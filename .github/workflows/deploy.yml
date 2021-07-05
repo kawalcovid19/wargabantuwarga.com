@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   push:
-    branches: [ master, feature/fetcher ]
+    branches: [ master ]
   schedule:
     - cron: '*/15 * * * *'
 
