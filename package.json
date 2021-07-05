@@ -7,10 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "fetch-wbw": "node etc/fetchers/fetch-wbw.js",
+    "netlify-export": "yarn fetch-wbw && yarn build && next export"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
     "next": "11.0.1",
+    "node-fetch": "^2.6.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
