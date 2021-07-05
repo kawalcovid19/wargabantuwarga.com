@@ -7,7 +7,7 @@ type Props = {
 
 export default function Home(props: Props) {
   return (
-    <div>
+    <>
       <Head>
         <title>Warga Bantu Warga</title>
         <meta
@@ -18,8 +18,8 @@ export default function Home(props: Props) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <style dangerouslySetInnerHTML={{ __html: props.css }} />
       </Head>
-      <body dangerouslySetInnerHTML={{ __html: props.html }}></body>
-    </div>
+      <main dangerouslySetInnerHTML={{ __html: props.html }}></main>
+    </>
   );
 }
 
