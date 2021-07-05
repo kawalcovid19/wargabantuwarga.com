@@ -14,15 +14,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Use Node.js 10.x
+      - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
-          node-version: 10.x
+          node-version: 14.x
 
-      - run: npm install
-      - run: npm run netlify-export
+      - run: yarn install
+      - run: yarn run netlify-export
 
-      - run: npm install -g netlify-cli@2.50.0
+      - run: yarn install -g netlify-cli@2.50.0
       - run: netlify deploy --prod --dir=out
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
