@@ -11,6 +11,7 @@ async function fetchWbw() {
     path.resolve(__dirname, "../../data/wbw.json"),
     JSON.stringify({
       html: $("body > #contents div").html(),
+      css: $("body > #contents style").html(),
     })
   );
 }
