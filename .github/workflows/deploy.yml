@@ -19,10 +19,10 @@ jobs:
         with:
           node-version: 14.x
 
-      - run: yarn install
+      - run: yarn
       - run: yarn run netlify-export
 
-      - run: yarn global install netlify-cli@2.50.0
+      - run: yarn global add netlify-cli@2.50.0
       - run: netlify deploy --prod --dir=out
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
