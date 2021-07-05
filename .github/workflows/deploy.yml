@@ -1,0 +1,29 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ master, feature/fetcher ]
+  schedule:
+    - cron: '*/15 * * * *'
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - run: yarn
+      - run: yarn run netlify-export
+
+      - run: yarn global add netlify-cli@2.50.0
+      - run: netlify deploy --prod --dir=out
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}

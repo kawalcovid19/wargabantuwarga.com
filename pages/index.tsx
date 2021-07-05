@@ -1,8 +1,11 @@
 import Head from "next/head";
-import htmr from "htmr";
-import { props } from "../src/index";
 
-export default function Home() {
+type Props = {
+    html: string;
+    css: string;
+}
+
+export default function Home(props: Props) {
   return (
     <div>
       <Head>
@@ -12,10 +15,15 @@ export default function Home() {
           content="Database ketersediaan bed di RS, donor plasma, dan oksigen"
         />
         <link rel="icon" href="/favicon.ico" />
+          <style dangerouslySetInnerHTML={{__html: props.css}}/>
       </Head>
-      <body>
-        {htmr(props)}
+      <body dangerouslySetInnerHTML={{__html: props.html}}>
       </body>
     </div>
   );
+}
+
+Home.getInitialProps = async () => {
+    const data = require('../data/wbw.json')
+    return {html: data.html, css: data.css}
 }
