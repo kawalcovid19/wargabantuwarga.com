@@ -16,15 +16,15 @@ export default function Home(props: Props) {
           name="description"
           content="Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan dan alat kesehatan untuk COVID-19."
         />
-        <meta name="og:title" content="Warga Bantu Warga" />
+        <meta property="og:title" content="Warga Bantu Warga" />
         <meta
-          name="og:description"
+          property="og:description"
           content="Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan dan alat kesehatan untuk COVID-19."
         />
-        <meta name="og:type" content="website" />
-        <meta name="og:image" content="/wbw.svg" />
-        <meta name="og:image:height" content="192" />
-        <meta name="og:image:width" content="192" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/wbw.svg" />
+        <meta property="og:image:height" content="192" />
+        <meta property="og:image:width" content="192" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Warga Bantu Warga" />
         <meta
