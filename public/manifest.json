@@ -1,0 +1,13 @@
+{
+  "name": "Warga Bantu Warga",
+  "short_name": "WBW",
+  "icons": [
+    {
+      "src": "/wbw.svg",
+      "sizes": "192x192"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
