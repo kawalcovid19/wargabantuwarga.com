@@ -1,6 +1,6 @@
 import Head from "next/head";
 // import Image from "next/image";
-import hero from "../public/hero.png";
+// import hero from "../public/hero.png";
 
 type Props = {
   html: string;
@@ -25,8 +25,10 @@ export default function Home(props: Props) {
           {/* <Image src={hero} alt="Warga Bantu Warga" /> */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/hero.png"
+            src="/hero.svg"
             alt="Warga Bantu Warga"
+            height="291"
+            width="650"
             style={{ maxWidth: 650, width: "100%" }}
           />
         </header>
