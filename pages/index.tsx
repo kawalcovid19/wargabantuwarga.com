@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+// import Image from "next/image";
 import hero from "../public/hero.png";
 
 type Props = {
@@ -22,7 +22,9 @@ export default function Home(props: Props) {
       </Head>
       <main>
         <header>
-          <Image src={hero} alt="Warga Bantu Warga" />
+          {/* <Image src={hero} alt="Warga Bantu Warga" /> */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/hero.png" alt="Warga Bantu Warga" />
         </header>
         <article dangerouslySetInnerHTML={{ __html: props.html }}></article>
       </main>
