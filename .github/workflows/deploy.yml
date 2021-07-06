@@ -21,7 +21,7 @@ jobs:
       - run: yarn run netlify-export
 
       - run: yarn global add netlify-cli@4.1.2
-      - run: netlify deploy --prod --dir=out
+      - run: netlify deploy --prod --dir=out --message "GitHub Actions"
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
