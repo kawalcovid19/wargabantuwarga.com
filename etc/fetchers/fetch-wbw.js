@@ -4,7 +4,7 @@ const path = require("path");
 const fetch = require("node-fetch");
 
 async function fetchWbw() {
-  const source = await fetch("https://kcov.id/wbw-source");
+  const source = await fetch("https://kcov.id/wbw-docs");
   const $ = cheerio.load(await source.text());
 
   fs.writeFileSync(
