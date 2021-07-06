@@ -3,8 +3,8 @@
   "short_name": "WBW",
   "icons": [
     {
-      "src": "/wbw.svg",
-      "sizes": "192x192"
+      "src": "/wbw.png",
+      "sizes": "601x689"
     }
   ],
   "theme_color": "#ffffff",
