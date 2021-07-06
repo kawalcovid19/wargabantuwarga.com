@@ -27,6 +27,8 @@ export default function Home(props: Props) {
           <img
             src="/hero.svg"
             alt="Warga Bantu Warga"
+            height="291"
+            width="650"
             style={{ maxWidth: 650, width: "100%" }}
           />
         </header>
