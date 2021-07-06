@@ -16,6 +16,11 @@ export default function Home(props: Props) {
           name="description"
           content="Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan dan alat kesehatan untuk COVID-19."
         />
+        <meta name="og:title" content="Warga Bantu Warga" />
+        <meta
+          name="og:description"
+          content="Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan dan alat kesehatan untuk COVID-19."
+        />
         <meta name="og:type" content="website" />
         <meta name="og:image" content="/wbw.svg" />
         <meta name="og:image:height" content="192" />
