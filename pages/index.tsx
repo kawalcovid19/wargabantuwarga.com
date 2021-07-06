@@ -14,8 +14,24 @@ export default function Home(props: Props) {
         <title>Warga Bantu Warga</title>
         <meta
           name="description"
-          content="Database ketersediaan bed di RS, donor plasma, dan oksigen"
+          content="Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan dan alat kesehatan untuk COVID-19."
         />
+        <meta property="og:title" content="Warga Bantu Warga" />
+        <meta
+          property="og:description"
+          content="Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan dan alat kesehatan untuk COVID-19."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/wbw.png" />
+        <meta property="og:image:height" content="689" />
+        <meta property="og:image:width" content="601" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Warga Bantu Warga" />
+        <meta
+          name="twitter:description"
+          content="Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan dan alat kesehatan untuk COVID-19."
+        />
+        <meta name="twitter:creator" content="Warga" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <style dangerouslySetInnerHTML={{ __html: props.css }} />
