@@ -25,7 +25,7 @@ export default function Home(props: Props) {
           {/* <Image src={hero} alt="Warga Bantu Warga" /> */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/hero.svg"
+            src="https://firebase-kanvas.imgix.net/warga_bantu_warga/hero_banner.png?auto=format,compress,enhance&fm=pjpg&cs=tinysrgb&fit=scale"
             alt="Warga Bantu Warga"
             height="291"
             width="650"
