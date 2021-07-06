@@ -2,3 +2,7 @@ body {
   max-width: 650px;
   margin: 0 auto;
 }
+
+table {
+  width: 100%;
+}
