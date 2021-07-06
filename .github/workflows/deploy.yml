@@ -22,7 +22,7 @@ jobs:
       - run: yarn
       - run: yarn run netlify-export
 
-      - run: yarn global add netlify-cli@2.50.0
+      - run: yarn global add netlify-cli@4.1.2
       - run: netlify deploy --prod --dir=out
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

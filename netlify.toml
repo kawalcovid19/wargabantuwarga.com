@@ -1,0 +1,12 @@
+[build]
+  command = "yarn netlify-export"
+  publish = "out"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[plugins]]
+  package = "netlify-plugin-cache-nextjs"
+
+[[plugins]]
+  package = "netlify-plugin-image-optim"
