@@ -24,7 +24,11 @@ export default function Home(props: Props) {
         <header>
           {/* <Image src={hero} alt="Warga Bantu Warga" /> */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/hero.png" alt="Warga Bantu Warga" />
+          <img
+            src="/hero.png"
+            alt="Warga Bantu Warga"
+            style={{ maxWidth: 650, width: "100%" }}
+          />
         </header>
         <article dangerouslySetInnerHTML={{ __html: props.html }}></article>
       </main>
