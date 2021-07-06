@@ -6,3 +6,7 @@ body {
 table {
   width: 100%;
 }
+
+img {
+  aspect-ratio: attr(width) / attr(height);
+}

@@ -29,7 +29,7 @@ export default function Home(props: Props) {
             alt="Warga Bantu Warga"
             height="291"
             width="650"
-            style={{ maxWidth: 650, width: "100%" }}
+            style={{ maxWidth: 650, height: "auto", width: "100%" }}
           />
         </header>
         <article dangerouslySetInnerHTML={{ __html: props.html }}></article>
