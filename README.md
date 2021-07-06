@@ -1,5 +1,15 @@
 # Warga Bantu Warga
 
+A society initiative to circulate information about health facilities and devices for COVID-19.
+
+## Purpose
+
+The purpose of this website is to republish publicly accessible Google Docs to be more mobile-friendly and performant.
+
+### Why Google Docs?
+
+So that our content contributors can collaborate easily without the hassle of conventional CMSes.
+
 ## Getting Started
 
 First, run the development server:
