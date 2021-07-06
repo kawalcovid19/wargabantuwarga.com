@@ -14,7 +14,7 @@ export default function Home(props: Props) {
         <title>Warga Bantu Warga</title>
         <meta
           name="description"
-          content="Database ketersediaan bed di RS, donor plasma, dan oksigen"
+          content="Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan dan alat kesehatan untuk COVID-19."
         />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
