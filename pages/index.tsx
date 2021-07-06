@@ -22,7 +22,10 @@ export default function Home(props: Props) {
           content="Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan dan alat kesehatan untuk COVID-19."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/wbw.png" />
+        <meta
+          property="og:image"
+          content="https://wargabantuwarga.com/wbw.png"
+        />
         <meta property="og:image:height" content="689" />
         <meta property="og:image:width" content="601" />
         <meta name="twitter:card" content="summary" />
