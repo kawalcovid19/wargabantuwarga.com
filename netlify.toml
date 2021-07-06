@@ -1,0 +1,6 @@
+[build]
+  command = "yarn netlify-export"
+  publish = "out"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

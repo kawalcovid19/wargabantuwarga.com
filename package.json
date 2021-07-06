@@ -12,6 +12,7 @@
     "netlify-export": "yarn fetch-wbw && yarn build && next export"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "3.6.2",
     "cheerio": "^1.0.0-rc.10",
     "next": "11.0.1",
     "node-fetch": "^2.6.1",
