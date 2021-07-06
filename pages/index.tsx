@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Image from "next/image";
-import hero from "../public/hero-banner-wargabantuwarga.png";
 
 type Props = {
   html: string;
@@ -22,7 +21,10 @@ export default function Home(props: Props) {
       </Head>
       <main>
         <header>
-          <Image src={hero} alt="Warga Bantu Warga" />
+          <Image
+            src="hero-banner-wargabantuwarga.svg"
+            alt="Warga Bantu Warga"
+          />
         </header>
         <article dangerouslySetInnerHTML={{ __html: props.html }}></article>
       </main>
