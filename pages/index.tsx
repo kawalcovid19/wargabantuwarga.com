@@ -16,6 +16,7 @@ export default function Home(props: Props) {
           name="description"
           content="Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan dan alat kesehatan untuk COVID-19."
         />
+        <meta name="og:image" content="/wbw.svg" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <style dangerouslySetInnerHTML={{ __html: props.css }} />
