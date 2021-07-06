@@ -1,4 +1,6 @@
 import Head from "next/head";
+// import Image from "next/image";
+import hero from "../public/hero.png";
 
 type Props = {
   html: string;
@@ -7,7 +9,7 @@ type Props = {
 
 export default function Home(props: Props) {
   return (
-    <div>
+    <>
       <Head>
         <title>Warga Bantu Warga</title>
         <meta
@@ -18,8 +20,19 @@ export default function Home(props: Props) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <style dangerouslySetInnerHTML={{ __html: props.css }} />
       </Head>
-      <body dangerouslySetInnerHTML={{ __html: props.html }}></body>
-    </div>
+      <main>
+        <header>
+          {/* <Image src={hero} alt="Warga Bantu Warga" /> */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/hero.png"
+            alt="Warga Bantu Warga"
+            style={{ maxWidth: 650, width: "100%" }}
+          />
+        </header>
+        <article dangerouslySetInnerHTML={{ __html: props.html }}></article>
+      </main>
+    </>
   );
 }
 
