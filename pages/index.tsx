@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Image from "next/image";
+import hero from "../public/hero.png";
 
 type Props = {
   html: string;
@@ -18,7 +20,12 @@ export default function Home(props: Props) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <style dangerouslySetInnerHTML={{ __html: props.css }} />
       </Head>
-      <main dangerouslySetInnerHTML={{ __html: props.html }}></main>
+      <main>
+        <header>
+          <Image src={hero} alt="Warga Bantu Warga" />
+        </header>
+        <article dangerouslySetInnerHTML={{ __html: props.html }}></article>
+      </main>
     </>
   );
 }
