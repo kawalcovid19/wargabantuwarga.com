@@ -1,6 +1,4 @@
 import Head from "next/head";
-// import Image from "next/image";
-// import hero from "../public/hero.png";
 
 type Props = {
   html: string;
