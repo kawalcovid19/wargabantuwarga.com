@@ -15,6 +15,10 @@ export async function getStaticProps() {
   };
 }
 
+export const config = {
+  unstable_runtimeJS: true,
+};
+
 export default function HomePage(props: HomePageProps) {
   return (
     <>
