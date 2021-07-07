@@ -30,8 +30,15 @@
     "typescript": "4.3.5"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
-    "*.{js,jsx,ts,tsx,css,md}": "prettier --write"
+    "*.{js,json,md}": [
+      "prettier --write"
+    ],
+    "**/**.css": [
+      "prettier --write"
+    ],
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
   },
   "private": true
 }
