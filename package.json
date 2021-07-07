@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@types/react": "17.0.13",
+    "critters": "^0.0.10",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
     "husky": ">=6",
