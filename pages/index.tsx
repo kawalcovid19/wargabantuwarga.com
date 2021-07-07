@@ -1,4 +1,5 @@
 import Head from "next/head";
+import data from "../data/wbw.json";
 
 type HomePageProps = {
   html: string;
@@ -6,7 +7,6 @@ type HomePageProps = {
 };
 
 export async function getStaticProps() {
-  const data = require("../data/wbw.json");
   return {
     props: {
       html: data.html,
@@ -24,7 +24,6 @@ export default function HomePage(props: HomePageProps) {
 
       <main>
         <header>
-          {/* <Image src={hero} alt="Warga Bantu Warga" /> */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="https://firebase-kanvas.imgix.net/warga_bantu_warga/hero_banner.png?auto=format,compress,enhance&fm=pjpg&cs=tinysrgb&fit=scale"
@@ -34,7 +33,7 @@ export default function HomePage(props: HomePageProps) {
             style={{ maxWidth: 650, height: "auto", width: "100%" }}
           />
         </header>
-        <article dangerouslySetInnerHTML={{ __html: props.html }}></article>
+        <article dangerouslySetInnerHTML={{ __html: props.html }} />
       </main>
     </>
   );
