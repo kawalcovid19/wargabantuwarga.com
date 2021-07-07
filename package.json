@@ -1,15 +1,14 @@
 {
   "name": "wargabantuwarga.com",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "prepare": "husky install",
+    "dev": "next",
     "fetch-wbw": "node etc/fetchers/fetch-wbw.js",
-    "netlify-export": "yarn fetch-wbw && yarn build && next export"
+    "lint": "next lint",
+    "netlify-export": "yarn fetch-wbw && yarn build && next export",
+    "prepare": "husky install",
+    "start": "next start"
   },
   "dependencies": {
     "@netlify/plugin-nextjs": "3.6.2",
@@ -33,5 +32,6 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
     "*.{js,jsx,ts,tsx,css,md}": "prettier --write"
-  }
+  },
+  "private": true
 }
