@@ -1,7 +1,7 @@
 const cheerio = require("cheerio");
 const fs = require("fs");
 const path = require("path");
-const fetch = require("node-fetch");
+const { fetch } = require("cross-fetch");
 
 async function fetchWbw() {
   const source = await fetch("https://kcov.id/wbw-docs");
@@ -12,7 +12,7 @@ async function fetchWbw() {
     JSON.stringify({
       html: $("body > #contents div").html(),
       css: $("body > #contents style").html(),
-    })
+    }),
   );
 }
 
