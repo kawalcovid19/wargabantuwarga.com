@@ -13,7 +13,7 @@
     pwa = 0.3
 
   [plugins.inputs]
-    output_path = "public/lighthouse.html"
+    output_path = "lighthouse.html"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
