@@ -34,13 +34,6 @@ export default function Home(props: Props) {
         />
         <meta name="twitter:creator" content="Warga" />
         <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com/"
-          crossOrigin="anonymous"
-        />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
-        <link rel="preload" as="font" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <style dangerouslySetInnerHTML={{ __html: props.css }} />
       </Head>

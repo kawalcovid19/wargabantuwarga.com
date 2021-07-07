@@ -6,7 +6,7 @@ import Document, {
   DocumentContext,
 } from "next/document";
 
-class MyDocument extends Document {
+export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
@@ -15,7 +15,17 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="id">
-        <Head />
+        <Head>
+          <meta charSet="UTF-8" />
+          <meta content="ie=edge" httpEquiv="X-UA-Compatible" />
+          <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com/"
+            crossOrigin="anonymous"
+          />
+          <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
+          <link rel="preload" as="font" />
+        </Head>
         <body>
           <Main />
           <NextScript />
@@ -24,5 +34,3 @@ class MyDocument extends Document {
     );
   }
 }
-
-export default MyDocument;
