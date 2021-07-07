@@ -38,7 +38,7 @@ We must carefully consider any additional client-side libraries that we include 
 
 #### ❌ Unmeasured Improvements
 
-For any improvements on the website, we should continuously measure its impact on the [Core Web Vitals](https://web.dev/vitals/). If it is proven to hurt the metrics, we should revert the changes and try to find another way to implement the improvements without hurting them.
+For any improvements on the website, we should continuously measure its impact on the [Core Web Vitals](https://web.dev/vitals/). If proven to hurt the metrics, we should revert the changes and find another way to implement them without degrading the performance.
 
 ## Getting Started
 
