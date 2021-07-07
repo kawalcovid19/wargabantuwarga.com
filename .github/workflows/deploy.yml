@@ -1,12 +1,13 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
 name: Deploy
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: "*/15 * * * *"
 
 jobs:
   deploy:
-
     runs-on: ubuntu-latest
 
     steps:
