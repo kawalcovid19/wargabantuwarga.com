@@ -6,7 +6,7 @@
   package = "@netlify/plugin-lighthouse"
 
   [plugins.inputs.thresholds]
-    performance = 0.91
+    performance = 0.85
     accessibility = 1
     best-practices = 1
     seo = 0.92
