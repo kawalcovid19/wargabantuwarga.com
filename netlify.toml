@@ -5,6 +5,9 @@
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
 
+  [plugins.inputs]
+    output_path = "public/lighthouse.html"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
