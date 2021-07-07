@@ -1,11 +1,21 @@
 import Head from "next/head";
 
-type Props = {
+type HomePageProps = {
   html: string;
   css: string;
 };
 
-export default function Home(props: Props) {
+export async function getStaticProps() {
+  const data = require("../data/wbw.json");
+  return {
+    props: {
+      html: data.html,
+      css: data.css,
+    },
+  };
+}
+
+export default function HomePage(props: HomePageProps) {
   return (
     <>
       <Head>
@@ -29,8 +39,3 @@ export default function Home(props: Props) {
     </>
   );
 }
-
-Home.getInitialProps = async () => {
-  const data = require("../data/wbw.json");
-  return { html: data.html, css: data.css };
-};
