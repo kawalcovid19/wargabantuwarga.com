@@ -38,10 +38,11 @@ export default function Home(props: Props) {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="preconnect"
-          href="https://fonts.googleapis.com/"
+          href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
+        {/* eslint-disable-next-line @next/next/google-font-preconnect */}
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <link rel="preload" as="font" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <style dangerouslySetInnerHTML={{ __html: props.css }} />
