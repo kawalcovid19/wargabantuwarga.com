@@ -5,22 +5,20 @@ type Props = {
   css: string;
 };
 
+const meta = {
+  title: "Warga Bantu Warga | Informasi Faskes & Alkes Untuk COVID-19",
+  description:
+    "Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan & alat kesehatan untuk COVID-19. WargaBantuWarga memudahkan publik mencari & mengakses informasi.",
+};
+
 export default function Home(props: Props) {
   return (
     <>
       <Head>
-        <title>
-          Warga Bantu Warga | Informasi Faskes & Alkes Untuk Covid 19
-        </title>
-        <meta
-          name="description"
-          content="Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan & alat kesehatan untuk COVID-19. WargaBantuWarga memudahkan publik mencari & mengakses informasi."
-        />
-        <meta property="og:title" content="Warga Bantu Warga" />
-        <meta
-          property="og:description"
-          content="Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan dan alat kesehatan untuk COVID-19."
-        />
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
