@@ -37,3 +37,6 @@ yarn-error.log*
 .eslintcache
 
 .idea/
+
+# Local Netlify folder
+.netlify

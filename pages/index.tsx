@@ -1,26 +1,24 @@
 import Head from "next/head";
-// import Image from "next/image";
-// import hero from "../public/hero.png";
 
 type Props = {
   html: string;
   css: string;
 };
 
+const meta = {
+  title: "Warga Bantu Warga | Informasi Faskes & Alkes Untuk COVID-19",
+  description:
+    "Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan & alat kesehatan untuk COVID-19. WargaBantuWarga memudahkan publik mencari & mengakses informasi.",
+};
+
 export default function Home(props: Props) {
   return (
     <>
       <Head>
-        <title>Warga Bantu Warga</title>
-        <meta
-          name="description"
-          content="Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan dan alat kesehatan untuk COVID-19."
-        />
-        <meta property="og:title" content="Warga Bantu Warga" />
-        <meta
-          property="og:description"
-          content="Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan dan alat kesehatan untuk COVID-19."
-        />
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
@@ -49,15 +47,16 @@ export default function Home(props: Props) {
       </Head>
       <main>
         <header>
-          {/* <Image src={hero} alt="Warga Bantu Warga" /> */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://firebase-kanvas.imgix.net/warga_bantu_warga/hero_banner.png?auto=format,compress,enhance&fm=pjpg&cs=tinysrgb&fit=scale"
-            alt="Warga Bantu Warga"
-            height="291"
-            width="650"
-            style={{ maxWidth: 650, height: "auto", width: "100%" }}
-          />
+          <h1>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://firebase-kanvas.imgix.net/warga_bantu_warga/hero_banner.png?auto=format,compress,enhance&fm=pjpg&cs=tinysrgb&fit=scale"
+              alt="Warga Bantu Warga"
+              height="291"
+              width="650"
+              style={{ maxWidth: 650, height: "auto", width: "100%" }}
+            />
+          </h1>
         </header>
         <article dangerouslySetInnerHTML={{ __html: props.html }}></article>
       </main>
