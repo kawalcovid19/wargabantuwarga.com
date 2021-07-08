@@ -11,10 +11,12 @@ export default function Home(props: Props) {
   return (
     <>
       <Head>
-        <title>Warga Bantu Warga</title>
+        <title>
+          Warga Bantu Warga | Informasi Faskes & Alkes Untuk Covid 19
+        </title>
         <meta
           name="description"
-          content="Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan dan alat kesehatan untuk COVID-19."
+          content="Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan & alat kesehatan untuk COVID-19. WargaBantuWarga memudahkan publik mencari & mengakses informasi."
         />
         <meta property="og:title" content="Warga Bantu Warga" />
         <meta
