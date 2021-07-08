@@ -59,7 +59,11 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Frequently Used Tools
+### Frequently Used Tools
 
 - [Measure Web Performance](https://web.dev/measure)
 - [Convert .ico](https://icoconvert.com)
+
+## Contributing
+
+See our [contributing guidelines](CONTRIBUTING.md).
