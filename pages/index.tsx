@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Script from "next/script";
 
 type Props = {
   html: string;
@@ -16,7 +15,7 @@ export default function Home(props: Props) {
   return (
     <>
       <Head>
-        <Script
+        <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l] = w[l] || [];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
