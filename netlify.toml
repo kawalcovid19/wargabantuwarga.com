@@ -9,7 +9,7 @@
     performance = 0.85
     accessibility = 1
     best-practices = 0.93
-    seo = 0.92
+    seo = 0.85
     pwa = 0.3
 
   [plugins.inputs]
