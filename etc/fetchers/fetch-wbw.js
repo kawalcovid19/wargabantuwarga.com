@@ -1,7 +1,13 @@
+const { fetchDocs } = require("./fetch-docs");
 const { fetchSheets } = require("./fetch-sheets");
 
-async function fetchWbw() {
-  await fetchSheets();
+function fetchWbw() {
+  // Not using async await to prevent blocking
+  console.log("Fetching docs");
+  fetchDocs().then(() => console.log("DONE fetching docs"));
+
+  console.log("Fetching sheets");
+  fetchSheets().then(() => console.log("DONE fetching sheets"));
 }
 
 fetchWbw();

@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const fetch = require("node-fetch");
 
-export async function fetchDocs() {
+module.exports.fetchDocs = async function fetchDocs() {
   const source = await fetch("https://kcov.id/wbw-docs");
   const $ = cheerio.load(await source.text());
   fs.writeFileSync(
@@ -13,4 +13,4 @@ export async function fetchDocs() {
       css: $("body > #contents style").html(),
     })
   );
-}
+};
