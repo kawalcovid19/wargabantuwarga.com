@@ -17,7 +17,12 @@
     "next": "11.0.1",
     "cross-fetch": "^3.1.4",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-tinacms-editor": "0.42.1",
+    "react-tinacms-inline": "0.42.1",
+    "styled-components": "5.3.0",
+    "tina-graphql-gateway": "0.3.0",
+    "tinacms": "0.42.1"
   },
   "devDependencies": {
     "@netlify/plugin-lighthouse": "2.1.2",
