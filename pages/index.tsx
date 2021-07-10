@@ -64,13 +64,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         ></iframe>
       </noscript>
       <main>
-        <button
-          onClick={() => {
-            throw new Error("Error test 1");
-          }}
-        >
-          Click to error
-        </button>
         <header>
           <h1>
             {/* eslint-disable-next-line @next/next/no-img-element */}
