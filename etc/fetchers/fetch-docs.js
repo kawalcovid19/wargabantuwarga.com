@@ -1,7 +1,7 @@
 const cheerio = require("cheerio");
 const fs = require("fs");
 const path = require("path");
-const fetch = require("node-fetch");
+const fetch = require("cross-fetch");
 
 module.exports.fetchDocs = async function fetchDocs() {
   const source = await fetch("https://kcov.id/wbw-docs");

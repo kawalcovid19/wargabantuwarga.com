@@ -1,7 +1,7 @@
 const cheerio = require("cheerio");
 const fs = require("fs");
 const path = require("path");
-const fetch = require("node-fetch");
+const fetch = require("cross-fetch");
 
 function toSnakeCase(text) {
   return text.trim().toLowerCase().replace(" ", "_");
@@ -16,9 +16,7 @@ function allIsEmptyString(array) {
 }
 
 module.exports.fetchSheets = async function fetchSheets() {
-  const source = await fetch(
-    "https://docs.google.com/spreadsheets/d/1RIcSiQqPCw-6H55QIYwblIQDPpFQmDNC73ukFa05J7c/htmlview"
-  );
+  const source = await fetch("https://kcov.id/wbw-sheets");
   const $ = cheerio.load(await source.text());
 
   const colMap = {};
