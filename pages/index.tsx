@@ -46,6 +46,13 @@ export default function Home(props: Props) {
         <style dangerouslySetInnerHTML={{ __html: props.css }} />
       </Head>
       <main>
+        <button
+          onClick={() => {
+            throw new Error("Error test 1");
+          }}
+        >
+          Click to error
+        </button>
         <header>
           <h1>
             {/* eslint-disable-next-line @next/next/no-img-element */}

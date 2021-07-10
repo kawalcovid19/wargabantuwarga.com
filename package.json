@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@netlify/plugin-nextjs": "3.6.2",
+    "@sentry/nextjs": "^6.8.0",
     "cheerio": "^1.0.0-rc.10",
     "next": "11.0.1",
     "node-fetch": "^2.6.1",
@@ -20,8 +21,8 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@types/react": "17.0.13",
     "@netlify/plugin-lighthouse": "2.1.2",
+    "@types/react": "17.0.13",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
     "husky": ">=6",
