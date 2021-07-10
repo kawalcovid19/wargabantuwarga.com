@@ -29,3 +29,17 @@ collections:
             name: "site_description"
             widget: "string"
             hint: "The description of the site to be shown in the URL previews on Google, Facebook, Twitter, WhatsApp, etc."
+  - name: "section"
+    label: "Sections"
+    description: "A section within the home page"
+    folder: "_content/sections"
+    create: true
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "Section title"
+      - label: 'Body'
+        name: 'body'
+        widget: 'markdown'
+        hint: "Section body"
