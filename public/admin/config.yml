@@ -1,0 +1,31 @@
+backend:
+  name: git-gateway
+  branch: experimental/netlify-cms
+media_folder: public/images
+public_folder: /images
+publish_mode: editorial_workflow
+
+collections:
+  - name: "config"
+    label: "Config"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "general"
+        label: "Site Configuration"
+        file: "config.json"
+        description: "General site settings"
+        fields:
+          - label: "Site name"
+            name: "site_name"
+            widget: "string"
+            hint: "The main name of the website, e.g., **Warga Bantu Warga** | Informasi Faskes & Alkes Untuk COVID-19"
+          - label: "Site tagline"
+            name: "site_tagline"
+            widget: "string"
+            hint: "The tagline to accompany the name, e.g., Warga Bantu Warga | **Informasi Faskes & Alkes Untuk COVID-19**"
+          - label: "Site description"
+            name: "site_description"
+            widget: "string"
+            hint: "The description of the site to be shown in the URL previews on Google, Facebook, Twitter, WhatsApp, etc."
