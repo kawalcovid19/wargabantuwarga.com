@@ -29,17 +29,30 @@ collections:
             name: "site_description"
             widget: "string"
             hint: "The description of the site to be shown in the URL previews on Google, Facebook, Twitter, WhatsApp, etc."
-  - name: "section"
+  - name: "home_page"
+    label: "Home Page"
+    delete: false
+    files:
+      - name: "home_page"
+        label: "Home Page"
+        file: "_content/home-page.yml"
+        fields:
+          - name: "content"
+            label: "Content"
+            widget: "list"
+            fields:
+              - name: "section"
+                label: "Section"
+                widget: "relation"
+                collection: "sections"
+                search_fields: ["title"]
+                value_field: "title"
+  - name: "sections"
     label: "Sections"
+    label_singular: "Section"
     description: "A section within the home page"
     folder: "_content/sections"
     create: true
     fields:
-      - label: "Title"
-        name: "title"
-        widget: "string"
-        hint: "Section title"
-      - label: 'Body'
-        name: 'body'
-        widget: 'markdown'
-        hint: "Section body"
+      - { label: "Title", name: "title", widget: "string", hint: "Section title" }
+      - { label: "Body", name: "body", widget: "markdown", hint: "Section body" }
