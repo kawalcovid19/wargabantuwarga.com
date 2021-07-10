@@ -811,10 +811,10 @@
     lighthouse "^8.0.0"
     puppeteer "^10.0.0"
 
-"@netlify/plugin-nextjs@3.6.2":
-  version "3.6.2"
-  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-3.6.2.tgz#8121b5d1ae5dfa2b87509376957a7b39fcac8ae8"
-  integrity sha512-JcwJJVIK/fP+eFGlCppc5oBNJaelnrMGHun10Y3J73Hh03b5YLkY+fqopkT1WKgAuOo/fu+t5pwHwRQZXzjsTQ==
+"@netlify/plugin-nextjs@3.6.3":
+  version "3.6.3"
+  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-3.6.3.tgz#961c6c60d78aaeb0b4ed8b78db08c09b8dc8ba4b"
+  integrity sha512-Cy2s01ybIfXKsrFLvkVBtXI9h0vIyRW1b4YQ88qahsblWxWEy8cplvy7Ke518NPlXljXXM0WA0we1kVrtrheGw==
   dependencies:
     "@netlify/functions" "^0.7.2"
     "@sls-next/lambda-at-edge" "1.8.0"
