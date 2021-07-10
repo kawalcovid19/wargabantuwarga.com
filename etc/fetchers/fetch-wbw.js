@@ -1,19 +1,13 @@
-const cheerio = require("cheerio");
-const fs = require("fs");
-const path = require("path");
-const fetch = require("node-fetch");
+const { fetchDocs } = require("./fetch-docs");
+const { fetchSheets } = require("./fetch-sheets");
 
-async function fetchWbw() {
-  const source = await fetch("https://kcov.id/wbw-docs");
-  const $ = cheerio.load(await source.text());
+function fetchWbw() {
+  // Not using async await to prevent blocking
+  console.log("Fetching docs");
+  fetchDocs().then(() => console.log("DONE fetching docs"));
 
-  fs.writeFileSync(
-    path.resolve(__dirname, "../../data/wbw.json"),
-    JSON.stringify({
-      html: $("body > #contents div").html(),
-      css: $("body > #contents style").html(),
-    })
-  );
+  console.log("Fetching sheets");
+  fetchSheets().then(() => console.log("DONE fetching sheets"));
 }
 
 fetchWbw();
