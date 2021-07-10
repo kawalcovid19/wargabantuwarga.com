@@ -1,0 +1,6 @@
+---
+title: Home Page
+content:
+  - section: "Hubungi Hotline #WargaBantuWarga"
+  - section: Informasi Terbaru
+---
