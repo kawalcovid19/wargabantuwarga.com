@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Script } from "../components/custom-script";
+import { Script } from "../components/script";
 
 type Props = {
   html: string;
