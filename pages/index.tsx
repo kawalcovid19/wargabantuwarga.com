@@ -1,4 +1,6 @@
 import Head from "next/head";
+import NextScript from "next/script";
+
 import { Script } from "../components/script";
 
 type Props = {
@@ -45,6 +47,12 @@ export default function Home(props: Props) {
         <link rel="preload" as="font" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <style dangerouslySetInnerHTML={{ __html: props.css }} />
+        {/* lazy loading Sentry. */}
+        {/* https://docs.sentry.io/platforms/javascript/install/lazy-load-sentry/ */}
+        <NextScript
+          src="https://js.sentry-cdn.com/0dda1c67a0744907b58c15b965348e63.min.js"
+          crossOrigin="anonymous"
+        />
       </Head>
       <Script
         dangerouslySetInnerHTML={{
