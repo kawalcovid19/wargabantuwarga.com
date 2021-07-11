@@ -2,6 +2,7 @@ import Head from "next/head";
 import NextScript from "next/script";
 
 import { Script } from "../components/script";
+import config from "../lib/config";
 
 type Props = {
   html: string;
@@ -9,9 +10,8 @@ type Props = {
 };
 
 const meta = {
-  title: "Warga Bantu Warga | Informasi Faskes & Alkes Untuk COVID-19",
-  description:
-    "Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan & alat kesehatan untuk COVID-19. WargaBantuWarga memudahkan publik mencari & mengakses informasi.",
+  title: `${config.site_name} | ${config.site_tagline}`,
+  description: config.site_description,
 };
 
 export default function Home(props: Props) {
