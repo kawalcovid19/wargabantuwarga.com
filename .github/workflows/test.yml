@@ -1,9 +1,6 @@
 name: Test deploy
 
-on:
-  push:
-    branches:
-      - feature/sentry-integration
+on: [push, pull_request]
 
 jobs:
   deploy:
