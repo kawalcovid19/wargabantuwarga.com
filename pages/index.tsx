@@ -1,15 +1,9 @@
 import Head from "next/head";
 import { Script } from "../components/script";
-import config from "../lib/config";
 
 type Props = {
   html: string;
   css: string;
-};
-
-const meta = {
-  title: `${config.site_name} | ${config.site_tagline}`,
-  description: config.site_description,
 };
 
 export default function Home(props: Props) {
