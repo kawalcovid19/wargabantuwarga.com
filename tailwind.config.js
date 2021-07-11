@@ -5,16 +5,12 @@ module.exports = {
   theme: {
     colors: {
       transparent: "transparent",
-      currentColor: "currentColor",
+      current: "currentColor",
       black: "#121212",
       gray: {
         DEFAULT: "#dedede",
         dark: "#aaaaaa",
       },
-      borderColor: (theme) => ({
-        ...theme("colors"),
-        DEFAULT: theme("colors.gray.DEFAULT", "currentColor"),
-      }),
     },
     fontFamily: {
       sans: ["Nunito", "sans-serif"],
