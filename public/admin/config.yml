@@ -35,24 +35,7 @@ collections:
     files:
       - name: "home_page"
         label: "Home Page"
-        file: "_content/home-page.yml"
+        file: "_content/home-page.md"
         fields:
-          - name: "content"
-            label: "Content"
-            widget: "list"
-            fields:
-              - name: "section"
-                label: "Section"
-                widget: "relation"
-                collection: "sections"
-                search_fields: ["title"]
-                value_field: "title"
-  - name: "sections"
-    label: "Sections"
-    label_singular: "Section"
-    description: "A section within the home page"
-    folder: "_content/sections"
-    create: true
-    fields:
-      - { label: "Title", name: "title", widget: "string", hint: "Section title" }
-      - { label: "Body", name: "body", widget: "markdown", hint: "Section body" }
+          - { label: "Title", name: "title", widget: "string", hint: "Page title" }
+          - { label: "Body", name: "body", widget: "markdown", hint: "Page body" }
