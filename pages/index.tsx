@@ -1,5 +1,4 @@
 import Head from "next/head";
-import NextScript from "next/script";
 
 import { Script } from "../components/script";
 
@@ -49,9 +48,10 @@ export default function Home(props: Props) {
         <style dangerouslySetInnerHTML={{ __html: props.css }} />
         {/* lazy loading Sentry. */}
         {/* https://docs.sentry.io/platforms/javascript/install/lazy-load-sentry/ */}
-        <NextScript
+        <script
+          async
           src="https://js.sentry-cdn.com/0dda1c67a0744907b58c15b965348e63.min.js"
-          crossOrigin="anonymous"
+          crossOrigin="origin"
         />
       </Head>
       <Script
