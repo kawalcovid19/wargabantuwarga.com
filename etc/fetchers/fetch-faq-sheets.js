@@ -4,7 +4,7 @@ const path = require("path");
 const fetch = require("cross-fetch");
 const FAQ_LINK = "https://kcov.id/wbw-faq";
 
-module.exports.fetchFaqSheet = async function fetchFaqSheet() {
+module.exports.fetchFaqSheets = async function fetchFaqSheets() {
   const source = await fetch(FAQ_LINK);
   const $ = cheerio.load(await source.text());
   const faq = $("#sheets-viewport > div#0").find("table tbody tr:not(:first)");
@@ -24,7 +24,7 @@ module.exports.fetchFaqSheet = async function fetchFaqSheet() {
     .toArray();
 
   fs.writeFileSync(
-    path.resolve(__dirname, "../../data/wbw-faq-sheet.json"),
+    path.resolve(__dirname, "../../data/wbw-faq-sheets.json"),
     JSON.stringify(faqJSON)
   );
 };
