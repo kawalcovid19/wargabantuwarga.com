@@ -1,5 +1,4 @@
 import Head from "next/head";
-import NextScript from "next/script";
 
 import { Script } from "../components/script";
 import config from "../lib/config";
