@@ -14,8 +14,8 @@
   "dependencies": {
     "@netlify/plugin-nextjs": "3.6.3",
     "cheerio": "^1.0.0-rc.10",
+    "cross-fetch": "^3.1.4",
     "next": "11.0.1",
-    "node-fetch": "^2.6.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
@@ -25,6 +25,7 @@
     "autoprefixer": "^10.2.6",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
+    "frontmatter-markdown-loader": "3.6.3",
     "husky": ">=6",
     "lint-staged": ">=10",
     "netlify-plugin-cache-nextjs": "1.6.1",
