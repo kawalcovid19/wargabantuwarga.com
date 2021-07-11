@@ -1,4 +1,4 @@
-name: Test deploy
+name: Preview deploy
 
 on: [push, pull_request]
 
@@ -16,12 +16,13 @@ jobs:
 
       - run: yarn
       - run: yarn run netlify-export
-
-      - run: yarn global add netlify-cli@4.1.2
-      - run: netlify deploy --dir=out --message "GitHub Actions - Test deploy"
         env:
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           NEXT_PUBLIC_SENTRY_DSN: ${{ secrets.NEXT_PUBLIC_SENTRY_DSN }}
           NEXT_PUBLIC_SENTRY_TRACES_SAMPLE_RATE: ${{ secrets.NEXT_PUBLIC_SENTRY_TRACES_SAMPLE_RATE }}
+
+      - run: yarn global add netlify-cli@4.1.2
+      - run: netlify deploy --dir=out --message "GitHub Actions - Preview deploy"
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
