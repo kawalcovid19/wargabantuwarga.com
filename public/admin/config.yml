@@ -32,6 +32,7 @@ collections:
   - name: "home_page"
     label: "Home Page"
     delete: false
+    preview_path: home-page
     files:
       - name: "home_page"
         label: "Home Page"
