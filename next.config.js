@@ -5,7 +5,6 @@ module.exports = {
       test: /\.md$/,
       use: {
         loader: "frontmatter-markdown-loader",
-        options: { mode: ["react-component"] },
       }
     });
     return configuration;
