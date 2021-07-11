@@ -12,9 +12,10 @@ export default class MyDocument extends Document {
             href="https://fonts.gstatic.com"
             crossOrigin="anonymous"
           />
-          {/* eslint-disable-next-line @next/next/google-font-preconnect */}
+          {/* eslint-disable @next/next/google-font-preconnect */}
           <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-          <link rel="preload" as="font" />
+          <link rel="preload" as="font" href="https://fonts.gstatic.com" />
+          {/* eslint-enable @next/next/google-font-preconnect */}
         </Head>
         <body>
           <Main />
