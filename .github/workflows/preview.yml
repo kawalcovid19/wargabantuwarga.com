@@ -1,8 +1,8 @@
-name: Test deploy
+name: Preview deploy
 
 on:
   push:
-    - branches: [feature/sentry-integration]
+    branches: [feature/sentry-integration]
 
 jobs:
   deploy:
@@ -20,7 +20,7 @@ jobs:
       - run: yarn run netlify-export
 
       - run: yarn global add netlify-cli@4.1.2
-      - run: netlify deploy --dir=out --message "GitHub Actions - Test deploy"
+      - run: netlify deploy --dir=out --message "GitHub Actions - Preview deploy"
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
