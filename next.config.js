@@ -5,7 +5,7 @@ module.exports = {
       test: /\.md$/,
       use: {
         loader: "frontmatter-markdown-loader",
-      }
+      },
     });
     return configuration;
   },
