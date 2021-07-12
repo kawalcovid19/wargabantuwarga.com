@@ -3,6 +3,7 @@ import "../styles/fonts.css";
 import type { AppProps } from "next/app";
 import config from "../lib/config";
 import Head from "next/head";
+import NextScript from "next/script";
 
 const meta = {
   title: `${config.site_name} | ${config.site_tagline}`,
@@ -30,6 +31,10 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:creator" content="Warga" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <NextScript
+          src="https://js.sentry-cdn.com/0dda1c67a0744907b58c15b965348e63.min.js"
+          crossOrigin="anonymous"
+        />
       </Head>
       <Component {...pageProps} />
     </>
