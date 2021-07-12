@@ -1,12 +1,24 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import { Script } from "../components/script";
+import data from "../data/wbw.json";
 
 type Props = {
   html: string;
   css: string;
 };
 
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      html: data.html,
+      css: data.css,
+    },
+  };
+};
+
 export default function Home(props: Props) {
+  console.log(props);
   return (
     <>
       <Head>
@@ -38,7 +50,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               alt="Warga Bantu Warga"
               height="291"
               width="650"
-              style={{ maxWidth: 650, height: "auto", width: "100%" }}
+              style={{ maxWidth: 650, height: "auto", width: "40rem" }}
             />
           </h1>
         </header>
@@ -47,8 +59,3 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </>
   );
 }
-
-Home.getInitialProps = async () => {
-  const data = require("../data/wbw.json");
-  return { html: data.html, css: data.css };
-};
