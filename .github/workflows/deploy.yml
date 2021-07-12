@@ -2,11 +2,10 @@ name: Deploy
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: "*/15 * * * *"
 
 jobs:
   deploy:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -25,3 +24,6 @@ jobs:
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          NEXT_PUBLIC_SENTRY_DSN: ${{ secrets.NEXT_PUBLIC_SENTRY_DSN }}
+          NEXT_PUBLIC_SENTRY_TRACES_SAMPLE_RATE: ${{ secrets.NEXT_PUBLIC_SENTRY_TRACES_SAMPLE_RATE }}

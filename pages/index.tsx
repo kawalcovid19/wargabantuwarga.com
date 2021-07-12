@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
+
 import { Script } from "../components/script";
 import data from "../data/wbw.json";
 

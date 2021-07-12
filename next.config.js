@@ -1,4 +1,6 @@
-module.exports = {
+const { withSentryConfig } = require("@sentry/nextjs");
+
+const userNextConfig = {
   reactStrictMode: true,
   webpack: (configuration) => {
     configuration.module.rules.push({
@@ -10,3 +12,5 @@ module.exports = {
     return configuration;
   },
 };
+
+module.exports = withSentryConfig(userNextConfig);
