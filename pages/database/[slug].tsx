@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import database, { ProvinceData } from "../../lib/database";
+import { Contacts } from "../../components/contacts";
+import database, { Province } from "../../lib/database";
 import {
   composeFunctions,
   convertToKebabCase,
@@ -9,18 +10,17 @@ import {
 } from "../../lib/string-utils";
 
 type DatabaseProps = {
-  title: string;
-  provinceData: ProvinceData;
+  province: Province;
 };
 
 export default function Database(props: DatabaseProps) {
-  const { provinceData, title } = props;
+  const { province } = props;
 
-  if (provinceData) {
+  if (province) {
     return (
       <main>
-        <h1>Database for {title}</h1>
-        <code>{JSON.stringify(provinceData)}</code>
+        <h1>Database for {province.name}</h1>
+        <Contacts data={province.data} />
       </main>
     );
   } else {
@@ -55,12 +55,11 @@ export const getStaticPaths: GetStaticPaths = () => {
 export const getStaticProps: GetStaticProps = ({ params = {} }) => {
   const { slug } = params;
   const index = getTheLastSegmentFromKebabCase(slug as string);
-  const provinceData = index ? database[index as unknown as number] : null;
+  const province = index ? database[index as unknown as number] : null;
 
   return {
     props: {
-      title: slug,
-      provinceData,
+      province,
     },
   };
 };
