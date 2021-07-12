@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import data from "../../data/wbw-sheets.json";
+import database from "../../lib/database";
 
 type DatabaseProps = {
   title: string;
@@ -14,7 +14,7 @@ export default function Database(props: DatabaseProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = () => {
-  const paths = data.map((item) => ({
+  const paths = database.map((item) => ({
     params: { slug: item.name },
   }));
 
