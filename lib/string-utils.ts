@@ -17,3 +17,9 @@ export function composeFunctions(...functions: Function[]): Function {
     return functions.reduce((acc, fn) => fn(acc), args);
   };
 }
+
+export function getTheLastSegmentFromKebabCase(
+  str: string
+): string | undefined {
+  return str.split("-").pop();
+}
