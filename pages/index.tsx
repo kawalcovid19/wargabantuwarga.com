@@ -18,7 +18,6 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 export default function Home(props: Props) {
-  console.log(props);
   return (
     <>
       <Head>
