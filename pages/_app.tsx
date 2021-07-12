@@ -31,7 +31,8 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:creator" content="Warga" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <NextScript
+        <script
+          async
           src="https://js.sentry-cdn.com/0dda1c67a0744907b58c15b965348e63.min.js"
           crossOrigin="anonymous"
         />
