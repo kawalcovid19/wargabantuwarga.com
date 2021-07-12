@@ -12,6 +12,8 @@
     "netlify-export": "yarn fetch-wbw && yarn build && next export"
   },
   "dependencies": {
+    "@headlessui/react": "1.3.0",
+    "@heroicons/react": "1.0.2",
     "@netlify/plugin-nextjs": "3.6.3",
     "@sentry/nextjs": "^6.8.0",
     "cheerio": "^1.0.0-rc.10",
@@ -23,6 +25,7 @@
   "devDependencies": {
     "@netlify/plugin-lighthouse": "2.1.2",
     "@types/react": "17.0.13",
+    "autoprefixer": "10.3.0",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
     "frontmatter-markdown-loader": "3.6.3",
@@ -30,11 +33,16 @@
     "lint-staged": ">=10",
     "netlify-plugin-cache-nextjs": "1.6.1",
     "netlify-plugin-image-optim": "0.4.0",
+    "postcss": "8.3.5",
     "prettier": "2.3.2",
+    "stylelint": "13.13.1",
+    "stylelint-config-recommended": "5.0.0",
+    "tailwindcss": "2.2.4",
     "typescript": "4.3.5"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "*.css": "stylelint --fix",
     "*.{js,jsx,ts,tsx,css,md}": "prettier --write"
   }
 }

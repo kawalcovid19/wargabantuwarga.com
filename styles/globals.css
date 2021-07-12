@@ -1,10 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
 body {
-  max-width: 650px;
+  max-width: 40rem;
   margin: 0 auto;
 }
 
 table {
-  width: 100%;
+  width: 40rem;
 }
 
 img {
