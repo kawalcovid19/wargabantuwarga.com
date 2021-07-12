@@ -3,7 +3,7 @@ import Head from "next/head";
 import { Script } from "../components/script";
 import data from "../data/wbw.json";
 
-type Props = {
+type HomeProps = {
   html: string;
   css: string;
 };
@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default function Home(props: Props) {
+export default function Home(props: HomeProps) {
   return (
     <>
       <Head>
