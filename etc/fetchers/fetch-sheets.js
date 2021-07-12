@@ -21,7 +21,7 @@ module.exports.fetchSheets = async function fetchSheets() {
 
   const colMap = {};
 
-  const sheetList = $("#sheet-menu > li:nth-child(3)")
+  const sheetList = $("#sheet-menu > li")
     .map((_, li) => {
       const sheetId = $(li).attr("id").replace("sheet-button-", "");
       const sheetName = $(li).text();
