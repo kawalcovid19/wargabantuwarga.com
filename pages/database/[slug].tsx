@@ -9,11 +9,11 @@ import {
   replaceSpacesWithCamelCase,
 } from "../../lib/string-utils";
 
-type DatabaseProps = {
+type ProvinceDatabaseProps = {
   province: Province;
 };
 
-export default function Database(props: DatabaseProps) {
+export default function ProvinceDatabase(props: ProvinceDatabaseProps) {
   const { province } = props;
 
   if (province) {
