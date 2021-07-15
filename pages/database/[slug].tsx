@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import { Contacts } from "../../components/contacts";
+import { ContactList } from "../../components/contact-list";
 import database, { Province } from "../../lib/database";
 import {
   composeFunctions,
@@ -20,7 +20,7 @@ export default function Database(props: DatabaseProps) {
     return (
       <main>
         <h1>Database for {province.name}</h1>
-        <Contacts data={province.data} />
+        <ContactList data={province.data} />
       </main>
     );
   } else {
@@ -47,8 +47,8 @@ export const getStaticPaths: GetStaticPaths = () => {
   });
 
   return {
-    paths,
     fallback: false,
+    paths,
   };
 };
 
