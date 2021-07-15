@@ -1,13 +1,13 @@
-import { useState, useRef } from "react";
+import { useState, useRef, MouseEvent } from "react";
 import { Layout } from "../components/layout";
-import database, { FAQDATA } from "../lib/faq-databases";
+import database, { FaqData } from "../lib/faq-databases";
 
-type FAQSPROPS = {
-  questionList: FAQSLIST;
+type FaqsProps = {
+  questionList: FaqsList;
 };
 
-type FAQSLIST = {
-  [key: string]: FAQDATA[];
+type FaqsList = {
+  [key: string]: FaqData[];
 };
 
 function groupBy<T, U>(data: T[], key: U) {
@@ -21,17 +21,18 @@ function groupBy<T, U>(data: T[], key: U) {
   }, {});
 }
 
-export default function Faqs(props: FAQSPROPS) {
+export default function Faqs(props: FaqsProps) {
   const { questionList } = props;
   const inputRef = useRef<HTMLInputElement>(null);
   const [questionData, setQuestionData] = useState(questionList);
 
-  const onSearchQuestion = () => {
+  const onSearchQuestion = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     if (!inputRef.current!.value) {
       return setQuestionData(questionList);
     }
 
-    const searchResult: FAQSLIST = {};
+    const searchResult: FaqsList = {};
     Object.keys(questionList).map((category: string) => {
       const questionCategory = questionList[category];
       for (let i = 0; i < questionCategory.length; i++) {
@@ -58,15 +59,16 @@ export default function Faqs(props: FAQSPROPS) {
             alt="Warga Bantu Warga"
             height="291"
             width="650"
+            style={{ maxWidth: "100%", height: "auto" }}
           />
         </h1>
       </header>
-      <div className="px-2">
+      <div className="px-3">
         <div className="max-w-7xl mx-auto py-6">
           <h2 className="text-3xl font-extrabold text-gray-900">
-            Frequently asked questions
+            Pertanyaan yang sering ditanyakan
           </h2>
-          <div className="flex items-center">
+          <form className="flex items-center">
             <input
               type="text"
               placeholder="Cari pertanyaan kamu"
@@ -74,13 +76,13 @@ export default function Faqs(props: FAQSPROPS) {
               ref={inputRef}
             />
             <button
-              type="button"
+              type="submit"
               className="bg-blue-600 text-white ml-2 py-2 px-6 rounded"
               onClick={onSearchQuestion}
             >
               Cari
             </button>
-          </div>
+          </form>
           {Object.keys(questionData).map((category: string) => (
             <div key={category}>
               <div className="relative">
@@ -90,14 +92,14 @@ export default function Faqs(props: FAQSPROPS) {
                 >
                   <div className="w-full border-t border-gray-300" />
                 </div>
-                <div className="relative flex justify-start">
+                <div className="relative flex flex-row items-center justify-start">
                   <span className="pr-3 bg-white text-lg font-medium text-gray-900">
                     {category}
                   </span>
                 </div>
               </div>
               <dl className="divide-y divide-gray-200">
-                {questionData[category].map((question: FAQDATA) => (
+                {questionData[category].map((question: FaqData) => (
                   <div
                     key={question.pertanyaan}
                     className="pt-6 pb-8 md:grid md:grid-cols-12 md:gap-8"
@@ -115,7 +117,8 @@ export default function Faqs(props: FAQSPROPS) {
                           <a
                             href={question.link}
                             target="_blank"
-                            className="underline text-blue-800" rel="noreferrer"
+                            className="underline text-blue-800"
+                            rel="noreferrer"
                           >
                             {question.sumber}
                           </a>
@@ -136,7 +139,7 @@ export default function Faqs(props: FAQSPROPS) {
 }
 
 export async function getStaticProps() {
-  const questionList: Object = groupBy<FAQDATA, string>(
+  const questionList: Object = groupBy<FaqData, string>(
     database,
     "kategori_pertanyaan"
   );
