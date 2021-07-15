@@ -49,11 +49,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               alt="Warga Bantu Warga"
               height="291"
               width="650"
-              style={{ maxWidth: 650, height: "auto", width: "40rem" }}
+              style={{ maxWidth: "100%", height: "auto" }}
             />
           </h1>
         </header>
-        <article dangerouslySetInnerHTML={{ __html: props.html }}></article>
+        <article
+          className="p-3"
+          dangerouslySetInnerHTML={{ __html: props.html }}
+        ></article>
       </main>
     </>
   );

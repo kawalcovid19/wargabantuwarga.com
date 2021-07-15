@@ -4,12 +4,8 @@
 @tailwind variants;
 
 body {
-  max-width: 40rem;
+  max-width: min(40rem, 100vw);
   margin: 0 auto;
-}
-
-table {
-  width: 40rem;
 }
 
 img {
