@@ -1,8 +1,8 @@
 import database from "../data/wbw-faq-sheets.json";
 
-export type Databases = FAQDATA[];
+export type Databases = FaqData[];
 
-export type FAQDATA = {
+export type FaqData = {
   readonly kategori_pertanyaan: string;
   readonly pertanyaan: string;
   readonly jawaban: string;
