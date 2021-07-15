@@ -42,7 +42,15 @@ For any improvements on the website, we should continuously measure its impact o
 
 ## Getting Started
 
-First, run the development server:
+First, install dependencies and fetch data to your local machine
+
+```bash
+cd wargabantuwarga.com
+yarn install
+yarn fetch-wbw
+```
+
+Then, run the development server:
 
 ```bash
 yarn dev
