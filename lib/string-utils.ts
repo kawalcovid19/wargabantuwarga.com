@@ -32,3 +32,7 @@ export function getSlug(name: string, index: number): string {
   )(name);
   return `${kebabName}-${index}`;
 }
+
+export function getInitial(name: string) {
+  return name.charAt(0).toUpperCase();
+}
