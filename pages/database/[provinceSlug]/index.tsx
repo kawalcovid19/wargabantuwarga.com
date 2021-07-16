@@ -5,16 +5,17 @@ import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
 
 type ProvinceDatabaseProps = {
   province: Province;
+  provinceSlug: string;
 };
 
 export default function ProvinceDatabase(props: ProvinceDatabaseProps) {
-  const { province } = props;
+  const { province, provinceSlug } = props;
 
   if (province) {
     return (
       <main>
         <h1>Database for {province.name}</h1>
-        <ContactList data={province.data} />
+        <ContactList data={province.data} provinceSlug={provinceSlug} />
       </main>
     );
   } else {
@@ -43,6 +44,7 @@ export const getStaticProps: GetStaticProps = ({ params = {} }) => {
   return {
     props: {
       province,
+      provinceSlug,
     },
   };
 };
