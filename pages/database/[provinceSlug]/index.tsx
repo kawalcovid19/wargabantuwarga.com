@@ -1,13 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import { ContactList } from "../../components/contact-list";
-import database, { getProvincesPaths, Province } from "../../lib/database";
-import {
-  composeFunctions,
-  convertToKebabCase,
-  getTheLastSegmentFromKebabCase,
-  removeSpaces,
-  replaceSpacesWithCamelCase,
-} from "../../lib/string-utils";
+import { ContactList } from "../../../components/contact-list";
+import database, { getProvincesPaths, Province } from "../../../lib/database";
+import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
 
 type ProvinceDatabaseProps = {
   province: Province;
@@ -42,8 +36,8 @@ export const getStaticPaths: GetStaticPaths = () => {
 };
 
 export const getStaticProps: GetStaticProps = ({ params = {} }) => {
-  const { slug } = params;
-  const index = getTheLastSegmentFromKebabCase(slug as string);
+  const { provinceSlug } = params;
+  const index = getTheLastSegmentFromKebabCase(provinceSlug as string);
   const province = index ? database[index as unknown as number] : null;
 
   return {

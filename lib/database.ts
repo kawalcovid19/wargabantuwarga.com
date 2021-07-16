@@ -23,15 +23,15 @@ export type ProvinceData = {
 
 export type ProvincePath = {
   params: {
-    slug: string;
+    provinceSlug: string;
   };
 };
 
 export const getProvincesPaths = (): ProvincePath[] =>
   database.map((item, index) => {
-    const slug = getSlug(item.name, index);
+    const provinceSlug = getSlug(item.name, index);
     return {
-      params: { slug },
+      params: { provinceSlug },
     };
   });
 
