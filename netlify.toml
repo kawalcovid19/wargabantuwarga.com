@@ -9,7 +9,7 @@
     performance = 0.72
     accessibility = 1
     best-practices = 0.93
-    seo = 0.91
+    seo = 0.9
 
   [plugins.inputs]
     output_path = "lighthouse.html"
