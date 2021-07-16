@@ -1,4 +1,5 @@
 import database from "../data/wbw-sheets.json";
+import { getSlug } from "./string-utils";
 
 export type Database = Province[];
 
@@ -19,5 +20,19 @@ export type ProvinceData = {
   readonly tanggal_verifikasi?: string;
   readonly bentuk_verifikasi?: string;
 };
+
+export type ProvincePath = {
+  params: {
+    slug: string;
+  };
+};
+
+export const getProvincesPaths = (): ProvincePath[] =>
+  database.map((item, index) => {
+    const slug = getSlug(item.name, index);
+    return {
+      params: { slug },
+    };
+  });
 
 export default database as unknown as Database;

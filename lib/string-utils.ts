@@ -23,3 +23,12 @@ export function getTheLastSegmentFromKebabCase(
 ): string | undefined {
   return str.split("-").pop();
 }
+
+export function getSlug(name: string, index: number): string {
+  const kebabName = composeFunctions(
+    replaceSpacesWithCamelCase,
+    removeSpaces,
+    convertToKebabCase
+  )(name);
+  return `${kebabName}-${index}`;
+}

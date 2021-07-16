@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ContactList } from "../../components/contact-list";
-import database, { Province } from "../../lib/database";
+import database, { getProvincesPaths, Province } from "../../lib/database";
 import {
   composeFunctions,
   convertToKebabCase,
@@ -33,18 +33,7 @@ export default function ProvinceDatabase(props: ProvinceDatabaseProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = () => {
-  const paths = database.map((item, index) => {
-    const name = composeFunctions(
-      replaceSpacesWithCamelCase,
-      removeSpaces,
-      convertToKebabCase
-    )(item.name);
-    const slug = `${name}-${index}`;
-    console.log(slug);
-    return {
-      params: { slug },
-    };
-  });
+  const paths = getProvincesPaths();
 
   return {
     fallback: false,
