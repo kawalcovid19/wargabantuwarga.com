@@ -6,10 +6,10 @@ export type Database = Province[];
 export type Province = {
   readonly id: number;
   readonly name: string;
-  readonly data: ProvinceData[];
+  readonly data: Contact[];
 };
 
-export type ProvinceData = {
+export type Contact = {
   readonly kebutuhan?: string;
   readonly keterangan?: string;
   readonly penyedia?: string;
@@ -34,5 +34,25 @@ export const getProvincesPaths = (): ProvincePath[] =>
       params: { provinceSlug },
     };
   });
+
+export type ContactPath = {
+  params: {
+    provinceSlug: string;
+    contactSlug: string;
+  };
+};
+
+export const getContactsPaths = (): ContactPath[] => {
+  const contactsPaths: ContactPath[] = [];
+  database.forEach((province, provinceIndex) => {
+    province.data.forEach((_, contactIndex) => {
+      const provinceSlug = getSlug(province.name, provinceIndex);
+      contactsPaths.push({
+        params: { provinceSlug, contactSlug: contactIndex.toString() },
+      });
+    });
+  });
+  return contactsPaths;
+};
 
 export default database as unknown as Database;

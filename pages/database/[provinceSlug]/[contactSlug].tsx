@@ -1,14 +1,22 @@
 import { PaperClipIcon } from "@heroicons/react/solid";
+import { GetStaticPaths, GetStaticProps } from "next";
+import database, { getContactsPaths, Contact } from "../../../lib/database";
+import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
 
-export default function Example() {
+type ContactPageProps = {
+  provinceSlug: string;
+  contact: Contact;
+};
+
+export default function ContactPage(props: ContactPageProps) {
   return (
     <>
       <div>
         <h3 className="text-lg leading-6 font-medium text-gray-900">
-          Applicant Information
+          {props.contact.penyedia}
         </h3>
         <p className="mt-1 max-w-2xl text-sm text-gray-500">
-          Personal details and application.
+          {props.contact.kebutuhan}
         </p>
       </div>
       <div className="mt-5 border-t border-gray-200">
@@ -161,3 +169,25 @@ export default function Example() {
     </>
   );
 }
+
+export const getStaticPaths: GetStaticPaths = () => {
+  const paths = getContactsPaths();
+  return {
+    fallback: false,
+    paths,
+  };
+};
+
+export const getStaticProps: GetStaticProps = ({ params = {} }) => {
+  const { provinceSlug, contactSlug } = params;
+  const index = getTheLastSegmentFromKebabCase(provinceSlug as string);
+  const province = index ? database[index as unknown as number] : null;
+  const contact =
+    province !== null ? province.data[contactSlug as unknown as number] : null;
+  return {
+    props: {
+      provinceSlug,
+      contact,
+    },
+  };
+};

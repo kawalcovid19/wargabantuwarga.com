@@ -5,11 +5,11 @@ import {
   PhoneIcon,
 } from "@heroicons/react/solid";
 import { BadgeCheckIcon as BadgeCheckIconUnverified } from "@heroicons/react/outline";
-import { ProvinceData } from "../lib/database";
+import { Contact } from "../lib/database";
 import Link from "next/link";
 
 type ContactListProps = {
-  data: ProvinceData[];
+  data: Contact[];
   provinceSlug: string;
 };
 
