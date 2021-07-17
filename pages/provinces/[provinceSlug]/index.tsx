@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ContactList } from "../../../components/contact-list";
+import { SearchForm } from "../../../components/search-form";
 import provinces, { getProvincesPaths, Province } from "../../../lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
 
@@ -15,6 +16,7 @@ export default function ProvincePage(props: ProvinceProps) {
     return (
       <main>
         <h1>Database for {province.name}</h1>
+        <SearchForm itemName="kontak" onSubmitKeywords={() => {}} />
         <ContactList data={province.data} provinceSlug={provinceSlug} />
       </main>
     );

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-type ProvinceListItem = {
+export type ProvinceListItem = {
   initials: string;
   name: string;
   slug: string;

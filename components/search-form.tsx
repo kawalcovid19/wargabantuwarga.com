@@ -7,8 +7,10 @@ interface UsernameFormElement extends HTMLFormElement {
 }
 
 export function SearchForm({
+  itemName,
   onSubmitKeywords,
 }: {
+  itemName: string;
   onSubmitKeywords: (keywords: string) => void;
 }) {
   function handleSubmit(event: React.FormEvent<UsernameFormElement>) {
@@ -19,7 +21,7 @@ export function SearchForm({
   return (
     <form className="flex items-center" onSubmit={handleSubmit}>
       <label htmlFor="keywordsInput" className="flex-shrink-0">
-        Cari provinsi:
+        Cari {itemName}:
       </label>
       <input
         id="keywordsInput"

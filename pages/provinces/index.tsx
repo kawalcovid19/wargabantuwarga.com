@@ -3,14 +3,7 @@ import provinces from "../../lib/provinces";
 import { getInitial, getSlug } from "../../lib/string-utils";
 import { SearchForm } from "../../components/search-form";
 import { useState } from "react";
-import { ProvinceList } from "../../components/province-list";
-
-type ProvinceListItem = {
-  initials: string;
-  name: string;
-  slug: string;
-  count: number;
-};
+import { ProvinceList, ProvinceListItem } from "../../components/province-list";
 
 type ProvincesPageProps = {
   provincesList: ProvinceListItem[];
@@ -37,7 +30,7 @@ export default function ProvincesPage(props: ProvincesPageProps) {
       <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide">
         Daftar Provinsi
       </h2>
-      <SearchForm onSubmitKeywords={handleSubmitKeywords} />
+      <SearchForm itemName="provinsi" onSubmitKeywords={handleSubmitKeywords} />
       <ProvinceList data={filteredProvinces} />
     </div>
   );
