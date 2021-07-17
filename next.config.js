@@ -7,6 +7,11 @@ module.exports = {
     workerThreads: true,
   },
 
+  future: {
+    // @nibraswastaken told me to add this - @resir014
+    strictPostcssConfiguration: true,
+  },
+
   images: {
     deviceSizes: [360, 420, 720],
     domains: ["firebase-kanvas.imgix.net"],
