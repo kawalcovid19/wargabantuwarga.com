@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import { useState } from "react";
 import { ContactList } from "../../../components/contact-list";
 import { SearchForm } from "../../../components/search-form";
+import { useSearch } from "../../../lib/hooks/use-search";
 import provinces, {
   Contact,
   getProvincesPaths,
@@ -14,35 +14,21 @@ type ProvinceProps = {
   provinceSlug: string;
 };
 
-const useSearch = (items: Contact[]) => {
-  const [filteredItems, setFilteredItems] = useState<Contact[]>(items);
-  const handleSubmitKeywords = (keywords: string) => {
-    const lowerKeywords = keywords.toLowerCase();
-    setFilteredItems(
-      items.filter((item) => {
-        const filterBy = (fieldName: keyof Contact) =>
-          item[fieldName]?.toLowerCase().includes(lowerKeywords) ?? false;
-        return (
-          filterBy("kebutuhan") ||
-          filterBy("penyedia") ||
-          filterBy("lokasi") ||
-          filterBy("alamat") ||
-          filterBy("keterangan") ||
-          filterBy("kontak") ||
-          filterBy("tautan") ||
-          filterBy("tambahan_informasi") ||
-          filterBy("bentuk_verifikasi")
-        );
-      })
-    );
-  };
-  return [filteredItems, handleSubmitKeywords] as const;
-};
-
 export default function ProvincePage(props: ProvinceProps) {
   const { province, provinceSlug } = props;
   const [filteredContacts, handleSubmitKeywords] = useSearch(
-    props.province.data
+    props.province.data,
+    [
+      "kebutuhan",
+      "penyedia",
+      "lokasi",
+      "alamat",
+      "keterangan",
+      "kontak",
+      "tautan",
+      "tambahan_informasi",
+      "bentuk_verifikasi",
+    ]
   );
 
   if (province) {
