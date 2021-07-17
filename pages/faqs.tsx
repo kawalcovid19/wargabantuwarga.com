@@ -65,6 +65,7 @@ export default function Faqs(props: FaqsProps) {
             height={287}
             blurDataURL={bannerBlurData}
             placeholder="blur"
+            priority={true}
             quality={70}
           />
         </h1>

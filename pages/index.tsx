@@ -54,6 +54,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               height={144}
               blurDataURL={bannerBlurData}
               placeholder="blur"
+              priority={true}
               quality={70}
             />
           </h1>
