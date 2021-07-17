@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 /** From https://github.com/vercel/next.js/blob/0af3b526408bae26d6b3f8cab75c4229998bf7cb/packages/next/client/request-idle-callback.ts */
 
 type RequestIdleCallbackHandle = any;
@@ -13,22 +14,23 @@ declare global {
   interface Window {
     requestIdleCallback: (
       callback: (deadline: RequestIdleCallbackDeadline) => void,
-      opts?: RequestIdleCallbackOptions
+      opts?: RequestIdleCallbackOptions,
     ) => RequestIdleCallbackHandle;
     cancelIdleCallback: (id: RequestIdleCallbackHandle) => void;
   }
 }
 
 export const requestIdleCallback =
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   (typeof self !== "undefined" && self.requestIdleCallback) ||
   function (
-    cb: (deadline: RequestIdleCallbackDeadline) => void
+    cb: (deadline: RequestIdleCallbackDeadline) => void,
   ): NodeJS.Timeout {
-    let start = Date.now();
-    return setTimeout(function () {
+    const start = Date.now();
+    return setTimeout(() => {
       cb({
         didTimeout: false,
-        timeRemaining: function () {
+        timeRemaining: () => {
           return Math.max(0, 50 - (Date.now() - start));
         },
       });
@@ -36,7 +38,8 @@ export const requestIdleCallback =
   };
 
 export const cancelIdleCallback =
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   (typeof self !== "undefined" && self.cancelIdleCallback) ||
   function (id: RequestIdleCallbackHandle) {
-    return clearTimeout(id);
+    return clearTimeout(id as NodeJS.Timeout);
   };

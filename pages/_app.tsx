@@ -1,8 +1,9 @@
 import "../styles/globals.css";
 import "../styles/fonts.css";
 
-import type { AppProps } from "next/app";
 import config from "../lib/config";
+
+import type { AppProps } from "next/app";
 import Head from "next/head";
 
 const meta = {
@@ -15,22 +16,22 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>{meta.title}</title>
-        <meta name="description" content={meta.description} />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:type" content="website" />
+        <meta content={meta.description} name="description" />
+        <meta content={meta.title} property="og:title" />
+        <meta content={meta.description} property="og:description" />
+        <meta content="website" property="og:type" />
         <meta
-          property="og:image"
           content="https://wargabantuwarga.com/wbw.png"
+          property="og:image"
         />
-        <meta property="og:image:height" content="689" />
-        <meta property="og:image:width" content="601" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={meta.title} />
-        <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:creator" content="Warga" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta content="689" property="og:image:height" />
+        <meta content="601" property="og:image:width" />
+        <meta content="summary" name="twitter:card" />
+        <meta content={meta.title} name="twitter:title" />
+        <meta content={meta.description} name="twitter:description" />
+        <meta content="Warga" name="twitter:creator" />
+        <link href="/favicon.ico" rel="icon" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
       </Head>
       <Component {...pageProps} />
     </>

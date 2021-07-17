@@ -11,6 +11,6 @@ module.exports.fetchDocs = async function fetchDocs() {
     JSON.stringify({
       html: $("body > #contents div").html(),
       css: $("body > #contents style").html(),
-    })
+    }),
   );
 };
