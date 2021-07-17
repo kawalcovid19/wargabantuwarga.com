@@ -1,14 +1,13 @@
-import { useState, useRef, MouseEvent } from "react";
+import { useMemo } from "react";
+import { GetStaticProps } from "next";
 import { Layout } from "../components/layout";
-import database, { FaqData } from "../lib/faq-databases";
+import faqSheets, { FaqData } from "../lib/faq-databases";
+import { SearchForm } from "../components/search-form";
+import { useSearch } from "../lib/hooks/use-search";
 import htmr from "htmr";
 
 type FaqsProps = {
-  questionList: FaqsList;
-};
-
-type FaqsList = {
-  [key: string]: FaqData[];
+  faqSheets: FaqData[];
 };
 
 function groupBy<T, U>(data: T[], key: U) {
@@ -23,32 +22,18 @@ function groupBy<T, U>(data: T[], key: U) {
 }
 
 export default function Faqs(props: FaqsProps) {
-  const { questionList } = props;
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [questionData, setQuestionData] = useState(questionList);
+  const { faqSheets } = props;
+  const [filteredQuestions, handleSubmitKeywords] = useSearch(faqSheets, [
+    "pertanyaan",
+    "jawaban",
+  ]);
 
-  const onSearchQuestion = (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    if (!inputRef.current!.value) {
-      return setQuestionData(questionList);
-    }
-
-    const searchResult: FaqsList = {};
-    Object.keys(questionList).map((category: string) => {
-      const questionCategory = questionList[category];
-      for (let i = 0; i < questionCategory.length; i++) {
-        const pertanyaan = questionCategory[i].pertanyaan.toLowerCase();
-        const keyword = inputRef.current!.value.toLowerCase();
-        if (pertanyaan.includes(keyword)) {
-          if (!searchResult[category]) {
-            searchResult[category] = [];
-          }
-          searchResult[category].push(questionCategory[i]);
-        }
-      }
-    });
-    setQuestionData(searchResult);
-  };
+  const listFaqs = useMemo(() => {
+    return groupBy<FaqData | unknown, string>(
+      filteredQuestions,
+      "kategori_pertanyaan"
+    );
+  }, [filteredQuestions]);
 
   return (
     <Layout>
@@ -69,22 +54,11 @@ export default function Faqs(props: FaqsProps) {
           <h2 className="text-3xl font-extrabold text-gray-900">
             Pertanyaan yang sering ditanyakan
           </h2>
-          <form className="flex items-center">
-            <input
-              type="text"
-              placeholder="Cari pertanyaan kamu"
-              className="focus:ring-indigo-500 focus:border-indigo-500 block w-full px-2 py-2 sm:text-sm border-gray-300 border-2 rounded-md mt-5 mb-5"
-              ref={inputRef}
-            />
-            <button
-              type="submit"
-              className="bg-blue-600 text-white ml-2 py-2 px-6 rounded"
-              onClick={onSearchQuestion}
-            >
-              Cari
-            </button>
-          </form>
-          {Object.keys(questionData).map((category: string) => (
+          <SearchForm
+            itemName="pertanyaan"
+            onSubmitKeywords={handleSubmitKeywords}
+          />
+          {Object.keys(listFaqs).map((category: string) => (
             <div key={category}>
               <div className="relative">
                 <div
@@ -100,7 +74,7 @@ export default function Faqs(props: FaqsProps) {
                 </div>
               </div>
               <dl className="divide-y divide-gray-200">
-                {questionData[category].map((question: FaqData) => (
+                {listFaqs[category].map((question: FaqData) => (
                   <div
                     key={question.pertanyaan}
                     className="pt-6 pb-8 md:grid md:grid-cols-12 md:gap-8"
@@ -139,14 +113,10 @@ export default function Faqs(props: FaqsProps) {
   );
 }
 
-export async function getStaticProps() {
-  const questionList: Object = groupBy<FaqData, string>(
-    database,
-    "kategori_pertanyaan"
-  );
+export const getStaticProps: GetStaticProps = () => {
   return {
     props: {
-      questionList,
+      faqSheets,
     },
   };
-}
+};
