@@ -1,5 +1,5 @@
-import { Layout } from "../components/layout";
 import { attributes, html } from "../_content/home-page.md";
+import { Layout } from "../components/layout";
 
 const HomePage = () => (
   <Layout>

@@ -17,10 +17,10 @@ export function useSearch<T = unknown[]>(items: T[], fieldNames: string[]) {
         };
 
         const filterFunctions = fieldNames.map((fieldName) =>
-          filterBy(fieldName as keyof T)
+          filterBy(fieldName as keyof T),
         );
         return filterFunctions.reduce((acc, curr) => acc || curr, false);
-      })
+      }),
     );
   };
   return [filteredItems, handleSubmitKeywords] as const;

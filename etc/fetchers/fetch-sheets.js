@@ -26,7 +26,7 @@ module.exports.fetchSheets = async function fetchSheets() {
       const sheetId = $(li).attr("id").replace("sheet-button-", "");
       const sheetName = $(li).text();
       const sheetColumns = $(
-        `[id='${sheetId}'] > div > table > tbody > tr:nth-child(1)`
+        `[id='${sheetId}'] > div > table > tbody > tr:nth-child(1)`,
       )
         .find("td")
         .map((colIndex, td) => {
@@ -39,9 +39,9 @@ module.exports.fetchSheets = async function fetchSheets() {
         .toArray()
         .filter((col) => col.name.trim().length !== 0);
       const sheetRows = $(
-        `[id='${sheetId}'] > div > table > tbody > tr:not(:nth-child(1))`
+        `[id='${sheetId}'] > div > table > tbody > tr:not(:nth-child(1))`,
       )
-        .map((_, tr) => {
+        .map((__, tr) => {
           return [
             $(tr)
               .find("td")
@@ -71,6 +71,6 @@ module.exports.fetchSheets = async function fetchSheets() {
 
   fs.writeFileSync(
     path.resolve(__dirname, "../../data/wbw-sheets.json"),
-    JSON.stringify(sheetList)
+    JSON.stringify(sheetList),
   );
 };

@@ -6,6 +6,7 @@ const IMGIX_PARAMS =
   "auto=format,compress,enhance&fm=pjpg&cs=tinysrgb&fit=scale";
 
 export const imgixLoader = ({ src, width, quality }: ImageLoaderProps) => {
+  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
   return `${IMGIX_URL}/${src}?w=${width}&q=${quality || 75}&${IMGIX_PARAMS}`;
 };
 
