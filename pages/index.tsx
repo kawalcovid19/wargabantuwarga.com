@@ -60,7 +60,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </h1>
         </header>
         <article
-          className="p-3"
+          className="home-page-content p-3"
           dangerouslySetInnerHTML={{ __html: props.html }}
         ></article>
       </main>

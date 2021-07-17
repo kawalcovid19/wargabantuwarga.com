@@ -11,3 +11,41 @@ body {
 img {
   aspect-ratio: attr(width) / attr(height);
 }
+
+/* Temporary workaround for Google Docs-generated Home Page markup */
+.home-page-content table::after {
+  content: " ";
+  display: block;
+  width: 100%;
+  border-top: 0.0625rem solid #ccc;
+  margin: 1rem 0;
+}
+.home-page-content table h2,
+.home-page-content table h3 {
+  margin-bottom: 1rem;
+}
+.home-page-content table td {
+  padding: 0 !important;
+  border: none !important;
+}
+.home-page-content table p * {
+  font-size: 1rem !important;
+}
+.home-page-content table p,
+.home-page-content table p *,
+.home-page-content table li,
+.home-page-content table li * {
+  line-height: 1.375;
+}
+.home-page-content table li {
+  padding-bottom: 0.5rem !important;
+}
+.home-page-content table ul li::before {
+  color: #99d1ff;
+}
+.home-page-content table p:first-child + ul {
+  margin-top: 1rem;
+}
+.home-page-content *:empty {
+  display: none;
+}
