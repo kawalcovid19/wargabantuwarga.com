@@ -5,7 +5,7 @@ import { PageContent } from "../components/layout/page-content";
 const HomePage = () => (
   <Page>
     <PageContent>
-      <article>
+      <article className="prose prose-indigo">
         <h1>{attributes.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </article>
