@@ -29,10 +29,6 @@ export default function ContactPage({
         }
         breadcrumbs={[
           {
-            name: "Home",
-            href: "/",
-          },
-          {
             name: "Provinsi",
             href: "/provinces",
           },
@@ -42,6 +38,8 @@ export default function ContactPage({
           },
           {
             name: contact.penyedia ?? "",
+            href: `/provinces/${router.query.provinceSlug}/${router.query.contactSlug}`,
+            current: true,
           },
         ]}
         title={contact.penyedia ?? "N/A"}

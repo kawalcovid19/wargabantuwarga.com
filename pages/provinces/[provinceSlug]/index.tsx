@@ -9,6 +9,7 @@ import provinces, { getProvincesPaths, Province } from "../../../lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
 
 import { GetStaticPaths, GetStaticProps } from "next";
+import { useRouter } from "next/router";
 
 type ProvinceProps = {
   province: Province;
@@ -17,6 +18,7 @@ type ProvinceProps = {
 
 export default function ProvincePage(props: ProvinceProps) {
   const { province, provinceSlug } = props;
+  const router = useRouter();
   const [filteredContacts, handleSubmitKeywords] = useSearch(
     props.province.data,
     [
@@ -40,15 +42,13 @@ export default function ProvincePage(props: ProvinceProps) {
           backButton={<BackButton href="/provinces" />}
           breadcrumbs={[
             {
-              name: "Home",
-              href: "/",
-            },
-            {
               name: "Provinsi",
               href: "/provinces",
             },
             {
               name: province.name,
+              href: `/provinces/${router.query.provinceSlug}`,
+              current: true,
             },
           ]}
           title={`Database for ${province.name}`}

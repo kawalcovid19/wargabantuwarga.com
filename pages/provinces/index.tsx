@@ -25,11 +25,9 @@ export default function ProvincesPage(props: ProvincesPageProps) {
         backButton={<BackButton href="/" />}
         breadcrumbs={[
           {
-            name: "Home",
-            href: "/",
-          },
-          {
             name: "Provinsi",
+            href: "/provinces",
+            current: true,
           },
         ]}
         title="Provinsi"
