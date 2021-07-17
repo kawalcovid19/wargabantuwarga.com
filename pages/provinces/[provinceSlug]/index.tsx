@@ -20,18 +20,8 @@ const useSearch = (items: Contact[]) => {
     const lowerKeywords = keywords.toLowerCase();
     setFilteredItems(
       items.filter((item) => {
-        const filterBy = (
-          fieldName:
-            | "kebutuhan"
-            | "keterangan"
-            | "lokasi"
-            | "penyedia"
-            | "kontak"
-            | "alamat"
-            | "tautan"
-            | "tambahan_informasi"
-            | "bentuk_verifikasi"
-        ) => item[fieldName]?.toLowerCase().includes(lowerKeywords) ?? false;
+        const filterBy = (fieldName: keyof Contact) =>
+          item[fieldName]?.toLowerCase().includes(lowerKeywords) ?? false;
         return (
           filterBy("kebutuhan") ||
           filterBy("penyedia") ||
