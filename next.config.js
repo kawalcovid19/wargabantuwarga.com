@@ -12,5 +12,7 @@ module.exports = {
   images: {
     deviceSizes: [360, 420, 768],
     domains: ["firebase-kanvas.imgix.net"],
+    loader: "imgix",
+    path: "https://firebase-kanvas.imgix.net/warga_bantu_warga/",
   },
 };
