@@ -1,7 +1,12 @@
 import { GetStaticPaths, GetStaticProps } from "next";
+import { useState } from "react";
 import { ContactList } from "../../../components/contact-list";
 import { SearchForm } from "../../../components/search-form";
-import provinces, { getProvincesPaths, Province } from "../../../lib/provinces";
+import provinces, {
+  Contact,
+  getProvincesPaths,
+  Province,
+} from "../../../lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
 
 type ProvinceProps = {
@@ -9,15 +14,39 @@ type ProvinceProps = {
   provinceSlug: string;
 };
 
+const useSearch = (items: Contact[]) => {
+  const [filteredItems, setFilteredItems] = useState<Contact[]>(items);
+  const handleSubmitKeywords = (keywords: string) => {
+    const lowerKeywords = keywords.toLowerCase();
+    const filterBy = (
+      item: Contact,
+      fieldName: "lokasi" | "penyedia" | "kontak"
+    ) => item[fieldName]?.toLowerCase().includes(lowerKeywords) ?? false;
+    setFilteredItems(
+      items.filter((item) => {
+        return (
+          filterBy(item, "lokasi") ||
+          filterBy(item, "penyedia") ||
+          filterBy(item, "kontak")
+        );
+      })
+    );
+  };
+  return [filteredItems, handleSubmitKeywords] as const;
+};
+
 export default function ProvincePage(props: ProvinceProps) {
   const { province, provinceSlug } = props;
+  const [filteredContacts, handleSubmitKeywords] = useSearch(
+    props.province.data
+  );
 
   if (province) {
     return (
       <main>
         <h1>Database for {province.name}</h1>
-        <SearchForm itemName="kontak" onSubmitKeywords={() => {}} />
-        <ContactList data={province.data} provinceSlug={provinceSlug} />
+        <SearchForm itemName="kontak" onSubmitKeywords={handleSubmitKeywords} />
+        <ContactList data={filteredContacts} provinceSlug={provinceSlug} />
       </main>
     );
   } else {
