@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
+import { Layout } from "../components/layout";
 import { Script } from "../components/script";
 import data from "../data/wbw.json";
 
@@ -19,7 +20,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 export default function Home(props: HomeProps) {
   return (
-    <>
+    <Layout>
       <Head>
         <style dangerouslySetInnerHTML={{ __html: props.css }} />
       </Head>
@@ -58,6 +59,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           dangerouslySetInnerHTML={{ __html: props.html }}
         ></article>
       </main>
-    </>
+    </Layout>
   );
 }

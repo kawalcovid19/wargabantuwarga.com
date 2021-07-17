@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ContactList } from "../../../components/contact-list";
+import { Layout } from "../../../components/layout";
 import { SearchForm } from "../../../components/search-form";
 import { useSearch } from "../../../lib/hooks/use-search";
 import provinces, {
@@ -33,17 +34,17 @@ export default function ProvincePage(props: ProvinceProps) {
 
   if (province) {
     return (
-      <main>
+      <Layout>
         <h1>Database for {province.name}</h1>
         <SearchForm itemName="kontak" onSubmitKeywords={handleSubmitKeywords} />
         <ContactList data={filteredContacts} provinceSlug={provinceSlug} />
-      </main>
+      </Layout>
     );
   } else {
     return (
-      <main>
+      <Layout>
         <h1>Database not found</h1>
-      </main>
+      </Layout>
     );
   }
 }

@@ -1,8 +1,9 @@
 import { GetStaticProps } from "next";
 import provinces from "../../lib/provinces";
 import { getInitial, getSlug } from "../../lib/string-utils";
-import { SearchForm } from "../../components/search-form";
+import { Layout } from "../../components/layout";
 import { ProvinceList, ProvinceListItem } from "../../components/province-list";
+import { SearchForm } from "../../components/search-form";
 import { useSearch } from "../../lib/hooks/use-search";
 
 type ProvincesPageProps = {
@@ -15,13 +16,13 @@ export default function ProvincesPage(props: ProvincesPageProps) {
     ["name"]
   );
   return (
-    <div>
+    <Layout>
       <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide">
         Daftar Provinsi
       </h2>
       <SearchForm itemName="provinsi" onSubmitKeywords={handleSubmitKeywords} />
       <ProvinceList data={filteredProvinces} />
-    </div>
+    </Layout>
   );
 }
 

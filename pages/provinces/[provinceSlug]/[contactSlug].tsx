@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ContactDetails } from "../../../components/contact-details";
+import { Layout } from "../../../components/layout";
 import provinces, { getContactsPaths, Contact } from "../../../lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
 
@@ -11,7 +12,12 @@ type ContactPageProps = {
 
 export default function ContactPage(props: ContactPageProps) {
   return (
-    <ContactDetails contact={props.contact} provinceName={props.provinceName} />
+    <Layout>
+      <ContactDetails
+        contact={props.contact}
+        provinceName={props.provinceName}
+      />
+    </Layout>
   );
 }
 

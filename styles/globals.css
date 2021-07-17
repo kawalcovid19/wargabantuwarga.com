@@ -3,11 +3,6 @@
 @tailwind utilities;
 @tailwind variants;
 
-body {
-  max-width: min(40rem, 100vw);
-  margin: 0 auto;
-}
-
 img {
   aspect-ratio: attr(width) / attr(height);
 }
