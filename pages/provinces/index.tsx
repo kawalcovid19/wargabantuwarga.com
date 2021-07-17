@@ -5,6 +5,7 @@ import provinces from "../../lib/provinces";
 import { getInitial, getSlug } from "../../lib/string-utils";
 import Link from "next/link";
 import { SearchForm } from "../../components/search-form";
+import { useState } from "react";
 
 type ProvinceListItem = {
   initials: string;
@@ -18,14 +19,24 @@ type ProvincesPageProps = {
 };
 
 export default function ProvincesPage(props: ProvincesPageProps) {
+  const [filteredProvinces, setFilteredProvinces] = useState(
+    props.provincesList
+  );
+  const handleSubmitKeywords = (keywords: string) => {
+    const provinces = props.provincesList.filter((province) => {
+      return province.name.toLowerCase().includes(keywords.toLowerCase());
+    });
+    console.log({ keywords, provinces });
+    setFilteredProvinces(provinces);
+  };
   return (
     <div>
       <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide">
         Daftar Provinsi
       </h2>
-      <SearchForm onSubmitKeywords={(keywords) => console.log(keywords)} />
+      <SearchForm onSubmitKeywords={handleSubmitKeywords} />
       <ul className="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {props.provincesList.map((province) => (
+        {filteredProvinces.map((province) => (
           <li
             key={province.name}
             className="col-span-1 flex shadow-sm rounded-md"
