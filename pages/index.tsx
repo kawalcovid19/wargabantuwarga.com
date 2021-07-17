@@ -56,7 +56,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </h1>
         </header>
         <article
-          className="prose p-3"
+          className="prose prose-indigo p-3"
           dangerouslySetInnerHTML={{ __html: props.html }}
         />
       </main>

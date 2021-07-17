@@ -3,7 +3,7 @@ import { Layout } from "../components/layout";
 
 const HomePage = () => (
   <Layout>
-    <article className="prose">
+    <article className="prose prose-indigo">
       <h1>{attributes.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </article>
