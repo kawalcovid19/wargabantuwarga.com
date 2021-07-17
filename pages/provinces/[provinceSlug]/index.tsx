@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ContactList } from "../../../components/contact-list";
-import database, { getProvincesPaths, Province } from "../../../lib/provinces";
+import provinces, { getProvincesPaths, Province } from "../../../lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
 
 type ProvinceDatabaseProps = {
@@ -39,7 +39,7 @@ export const getStaticPaths: GetStaticPaths = () => {
 export const getStaticProps: GetStaticProps = ({ params = {} }) => {
   const { provinceSlug } = params;
   const index = getTheLastSegmentFromKebabCase(provinceSlug as string);
-  const province = index ? database[index as unknown as number] : null;
+  const province = index ? provinces[index as unknown as number] : null;
 
   return {
     props: {

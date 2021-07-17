@@ -1,7 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { DotsVerticalIcon } from "@heroicons/react/solid";
 import { GetStaticProps } from "next";
-import database from "../../lib/provinces";
+import provinces from "../../lib/provinces";
 import { getInitial, getSlug } from "../../lib/string-utils";
 import Link from "next/link";
 
@@ -13,7 +13,7 @@ type ProvinceListItem = {
 };
 
 type DatabasePageProps = {
-  provinces: ProvinceListItem[];
+  provincesList: ProvinceListItem[];
 };
 
 export default function ProvincesPage(props: DatabasePageProps) {
@@ -23,7 +23,7 @@ export default function ProvincesPage(props: DatabasePageProps) {
         Daftar Provinsi
       </h2>
       <ul className="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {props.provinces.map((province) => (
+        {props.provincesList.map((province) => (
           <li
             key={province.name}
             className="col-span-1 flex shadow-sm rounded-md"
@@ -49,16 +49,16 @@ export default function ProvincesPage(props: DatabasePageProps) {
 }
 
 export const getStaticProps: GetStaticProps = () => {
-  const provinces = database.map(({ name, data }, index) => ({
+  const provincesList = provinces.map(({ name, data }, index) => ({
     initials: getInitial(name),
     name,
     slug: getSlug(name, index),
     count: data.length,
   }));
-  provinces.shift();
+  provincesList.shift();
   return {
     props: {
-      provinces,
+      provincesList,
     },
   };
 };
