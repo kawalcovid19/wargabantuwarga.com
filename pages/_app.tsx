@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import "../styles/fonts.css";
 
+import { LayoutRoot } from "../components/layout/layout-root";
 import config from "../lib/config";
 
 import type { AppProps } from "next/app";
@@ -13,7 +14,7 @@ const meta = {
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <LayoutRoot>
       <Head>
         <title>{meta.title}</title>
         <meta content={meta.description} name="description" />
@@ -34,6 +35,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
       </Head>
       <Component {...pageProps} />
-    </>
+    </LayoutRoot>
   );
 }
