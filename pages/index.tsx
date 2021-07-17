@@ -50,10 +50,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               src="hero_banner.png"
               alt="Warga Bantu Warga"
               layout="responsive"
-              width={640}
-              height={287}
+              width={320}
+              height={144}
               blurDataURL={bannerBlurData}
               placeholder="blur"
+              priority={true}
             />
           </h1>
         </header>
