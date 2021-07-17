@@ -19,7 +19,7 @@ export function ContactList(props: ContactListProps) {
       <ul className="divide-y divide-gray-200">
         {props.data.map((contact, index) => (
           <li key={index}>
-            <Link href={`/database/${props.provinceSlug}/${index}`}>
+            <Link href={`/provinces/${props.provinceSlug}/${index}`}>
               <a className="block hover:bg-gray-50">
                 <div className="px-4 py-4 sm:px-6">
                   <div className="flex items-center justify-between">
