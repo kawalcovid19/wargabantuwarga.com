@@ -12,11 +12,11 @@ type ProvinceListItem = {
   count: number;
 };
 
-type DatabasePageProps = {
+type ProvincesPageProps = {
   provincesList: ProvinceListItem[];
 };
 
-export default function ProvincesPage(props: DatabasePageProps) {
+export default function ProvincesPage(props: ProvincesPageProps) {
   return (
     <div>
       <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide">

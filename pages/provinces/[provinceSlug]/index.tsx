@@ -3,12 +3,12 @@ import { ContactList } from "../../../components/contact-list";
 import provinces, { getProvincesPaths, Province } from "../../../lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
 
-type ProvinceDatabaseProps = {
+type ProvinceProps = {
   province: Province;
   provinceSlug: string;
 };
 
-export default function ProvinceDatabase(props: ProvinceDatabaseProps) {
+export default function ProvincePage(props: ProvinceProps) {
   const { province, provinceSlug } = props;
 
   if (province) {
