@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Layout } from "../components/layout";
 import database, { FaqData } from "../lib/faq-databases";
 import { imgixLoader, bannerBlurData } from "../lib/imgix-loader";
+import htmr from "htmr";
 
 type FaqsProps = {
   questionList: FaqsList;
@@ -113,7 +114,7 @@ export default function Faqs(props: FaqsProps) {
                     </dt>
                     <dd className="mt-2 md:mt-0 md:col-span-7">
                       <p className="text-base text-gray-500">
-                        {question.jawaban}
+                        {htmr(question.jawaban)}
                       </p>
                       <small>
                         Sumber:{" "}
