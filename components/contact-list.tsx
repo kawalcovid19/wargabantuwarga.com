@@ -37,8 +37,12 @@ export function ContactList(props: ContactListProps) {
                       {contact.keterangan}
                     </p>
                     {contact.tanggal_verifikasi !== "" ? (
-                      <div className="mt-2 flex items-center text-xs text-gray-500 sm:mt-0">
-                        <p>
+                      <div className="mt-2 mb-3 flex items-center text-xs text-gray-500 sm:my-0">
+                        <BadgeCheckIcon
+                          className="flex-shrink-0 h-5 w-5 sm:order-2 text-green-400"
+                          aria-hidden="true"
+                        />
+                        <p className="mx-1.5">
                           Terverifikasi{" "}
                           {contact.tanggal_verifikasi && (
                             <time dateTime={contact.tanggal_verifikasi}>
@@ -46,18 +50,14 @@ export function ContactList(props: ContactListProps) {
                             </time>
                           )}
                         </p>
-                        <BadgeCheckIcon
-                          className="flex-shrink-0 ml-1.5 h-5 w-5 text-green-400"
-                          aria-hidden="true"
-                        />
                       </div>
                     ) : (
-                      <div className="mt-2 flex items-center text-xs text-gray-400 sm:mt-0">
-                        <p>Belum terverifkasi</p>
+                      <div className="mt-2 mb-3 flex items-center text-xs text-gray-400 sm:my-0">
                         <BadgeCheckIconUnverified
-                          className="flex-shrink-0 ml-1.5 h-5 w-5 text-gray-400"
+                          className="flex-shrink-0 h-5 w-5 sm:order-2 text-gray-400"
                           aria-hidden="true"
                         />
+                        <p className="mx-1.5">Belum terverifkasi</p>
                       </div>
                     )}
                   </div>
