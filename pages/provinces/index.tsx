@@ -1,10 +1,11 @@
-import { GetStaticProps } from "next";
-import provinces from "../../lib/provinces";
-import { getInitial, getSlug } from "../../lib/string-utils";
 import { Layout } from "../../components/layout";
 import { ProvinceList, ProvinceListItem } from "../../components/province-list";
 import { SearchForm } from "../../components/search-form";
 import { useSearch } from "../../lib/hooks/use-search";
+import provinces from "../../lib/provinces";
+import { getInitial, getSlug } from "../../lib/string-utils";
+
+import { GetStaticProps } from "next";
 
 type ProvincesPageProps = {
   provincesList: ProvinceListItem[];
@@ -13,7 +14,7 @@ type ProvincesPageProps = {
 export default function ProvincesPage(props: ProvincesPageProps) {
   const [filteredProvinces, handleSubmitKeywords] = useSearch(
     props.provincesList,
-    ["name"]
+    ["name"],
   );
   return (
     <Layout>

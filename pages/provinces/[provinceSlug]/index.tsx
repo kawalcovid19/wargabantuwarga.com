@@ -1,14 +1,11 @@
-import { GetStaticPaths, GetStaticProps } from "next";
 import { ContactList } from "../../../components/contact-list";
 import { Layout } from "../../../components/layout";
 import { SearchForm } from "../../../components/search-form";
 import { useSearch } from "../../../lib/hooks/use-search";
-import provinces, {
-  Contact,
-  getProvincesPaths,
-  Province,
-} from "../../../lib/provinces";
+import provinces, { getProvincesPaths, Province } from "../../../lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
+
+import { GetStaticPaths, GetStaticProps } from "next";
 
 type ProvinceProps = {
   province: Province;
@@ -29,9 +26,10 @@ export default function ProvincePage(props: ProvinceProps) {
       "tautan",
       "tambahan_informasi",
       "bentuk_verifikasi",
-    ]
+    ],
   );
 
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (province) {
     return (
       <Layout>

@@ -1,11 +1,14 @@
+/* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
+/* eslint-disable no-negated-condition */
 /* This example requires Tailwind CSS v2.0+ */
+import { Contact } from "../lib/provinces";
+
+import { BadgeCheckIcon as BadgeCheckIconUnverified } from "@heroicons/react/outline";
 import {
   BadgeCheckIcon,
   LocationMarkerIcon,
   PhoneIcon,
 } from "@heroicons/react/solid";
-import { BadgeCheckIcon as BadgeCheckIconUnverified } from "@heroicons/react/outline";
-import { Contact } from "../lib/provinces";
 import Link from "next/link";
 
 type ContactListProps = {
@@ -39,8 +42,8 @@ export function ContactList(props: ContactListProps) {
                     {contact.tanggal_verifikasi !== "" ? (
                       <div className="mt-2 mb-3 flex items-center text-xs text-gray-500 sm:my-0">
                         <BadgeCheckIcon
-                          className="flex-shrink-0 h-4 w-4 sm:order-2 text-green-400"
                           aria-hidden="true"
+                          className="flex-shrink-0 h-4 w-4 sm:order-2 text-green-400"
                         />
                         <p className="ml-2 mr-1">
                           Terverifikasi{" "}
@@ -54,8 +57,8 @@ export function ContactList(props: ContactListProps) {
                     ) : (
                       <div className="mt-2 mb-3 flex items-center text-xs text-gray-400 sm:my-0">
                         <BadgeCheckIconUnverified
-                          className="flex-shrink-0 h-4 w-4 sm:order-2 text-gray-400"
                           aria-hidden="true"
+                          className="flex-shrink-0 h-4 w-4 sm:order-2 text-gray-400"
                         />
                         <p className="ml-2 mr-1">Belum terverifkasi</p>
                       </div>
@@ -65,8 +68,8 @@ export function ContactList(props: ContactListProps) {
                     <div className="mt-2 sm:flex sm:justify-between">
                       <p className="flex items-center text-sm text-gray-500">
                         <PhoneIcon
-                          className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"
                           aria-hidden="true"
+                          className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"
                         />
                         {contact.kontak}
                       </p>
@@ -77,8 +80,8 @@ export function ContactList(props: ContactListProps) {
                       <div className="sm:flex">
                         <p className="mt-2 flex items-start text-sm text-gray-500 sm:mt-0">
                           <LocationMarkerIcon
-                            className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"
                             aria-hidden="true"
+                            className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"
                           />
                           {contact.alamat}
                         </p>

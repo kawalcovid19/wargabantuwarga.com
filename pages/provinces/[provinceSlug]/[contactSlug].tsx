@@ -1,8 +1,10 @@
-import { GetStaticPaths, GetStaticProps } from "next";
+/* eslint-disable no-negated-condition */
 import { ContactDetails } from "../../../components/contact-details";
 import { Layout } from "../../../components/layout";
-import provinces, { getContactsPaths, Contact } from "../../../lib/provinces";
+import provinces, { Contact, getContactsPaths } from "../../../lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
+
+import { GetStaticPaths, GetStaticProps } from "next";
 
 type ContactPageProps = {
   provinceName: string;

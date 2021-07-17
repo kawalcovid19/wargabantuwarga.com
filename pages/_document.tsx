@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Head, Html, Main, NextScript } from "next/document";
 
 export default class MyDocument extends Document {
   render() {
@@ -8,12 +8,12 @@ export default class MyDocument extends Document {
           <meta charSet="UTF-8" />
           <meta content="ie=edge" httpEquiv="X-UA-Compatible" />
           <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
             crossOrigin="anonymous"
+            href="https://fonts.gstatic.com"
+            rel="preconnect"
           />
           {/* eslint-disable-next-line @next/next/google-font-preconnect */}
-          <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+          <link href="https://fonts.gstatic.com" rel="dns-prefetch" />
         </Head>
         <body>
           <Main />

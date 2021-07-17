@@ -3,6 +3,7 @@
  */
 
 import { ScriptHTMLAttributes, useEffect } from "react";
+
 import { requestIdleCallback } from "../lib/request-idle-callback";
 
 const loadScript = (props: ScriptHTMLAttributes<HTMLScriptElement>): void => {
@@ -30,7 +31,7 @@ declare global {
   interface Window {
     requestIdleCallback: (
       callback: (deadline: RequestIdleCallbackDeadline) => void,
-      opts?: RequestIdleCallbackOptions
+      opts?: RequestIdleCallbackOptions,
     ) => RequestIdleCallbackHandle;
     cancelIdleCallback: (handle: RequestIdleCallbackHandle) => void;
   }
@@ -47,7 +48,7 @@ function loadLazyScript(props: ScriptHTMLAttributes<HTMLScriptElement>) {
 }
 
 export function Script(
-  props: ScriptHTMLAttributes<HTMLScriptElement>
+  props: ScriptHTMLAttributes<HTMLScriptElement>,
 ): JSX.Element | null {
   useEffect(() => {
     loadLazyScript(props);
