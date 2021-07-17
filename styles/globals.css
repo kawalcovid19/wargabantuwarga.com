@@ -11,3 +11,26 @@ body {
 img {
   aspect-ratio: attr(width) / attr(height);
 }
+
+/* override tailwind typography for Google Docs-generated content */
+.prose table {
+  @apply text-base my-0;
+}
+.prose table::after {
+  @apply my-2 w-full block border-t border-gray-300;
+  content: " ";
+}
+.prose table td {
+  padding: 0;
+}
+.prose *:empty,
+.prose table + hr {
+  display: none;
+}
+.prose h2:first-child,
+.prose p:first-child {
+  @apply mt-0;
+}
+.prose h3 {
+  @apply leading-snug;
+}
