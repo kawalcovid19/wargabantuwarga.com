@@ -13,13 +13,13 @@ export function convertToKebabCase(str: string): string {
 }
 
 export function composeFunctions(...functions: Function[]): Function {
-  return (args: any) => {
+  return (args: unknown) => {
     return functions.reduce((acc, fn) => fn(acc), args);
   };
 }
 
 export function getTheLastSegmentFromKebabCase(
-  str: string
+  str: string,
 ): string | undefined {
   return str.split("-").pop();
 }
@@ -28,7 +28,7 @@ export function getSlug(name: string, index: number): string {
   const kebabName = composeFunctions(
     replaceSpacesWithCamelCase,
     removeSpaces,
-    convertToKebabCase
+    convertToKebabCase,
   )(name);
   return `${kebabName}-${index}`;
 }

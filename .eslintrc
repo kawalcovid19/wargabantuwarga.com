@@ -1,3 +1,49 @@
 {
-  "extends": ["next", "next/core-web-vitals"]
+  "extends": [
+    "plugin:prettier/recommended",
+    "prettier",
+    "kentcdodds",
+    "kentcdodds/react",
+    "kentcdodds/jsx-a11y",
+    "plugin:@next/next/recommended"
+  ],
+  "plugins": ["prettier", "simple-import-sort"],
+  "rules": {
+    "@babel/new-cap": "off",
+    "import/extensions": ["warn", "never", { "css": "ignorePackages" }],
+    "import/newline-after-import": "warn",
+    "import/no-extraneous-dependencies": "warn",
+    "import/order": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "simple-import-sort/exports": "warn",
+    "simple-import-sort/imports": [
+      "warn",
+      {
+        "groups": [
+          ["^.+\\.s?css$"],
+          ["^\\u0000"],
+          ["^react$"],
+          ["^~"],
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"]
+        ]
+      }
+    ],
+    "sort-imports": "off",
+
+    "jsx-a11y/accessible-emoji": "off",
+    "react/jsx-sort-props": ["warn", { "reservedFirst": ["key"] }],
+    "react/react-in-jsx-scope": ["off"]
+  },
+
+  "overrides": [
+    {
+      "files": ["**/*.(d.)?ts(x)?"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "rules": {}
+    }
+  ]
 }

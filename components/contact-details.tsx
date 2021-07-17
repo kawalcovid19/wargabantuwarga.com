@@ -8,8 +8,8 @@ type ContactDetailsProps = {
 const ReportButton = () => (
   <span className="ml-4 flex-shrink-0">
     <button
-      type="button"
       className="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+      type="button"
     >
       Laporkan kesalahan
     </button>
@@ -42,10 +42,10 @@ const DescriptionLink = (props: DescriptionLinkProps) =>
       <dt className="text-sm font-medium text-gray-500">{props.label}</dt>
       <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-3">
         <a
-          href={props.value}
-          target="_blank"
-          rel="noopener noreferrer"
           className="flex-grow"
+          href={props.value}
+          rel="noopener noreferrer"
+          target="_blank"
         >
           {props.value}
         </a>

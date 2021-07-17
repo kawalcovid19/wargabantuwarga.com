@@ -1,4 +1,5 @@
 import provinces from "../data/wbw-sheets.json";
+
 import { getSlug } from "./string-utils";
 
 export type Provinces = Province[];

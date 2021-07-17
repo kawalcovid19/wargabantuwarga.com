@@ -2,6 +2,7 @@ const cheerio = require("cheerio");
 const fs = require("fs");
 const path = require("path");
 const fetch = require("cross-fetch");
+
 const FAQ_LINK = "https://kcov.id/wbw-faq";
 
 module.exports.fetchFaqSheets = async function fetchFaqSheets() {
@@ -25,6 +26,6 @@ module.exports.fetchFaqSheets = async function fetchFaqSheets() {
 
   fs.writeFileSync(
     path.resolve(__dirname, "../../data/wbw-faq-sheets.json"),
-    JSON.stringify(faqJSON)
+    JSON.stringify(faqJSON),
   );
 };
