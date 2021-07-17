@@ -26,7 +26,6 @@ const DescriptionItem = (props: DescriptionItemProps) => (
     <dt className="text-sm font-medium text-gray-500">{props.label}</dt>
     <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-3">
       <span className="flex-grow">{props.value}</span>
-      <ReportButton />
     </dd>
   </div>
 );
