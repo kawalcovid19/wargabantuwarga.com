@@ -1,6 +1,7 @@
 import { useState, useRef, MouseEvent } from "react";
 import { Layout } from "../components/layout";
 import database, { FaqData } from "../lib/faq-databases";
+import { HtmlParser } from "../components/html-parser";
 
 type FaqsProps = {
   questionList: FaqsList;
@@ -109,7 +110,7 @@ export default function Faqs(props: FaqsProps) {
                     </dt>
                     <dd className="mt-2 md:mt-0 md:col-span-7">
                       <p className="text-base text-gray-500">
-                        {question.jawaban}
+                        <HtmlParser>{question.jawaban}</HtmlParser>
                       </p>
                       <small>
                         Sumber:{" "}
