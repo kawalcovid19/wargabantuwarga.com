@@ -66,6 +66,7 @@ export default function Faqs(props: FaqsProps) {
             blurDataURL={bannerBlurData}
             placeholder="blur"
             priority={true}
+            quality={70}
           />
         </h1>
       </header>
