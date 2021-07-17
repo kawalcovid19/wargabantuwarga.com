@@ -7,7 +7,6 @@ img {
   aspect-ratio: attr(width) / attr(height);
 }
 
-
 /* Temporary workaround for Google Docs-generated Home Page markup */
 .home-page-content table::after {
   content: " ";
@@ -44,6 +43,7 @@ img {
 }
 .home-page-content *:empty {
   display: none;
+}
 
 /* override tailwind typography for Google Docs-generated content */
 /*
