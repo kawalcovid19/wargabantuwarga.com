@@ -1,7 +1,9 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import { Script } from "../components/script";
 import data from "../data/wbw.json";
+import { imgixLoader, bannerBlurData } from "../lib/imgix-loader";
 
 type HomeProps = {
   html: string;
@@ -43,13 +45,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <main>
         <header>
           <h1>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://firebase-kanvas.imgix.net/warga_bantu_warga/hero_banner.png?auto=format,compress,enhance&fm=pjpg&cs=tinysrgb&fit=scale"
+            <Image
+              loader={imgixLoader}
+              src="hero_banner.png"
               alt="Warga Bantu Warga"
-              height="291"
-              width="650"
-              style={{ maxWidth: "100%", height: "auto" }}
+              layout="responsive"
+              width={320}
+              height={144}
+              blurDataURL={bannerBlurData}
+              placeholder="blur"
+              priority={true}
+              quality={70}
             />
           </h1>
         </header>
