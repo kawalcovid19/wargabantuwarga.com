@@ -20,9 +20,29 @@ const useSearch = (items: Contact[]) => {
     const lowerKeywords = keywords.toLowerCase();
     setFilteredItems(
       items.filter((item) => {
-        const filterBy = (fieldName: "lokasi" | "penyedia" | "kontak") =>
-          item[fieldName]?.toLowerCase().includes(lowerKeywords) ?? false;
-        return filterBy("lokasi") || filterBy("penyedia") || filterBy("kontak");
+        const filterBy = (
+          fieldName:
+            | "kebutuhan"
+            | "keterangan"
+            | "lokasi"
+            | "penyedia"
+            | "kontak"
+            | "alamat"
+            | "tautan"
+            | "tambahan_informasi"
+            | "bentuk_verifikasi"
+        ) => item[fieldName]?.toLowerCase().includes(lowerKeywords) ?? false;
+        return (
+          filterBy("kebutuhan") ||
+          filterBy("penyedia") ||
+          filterBy("lokasi") ||
+          filterBy("alamat") ||
+          filterBy("keterangan") ||
+          filterBy("kontak") ||
+          filterBy("tautan") ||
+          filterBy("tambahan_informasi") ||
+          filterBy("bentuk_verifikasi")
+        );
       })
     );
   };
