@@ -2,18 +2,19 @@ import "../styles/globals.css";
 import "../styles/fonts.css";
 
 import type { AppProps } from "next/app";
+import config from "../lib/config";
 import Head from "next/head";
 
 const meta = {
-  title: "Warga Bantu Warga",
-  description: `Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan dan alat kesehatan untuk COVID-19.`,
+  title: `${config.site_name} | ${config.site_tagline}`,
+  description: config.site_description,
 };
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Warga Bantu Warga</title>
+        <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
@@ -29,10 +30,8 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:creator" content="Warga" />
         <link rel="icon" href="/favicon.ico" />
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-
       <Component {...pageProps} />
     </>
   );

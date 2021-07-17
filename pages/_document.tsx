@@ -7,7 +7,6 @@ import Document, {
 } from "next/document";
 
 export default class MyDocument extends Document {
-
   render() {
     return (
       <Html lang="id">
@@ -16,11 +15,11 @@ export default class MyDocument extends Document {
           <meta content="ie=edge" httpEquiv="X-UA-Compatible" />
           <link
             rel="preconnect"
-            href="https://fonts.googleapis.com/"
+            href="https://fonts.gstatic.com"
             crossOrigin="anonymous"
           />
-          <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
-          <link rel="preload" as="font" />
+          {/* eslint-disable-next-line @next/next/google-font-preconnect */}
+          <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         </Head>
         <body>
           <Main />

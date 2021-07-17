@@ -1,10 +1,11 @@
-body {
-  max-width: 650px;
-  margin: 0 auto;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
 
-table {
-  width: 100%;
+body {
+  max-width: min(40rem, 100vw);
+  margin: 0 auto;
 }
 
 img {

@@ -3,6 +3,18 @@
   publish = "out"
 
 [[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+  [plugins.inputs.thresholds]
+    performance = 0.72
+    accessibility = 1
+    best-practices = 0.93
+    seo = 0.9
+
+  [plugins.inputs]
+    output_path = "lighthouse.html"
+
+[[plugins]]
   package = "@netlify/plugin-nextjs"
 
 [[plugins]]

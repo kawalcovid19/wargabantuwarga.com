@@ -8,6 +8,13 @@ module.exports = {
     workerThreads: true,
   },
 
+  images: {
+    deviceSizes: [360, 420, 720],
+    domains: ["firebase-kanvas.imgix.net"],
+    loader: "imgix",
+    path: "https://firebase-kanvas.imgix.net/warga_bantu_warga/",
+  },
+
   // https://nextjs.org/docs/api-reference/next.config.js/react-strict-mode
   reactStrictMode: true,
 
@@ -21,6 +28,13 @@ module.exports = {
         "react-dom": "preact/compat",
       });
     }
+
+    config.module.rules.push({
+      test: /\.md$/,
+      use: {
+        loader: "frontmatter-markdown-loader",
+      },
+    });
 
     return config;
   },
