@@ -4,8 +4,12 @@ module.exports = {
   experimental: {
     optimizeCss: true,
     optimizeImages: true,
-    scrollRestoration: true,
     workerThreads: true,
+  },
+
+  future: {
+    // @nibraswastaken told me to add this - @resir014
+    strictPostcssConfiguration: true,
   },
 
   images: {
