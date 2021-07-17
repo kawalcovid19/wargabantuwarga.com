@@ -1,7 +1,7 @@
-import database from "../data/wbw-sheets.json";
+import provinces from "../data/wbw-sheets.json";
 import { getSlug } from "./string-utils";
 
-export type Database = Province[];
+export type Provinces = Province[];
 
 export type Province = {
   readonly id: number;
@@ -29,7 +29,7 @@ export type ProvincePath = {
 };
 
 export const getProvincesPaths = (): ProvincePath[] =>
-  database.map((item, index) => {
+  provinces.map((item, index) => {
     const provinceSlug = getSlug(item.name, index);
     return {
       params: { provinceSlug },
@@ -45,7 +45,7 @@ export type ContactPath = {
 
 export const getContactsPaths = (): ContactPath[] => {
   const contactsPaths: ContactPath[] = [];
-  database.forEach((province, provinceIndex) => {
+  provinces.forEach((province, provinceIndex) => {
     province.data.forEach((_, contactIndex) => {
       const provinceSlug = getSlug(province.name, provinceIndex);
       contactsPaths.push({
@@ -56,4 +56,4 @@ export const getContactsPaths = (): ContactPath[] => {
   return contactsPaths;
 };
 
-export default database as unknown as Database;
+export default provinces as unknown as Provinces;
