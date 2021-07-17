@@ -4,6 +4,7 @@ import { GetStaticProps } from "next";
 import provinces from "../../lib/provinces";
 import { getInitial, getSlug } from "../../lib/string-utils";
 import Link from "next/link";
+import { SearchForm } from "../../components/search-form";
 
 type ProvinceListItem = {
   initials: string;
@@ -22,6 +23,7 @@ export default function ProvincesPage(props: ProvincesPageProps) {
       <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide">
         Daftar Provinsi
       </h2>
+      <SearchForm onSubmitKeywords={(keywords) => console.log(keywords)} />
       <ul className="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {props.provincesList.map((province) => (
           <li
