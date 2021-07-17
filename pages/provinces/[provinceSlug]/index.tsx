@@ -18,17 +18,11 @@ const useSearch = (items: Contact[]) => {
   const [filteredItems, setFilteredItems] = useState<Contact[]>(items);
   const handleSubmitKeywords = (keywords: string) => {
     const lowerKeywords = keywords.toLowerCase();
-    const filterBy = (
-      item: Contact,
-      fieldName: "lokasi" | "penyedia" | "kontak"
-    ) => item[fieldName]?.toLowerCase().includes(lowerKeywords) ?? false;
     setFilteredItems(
       items.filter((item) => {
-        return (
-          filterBy(item, "lokasi") ||
-          filterBy(item, "penyedia") ||
-          filterBy(item, "kontak")
-        );
+        const filterBy = (fieldName: "lokasi" | "penyedia" | "kontak") =>
+          item[fieldName]?.toLowerCase().includes(lowerKeywords) ?? false;
+        return filterBy("lokasi") || filterBy("penyedia") || filterBy("kontak");
       })
     );
   };
