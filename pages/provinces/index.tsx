@@ -1,5 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
-import { DotsVerticalIcon } from "@heroicons/react/solid";
 import { GetStaticProps } from "next";
 import provinces from "../../lib/provinces";
 import { getInitial, getSlug } from "../../lib/string-utils";
@@ -18,17 +16,22 @@ type ProvincesPageProps = {
   provincesList: ProvinceListItem[];
 };
 
+const useSearch = (items: ProvinceListItem[]) => {
+  const [filteredItems, setFilteredItems] = useState<ProvinceListItem[]>(items);
+  const handleSubmitKeywords = (keywords: string) => {
+    setFilteredItems(
+      items.filter((item) => {
+        return item.name.toLowerCase().includes(keywords.toLowerCase());
+      })
+    );
+  };
+  return [filteredItems, handleSubmitKeywords] as const;
+};
+
 export default function ProvincesPage(props: ProvincesPageProps) {
-  const [filteredProvinces, setFilteredProvinces] = useState(
+  const [filteredProvinces, handleSubmitKeywords] = useSearch(
     props.provincesList
   );
-  const handleSubmitKeywords = (keywords: string) => {
-    const provinces = props.provincesList.filter((province) => {
-      return province.name.toLowerCase().includes(keywords.toLowerCase());
-    });
-    console.log({ keywords, provinces });
-    setFilteredProvinces(provinces);
-  };
   return (
     <div>
       <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide">
