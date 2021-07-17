@@ -85,7 +85,7 @@ export default function Faqs(props: FaqsProps) {
                     key={question.pertanyaan}
                     className="pt-6 pb-8 md:grid md:grid-cols-12 md:gap-8"
                   >
-                    <dt className="text-base font-medium text-gray-900 md:col-span-5">
+                    <dt className="text-base font-semibold text-gray-900 md:col-span-5">
                       {question.pertanyaan}
                     </dt>
                     <dd className="mt-2 md:mt-0 md:col-span-7">
