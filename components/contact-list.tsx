@@ -61,18 +61,20 @@ export function ContactList(props: ContactListProps) {
                       </div>
                     )}
                   </div>
-                  <div className="mt-2 sm:flex sm:justify-between">
-                    <p className="flex items-center text-sm text-gray-500">
-                      <PhoneIcon
-                        className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"
-                        aria-hidden="true"
-                      />
-                      {contact.kontak}
-                    </p>
-                  </div>
-                  <div className="mt-2 sm:flex sm:justify-between">
-                    <div className="sm:flex">
-                      {contact.alamat !== "" && (
+                  {contact.kontak !== "" && (
+                    <div className="mt-2 sm:flex sm:justify-between">
+                      <p className="flex items-center text-sm text-gray-500">
+                        <PhoneIcon
+                          className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"
+                          aria-hidden="true"
+                        />
+                        {contact.kontak}
+                      </p>
+                    </div>
+                  )}
+                  {contact.alamat !== "" && (
+                    <div className="mt-2 sm:flex sm:justify-between">
+                      <div className="sm:flex">
                         <p className="mt-2 flex items-start text-sm text-gray-500 sm:mt-0">
                           <LocationMarkerIcon
                             className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"
@@ -80,9 +82,9 @@ export function ContactList(props: ContactListProps) {
                           />
                           {contact.alamat}
                         </p>
-                      )}
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               </a>
             </Link>
