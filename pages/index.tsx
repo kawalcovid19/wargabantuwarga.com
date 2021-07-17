@@ -3,16 +3,19 @@ import data from "../data/wbw.json";
 import { bannerBlurData, imgixLoader } from "../lib/imgix-loader";
 
 import { GetStaticProps } from "next";
+import Head from "next/head";
 import Image from "next/image";
 
 type HomeProps = {
   html: string;
+  css: string;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       html: data.html,
+      css: data.css,
     },
   };
 };
@@ -20,6 +23,9 @@ export const getStaticProps: GetStaticProps = async () => {
 export default function Home(props: HomeProps) {
   return (
     <>
+      <Head>
+        <style dangerouslySetInnerHTML={{ __html: props.css }} />
+      </Head>
       <Script
         dangerouslySetInnerHTML={{
           __html: `(function(w,d,s,l,i){w[l] = w[l] || [];w[l].push({'gtm.start':
@@ -56,7 +62,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </h1>
         </header>
         <article
-          className="prose prose-indigo p-3"
+          className="p-3"
           dangerouslySetInnerHTML={{ __html: props.html }}
         />
       </main>
