@@ -1,5 +1,8 @@
 import { ContactList } from "../../../components/contact-list";
-import { Layout } from "../../../components/layout";
+import { BackButton } from "../../../components/layout/back-button";
+import { Page } from "../../../components/layout/page";
+import { PageContent } from "../../../components/layout/page-content";
+import { PageHeader } from "../../../components/layout/page-header";
 import { SearchForm } from "../../../components/search-form";
 import { useSearch } from "../../../lib/hooks/use-search";
 import provinces, { getProvincesPaths, Province } from "../../../lib/provinces";
@@ -32,17 +35,38 @@ export default function ProvincePage(props: ProvinceProps) {
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (province) {
     return (
-      <Layout>
-        <h1>Database for {province.name}</h1>
-        <SearchForm itemName="kontak" onSubmitKeywords={handleSubmitKeywords} />
-        <ContactList data={filteredContacts} provinceSlug={provinceSlug} />
-      </Layout>
+      <Page>
+        <PageHeader
+          backButton={<BackButton href="/provinces" />}
+          breadcrumbs={[
+            {
+              name: "Home",
+              href: "/",
+            },
+            {
+              name: "Provinsi",
+              href: "/provinces",
+            },
+            {
+              name: province.name,
+            },
+          ]}
+          title={`Database for ${province.name}`}
+        />
+        <PageContent>
+          <SearchForm
+            itemName="kontak"
+            onSubmitKeywords={handleSubmitKeywords}
+          />
+          <ContactList data={filteredContacts} provinceSlug={provinceSlug} />
+        </PageContent>
+      </Page>
     );
   } else {
     return (
-      <Layout>
+      <Page>
         <h1>Database not found</h1>
-      </Layout>
+      </Page>
     );
   }
 }

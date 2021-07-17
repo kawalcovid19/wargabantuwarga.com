@@ -1,4 +1,7 @@
-import { Layout } from "../../components/layout";
+import { BackButton } from "../../components/layout/back-button";
+import { Page } from "../../components/layout/page";
+import { PageContent } from "../../components/layout/page-content";
+import { PageHeader } from "../../components/layout/page-header";
 import { ProvinceList, ProvinceListItem } from "../../components/province-list";
 import { SearchForm } from "../../components/search-form";
 import { useSearch } from "../../lib/hooks/use-search";
@@ -17,13 +20,28 @@ export default function ProvincesPage(props: ProvincesPageProps) {
     ["name"],
   );
   return (
-    <Layout>
-      <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide">
-        Daftar Provinsi
-      </h2>
-      <SearchForm itemName="provinsi" onSubmitKeywords={handleSubmitKeywords} />
-      <ProvinceList data={filteredProvinces} />
-    </Layout>
+    <Page>
+      <PageHeader
+        backButton={<BackButton href="/" />}
+        breadcrumbs={[
+          {
+            name: "Home",
+            href: "/",
+          },
+          {
+            name: "Provinsi",
+          },
+        ]}
+        title="Provinsi"
+      />
+      <PageContent>
+        <SearchForm
+          itemName="provinsi"
+          onSubmitKeywords={handleSubmitKeywords}
+        />
+        <ProvinceList data={filteredProvinces} />
+      </PageContent>
+    </Page>
   );
 }
 
