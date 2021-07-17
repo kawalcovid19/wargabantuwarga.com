@@ -1,6 +1,8 @@
 import { useState, useRef, MouseEvent } from "react";
+import Image from "next/image";
 import { Layout } from "../components/layout";
 import database, { FaqData } from "../lib/faq-databases";
+import { imgixLoader, bannerBlurData } from "../lib/imgix-loader";
 
 type FaqsProps = {
   questionList: FaqsList;
@@ -53,13 +55,15 @@ export default function Faqs(props: FaqsProps) {
     <Layout>
       <header>
         <h1>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://firebase-kanvas.imgix.net/warga_bantu_warga/hero_banner.png?auto=format,compress,enhance&fm=pjpg&cs=tinysrgb&fit=scale"
+          <Image
+            loader={imgixLoader}
+            src="hero_banner.png"
             alt="Warga Bantu Warga"
-            height="291"
-            width="650"
-            style={{ maxWidth: "100%", height: "auto" }}
+            layout="responsive"
+            width={640}
+            height={287}
+            blurDataURL={bannerBlurData}
+            placeholder="blur"
           />
         </h1>
       </header>
