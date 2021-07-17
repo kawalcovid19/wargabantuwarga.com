@@ -39,10 +39,10 @@ export function ContactList(props: ContactListProps) {
                     {contact.tanggal_verifikasi !== "" ? (
                       <div className="mt-2 mb-3 flex items-center text-xs text-gray-500 sm:my-0">
                         <BadgeCheckIcon
-                          className="flex-shrink-0 h-5 w-5 sm:order-2 text-green-400"
+                          className="flex-shrink-0 h-4 w-4 sm:order-2 text-green-400"
                           aria-hidden="true"
                         />
-                        <p className="mx-1.5">
+                        <p className="ml-2 mr-1">
                           Terverifikasi{" "}
                           {contact.tanggal_verifikasi && (
                             <time dateTime={contact.tanggal_verifikasi}>
@@ -54,17 +54,17 @@ export function ContactList(props: ContactListProps) {
                     ) : (
                       <div className="mt-2 mb-3 flex items-center text-xs text-gray-400 sm:my-0">
                         <BadgeCheckIconUnverified
-                          className="flex-shrink-0 h-5 w-5 sm:order-2 text-gray-400"
+                          className="flex-shrink-0 h-4 w-4 sm:order-2 text-gray-400"
                           aria-hidden="true"
                         />
-                        <p className="mx-1.5">Belum terverifkasi</p>
+                        <p className="ml-2 mr-1">Belum terverifkasi</p>
                       </div>
                     )}
                   </div>
                   <div className="mt-2 sm:flex sm:justify-between">
                     <p className="flex items-center text-sm text-gray-500">
                       <PhoneIcon
-                        className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                        className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"
                         aria-hidden="true"
                       />
                       {contact.kontak}
@@ -73,9 +73,9 @@ export function ContactList(props: ContactListProps) {
                   <div className="mt-2 sm:flex sm:justify-between">
                     <div className="sm:flex">
                       {contact.alamat !== "" && (
-                        <p className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+                        <p className="mt-2 flex items-start text-sm text-gray-500 sm:mt-0">
                           <LocationMarkerIcon
-                            className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                            className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"
                             aria-hidden="true"
                           />
                           {contact.alamat}
