@@ -32,6 +32,7 @@ export default function Faqs(props: FaqsProps) {
     "jawaban",
   ]);
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const listFaqs = useMemo(() => {
     return groupBy<FaqData | unknown, string>(
       filteredQuestions,
