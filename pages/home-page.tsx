@@ -1,8 +1,7 @@
 import { attributes, html } from "../_content/home-page.md";
-import { Layout } from "../components/layout";
 
 const HomePage = () => (
-  <Layout>
+  <>
     <article>
       <h1>{attributes.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: html }} />
@@ -15,7 +14,7 @@ const HomePage = () => (
         text-align: center;
       }
     `}</style>
-  </Layout>
+  </>
 );
 
 export default HomePage;
