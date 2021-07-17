@@ -1,7 +1,9 @@
 import { useMemo } from "react";
 
+import { BackButton } from "../components/layout/back-button";
 import { Page } from "../components/layout/page";
 import { PageContent } from "../components/layout/page-content";
+import { PageHeader } from "../components/layout/page-header";
 import { SearchForm } from "../components/search-form";
 import faqSheets, { FaqData } from "../lib/faq-databases";
 import { useSearch } from "../lib/hooks/use-search";
@@ -41,12 +43,20 @@ export default function Faqs(props: FaqsProps) {
 
   return (
     <Page>
+      <PageHeader
+        backButton={<BackButton href="/" />}
+        breadcrumbs={[
+          {
+            name: "FAQ",
+            href: "/faq",
+            current: true,
+          },
+        ]}
+        title="Pertanyaan yang sering ditanyakan"
+      />
       <PageContent>
         <div className="px-3">
           <div className="max-w-7xl mx-auto py-6">
-            <h2 className="text-3xl font-extrabold text-gray-900">
-              Pertanyaan yang sering ditanyakan
-            </h2>
             <SearchForm
               itemName="pertanyaan"
               onSubmitKeywords={handleSubmitKeywords}
