@@ -16,7 +16,7 @@ type DatabasePageProps = {
   provinces: ProvinceListItem[];
 };
 
-export default function DatabasePage(props: DatabasePageProps) {
+export default function ProvincesPage(props: DatabasePageProps) {
   return (
     <div>
       <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide">
