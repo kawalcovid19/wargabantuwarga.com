@@ -1,4 +1,4 @@
-import { Contact } from "../lib/database";
+import { Contact } from "../lib/provinces";
 
 type ContactDetailsProps = {
   contact: Contact;

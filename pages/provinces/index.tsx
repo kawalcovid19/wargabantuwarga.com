@@ -1,7 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { DotsVerticalIcon } from "@heroicons/react/solid";
 import { GetStaticProps } from "next";
-import database from "../../lib/database";
+import database from "../../lib/provinces";
 import { getInitial, getSlug } from "../../lib/string-utils";
 import Link from "next/link";
 

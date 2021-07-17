@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ContactList } from "../../../components/contact-list";
-import database, { getProvincesPaths, Province } from "../../../lib/database";
+import database, { getProvincesPaths, Province } from "../../../lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
 
 type ProvinceDatabaseProps = {

@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ContactDetails } from "../../../components/contact-details";
-import database, { getContactsPaths, Contact } from "../../../lib/database";
+import database, { getContactsPaths, Contact } from "../../../lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
 
 type ContactPageProps = {

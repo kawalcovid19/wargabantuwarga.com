@@ -5,7 +5,7 @@ import {
   PhoneIcon,
 } from "@heroicons/react/solid";
 import { BadgeCheckIcon as BadgeCheckIconUnverified } from "@heroicons/react/outline";
-import { Contact } from "../lib/database";
+import { Contact } from "../lib/provinces";
 import Link from "next/link";
 
 type ContactListProps = {
