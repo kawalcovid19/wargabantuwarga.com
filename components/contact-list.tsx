@@ -39,10 +39,12 @@ export function ContactList(props: ContactListProps) {
                     {contact.tanggal_verifikasi !== "" ? (
                       <div className="mt-2 flex items-center text-xs text-gray-500 sm:mt-0">
                         <p>
-                          Terverifikasi pada{" "}
-                          <time dateTime={contact.tanggal_verifikasi}>
-                            {contact.tanggal_verifikasi}
-                          </time>
+                          Terverifikasi{" "}
+                          {contact.tanggal_verifikasi && (
+                            <time dateTime={contact.tanggal_verifikasi}>
+                              {contact.tanggal_verifikasi}
+                            </time>
+                          )}
                         </p>
                         <BadgeCheckIcon
                           className="flex-shrink-0 ml-1.5 h-5 w-5 text-green-400"
