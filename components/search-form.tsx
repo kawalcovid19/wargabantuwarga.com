@@ -24,6 +24,7 @@ export function SearchForm({
         Cari {itemName}:
       </label>
       <input
+        autoComplete="off"
         className="focus:ring-indigo-500 focus:border-indigo-500 block w-full px-2 py-2 sm:text-sm border-gray-300 border-2 rounded-md my-5 mx-2"
         id="keywordsInput"
         type="text"

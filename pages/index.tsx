@@ -1,10 +1,10 @@
+import { Page } from "../components/layout/page";
+import { PageContent } from "../components/layout/page-content";
 import { Script } from "../components/script";
 import data from "../data/wbw.json";
-import { bannerBlurData, imgixLoader } from "../lib/imgix-loader";
 
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import Image from "next/image";
 
 type HomeProps = {
   html: string;
@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 export default function Home(props: HomeProps) {
   return (
-    <>
+    <Page>
       <Head>
         <style dangerouslySetInnerHTML={{ __html: props.css }} />
       </Head>
@@ -44,28 +44,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           width="0"
         />
       </noscript>
-      <main>
-        <header>
-          <h1>
-            <Image
-              alt="Warga Bantu Warga"
-              blurDataURL={bannerBlurData}
-              height={144}
-              layout="responsive"
-              loader={imgixLoader}
-              placeholder="blur"
-              priority={true}
-              quality={70}
-              src="hero_banner.png"
-              width={320}
-            />
-          </h1>
-        </header>
+      <PageContent>
         <article
           className="home-page-content p-3"
           dangerouslySetInnerHTML={{ __html: props.html }}
         />
-      </main>
-    </>
+      </PageContent>
+    </Page>
   );
 }
