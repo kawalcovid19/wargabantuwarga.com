@@ -9,4 +9,8 @@ module.exports = {
     });
     return configuration;
   },
+  images: {
+    deviceSizes: [360, 420, 768],
+    domains: ["firebase-kanvas.imgix.net"],
+  },
 };
