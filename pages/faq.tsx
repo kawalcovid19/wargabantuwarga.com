@@ -15,7 +15,6 @@ type FaqsProps = {
 };
 
 function groupBy<T, U>(data: T[], key: U) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return data.reduce((acc: any, currentValue: any) => {
     const groupKey = currentValue[key];
     if (!acc[groupKey]) {

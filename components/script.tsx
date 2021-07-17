@@ -18,7 +18,6 @@ const loadScript = (props: ScriptHTMLAttributes<HTMLScriptElement>): void => {
   document.body.appendChild(el);
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type RequestIdleCallbackHandle = any;
 type RequestIdleCallbackOptions = {
   timeout: number;
