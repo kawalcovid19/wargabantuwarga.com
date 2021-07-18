@@ -27,9 +27,9 @@ type DescriptionItemProps = {
 };
 
 const DescriptionItem = (props: DescriptionItemProps) => (
-  <div className="py-4 sm:py-5 sm:grid sm:grid-cols-4 sm:gap-4">
+  <div className="py-4 px-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
     <dt className="text-sm font-medium text-gray-500">{props.label}</dt>
-    <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-3">
+    <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
       <span className="flex-grow">{props.value}</span>
     </dd>
   </div>
@@ -74,7 +74,7 @@ const DescriptionLink = (props: DescriptionLinkProps) => {
 
 export function ContactDetails({ contact, provinceName }: ContactDetailsProps) {
   return (
-    <div className="mt-5 border-t border-gray-200">
+    <div className="bg-white shadow overflow-hidden rounded-md">
       <dl className="divide-y divide-gray-200">
         <DescriptionItem label="Penyedia" value={contact.penyedia} />
         <DescriptionItem label="Keterangan" value={contact.keterangan} />
@@ -88,8 +88,8 @@ export function ContactDetails({ contact, provinceName }: ContactDetailsProps) {
           value={contact.tautan}
         />
         <DescriptionItem
-          label="Tanggal Verifikasi"
-          value={contact.tanggal_verifikasi}
+          label="Terakhir Update"
+          value={contact.terakhir_update}
         />
         <DescriptionItem
           label="Bentuk Verifikasi"
