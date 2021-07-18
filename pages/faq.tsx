@@ -1,10 +1,11 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 import { BackButton } from "../components/layout/back-button";
 import { Page } from "../components/layout/page";
 import { PageContent } from "../components/layout/page-content";
 import { PageHeader } from "../components/layout/page-header";
 import { SearchForm } from "../components/search-form";
+import { SelectDropdown } from "../components/select-dropdown";
 import faqSheets, { FaqData } from "../lib/faq-databases";
 import { useSearch } from "../lib/hooks/use-search";
 
@@ -32,14 +33,39 @@ export default function Faqs(props: FaqsProps) {
     "pertanyaan",
     "jawaban",
   ]);
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  const selectedQuestions = filteredQuestions.filter((f) => {
+    // eslint-disable-next-line no-negated-condition
+    if (selectedCategory !== "") {
+      return f.kategori_pertanyaan == selectedCategory;
+    } else {
+      return filteredQuestions;
+    }
+  });
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const listFaqs = useMemo(() => {
-    return groupBy<FaqData | unknown, string>(
-      filteredQuestions,
-      "kategori_pertanyaan",
-    );
-  }, [filteredQuestions]);
+    // eslint-disable-next-line no-negated-condition
+    if (selectedCategory !== "") {
+      return groupBy<FaqData | unknown, string>(
+        selectedQuestions,
+        "kategori_pertanyaan",
+      );
+    } else {
+      return groupBy<FaqData | unknown, string>(
+        filteredQuestions,
+        "kategori_pertanyaan",
+      );
+    }
+  }, [selectedQuestions]);
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const listOptions = groupBy<FaqData | unknown, string>(
+    filteredQuestions,
+    "kategori_pertanyaan",
+  );
 
   return (
     <Page>
@@ -58,6 +84,11 @@ export default function Faqs(props: FaqsProps) {
         <SearchForm
           itemName="pertanyaan"
           onSubmitKeywords={handleSubmitKeywords}
+        />
+        <SelectDropdown
+          listOptions={listOptions}
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
         />
         <div className="space-y-4">
           {Object.keys(listFaqs as Record<string, unknown>).map(
