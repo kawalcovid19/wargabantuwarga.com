@@ -36,3 +36,7 @@ export function getSlug(name: string, index: number): string {
 export function getInitial(name: string) {
   return name.charAt(0).toUpperCase();
 }
+
+export function isNotEmpty(value?: string): boolean {
+  return value !== undefined && value !== "";
+}
