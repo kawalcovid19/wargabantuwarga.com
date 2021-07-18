@@ -71,7 +71,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </header>
       <PageContent>
         <article
-          className="home-page-content pt-4"
+          className="home-page-content p-4 bg-white"
           dangerouslySetInnerHTML={{ __html: props.html }}
         />
       </PageContent>
