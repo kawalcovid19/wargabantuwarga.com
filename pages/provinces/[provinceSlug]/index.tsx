@@ -19,7 +19,7 @@ type ProvinceProps = {
 export default function ProvincePage(props: ProvinceProps) {
   const { province, provinceSlug } = props;
   const router = useRouter();
-  const [filteredContacts, handleSubmitKeywords] = useSearch(
+  const [filteredContacts, handleSubmitKeywords, filterItems] = useSearch(
     props.province.data,
     [
       "kebutuhan",
@@ -32,6 +32,17 @@ export default function ProvincePage(props: ProvinceProps) {
       "tambahan_informasi",
       "bentuk_verifikasi",
     ],
+    [
+      { field: "kebutuhan", title: "Kategori" },
+      { field: "lokasi", title: "Lokasi" },
+    ],
+    {
+      penyedia_asc: {
+        field: "penyedia",
+        order: "asc",
+      },
+    },
+    "penyedia_asc",
   );
 
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
@@ -55,6 +66,7 @@ export default function ProvincePage(props: ProvinceProps) {
         />
         <PageContent>
           <SearchForm
+            filterItems={filterItems}
             itemName="kontak"
             onSubmitKeywords={handleSubmitKeywords}
           />
