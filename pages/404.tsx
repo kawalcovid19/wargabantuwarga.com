@@ -7,7 +7,7 @@ export default function FourOhFour() {
   return (
     <Page>
       <PageContent>
-        <div className="bg-white min-h-screen px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
+        <div className="min-h-screen px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
           <div className="max-w-max mx-auto">
             <main className="sm:flex">
               <p className="text-4xl font-extrabold text-blue-600 sm:text-5xl">
