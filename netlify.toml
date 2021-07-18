@@ -13,7 +13,7 @@
     # TEMPORARY - bump back up to 0.9 once we get Netlify CMS running.
     seo = 0.88
 
-  [plugins.inputs]
+  [plugins.inputs.audits]
     output_path = "lighthouse.html"
 
 [[plugins]]
