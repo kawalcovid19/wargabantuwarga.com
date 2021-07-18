@@ -12,10 +12,12 @@ export function SearchForm({
   itemName,
   onSubmitKeywords,
   filterItems,
+  autoSearch,
 }: {
   itemName: string;
   onSubmitKeywords: (keywords: string, filters?: any) => void;
   filterItems?: {};
+  autoSearch?: boolean;
 }) {
   const [keywords, setKeywords] = useState<string>("");
   const [filters, setFilters] = useState<any>({});
@@ -34,7 +36,9 @@ export function SearchForm({
   function handleKeywordsChange(event: ChangeEvent<HTMLInputElement>) {
     const newKeywords = event.target.value;
     setKeywords(newKeywords);
-    //onSubmitKeywords(newKeywords, filters);
+    if (autoSearch) {
+      onSubmitKeywords(newKeywords, filters);
+    }
   }
   function handleFilterChange(event: ChangeEvent<HTMLSelectElement>) {
     const newFilters = { ...filters };
@@ -69,12 +73,14 @@ export function SearchForm({
           onChange={handleKeywordsChange}
           type="text"
         />
-        <button
-          className="bg-blue-600 text-white ml-2 py-2 px-6 rounded"
-          type="submit"
-        >
-          Cari
-        </button>
+        {!autoSearch && (
+          <button
+            className="bg-blue-600 text-white ml-2 py-2 px-6 rounded"
+            type="submit"
+          >
+            Cari
+          </button>
+        )}
         <button
           className="bg-gray-200 text-black ml-2 py-2 px-6 rounded"
           type="reset"
