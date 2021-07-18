@@ -53,9 +53,7 @@ module.exports.fetchSheets = async function fetchSheets() {
     .map((_, li) => {
       const sheetId = $(li).attr("id").replace("sheet-button-", "");
       const sheetName = $(li).text();
-      const sheetColumns = $(
-        `[id='${sheetId}'] > div > table > tbody > tr:nth-child(1)`,
-      )
+      const sheetColumns = $(`#${sheetId} tbody > tr:nth-child(1)`)
         .find("td")
         .map((colIndex, td) => {
           colMap[colIndex] = $(td).text();
@@ -66,10 +64,11 @@ module.exports.fetchSheets = async function fetchSheets() {
         })
         .toArray()
         .filter((col) => col.name.trim().length !== 0);
-      const sheetRows = $(
-        `[id='${sheetId}'] > div > table > tbody > tr:not(:nth-child(1))`,
-      )
-        .map((__, tr) => {
+      const sheetRows = $(`#${sheetId} tbody > tr`)
+        .map((rowIndex, tr) => {
+          if (rowIndex === 0) {
+            return [];
+          }
           return [
             $(tr)
               .find("td")
