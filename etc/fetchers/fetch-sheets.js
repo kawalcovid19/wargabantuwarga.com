@@ -102,6 +102,8 @@ module.exports.fetchSheets = async function fetchSheets() {
                     prev.penyedia ? prev.penyedia : prev.keterangan,
                     rowIndex,
                   );
+                } else if (colName == "terakhir_update") {
+                  prev.verifikasi = cellValue == "" ? 0 : 1;
                 }
                 return prev;
               },

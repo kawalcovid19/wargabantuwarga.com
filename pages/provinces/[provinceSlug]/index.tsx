@@ -41,8 +41,12 @@ export default function ProvincePage(props: ProvinceProps) {
         field: "penyedia",
         order: "asc",
       },
+      verified_desc: {
+        field: ["verifikasi", "penyedia"],
+        order: ["desc", "asc"],
+      },
     },
-    "penyedia_asc",
+    "penyedia_desc",
   );
 
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
@@ -69,6 +73,10 @@ export default function ProvincePage(props: ProvinceProps) {
             filterItems={filterItems}
             itemName="kontak"
             onSubmitKeywords={handleSubmitKeywords}
+            sortSettings={[
+              { value: "penyedia_asc", label: "Nama" },
+              { value: "verified_desc", label: "Terverifikasi" },
+            ]}
           />
           <ContactList data={filteredContacts} provinceSlug={provinceSlug} />
         </PageContent>

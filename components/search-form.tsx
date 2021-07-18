@@ -8,23 +8,31 @@ interface UsernameFormElement extends HTMLFormElement {
   readonly elements: FormElements;
 }
 
+type SortSetting = {
+  value: string;
+  label: string;
+};
+
 export function SearchForm({
   itemName,
   onSubmitKeywords,
   filterItems,
+  sortSettings,
   autoSearch,
 }: {
   itemName: string;
-  onSubmitKeywords: (keywords: string, filters?: any) => void;
+  onSubmitKeywords: (keywords: string, filters?: any, sort_by?: string) => void;
   filterItems?: {};
+  sortSettings?: SortSetting[];
   autoSearch?: boolean;
 }) {
   const [keywords, setKeywords] = useState<string>("");
   const [filters, setFilters] = useState<any>({});
+  const [sort_by, setSortBy] = useState<string>("");
 
   function handleSubmit(event: React.FormEvent<UsernameFormElement>) {
     event.preventDefault();
-    onSubmitKeywords(keywords, filters);
+    onSubmitKeywords(keywords, filters, sort_by);
   }
 
   function handleReset() {
@@ -37,7 +45,7 @@ export function SearchForm({
     const newKeywords = event.target.value;
     setKeywords(newKeywords);
     if (autoSearch) {
-      onSubmitKeywords(newKeywords, filters);
+      onSubmitKeywords(newKeywords, filters, sort_by);
     }
   }
   function handleFilterChange(event: ChangeEvent<HTMLSelectElement>) {
@@ -50,43 +58,46 @@ export function SearchForm({
       newFilters[filterName] = [];
     }
     setFilters(newFilters);
-    onSubmitKeywords(keywords, newFilters);
+    onSubmitKeywords(keywords, newFilters, sort_by);
+  }
+  function handleSortChange(event: ChangeEvent<HTMLSelectElement>) {
+    const sortValue = event.target.value;
+    setSortBy(sortValue);
+    onSubmitKeywords(keywords, filters, sortValue);
   }
 
   return (
-    <form
-      className="flex flex-col pb-4"
-      onReset={handleReset}
-      onSubmit={handleSubmit}
-    >
-      <label
-        className="block text-sm font-medium text-gray-700"
-        htmlFor="keywordsInput"
-      >
-        Cari {itemName}:
-      </label>
-      <div className="flex items-center mt-1">
-        <input
-          autoComplete="off"
-          className="focus:ring-indigo-500 focus:border-indigo-500 block w-full px-2 py-2 sm:text-sm border-gray-300 border-2 rounded-md"
-          id="keywordsInput"
-          onChange={handleKeywordsChange}
-          type="text"
-        />
-        {!autoSearch && (
-          <button
-            className="bg-blue-600 text-white ml-2 py-2 px-6 rounded"
-            type="submit"
-          >
-            Cari
-          </button>
-        )}
-        <button
-          className="bg-gray-200 text-black ml-2 py-2 px-6 rounded"
-          type="reset"
+    <form className="pb-4" onReset={handleReset} onSubmit={handleSubmit}>
+      <div className="flex flex-col">
+        <label
+          className="block text-sm font-medium text-gray-700"
+          htmlFor="keywordsInput"
         >
-          Reset
-        </button>
+          Cari {itemName}:
+        </label>
+        <div className="flex items-center mt-1">
+          <input
+            autoComplete="off"
+            className="focus:ring-indigo-500 focus:border-indigo-500 block w-full px-2 py-2 sm:text-sm border-gray-300 border-2 rounded-md"
+            id="keywordsInput"
+            onChange={handleKeywordsChange}
+            type="text"
+          />
+          {!autoSearch && (
+            <button
+              className="bg-blue-600 text-white ml-2 py-2 px-6 rounded"
+              type="submit"
+            >
+              Cari
+            </button>
+          )}
+          <button
+            className="bg-gray-200 text-black ml-2 py-2 px-6 rounded"
+            type="reset"
+          >
+            Reset
+          </button>
+        </div>
       </div>
       {filterItems && Object.keys(filterItems).length ? (
         <div className="mt-3 text-sm">
@@ -124,6 +135,29 @@ export function SearchForm({
             })}
           </div>
         </div>
+      ) : null}
+      {sortSettings?.length ? (
+        <>
+          <div className="float-right mt-5 text-sm">
+            <label className="font-medium text-gray-700 mr-2" htmlFor="sort-by">
+              Urut berdasarkan
+            </label>
+            <select
+              className="focus:ring-indigo-500 focus:border-indigo-500 px-2 py-2 sm:text-sm border-gray-300 border-2 rounded-md"
+              name="sort-by"
+              onChange={handleSortChange}
+            >
+              {sortSettings.map((cur, idx) => {
+                return (
+                  <option key={`sort-by-${idx}`} value={cur.value}>
+                    {cur.label}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+          <div className="clear-right" />
+        </>
       ) : null}
     </form>
   );

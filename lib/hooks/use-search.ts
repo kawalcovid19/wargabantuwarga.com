@@ -28,6 +28,8 @@ export function useSearch<T = unknown[]>(
         aggregations[cur.field] = {
           title: cur.title,
           size: 10,
+          sort: "term",
+          order: "asc",
         };
         return aggregations;
       },
@@ -42,22 +44,18 @@ export function useSearch<T = unknown[]>(
   const [filteredItems, setFilteredItems] = useState<T[]>(items);
   const [aggregationData, setAggregationData] = useState<any>({});
 
-  const aggregate = (params?: any) => {
+  const aggregate = (keywords?: string) => {
     if (aggregationSettings?.length) {
-      const query = params?.query || "";
       const aggregateResult = itemsjs.search({
-        sort: defaultSort ? defaultSort : "default",
         per_page: 0, // only return aggregation data
-        query,
+        query: keywords,
       });
       const _aggregationData: { [key: string]: any } =
         aggregateResult.data.aggregations;
       Object.keys(_aggregationData).forEach((key) => {
-        _aggregationData[key].buckets = _aggregationData[key].buckets
-          .filter((cur: { doc_count: number }) => cur.doc_count > 0)
-          .sort((a: { key: string }, b: { key: string }) =>
-            a.key.localeCompare(b.key),
-          );
+        _aggregationData[key].buckets = _aggregationData[key].buckets.filter(
+          (cur: { doc_count: number }) => cur.doc_count > 0,
+        );
       });
       setAggregationData(_aggregationData);
     }
@@ -77,10 +75,14 @@ export function useSearch<T = unknown[]>(
     aggregate();
   }, [items]);
 
-  const handleSubmitKeywords = (keywords: string, filters?: any) => {
-    search({ query: keywords, filters });
+  const handleSubmitKeywords = (
+    keywords: string,
+    filters?: any,
+    sort_by?: string,
+  ) => {
+    search({ query: keywords, filters, sort: sort_by });
     if (keywords != lastKeywords) {
-      aggregate();
+      aggregate(keywords);
       setLastKeywords(keywords);
     }
   };
