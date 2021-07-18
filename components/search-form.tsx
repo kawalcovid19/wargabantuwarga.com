@@ -38,6 +38,7 @@ export function SearchForm({
   function handleReset() {
     setKeywords("");
     setFilters({});
+    setSortBy("");
     onSubmitKeywords("");
   }
 

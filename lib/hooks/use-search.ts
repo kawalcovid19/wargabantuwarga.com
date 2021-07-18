@@ -80,7 +80,12 @@ export function useSearch<T = unknown[]>(
     filters?: any,
     sort_by?: string,
   ) => {
-    search({ query: keywords, filters, sort: sort_by });
+    const params = {
+      query: keywords,
+      filters,
+      ...(sort_by ? { sort: sort_by } : {}),
+    };
+    search(params);
     if (keywords != lastKeywords) {
       aggregate(keywords);
       setLastKeywords(keywords);
