@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
-/* eslint-disable no-negated-condition */
-/* This example requires Tailwind CSS v2.0+ */
 import { Contact } from "../lib/provinces";
 import { isNotEmpty } from "../lib/string-utils";
 
@@ -28,7 +25,7 @@ export function ContactList(props: ContactListProps) {
                 <div className="px-4 py-4 sm:px-6">
                   <div className="flex items-center justify-between">
                     <p className="text-sm font-semibold text-blue-600 truncate">
-                      {contact.penyedia || contact.keterangan}
+                      {contact.penyedia ?? contact.keterangan}
                     </p>
                     <div className="ml-2 flex-shrink-0 flex">
                       <p className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
@@ -40,7 +37,7 @@ export function ContactList(props: ContactListProps) {
                     <p className="text-sm font-medium text-gray-600 truncate">
                       {contact.keterangan}
                     </p>
-                    {isNotEmpty(contact.tanggal_verifikasi) ? (
+                    {isNotEmpty(contact.terakhir_update) ? (
                       <div className="mt-2 mb-3 flex items-center text-xs text-gray-500 sm:my-0">
                         <BadgeCheckIcon
                           aria-hidden="true"
@@ -48,9 +45,9 @@ export function ContactList(props: ContactListProps) {
                         />
                         <p className="ml-2 mr-1">
                           Terverifikasi{" "}
-                          {contact.tanggal_verifikasi && (
-                            <time dateTime={contact.tanggal_verifikasi}>
-                              {contact.tanggal_verifikasi}
+                          {contact.terakhir_update && (
+                            <time dateTime={contact.terakhir_update}>
+                              {contact.terakhir_update}
                             </time>
                           )}
                         </p>

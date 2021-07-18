@@ -65,8 +65,8 @@ export function ContactDetails({ contact }: ContactDetailsProps) {
         <DescriptionItem label="Alamat" value={contact.alamat} />
         <DescriptionLink label="Tautan" value={contact.tautan} />
         <DescriptionItem
-          label="Tanggal Verifikasi"
-          value={contact.tanggal_verifikasi}
+          label="Terakhir Update"
+          value={contact.terakhir_update}
         />
         <DescriptionItem
           label="Bentuk Verifikasi"
