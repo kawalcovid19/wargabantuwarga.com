@@ -9,8 +9,9 @@ export function useSearch<T = unknown[]>(
   items: T[],
   fieldNames: string[],
   aggregationSettings?: AggregationSetting[],
-  sortSettings?: any,
+  sortSettings?: {},
   defaultSort?: string,
+  preProcess?: (items: T[]) => T[],
 ) {
   const configuration: any = {
     searchableFields: fieldNames,
@@ -36,7 +37,10 @@ export function useSearch<T = unknown[]>(
   }
 
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const itemsjs = require("itemsjs")(items, configuration);
+  const itemsjs = require("itemsjs")(
+    preProcess ? preProcess(items) : items,
+    configuration,
+  );
 
   const [filteredItems, setFilteredItems] = useState<T[]>(items);
   const [aggregationData, setAggregationData] = useState<any>({});

@@ -11,6 +11,8 @@ export type Province = {
 };
 
 export type Contact = {
+  id?: number;
+  slug?: string;
   readonly kebutuhan?: string;
   readonly keterangan?: string;
   readonly lokasi?: string;
@@ -47,10 +49,15 @@ export type ContactPath = {
 export const getContactsPaths = (): ContactPath[] => {
   const contactsPaths: ContactPath[] = [];
   provinces.forEach((province, provinceIndex) => {
-    province.data.forEach((_, contactIndex) => {
+    province.data.forEach((contact: Contact, contactIndex: number) => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       const provinceSlug = getSlug(province.name, provinceIndex);
+      const contactSlug = getSlug(
+        (contact.penyedia == "" ? contact.keterangan : contact.penyedia) ?? "",
+        contactIndex,
+      );
       contactsPaths.push({
-        params: { provinceSlug, contactSlug: contactIndex.toString() },
+        params: { provinceSlug, contactSlug },
       });
     });
   });

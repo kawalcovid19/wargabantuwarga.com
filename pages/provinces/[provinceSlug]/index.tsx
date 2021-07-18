@@ -6,7 +6,10 @@ import { PageHeader } from "../../../components/layout/page-header";
 import { SearchForm } from "../../../components/search-form";
 import { useSearch } from "../../../lib/hooks/use-search";
 import provinces, { getProvincesPaths, Province } from "../../../lib/provinces";
-import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
+import {
+  getSlug,
+  getTheLastSegmentFromKebabCase,
+} from "../../../lib/string-utils";
 
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
@@ -43,6 +46,17 @@ export default function ProvincePage(props: ProvinceProps) {
       },
     },
     "penyedia_asc",
+    (items) => {
+      return items.map((contact, contactIndex) => {
+        contact.id = contactIndex;
+        contact.slug = getSlug(
+          (contact.penyedia == "" ? contact.keterangan : contact.penyedia) ??
+            "",
+          contactIndex,
+        );
+        return contact;
+      });
+    },
   );
 
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
