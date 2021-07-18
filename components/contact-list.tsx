@@ -1,3 +1,4 @@
+import { Contact } from "../lib/provinces";
 import { isNotEmpty } from "../lib/string-utils";
 
 import { BadgeCheckIcon as BadgeCheckIconUnverified } from "@heroicons/react/outline";
@@ -8,23 +9,8 @@ import {
 } from "@heroicons/react/solid";
 import Link from "next/link";
 
-export type ContactListItem = {
-  id: number;
-  slug: string;
-  kebutuhan?: string;
-  keterangan?: string;
-  lokasi?: string;
-  penyedia?: string;
-  kontak?: string;
-  alamat?: string;
-  tautan?: string;
-  tambahan_informasi?: string;
-  terakhir_update?: string;
-  bentuk_verifikasi?: string;
-};
-
 type ContactListProps = {
-  data: ContactListItem[];
+  data: Contact[];
   provinceSlug: string;
 };
 
