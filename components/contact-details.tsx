@@ -5,6 +5,7 @@ type ContactDetailsProps = {
   provinceName: string;
 };
 
+/* TODO: Integrate this button with a pre-filled Google Forms URL
 const ReportButton = () => (
   <span className="ml-4 flex-shrink-0">
     <button
@@ -15,6 +16,7 @@ const ReportButton = () => (
     </button>
   </span>
 );
+*/
 
 type DescriptionItemProps = {
   label: string;
@@ -48,7 +50,6 @@ const DescriptionLink = (props: DescriptionLinkProps) =>
         >
           {props.value}
         </a>
-        <ReportButton />
       </dd>
     </div>
   ) : null;
