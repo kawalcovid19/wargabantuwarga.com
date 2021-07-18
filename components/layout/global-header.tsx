@@ -1,32 +1,16 @@
-import { bannerBlurData, imgixLoader } from "../../lib/imgix-loader";
+import WBWLogo from "../ui/wbw-logo";
 
-import Image from "next/image";
 import Link from "next/link";
 
-// TODO: Replace with a more suitable global navbar.
 export function GlobalHeader() {
   return (
-    <header>
-      <div className="max-w-xl mx-auto">
-        <h1 className="p-0">
-          <Link href="/">
-            <a>
-              <Image
-                alt="Warga Bantu Warga"
-                blurDataURL={bannerBlurData}
-                height={287}
-                layout="responsive"
-                loader={imgixLoader}
-                placeholder="blur"
-                priority={true}
-                quality={70}
-                src="hero_banner.png"
-                width={640}
-              />
-            </a>
-          </Link>
-        </h1>
-      </div>
+    <header className="flex items-center justify-center fixed w-full h-20 px-4 z-50 bg-brand-500 text-white shadow-md">
+      <Link href="/">
+        <a className="align-middle">
+          <h1 className="sr-only">Warga Bantu Warga</h1>
+          <WBWLogo aria-hidden height={40} />
+        </a>
+      </Link>
     </header>
   );
 }
