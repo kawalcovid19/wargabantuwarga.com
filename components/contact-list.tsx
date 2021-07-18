@@ -2,6 +2,7 @@
 /* eslint-disable no-negated-condition */
 /* This example requires Tailwind CSS v2.0+ */
 import { Contact } from "../lib/provinces";
+import { isNotEmpty } from "../lib/string-utils";
 
 import { BadgeCheckIcon as BadgeCheckIconUnverified } from "@heroicons/react/outline";
 import {
@@ -39,7 +40,7 @@ export function ContactList(props: ContactListProps) {
                     <p className="text-sm font-medium text-gray-600 truncate">
                       {contact.keterangan}
                     </p>
-                    {contact.tanggal_verifikasi !== "" ? (
+                    {isNotEmpty(contact.tanggal_verifikasi) ? (
                       <div className="mt-2 mb-3 flex items-center text-xs text-gray-500 sm:my-0">
                         <BadgeCheckIcon
                           aria-hidden="true"
@@ -64,7 +65,7 @@ export function ContactList(props: ContactListProps) {
                       </div>
                     )}
                   </div>
-                  {contact.kontak !== "" && (
+                  {isNotEmpty(contact.kontak) && (
                     <div className="mt-2 sm:flex sm:justify-between">
                       <p className="flex items-center text-sm text-gray-500">
                         <PhoneIcon
@@ -75,7 +76,7 @@ export function ContactList(props: ContactListProps) {
                       </p>
                     </div>
                   )}
-                  {contact.alamat !== "" && (
+                  {isNotEmpty(contact.alamat) && (
                     <div className="mt-2 sm:flex sm:justify-between">
                       <div className="sm:flex">
                         <p className="mt-2 flex items-start text-sm text-gray-500 sm:mt-0">
