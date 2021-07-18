@@ -63,7 +63,7 @@ export default function Faqs(props: FaqsProps) {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const listOptions = groupBy<FaqData | unknown, string>(
-    filteredQuestions,
+    faqSheets,
     "kategori_pertanyaan",
   );
 
