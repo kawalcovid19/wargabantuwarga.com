@@ -99,8 +99,7 @@ module.exports.fetchSheets = async function fetchSheets() {
                 prev[colName] = rowValue;
                 if (colName == "penyedia") {
                   prev.slug = getSlug(
-                    (prev.penyedia == "" ? prev.keterangan : prev.penyedia) ??
-                      "",
+                    prev.penyedia ? prev.penyedia : prev.keterangan,
                     rowIndex,
                   );
                 }
