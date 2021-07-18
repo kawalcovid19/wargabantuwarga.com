@@ -9,7 +9,6 @@ type ReportButtonProps = {
   onClick: () => void;
 };
 
-//  TODO: Integrate this button with a pre-filled Google Forms URL
 const ReportButton = (props: ReportButtonProps) => (
   <span className="ml-4 flex-shrink-0">
     <button
@@ -40,16 +39,19 @@ type DescriptionLinkProps = {
   label: string;
   value?: string;
   contact: Contact;
+  provinceName: string;
 };
 
 const DescriptionLink = (props: DescriptionLinkProps) => {
-  const { lokasi, keterangan, penyedia, kontak } = props.contact;
-  const baseFormUrl =
+  const { keterangan, penyedia, kontak } = props.contact;
+
+  const formBaseUrl =
     "https://docs.google.com/forms/d/e/1FAIpQLSeDdZLMD9RTfOiKMItNb8542KAO5w3x9O2ZFQmNyff1rYRZvQ/viewform?usp=pp_url";
-  const formValue = `&entry.346789668=${keterangan}&entry.323081545=${lokasi}&entry.68818336=${penyedia}&entry.217416134=${kontak}&entry.11952303=`;
+
+  const formQuery = `&entry.346789668=__other_option__&entry.346789668.other_option_response=${keterangan}&entry.323081545=${props.provinceName}&entry.68818336=${penyedia}&entry.217416134=${kontak}`;
 
   const reportButtonHandler = () => {
-    window.open(baseFormUrl.concat(encodeURI(formValue)), "_blank");
+    window.open(formBaseUrl.concat(encodeURI(formQuery)), "_blank");
   };
 
   return props.value ? (
@@ -70,7 +72,7 @@ const DescriptionLink = (props: DescriptionLinkProps) => {
   ) : null;
 };
 
-export function ContactDetails({ contact }: ContactDetailsProps) {
+export function ContactDetails({ contact, provinceName }: ContactDetailsProps) {
   return (
     <div className="mt-5 border-t border-gray-200">
       <dl className="divide-y divide-gray-200">
@@ -82,6 +84,7 @@ export function ContactDetails({ contact }: ContactDetailsProps) {
         <DescriptionLink
           contact={contact}
           label="Tautan"
+          provinceName={provinceName}
           value={contact.tautan}
         />
         <DescriptionItem
