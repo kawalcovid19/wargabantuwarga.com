@@ -47,7 +47,7 @@ module.exports.fetchSheets = async function fetchSheets() {
               .find("td")
               .map((colIndex, td) => {
                 if (colMap[colIndex]) {
-                  return $(td).text();
+                  return $(td).text().trim();
                 }
                 return "";
               })
