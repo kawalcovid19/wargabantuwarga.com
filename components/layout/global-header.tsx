@@ -8,7 +8,7 @@ export function GlobalHeader() {
   return (
     <header>
       <div className="max-w-xl mx-auto">
-        <h1>
+        <h1 className="p-0">
           <Link href="/">
             <a>
               <Image

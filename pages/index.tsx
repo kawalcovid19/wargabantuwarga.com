@@ -46,7 +46,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </noscript>
       <PageContent>
         <article
-          className="home-page-content p-3"
+          className="home-page-content pt-4"
           dangerouslySetInnerHTML={{ __html: props.html }}
         />
       </PageContent>
