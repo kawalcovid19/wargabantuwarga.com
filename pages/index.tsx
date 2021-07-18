@@ -2,9 +2,12 @@ import { Page } from "../components/layout/page";
 import { PageContent } from "../components/layout/page-content";
 import { Script } from "../components/script";
 import data from "../data/wbw.json";
+import { bannerBlurData, imgixLoader } from "../lib/imgix-loader";
 
 import { GetStaticProps } from "next";
 import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 
 type HomeProps = {
   html: string;
@@ -44,9 +47,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           width="0"
         />
       </noscript>
+      <header>
+        <div className="max-w-xl mx-auto">
+          <h1 className="p-0">
+            <Link href="/">
+              <a>
+                <Image
+                  alt="Warga Bantu Warga"
+                  blurDataURL={bannerBlurData}
+                  height={287}
+                  layout="responsive"
+                  loader={imgixLoader}
+                  placeholder="blur"
+                  priority={true}
+                  quality={70}
+                  src="hero_banner.png"
+                  width={640}
+                />
+              </a>
+            </Link>
+          </h1>
+        </div>
+      </header>
       <PageContent>
         <article
-          className="home-page-content pt-4"
+          className="home-page-content p-4 bg-white shadow overflow-hidden rounded-md"
           dangerouslySetInnerHTML={{ __html: props.html }}
         />
       </PageContent>
