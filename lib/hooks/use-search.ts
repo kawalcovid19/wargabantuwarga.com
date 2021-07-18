@@ -27,7 +27,7 @@ export function useSearch<T = unknown[]>(
       (aggregations: any, cur) => {
         aggregations[cur.field] = {
           title: cur.title,
-          size: 10,
+          size: 100,
           sort: "term",
           order: "asc",
         };

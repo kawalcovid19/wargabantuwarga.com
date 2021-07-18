@@ -86,30 +86,28 @@ module.exports.fetchSheets = async function fetchSheets() {
       return {
         id: sheetId,
         name: sheetName,
-        data: sheetRows
-          .map((row, rowIndex) => {
-            return sheetColumns.reduce(
-              (prev, col) => {
-                const colName = toSnakeCase(col.name);
-                let cellValue = row[col.index];
-                if (colName == "lokasi") {
-                  cellValue = toTitleCase(cellValue);
-                }
-                prev[colName] = cellValue;
-                if (colName == "penyedia") {
-                  prev.slug = getSlug(
-                    prev.penyedia ? prev.penyedia : prev.keterangan,
-                    rowIndex,
-                  );
-                } else if (colName == "terakhir_update") {
-                  prev.verifikasi = cellValue == "" ? 0 : 1;
-                }
-                return prev;
-              },
-              { id: rowIndex.toString() },
-            );
-          })
-          .sort((a, b) => a.penyedia.localeCompare(b.penyedia)),
+        data: sheetRows.map((row, rowIndex) => {
+          return sheetColumns.reduce(
+            (prev, col) => {
+              const colName = toSnakeCase(col.name);
+              let cellValue = row[col.index];
+              if (colName == "lokasi") {
+                cellValue = toTitleCase(cellValue);
+              }
+              prev[colName] = cellValue;
+              if (colName == "penyedia") {
+                prev.slug = getSlug(
+                  prev.penyedia ? prev.penyedia : prev.keterangan,
+                  rowIndex,
+                );
+              } else if (colName == "terakhir_update") {
+                prev.verifikasi = cellValue == "" ? 0 : 1;
+              }
+              return prev;
+            },
+            { id: rowIndex.toString() },
+          );
+        }),
       };
     })
     .toArray();
