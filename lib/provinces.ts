@@ -11,8 +11,6 @@ export type Province = {
 };
 
 export type Contact = {
-  id?: number;
-  slug?: string;
   readonly kebutuhan?: string;
   readonly keterangan?: string;
   readonly lokasi?: string;

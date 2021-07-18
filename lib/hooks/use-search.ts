@@ -11,7 +11,6 @@ export function useSearch<T = unknown[]>(
   aggregationSettings?: AggregationSetting[],
   sortSettings?: {},
   defaultSort?: string,
-  preProcess?: (items: T[]) => T[],
 ) {
   const configuration: any = {
     searchableFields: fieldNames,
@@ -23,7 +22,7 @@ export function useSearch<T = unknown[]>(
       ...sortSettings,
     },
   };
-  if (aggregationSettings) {
+  if (aggregationSettings?.length) {
     configuration.aggregations = aggregationSettings.reduce(
       (aggregations: any, cur) => {
         aggregations[cur.field] = {
@@ -37,23 +36,14 @@ export function useSearch<T = unknown[]>(
   }
 
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const itemsjs = require("itemsjs")(
-    preProcess ? preProcess(items) : items,
-    configuration,
-  );
+  const itemsjs = require("itemsjs")(items, configuration);
 
+  const [lastKeywords, setLastKeywords] = useState<string>("");
   const [filteredItems, setFilteredItems] = useState<T[]>(items);
   const [aggregationData, setAggregationData] = useState<any>({});
 
-  const search = (params?: any) => {
-    const searchResult: any = itemsjs.search({
-      sort: defaultSort ? defaultSort : "default",
-      per_page: 10000, // return all data, assuming less than 10000
-      ...params,
-    });
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    setFilteredItems(searchResult.data.items);
-    if (aggregationSettings) {
+  const aggregate = (params?: any) => {
+    if (aggregationSettings?.length) {
       const query = params?.query || "";
       const aggregateResult = itemsjs.search({
         sort: defaultSort ? defaultSort : "default",
@@ -73,12 +63,26 @@ export function useSearch<T = unknown[]>(
     }
   };
 
+  const search = (params?: any) => {
+    const searchResult: any = itemsjs.search({
+      sort: defaultSort ? defaultSort : "default",
+      per_page: 10000, // return all data, assuming less than 10000
+      ...params,
+    });
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    setFilteredItems(searchResult.data.items);
+  };
+
   useEffect(() => {
-    search();
+    aggregate();
   }, [items]);
 
   const handleSubmitKeywords = (keywords: string, filters?: any) => {
     search({ query: keywords, filters });
+    if (keywords != lastKeywords) {
+      aggregate();
+      setLastKeywords(keywords);
+    }
   };
 
   return [filteredItems, handleSubmitKeywords, aggregationData] as const;

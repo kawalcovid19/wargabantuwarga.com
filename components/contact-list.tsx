@@ -1,4 +1,3 @@
-import { Contact } from "../lib/provinces";
 import { isNotEmpty } from "../lib/string-utils";
 
 import { BadgeCheckIcon as BadgeCheckIconUnverified } from "@heroicons/react/outline";
@@ -9,8 +8,23 @@ import {
 } from "@heroicons/react/solid";
 import Link from "next/link";
 
+export type ContactListItem = {
+  id: number;
+  slug: string;
+  kebutuhan?: string;
+  keterangan?: string;
+  lokasi?: string;
+  penyedia?: string;
+  kontak?: string;
+  alamat?: string;
+  tautan?: string;
+  tambahan_informasi?: string;
+  terakhir_update?: string;
+  bentuk_verifikasi?: string;
+};
+
 type ContactListProps = {
-  data: Contact[];
+  data: ContactListItem[];
   provinceSlug: string;
 };
 
@@ -20,11 +34,7 @@ export function ContactList(props: ContactListProps) {
       <ul className="divide-y divide-gray-200">
         {props.data.map((contact, index) => (
           <li key={index}>
-            <Link
-              href={`/provinces/${props.provinceSlug}/${
-                contact.slug ?? contact.id ?? index
-              }`}
-            >
+            <Link href={`/provinces/${props.provinceSlug}/${contact.slug}`}>
               <a className="block hover:bg-gray-50">
                 <div className="px-4 py-4 sm:px-6">
                   <div className="flex items-center justify-between">
