@@ -1,5 +1,5 @@
 import * as React from "react";
 
 export const Page: React.FC = ({ children }) => {
-  return <main className="w-full min-h-screen">{children}</main>;
+  return <section className="flex-1 pt-20">{children}</section>;
 };
