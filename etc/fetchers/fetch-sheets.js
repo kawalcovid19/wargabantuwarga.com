@@ -92,11 +92,11 @@ module.exports.fetchSheets = async function fetchSheets() {
             return sheetColumns.reduce(
               (prev, col) => {
                 const colName = toSnakeCase(col.name);
-                let rowValue = row[col.index];
+                let cellValue = row[col.index];
                 if (colName == "lokasi") {
-                  rowValue = toTitleCase(rowValue);
+                  cellValue = toTitleCase(cellValue);
                 }
-                prev[colName] = rowValue;
+                prev[colName] = cellValue;
                 if (colName == "penyedia") {
                   prev.slug = getSlug(
                     prev.penyedia ? prev.penyedia : prev.keterangan,
