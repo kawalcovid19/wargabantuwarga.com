@@ -64,9 +64,8 @@ export const getStaticProps: GetStaticProps = ({ params = {} }) => {
   const index = getTheLastSegmentFromKebabCase(provinceSlug as string);
   const province = index ? provinces[index as unknown as number] : null;
   const provinceName = province ? province.name : "";
-  const contactIndex = getTheLastSegmentFromKebabCase(contactSlug as string);
   const contact =
-    province !== null ? province.data[contactIndex as unknown as number] : null;
+    province !== null ? province.data.find((a) => a.slug == contactSlug) : null;
   return {
     props: {
       provinceSlug,
