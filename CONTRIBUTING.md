@@ -10,13 +10,13 @@ Most contributions start from defining issues. Anyone can open an issue for disc
 
 #### Open Issues
 
-Open Issues means it still needs more attention and need to be resolved. Commonly, contributors will explore Open Issue section to resolve an issue.
+Open Issues are issues that need more attention and need to be resolved. Contributors should pick any of the Open Issues and start working on them.
 
 #### Closed Issues
 
-Closed Issues means it has been completed or no need further action. Closed issue can be changed to open if contributors find related issue with the same category in the future.
+Closed Issues are issues that have been completed or doesn't need further action. Closed issues can be reopened if contributors find any issues related to it sometime in the future.
 
-Please pay attention on every issue attribute. Every issue might be referenced by other contributors through [Linked Pull Request](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue). It means the issue is currently being handled. To avoid working on the same issue, contributors were strongly encouraged to submit a [draft pull request](https://github.blog/2019-02-14-introducing-draft-pull-requests/) first when they start working on an issue.
+Please pay attention on every issue attribute. Every issue might be referenced by other contributors through [Linked Pull Requests](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue). If an issue has a linked pull request, that means the issue is currently being handled. To avoid working on the same issue, contributors were strongly encouraged to submit a [draft pull request](https://github.blog/2019-02-14-introducing-draft-pull-requests/) first when they start working on an issue.
 
 ### Start working on issues
 
@@ -38,13 +38,13 @@ Sebagian besar kontribusi berawal dari membuat _Issues_. Tiap orang dapat memula
 
 #### _Open Issues_
 
-_Open Issues_ merupakan kategori yang membutuhkan perhatian lebih serta penyelesaian. Biasanya, kontributor akan menelusuri bagian _Open Issues_ untuk mengerjakan _issue_ yang belum ditangani.
+_Open Issues_ merupakan kategori yang membutuhkan perhatian lebih serta penyelesaian. Kontributor disarankan menelusuri bagian _Open Issues_ dan mulai mengerjakannya.
 
 #### _Closed Issues_
 
-_Closed Issues_ merupakan kategori _issue_ yang sudah selesai dikerjakan atau tidak membutuhkan aksi lanjutan. _Issue_ dengan status _closed_ dapat kembali diubah menjadi _open_ ketika kontibutor menemukan _issue_ dengan kategori yang sama di masa mendatang.
+_Closed Issues_ merupakan kategori _issue_ yang sudah selesai dikerjakan atau tidak membutuhkan aksi lanjutan. _Issue_ dengan status _closed_ dapat kembali diubah menjadi _open_ ketika kontibutor menemukan _issue_ yang berhubungan di masa mendatang.
 
-Mohon perhatikan tiap atribut _issue_. Tiap _issue_ kemungkinan dikerjakan oleh kontributor lain melalui _Pull Request_ tertentu. Ini berarti _issue_ sedang dalam penanganan. Untuk menghindari pekerjaan yang sama, kontributor sangat dianjurkan untuk mengajukan sebuah [_draft pull request_](https://github.blog/2019-02-14-introducing-draft-pull-requests/) terlebih dahulu setiap kali hendak mengerjakan suatu _issue_.
+Mohon perhatikan tiap atribut _issue_. Tiap _issue_ kemungkinan dikerjakan oleh kontributor lain melalui [_Linked Pull Requests_](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue). Ini berarti _issue_ sedang dalam penanganan. Untuk menghindari pekerjaan yang sama, kontributor sangat dianjurkan untuk mengajukan sebuah [_draft pull request_](https://github.blog/2019-02-14-introducing-draft-pull-requests/) terlebih dahulu setiap kali hendak mengerjakan suatu _issue_.
 
 ### Panduan mulai bekerja
 
