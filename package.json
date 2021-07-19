@@ -10,7 +10,9 @@
     "lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx}\"",
     "netlify-export": "yarn fetch-wbw && yarn build && next export",
     "prepare": "husky install",
-    "start": "next start"
+    "start": "next start",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "dependencies": {
     "@headlessui/react": "1.3.0",
@@ -34,6 +36,7 @@
     "autoprefixer": "10.3.0",
     "chalk": "^4.1.1",
     "critters": "^0.0.10",
+    "cypress": "^7.7.0",
     "eslint": "7.30.0",
     "eslint-config-kentcdodds": "^19.1.0",
     "eslint-config-next": "11.0.1",
