@@ -1,4 +1,5 @@
-import { CopyButton } from "../components/copy-button";
+// import { CopyButton } from "../components/copy-button";
+import { anchorTransformer } from "../lib/htmr-transformers";
 import { Contact } from "../lib/provinces";
 import { isNotEmpty } from "../lib/string-utils";
 
@@ -8,6 +9,8 @@ import {
   LocationMarkerIcon,
   PhoneIcon,
 } from "@heroicons/react/solid";
+import htmr from "htmr";
+import { HtmrOptions } from "htmr/src/types";
 import Link from "next/link";
 
 type ContactListProps = {
@@ -16,6 +19,10 @@ type ContactListProps = {
 };
 
 export function ContactList(props: ContactListProps) {
+  const htmrTransform: HtmrOptions["transform"] = {
+    a: anchorTransformer,
+  };
+
   return (
     <div className="bg-white shadow overflow-hidden sm:rounded-md">
       <ul className="divide-y divide-gray-200">
@@ -26,7 +33,9 @@ export function ContactList(props: ContactListProps) {
                 <div className="px-4 py-4 sm:px-6">
                   <div className="flex items-center justify-between">
                     <p className="text-sm font-semibold text-blue-600 truncate">
-                      {contact.penyedia ?? contact.keterangan}
+                      {isNotEmpty(contact.penyedia)
+                        ? contact.penyedia
+                        : contact.keterangan}
                     </p>
                     <div className="ml-2 flex-shrink-0 flex">
                       <p className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
@@ -70,10 +79,9 @@ export function ContactList(props: ContactListProps) {
                           aria-hidden="true"
                           className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"
                         />
-                        {contact.kontak}
-                        {typeof contact.kontak == "string" && (
-                          <CopyButton text={contact.kontak} />
-                        )}
+                        {htmr(contact.kontak as string, {
+                          transform: htmrTransform,
+                        })}
                       </p>
                     </div>
                   )}
@@ -85,7 +93,9 @@ export function ContactList(props: ContactListProps) {
                             aria-hidden="true"
                             className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"
                           />
-                          {contact.alamat}
+                          {htmr(contact.alamat as string, {
+                            transform: htmrTransform,
+                          })}
                         </p>
                       </div>
                     </div>

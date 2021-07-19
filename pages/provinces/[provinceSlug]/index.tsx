@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { ContactList } from "../../../components/contact-list";
 import { BackButton } from "../../../components/layout/back-button";
 import { Page } from "../../../components/layout/page";
@@ -29,7 +30,7 @@ export default function ProvincePage(props: ProvinceProps) {
       "alamat",
       "keterangan",
       "kontak",
-      "tautan",
+      "link",
       "tambahan_informasi",
       "bentuk_verifikasi",
     ],
