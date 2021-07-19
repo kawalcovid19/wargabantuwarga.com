@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import ItemsJS from "itemsjs";
+
 type AggregationSetting = {
   field: string;
   title: string;
@@ -37,8 +39,7 @@ export function useSearch<T = unknown[]>(
     );
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const itemsjs = require("itemsjs")(items, configuration);
+  const itemsjs = ItemsJS(items, configuration);
 
   const [lastKeywords, setLastKeywords] = useState<string>("");
   const [filteredItems, setFilteredItems] = useState<T[]>(items);
