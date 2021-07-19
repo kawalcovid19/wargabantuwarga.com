@@ -1,4 +1,10 @@
+import { CopyButton } from "../components/copy-button";
+import { anchorTransformer } from "../lib/htmr-transformers";
 import { Contact } from "../lib/provinces";
+import { isNotEmpty, stripTags } from "../lib/string-utils";
+
+import htmr from "htmr";
+import { HtmrOptions } from "htmr/src/types";
 
 type ContactDetailsProps = {
   contact: Contact;
@@ -35,7 +41,7 @@ const ReportButton = (props: ReportButtonProps) => (
       onClick={props.onClick}
       type="button"
     >
-      Laporkan kesalahan
+      Koreksi
     </button>
   </span>
 );
@@ -43,43 +49,30 @@ const ReportButton = (props: ReportButtonProps) => (
 type DescriptionItemProps = {
   label: string;
   value?: string;
+  withCopyButton?: boolean;
   onClick: () => void;
 };
 
-const DescriptionItem = (props: DescriptionItemProps) => (
-  <div className="py-4 px-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-    <dt className="text-sm font-medium text-gray-500">{props.label}</dt>
-    <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-      <span className="flex-grow">{props.value}</span>
-      <ReportButton onClick={props.onClick} />
-    </dd>
-  </div>
-);
+const DescriptionItem = (props: DescriptionItemProps) => {
+  const value = isNotEmpty(props.value) ? (props.value as string) : "";
+  const htmrTransform: HtmrOptions["transform"] = {
+    a: anchorTransformer,
+  };
 
-type DescriptionLinkProps = {
-  label: string;
-  value?: string;
-  contact: Contact;
-  onClick: () => void;
-};
-
-const DescriptionLink = (props: DescriptionLinkProps) => {
-  return props.value ? (
-    <div className="py-4 sm:py-5 sm:grid sm:grid-cols-4 sm:gap-4">
+  return (
+    <div className="py-4 px-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
       <dt className="text-sm font-medium text-gray-500">{props.label}</dt>
-      <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-3">
-        <a
-          className="flex-grow"
-          href={props.value}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          {props.value}
-        </a>
+      <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+        <span className="flex-grow">
+          {htmr(value, { transform: htmrTransform })}
+        </span>
+        {typeof value == "string" &&
+          value.length > 0 &&
+          props.withCopyButton && <CopyButton text={stripTags(value)} />}
         <ReportButton onClick={props.onClick} />
       </dd>
     </div>
-  ) : null;
+  );
 };
 
 export function ContactDetails({ contact, provinceName }: ContactDetailsProps) {
@@ -109,17 +102,18 @@ export function ContactDetails({ contact, provinceName }: ContactDetailsProps) {
           label="Kontak"
           onClick={_reportButtonHandler}
           value={contact.kontak}
+          withCopyButton
         />
         <DescriptionItem
           label="Alamat"
           onClick={_reportButtonHandler}
           value={contact.alamat}
+          withCopyButton
         />
-        <DescriptionLink
-          contact={contact}
+        <DescriptionItem
           label="Tautan"
           onClick={_reportButtonHandler}
-          value={contact.tautan}
+          value={contact.link}
         />
         <DescriptionItem
           label="Terakhir Update"

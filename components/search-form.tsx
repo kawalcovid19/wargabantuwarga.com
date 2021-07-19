@@ -1,6 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
 
 import { getQueryParams } from "../lib/string-utils";
+
+import { PrimaryButton, SecondaryButton } from "./ui/button";
+import { Select } from "./ui/select";
 
 import { debounce } from "lodash";
 import Router from "next/router";
@@ -135,7 +142,11 @@ export function SearchForm({
   }, [itemName]);
 
   return (
-    <form className="pb-4" onReset={handleReset} onSubmit={handleSubmit}>
+    <form
+      className="pb-8 space-y-4"
+      onReset={handleReset}
+      onSubmit={handleSubmit}
+    >
       <div className="flex flex-col">
         <label
           className="block text-sm font-medium text-gray-700"
@@ -146,46 +157,40 @@ export function SearchForm({
         <div className="flex items-center mt-1">
           <input
             autoComplete="off"
-            className="focus:ring-indigo-500 focus:border-indigo-500 block w-full px-2 py-2 sm:text-sm border-gray-300 border-2 rounded-md"
+            className="outline-none focus:ring-blue-500 focus:border-blue-500 block w-full px-2 py-2 sm:text-sm border-gray-300 hover:border-gray-400 border-2 rounded-md"
             id="keywordsInput"
             onChange={handleKeywordsChange}
             type="text"
             value={keywords}
           />
           {!autoSearch && (
-            <button
-              className="bg-blue-600 text-white ml-2 py-2 px-6 rounded"
-              type="submit"
-            >
+            <PrimaryButton className="ml-2" type="submit">
               Cari
-            </button>
+            </PrimaryButton>
           )}
-          <button
-            className="bg-gray-200 text-black ml-2 py-2 px-6 rounded"
-            type="reset"
-          >
+          <SecondaryButton className="ml-2" type="reset">
             Reset
-          </button>
+          </SecondaryButton>
         </div>
       </div>
       {filterItems && Object.keys(filterItems).length ? (
-        <div className="mt-3 text-sm">
+        <>
           <span className="block mb-2 font-medium text-gray-700">Filter</span>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {Object.entries(filterItems).map(([key, value], idx) => {
               const { title, buckets }: any = value;
               return (
-                <div key={`filter-${idx}`}>
+                <div key={`filter-${idx}`} className="space-y-1">
                   <label
-                    className="block mb-1 font-medium text-gray-700"
+                    className="block text-sm font-medium text-gray-700"
                     htmlFor={`filter-${key}`}
                   >
                     {title}
                   </label>
-                  <select
-                    className="focus:ring-indigo-500 focus:border-indigo-500 block w-full px-2 py-2 sm:text-sm border-gray-300 border-2 rounded-md"
+                  <Select
                     name={key}
                     onChange={handleFilterChange}
+                    title={title}
                     value={filters[key]?.length ? filters[key][0] : ""}
                   >
                     <option value="">Semua</option>
@@ -199,23 +204,26 @@ export function SearchForm({
                         </option>
                       );
                     })}
-                  </select>
+                  </Select>
                 </div>
               );
             })}
           </div>
-        </div>
+        </>
       ) : null}
       {sortSettings?.length ? (
-        <>
-          <div className="float-right mt-5 text-sm">
-            <label className="font-medium text-gray-700 mr-2" htmlFor="sort-by">
+        <div className="grid grid-cols-2 gap-4">
+          <div className="space-y-1">
+            <label
+              className="font-medium text-sm text-gray-700 mr-2"
+              htmlFor="sort-by"
+            >
               Urut berdasarkan
             </label>
-            <select
-              className="focus:ring-indigo-500 focus:border-indigo-500 px-2 py-2 sm:text-sm border-gray-300 border-2 rounded-md"
+            <Select
               name="sort-by"
               onChange={handleSortChange}
+              title="Urut berdasarkan"
               value={sort_by}
             >
               {sortSettings.map((cur, idx) => {
@@ -225,10 +233,9 @@ export function SearchForm({
                   </option>
                 );
               })}
-            </select>
+            </Select>
           </div>
-          <div className="clear-right" />
-        </>
+        </div>
       ) : null}
     </form>
   );

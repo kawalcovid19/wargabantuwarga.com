@@ -46,6 +46,10 @@ export function isNotEmpty(value?: string): boolean {
   return value !== undefined && value !== "";
 }
 
+export function stripTags(str: string): string {
+  return str.replace(/(<([^>]+)>)/gi, "");
+}
+
 export function getQueryParams(query: string): {} {
   return query
     ? (/^[?#]/.test(query) ? query.slice(1) : query)
