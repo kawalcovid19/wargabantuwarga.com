@@ -9,8 +9,9 @@ import Head from "next/head";
 import { DefaultSeo } from "next-seo";
 
 const meta = {
-  site_name: config.site_name,
+  siteName: config.site_name,
   title: `${config.site_name} | ${config.site_tagline}`,
+  tagline: config.site_tagline,
   description: config.site_description,
   url: config.site_url,
 };
@@ -24,20 +25,20 @@ export default function App({ Component, pageProps, router }: AppProps) {
         openGraph={{
           type: "website",
           locale: "id_ID",
-          title: meta.title,
+          title: meta.tagline,
           description: meta.description,
-          site_name: meta.site_name,
+          site_name: meta.siteName,
           images: [
             {
               url: "https://wargabantuwarga.com/wbw.png",
-              alt: meta.title,
+              alt: meta.siteName,
               height: 689,
               width: 601,
             },
           ],
         }}
-        title={meta.title}
-        titleTemplate={`${meta.title} | %s`}
+        title={config.site_tagline}
+        titleTemplate={`${meta.siteName} | %s`}
         twitter={{
           handle: "@KawalCOVID19",
           site: "@KawalCOVID19",
