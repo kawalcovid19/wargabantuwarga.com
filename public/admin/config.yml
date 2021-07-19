@@ -31,6 +31,10 @@ collections:
             name: "site_description"
             widget: "string"
             hint: "The description of the site to be shown in the URL previews on Google, Facebook, Twitter, WhatsApp, etc."
+          - label: "Site URL"
+            name: "site_url"
+            widget: "string"
+            hint: "The canonical URL of the website, complete with the protocol (e.g. `https://`) and **without** trailing slash (`/`)."
   - name: "home_page"
     label: "Home Page"
     delete: false
@@ -40,5 +44,15 @@ collections:
         label: "Home Page"
         file: "_content/home-page.md"
         fields:
-          - { label: "Title", name: "title", widget: "string", hint: "Page title" }
-          - { label: "Body", name: "body", widget: "markdown", hint: "Page body" }
+          - {
+              label: "Title",
+              name: "title",
+              widget: "string",
+              hint: "Page title",
+            }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              hint: "Page body",
+            }
