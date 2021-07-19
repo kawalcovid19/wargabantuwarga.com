@@ -1,5 +1,7 @@
 import { ChangeEvent, useState } from "react";
 
+import { PrimaryButton, SecondaryButton } from "./ui/button";
+
 interface FormElements extends HTMLFormControlsCollection {
   keywordsInput: HTMLInputElement;
 }
@@ -79,25 +81,19 @@ export function SearchForm({
         <div className="flex items-center mt-1">
           <input
             autoComplete="off"
-            className="focus:ring-indigo-500 focus:border-indigo-500 block w-full px-2 py-2 sm:text-sm border-gray-300 border-2 rounded-md"
+            className="outline-none focus:ring-blue-500 focus:border-blue-500 block w-full px-2 py-2 sm:text-sm border-gray-300 hover:border-gray-400 border-2 rounded-md"
             id="keywordsInput"
             onChange={handleKeywordsChange}
             type="text"
           />
           {!autoSearch && (
-            <button
-              className="bg-blue-600 text-white ml-2 py-2 px-6 rounded"
-              type="submit"
-            >
+            <PrimaryButton className="ml-2" type="submit">
               Cari
-            </button>
+            </PrimaryButton>
           )}
-          <button
-            className="bg-gray-200 text-black ml-2 py-2 px-6 rounded"
-            type="reset"
-          >
+          <SecondaryButton className="ml-2" type="reset">
             Reset
-          </button>
+          </SecondaryButton>
         </div>
       </div>
       {filterItems && Object.keys(filterItems).length ? (
@@ -115,7 +111,7 @@ export function SearchForm({
                     {title}
                   </label>
                   <select
-                    className="focus:ring-indigo-500 focus:border-indigo-500 block w-full px-2 py-2 sm:text-sm border-gray-300 border-2 rounded-md"
+                    className="outline-none focus:ring-blue-500 focus:border-blue-500 block w-full px-2 py-2 sm:text-sm border-gray-300 hover:border-gray-400 border-2 rounded-md"
                     name={key}
                     onChange={handleFilterChange}
                   >

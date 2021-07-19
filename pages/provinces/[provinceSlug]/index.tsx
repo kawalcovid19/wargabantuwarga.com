@@ -29,7 +29,7 @@ export default function ProvincePage(props: ProvinceProps) {
       "alamat",
       "keterangan",
       "kontak",
-      "tautan",
+      "link",
       "tambahan_informasi",
       "bentuk_verifikasi",
     ],
