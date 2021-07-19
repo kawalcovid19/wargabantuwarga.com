@@ -13,12 +13,14 @@ const meta = {
   title: `${config.site_name} | ${config.site_tagline}`,
   tagline: config.site_tagline,
   description: config.site_description,
+  url: "https://www.wargabantuwarga.com",
 };
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <LayoutRoot>
       <DefaultSeo
+        canonical={`${meta.url}${router.asPath || "/"}`}
         description={meta.description}
         openGraph={{
           type: "website",
