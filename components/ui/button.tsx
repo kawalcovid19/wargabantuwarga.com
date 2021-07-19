@@ -21,7 +21,7 @@ export const PrimaryButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ),
 );
 
-PrimaryButton.displayName = "SecondaryButton";
+PrimaryButton.displayName = "PrimaryButton";
 
 export const SecondaryButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, style, type, children, ...rest }, ref) => (
