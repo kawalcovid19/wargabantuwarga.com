@@ -34,11 +34,18 @@ export function CopyButton({ text }: { text: string }) {
   return (
     <button
       aria-label="salin"
-      className="relative z-10 w-8 h-6 ml-2 bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white flex-none flex items-center justify-center rounded"
+      className="relative z-10 px-2 h-6 ml-2 bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white flex-none flex items-center justify-center rounded text-xs"
       onClick={handleCopy}
       type="button"
     >
-      {isCopied ? <span>Tersalin ✓</span> : <span>Salin <ClipboardCopyIcon className="h-4 w-4" /></span>}
+      {isCopied ? (
+        <span>✓&nbsp;Tersalin</span>
+      ) : (
+        <>
+          <ClipboardCopyIcon className="h-4 w-4" />
+          <span className="ml-1">Salin</span>
+        </>
+      )}
     </button>
   );
 }
