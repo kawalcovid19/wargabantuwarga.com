@@ -8,7 +8,7 @@ export const anchorTransformer = (node: JSX.IntrinsicElements["a"]) => {
     if (href.substr(0, 4) === "http") {
       return (
         <a
-          className="text-indigo-600 hover:text-indigo-500"
+          className="text-indigo-600 hover:text-indigo-500 relative"
           href={href}
           rel="noopener noreferrer"
           target="_blank"
