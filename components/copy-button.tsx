@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import { ClipboardCopyIcon } from "@heroicons/react/outline";
+
 export function CopyButton({ text }: { text: string }) {
   const [isCopied, setCopied] = useState<boolean>(false);
   const [canCopy, setCanCopy] = useState<boolean>(false);
@@ -26,8 +28,9 @@ export function CopyButton({ text }: { text: string }) {
   }
 
   return (
-    <button onClick={handleCopy} type="button">
-      {isCopied ? "✓ copy" : "copy"}
+    <button aria-label="salin" onClick={handleCopy} type="button">
+      {isCopied && "✓"}
+      <ClipboardCopyIcon />
     </button>
   );
 }
