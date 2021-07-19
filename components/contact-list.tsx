@@ -32,7 +32,9 @@ export function ContactList(props: ContactListProps) {
                 <div className="px-4 py-4 sm:px-6">
                   <div className="flex items-center justify-between">
                     <p className="text-sm font-semibold text-blue-600 truncate">
-                      {contact.penyedia ?? contact.keterangan}
+                      {isNotEmpty(contact.penyedia)
+                        ? contact.penyedia
+                        : contact.keterangan}
                     </p>
                     <div className="ml-2 flex-shrink-0 flex">
                       <p className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
