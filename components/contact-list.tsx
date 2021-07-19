@@ -1,3 +1,4 @@
+import { anchorTransformer } from "../lib/htmr-transformers";
 import { Contact } from "../lib/provinces";
 import { isNotEmpty } from "../lib/string-utils";
 
@@ -7,6 +8,8 @@ import {
   LocationMarkerIcon,
   PhoneIcon,
 } from "@heroicons/react/solid";
+import htmr from "htmr";
+import { HtmrOptions } from "htmr/src/types";
 import Link from "next/link";
 
 type ContactListProps = {
@@ -15,6 +18,10 @@ type ContactListProps = {
 };
 
 export function ContactList(props: ContactListProps) {
+  const htmrTransform: HtmrOptions["transform"] = {
+    a: anchorTransformer,
+  };
+
   return (
     <div className="bg-white shadow overflow-hidden sm:rounded-md">
       <ul className="divide-y divide-gray-200">
@@ -69,7 +76,9 @@ export function ContactList(props: ContactListProps) {
                           aria-hidden="true"
                           className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"
                         />
-                        {contact.kontak}
+                        {htmr(contact.kontak as string, {
+                          transform: htmrTransform,
+                        })}
                       </p>
                     </div>
                   )}
@@ -81,7 +90,9 @@ export function ContactList(props: ContactListProps) {
                             aria-hidden="true"
                             className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"
                           />
-                          {contact.alamat}
+                          {htmr(contact.alamat as string, {
+                            transform: htmrTransform,
+                          })}
                         </p>
                       </div>
                     </div>

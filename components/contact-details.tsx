@@ -1,9 +1,9 @@
+import { anchorTransformer } from "../lib/htmr-transformers";
 import { Contact } from "../lib/provinces";
 import { isNotEmpty } from "../lib/string-utils";
 
 import htmr from "htmr";
 import { HtmrOptions } from "htmr/src/types";
-import Link from "next/link";
 
 type ContactDetailsProps = {
   contact: Contact;
@@ -49,38 +49,6 @@ type DescriptionItemProps = {
   label: string;
   value?: string;
   onClick: () => void;
-};
-
-const anchorTransformer = (node: JSX.IntrinsicElements["a"]) => {
-  const { href, children } = node;
-
-  if (href) {
-    // TODO: Strip Google's URL prefix
-    if (href.substr(0, 4) === "http") {
-      return (
-        <a
-          className="text-indigo-600 hover:text-indigo-500"
-          href={href}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          {children}
-        </a>
-      );
-    }
-
-    return (
-      <Link href={href}>
-        <a className="text-indigo-600 hover:text-indigo-500">{children}</a>
-      </Link>
-    );
-  }
-
-  return (
-    <a className="text-indigo-600 hover:text-indigo-500" href={href}>
-      {children}
-    </a>
-  );
 };
 
 const DescriptionItem = (props: DescriptionItemProps) => {
