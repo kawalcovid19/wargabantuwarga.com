@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import ItemsJS from "itemsjs";
-import Router from "next/router";
 
 type AggregationSetting = {
   field: string;
@@ -64,44 +63,15 @@ export function useSearch<T = unknown[]>(
   };
 
   const search = (params?: any) => {
-    const searchParams = {
+    const searchResult: any = itemsjs.search({
       sort: defaultSort ? defaultSort : "default",
       per_page: 10000, // return all data, assuming less than 10000
       ...params,
-    };
-    const searchResult: any = itemsjs.search(searchParams);
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    setFilteredItems(searchResult.data.items);
-
-    // change url query params
-    const currentPath = Router.asPath;
-    const queryParams = [];
-    const { query, filters, sort } = searchParams;
-    if (query) queryParams.push(`q=${query}`);
-    if (filters) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-      Object.keys(filters).forEach((filter) => {
-        if (filters[filter].length) {
-          const filterValue = filters[filter][0];
-          queryParams.push(`${filter}=${filterValue}`);
-        }
-      });
-    }
-    if (sort != defaultSort && sort != "default") {
-      queryParams.push(`sort=${sort}`);
-    }
-    const newPath =
-      window.location.pathname +
-      (queryParams.length ? `?${queryParams.join("&")}` : "");
-    if (currentPath !== newPath) {
-      Router.replace(currentPath, newPath, { shallow: true });
-    }
+    });
+    setFilteredItems(searchResult.data.items as T[]);
   };
 
   useEffect(() => {
-    //const queryParams = Router.asPath.split("?").pop()?.split("&");
-    //if (queryParams?.length) {
-    //}
     aggregate();
   }, [items]);
 
