@@ -37,7 +37,9 @@ export default function ContactPage({
             href: `/provinces/${router.query.provinceSlug}`,
           },
           {
-            name: contact.penyedia ?? "",
+            name: contact.penyedia
+              ? contact.penyedia
+              : contact.keterangan ?? "",
             href: `/provinces/${router.query.provinceSlug}/${router.query.contactSlug}`,
             current: true,
           },
@@ -64,8 +66,10 @@ export const getStaticProps: GetStaticProps = ({ params = {} }) => {
   const index = getTheLastSegmentFromKebabCase(provinceSlug as string);
   const province = index ? provinces[index as unknown as number] : null;
   const provinceName = province ? province.name : "";
-  const contact =
-    province !== null ? province.data[contactSlug as unknown as number] : null;
+  const contactIndex = getTheLastSegmentFromKebabCase(contactSlug as string);
+  const contact = province
+    ? province.data[contactIndex as unknown as number]
+    : null;
   return {
     props: {
       provinceSlug,

@@ -6,6 +6,34 @@ const fetch = require("cross-fetch");
 function toSnakeCase(text) {
   return text.trim().toLowerCase().replace(" ", "_");
 }
+function toTitleCase(str) {
+  return str
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+function replaceSpacesWithCamelCase(str) {
+  return str.replace(/\s+/g, (s) => {
+    return s.substring(0, 1).toUpperCase() + s.substring(1);
+  });
+}
+function replaceSpecialCharacterWithSpace(str) {
+  return str.replace(/[^a-zA-Z0-9. ]/g, " ");
+}
+function removeSpaces(str) {
+  return str.replace(/\s+/g, "");
+}
+function convertToKebabCase(str) {
+  return str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+}
+function getSlug(name, index) {
+  const kebabName = convertToKebabCase(
+    removeSpaces(
+      replaceSpecialCharacterWithSpace(replaceSpacesWithCamelCase(name)),
+    ),
+  );
+  return `${kebabName}-${index}`;
+}
 function allIsEmptyString(array) {
   for (const item of array) {
     if (item.length !== 0) {
@@ -46,7 +74,7 @@ module.exports.fetchSheets = async function fetchSheets() {
               .find("td")
               .map((colIndex, td) => {
                 if (colMap[colIndex]) {
-                  return $(td).text();
+                  return $(td).text().trim();
                 }
                 return "";
               })
@@ -58,11 +86,27 @@ module.exports.fetchSheets = async function fetchSheets() {
       return {
         id: sheetId,
         name: sheetName,
-        data: sheetRows.map((row) => {
-          return sheetColumns.reduce((prev, col) => {
-            prev[toSnakeCase(col.name)] = row[col.index];
-            return prev;
-          }, {});
+        data: sheetRows.map((row, rowIndex) => {
+          return sheetColumns.reduce(
+            (prev, col) => {
+              const colName = toSnakeCase(col.name);
+              let cellValue = row[col.index];
+              if (colName == "lokasi") {
+                cellValue = toTitleCase(cellValue);
+              }
+              prev[colName] = cellValue;
+              if (colName == "penyedia") {
+                prev.slug = getSlug(
+                  prev.penyedia ? prev.penyedia : prev.keterangan,
+                  rowIndex,
+                );
+              } else if (colName == "terakhir_update") {
+                prev.verifikasi = cellValue == "" ? 0 : 1;
+              }
+              return prev;
+            },
+            { id: rowIndex.toString() },
+          );
         }),
       };
     })

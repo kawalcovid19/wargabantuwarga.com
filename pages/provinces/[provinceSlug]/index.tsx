@@ -5,22 +5,23 @@ import { PageContent } from "../../../components/layout/page-content";
 import { PageHeader } from "../../../components/layout/page-header";
 import { SearchForm } from "../../../components/search-form";
 import { useSearch } from "../../../lib/hooks/use-search";
-import provinces, { getProvincesPaths, Province } from "../../../lib/provinces";
+import provinces, { Contact, getProvincesPaths } from "../../../lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
 
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
 
 type ProvinceProps = {
-  province: Province;
+  provinceName: string;
   provinceSlug: string;
+  contactList: Contact[];
 };
 
 export default function ProvincePage(props: ProvinceProps) {
-  const { province, provinceSlug } = props;
+  const { provinceName, provinceSlug, contactList } = props;
   const router = useRouter();
-  const [filteredContacts, handleSubmitKeywords] = useSearch(
-    props.province.data,
+  const [filteredContacts, handleSubmitKeywords, filterItems] = useSearch(
+    contactList,
     [
       "kebutuhan",
       "penyedia",
@@ -32,10 +33,25 @@ export default function ProvincePage(props: ProvinceProps) {
       "tambahan_informasi",
       "bentuk_verifikasi",
     ],
+    [
+      { field: "kebutuhan", title: "Kategori" },
+      { field: "lokasi", title: "Lokasi" },
+    ],
+    {
+      penyedia_asc: {
+        field: "penyedia",
+        order: "asc",
+      },
+      verified_desc: {
+        field: ["verifikasi", "penyedia"],
+        order: ["desc", "asc"],
+      },
+    },
+    "penyedia_asc",
   );
 
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-  if (province) {
+  if (provinceName) {
     return (
       <Page>
         <PageHeader
@@ -46,17 +62,22 @@ export default function ProvincePage(props: ProvinceProps) {
               href: "/provinces",
             },
             {
-              name: province.name,
+              name: provinceName,
               href: `/provinces/${router.query.provinceSlug}`,
               current: true,
             },
           ]}
-          title={`Database for ${province.name}`}
+          title={`Database for ${provinceName}`}
         />
         <PageContent>
           <SearchForm
+            filterItems={filterItems}
             itemName="kontak"
             onSubmitKeywords={handleSubmitKeywords}
+            sortSettings={[
+              { value: "penyedia_asc", label: "Nama" },
+              { value: "verified_desc", label: "Terverifikasi" },
+            ]}
           />
           <ContactList data={filteredContacts} provinceSlug={provinceSlug} />
         </PageContent>
@@ -84,11 +105,18 @@ export const getStaticProps: GetStaticProps = ({ params = {} }) => {
   const { provinceSlug } = params;
   const index = getTheLastSegmentFromKebabCase(provinceSlug as string);
   const province = index ? provinces[index as unknown as number] : null;
+  const provinceName = province ? province.name : "";
+  const contactList = province
+    ? [...province.data].sort((a, b) =>
+        (a.penyedia ?? "").localeCompare(b.penyedia ?? ""),
+      )
+    : null;
 
   return {
     props: {
-      province,
+      provinceName,
       provinceSlug,
+      contactList,
     },
   };
 };

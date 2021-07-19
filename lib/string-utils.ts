@@ -8,6 +8,10 @@ export function removeSpaces(str: string): string {
   return str.replace(/\s+/g, "");
 }
 
+export function replaceSpecialCharacterWithSpace(str: string): string {
+  return str.replace(/[^a-zA-Z0-9. ]/g, " ");
+}
+
 export function convertToKebabCase(str: string): string {
   return str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
 }
@@ -27,6 +31,7 @@ export function getTheLastSegmentFromKebabCase(
 export function getSlug(name: string, index: number): string {
   const kebabName = composeFunctions(
     replaceSpacesWithCamelCase,
+    replaceSpecialCharacterWithSpace,
     removeSpaces,
     convertToKebabCase,
   )(name);

@@ -4297,6 +4297,14 @@ fast-xml-parser@^3.16.0, fast-xml-parser@^3.19.0:
   resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-3.19.0.tgz#cb637ec3f3999f51406dd8ff0e6fc4d83e520d01"
   integrity sha512-4pXwmBplsCPv8FOY1WRakF970TjNGnGnfbOnLqjlYvMiF1SR3yOHyxMR/YCXpPTOspNF5gwudqktIP4VsWkvBg==
 
+fastbitset@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/fastbitset/-/fastbitset-0.4.0.tgz#13a4bb93c2ab18f0b5820deebe92cf508dfaaa4b"
+  integrity sha512-dM2fcSsVL7VleMf/rG8R1pq6rdpD2kRYsNO+GcbEJiln/lOMx3uhVcnDgDa3eLQudaNidtYC0lQ99kzPooTstw==
+  dependencies:
+    bl "^4.0.3"
+    minimist "^1.2.5"
+
 fastest-levenshtein@^1.0.12:
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/fastest-levenshtein/-/fastest-levenshtein-1.0.12.tgz#9990f7d3a88cc5a9ffd1f1745745251700d497e2"
@@ -5860,6 +5868,14 @@ isurl@^1.0.0-alpha5:
     has-to-string-tag-x "^1.2.0"
     is-object "^1.0.1"
 
+itemsjs@^2.1.10:
+  version "2.1.10"
+  resolved "https://registry.yarnpkg.com/itemsjs/-/itemsjs-2.1.10.tgz#1b0c4597975ed7b1f650865de641428a2978b196"
+  integrity sha512-slp5dO5+fcgx1sVeBm2KZyZSN0l4Ek/kvSZK+Oc51wQR/j6RhOB8ZdWxRYiLpHTsXJJd/a7KtuZpbK56py2PFg==
+  dependencies:
+    fastbitset "^0.4.0"
+    lunr "^1.0.0"
+
 jest-worker@27.0.0-next.5:
   version "27.0.0-next.5"
   resolved "https://registry.yarnpkg.com/jest-worker/-/jest-worker-27.0.0-next.5.tgz#5985ee29b12a4e191f4aae4bb73b97971d86ec28"
@@ -6433,6 +6449,11 @@ lru-cache@^6.0.0:
   integrity sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==
   dependencies:
     yallist "^4.0.0"
+
+lunr@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/lunr/-/lunr-1.0.0.tgz#5c9276c92c91ac35a9241b5018d46723d92e2f5f"
+  integrity sha1-XJJ2ySyRrDWpJBtQGNRnI9kuL18=
 
 lz-string@^1.4.4:
   version "1.4.4"

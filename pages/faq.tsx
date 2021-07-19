@@ -28,10 +28,11 @@ function groupBy<T, U>(data: T[], key: U) {
 
 export default function Faqs(props: FaqsProps) {
   const { faqSheets: faq } = props;
-  const [filteredQuestions, handleSubmitKeywords] = useSearch(faq, [
-    "pertanyaan",
-    "jawaban",
-  ]);
+  const [filteredQuestions, handleSubmitKeywords, filterItems] = useSearch(
+    faq,
+    ["pertanyaan", "jawaban"],
+    [{ field: "kategori_pertanyaan", title: "Kategori Pertanyaan" }],
+  );
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const listFaqs = useMemo(() => {
@@ -56,6 +57,7 @@ export default function Faqs(props: FaqsProps) {
       />
       <PageContent>
         <SearchForm
+          filterItems={filterItems}
           itemName="pertanyaan"
           onSubmitKeywords={handleSubmitKeywords}
         />
