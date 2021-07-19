@@ -1,4 +1,4 @@
-// import { CopyButton } from "../components/copy-button";
+import { CopyButton } from "../components/copy-button";
 import { anchorTransformer } from "../lib/htmr-transformers";
 import { Contact } from "../lib/provinces";
 import { isNotEmpty } from "../lib/string-utils";
@@ -82,6 +82,9 @@ export function ContactList(props: ContactListProps) {
                     {htmr(contact.kontak as string, {
                       transform: htmrTransform,
                     })}
+                    <CopyButton text={contact.kontak} />
+                    {/* {typeof contact.kontak == "string" && (
+                    )} */}
                   </p>
                 </div>
               )}
