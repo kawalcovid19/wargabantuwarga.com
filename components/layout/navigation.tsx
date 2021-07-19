@@ -44,7 +44,6 @@ export function Navigation() {
               <li key={item.name} className="font-sans">
                 <Link href={item.href}>
                   <a
-                    aria-current={isActive ? "page" : undefined}
                     className={clsx(
                       "inline-flex items-center justify-center",
                       "h-12 w-12",
