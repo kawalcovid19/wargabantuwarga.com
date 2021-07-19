@@ -38,7 +38,7 @@ export function CopyButton({ text }: { text: string }) {
       onClick={handleCopy}
       type="button"
     >
-      {isCopied ? <span>✓</span> : <ClipboardCopyIcon className="h-4 w-4" />}
+      {isCopied ? <span>Tersalin ✓</span> : <span>Salin <ClipboardCopyIcon className="h-4 w-4" /></span>}
     </button>
   );
 }
