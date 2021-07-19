@@ -14,19 +14,19 @@ function toSecond(hrtime) {
   const spinner = ora(`${chalk.yellowBright("Fetching all data...")}`).start();
 
   fetchFaqSheets().then(() => {
-    const end = `${toSecond(process.hrtime(start))} second`;
+    const end = `${toSecond(process.hrtime(start))} seconds`;
     spinner.succeed(`Fetching FAQ done in ${chalk.greenBright(end)}`);
     spinner.start(`${chalk.yellowBright("Fetching next data...")}`);
   });
 
   fetchDocs().then(() => {
-    const end = `${toSecond(process.hrtime(start))} second`;
+    const end = `${toSecond(process.hrtime(start))} seconds`;
     spinner.succeed(`Fetching Docs done in ${chalk.greenBright(end)}`);
     spinner.start(`${chalk.yellowBright("Fetching next data...")}`);
   });
 
   fetchSheets().then(() => {
-    const end = `${toSecond(process.hrtime(start))} second`;
+    const end = `${toSecond(process.hrtime(start))} seconds`;
     spinner.succeed(`Fetching Sheets done in ${chalk.greenBright(end)}`);
   });
 })();
