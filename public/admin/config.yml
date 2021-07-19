@@ -40,5 +40,15 @@ collections:
         label: "Home Page"
         file: "_content/home-page.md"
         fields:
-          - { label: "Title", name: "title", widget: "string", hint: "Page title" }
-          - { label: "Body", name: "body", widget: "markdown", hint: "Page body" }
+          - {
+              label: "Title",
+              name: "title",
+              widget: "string",
+              hint: "Page title",
+            }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              hint: "Page body",
+            }

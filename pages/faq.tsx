@@ -10,6 +10,7 @@ import { useSearch } from "../lib/hooks/use-search";
 
 import htmr from "htmr";
 import { GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 
 type FaqsProps = {
   faqSheets: FaqData[];
@@ -25,6 +26,10 @@ function groupBy<T, U>(data: T[], key: U) {
     return acc;
   }, {});
 }
+
+const meta = {
+  title: "Pertanyaan yang sering ditanyakan",
+};
 
 export default function Faqs(props: FaqsProps) {
   const { faqSheets: faq } = props;
@@ -44,6 +49,7 @@ export default function Faqs(props: FaqsProps) {
 
   return (
     <Page>
+      <NextSeo openGraph={{ title: meta.title }} title={meta.title} />
       <PageHeader
         backButton={<BackButton href="/" />}
         breadcrumbs={[
