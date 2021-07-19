@@ -1,4 +1,9 @@
 import { Contact } from "../lib/provinces";
+import { isNotEmpty } from "../lib/string-utils";
+
+import htmr from "htmr";
+import { HtmrOptions } from "htmr/src/types";
+import Link from "next/link";
 
 type ContactDetailsProps = {
   contact: Contact;
@@ -46,41 +51,55 @@ type DescriptionItemProps = {
   onClick: () => void;
 };
 
-const DescriptionItem = (props: DescriptionItemProps) => (
-  <div className="py-4 px-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-    <dt className="text-sm font-medium text-gray-500">{props.label}</dt>
-    <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-      <span className="flex-grow">{props.value}</span>
-      <ReportButton onClick={props.onClick} />
-    </dd>
-  </div>
-);
+const anchorTransformer = (node: JSX.IntrinsicElements["a"]) => {
+  const { href, children } = node;
 
-type DescriptionLinkProps = {
-  label: string;
-  value?: string;
-  contact: Contact;
-  onClick: () => void;
-};
-
-const DescriptionLink = (props: DescriptionLinkProps) => {
-  console.log(props);
-  return props.value ? (
-    <div className="py-4 px-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-      <dt className="text-sm font-medium text-gray-500">{props.label}</dt>
-      <dd className="mt-1 flex text-sm text-indigo-600 hover:text-indigo:500 sm:mt-0 sm:col-span-2">
+  if (href) {
+    // TODO: Strip Google's URL prefix
+    if (href.substr(0, 4) === "http") {
+      return (
         <a
-          className="flex-grow"
-          href={props.value}
+          className="text-indigo-600 hover:text-indigo-500"
+          href={href}
           rel="noopener noreferrer"
           target="_blank"
         >
-          {props.value}
+          {children}
         </a>
+      );
+    }
+
+    return (
+      <Link href={href}>
+        <a className="text-indigo-600 hover:text-indigo-500">{children}</a>
+      </Link>
+    );
+  }
+
+  return (
+    <a className="text-indigo-600 hover:text-indigo-500" href={href}>
+      {children}
+    </a>
+  );
+};
+
+const DescriptionItem = (props: DescriptionItemProps) => {
+  const value = isNotEmpty(props.value) ? (props.value as string) : "";
+  const htmrTransform: HtmrOptions["transform"] = {
+    a: anchorTransformer,
+  };
+
+  return (
+    <div className="py-4 px-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+      <dt className="text-sm font-medium text-gray-500">{props.label}</dt>
+      <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+        <span className="flex-grow">
+          {htmr(value, { transform: htmrTransform })}
+        </span>
         <ReportButton onClick={props.onClick} />
       </dd>
     </div>
-  ) : null;
+  );
 };
 
 export function ContactDetails({ contact, provinceName }: ContactDetailsProps) {
@@ -116,8 +135,7 @@ export function ContactDetails({ contact, provinceName }: ContactDetailsProps) {
           onClick={_reportButtonHandler}
           value={contact.alamat}
         />
-        <DescriptionLink
-          contact={contact}
+        <DescriptionItem
           label="Tautan"
           onClick={_reportButtonHandler}
           value={contact.link}
