@@ -35,7 +35,7 @@ const ReportButton = (props: ReportButtonProps) => (
       onClick={props.onClick}
       type="button"
     >
-      Laporkan kesalahan
+      Koreksi
     </button>
   </span>
 );
@@ -66,9 +66,9 @@ type DescriptionLinkProps = {
 const DescriptionLink = (props: DescriptionLinkProps) => {
   console.log(props);
   return props.value ? (
-    <div className="py-4 sm:py-5 sm:grid sm:grid-cols-4 sm:gap-4">
+    <div className="py-4 px-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
       <dt className="text-sm font-medium text-gray-500">{props.label}</dt>
-      <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-3">
+      <dd className="mt-1 flex text-sm text-indigo-600 hover:text-indigo:500 sm:mt-0 sm:col-span-2">
         <a
           className="flex-grow"
           href={props.value}
