@@ -1,4 +1,6 @@
-import { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useCallback, useState } from "react";
+
+import { debounce } from "lodash";
 
 interface FormElements extends HTMLFormControlsCollection {
   keywordsInput: HTMLInputElement;
@@ -42,13 +44,23 @@ export function SearchForm({
     onSubmitKeywords("");
   }
 
+  const debouncedSearch = useCallback(
+    debounce(
+      (_keywords: string, _filters?: any, _sort_by?: string) =>
+        onSubmitKeywords(_keywords, _filters, _sort_by),
+      100,
+    ),
+    [],
+  );
+
   function handleKeywordsChange(event: ChangeEvent<HTMLInputElement>) {
     const newKeywords = event.target.value;
     setKeywords(newKeywords);
     if (autoSearch) {
-      onSubmitKeywords(newKeywords, filters, sort_by);
+      debouncedSearch(newKeywords, filters, sort_by);
     }
   }
+
   function handleFilterChange(event: ChangeEvent<HTMLSelectElement>) {
     const newFilters = { ...filters };
     const filterName = event.target.name;
@@ -61,6 +73,7 @@ export function SearchForm({
     setFilters(newFilters);
     onSubmitKeywords(keywords, newFilters, sort_by);
   }
+
   function handleSortChange(event: ChangeEvent<HTMLSelectElement>) {
     const sortValue = event.target.value;
     setSortBy(sortValue);
