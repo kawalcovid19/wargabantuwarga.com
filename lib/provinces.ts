@@ -11,8 +11,8 @@ export type Province = {
 };
 
 export type Contact = {
-  readonly id?: string;
-  readonly slug?: string;
+  readonly id: string;
+  readonly slug: string;
   readonly kebutuhan?: string;
   readonly keterangan?: string;
   readonly lokasi?: string;
@@ -23,7 +23,7 @@ export type Contact = {
   readonly tambahan_informasi?: string;
   readonly terakhir_update?: string;
   readonly bentuk_verifikasi?: string;
-  readonly verifikasi?: number;
+  readonly verifikasi: number;
 };
 
 export type ProvincePath = {
@@ -54,7 +54,7 @@ export const getContactsPaths = (): ContactPath[] => {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       const provinceSlug = getSlug(province.name, provinceIndex);
       contactsPaths.push({
-        params: { provinceSlug, contactSlug: contact.slug ?? "" },
+        params: { provinceSlug, contactSlug: contact.slug },
       });
     });
   });
