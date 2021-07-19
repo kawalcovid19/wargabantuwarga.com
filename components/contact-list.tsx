@@ -1,7 +1,7 @@
 import { CopyButton } from "../components/copy-button";
 import { anchorTransformer } from "../lib/htmr-transformers";
 import { Contact } from "../lib/provinces";
-import { isNotEmpty } from "../lib/string-utils";
+import { isNotEmpty, stripTags } from "../lib/string-utils";
 
 import { BadgeCheckIcon as BadgeCheckIconUnverified } from "@heroicons/react/outline";
 import {
@@ -84,7 +84,7 @@ export function ContactList(props: ContactListProps) {
                     })}
                   </p>
                   {typeof contact.kontak == "string" && (
-                    <CopyButton text={contact.kontak} />
+                    <CopyButton text={stripTags(contact.kontak)} />
                   )}
                 </div>
               )}
@@ -100,7 +100,7 @@ export function ContactList(props: ContactListProps) {
                     })}
                   </p>
                   {typeof contact.alamat == "string" && (
-                    <CopyButton text={contact.alamat} />
+                    <CopyButton text={stripTags(contact.alamat)} />
                   )}
                 </div>
               )}
