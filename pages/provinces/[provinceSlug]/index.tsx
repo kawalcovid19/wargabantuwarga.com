@@ -47,7 +47,7 @@ export default function ProvincePage(props: ProvinceProps) {
         order: ["desc", "asc"],
       },
     },
-    "penyedia_desc",
+    "penyedia_asc",
   );
 
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
@@ -107,7 +107,7 @@ export const getStaticProps: GetStaticProps = ({ params = {} }) => {
   const province = index ? provinces[index as unknown as number] : null;
   const provinceName = province ? province.name : "";
   const contactList = province
-    ? province.data.sort((a, b) =>
+    ? [...province.data].sort((a, b) =>
         (a.penyedia ?? "").localeCompare(b.penyedia ?? ""),
       )
     : null;
