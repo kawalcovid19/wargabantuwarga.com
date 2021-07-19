@@ -6,7 +6,6 @@ public_folder: /images
 publish_mode: editorial_workflow
 site_url: https://www.wargabantuwarga.com
 display_url: https://www.wargabantuwarga.com
-logo_url: https://www.wargabantuwarga.com/wbw.svg
 
 collections:
   - name: "config"
