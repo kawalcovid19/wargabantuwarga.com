@@ -1,6 +1,7 @@
+import { CopyButton } from "../components/copy-button";
 import { anchorTransformer } from "../lib/htmr-transformers";
 import { Contact } from "../lib/provinces";
-import { isNotEmpty } from "../lib/string-utils";
+import { isNotEmpty, stripTags } from "../lib/string-utils";
 
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
 import htmr from "htmr";
@@ -50,6 +51,7 @@ const ReportButton = (props: ReportButtonProps) => (
 type DescriptionItemProps = {
   label: string;
   value?: string;
+  withCopyButton?: boolean;
   onClick: () => void;
 };
 
@@ -66,6 +68,9 @@ const DescriptionItem = (props: DescriptionItemProps) => {
         <span className="flex-grow">
           {htmr(value, { transform: htmrTransform })}
         </span>
+        {typeof value == "string" &&
+          value.length > 0 &&
+          props.withCopyButton && <CopyButton text={stripTags(value)} />}
         <ReportButton onClick={props.onClick} />
       </dd>
     </div>
@@ -99,11 +104,13 @@ export function ContactDetails({ contact, provinceName }: ContactDetailsProps) {
           label="Kontak"
           onClick={_reportButtonHandler}
           value={contact.kontak}
+          withCopyButton
         />
         <DescriptionItem
           label="Alamat"
           onClick={_reportButtonHandler}
           value={contact.alamat}
+          withCopyButton
         />
         <DescriptionItem
           label="Tautan"
