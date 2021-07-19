@@ -74,7 +74,12 @@ module.exports.fetchSheets = async function fetchSheets() {
               .find("td")
               .map((colIndex, td) => {
                 if (colMap[colIndex]) {
-                  return $(td).text().trim();
+                  // Kebutuhan, Keterangan, Lokasi, & Penyedia aren't supposed to be linked
+                  if (colIndex < 5) {
+                    return $(td).text().trim();
+                  } else {
+                    return $(td).html().trim();
+                  }
                 }
                 return "";
               })
