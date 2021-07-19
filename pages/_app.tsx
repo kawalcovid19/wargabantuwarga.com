@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
         openGraph={{
           type: "website",
           locale: "id_ID",
-          title: meta.tagline,
+          title: meta.title,
           description: meta.description,
           site_name: meta.siteName,
           images: [
