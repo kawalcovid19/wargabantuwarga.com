@@ -73,7 +73,7 @@ export function ContactList(props: ContactListProps) {
                 )}
               </div>
               {isNotEmpty(contact.kontak) && (
-                <div className="mt-2 sm:flex sm:justify-between">
+                <div className="mt-2 flex justify-between w-full">
                   <p className="flex items-center text-sm text-gray-500">
                     <PhoneIcon
                       aria-hidden="true"
@@ -89,21 +89,19 @@ export function ContactList(props: ContactListProps) {
                 </div>
               )}
               {isNotEmpty(contact.alamat) && (
-                <div className="mt-2 sm:flex sm:justify-between">
-                  <div className="sm:flex">
-                    <p className="mt-2 flex items-start text-sm text-gray-500 sm:mt-0">
-                      <LocationMarkerIcon
-                        aria-hidden="true"
-                        className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"
-                      />
-                      {htmr(contact.alamat as string, {
-                        transform: htmrTransform,
-                      })}
-                    </p>
-                    {typeof contact.alamat == "string" && (
-                      <CopyButton text={contact.alamat} />
-                    )}
-                  </div>
+                <div className="mt-2 flex justify-between w-full">
+                  <p className="mt-2 flex items-start text-sm text-gray-500 sm:mt-0">
+                    <LocationMarkerIcon
+                      aria-hidden="true"
+                      className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"
+                    />
+                    {htmr(contact.alamat as string, {
+                      transform: htmrTransform,
+                    })}
+                  </p>
+                  {typeof contact.alamat == "string" && (
+                    <CopyButton text={contact.alamat} />
+                  )}
                 </div>
               )}
             </div>
