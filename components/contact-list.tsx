@@ -1,3 +1,4 @@
+import { CopyButton } from "../components/copy-button";
 import { Contact } from "../lib/provinces";
 import { isNotEmpty } from "../lib/string-utils";
 
@@ -70,6 +71,9 @@ export function ContactList(props: ContactListProps) {
                           className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"
                         />
                         {contact.kontak}
+                        {typeof contact.kontak == "string" && (
+                          <CopyButton text={contact.kontak} />
+                        )}
                       </p>
                     </div>
                   )}
