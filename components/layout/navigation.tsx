@@ -45,9 +45,7 @@ export function Navigation() {
                 <Link href={item.href}>
                   <a
                     className={clsx(
-                      "inline-flex items-center justify-center",
-                      "h-12 w-12",
-                      "rounded-md",
+                      "inline-flex items-center justify-center h-12 w-12 rounded-md",
                       isActive
                         ? "bg-blue-100 text-blue-600 hover:text-blue-700"
                         : "text-gray-600 hover:text-gray-700",
