@@ -82,10 +82,10 @@ export function ContactList(props: ContactListProps) {
                     {htmr(contact.kontak as string, {
                       transform: htmrTransform,
                     })}
-                    <CopyButton text={contact.kontak} />
-                    {/* {typeof contact.kontak == "string" && (
-                    )} */}
                   </p>
+                  {typeof contact.kontak == "string" && (
+                    <CopyButton text={contact.kontak} />
+                  )}
                 </div>
               )}
               {isNotEmpty(contact.alamat) && (
@@ -100,6 +100,9 @@ export function ContactList(props: ContactListProps) {
                         transform: htmrTransform,
                       })}
                     </p>
+                    {typeof contact.alamat == "string" && (
+                      <CopyButton text={contact.alamat} />
+                    )}
                   </div>
                 </div>
               )}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-// import { ClipboardCopyIcon } from "@heroicons/react/outline";
+import { ClipboardCopyIcon } from "@heroicons/react/outline";
 
 export function CopyButton({ text }: { text: string }) {
   const [isCopied, setCopied] = useState<boolean>(false);
@@ -18,7 +18,8 @@ export function CopyButton({ text }: { text: string }) {
 
   if (!canCopy) return null;
 
-  function handleCopy() {
+  function handleCopy(e: React.FormEvent<HTMLButtonElement>) {
+    e.currentTarget.blur();
     return navigator.clipboard
       .writeText(text)
       .then(() => {
@@ -33,12 +34,11 @@ export function CopyButton({ text }: { text: string }) {
   return (
     <button
       aria-label="salin"
-      className="relative z-10 py-1 px-2 ml-2 bg-gray-100"
+      className="relative z-10 w-8 h-6 ml-2 bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white flex-none flex items-center justify-center rounded"
       onClick={handleCopy}
       type="button"
     >
-      {isCopied ? "✓ copy" : "copy"}
-      {/* <ClipboardCopyIcon /> */}
+      {isCopied ? <span>✓</span> : <ClipboardCopyIcon className="h-4 w-4" />}
     </button>
   );
 }
