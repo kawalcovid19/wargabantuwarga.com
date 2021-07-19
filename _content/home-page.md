@@ -5,9 +5,14 @@ title: Warga Bantu Warga
 
 ### Hubungi Hotline #WargaBantuWarga
 
-**Chat ke nomor WhatsApp (hanya bisa chat tidak bisa ditelepon): 081257579812 atau klik: [bit.ly/halowarga](https://bit.ly/halowarga&sa=D&source=editors&ust=1625942917016000&usg=AOvVaw2CKnVnNCGGHjGSB-NsS5Aj)**
+**Chat ke nomor WhatsApp (hanya bisa chat tidak bisa ditelepon):**\
+**081257579812 atau klik: [bit.ly/halowarga](https://bit.ly/halowarga)**
+
+Catatan: Jam operasional hotline pukul 07.30-22.30 WIB. Di luar jam operasional, Anda masih bisa melihat [database fasilitas/alat kesehatan per provinsi dengan klik link ini](https://www.wargabantuwarga.com/provinces).
 
 Hotline #WargaBantuWarga dijalankan sepenuhnya oleh Relawan, untuk saat ini kami hanya bisa memberikan informasi yang relevan, belum bisa memberikan bantuan langsung/darurat.
+
+---
 
 ### Informasi Terbaru
 
