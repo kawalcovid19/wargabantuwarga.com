@@ -2,6 +2,7 @@ import { anchorTransformer } from "../lib/htmr-transformers";
 import { Contact } from "../lib/provinces";
 import { isNotEmpty } from "../lib/string-utils";
 
+import { ExclamationCircleIcon } from "@heroicons/react/outline";
 import htmr from "htmr";
 import { HtmrOptions } from "htmr/src/types";
 
@@ -38,9 +39,10 @@ const ReportButton = (props: ReportButtonProps) => (
     <button
       className="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
       onClick={props.onClick}
+      title="Laporkan kesalahan"
       type="button"
     >
-      Koreksi
+      <ExclamationCircleIcon aria-hidden="true" className="w-5 h-5" />
     </button>
   </span>
 );
