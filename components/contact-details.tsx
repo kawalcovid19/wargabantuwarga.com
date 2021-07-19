@@ -64,6 +64,7 @@ type DescriptionLinkProps = {
 };
 
 const DescriptionLink = (props: DescriptionLinkProps) => {
+  console.log(props);
   return props.value ? (
     <div className="py-4 sm:py-5 sm:grid sm:grid-cols-4 sm:gap-4">
       <dt className="text-sm font-medium text-gray-500">{props.label}</dt>
@@ -119,7 +120,7 @@ export function ContactDetails({ contact, provinceName }: ContactDetailsProps) {
           contact={contact}
           label="Tautan"
           onClick={_reportButtonHandler}
-          value={contact.tautan}
+          value={contact.link}
         />
         <DescriptionItem
           label="Terakhir Update"
