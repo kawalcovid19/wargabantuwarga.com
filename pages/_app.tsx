@@ -31,6 +31,10 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta content={meta.title} name="twitter:title" />
         <meta content={meta.description} name="twitter:description" />
         <meta content="Warga" name="twitter:creator" />
+        <meta
+          content="0Ierdm0GW-vFOuFxO5TbsI-wCMFVL5FLRQmDtn4XjjA"
+          name="google-site-verification"
+        />
         <link href="/favicon.ico" rel="icon" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
       </Head>
