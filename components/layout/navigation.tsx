@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import WhatsAppLogo from "../ui/whatsapp-logo";
+
 import {
   HomeIcon,
   QuestionMarkCircleIcon,
@@ -26,6 +28,12 @@ const navigation = [
     icon: QuestionMarkCircleIcon,
     href: "/faq",
   },
+  {
+    name: "WhatsApp",
+    icon: WhatsAppLogo,
+    href: "https://wa.me/6281257579812",
+    external: true,
+  },
 ];
 
 export function Navigation() {
@@ -42,7 +50,7 @@ export function Navigation() {
 
             return (
               <li key={item.name} className="font-sans">
-                <Link href={item.href}>
+                {item.external ? (
                   <a
                     className={clsx(
                       "inline-flex items-center justify-center h-12 w-12 rounded-md",
@@ -51,6 +59,9 @@ export function Navigation() {
                         : "text-gray-600 hover:text-gray-700",
                       "hover:bg-blue-100",
                     )}
+                    href={item.href}
+                    rel="noreferrer"
+                    target="_blank"
                   >
                     {React.createElement(item.icon, {
                       className: "w-8 h-8",
@@ -58,7 +69,25 @@ export function Navigation() {
                     })}
                     <span className="sr-only">{item.name}</span>
                   </a>
-                </Link>
+                ) : (
+                  <Link href={item.href}>
+                    <a
+                      className={clsx(
+                        "inline-flex items-center justify-center h-12 w-12 rounded-md",
+                        isActive
+                          ? "bg-blue-100 text-blue-600 hover:text-blue-700"
+                          : "text-gray-600 hover:text-gray-700",
+                        "hover:bg-blue-100",
+                      )}
+                    >
+                      {React.createElement(item.icon, {
+                        className: "w-8 h-8",
+                        "aria-hidden": true,
+                      })}
+                      <span className="sr-only">{item.name}</span>
+                    </a>
+                  </Link>
+                )}
               </li>
             );
           })}

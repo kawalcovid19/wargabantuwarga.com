@@ -4,7 +4,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next",
-    "fetch-wbw": "node etc/fetchers/fetch-wbw.js",
+    "fetch-wbw": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' ts-node etc/fetchers/fetch-wbw.ts",
     "format": "prettier --write \"./**/*.{ts,tsx}\"",
     "lint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx}\"",
@@ -54,6 +54,7 @@
     "stylelint": "13.13.1",
     "stylelint-config-recommended": "5.0.0",
     "tailwindcss": "2.2.4",
+    "ts-node": "^10.1.0",
     "typescript": "4.3.5"
   },
   "lint-staged": {
