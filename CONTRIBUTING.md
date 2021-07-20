@@ -28,7 +28,7 @@ Before working on an issue, there are a few things that you need to pay attentio
 
 ### Utilising Draft Pull Requests for Communication
 
-Draft Pull Requests is a feature provided by GitHub as a mean to communicate with contributors. When we create a Draft Pull Request, we can't merge it until it's marked as Ready for review. This is a better approach to use it as a communication tool between contributors, and we can provide information that we are currently working on an issue.
+Draft Pull Requests is a feature provided by GitHub as a means to communicate with contributors. When we create a Draft Pull Request, we can't merge it until it's marked as Ready for review. This is a better approach to use as a communication tool between contributors, and we can provide information that we are currently working on an issue.
 
 Steps to creating a Draft Pull Request:
 
