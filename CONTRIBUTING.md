@@ -26,6 +26,10 @@ Before working on an issue, there are a few things that you need to pay attentio
 2. To start working on it, ensure that you create a new branch from the `main` branch, then commit and push your changes **as soon as possible** no matter how small they are.
 3. Then **create a new pull request** while [marking it as a **draft pull request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/) to signal the other contributors that [it's a work in progress](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request). This is necessary to signal the other contributors that there are work in progress for that particular issue.
 
+### Utilising Draft Pull Requests for Communication
+
+Draft Pull Requests is a feature provided by GitHub as a mean to communicate with another developer. When you create a Draft Pull Request, it can't be merged until it's marked for review. This is a better approach to use pull request as a communication tool between developers, and we can provide an information that we are currently are working on an issue.
+
 ---
 
 ## Cara berkontribusi
