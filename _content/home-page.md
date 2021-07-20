@@ -1,5 +1,4 @@
 ---
-title: Warga Bantu Warga
 last_updated_time: 2021-07-20T02:05:44.943Z
 ---
 

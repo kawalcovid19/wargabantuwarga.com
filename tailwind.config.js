@@ -25,6 +25,17 @@ module.exports = {
       fontFamily: {
         sans: ["Nunito", ...defaultTheme.fontFamily.sans],
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            hr: {
+              borderColor: "#9ca3af",
+              marginTop: "1.5rem",
+              marginBottom: "1.5rem",
+            },
+          },
+        },
+      },
     },
   },
   variants: {
