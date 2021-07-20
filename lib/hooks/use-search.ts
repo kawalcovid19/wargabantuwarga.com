@@ -96,6 +96,8 @@ export function useSearch<T = unknown[]>(
       let keywordsParam: string = "";
       const filtersParam: any = {};
       const searchParams: any = {};
+      const aggregationFields =
+        aggregationSettings?.map((cur) => cur.field) ?? [];
       Object.entries(queryParams).forEach(([key, value]) => {
         if (key == "q") {
           keywordsParam = value as string;
@@ -108,8 +110,8 @@ export function useSearch<T = unknown[]>(
           if (sortParam) {
             searchParams.sort = sortParam;
           }
-        } else {
-          filtersParam[key] = [value as string];
+        } else if (aggregationFields.includes(key)) {
+          filtersParam[key] = value ? [value] : [];
         }
       });
       if (Object.keys(filtersParam as {}).length) {

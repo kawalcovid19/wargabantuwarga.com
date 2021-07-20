@@ -43,7 +43,9 @@ export function SearchForm({
 }) {
   const [keywords, setKeywords] = useState<string>("");
   const [filters, setFilters] = useState<any>({});
-  const [sort_by, setSortBy] = useState<string>("");
+  const [sort_by, setSortBy] = useState<string>(
+    sortSettings?.length ? sortSettings[0].value : "",
+  );
 
   function handleSubmit(event: React.FormEvent<UsernameFormElement>) {
     event.preventDefault();
