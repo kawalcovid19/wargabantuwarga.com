@@ -1,4 +1,5 @@
 import { Contact } from "../lib/provinces";
+import { stripTags } from "../lib/string-utils";
 
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
 
@@ -17,7 +18,9 @@ export const ReportButton = (props: ReportButtonProps) => {
     const formBaseUrl =
       "https://docs.google.com/forms/d/e/1FAIpQLSeDdZLMD9RTfOiKMItNb8542KAO5w3x9O2ZFQmNyff1rYRZvQ/viewform?usp=pp_url";
 
-    const formQuery = `&entry.346789668=${kebutuhan}&entry.323081545=${provinceName}&entry.68818336=${penyedia}&entry.217416134=${kontak}`;
+    const formQuery = `&entry.346789668=${kebutuhan}&entry.323081545=${provinceName}&entry.68818336=${penyedia}&entry.217416134=${stripTags(
+      kontak ?? "",
+    )}`;
 
     return window.open(formBaseUrl.concat(encodeURI(formQuery)), "_blank");
   };
