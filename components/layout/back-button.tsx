@@ -5,7 +5,6 @@ import Link, { LinkProps } from "next/link";
 
 type BackButtonProps = LinkProps;
 
-// TODO: Need to replace this with navbar-wide back button.
 export function BackButton(props: BackButtonProps) {
   return (
     <nav aria-label="Back" className="sm:hidden">
@@ -15,7 +14,7 @@ export function BackButton(props: BackButtonProps) {
             aria-hidden="true"
             className="flex-shrink-0 -ml-1 mr-1 h-5 w-5 text-gray-400"
           />
-          Back
+          Kembali
         </a>
       </Link>
     </nav>
