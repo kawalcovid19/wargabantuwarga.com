@@ -165,7 +165,22 @@ export function SearchForm({
                     <option value="">Semua</option>
                     {buckets.map((bucket: any, bIdx: number) => {
                       if (bucket.key) {
-                        if (checkDocSize && bucket.doc_count > 0) {
+                        if (checkDocSize) {
+                          if (bucket.doc_count > 0) {
+                            return (
+                              <option
+                                key={`option-${key}-${bIdx + 1}`}
+                                value={bucket.key}
+                              >
+                                {bucket.key}
+                              </option>
+                            );
+                          }
+                          // Do not print, when doc_count = 0 and checkDocSize set to true
+                          return null;
+                        } else {
+                          // FAQ page doesn't check the doc_count
+                          // just pass checkDocSize props to false
                           return (
                             <option
                               key={`option-${key}-${bIdx + 1}`}
@@ -175,16 +190,6 @@ export function SearchForm({
                             </option>
                           );
                         }
-
-                        // FAQ page doesn't check the doc_count
-                        return (
-                          <option
-                            key={`option-${key}-${bIdx + 1}`}
-                            value={bucket.key}
-                          >
-                            {bucket.key}
-                          </option>
-                        );
                       }
                       return null;
                     })}
