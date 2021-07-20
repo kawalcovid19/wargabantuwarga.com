@@ -99,7 +99,11 @@ export function SearchForm({
   useEffect(() => {
     setKeywords(initialValue?.query ?? "");
     setFilters(initialValue?.filters ?? {});
-    setSortBy(initialValue?.sort ?? "");
+    setSortBy(
+      initialValue?.sort ||
+        (sortSettings?.length && sortSettings[0].value) ||
+        "",
+    );
   }, [initialValue]);
 
   return (
