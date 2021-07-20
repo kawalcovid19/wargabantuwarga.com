@@ -18,7 +18,7 @@ import ora from "ora";
       spinner.start(`${chalk.yellowBright("Fetching next data...")}`);
     })
     .catch((err) => {
-      console.error(err);
+      chalk.red(err);
     });
 
   fetchDocs()
@@ -28,7 +28,7 @@ import ora from "ora";
       spinner.start(`${chalk.yellowBright("Fetching next data...")}`);
     })
     .catch((err) => {
-      console.error(err);
+      chalk.red(err);
     });
 
   fetchSheets()
@@ -37,6 +37,6 @@ import ora from "ora";
       spinner.succeed(`Fetching Sheets done in ${chalk.greenBright(end)}`);
     })
     .catch((err) => {
-      console.error(err);
+      chalk.red(err);
     });
 })();
