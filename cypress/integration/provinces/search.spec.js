@@ -26,7 +26,7 @@ describe("provinces page typed search", () => {
 
   it("gives no result when search keyword does not correspond to any provinces in Indonesia", () => {
     cy.get("input#keywordsInput").type("asdf");
-    cy.get("ul").first().children().should("have.length", 0);
+    cy.contains("Provinsi tidak ditemukan").should("exist");
   });
 });
 
@@ -57,6 +57,6 @@ describe("provinces page query param search", () => {
   it("gives no result when search keyword does not correspond to any provinces in Indonesia", () => {
     cy.visit("http://localhost:3000/provinces?q=asdf");
 
-    cy.get("ul").first().children().should("have.length", 0);
+    cy.contains("Provinsi tidak ditemukan").should("exist");
   });
 });
