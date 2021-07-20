@@ -1,0 +1,5 @@
+# Allow all user-agent
+User-agent: *
+Allow: /
+
+Sitemap: https://www.wargabantuwarga.com/sitemap.xml
