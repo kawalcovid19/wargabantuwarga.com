@@ -145,3 +145,7 @@ export function getInitial(name: string) {
 export function isNotEmpty(value?: string): boolean {
   return !!value;
 }
+
+export function stripTags(str: string): string {
+  return str.replace(/(<([^>]+)>)/gi, "");
+}

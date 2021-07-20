@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { ContactList } from "../../../components/contact-list";
 import { BackButton } from "../../../components/layout/back-button";
 import { Page } from "../../../components/layout/page";
@@ -47,7 +48,7 @@ export default function ProvincePage(props: ProvinceProps) {
         order: ["desc", "asc"],
       },
     },
-    "penyedia_asc",
+    "verified_desc",
   );
 
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
@@ -67,7 +68,7 @@ export default function ProvincePage(props: ProvinceProps) {
               current: true,
             },
           ]}
-          title={`Database for ${provinceName}`}
+          title={provinceName}
         />
         <PageContent>
           <SearchForm
@@ -75,8 +76,8 @@ export default function ProvincePage(props: ProvinceProps) {
             itemName="kontak"
             onSubmitKeywords={handleSubmitKeywords}
             sortSettings={[
-              { value: "penyedia_asc", label: "Nama" },
               { value: "verified_desc", label: "Terverifikasi" },
+              { value: "penyedia_asc", label: "Nama" },
             ]}
           />
           <ContactList data={filteredContacts} provinceSlug={provinceSlug} />
@@ -107,8 +108,10 @@ export const getStaticProps: GetStaticProps = ({ params = {} }) => {
   const province = index ? provinces[index as unknown as number] : null;
   const provinceName = province ? province.name : "";
   const contactList = province
-    ? [...province.data].sort((a, b) =>
-        (a.penyedia ?? "").localeCompare(b.penyedia ?? ""),
+    ? [...province.data].sort(
+        (a, b) =>
+          b.verifikasi - a.verifikasi ||
+          (a.penyedia ?? "").localeCompare(b.penyedia ?? ""),
       )
     : null;
 
