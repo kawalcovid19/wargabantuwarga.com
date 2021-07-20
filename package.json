@@ -4,7 +4,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next",
-    "fetch-wbw": "ts-node etc/fetchers/fetch-wbw.js",
+    "fetch-wbw": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' ts-node etc/fetchers/fetch-wbw.ts",
     "format": "prettier --write \"./**/*.{ts,tsx}\"",
     "lint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx}\"",
