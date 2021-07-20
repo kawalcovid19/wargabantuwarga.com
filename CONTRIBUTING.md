@@ -28,18 +28,18 @@ Before working on an issue, there are a few things that you need to pay attentio
 
 ### Utilising Draft Pull Requests for Communication
 
-Draft Pull Requests is a feature provided by GitHub as a mean to communicate with another developer. When you create a Draft Pull Request, it can't be merged until it's marked for review. This is a better approach to use pull request as a communication tool between developers, and we can provide an information that we are currently are working on an issue.
+Draft Pull Requests is a feature provided by GitHub as a mean to communicate with another developer. When we create a Draft Pull Request, we can't merge it until it's marked Ready for review. This is a better approach to use it as a communication tool between developers, and we can provide an information that we are currently are working on an issue.
 
 Steps to creating a Draft Pull Request:
 
-1. Commit and push your new changes into the remote repository
-2. Head over to the Pull requests section on your forked repository, hit New pull request
+1. Commit and push your new changes into the remote repository.
+2. Head over to the Pull requests section on your forked repository, hit New pull request.
 ![Hint-1](https://user-images.githubusercontent.com/46013258/126284390-c2bd1aa6-fdc2-4aa6-a945-031f02db038e.png)
-3. Pick your forked repository for the head repository, and compare with the branch that you are having changes in
+3. Pick your forked repository for the head repository, and compare with the branch that you are having changes in.
 ![Hint-2](https://user-images.githubusercontent.com/46013258/126285036-27b49325-62a2-4a6c-b216-5bae261788da.png)
-4. Put a title and some description in your pull request, then pick Create draft pull request (like in the image below) and hit the green button
+4. Put a title and some description in your pull request, then pick Create draft pull request (like in the image below) and hit the green button.
 ![Hint-3](https://user-images.githubusercontent.com/46013258/126286179-04341e30-1224-49cb-9b9a-3c3aee99c308.png)
-5. Don't forget to mark your Draft Pull Request as ready for review after you commit all of the changes
+5. Don't forget to mark your Draft Pull Request as Ready for review after you commit all of the changes.
 
 ---
 
@@ -68,3 +68,18 @@ Sebelum mengerjakan sebuah _issue_, ada hal yang harus diperhatikan:
 1. Apakah ada kontributor lain yang sedang mengerjakannya? Anda dapat mencari apakah ada _pull request_ terkait sebelum memutuskan untuk mulai mengerjakan _issue_ tersebut.
 2. Untuk mulai mengerjakannya, pastikan **_create branch_** dari `main`, lalu segera _commit_ dan _push_ perubahannya **sesegera mungkin** sekecil apapun itu.
 3. Kemudian **buat _pull request_** baru dengan [menjadikannya sebagai **_draft pull request_**](https://github.blog/2019-02-14-introducing-draft-pull-requests/) untuk memberikan sinyal kepada kontributor lainnya bahwa [_pull request_ ini masih sedang dalam pengerjaan](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request). Dengan demikian, orang lain yang ingin mengerjakan _issue_ yang sama akan berpikir dua kali sebelum ikut mengerjakannya.
+
+### Memanfaatkan _Draft Pull Requests_ untuk Berkomunikasi
+
+_Draft Pull Requests_ merupakan sebuah fitur yang disediakan oleh GitHub, yang bertujuan sebagai alat berkomunikasi bagi para pengembang aplikasi. Ketika kita membuat sebuah Draft Pull Request, kita tidak bisa menggabungkannya kecuali itu sudah ditandai sebagai _Ready for review_. Ini merupakan pendekatan yang lebih baik untuk menggunakannya sebagai alat berkomunikasi antar pengembang, dan kita juga bisa memberikan informasi bahwa kita sedang mengatasi sebuah isu.
+
+Langkah-langkah untuk membuat _Draft Pull Request_:
+
+1. _Commit_ dan _push_ perubahan terbaru ke _forked repository_ Anda.
+2. Pergi ke bagian _Pull requests_ pada _forked repository_ Anda, dan klik _New pull request_.
+![Petunjuk-1](https://user-images.githubusercontent.com/46013258/126284390-c2bd1aa6-fdc2-4aa6-a945-031f02db038e.png)
+3. Pilih _forked repository_ Anda sebagai _head repository_, dan pilih _branch_ tempat Anda membuat perubahan untuk bagian _compare_.
+![Petunjuk-2](https://user-images.githubusercontent.com/46013258/126285036-27b49325-62a2-4a6c-b216-5bae261788da.png)
+4. Berikan sebuah judul dan beberapa deskripsi mengenai _pull request_ Anda, lalu pilih _Create draft pull request_ (seperti pada gambar di bawah) dan klik tombol berwarna hijau.
+![Petunjuk-3](https://user-images.githubusercontent.com/46013258/126286179-04341e30-1224-49cb-9b9a-3c3aee99c308.png)
+5. Jangan lupa untuk menandai _Draft Pull Request_ Anda sebagai _ready for _review ketika Anda sudah melakukan semua perubahan yang diinginkan.
