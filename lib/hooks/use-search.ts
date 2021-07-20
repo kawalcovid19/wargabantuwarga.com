@@ -55,14 +55,7 @@ export function useSearch<T = unknown[]>(
         per_page: 0, // only return aggregation data
         query: keywords,
       });
-      const _aggregationData: { [key: string]: any } =
-        aggregateResult.data.aggregations;
-      Object.keys(_aggregationData).forEach((key) => {
-        _aggregationData[key].buckets = _aggregationData[key].buckets.filter(
-          (cur: { doc_count: number }) => cur.doc_count > 0,
-        );
-      });
-      setAggregationData(_aggregationData);
+      setAggregationData(aggregateResult.data.aggregations);
     }
   };
 

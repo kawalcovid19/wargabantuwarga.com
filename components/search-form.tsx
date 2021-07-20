@@ -155,12 +155,15 @@ export function SearchForm({
                     <option value="">Semua</option>
                     {buckets.map((bucket: any, bIdx: number) => {
                       return (
-                        <option
-                          key={`option-${key}-${bIdx + 1}`}
-                          value={bucket.key}
-                        >
-                          {bucket.key}
-                        </option>
+                        bucket.doc_count > 0 &&
+                        bucket.key && (
+                          <option
+                            key={`option-${key}-${bIdx + 1}`}
+                            value={bucket.key}
+                          >
+                            {bucket.key}
+                          </option>
+                        )
                       );
                     })}
                   </Select>
