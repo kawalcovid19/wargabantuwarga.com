@@ -69,7 +69,7 @@ export default function ProvincePage(props: ProvinceProps) {
               current: true,
             },
           ]}
-          title={`Database for ${provinceName}`}
+          title={provinceName}
         />
         <PageContent>
           <SearchForm
