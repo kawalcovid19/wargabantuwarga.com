@@ -4,7 +4,7 @@ import { BackButton } from "../../../components/layout/back-button";
 import { Page } from "../../../components/layout/page";
 import { PageContent } from "../../../components/layout/page-content";
 import { PageHeader } from "../../../components/layout/page-header";
-import ReportButton from "../../../components/ReportButton";
+import { ReportButton } from "../../../components/report-button";
 import provinces, { Contact, getContactsPaths } from "../../../lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
 

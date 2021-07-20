@@ -7,7 +7,7 @@ type ReportButtonProps = {
   provinceName: string;
 };
 
-const ReportButton = (props: ReportButtonProps) => {
+export const ReportButton = (props: ReportButtonProps) => {
   const {
     provinceName,
     contact: { penyedia, kontak, kebutuhan },
@@ -31,10 +31,8 @@ const ReportButton = (props: ReportButtonProps) => {
         type="button"
       >
         <ExclamationCircleIcon aria-hidden="true" className="w-5 h-5" />{" "}
-        <span>Laportkan kesalahan</span>
+        <span>Laporkan kesalahan</span>
       </button>
     </div>
   );
 };
-
-export default ReportButton;

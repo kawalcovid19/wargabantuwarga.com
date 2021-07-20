@@ -45,8 +45,8 @@ export function ContactDetails({ contact }: ContactDetailsProps) {
         <DescriptionItem label="Penyedia" value={contact.penyedia} />
         <DescriptionItem label="Keterangan" value={contact.keterangan} />
         <DescriptionItem label="Lokasi" value={contact.lokasi} />
-        <DescriptionItem label="Kontak" value={contact.kontak} />
-        <DescriptionItem label="Alamat" value={contact.alamat} />
+        <DescriptionItem label="Kontak" value={contact.kontak} withCopyButton />
+        <DescriptionItem label="Alamat" value={contact.alamat} withCopyButton />
         <DescriptionItem label="Tautan" value={contact.link} />
         <DescriptionItem
           label="Terakhir Update"
