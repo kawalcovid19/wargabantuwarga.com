@@ -28,7 +28,7 @@ Before working on an issue, there are a few things that you need to pay attentio
 
 ## FAQ
 
-### Why are you using English in your issues & PRs?
+### Why are we using English in our issues & PRs?
 
 There are several reasons we're using English while communicating in GitHub Issues & PRs:
 
@@ -66,10 +66,10 @@ Sebelum mengerjakan sebuah _issue_, ada hal yang harus diperhatikan:
 
 ## Pertanyaan yang sering ditanyakan
 
-### Mengapa kalian menggunakan bahasa Inggris dalam menulis _issue_ dan _pull request_?
+### Mengapa kita menggunakan bahasa Inggris dalam menulis _issue_ dan _pull request_?
 
 Ada beberapa alasan mengapa kita menggunakan bahasa Inggris ketika berkomunikasi di dalam _issue_ dan _pull request_:
 
-1. Secara alamiah, lebih mudah untuk _software engineer_ berkomunikasi dalam bahasa Inggris, karena terminologi-terminologi teknis yang digunakan dalam pemrograman pun berbahasa Inggris. Menterjemahkan ke Bahasa memunculkan resiko miskomunikasi, sementara menggunakan Bahasa Inggris membutuhkan banyak penyesuaian penulisan dalam bentuk_italic_ mengacu pada [PUEBI](https://puebi.js.org/huruf/miring).
-2. Membiasakan para kontributor, yang mayoritas berasal dari Indonesia, untuk berkomunikasi dengan bahasa Inggris. Sangat penting untuk mengasah kemampuan menulis dan membaca bahasa Inggris kita karena sebagian besar dari komunitas _open-source_ di seluruh dunia menggunakan bahasa Inggris sebagai bahasa utama mereka.
-3. Menggunakan bahasa Inggris membuat proyek ini lebih mudah diakui secara global. Apabila kita ingin mendapatkan dukungan dari komunitas global, mereka lebih mudah memahami tujuan kita, sehingga mereka lebih mudah untuk meluangkan waktu dan keahlian mereka untuk membantu membuat proyek ini lebih baik. Contohnya, menyediakan _free credits_ untuk layanan mereka, mengadvokasikan proyek ini kepada pemimpin dunia, atau berkontribusi langsung ke proyek kita.
+1. Secara alamiah, lebih mudah untuk _software engineer_ berkomunikasi dalam bahasa Inggris, karena terminologi-terminologi teknis yang digunakan dalam pemrograman pun berbahasa Inggris. Menterjemahkan ke Bahasa memunculkan resiko miskomunikasi, sementara menggunakan Bahasa Inggris membutuhkan banyak penyesuaian penulisan dalam bentuk*italic* mengacu pada [PUEBI](https://puebi.js.org/huruf/miring).
+2. Membiasakan para kontributor yang mayoritas berasal dari Indonesia untuk berkomunikasi dengan bahasa Inggris. Sangat penting untuk mengasah kemampuan menulis dan membaca bahasa Inggris kita karena sebagian besar dari komunitas _open-source_ di seluruh dunia menggunakan bahasa Inggris sebagai bahasa utama mereka.
+3. Menggunakan bahasa Inggris membuat proyek ini lebih mudah diakui secara global. Apabila kita ingin mendapatkan dukungan dari komunitas global, mereka lebih mudah memahami tujuan kita, sehingga mereka lebih mudah untuk meluangkan waktu dan keahlian mereka untuk membantu membuat proyek ini lebih baik. Contohnya menyediakan _free credits_ untuk layanan mereka, mengadvokasikan proyek ini kepada pemimpin dunia, atau berkontribusi langsung ke proyek kita.
