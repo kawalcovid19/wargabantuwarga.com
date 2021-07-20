@@ -26,30 +26,32 @@ export function ContactList(props: ContactListProps) {
     a: anchorTransformer,
   };
 
-  const parentRef = useRef<HTMLUListElement>(null);
+  const virtualListContainerRef = useRef<HTMLDivElement>(null);
 
-  const rowVirtualizer = useVirtual({
+  const virtualizer = useVirtual({
     size: props.data.length,
-    parentRef,
+    parentRef: virtualListContainerRef,
   });
 
   return (
-    <div className="bg-white shadow sm:rounded-md overflow-hidden">
+    <div
+      className="bg-white shadow sm:rounded-md max-h-screen relative overflow-y-auto overflow-x-hidden"
+      ref={virtualListContainerRef}
+    >
       <ul
-        className="divide-y divide-gray-200 h-screen relative overflow-y-auto overflow-x-hidden"
-        ref={parentRef}
+        className="divide-y divide-gray-200"
+        style={{
+          height: `${virtualizer.totalSize}px`,
+        }}
       >
-        {rowVirtualizer.virtualItems.map((virtualRow) => {
+        {virtualizer.virtualItems.map((virtualRow) => {
           const contact: Contact = props.data[virtualRow.index];
           return (
             <li
               key={virtualRow.index}
+              className="absolute top-0 left-0 w-full"
               ref={virtualRow.measureRef}
               style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
                 transform: `translateY(${virtualRow.start}px)`,
               }}
             >
