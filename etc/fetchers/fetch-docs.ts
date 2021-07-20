@@ -1,9 +1,9 @@
-const cheerio = require("cheerio");
-const fs = require("fs");
-const path = require("path");
-const fetch = require("cross-fetch");
+import cheerio from "cheerio";
+import fetch from "cross-fetch";
+import fs from "fs";
+import path from "path";
 
-module.exports.fetchDocs = async function fetchDocs() {
+export async function fetchDocs() {
   const source = await fetch("https://kcov.id/wbw-docs");
   const $ = cheerio.load(await source.text());
   fs.writeFileSync(
@@ -13,4 +13,4 @@ module.exports.fetchDocs = async function fetchDocs() {
       css: $("body > #contents style").html(),
     }),
   );
-};
+}
