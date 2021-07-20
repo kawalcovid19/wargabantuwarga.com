@@ -1,10 +1,10 @@
 import { attributes, html } from "../_content/home-page.md";
-import { Page } from "../components/layout/page";
-import { PageContent } from "../components/layout/page-content";
-import config from "../lib/config";
-import { bannerBlurData, imgixLoader } from "../lib/imgix-loader";
 
+import { Page } from "@components/layout/page";
+import { PageContent } from "@components/layout/page-content";
 import { ClockIcon } from "@heroicons/react/outline";
+import config from "@lib/config";
+import { bannerBlurData, imgixLoader } from "@lib/imgix-loader";
 import Image from "next/image";
 import Link from "next/link";
 import { NextSeo } from "next-seo";

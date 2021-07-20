@@ -1,6 +1,5 @@
-import { Page } from "../components/layout/page";
-import { PageContent } from "../components/layout/page-content";
-
+import { Page } from "@components/layout/page";
+import { PageContent } from "@components/layout/page-content";
 import Link from "next/link";
 
 export default function FourOhFour() {

@@ -1,5 +1,5 @@
-import { Page } from "../components/layout/page";
-import { PageContent } from "../components/layout/page-content";
+import { Page } from "@components/layout/page";
+import { PageContent } from "@components/layout/page-content";
 
 export default function FallbackError() {
   const refreshPage = () => window.location.reload();

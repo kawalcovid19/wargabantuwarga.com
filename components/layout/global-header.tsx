@@ -1,5 +1,4 @@
-import WBWLogo from "../ui/wbw-logo";
-
+import WBWLogo from "@components/ui/wbw-logo";
 import Link from "next/link";
 
 export function GlobalHeader() {

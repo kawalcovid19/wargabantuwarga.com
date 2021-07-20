@@ -1,10 +1,6 @@
-import { CopyButton } from "../components/copy-button";
-import { anchorTransformer } from "../lib/htmr-transformers";
-import { Contact } from "../lib/provinces";
-import { isNotEmpty, stripTags } from "../lib/string-utils";
-
 import { EmptyState } from "./ui/empty-state";
 
+import { CopyButton } from "@components/copy-button";
 import {
   BadgeCheckIcon as BadgeCheckIconUnverified,
   ExclamationCircleIcon,
@@ -14,6 +10,9 @@ import {
   LocationMarkerIcon,
   PhoneIcon,
 } from "@heroicons/react/solid";
+import { anchorTransformer } from "@lib/htmr-transformers";
+import { Contact } from "@lib/provinces";
+import { isNotEmpty, stripTags } from "@lib/string-utils";
 import htmr from "htmr";
 import { HtmrOptions } from "htmr/src/types";
 import Link from "next/link";

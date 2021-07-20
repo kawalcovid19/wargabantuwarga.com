@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { ContactList } from "../../../components/contact-list";
-import { BackButton } from "../../../components/layout/back-button";
-import { Page } from "../../../components/layout/page";
-import { PageContent } from "../../../components/layout/page-content";
-import { PageHeader } from "../../../components/layout/page-header";
-import { SearchForm } from "../../../components/search-form";
-import { useSearch } from "../../../lib/hooks/use-search";
-import provinces, { Contact, getProvincesPaths } from "../../../lib/provinces";
-import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
-
+import { ContactList } from "@components/contact-list";
+import { BackButton } from "@components/layout/back-button";
+import { Page } from "@components/layout/page";
+import { PageContent } from "@components/layout/page-content";
+import { PageHeader } from "@components/layout/page-header";
+import { SearchForm } from "@components/search-form";
+import { useSearch } from "@lib/hooks/use-search";
+import provinces, { Contact, getProvincesPaths } from "@lib/provinces";
+import { getTheLastSegmentFromKebabCase } from "@lib/string-utils";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
