@@ -35,6 +35,7 @@ export function SearchForm({
   sortSettings,
   autoSearch,
   initialValue,
+  checkDocSize,
 }: {
   itemName: string;
   onSubmitKeywords: (keywords: string, filters?: any, sort_by?: string) => void;
@@ -46,6 +47,7 @@ export function SearchForm({
     filters?: {};
     sort?: string;
   };
+  checkDocSize: boolean;
 }) {
   const defaultSort = sortSettings?.length ? sortSettings[0].value : "";
   const [keywords, setKeywords] = useState<string>("");
@@ -139,6 +141,7 @@ export function SearchForm({
           </SecondaryButton>
         </div>
       </div>
+
       {filterItems && Object.keys(filterItems).length ? (
         <>
           <span className="block mb-2 font-medium text-gray-700">Filter</span>
@@ -161,17 +164,34 @@ export function SearchForm({
                   >
                     <option value="">Semua</option>
                     {buckets.map((bucket: any, bIdx: number) => {
-                      return (
-                        bucket.doc_count > 0 &&
-                        bucket.key && (
-                          <option
-                            key={`option-${key}-${bIdx + 1}`}
-                            value={bucket.key}
-                          >
-                            {bucket.key}
-                          </option>
-                        )
-                      );
+                      if (bucket.key) {
+                        if (checkDocSize) {
+                          if (bucket.doc_count > 0) {
+                            return (
+                              <option
+                                key={`option-${key}-${bIdx + 1}`}
+                                value={bucket.key}
+                              >
+                                {bucket.key}
+                              </option>
+                            );
+                          }
+                          // Do not print, when doc_count = 0 and checkDocSize set to true
+                          return null;
+                        } else {
+                          // FAQ page doesn't check the doc_count
+                          // just pass checkDocSize props to false
+                          return (
+                            <option
+                              key={`option-${key}-${bIdx + 1}`}
+                              value={bucket.key}
+                            >
+                              {bucket.key}
+                            </option>
+                          );
+                        }
+                      }
+                      return null;
                     })}
                   </Select>
                 </div>
@@ -180,6 +200,7 @@ export function SearchForm({
           </div>
         </>
       ) : null}
+
       {sortSettings?.length ? (
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-1">
