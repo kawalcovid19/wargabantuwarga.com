@@ -54,7 +54,8 @@ export function SearchForm({
 
   function handleSubmit(event: FormEvent<UsernameFormElement>) {
     event.preventDefault();
-    onSubmitKeywords(keywords, filters, sortBy);
+    setFilters({});
+    onSubmitKeywords(keywords, {}, sortBy);
   }
 
   function handleReset(event: FormEvent<UsernameFormElement>) {
