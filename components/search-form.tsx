@@ -2,7 +2,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
+import React, {
+  ChangeEvent,
+  FormEvent,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 
 import { PrimaryButton, SecondaryButton } from "./ui/button";
 import { Select } from "./ui/select";
@@ -44,14 +50,14 @@ export function SearchForm({
   const defaultSort = sortSettings?.length ? sortSettings[0].value : "";
   const [keywords, setKeywords] = useState<string>("");
   const [filters, setFilters] = useState<any>({});
-  const [sort_by, setSortBy] = useState<string>(defaultSort);
+  const [sortBy, setSortBy] = useState<string>(defaultSort);
 
-  function handleSubmit(event: React.FormEvent<UsernameFormElement>) {
+  function handleSubmit(event: FormEvent<UsernameFormElement>) {
     event.preventDefault();
-    onSubmitKeywords(keywords, filters, sort_by);
+    onSubmitKeywords(keywords, filters, sortBy);
   }
 
-  function handleReset(event: React.FormEvent<UsernameFormElement>) {
+  function handleReset(event: FormEvent<UsernameFormElement>) {
     event.preventDefault();
     setKeywords("");
     setFilters({});
@@ -72,7 +78,7 @@ export function SearchForm({
     const newKeywords = event.target.value;
     setKeywords(newKeywords);
     if (autoSearch) {
-      debouncedSearch(newKeywords, filters, sort_by);
+      debouncedSearch(newKeywords, filters, sortBy);
     }
   }
 
@@ -86,7 +92,7 @@ export function SearchForm({
       newFilters[filterName] = [];
     }
     setFilters(newFilters);
-    onSubmitKeywords(keywords, newFilters, sort_by);
+    onSubmitKeywords(keywords, newFilters, sortBy);
   }
 
   function handleSortChange(event: ChangeEvent<HTMLSelectElement>) {
@@ -187,7 +193,7 @@ export function SearchForm({
               name="sort-by"
               onChange={handleSortChange}
               title="Urut berdasarkan"
-              value={sort_by}
+              value={sortBy}
             >
               {sortSettings.map((cur, idx) => {
                 return (
