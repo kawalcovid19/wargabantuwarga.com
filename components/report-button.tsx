@@ -22,6 +22,8 @@ export const ReportButton = (props: ReportButtonProps) => {
       kontak ?? "",
     )}`;
 
+    // delete this comment
+
     return window.open(formBaseUrl.concat(encodeURI(formQuery)), "_blank");
   };
 
