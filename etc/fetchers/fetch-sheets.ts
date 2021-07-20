@@ -3,10 +3,22 @@ import fetch from "cross-fetch";
 import fs from "fs";
 import path from "path";
 
-function toSnakeCase(text: string): string {
-  return text.trim().toLowerCase().replace(" ", "_");
+/**
+ * Converts a string to snake_case.
+ *
+ * @param {string} str input string
+ * @returns {string} snake_cased version of `str`
+ */
+function toSnakeCase(str: string): string {
+  return str.trim().toLowerCase().replace(" ", "_");
 }
 
+/**
+ * Converts a string to TitleCase
+ *
+ * @param {string} str input string
+ * @returns {string} TitleCased version of `str`
+ */
 function toTitleCase(str: string): string {
   return str
     .split(" ")
@@ -14,24 +26,55 @@ function toTitleCase(str: string): string {
     .join(" ");
 }
 
+/**
+ * Convert all whitespaces in a string to camelCase
+ *
+ * @param {string} str input string
+ * @returns {string} camelCased and whitespace-free version of `str`
+ */
 function replaceSpacesWithCamelCase(str: string): string {
   return str.replace(/\s+/g, (s) => {
     return s.substring(0, 1).toUpperCase() + s.substring(1);
   });
 }
 
+/**
+ * Replace all non-alphanumeric character in a string with space
+ *
+ * @param {string} str input string
+ * @returns {string} `str`, without non-alphanumeric characters
+ */
 function replaceSpecialCharacterWithSpace(str: string): string {
   return str.replace(/[^a-zA-Z0-9. ]/g, " ");
 }
 
+/**
+ * Remove all whitespaces from a string
+ *
+ * @param {string} str input string
+ * @returns {string} whitespace-free version of `str`
+ */
 function removeSpaces(str: string): string {
   return str.replace(/\s+/g, "");
 }
 
+/**
+ * Converts a string to kebab-case
+ *
+ * @param {string} str input string
+ * @returns {string} kebab-cased version of `str`
+ */
 function convertToKebabCase(str: string): string {
   return str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
 }
 
+/**
+ * Get slug from slug identifier and slug index
+ *
+ * @param {string} name slug identifier
+ * @param {number} index slug index
+ * @returns {string} slug string
+ */
 function getSlug(name: string, index: number): string {
   const kebabName = convertToKebabCase(
     removeSpaces(
@@ -41,6 +84,13 @@ function getSlug(name: string, index: number): string {
   return `${kebabName}-${index}`;
 }
 
+/**
+ * Checks if all strings in an array are empty strings
+ *
+ * @param {string[]} array input array
+ * @returns `true` if all strings in `array` are empty strings,
+ * `false` otherwise
+ */
 function allIsEmptyString(array: string[]) {
   return array.every((str) => !str.length);
 }
