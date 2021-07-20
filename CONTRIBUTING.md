@@ -81,7 +81,7 @@ Sebelum mengerjakan sebuah _issue_, ada hal yang harus diperhatikan:
 
 ### Memanfaatkan _Draft Pull Requests_ untuk Berkomunikasi
 
-_Draft Pull Requests_ merupakan sebuah fitur yang disediakan oleh GitHub, yang bertujuan sebagai alat berkomunikasi bagi para pengembang aplikasi. Ketika kita membuat sebuah Draft Pull Request, kita tidak bisa menggabungkannya kecuali itu sudah ditandai sebagai _Ready for review_. Ini merupakan pendekatan yang lebih baik untuk menggunakannya sebagai alat berkomunikasi antar pengembang, dan kita juga bisa memberikan informasi bahwa kita sedang mengatasi sebuah isu.
+_Draft Pull Requests_ merupakan sebuah fitur yang disediakan oleh GitHub, yang bertujuan sebagai alat berkomunikasi bagi para kontributor. Ketika kita membuat sebuah Draft Pull Request, kita tidak bisa menggabungkannya kecuali itu sudah ditandai sebagai _Ready for review_. Ini merupakan pendekatan yang lebih baik untuk menggunakannya sebagai alat berkomunikasi antar kontributor, dan kita juga bisa memberikan informasi bahwa kita sedang mengatasi sebuah isu.
 
 Langkah-langkah untuk membuat _Draft Pull Request_:
 
