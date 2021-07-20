@@ -4,7 +4,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next",
-    "fetch-wbw": "cross-env TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' ts-node etc/fetchers/fetch-wbw.ts",
+    "fetch-wbw": "ts-node etc/fetchers/fetch-wbw.ts",
     "format": "prettier --write \"./**/*.{ts,tsx}\"",
     "lint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx}\"",
@@ -36,7 +36,6 @@
     "autoprefixer": "10.3.0",
     "chalk": "^4.1.1",
     "critters": "^0.0.10",
-    "cross-env": "^7.0.3",
     "eslint": "7.30.0",
     "eslint-config-kentcdodds": "^19.1.0",
     "eslint-config-next": "11.0.1",
