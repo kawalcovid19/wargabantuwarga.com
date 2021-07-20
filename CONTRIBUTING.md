@@ -28,7 +28,7 @@ Before working on an issue, there are a few things that you need to pay attentio
 
 ## FAQ
 
-### Why are you using English in our issues & PRs?
+### Why are you using English in your issues & PRs?
 
 There are several reasons we're using English while communicating in GitHub Issues & PRs:
 
