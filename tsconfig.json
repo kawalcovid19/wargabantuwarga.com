@@ -1,9 +1,4 @@
 {
-  "ts-node": {
-    "compilerOptions": {
-      "module": "commonjs"
-    }
-  },
   "compilerOptions": {
     "allowJs": true,
     "esModuleInterop": true,
@@ -21,5 +16,10 @@
     "typeRoots": ["./@types", "./node_modules/@types"]
   },
   "exclude": ["node_modules"],
-  "include": ["env.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["env.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
 }
