@@ -30,6 +30,19 @@ Before working on an issue, there are a few things that you need to pay attentio
 
 Draft Pull Requests is a feature provided by GitHub as a mean to communicate with another developer. When you create a Draft Pull Request, it can't be merged until it's marked for review. This is a better approach to use pull request as a communication tool between developers, and we can provide an information that we are currently are working on an issue.
 
+
+Steps to creating a Draft Pull Request:
+
+1. Commit and push your new changes into the remote repository
+2. Head over to the Pull requests section on your forked repository, hit New pull request
+![Hint-1](https://user-images.githubusercontent.com/46013258/126284390-c2bd1aa6-fdc2-4aa6-a945-031f02db038e.png)
+3. Pick your forked repository for the head repository, and compare with the branch that you are having changes in
+![Hint-2](https://user-images.githubusercontent.com/46013258/126285036-27b49325-62a2-4a6c-b216-5bae261788da.png)
+4. Put a title and some description in your pull request, then pick Create draft pull request (like in the image below) and hit the green button
+![Hint-3](https://user-images.githubusercontent.com/46013258/126286179-04341e30-1224-49cb-9b9a-3c3aee99c308.png)
+5. Don't forget to mark your Draft Pull Request as ready for review after you commit all of the changes
+
+
 ---
 
 ## Cara berkontribusi
