@@ -11,6 +11,20 @@ type ContactDetailsProps = {
   provinceName: string;
 };
 
+// ? please don't remove this ReportButton until issue is resolved. - @kalwabed
+// reference: https://github.com/kawalcovid19/wargabantuwarga.com/pull/171
+// const ReportButton = (props: ReportButtonProps) => (
+//   <span className="ml-4 flex-shrink-0">
+//     <button
+//       className="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+//       onClick={props.onClick}
+//       type="button"
+//     >
+//       Koreksi
+//     </button>
+//   </span>
+// );
+
 type DescriptionItemProps = {
   label: string;
   value?: string;
