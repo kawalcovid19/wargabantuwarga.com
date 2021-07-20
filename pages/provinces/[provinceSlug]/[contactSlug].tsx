@@ -4,6 +4,7 @@ import { BackButton } from "../../../components/layout/back-button";
 import { Page } from "../../../components/layout/page";
 import { PageContent } from "../../../components/layout/page-content";
 import { PageHeader } from "../../../components/layout/page-header";
+import { ReportButton } from "../../../components/report-button";
 import provinces, { Contact, getContactsPaths } from "../../../lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
 
@@ -21,6 +22,7 @@ export default function ContactPage({
   provinceName,
 }: ContactPageProps) {
   const router = useRouter();
+
   return (
     <Page>
       <PageHeader
@@ -48,6 +50,7 @@ export default function ContactPage({
       />
       <PageContent>
         <ContactDetails contact={contact} provinceName={provinceName} />
+        <ReportButton contact={contact} provinceName={provinceName} />
       </PageContent>
     </Page>
   );
