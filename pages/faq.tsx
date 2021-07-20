@@ -40,6 +40,8 @@ export default function Faqs(props: FaqsProps) {
       [{ field: "kategori_pertanyaan", title: "Kategori Pertanyaan" }],
     );
 
+  console.log({ filterItems });
+
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const listFaqs = useMemo(() => {
     return groupBy<FaqData | unknown, string>(
@@ -64,6 +66,7 @@ export default function Faqs(props: FaqsProps) {
       />
       <PageContent>
         <SearchForm
+          checkDocSize={false}
           filterItems={filterItems}
           initialValue={urlParams}
           itemName="pertanyaan"

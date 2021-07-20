@@ -73,6 +73,7 @@ export default function ProvincePage(props: ProvinceProps) {
         />
         <PageContent>
           <SearchForm
+            checkDocSize={true}
             filterItems={filterItems}
             initialValue={urlParams}
             itemName="kontak"
