@@ -44,12 +44,15 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       />
       <Head>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <meta
           content="0Ierdm0GW-vFOuFxO5TbsI-wCMFVL5FLRQmDtn4XjjA"
           name="google-site-verification"
         />
+
         <link href="/favicon.ico" rel="icon" />
-        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <link href="/manifest.json" rel="manifest" />
+        <meta content="#1667C2" name="theme-color" />
       </Head>
       <Component {...pageProps} />
     </LayoutRoot>

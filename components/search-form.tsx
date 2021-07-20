@@ -30,14 +30,15 @@ type SortSetting = {
 
 export function SearchForm({
   itemName,
+  checkDocSize,
   onSubmitKeywords,
   filterItems,
   sortSettings,
   autoSearch,
   initialValue,
-  checkDocSize,
 }: {
   itemName: string;
+  checkDocSize: boolean;
   onSubmitKeywords: (keywords: string, filters?: any, sort_by?: string) => void;
   filterItems?: {};
   sortSettings?: SortSetting[];
@@ -47,7 +48,6 @@ export function SearchForm({
     filters?: {};
     sort?: string;
   };
-  checkDocSize: boolean;
 }) {
   const defaultSort = sortSettings?.length ? sortSettings[0].value : "";
   const [keywords, setKeywords] = useState<string>("");

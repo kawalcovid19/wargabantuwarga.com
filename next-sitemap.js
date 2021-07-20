@@ -1,6 +1,14 @@
 module.exports = {
   siteUrl: "https://www.wargabantuwarga.com",
-  generateRobotsTxt: false,
-  sitemapSize: 100,
+  generateRobotsTxt: true,
+  sitemapSize: 1000,
   exclude: [""],
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: "*",
+        allow: "/",
+      },
+    ],
+  },
 };
