@@ -4,13 +4,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
 
-import { getQueryParams } from "../lib/string-utils";
-
 import { PrimaryButton, SecondaryButton } from "./ui/button";
 import { Select } from "./ui/select";
 
 import { debounce } from "lodash";
-import Router from "next/router";
 
 interface FormElements extends HTMLFormControlsCollection {
   keywordsInput: HTMLInputElement;
@@ -31,48 +28,26 @@ export function SearchForm({
   filterItems,
   sortSettings,
   autoSearch,
+  initialValue,
 }: {
   itemName: string;
   onSubmitKeywords: (keywords: string, filters?: any, sort_by?: string) => void;
   filterItems?: {};
   sortSettings?: SortSetting[];
   autoSearch?: boolean;
+  initialValue?: {
+    query?: string;
+    filters?: {};
+    sort?: string;
+  };
 }) {
   const [keywords, setKeywords] = useState<string>("");
   const [filters, setFilters] = useState<any>({});
   const [sort_by, setSortBy] = useState<string>("");
 
-  function getSearchResult(
-    keywordsValue: string,
-    filtersValue?: any,
-    sortValue?: string,
-    updateUrlParams: boolean = true,
-  ) {
-    if (updateUrlParams) {
-      const queryParams = [];
-      if (keywordsValue) queryParams.push(`q=${keywordsValue}`);
-      if (filtersValue) {
-        Object.keys(filtersValue as {}).forEach((filter) => {
-          if (filtersValue[filter].length) {
-            const filterValue = filtersValue[filter][0];
-            queryParams.push(`${filter}=${filterValue}`);
-          }
-        });
-      }
-      if (sortValue) {
-        queryParams.push(`sort=${sortValue}`);
-      }
-      const newPath =
-        window.location.pathname +
-        (queryParams.length ? `?${queryParams.join("&")}` : "");
-      void Router.push(newPath, undefined, { shallow: true });
-    }
-    onSubmitKeywords(keywordsValue, filtersValue, sortValue);
-  }
-
   function handleSubmit(event: React.FormEvent<UsernameFormElement>) {
     event.preventDefault();
-    getSearchResult(keywords, filters, sort_by);
+    onSubmitKeywords(keywords, filters, sort_by);
   }
 
   function handleReset(event: React.FormEvent<UsernameFormElement>) {
@@ -80,13 +55,13 @@ export function SearchForm({
     setKeywords("");
     setFilters({});
     setSortBy("");
-    getSearchResult("");
+    onSubmitKeywords("");
   }
 
   const debouncedSearch = useCallback(
     debounce(
       (keywordsValue: string, filtersValue?: any, sortValue?: string) =>
-        getSearchResult(keywordsValue, filtersValue, sortValue),
+        onSubmitKeywords(keywordsValue, filtersValue, sortValue),
       100,
     ),
     [],
@@ -110,36 +85,20 @@ export function SearchForm({
       newFilters[filterName] = [];
     }
     setFilters(newFilters);
-    getSearchResult(keywords, newFilters, sort_by);
+    onSubmitKeywords(keywords, newFilters, sort_by);
   }
 
   function handleSortChange(event: ChangeEvent<HTMLSelectElement>) {
     const sortValue = event.target.value;
     setSortBy(sortValue);
-    getSearchResult(keywords, filters, sortValue);
+    onSubmitKeywords(keywords, filters, sortValue);
   }
 
   useEffect(() => {
-    const queryParams = getQueryParams(window.location.search);
-    if (Object.keys(queryParams).length) {
-      let keywordsParam: string = "";
-      let sortParam: string = "";
-      const filtersParam: any = {};
-      Object.entries(queryParams).forEach(([key, value]) => {
-        if (key == "q") {
-          keywordsParam = value as string;
-          setKeywords(keywordsParam);
-        } else if (key == "sort") {
-          sortParam = value as string;
-          setSortBy(sortParam);
-        } else {
-          filtersParam[key] = [value as string];
-        }
-      });
-      setFilters(filtersParam);
-      getSearchResult(keywordsParam, filtersParam, sortParam, false);
-    }
-  }, [itemName]);
+    setKeywords(initialValue?.query ?? "");
+    setFilters(initialValue?.filters ?? {});
+    setSortBy(initialValue?.sort ?? "");
+  }, [initialValue]);
 
   return (
     <form
@@ -191,7 +150,7 @@ export function SearchForm({
                     name={key}
                     onChange={handleFilterChange}
                     title={title}
-                    value={filters[key]?.length ? filters[key][0] : ""}
+                    value={filters?.[key]?.length ? filters[key][0] : ""}
                   >
                     <option value="">Semua</option>
                     {buckets.map((bucket: any, bIdx: number) => {
