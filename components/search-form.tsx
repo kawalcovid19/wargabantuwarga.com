@@ -41,11 +41,10 @@ export function SearchForm({
     sort?: string;
   };
 }) {
+  const defaultSort = sortSettings?.length ? sortSettings[0].value : "";
   const [keywords, setKeywords] = useState<string>("");
   const [filters, setFilters] = useState<any>({});
-  const [sort_by, setSortBy] = useState<string>(
-    sortSettings?.length ? sortSettings[0].value : "",
-  );
+  const [sort_by, setSortBy] = useState<string>(defaultSort);
 
   function handleSubmit(event: React.FormEvent<UsernameFormElement>) {
     event.preventDefault();
@@ -56,7 +55,7 @@ export function SearchForm({
     event.preventDefault();
     setKeywords("");
     setFilters({});
-    setSortBy("");
+    setSortBy(defaultSort);
     onSubmitKeywords("");
   }
 
@@ -99,11 +98,7 @@ export function SearchForm({
   useEffect(() => {
     setKeywords(initialValue?.query ?? "");
     setFilters(initialValue?.filters ?? {});
-    setSortBy(
-      initialValue?.sort ||
-        (sortSettings?.length && sortSettings[0].value) ||
-        "",
-    );
+    setSortBy(initialValue?.sort ?? defaultSort);
   }, [initialValue]);
 
   return (
