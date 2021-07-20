@@ -62,7 +62,7 @@ export function SearchForm({
     debounce(
       (keywordsValue: string, filtersValue?: any, sortValue?: string) =>
         onSubmitKeywords(keywordsValue, filtersValue, sortValue),
-      100,
+      300,
     ),
     [],
   );
