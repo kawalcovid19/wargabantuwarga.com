@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import WhatsAppLogo from "../ui/whatsapp-logo";
+
 import {
   HomeIcon,
   QuestionMarkCircleIcon,
@@ -26,6 +28,11 @@ const navigation = [
     icon: QuestionMarkCircleIcon,
     href: "/faq",
   },
+  {
+    name: "WhatsApp",
+    icon: WhatsAppLogo,
+    href: "https://wa.me/6281257579812",
+  },
 ];
 
 export function Navigation() {
@@ -51,6 +58,7 @@ export function Navigation() {
                         : "text-gray-600 hover:text-gray-700",
                       "hover:bg-blue-100",
                     )}
+                    target={item.href.includes("https") ? "_blank" : undefined}
                   >
                     {React.createElement(item.icon, {
                       className: "w-8 h-8",

@@ -3,7 +3,7 @@ import * as React from "react";
 const WhatsAppLogo: React.FC<React.SVGProps<SVGSVGElement>> = ({
   width,
   height,
-  fill = "#fff",
+  fill = "#4C5461",
   ...props
 }) => {
   return (
