@@ -1,5 +1,6 @@
 ---
 title: Warga Bantu Warga
+last_updated_time: 2021-07-20T02:05:44.943Z
 ---
 ## Informasi Penting
 
@@ -21,6 +22,8 @@ Saat ini hanya untuk IGD di Jakarta.
 
 [Klik di sini untuk lihat ketersediaan IGD di Jakarta.](https://yankes.kemkes.go.id/app/siranap/rumah_sakit?jenis%3D1%26propinsi%3D31prop%26kabkota%3D&sa=D&source=editors&ust=1625942917018000&usg=AOvVaw1rmJ2yvMO3XtPPKGjOQaMw)
 
+- - -
+
 ### Cara Berkontribusi
 
 * Mau upload info? [Tambahkan info di sini](https://forms.gle/Z3obzzcf9tY36MCH7&sa=D&source=editors&ust=1625942917019000&usg=AOvVaw39uj0Wbgj-_gM0kou1_kCu).
@@ -28,9 +31,13 @@ Saat ini hanya untuk IGD di Jakarta.
   [Daftar jadi relawan di sini](https://bit.ly/RelawanTanggapGBC&sa=D&source=editors&ust=1625942917020000&usg=AOvVaw1Fz07ZzsL-33RE3wN0Zw9e).
 * Mau mendonorkan darah plasma konvalesen (hanya diisi oleh calon pendonor, bukan penerima donor darah). [Daftar donor darah di sini](https://forms.gle/dQL8qW3js5ufBRtW8&sa=D&source=editors&ust=1625942917020000&usg=AOvVaw2aGHwUc66-J5fg5YpxC49l).
 
+- - -
+
 ### Mau lihat database RS, Puskesmas, Ambulans, Oksigen, & kontak penting lainnya?
 
 [Lihat database selengkapnya disini](https://kcov.id/wbw-sheets).
+
+- - -
 
 ### Daftar Isi
 
@@ -39,6 +46,8 @@ Saat ini hanya untuk IGD di Jakarta.
 3. [Isolasi Mandiri: Apa yang harus dilakukan?](#isolasi-mandiri-apa-yang-harus-dilakukan)
 4. [Laman Edukasi COVID-19](#laman-edukasi-covid-19)
 5. [Donasi untuk Warga Terdampak](#donasi-dan-penggalangan-dana)
+
+- - -
 
 ### Situs Informasi & Kontak Penanganan COVID-19: Pemerintah dan Inisiatif Warga
 
@@ -69,6 +78,8 @@ Saat ini hanya untuk IGD di Jakarta.
 
 * Hotline Dompet Dhuafa (WhatsApp Only - Khusus Jabodetabek). Untuk layanan ambulans Covid, layanan Isoman, support oksigen, layanan pemulasaraan jenazah, layanan psikologi dan religi, RS Lapangan Covid. Kontak: 08111617101
 
+- - -
+
 ### Daftar Kontak Fasilitas & Alat Kesehatan per Provinsi
 
 [Lihat selengkapnya di sini](https://kcov.id/wbw-sheets)
@@ -87,6 +98,8 @@ Klik link di bawah untuk mengakses data kontak RS, Puskesmas, oksigen, donor kon
 
 *Semangat #WargaBantuWarga adalah berbagi informasi untuk warga. Saat ini data yang terkumpul di database adalah hasil pencarian informasi relawan dari beragam sumber terutama via media sosial. Karena keterbatasan kami, data-data yang tampil di database #WargaBantuWarga belum diverifikasi. Diharapkan warga berhati-hati saat mengontak atau melakukan transaksi dengan penyedia layanan untuk menghindari hal-hal yang tidak diinginkan.*
 
+- - -
+
 ### Isolasi Mandiri: Apa yang harus dilakukan?
 
 Kumpulan informasi mengenai hal yang perlu Anda ketahui dan langkah penting yang perlu Anda lakukan untuk melakukan isolasi mandiri.
@@ -100,6 +113,8 @@ Kumpulan informasi mengenai hal yang perlu Anda ketahui dan langkah penting yang
 * [Protokol & Kegiatan Harian Isoman](https://www.instagram.com/p/CQ8nTLPHC7c/)
 * [Panduan Isolasi Mandiri Untuk Anak-anak](https://www.orami.co.id/magazine/panduan-isolasi-mandiri-untuk-anak-dengan-covid-19/)
 * [Tips Merawat Anak-anak Positif Covid-19 Yang Harus Isolasi Mandiri](https://kumparan.com/kumparanmom/tips-merawat-anak-yang-harus-isolasi-mandiri-di-rumah-karena-covid-19-1w167btt3LX)
+
+- - -
 
 ### Laman Edukasi COVID-19
 
@@ -188,6 +203,8 @@ Pedoman Pemulasaran & Penguburan Jenazah Covid-19
 
 * [Pedoman Kemenkes Terkait Pemulasaran & Penguburan Jenazah Akibat Covid-19](https://promkes.kemkes.go.id/download/eqep/files547914May_Guidebook%20Jenazah_Kemenkes.pdf)
 
+- - -
+
 ### Donasi dan Penggalangan Dana
 
 Kumpulan informasi mengenai donasi, nomor rekening, dan lainnya yang relevan dengan bantuan COVID-19.
@@ -200,10 +217,14 @@ Kumpulan informasi mengenai donasi, nomor rekening, dan lainnya yang relevan den
 * [Donasi Paket Obat Gratis](https://m.benihbaik.com/campaign/paket-obat-gratis)
 * [Donasi via Dompet Dhuafa](https://donasi.dompetdhuafa.org/)
 
+- - -
+
 ### Kolaborator
 
 Terima kasih kepada para kolaborator inisiatif [\#WargaBantuWarga](https://twitter.com/hashtag/WargaBantuWarga):
 
 [@kitabisacom](https://twitter.com/kitabisacom) [@KawalCOVID19](https://twitter.com/KawalCOVID19) [@fimnews](https://www.instagram.com/fimnews/) [@forumzakat](https://twitter.com/forumzakat) [Baznas](https://baznas.go.id/) [@KataDotAI](https://twitter.com/KataDotAI) [@indorelawan](https://twitter.com/indorelawan) [@pemimpinid_](https://twitter.com/pemimpinid_) [@pandemictalks](https://www.instagram.com/pandemictalks/) [@laporcovid19](https://www.instagram.com/laporcovid19/) [@filantropiindonesia ](https://www.instagram.com/filantropiindonesia/) [Human Initiative Volunteer Energy](https://hive.human-initiative.org/) [Narasi](https://www.instagram.com/narasi.tv/) [Qiscus](https://qiscus.io/) [Humanitarian Forum Indonesia](https://www.instagram.com/humanitarianforumindonesia/?hl=en) [urundayacovid.com](https://urundayacovid.com/) [Serikat Buruh Migran Indonesia](https://sbmi.or.id/) [atmaGO](https://covid19.atmago.com/id) [Jaringan Semua Murid Semua Guru](https://semuamuridsemuaguru.id/) [ILUNI UI Psikologi](https://instagram.com/iluniuipsi?utm_medium=copy_link)
+
+- - -
 
 Ada usulan atau laporan terkait website ini? [Sampaikan masukan Anda di sini.](https://kcov.id/wbw-discuss)
