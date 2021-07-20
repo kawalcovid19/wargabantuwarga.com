@@ -26,6 +26,16 @@ Before working on an issue, there are a few things that you need to pay attentio
 2. To start working on it, ensure that you create a new branch from the `main` branch, then commit and push your changes **as soon as possible** no matter how small they are.
 3. Then **create a new pull request** while [marking it as a **draft pull request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/) to signal the other contributors that [it's a work in progress](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request). This is necessary to signal the other contributors that there are work in progress for that particular issue.
 
+## FAQ
+
+### Why are we using English in our issues & PRs?
+
+There are several reasons we're using English while communicating in GitHub Issues & PRs:
+
+1. It's more natural for software engineers to communicate in English because it involves many technical terms in English. Trying to translate them into Bahasa Indonesia posing a risk of miscommunication, while keeping them in English requires us to do a lot of _italic_ formatting, according to [PUEBI](https://puebi.js.org/huruf/miring).
+2. It accustoms the contributors, which are mostly Indonesian, to communicate in English. It is important to increase our English reading and writing skills because the vast majority of the global open-source communities are using Engish as the main language.
+3. It makes this project easier to be recognised globally. So if we need to get more support from the global communities, they could easily understand what we are doing and help us out with their access and competence. e.g., providing us free credits for their services, advocating us to global leaders, or contributing directly to our codebase.
+
 ---
 
 ## Cara berkontribusi
@@ -53,3 +63,13 @@ Sebelum mengerjakan sebuah _issue_, ada hal yang harus diperhatikan:
 1. Apakah ada kontributor lain yang sedang mengerjakannya? Anda dapat mencari apakah ada _pull request_ terkait sebelum memutuskan untuk mulai mengerjakan _issue_ tersebut.
 2. Untuk mulai mengerjakannya, pastikan **_create branch_** dari `main`, lalu segera _commit_ dan _push_ perubahannya **sesegera mungkin** sekecil apapun itu.
 3. Kemudian **buat _pull request_** baru dengan [menjadikannya sebagai **_draft pull request_**](https://github.blog/2019-02-14-introducing-draft-pull-requests/) untuk memberikan sinyal kepada kontributor lainnya bahwa [_pull request_ ini masih sedang dalam pengerjaan](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request). Dengan demikian, orang lain yang ingin mengerjakan _issue_ yang sama akan berpikir dua kali sebelum ikut mengerjakannya.
+
+## Pertanyaan yang sering ditanyakan
+
+### Mengapa kita menggunakan bahasa Inggris dalam menulis _issue_ dan _pull request_?
+
+Ada beberapa alasan mengapa kita menggunakan bahasa Inggris ketika berkomunikasi di dalam _issue_ dan _pull request_:
+
+1. Secara alamiah, lebih mudah untuk _software engineer_ berkomunikasi dalam bahasa Inggris, karena terminologi-terminologi teknis yang digunakan dalam pemrograman pun berbahasa Inggris. Menerjemahkannya ke Bahasa Indonesia memunculkan resiko miskomunikasi, sementara menggunakan Bahasa Inggris membutuhkan banyak penyesuaian penulisan dalam bentuk _italic_ mengacu pada [PUEBI](https://puebi.js.org/huruf/miring).
+2. Membiasakan para kontributor yang mayoritas berasal dari Indonesia untuk berkomunikasi dengan bahasa Inggris. Sangat penting untuk mengasah kemampuan menulis dan membaca bahasa Inggris kita karena sebagian besar dari komunitas _open-source_ di seluruh dunia menggunakan bahasa Inggris sebagai bahasa utama mereka.
+3. Menggunakan bahasa Inggris membuat proyek ini lebih mudah diakui secara global. Apabila kita ingin mendapatkan dukungan dari komunitas global, mereka lebih mudah memahami tujuan kita, sehingga mereka lebih mudah untuk meluangkan waktu dan keahlian mereka untuk membantu membuat proyek ini lebih baik. Contohnya menyediakan _free credits_ untuk layanan mereka, mengadvokasikan proyek ini kepada pemimpin dunia, atau berkontribusi langsung ke proyek kita.
