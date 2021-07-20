@@ -125,7 +125,7 @@ export function SearchForm({
         <div className="flex items-center mt-1">
           <input
             autoComplete="off"
-            className="outline-none focus:ring-blue-500 focus:border-blue-500 block w-full px-2 py-2 sm:text-sm border-gray-300 hover:border-gray-400 border-2 rounded-md"
+            className="outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full px-2 py-2 sm:text-sm border-gray-300 hover:border-gray-400 border rounded-md"
             id="keywordsInput"
             onChange={handleKeywordsChange}
             type="text"
