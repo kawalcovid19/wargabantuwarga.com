@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "scripts": {
     "build": "next build",
+    "postbuild": "next-sitemap",
     "dev": "next",
-    "fetch-wbw": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' ts-node etc/fetchers/fetch-wbw.ts",
+    "fetch-wbw": "ts-node etc/fetchers/fetch-wbw.ts",
     "format": "prettier --write \"./**/*.{ts,tsx}\"",
     "lint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx}\"",
@@ -49,6 +50,7 @@
     "lint-staged": "11.0.1",
     "netlify-plugin-cache-nextjs": "1.6.1",
     "netlify-plugin-image-optim": "0.4.0",
+    "next-sitemap": "^1.6.140",
     "ora": "^5.4.1",
     "postcss": "8.3.5",
     "prettier": "2.3.2",

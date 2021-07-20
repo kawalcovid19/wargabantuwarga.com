@@ -35,6 +35,7 @@ export default function ProvincesPage(props: ProvincesPageProps) {
       <PageContent>
         <SearchForm
           autoSearch={true}
+          checkDocSize={true}
           initialValue={urlParams}
           itemName="provinsi"
           onSubmitKeywords={handleSubmitKeywords}

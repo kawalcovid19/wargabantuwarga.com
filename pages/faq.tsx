@@ -64,6 +64,7 @@ export default function Faqs(props: FaqsProps) {
       />
       <PageContent>
         <SearchForm
+          checkDocSize={false}
           filterItems={filterItems}
           initialValue={urlParams}
           itemName="pertanyaan"
