@@ -10,7 +10,9 @@
     "lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx}\"",
     "netlify-export": "yarn fetch-wbw && yarn build && next export",
     "prepare": "husky install",
-    "start": "next start"
+    "start": "next start",
+    "type-check": "tsc --noEmit",
+    "validate": "yarn lint && yarn type-check"
   },
   "dependencies": {
     "@headlessui/react": "1.3.0",
@@ -43,8 +45,8 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "frontmatter-markdown-loader": "3.6.3",
-    "husky": ">=6",
-    "lint-staged": ">=10",
+    "husky": "7.0.1",
+    "lint-staged": "11.0.1",
     "netlify-plugin-cache-nextjs": "1.6.1",
     "netlify-plugin-image-optim": "0.4.0",
     "ora": "^5.4.1",

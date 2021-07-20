@@ -1,0 +1,40 @@
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize]
+
+name: Run tests & type checking
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12"
+      - run: yarn install --frozen-lockfile
+      - uses: actions/cache@v1
+        id: cache-build
+        with:
+          path: "."
+          key: ${{ github.sha }}
+
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/cache@v1
+        id: restore-build
+        with:
+          path: "."
+          key: ${{ github.sha }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12"
+      - run: yarn run validate
+        env:
+          CI: true
