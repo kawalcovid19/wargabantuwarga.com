@@ -164,31 +164,29 @@ export function SearchForm({
                   >
                     <option value="">Semua</option>
                     {buckets.map((bucket: any, bIdx: number) => {
-                      if (checkDocSize && bucket.doc_count > 0) {
-                        return (
-                          bucket.doc_count > 0 &&
-                          bucket.key && (
+                      if (bucket.key) {
+                        if (checkDocSize && bucket.doc_count > 0) {
+                          return (
                             <option
                               key={`option-${key}-${bIdx + 1}`}
                               value={bucket.key}
                             >
                               {bucket.key}
                             </option>
-                          )
-                        );
-                      }
+                          );
+                        }
 
-                      // FAQ page doesn't count the doc_count
-                      return (
-                        bucket.key && (
+                        // FAQ page doesn't check the doc_count
+                        return (
                           <option
                             key={`option-${key}-${bIdx + 1}`}
                             value={bucket.key}
                           >
                             {bucket.key}
                           </option>
-                        )
-                      );
+                        );
+                      }
+                      return null;
                     })}
                   </Select>
                 </div>
