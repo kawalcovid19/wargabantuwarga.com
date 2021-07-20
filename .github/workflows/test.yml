@@ -23,7 +23,7 @@ jobs:
           key: ${{ github.sha }}
 
   lint:
-    name: Validate
+    name: ESLint
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -40,7 +40,7 @@ jobs:
           CI: true
 
   type-check:
-    name: Validate
+    name: Type check
     runs-on: ubuntu-latest
     needs: build
     steps:
