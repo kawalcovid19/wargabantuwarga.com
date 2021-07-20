@@ -13,7 +13,7 @@ import React, {
 import { PrimaryButton, SecondaryButton } from "./ui/button";
 import { Select } from "./ui/select";
 
-import { debounce } from "lodash";
+import { debounce } from "ts-debounce";
 
 interface FormElements extends HTMLFormControlsCollection {
   keywordsInput: HTMLInputElement;
@@ -78,7 +78,7 @@ export function SearchForm({
     const newKeywords = event.target.value;
     setKeywords(newKeywords);
     if (autoSearch) {
-      debouncedSearch(newKeywords, filters, sortBy);
+      void debouncedSearch(newKeywords, filters, sortBy);
     }
   }
 

@@ -18,18 +18,17 @@
     "@heroicons/react": "1.0.2",
     "@netlify/plugin-nextjs": "3.7.1",
     "@tailwindcss/typography": "0.4.1",
-    "@types/lodash": "^4.14.171",
     "cheerio": "^1.0.0-rc.10",
     "clsx": "^1.1.1",
     "cross-fetch": "^3.1.4",
     "htmr": "^1.0.0",
     "itemsjs": "^2.1.10",
-    "lodash": "^4.17.21",
     "next": "11.0.1",
     "next-seo": "^4.26.0",
     "preact": "^10.5.14",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "ts-debounce": "^3.0.0"
   },
   "devDependencies": {
     "@netlify/plugin-lighthouse": "2.1.2",
