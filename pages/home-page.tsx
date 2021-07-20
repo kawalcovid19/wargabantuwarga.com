@@ -38,7 +38,7 @@ const HomePage = () => (
       </div>
     </header>
     <PageContent>
-      <article className="prose prose-indigo">
+      <article className="prose prose-indigo p-4 bg-white shadow overflow-hidden rounded-md">
         <h1>{attributes.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </article>
