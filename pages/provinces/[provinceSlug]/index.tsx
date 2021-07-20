@@ -21,35 +21,36 @@ type ProvinceProps = {
 export default function ProvincePage(props: ProvinceProps) {
   const { provinceName, provinceSlug, contactList } = props;
   const router = useRouter();
-  const [filteredContacts, handleSubmitKeywords, filterItems] = useSearch(
-    contactList,
-    [
-      "kebutuhan",
-      "penyedia",
-      "lokasi",
-      "alamat",
-      "keterangan",
-      "kontak",
-      "link",
-      "tambahan_informasi",
-      "bentuk_verifikasi",
-    ],
-    [
-      { field: "kebutuhan", title: "Kategori" },
-      { field: "lokasi", title: "Lokasi" },
-    ],
-    {
-      penyedia_asc: {
-        field: "penyedia",
-        order: "asc",
+  const [filteredContacts, handleSubmitKeywords, urlParams, filterItems] =
+    useSearch(
+      contactList,
+      [
+        "kebutuhan",
+        "penyedia",
+        "lokasi",
+        "alamat",
+        "keterangan",
+        "kontak",
+        "link",
+        "tambahan_informasi",
+        "bentuk_verifikasi",
+      ],
+      [
+        { field: "kebutuhan", title: "Kategori" },
+        { field: "lokasi", title: "Lokasi" },
+      ],
+      {
+        penyedia_asc: {
+          field: "penyedia",
+          order: "asc",
+        },
+        verified_first: {
+          field: ["verifikasi", "penyedia"],
+          order: ["desc", "asc"],
+        },
       },
-      verified_desc: {
-        field: ["verifikasi", "penyedia"],
-        order: ["desc", "asc"],
-      },
-    },
-    "verified_desc",
-  );
+      "verified_first",
+    );
 
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (provinceName) {
@@ -73,10 +74,11 @@ export default function ProvincePage(props: ProvinceProps) {
         <PageContent>
           <SearchForm
             filterItems={filterItems}
+            initialValue={urlParams}
             itemName="kontak"
             onSubmitKeywords={handleSubmitKeywords}
             sortSettings={[
-              { value: "verified_desc", label: "Terverifikasi" },
+              { value: "verified_first", label: "Terverifikasi" },
               { value: "penyedia_asc", label: "Nama" },
             ]}
           />

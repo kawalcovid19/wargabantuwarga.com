@@ -15,7 +15,7 @@ type ProvincesPageProps = {
 };
 
 export default function ProvincesPage(props: ProvincesPageProps) {
-  const [filteredProvinces, handleSubmitKeywords] = useSearch(
+  const [filteredProvinces, handleSubmitKeywords, urlParams] = useSearch(
     props.provincesList,
     ["name"],
   );
@@ -35,6 +35,7 @@ export default function ProvincesPage(props: ProvincesPageProps) {
       <PageContent>
         <SearchForm
           autoSearch={true}
+          initialValue={urlParams}
           itemName="provinsi"
           onSubmitKeywords={handleSubmitKeywords}
         />

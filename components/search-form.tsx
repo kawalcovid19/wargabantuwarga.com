@@ -2,10 +2,18 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ChangeEvent, useState } from "react";
+import React, {
+  ChangeEvent,
+  FormEvent,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 
 import { PrimaryButton, SecondaryButton } from "./ui/button";
 import { Select } from "./ui/select";
+
+import { debounce } from "ts-debounce";
 
 interface FormElements extends HTMLFormControlsCollection {
   keywordsInput: HTMLInputElement;
@@ -26,36 +34,54 @@ export function SearchForm({
   filterItems,
   sortSettings,
   autoSearch,
+  initialValue,
 }: {
   itemName: string;
   onSubmitKeywords: (keywords: string, filters?: any, sort_by?: string) => void;
   filterItems?: {};
   sortSettings?: SortSetting[];
   autoSearch?: boolean;
+  initialValue?: {
+    query?: string;
+    filters?: {};
+    sort?: string;
+  };
 }) {
+  const defaultSort = sortSettings?.length ? sortSettings[0].value : "";
   const [keywords, setKeywords] = useState<string>("");
   const [filters, setFilters] = useState<any>({});
-  const [sort_by, setSortBy] = useState<string>("");
+  const [sortBy, setSortBy] = useState<string>(defaultSort);
 
-  function handleSubmit(event: React.FormEvent<UsernameFormElement>) {
+  function handleSubmit(event: FormEvent<UsernameFormElement>) {
     event.preventDefault();
-    onSubmitKeywords(keywords, filters, sort_by);
+    onSubmitKeywords(keywords, filters, sortBy);
   }
 
-  function handleReset() {
+  function handleReset(event: FormEvent<UsernameFormElement>) {
+    event.preventDefault();
     setKeywords("");
     setFilters({});
-    setSortBy("");
+    setSortBy(defaultSort);
     onSubmitKeywords("");
   }
+
+  const debouncedSearch = useCallback(
+    debounce(
+      (keywordsValue: string, filtersValue?: any, sortValue?: string) =>
+        onSubmitKeywords(keywordsValue, filtersValue, sortValue),
+      300,
+    ),
+    [],
+  );
 
   function handleKeywordsChange(event: ChangeEvent<HTMLInputElement>) {
     const newKeywords = event.target.value;
     setKeywords(newKeywords);
     if (autoSearch) {
-      onSubmitKeywords(newKeywords, filters, sort_by);
+      void debouncedSearch(newKeywords, filters, sortBy);
     }
   }
+
   function handleFilterChange(event: ChangeEvent<HTMLSelectElement>) {
     const newFilters = { ...filters };
     const filterName = event.target.name;
@@ -66,13 +92,20 @@ export function SearchForm({
       newFilters[filterName] = [];
     }
     setFilters(newFilters);
-    onSubmitKeywords(keywords, newFilters, sort_by);
+    onSubmitKeywords(keywords, newFilters, sortBy);
   }
+
   function handleSortChange(event: ChangeEvent<HTMLSelectElement>) {
     const sortValue = event.target.value;
     setSortBy(sortValue);
     onSubmitKeywords(keywords, filters, sortValue);
   }
+
+  useEffect(() => {
+    setKeywords(initialValue?.query ?? "");
+    setFilters(initialValue?.filters ?? {});
+    setSortBy(initialValue?.sort ?? defaultSort);
+  }, [initialValue]);
 
   return (
     <form
@@ -90,10 +123,11 @@ export function SearchForm({
         <div className="flex items-center mt-1">
           <input
             autoComplete="off"
-            className="outline-none focus:ring-blue-500 focus:border-blue-500 block w-full px-2 py-2 sm:text-sm border-gray-300 hover:border-gray-400 border-2 rounded-md"
+            className="outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full px-2 py-2 sm:text-sm border-gray-300 hover:border-gray-400 border rounded-md"
             id="keywordsInput"
             onChange={handleKeywordsChange}
             type="text"
+            value={keywords}
           />
           {!autoSearch && (
             <PrimaryButton className="ml-2" type="submit">
@@ -123,16 +157,20 @@ export function SearchForm({
                     name={key}
                     onChange={handleFilterChange}
                     title={title}
+                    value={filters?.[key]?.length ? filters[key][0] : ""}
                   >
                     <option value="">Semua</option>
                     {buckets.map((bucket: any, bIdx: number) => {
                       return (
-                        <option
-                          key={`option-${key}-${bIdx + 1}`}
-                          value={bucket.key}
-                        >
-                          {bucket.key}
-                        </option>
+                        bucket.doc_count > 0 &&
+                        bucket.key && (
+                          <option
+                            key={`option-${key}-${bIdx + 1}`}
+                            value={bucket.key}
+                          >
+                            {bucket.key}
+                          </option>
+                        )
                       );
                     })}
                   </Select>
@@ -155,6 +193,7 @@ export function SearchForm({
               name="sort-by"
               onChange={handleSortChange}
               title="Urut berdasarkan"
+              value={sortBy}
             >
               {sortSettings.map((cur, idx) => {
                 return (

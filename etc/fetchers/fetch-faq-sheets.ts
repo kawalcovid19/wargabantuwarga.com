@@ -1,11 +1,11 @@
-const cheerio = require("cheerio");
-const fs = require("fs");
-const path = require("path");
-const fetch = require("cross-fetch");
+import cheerio from "cheerio";
+import fetch from "cross-fetch";
+import fs from "fs";
+import path from "path";
 
 const FAQ_LINK = "https://kcov.id/wbw-faq";
 
-module.exports.fetchFaqSheets = async function fetchFaqSheets() {
+export async function fetchFaqSheets() {
   const source = await fetch(FAQ_LINK);
   const $ = cheerio.load(await source.text());
   const faq = $("#sheets-viewport > div#0").find("table tbody tr:not(:first)");
@@ -28,4 +28,4 @@ module.exports.fetchFaqSheets = async function fetchFaqSheets() {
     path.resolve(__dirname, "../../data/wbw-faq-sheets.json"),
     JSON.stringify(faqJSON),
   );
-};
+}

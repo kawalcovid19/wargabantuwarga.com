@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "scripts": {
     "build": "next build",
+    "postbuild": "next-sitemap",
     "dev": "next",
-    "fetch-wbw": "node etc/fetchers/fetch-wbw.js",
+    "fetch-wbw": "ts-node etc/fetchers/fetch-wbw.ts",
     "format": "prettier --write \"./**/*.{ts,tsx}\"",
     "lint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx}\"",
@@ -13,7 +14,8 @@
     "start": "next start",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "test:e2e:dev": "start-server-and-test dev http://localhost:3000 cypress:open"
+    "test:e2e:dev": "start-server-and-test dev http://localhost:3000 cypress:open",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@headlessui/react": "1.3.0",
@@ -29,7 +31,8 @@
     "next-seo": "^4.26.0",
     "preact": "^10.5.14",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "ts-debounce": "^3.0.0"
   },
   "devDependencies": {
     "@netlify/plugin-lighthouse": "2.1.2",
@@ -49,10 +52,11 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "frontmatter-markdown-loader": "3.6.3",
-    "husky": ">=6",
-    "lint-staged": ">=10",
+    "husky": "7.0.1",
+    "lint-staged": "11.0.1",
     "netlify-plugin-cache-nextjs": "1.6.1",
     "netlify-plugin-image-optim": "0.4.0",
+    "next-sitemap": "^1.6.140",
     "ora": "^5.4.1",
     "postcss": "8.3.5",
     "prettier": "2.3.2",
@@ -60,6 +64,7 @@
     "stylelint": "13.13.1",
     "stylelint-config-recommended": "5.0.0",
     "tailwindcss": "2.2.4",
+    "ts-node": "^10.1.0",
     "typescript": "4.3.5"
   },
   "lint-staged": {
