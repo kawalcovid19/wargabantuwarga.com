@@ -194,6 +194,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "kevinmingtarja",
+      "name": "Kevin Mingtarja",
+      "avatar_url": "https://avatars.githubusercontent.com/u/69668484?v=4",
+      "profile": "http://linkedin.com/in/kevinmingtarja/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
