@@ -14,7 +14,14 @@
         "code",
         "projectManagement",
         "doc",
-        "review"
+        "review",
+        "a11y",
+        "ideas",
+        "maintenance",
+        "mentoring",
+        "security",
+        "tool",
+        "translation"
       ]
     },
     {
