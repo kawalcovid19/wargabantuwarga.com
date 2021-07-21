@@ -10,7 +10,7 @@ import Link from "next/link";
 import { NextSeo } from "next-seo";
 
 const meta = {
-  title: `${config.site_name} | ${config.site_tagline}`,
+  title: `${config.site_tagline} | ${config.site_name}`,
 };
 
 const LastUpdatedAlert = () => (
