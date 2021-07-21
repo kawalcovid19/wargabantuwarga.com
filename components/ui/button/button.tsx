@@ -1,11 +1,12 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import * as React from "react";
+
+import { Spinner } from "../spinner";
 
 import {
   buttonBlockStyles,
   buttonRoundedStyles,
   buttonSizes,
+  disabledStyles,
   renderIcon,
 } from "./helpers";
 import { ButtonProps } from "./types";
@@ -22,6 +23,9 @@ export const PrimaryButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
       size = "md",
       rounded,
       icon,
+      isLoading,
+      loadingText = "Memuat...",
+      disabled,
       children,
       ...rest
     },
@@ -33,15 +37,22 @@ export const PrimaryButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         buttonSizes(size),
         buttonRoundedStyles(rounded, size),
         "items-center border border-transparent font-medium shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
+        "disabled:cursor-not-allowed",
+        disabledStyles,
         className,
       )}
+      disabled={isLoading ?? disabled}
       ref={ref}
       style={style}
       type={type ?? "button"}
       {...rest}
     >
-      {renderIcon(icon, size)}
-      {children}
+      {renderIcon(
+        isLoading ? Spinner : icon,
+        size,
+        isLoading ? "animate-spin" : undefined,
+      )}
+      {isLoading ? loadingText : children}
     </button>
   ),
 );
@@ -59,6 +70,9 @@ export const SecondaryButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
       rounded,
       icon,
       children,
+      isLoading,
+      loadingText = "Memuat...",
+      disabled,
       ...rest
     },
     ref,
@@ -69,15 +83,21 @@ export const SecondaryButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         buttonSizes(size),
         buttonRoundedStyles(rounded, size),
         "items-center border border-transparent font-medium text-blue-700 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
+        disabledStyles,
         className,
       )}
+      disabled={isLoading ?? disabled}
       ref={ref}
       style={style}
       type={type ?? "button"}
       {...rest}
     >
-      {renderIcon(icon, size)}
-      {children}
+      {renderIcon(
+        isLoading ? Spinner : icon,
+        size,
+        isLoading ? "animate-spin" : undefined,
+      )}
+      {isLoading ? loadingText : children}
     </button>
   ),
 );
@@ -94,6 +114,9 @@ export const WhiteButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
       size = "md",
       icon,
       rounded,
+      isLoading,
+      loadingText = "Memuat...",
+      disabled,
       children,
       ...rest
     },
@@ -105,15 +128,22 @@ export const WhiteButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         buttonSizes(size),
         buttonRoundedStyles(rounded, size),
         "items-center border border-transparent font-medium shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
+        "disabled:cursor-not-allowed",
+        disabledStyles,
         className,
       )}
+      disabled={isLoading ?? disabled}
       ref={ref}
       style={style}
       type={type ?? "button"}
       {...rest}
     >
-      {renderIcon(icon, size)}
-      {children}
+      {renderIcon(
+        isLoading ? Spinner : icon,
+        size,
+        isLoading ? "animate-spin" : undefined,
+      )}
+      {isLoading ? loadingText : children}
     </button>
   ),
 );

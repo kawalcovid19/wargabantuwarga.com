@@ -2,6 +2,10 @@ import * as React from "react";
 
 import { ButtonProps, ButtonSizes } from "./types";
 
+import clsx from "clsx";
+
+export const disabledStyles = "disabled:cursor-not-allowed disabled:opacity-75";
+
 export function buttonBlockStyles(block?: boolean) {
   if (block) {
     return "flex";
@@ -68,10 +72,14 @@ export function buttonIconSizes(size?: ButtonSizes) {
   }
 }
 
-export function renderIcon(icon?: ButtonProps["icon"], size?: ButtonSizes) {
+export function renderIcon(
+  icon?: ButtonProps["icon"],
+  size?: ButtonSizes,
+  additionalClasses?: string,
+) {
   if (icon) {
     return React.createElement(icon, {
-      className: buttonIconSizes(size),
+      className: clsx(buttonIconSizes(size), additionalClasses),
       "aria-hidden": true,
     });
   }
