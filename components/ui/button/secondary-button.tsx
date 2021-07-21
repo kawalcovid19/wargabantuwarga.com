@@ -8,7 +8,7 @@ import {
   buttonRoundedStyles,
   buttonSizes,
   disabledStyles,
-  renderIcon,
+  renderButtonIcon,
 } from "./utils";
 
 import clsx from "clsx";
@@ -46,7 +46,7 @@ export const SecondaryButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
       type={type ?? "button"}
       {...rest}
     >
-      {renderIcon(
+      {renderButtonIcon(
         isLoading ? Spinner : icon,
         size,
         isLoading ? "animate-spin" : undefined,

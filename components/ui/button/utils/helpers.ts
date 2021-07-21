@@ -72,7 +72,7 @@ export function buttonIconSizes(size?: ButtonSizes) {
   }
 }
 
-export function renderIcon(
+export function renderButtonIcon(
   icon?: ButtonProps["icon"],
   size?: ButtonSizes,
   additionalClasses?: string,
