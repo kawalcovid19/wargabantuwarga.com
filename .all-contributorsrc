@@ -138,6 +138,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "emer7",
+      "name": "Gilbert Emerson",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21377166?v=4",
+      "profile": "https://github.com/emer7",
+      "contributions": [
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
