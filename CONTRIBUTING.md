@@ -80,6 +80,15 @@ _Closed Issues_ merupakan kategori _issue_ yang sudah selesai dikerjakan atau ti
 
 Mohon perhatikan tiap atribut _issue_. Tiap _issue_ kemungkinan dikerjakan oleh kontributor lain melalui [_Linked Pull Requests_](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue). Ini berarti _issue_ sedang dalam penanganan. Untuk menghindari pekerjaan yang sama, kontributor sangat dianjurkan untuk mengajukan sebuah [_draft pull request_](https://github.blog/2019-02-14-introducing-draft-pull-requests/) terlebih dahulu setiap kali hendak mengerjakan suatu _issue_.
 
+#### Untuk Pemula: label _`good-first-issue`_
+
+Seperti yang tertulis [di sini](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/), _`good-first-issue`_ merupakan sebuah fitur label dari GitHub yang diciptakan untuk membantu para kontributor pemula dalam berkontribusi ke sebuah proyek _open-source_. _`good-first-issue`_ memberitakan kita mengenai tingkat kesulitan dari sebuah _issue_. Ini berarti, bahwa sebuah _issue_ dengan label _`good-first-issue`_ cocok sekali bagi kontributor pemula yang ingin melakukan kontribusi pertama mereka ke sebuah proyek _open-source_.
+
+Bagaimana cara mencari _issue_ dengan label _`good-first-issue`_:
+
+1. Cara paling mudah adalah dengan mengunjungi pranala `github.com/<owner>/<repository>/contribute`. Dalam hal ini, Anda dapat mengunjungi [pranala ini](https://github.com/kawalcovid19/wargabantuwarga.com/contribute). Pranala tersebut akan memberikan daftar dari semua _issue_ dengan label _`good-first-issue`_.
+2. Atau cara lainnya adalah dengan mengunjungi bagian [_Issues_](https://github.com/kawalcovid19/wargabantuwarga.com/issues) dari sebuah repository, lalu klik bagian _Labels_ di sebelah _Milestones_. Di sana, Anda dapat melihat banyak label untuk _issues_ yang terdapat dalam repository tersebut. Lalu cari dan klik label `good-first-issue`.
+
 ### Panduan mulai bekerja
 
 Sebelum mengerjakan sebuah _issue_, ada hal yang harus diperhatikan:
