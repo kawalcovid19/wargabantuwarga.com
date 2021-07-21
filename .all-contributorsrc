@@ -224,6 +224,17 @@
         "review",
         "code"
       ]
+    },
+    {
+      "login": "baraeb92",
+      "name": "Bara E. Brahmantika",
+      "avatar_url": "https://avatars.githubusercontent.com/u/23743497?v=4",
+      "profile": "http://kitabisa.com",
+      "contributions": [
+        "ideas",
+        "infra",
+        "projectManagement"
+      ]
     }
   ],
   "contributorsPerLine": 7,
