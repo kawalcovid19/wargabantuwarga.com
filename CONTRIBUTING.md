@@ -18,6 +18,8 @@ Closed Issues are issues that have been completed or doesn't need further action
 
 Please pay attention on every issue attribute. Every issue might be referenced by other contributors through [Linked Pull Requests](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue). If an issue has a linked pull request, that means the issue is currently being handled. To avoid working on the same issue, contributors were strongly encouraged to submit a [draft pull request](https://github.blog/2019-02-14-introducing-draft-pull-requests/) first when they start working on an issue.
 
+#### For Beginners: `good-first-issue` label
+
 ### Start working on issues
 
 Before working on an issue, there are a few things that you need to pay attention to:
