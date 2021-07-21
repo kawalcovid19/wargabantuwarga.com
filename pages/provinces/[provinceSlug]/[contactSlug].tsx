@@ -4,11 +4,13 @@ import { BackButton } from "../../../components/layout/back-button";
 import { Page } from "../../../components/layout/page";
 import { PageContent } from "../../../components/layout/page-content";
 import { PageHeader } from "../../../components/layout/page-header";
+import { ReportButton } from "../../../components/report-button";
 import provinces, { Contact, getContactsPaths } from "../../../lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
 
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/dist/client/router";
+import { NextSeo } from "next-seo";
 
 type ContactPageProps = {
   provinceName: string;
@@ -16,13 +18,29 @@ type ContactPageProps = {
   contact: Contact;
 };
 
+const getMeta = (provinceName: string, contact: Contact) => {
+  const providerWithSeparator = !!contact.penyedia
+    ? `${contact.penyedia} - `
+    : "";
+
+  return {
+    // @TODO: change this after got a better title
+    title: `${providerWithSeparator}${contact.keterangan} di ${provinceName}`,
+  };
+};
+
 export default function ContactPage({
   contact,
   provinceName,
 }: ContactPageProps) {
   const router = useRouter();
+
   return (
     <Page>
+      <NextSeo
+        openGraph={{ title: getMeta(provinceName, contact).title }}
+        title={getMeta(provinceName, contact).title}
+      />
       <PageHeader
         backButton={
           <BackButton href={`/provinces/${router.query.provinceSlug}`} />
@@ -48,6 +66,7 @@ export default function ContactPage({
       />
       <PageContent>
         <ContactDetails contact={contact} provinceName={provinceName} />
+        <ReportButton contact={contact} provinceName={provinceName} />
       </PageContent>
     </Page>
   );

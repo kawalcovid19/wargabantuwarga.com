@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { ContactList } from "../../../components/contact-list";
 import { BackButton } from "../../../components/layout/back-button";
 import { Page } from "../../../components/layout/page";
@@ -10,6 +11,7 @@ import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
 
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
+import { NextSeo } from "next-seo";
 
 type ProvinceProps = {
   provinceName: string;
@@ -17,43 +19,55 @@ type ProvinceProps = {
   contactList: Contact[];
 };
 
+const getMeta = (provinceName: string) => {
+  return {
+    // @TODO: change this after got a better title
+    title: `Informasi Faskes & Alkes untuk COVID-19 di Provinsi ${provinceName}`,
+  };
+};
+
 export default function ProvincePage(props: ProvinceProps) {
   const { provinceName, provinceSlug, contactList } = props;
   const router = useRouter();
-  const [filteredContacts, handleSubmitKeywords, filterItems] = useSearch(
-    contactList,
-    [
-      "kebutuhan",
-      "penyedia",
-      "lokasi",
-      "alamat",
-      "keterangan",
-      "kontak",
-      "tautan",
-      "tambahan_informasi",
-      "bentuk_verifikasi",
-    ],
-    [
-      { field: "kebutuhan", title: "Kategori" },
-      { field: "lokasi", title: "Lokasi" },
-    ],
-    {
-      penyedia_asc: {
-        field: "penyedia",
-        order: "asc",
+  const [filteredContacts, handleSubmitKeywords, urlParams, filterItems] =
+    useSearch(
+      contactList,
+      [
+        "kebutuhan",
+        "penyedia",
+        "lokasi",
+        "alamat",
+        "keterangan",
+        "kontak",
+        "link",
+        "tambahan_informasi",
+        "bentuk_verifikasi",
+      ],
+      [
+        { field: "kebutuhan", title: "Kategori" },
+        { field: "lokasi", title: "Lokasi" },
+      ],
+      {
+        penyedia_asc: {
+          field: "penyedia",
+          order: "asc",
+        },
+        verified_first: {
+          field: ["verifikasi", "penyedia"],
+          order: ["desc", "asc"],
+        },
       },
-      verified_desc: {
-        field: ["verifikasi", "penyedia"],
-        order: ["desc", "asc"],
-      },
-    },
-    "penyedia_asc",
-  );
+      "verified_first",
+    );
 
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (provinceName) {
     return (
       <Page>
+        <NextSeo
+          openGraph={{ title: getMeta(provinceName).title }}
+          title={getMeta(provinceName).title}
+        />
         <PageHeader
           backButton={<BackButton href="/provinces" />}
           breadcrumbs={[
@@ -67,16 +81,18 @@ export default function ProvincePage(props: ProvinceProps) {
               current: true,
             },
           ]}
-          title={`Database for ${provinceName}`}
+          title={provinceName}
         />
         <PageContent>
           <SearchForm
+            checkDocSize={true}
             filterItems={filterItems}
+            initialValue={urlParams}
             itemName="kontak"
             onSubmitKeywords={handleSubmitKeywords}
             sortSettings={[
+              { value: "verified_first", label: "Terverifikasi" },
               { value: "penyedia_asc", label: "Nama" },
-              { value: "verified_desc", label: "Terverifikasi" },
             ]}
           />
           <ContactList data={filteredContacts} provinceSlug={provinceSlug} />
@@ -107,8 +123,10 @@ export const getStaticProps: GetStaticProps = ({ params = {} }) => {
   const province = index ? provinces[index as unknown as number] : null;
   const provinceName = province ? province.name : "";
   const contactList = province
-    ? [...province.data].sort((a, b) =>
-        (a.penyedia ?? "").localeCompare(b.penyedia ?? ""),
+    ? [...province.data].sort(
+        (a, b) =>
+          b.verifikasi - a.verifikasi ||
+          (a.penyedia ?? "").localeCompare(b.penyedia ?? ""),
       )
     : null;
 
