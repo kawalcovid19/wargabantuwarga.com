@@ -1,6 +1,6 @@
 # Warga Bantu Warga
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 A society initiative to circulate information about health facilities and devices for COVID-19.
@@ -88,7 +88,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://zainf.dev"><img src="https://avatars.githubusercontent.com/u/6315466?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zain Fathoni</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=zainfathoni" title="Code">💻</a> <a href="#projectManagement-zainfathoni" title="Project Management">📆</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=zainfathoni" title="Documentation">📖</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/pulls?q=is%3Apr+reviewed-by%3Azainfathoni" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://zainf.dev"><img src="https://avatars.githubusercontent.com/u/6315466?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zain Fathoni</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=zainfathoni" title="Code">💻</a> <a href="#projectManagement-zainfathoni" title="Project Management">📆</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=zainfathoni" title="Documentation">📖</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/pulls?q=is%3Apr+reviewed-by%3Azainfathoni" title="Reviewed Pull Requests">👀</a> <a href="#a11y-zainfathoni" title="Accessibility">️️️️♿️</a> <a href="#ideas-zainfathoni" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-zainfathoni" title="Maintenance">🚧</a> <a href="#mentoring-zainfathoni" title="Mentoring">🧑‍🏫</a> <a href="#security-zainfathoni" title="Security">🛡️</a> <a href="#tool-zainfathoni" title="Tools">🔧</a> <a href="#translation-zainfathoni" title="Translation">🌍</a></td>
     <td align="center"><a href="https://resir014.xyz"><img src="https://avatars.githubusercontent.com/u/5663877?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Resi Respati</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=resir014" title="Code">💻</a> <a href="#design-resir014" title="Design">🎨</a></td>
   </tr>
 </table>
