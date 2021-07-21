@@ -10,11 +10,19 @@ import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
 
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/dist/client/router";
+import { NextSeo } from "next-seo";
 
 type ContactPageProps = {
   provinceName: string;
   provinceSlug: string;
   contact: Contact;
+};
+
+const getMeta = (provinceName: string, contact: Contact) => {
+  return {
+    // @TODO: change this after got a better title
+    title: `${contact.penyedia} - ${contact.keterangan} di ${provinceName}`,
+  };
 };
 
 export default function ContactPage({
@@ -25,6 +33,10 @@ export default function ContactPage({
 
   return (
     <Page>
+      <NextSeo
+        openGraph={{ title: getMeta(provinceName, contact).title }}
+        title={getMeta(provinceName, contact).title}
+      />
       <PageHeader
         backButton={
           <BackButton href={`/provinces/${router.query.provinceSlug}`} />
