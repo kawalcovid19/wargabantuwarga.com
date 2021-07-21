@@ -1,0 +1,95 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "zainfathoni",
+      "name": "Zain Fathoni",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6315466?v=4",
+      "profile": "https://zainf.dev",
+      "contributions": [
+        "code",
+        "projectManagement",
+        "doc",
+        "review",
+        "a11y",
+        "ideas",
+        "maintenance",
+        "mentoring",
+        "security",
+        "tool",
+        "translation"
+      ]
+    },
+    {
+      "login": "resir014",
+      "name": "Resi Respati",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5663877?v=4",
+      "profile": "https://resir014.xyz",
+      "contributions": [
+        "code",
+        "design",
+        "a11y",
+        "doc",
+        "ideas",
+        "maintenance",
+        "mentoring",
+        "projectManagement",
+        "review",
+        "security",
+        "tool",
+        "translation"
+      ]
+    },
+    {
+      "login": "ekamuktia",
+      "name": "ekamuktia",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9606523?v=4",
+      "profile": "https://github.com/ekamuktia",
+      "contributions": [
+        "bug",
+        "code",
+        "ideas",
+        "maintenance",
+        "review"
+      ]
+    },
+    {
+      "login": "ekafyi",
+      "name": "Eka",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6597211?v=4",
+      "profile": "https://dev.to/@ekafyi",
+      "contributions": [
+        "code",
+        "design",
+        "ideas",
+        "maintenance",
+        "review"
+      ]
+    },
+    {
+      "login": "mazipan",
+      "name": "Irfan Maulana",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7221389?v=4",
+      "profile": "https://mazipan.space",
+      "contributions": [
+        "bug",
+        "code",
+        "ideas",
+        "infra",
+        "maintenance",
+        "mentoring",
+        "review"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "wargabantuwarga.com",
+  "projectOwner": "kawalcovid19",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

@@ -1,4 +1,7 @@
 # Warga Bantu Warga
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 A society initiative to circulate information about health facilities and devices for COVID-19.
 
@@ -75,3 +78,27 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ## Contributing
 
 See our [contributing guidelines](CONTRIBUTING.md).
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://zainf.dev"><img src="https://avatars.githubusercontent.com/u/6315466?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zain Fathoni</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=zainfathoni" title="Code">💻</a> <a href="#projectManagement-zainfathoni" title="Project Management">📆</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=zainfathoni" title="Documentation">📖</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/pulls?q=is%3Apr+reviewed-by%3Azainfathoni" title="Reviewed Pull Requests">👀</a> <a href="#a11y-zainfathoni" title="Accessibility">️️️️♿️</a> <a href="#ideas-zainfathoni" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-zainfathoni" title="Maintenance">🚧</a> <a href="#mentoring-zainfathoni" title="Mentoring">🧑‍🏫</a> <a href="#security-zainfathoni" title="Security">🛡️</a> <a href="#tool-zainfathoni" title="Tools">🔧</a> <a href="#translation-zainfathoni" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://resir014.xyz"><img src="https://avatars.githubusercontent.com/u/5663877?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Resi Respati</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=resir014" title="Code">💻</a> <a href="#design-resir014" title="Design">🎨</a> <a href="#a11y-resir014" title="Accessibility">️️️️♿️</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=resir014" title="Documentation">📖</a> <a href="#ideas-resir014" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-resir014" title="Maintenance">🚧</a> <a href="#mentoring-resir014" title="Mentoring">🧑‍🏫</a> <a href="#projectManagement-resir014" title="Project Management">📆</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/pulls?q=is%3Apr+reviewed-by%3Aresir014" title="Reviewed Pull Requests">👀</a> <a href="#security-resir014" title="Security">🛡️</a> <a href="#tool-resir014" title="Tools">🔧</a> <a href="#translation-resir014" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/ekamuktia"><img src="https://avatars.githubusercontent.com/u/9606523?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ekamuktia</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/issues?q=author%3Aekamuktia" title="Bug reports">🐛</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=ekamuktia" title="Code">💻</a> <a href="#ideas-ekamuktia" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-ekamuktia" title="Maintenance">🚧</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/pulls?q=is%3Apr+reviewed-by%3Aekamuktia" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://dev.to/@ekafyi"><img src="https://avatars.githubusercontent.com/u/6597211?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Eka</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=ekafyi" title="Code">💻</a> <a href="#design-ekafyi" title="Design">🎨</a> <a href="#ideas-ekafyi" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-ekafyi" title="Maintenance">🚧</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/pulls?q=is%3Apr+reviewed-by%3Aekafyi" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://mazipan.space"><img src="https://avatars.githubusercontent.com/u/7221389?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Irfan Maulana</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/issues?q=author%3Amazipan" title="Bug reports">🐛</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=mazipan" title="Code">💻</a> <a href="#ideas-mazipan" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-mazipan" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-mazipan" title="Maintenance">🚧</a> <a href="#mentoring-mazipan" title="Mentoring">🧑‍🏫</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/pulls?q=is%3Apr+reviewed-by%3Amazipan" title="Reviewed Pull Requests">👀</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

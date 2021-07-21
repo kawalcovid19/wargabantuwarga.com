@@ -1,12 +1,12 @@
 /* eslint-disable no-negated-condition */
-import { ContactDetails } from "../../../components/contact-details";
-import { BackButton } from "../../../components/layout/back-button";
-import { Page } from "../../../components/layout/page";
-import { PageContent } from "../../../components/layout/page-content";
-import { PageHeader } from "../../../components/layout/page-header";
-import { ReportButton } from "../../../components/report-button";
-import provinces, { Contact, getContactsPaths } from "../../../lib/provinces";
-import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
+import { ContactDetails } from "~/components/contact-details";
+import { BackButton } from "~/components/layout/back-button";
+import { Page } from "~/components/layout/page";
+import { PageContent } from "~/components/layout/page-content";
+import { PageHeader } from "~/components/layout/page-header";
+import { ReportButton } from "~/components/report-button";
+import provinces, { Contact, getContactsPaths } from "~/lib/provinces";
+import { getTheLastSegmentFromKebabCase } from "~/lib/string-utils";
 
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/dist/client/router";

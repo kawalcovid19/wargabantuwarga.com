@@ -1,4 +1,4 @@
-import faqSheets from "../data/wbw-faq-sheets.json";
+import faqSheets from "~/data/wbw-faq-sheets.json";
 
 export type Databases = FaqData[];
 

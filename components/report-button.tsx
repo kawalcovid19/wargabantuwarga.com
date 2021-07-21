@@ -1,5 +1,5 @@
-import { Contact } from "../lib/provinces";
-import { stripTags } from "../lib/string-utils";
+import { Contact } from "~/lib/provinces";
+import { stripTags } from "~/lib/string-utils";
 
 import { SecondaryButton } from "./ui/button";
 
