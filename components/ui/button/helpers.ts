@@ -13,24 +13,36 @@ export function buttonBlockStyles(block?: boolean) {
 export function buttonSizes(size?: ButtonSizes) {
   switch (size) {
     case "xs": {
-      return "px-2.5 py-1.5 text-xs rounded";
+      return "px-2.5 py-1.5 text-xs";
     }
     case "sm": {
-      return "px-3 py-2 text-sm leading-4 rounded-md";
+      return "px-3 py-2 text-sm leading-4";
     }
     case "md": {
-      return "px-4 py-2 text-sm rounded-md";
+      return "px-4 py-2 text-sm";
     }
     case "lg": {
-      return "px-4 py-2 text-base rounded-md";
+      return "px-4 py-2 text-base";
     }
     case "xl": {
-      return "px-6 py-3 text-base rounded-md";
+      return "px-6 py-3 text-base";
     }
     default: {
-      return "px-4 py-2 text-sm rounded-md";
+      return "px-4 py-2 text-sm";
     }
   }
+}
+
+export function buttonRoundedStyles(rounded?: boolean, size?: ButtonSizes) {
+  if (rounded) {
+    return "rounded-full";
+  }
+
+  if (size !== "xs") {
+    return "rounded-md";
+  }
+
+  return "rounded";
 }
 
 export function buttonIconSizes(size?: ButtonSizes) {
