@@ -1,5 +1,5 @@
-import "@styles/globals.css";
-import "@styles/fonts.css";
+import "~/styles/globals.css";
+import "~/styles/fonts.css";
 import "nprogress/nprogress.css";
 
 import { useEffect } from "react";
