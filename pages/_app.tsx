@@ -13,7 +13,7 @@ const meta = {
   title: `${config.site_tagline} | ${config.site_name}`,
   tagline: config.site_tagline,
   description: config.site_description,
-  url: "https://www.wargabantuwarga.com",
+  url: config.site_url,
 };
 
 export default function App({ Component, pageProps, router }: AppProps) {
