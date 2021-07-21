@@ -31,7 +31,17 @@
       "profile": "https://resir014.xyz",
       "contributions": [
         "code",
-        "design"
+        "design",
+        "a11y",
+        "doc",
+        "ideas",
+        "maintenance",
+        "mentoring",
+        "projectManagement",
+        "review",
+        "security",
+        "tool",
+        "translation"
       ]
     }
   ],
