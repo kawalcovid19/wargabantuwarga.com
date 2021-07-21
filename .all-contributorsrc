@@ -97,6 +97,15 @@
         "maintenance",
         "tool"
       ]
+    },
+    {
+      "login": "hanihusam",
+      "name": "Hani Husamuddin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25399426?v=4",
+      "profile": "https://www.linkedin.com/in/hanihusam/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
