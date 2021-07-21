@@ -1,14 +1,16 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { ArrowCircleUpIcon } from "@heroicons/react/solid";
 import clsx from "clsx";
 
-export const ScrollArrow = () => {
+type ScrollArrowProps = {
+  heightThreshold: number;
+};
+
+export const ScrollArrow = ({ heightThreshold = 400 }: ScrollArrowProps) => {
   const [showScroll, setShowScroll] = useState(false);
 
   const checkScrollTop = useCallback(() => {
-    const heightThreshold = 400;
-
     if (!showScroll && window.pageYOffset > heightThreshold) {
       setShowScroll(true);
     } else if (showScroll && window.pageYOffset <= heightThreshold) {
@@ -26,12 +28,13 @@ export const ScrollArrow = () => {
   };
 
   return (
-    <ArrowCircleUpIcon
-      className={clsx(
-        "fixed cursor-pointer bottom-20 right-10 h-16",
-        showScroll ? "flex" : "hidden",
-      )}
-      onClick={scrollTop}
-    />
+    <button onClick={scrollTop}>
+      <ArrowCircleUpIcon
+        className={clsx(
+          "fixed text-blue-600 cursor-pointer bottom-20 right-10 h-16 opacity-60 hover:opacity-100 transition duration-300 ease-in-out",
+          showScroll ? "flex" : "hidden",
+        )}
+      />
+    </button>
   );
 };
