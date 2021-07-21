@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
-import { ClipboardCopyIcon } from "@heroicons/react/outline";
+import { SecondaryButton } from "./ui/button";
+
+import { CheckIcon, ClipboardCopyIcon } from "@heroicons/react/outline";
 
 export function CopyButton({ text }: { text: string }) {
   const [isCopied, setCopied] = useState<boolean>(false);
@@ -32,20 +34,17 @@ export function CopyButton({ text }: { text: string }) {
   }
 
   return (
-    <button
-      aria-label="salin"
-      className="relative z-10 px-2 h-6 ml-2 bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white flex-none flex items-center justify-center rounded text-xs"
-      onClick={handleCopy}
-      type="button"
-    >
-      {isCopied ? (
-        <span>✓&nbsp;Tersalin</span>
-      ) : (
-        <>
-          <ClipboardCopyIcon className="h-4 w-4" />
-          <span className="ml-1">Salin</span>
-        </>
-      )}
-    </button>
+    <div className="flex items-start">
+      <SecondaryButton
+        aria-label="Salin"
+        className="relative z-10"
+        icon={isCopied ? CheckIcon : ClipboardCopyIcon}
+        onClick={handleCopy}
+        size="xs"
+        type="button"
+      >
+        {isCopied ? "Tersalin" : "Salin"}
+      </SecondaryButton>
+    </div>
   );
 }

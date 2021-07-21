@@ -18,9 +18,10 @@ const meta = {
   title: `${config.site_tagline} | ${config.site_name}`,
   tagline: config.site_tagline,
   description: config.site_description,
+  url: config.site_url,
 };
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps, router }: AppProps) {
   const router = useRouter();
 
   useEffect(() => {
@@ -45,6 +46,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <LayoutRoot>
       <DefaultSeo
+        canonical={`${meta.url}${router.asPath || "/"}`}
         description={meta.description}
         openGraph={{
           type: "website",
