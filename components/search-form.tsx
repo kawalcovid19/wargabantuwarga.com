@@ -12,6 +12,7 @@ import React, {
 
 import { PrimaryButton, SecondaryButton } from "./ui/button";
 import { Select } from "./ui/select";
+import { SelectSkeleton } from "./ui/skeleton-loading";
 
 import { debounce } from "ts-debounce";
 
@@ -36,6 +37,7 @@ export function SearchForm({
   sortSettings,
   autoSearch,
   initialValue,
+  loading,
 }: {
   itemName: string;
   checkDocSize: boolean;
@@ -48,6 +50,7 @@ export function SearchForm({
     filters?: {};
     sort?: string;
   };
+  loading?: boolean;
 }) {
   const defaultSort = sortSettings?.length ? sortSettings[0].value : "";
   const [keywords, setKeywords] = useState<string>("");
@@ -142,7 +145,9 @@ export function SearchForm({
         </div>
       </div>
 
-      {filterItems && Object.keys(filterItems).length ? (
+      {loading ? (
+        <SelectSkeleton />
+      ) : filterItems && Object.keys(filterItems).length ? (
         <>
           <span className="block mb-2 font-medium text-gray-700">Filter</span>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -201,7 +206,9 @@ export function SearchForm({
         </>
       ) : null}
 
-      {sortSettings?.length ? (
+      {loading ? (
+        <SelectSkeleton />
+      ) : sortSettings?.length ? (
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-1">
             <label

@@ -4,6 +4,7 @@ import { Contact } from "../lib/provinces";
 import { isNotEmpty, stripTags } from "../lib/string-utils";
 
 import { EmptyState } from "./ui/empty-state";
+import { ContactListSkeleton } from "./ui/skeleton-loading";
 
 import {
   BadgeCheckIcon as BadgeCheckIconUnverified,
@@ -21,12 +22,17 @@ import Link from "next/link";
 type ContactListProps = {
   data: Contact[];
   provinceSlug: string;
+  loading: boolean;
 };
 
 export function ContactList(props: ContactListProps) {
   const htmrTransform: HtmrOptions["transform"] = {
     a: anchorTransformer,
   };
+
+  if (props.loading) {
+    return <ContactListSkeleton />;
+  }
 
   if (props.data.length > 0) {
     return (

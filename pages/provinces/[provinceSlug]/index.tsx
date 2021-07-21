@@ -29,36 +29,41 @@ const getMeta = (provinceName: string) => {
 export default function ProvincePage(props: ProvinceProps) {
   const { provinceName, provinceSlug, contactList } = props;
   const router = useRouter();
-  const [filteredContacts, handleSubmitKeywords, urlParams, filterItems] =
-    useSearch(
-      contactList,
-      [
-        "kebutuhan",
-        "penyedia",
-        "lokasi",
-        "alamat",
-        "keterangan",
-        "kontak",
-        "link",
-        "tambahan_informasi",
-        "bentuk_verifikasi",
-      ],
-      [
-        { field: "kebutuhan", title: "Kategori" },
-        { field: "lokasi", title: "Lokasi" },
-      ],
-      {
-        penyedia_asc: {
-          field: "penyedia",
-          order: "asc",
-        },
-        verified_first: {
-          field: ["verifikasi", "penyedia"],
-          order: ["desc", "asc"],
-        },
+  const [
+    filteredContacts,
+    handleSubmitKeywords,
+    urlParams,
+    filterItems,
+    loading,
+  ] = useSearch(
+    contactList,
+    [
+      "kebutuhan",
+      "penyedia",
+      "lokasi",
+      "alamat",
+      "keterangan",
+      "kontak",
+      "link",
+      "tambahan_informasi",
+      "bentuk_verifikasi",
+    ],
+    [
+      { field: "kebutuhan", title: "Kategori" },
+      { field: "lokasi", title: "Lokasi" },
+    ],
+    {
+      penyedia_asc: {
+        field: "penyedia",
+        order: "asc",
       },
-      "verified_first",
-    );
+      verified_first: {
+        field: ["verifikasi", "penyedia"],
+        order: ["desc", "asc"],
+      },
+    },
+    "verified_first",
+  );
 
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (provinceName) {
@@ -89,13 +94,18 @@ export default function ProvincePage(props: ProvinceProps) {
             filterItems={filterItems}
             initialValue={urlParams}
             itemName="kontak"
+            loading={loading}
             onSubmitKeywords={handleSubmitKeywords}
             sortSettings={[
               { value: "verified_first", label: "Terverifikasi" },
               { value: "penyedia_asc", label: "Nama" },
             ]}
           />
-          <ContactList data={filteredContacts} provinceSlug={provinceSlug} />
+          <ContactList
+            data={filteredContacts}
+            loading={loading}
+            provinceSlug={provinceSlug}
+          />
         </PageContent>
       </Page>
     );
