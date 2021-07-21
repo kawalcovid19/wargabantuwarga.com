@@ -34,7 +34,7 @@ export default function ProvincePage(props: ProvinceProps) {
     handleSubmitKeywords,
     urlParams,
     filterItems,
-    loading,
+    isLoading,
   ] = useSearch(
     contactList,
     [
@@ -93,8 +93,8 @@ export default function ProvincePage(props: ProvinceProps) {
             checkDocSize={true}
             filterItems={filterItems}
             initialValue={urlParams}
+            isLoading={isLoading}
             itemName="kontak"
-            loading={loading}
             onSubmitKeywords={handleSubmitKeywords}
             sortSettings={[
               { value: "verified_first", label: "Terverifikasi" },
@@ -103,7 +103,7 @@ export default function ProvincePage(props: ProvinceProps) {
           />
           <ContactList
             data={filteredContacts}
-            loading={loading}
+            isLoading={isLoading}
             provinceSlug={provinceSlug}
           />
         </PageContent>

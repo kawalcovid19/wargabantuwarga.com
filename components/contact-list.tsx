@@ -22,7 +22,7 @@ import Link from "next/link";
 type ContactListProps = {
   data: Contact[];
   provinceSlug: string;
-  loading: boolean;
+  isLoading: boolean;
 };
 
 export function ContactList(props: ContactListProps) {
@@ -30,7 +30,7 @@ export function ContactList(props: ContactListProps) {
     a: anchorTransformer,
   };
 
-  if (props.loading) {
+  if (props.isLoading) {
     return <ContactListSkeleton />;
   }
 

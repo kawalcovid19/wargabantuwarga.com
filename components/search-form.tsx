@@ -37,7 +37,7 @@ export function SearchForm({
   sortSettings,
   autoSearch,
   initialValue,
-  loading,
+  isLoading,
 }: {
   itemName: string;
   checkDocSize: boolean;
@@ -50,7 +50,7 @@ export function SearchForm({
     filters?: {};
     sort?: string;
   };
-  loading?: boolean;
+  isLoading?: boolean;
 }) {
   const defaultSort = sortSettings?.length ? sortSettings[0].value : "";
   const [keywords, setKeywords] = useState<string>("");
@@ -145,7 +145,7 @@ export function SearchForm({
         </div>
       </div>
 
-      {loading ? (
+      {isLoading ? (
         <SelectSkeleton />
       ) : filterItems && Object.keys(filterItems).length ? (
         <>
@@ -206,7 +206,7 @@ export function SearchForm({
         </>
       ) : null}
 
-      {loading ? (
+      {isLoading ? (
         <SelectSkeleton />
       ) : sortSettings?.length ? (
         <div className="grid grid-cols-2 gap-4">

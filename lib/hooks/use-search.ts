@@ -49,7 +49,7 @@ export function useSearch<T = unknown[]>(
   const [lastKeywords, setLastKeywords] = useState<string>("");
   const [filteredItems, setFilteredItems] = useState<T[]>([]);
   const [aggregationData, setAggregationData] = useState<any>({});
-  const [loading, setLoading] = useState<boolean>(true);
+  const [isLoading, setLoading] = useState<boolean>(true);
 
   const aggregate = (keywords?: string) => {
     if (aggregationSettings?.length) {
@@ -154,6 +154,6 @@ export function useSearch<T = unknown[]>(
     handleSubmitKeywords,
     initialParams,
     aggregationData,
-    loading,
+    isLoading,
   ] as const;
 }

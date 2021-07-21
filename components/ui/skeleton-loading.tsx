@@ -24,7 +24,7 @@ export const ContactListSkeleton = () => {
 export const SelectSkeleton = () => {
   return (
     <div className="space-y-1">
-      <div className=" animate-pulse h-8 bg-gray-300 rounded w-2/5" />
+      <div className="animate-pulse h-8 bg-gray-300 rounded w-2/5" />
     </div>
   );
 };
