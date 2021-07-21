@@ -1,6 +1,6 @@
 # Warga Bantu Warga
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 A society initiative to circulate information about health facilities and devices for COVID-19.
@@ -98,6 +98,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/nibraswastaken"><img src="https://avatars.githubusercontent.com/u/74199335?v=4?s=100" width="100px;" alt=""/><br /><sub><b>nibraswastaken</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=nibraswastaken" title="Code">💻</a> <a href="#infra-nibraswastaken" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#tool-nibraswastaken" title="Tools">🔧</a> <a href="#ideas-nibraswastaken" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="http://kalwabed.xyz"><img src="https://avatars.githubusercontent.com/u/49640654?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kalwabed Rizki</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=kalwabed" title="Documentation">📖</a> <a href="#translation-kalwabed" title="Translation">🌍</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=kalwabed" title="Code">💻</a></td>
   </tr>
 </table>
 
