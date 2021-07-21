@@ -20,6 +20,8 @@ Please pay attention on every issue attribute. Every issue might be referenced b
 
 #### For Beginners: `good-first-issue` label
 
+As mentioned [here](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/), `good-first-issue` is a label feature from GitHub which created to help beginner developers in contributing to an open-source project. `good-first-issue` informed us about the difficulty level of an issue. This means, that an issue with `good-first-issue` label suits perfectly for developers that would like to have their first contribution to an open-source project.
+
 ### Start working on issues
 
 Before working on an issue, there are a few things that you need to pay attention to:
