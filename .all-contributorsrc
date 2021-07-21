@@ -154,7 +154,86 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/13099373?v=4",
       "profile": "https://andriawan.com",
       "contributions": [
+        "doc",
+        "ideas",
+        "bug"
+      ]
+    },
+    {
+      "login": "TjandraD",
+      "name": "Tjandra Darmo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46013258?v=4",
+      "profile": "https://tjandradarmo.me",
+      "contributions": [
         "doc"
+      ]
+    },
+    {
+      "login": "Namchee",
+      "name": "Cristopher",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32661241?v=4",
+      "profile": "https://github.com/Namchee",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "faizrktm",
+      "name": "Faiz Azmi Rekatama",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46273747?v=4",
+      "profile": "https://github.com/faizrktm",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "ardiwilda",
+      "name": "ardiwilda",
+      "avatar_url": "https://avatars.githubusercontent.com/u/87063733?v=4",
+      "profile": "https://github.com/ardiwilda",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "kevinmingtarja",
+      "name": "Kevin Mingtarja",
+      "avatar_url": "https://avatars.githubusercontent.com/u/69668484?v=4",
+      "profile": "http://linkedin.com/in/kevinmingtarja/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "vzrenggamani",
+      "name": "Rengga Prakoso Nugroho",
+      "avatar_url": "https://avatars.githubusercontent.com/u/14950309?v=4",
+      "profile": "https://renggaprakosonugroho.my.id/",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "pveyes",
+      "name": "Fatih Kalifa",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1614415?v=4",
+      "profile": "https://fatihkalifa.com",
+      "contributions": [
+        "doc",
+        "design",
+        "review",
+        "code"
+      ]
+    },
+    {
+      "login": "baraeb92",
+      "name": "Bara E. Brahmantika",
+      "avatar_url": "https://avatars.githubusercontent.com/u/23743497?v=4",
+      "profile": "http://kitabisa.com",
+      "contributions": [
+        "ideas",
+        "infra",
+        "projectManagement"
       ]
     }
   ],
