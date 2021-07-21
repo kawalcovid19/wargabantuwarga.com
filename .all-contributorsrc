@@ -84,6 +84,78 @@
         "mentoring",
         "review"
       ]
+    },
+    {
+      "login": "adityapurwa",
+      "name": "Aditya Purwa",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6219895?v=4",
+      "profile": "http://taxfix.de",
+      "contributions": [
+        "code",
+        "ideas",
+        "infra",
+        "maintenance",
+        "tool"
+      ]
+    },
+    {
+      "login": "hanihusam",
+      "name": "Hani Husamuddin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25399426?v=4",
+      "profile": "https://www.linkedin.com/in/hanihusam/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "nibraswastaken",
+      "name": "nibraswastaken",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74199335?v=4",
+      "profile": "https://github.com/nibraswastaken",
+      "contributions": [
+        "code",
+        "infra",
+        "tool",
+        "ideas"
+      ]
+    },
+    {
+      "login": "kalwabed",
+      "name": "Kalwabed Rizki",
+      "avatar_url": "https://avatars.githubusercontent.com/u/49640654?v=4",
+      "profile": "http://kalwabed.xyz",
+      "contributions": [
+        "doc",
+        "translation",
+        "code"
+      ]
+    },
+    {
+      "login": "ihsanrabb",
+      "name": "ihsanrabb",
+      "avatar_url": "https://avatars.githubusercontent.com/u/47909781?v=4",
+      "profile": "https://github.com/ihsanrabb",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "emer7",
+      "name": "Gilbert Emerson",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21377166?v=4",
+      "profile": "https://github.com/emer7",
+      "contributions": [
+        "test"
+      ]
+    },
+    {
+      "login": "andriawan",
+      "name": "Muhammad Irwan Andriawan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13099373?v=4",
+      "profile": "https://andriawan.com",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
