@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import WhatsAppLogo from "../ui/whatsapp-logo";
+import WhatsAppLogo from "~/components/ui/whatsapp-logo";
 
 import {
   HomeIcon,

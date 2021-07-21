@@ -2,7 +2,7 @@ module.exports = {
   siteUrl: "https://www.wargabantuwarga.com",
   generateRobotsTxt: true,
   sitemapSize: 1000,
-  exclude: [""],
+  exclude: ["/provinces/tentang-database-0"],
   robotsTxtOptions: {
     policies: [
       {

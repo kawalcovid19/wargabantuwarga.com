@@ -1,4 +1,4 @@
-import provinces from "../data/wbw-sheets.json";
+import provinces from "~/data/wbw-sheets.json";
 
 import { getSlug } from "./string-utils";
 

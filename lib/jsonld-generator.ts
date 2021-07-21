@@ -1,5 +1,5 @@
-import { BreadcrumbItem } from "../components/ui/breadcrumb";
-import { PUBLIC_PATH } from "../constants";
+import { BreadcrumbItem } from "~/components/ui/breadcrumb";
+import { PUBLIC_PATH } from "~/constants";
 
 const HOME_STRUCTURE = {
   "@type": "ListItem",

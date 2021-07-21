@@ -1,8 +1,8 @@
-import { attributes, html } from "../_content/home-page.md";
-import { Page } from "../components/layout/page";
-import { PageContent } from "../components/layout/page-content";
-import config from "../lib/config";
-import { bannerBlurData, imgixLoader } from "../lib/imgix-loader";
+import { attributes, html } from "~/_content/home-page.md";
+import { Page } from "~/components/layout/page";
+import { PageContent } from "~/components/layout/page-content";
+import config from "~/lib/config";
+import { bannerBlurData, imgixLoader } from "~/lib/imgix-loader";
 
 import { ClockIcon } from "@heroicons/react/outline";
 import Image from "next/image";
