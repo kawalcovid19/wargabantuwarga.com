@@ -11,6 +11,7 @@ import React, {
 } from "react";
 
 import { PrimaryButton, SecondaryButton } from "./ui/button";
+import { FormLabel } from "./ui/forms/form-label";
 import { InputSelect } from "./ui/forms/input-select";
 import { InputText } from "./ui/forms/input-text";
 
@@ -117,12 +118,7 @@ export function SearchForm({
       onSubmit={handleSubmit}
     >
       <div className="flex flex-col">
-        <label
-          className="block text-sm font-medium text-gray-700"
-          htmlFor="keywordsInput"
-        >
-          Cari {itemName}:
-        </label>
+        <FormLabel htmlFor="keywordsInput">Cari {itemName}:</FormLabel>
         <div className="flex items-center mt-1">
           <InputText
             autoComplete="off"
@@ -150,12 +146,7 @@ export function SearchForm({
               const { title, buckets }: any = value;
               return (
                 <div key={`filter-${idx}`} className="space-y-1">
-                  <label
-                    className="block text-sm font-medium text-gray-700"
-                    htmlFor={`filter-${key}`}
-                  >
-                    {title}
-                  </label>
+                  <FormLabel htmlFor={`filter-${key}`}>{title}</FormLabel>
                   <InputSelect
                     name={key}
                     onChange={handleFilterChange}
@@ -204,12 +195,7 @@ export function SearchForm({
       {sortSettings?.length ? (
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-1">
-            <label
-              className="font-medium text-sm text-gray-700 mr-2"
-              htmlFor="sort-by"
-            >
-              Urut berdasarkan
-            </label>
+            <FormLabel htmlFor="sort-by">Urut berdasarkan</FormLabel>
             <InputSelect
               name="sort-by"
               onChange={handleSortChange}
