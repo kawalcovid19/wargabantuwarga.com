@@ -21,4 +21,4 @@ export const InputTextarea = React.forwardRef<
   );
 });
 
-InputTextarea.displayName = "InputText";
+InputTextarea.displayName = "InputTextarea";
