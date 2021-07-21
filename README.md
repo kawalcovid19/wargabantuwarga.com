@@ -1,6 +1,6 @@
 # Warga Bantu Warga
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 A society initiative to circulate information about health facilities and devices for COVID-19.
@@ -94,6 +94,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://dev.to/@ekafyi"><img src="https://avatars.githubusercontent.com/u/6597211?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Eka</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=ekafyi" title="Code">💻</a> <a href="#design-ekafyi" title="Design">🎨</a> <a href="#ideas-ekafyi" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-ekafyi" title="Maintenance">🚧</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/pulls?q=is%3Apr+reviewed-by%3Aekafyi" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://mazipan.space"><img src="https://avatars.githubusercontent.com/u/7221389?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Irfan Maulana</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/issues?q=author%3Amazipan" title="Bug reports">🐛</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=mazipan" title="Code">💻</a> <a href="#ideas-mazipan" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-mazipan" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-mazipan" title="Maintenance">🚧</a> <a href="#mentoring-mazipan" title="Mentoring">🧑‍🏫</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/pulls?q=is%3Apr+reviewed-by%3Amazipan" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="http://taxfix.de"><img src="https://avatars.githubusercontent.com/u/6219895?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aditya Purwa</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=adityapurwa" title="Code">💻</a> <a href="#ideas-adityapurwa" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-adityapurwa" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-adityapurwa" title="Maintenance">🚧</a> <a href="#tool-adityapurwa" title="Tools">🔧</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/hanihusam/"><img src="https://avatars.githubusercontent.com/u/25399426?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hani Husamuddin</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=hanihusam" title="Code">💻</a></td>
   </tr>
 </table>
 
