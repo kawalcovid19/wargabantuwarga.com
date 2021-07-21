@@ -10,7 +10,7 @@ import { DefaultSeo } from "next-seo";
 
 const meta = {
   siteName: config.site_name,
-  title: `${config.site_name} | ${config.site_tagline}`,
+  title: `${config.site_tagline} | ${config.site_name}`,
   tagline: config.site_tagline,
   description: config.site_description,
 };
