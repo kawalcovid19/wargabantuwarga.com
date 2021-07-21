@@ -1,5 +1,8 @@
 import "../styles/globals.css";
 import "../styles/fonts.css";
+import "nprogress/nprogress.css";
+
+import { useEffect } from "react";
 
 import { LayoutRoot } from "../components/layout/layout-root";
 import config from "../lib/config";
@@ -7,6 +10,7 @@ import config from "../lib/config";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { DefaultSeo } from "next-seo";
+import NProgress from "nprogress";
 
 const meta = {
   siteName: config.site_name,
@@ -17,6 +21,25 @@ const meta = {
 };
 
 export default function App({ Component, pageProps, router }: AppProps) {
+  useEffect(() => {
+    const handleStart = () => {
+      NProgress.start();
+    };
+    const handleStop = () => {
+      NProgress.done();
+    };
+
+    router.events.on("routeChangeStart", handleStart);
+    router.events.on("routeChangeComplete", handleStop);
+    router.events.on("routeChangeError", handleStop);
+
+    return () => {
+      router.events.off("routeChangeStart", handleStart);
+      router.events.off("routeChangeComplete", handleStop);
+      router.events.off("routeChangeError", handleStop);
+    };
+  }, [router]);
+
   return (
     <LayoutRoot>
       <DefaultSeo
