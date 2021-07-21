@@ -44,6 +44,7 @@ export function useSearch<T = unknown[]>(
       ...sortSettings,
     },
   };
+
   if (aggregationSettings?.length) {
     configuration.aggregations = aggregationSettings.reduce(
       (aggregations: any, cur) => {

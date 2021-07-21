@@ -35,6 +35,7 @@ export function SearchForm({
   sortSettings,
   autoSearch,
   initialValue,
+  checkDocSize,
 }: {
   itemName: string;
   onSubmitKeywords: (keywords: string, filters?: any, sort_by?: string) => void;
@@ -46,6 +47,7 @@ export function SearchForm({
     filters?: {};
     sort?: string;
   };
+  checkDocSize: boolean;
 }) {
   const defaultSort = sortSettings?.length ? sortSettings[0].value : "";
   const [keywords, setKeywords] = useState<string>("");
@@ -124,7 +126,7 @@ export function SearchForm({
         <div className="flex items-center mt-1">
           <input
             autoComplete="off"
-            className="outline-none focus:ring-blue-500 focus:border-blue-500 block w-full px-2 py-2 sm:text-sm border-gray-300 hover:border-gray-400 border-2 rounded-md"
+            className="outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full px-2 py-2 sm:text-sm border-gray-300 hover:border-gray-400 border rounded-md"
             id="keywordsInput"
             onChange={handleKeywordsChange}
             type="text"
@@ -140,6 +142,7 @@ export function SearchForm({
           </SecondaryButton>
         </div>
       </div>
+
       {filterItems && Object.keys(filterItems).length ? (
         <>
           <span className="block mb-2 font-medium text-gray-700">Filter</span>
@@ -162,17 +165,29 @@ export function SearchForm({
                   >
                     <option value="">Semua</option>
                     {buckets.map((bucket: any, bIdx: number) => {
-                      return (
-                        bucket.doc_count > 0 &&
-                        bucket.key && (
+                      if (bucket.key) {
+                        if (checkDocSize && bucket.doc_count > 0) {
+                          return (
+                            <option
+                              key={`option-${key}-${bIdx + 1}`}
+                              value={bucket.key}
+                            >
+                              {bucket.key}
+                            </option>
+                          );
+                        }
+
+                        // FAQ page doesn't check the doc_count
+                        return (
                           <option
                             key={`option-${key}-${bIdx + 1}`}
                             value={bucket.key}
                           >
                             {bucket.key}
                           </option>
-                        )
-                      );
+                        );
+                      }
+                      return null;
                     })}
                   </Select>
                 </div>
@@ -181,6 +196,7 @@ export function SearchForm({
           </div>
         </>
       ) : null}
+
       {sortSettings?.length ? (
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-1">
