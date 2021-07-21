@@ -9,9 +9,15 @@ import provinces from "../../lib/provinces";
 import { getInitial, getSlug } from "../../lib/string-utils";
 
 import { GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 
 type ProvincesPageProps = {
   provincesList: ProvinceListItem[];
+};
+
+const meta = {
+  // @TODO: change this after got a better title
+  title: "Informasi Faskes & Alkes untuk COVID-19 di semua provinsi Indonesia",
 };
 
 export default function ProvincesPage(props: ProvincesPageProps) {
@@ -21,6 +27,7 @@ export default function ProvincesPage(props: ProvincesPageProps) {
   );
   return (
     <Page>
+      <NextSeo openGraph={{ title: meta.title }} title={meta.title} />
       <PageHeader
         backButton={<BackButton href="/" />}
         breadcrumbs={[

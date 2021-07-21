@@ -11,11 +11,19 @@ import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
 
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
+import { NextSeo } from "next-seo";
 
 type ProvinceProps = {
   provinceName: string;
   provinceSlug: string;
   contactList: Contact[];
+};
+
+const getMeta = (provinceName: string) => {
+  return {
+    // @TODO: change this after got a better title
+    title: `Informasi Faskes & Alkes untuk COVID-19 di provinsi ${provinceName}`,
+  };
 };
 
 export default function ProvincePage(props: ProvinceProps) {
@@ -61,6 +69,10 @@ export default function ProvincePage(props: ProvinceProps) {
   if (provinceName) {
     return (
       <Page>
+        <NextSeo
+          openGraph={{ title: getMeta(provinceName).title }}
+          title={getMeta(provinceName).title}
+        />
         <PageHeader
           backButton={<BackButton href="/provinces" />}
           breadcrumbs={[
