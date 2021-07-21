@@ -1,6 +1,6 @@
 # Warga Bantu Warga
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 A society initiative to circulate information about health facilities and devices for COVID-19.
@@ -104,6 +104,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://andriawan.com"><img src="https://avatars.githubusercontent.com/u/13099373?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Muhammad Irwan Andriawan</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=andriawan" title="Documentation">📖</a></td>
     <td align="center"><a href="https://tjandradarmo.me"><img src="https://avatars.githubusercontent.com/u/46013258?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tjandra Darmo</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=TjandraD" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/Namchee"><img src="https://avatars.githubusercontent.com/u/32661241?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cristopher</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=Namchee" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/faizrktm"><img src="https://avatars.githubusercontent.com/u/46273747?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Faiz Azmi Rekatama</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=faizrktm" title="Code">💻</a></td>
   </tr>
 </table>
 
