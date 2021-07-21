@@ -106,6 +106,18 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "nibraswastaken",
+      "name": "nibraswastaken",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74199335?v=4",
+      "profile": "https://github.com/nibraswastaken",
+      "contributions": [
+        "code",
+        "infra",
+        "tool",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
