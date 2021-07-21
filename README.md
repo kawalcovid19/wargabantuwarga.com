@@ -1,6 +1,6 @@
 # Warga Bantu Warga
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-19-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 A society initiative to circulate information about health facilities and devices for COVID-19.
@@ -111,6 +111,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://linkedin.com/in/kevinmingtarja/"><img src="https://avatars.githubusercontent.com/u/69668484?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kevin Mingtarja</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=kevinmingtarja" title="Code">💻</a></td>
     <td align="center"><a href="https://renggaprakosonugroho.my.id/"><img src="https://avatars.githubusercontent.com/u/14950309?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rengga Prakoso Nugroho</b></sub></a><br /><a href="#content-vzrenggamani" title="Content">🖋</a></td>
     <td align="center"><a href="https://fatihkalifa.com"><img src="https://avatars.githubusercontent.com/u/1614415?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Fatih Kalifa</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=pveyes" title="Documentation">📖</a> <a href="#design-pveyes" title="Design">🎨</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/pulls?q=is%3Apr+reviewed-by%3Apveyes" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=pveyes" title="Code">💻</a></td>
+    <td align="center"><a href="http://kitabisa.com"><img src="https://avatars.githubusercontent.com/u/23743497?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bara E. Brahmantika</b></sub></a><br /><a href="#ideas-baraeb92" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-baraeb92" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#projectManagement-baraeb92" title="Project Management">📆</a></td>
   </tr>
 </table>
 
