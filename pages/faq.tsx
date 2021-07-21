@@ -10,6 +10,7 @@ import { useSearch } from "../lib/hooks/use-search";
 
 import htmr from "htmr";
 import { GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 
 type FaqsProps = {
   faqSheets: FaqData[];
@@ -26,12 +27,18 @@ function groupBy<T, U>(data: T[], key: U) {
   }, {});
 }
 
+const meta = {
+  title: "Pertanyaan yang sering ditanyakan",
+};
+
 export default function Faqs(props: FaqsProps) {
   const { faqSheets: faq } = props;
-  const [filteredQuestions, handleSubmitKeywords] = useSearch(faq, [
-    "pertanyaan",
-    "jawaban",
-  ]);
+  const [filteredQuestions, handleSubmitKeywords, urlParams, filterItems] =
+    useSearch(
+      faq,
+      ["pertanyaan", "jawaban"],
+      [{ field: "kategori_pertanyaan", title: "Kategori Pertanyaan" }],
+    );
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const listFaqs = useMemo(() => {
@@ -43,6 +50,7 @@ export default function Faqs(props: FaqsProps) {
 
   return (
     <Page>
+      <NextSeo openGraph={{ title: meta.title }} title={meta.title} />
       <PageHeader
         backButton={<BackButton href="/" />}
         breadcrumbs={[
@@ -56,9 +64,13 @@ export default function Faqs(props: FaqsProps) {
       />
       <PageContent>
         <SearchForm
+          checkDocSize={false}
+          filterItems={filterItems}
+          initialValue={urlParams}
           itemName="pertanyaan"
           onSubmitKeywords={handleSubmitKeywords}
         />
+
         <div className="space-y-4">
           {Object.keys(listFaqs as Record<string, unknown>).map(
             (category: string) => (

@@ -6,7 +6,7 @@ declare module "*.css" {
 declare module "*.md" {
   // eslint-disable-next-line one-var
   const attributes: {
-    title: string;
+    last_updated_time: string;
   };
   // eslint-disable-next-line one-var
   const html: string;

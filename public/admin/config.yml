@@ -4,6 +4,7 @@ backend:
 media_folder: public/images
 public_folder: /images
 publish_mode: editorial_workflow
+display_url: https://www.wargabantuwarga.com
 
 collections:
   - name: "config"
@@ -38,5 +39,15 @@ collections:
         label: "Home Page"
         file: "_content/home-page.md"
         fields:
-          - { label: "Title", name: "title", widget: "string", hint: "Page title" }
-          - { label: "Body", name: "body", widget: "markdown", hint: "Page body" }
+          - {
+              label: "Last updated time",
+              name: "last_updated_time",
+              widget: "datetime",
+              hint: "Last updated time",
+            }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              hint: "Page body",
+            }

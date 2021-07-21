@@ -7,6 +7,17 @@ img {
   aspect-ratio: attr(width) / attr(height);
 }
 
+@layer components {
+  .helper-link-cover::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
 /* Temporary workaround for Google Docs-generated Home Page markup */
 .home-page-content table::after {
   content: " ";

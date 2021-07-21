@@ -2,12 +2,14 @@ import { Page } from "../components/layout/page";
 import { PageContent } from "../components/layout/page-content";
 import { Script } from "../components/script";
 import data from "../data/wbw.json";
+import config from "../lib/config";
 import { bannerBlurData, imgixLoader } from "../lib/imgix-loader";
 
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { NextSeo } from "next-seo";
 
 type HomeProps = {
   html: string;
@@ -23,9 +25,14 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
+const meta = {
+  title: `${config.site_tagline} | ${config.site_name}`,
+};
+
 export default function Home(props: HomeProps) {
   return (
     <Page>
+      <NextSeo title={meta.title} titleTemplate="%s" />
       <Head>
         <style dangerouslySetInnerHTML={{ __html: props.css }} />
       </Head>
