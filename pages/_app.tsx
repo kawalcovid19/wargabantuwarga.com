@@ -9,7 +9,6 @@ import config from "../lib/config";
 
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import { DefaultSeo } from "next-seo";
 import NProgress from "nprogress";
 
@@ -22,8 +21,6 @@ const meta = {
 };
 
 export default function App({ Component, pageProps, router }: AppProps) {
-  const router = useRouter();
-
   useEffect(() => {
     const handleStart = () => {
       NProgress.start();
