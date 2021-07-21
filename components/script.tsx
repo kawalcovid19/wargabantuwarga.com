@@ -4,7 +4,7 @@
 
 import { ScriptHTMLAttributes, useEffect } from "react";
 
-import { requestIdleCallback } from "@lib/request-idle-callback";
+import { requestIdleCallback } from "~/lib/request-idle-callback";
 
 const loadScript = (props: ScriptHTMLAttributes<HTMLScriptElement>): void => {
   const { dangerouslySetInnerHTML } = props;

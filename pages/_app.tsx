@@ -4,8 +4,9 @@ import "nprogress/nprogress.css";
 
 import { useEffect } from "react";
 
-import { LayoutRoot } from "@components/layout/layout-root";
-import config from "@lib/config";
+import { LayoutRoot } from "~/components/layout/layout-root";
+import config from "~/lib/config";
+
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { DefaultSeo } from "next-seo";

@@ -1,7 +1,8 @@
-import { CopyButton } from "@components/copy-button";
-import { anchorTransformer } from "@lib/htmr-transformers";
-import { Contact } from "@lib/provinces";
-import { isNotEmpty, stripTags } from "@lib/string-utils";
+import { CopyButton } from "~/components/copy-button";
+import { anchorTransformer } from "~/lib/htmr-transformers";
+import { Contact } from "~/lib/provinces";
+import { isNotEmpty, stripTags } from "~/lib/string-utils";
+
 import htmr from "htmr";
 import { HtmrOptions } from "htmr/src/types";
 

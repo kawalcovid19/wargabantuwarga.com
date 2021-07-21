@@ -10,8 +10,8 @@ import React, {
   useState,
 } from "react";
 
-import { PrimaryButton, SecondaryButton } from "./ui/button";
-import { Select } from "./ui/select";
+import { PrimaryButton, SecondaryButton } from "~/components/ui/button";
+import { Select } from "~/components/ui/select";
 
 import { debounce } from "ts-debounce";
 

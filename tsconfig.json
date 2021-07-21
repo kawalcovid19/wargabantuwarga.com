@@ -16,10 +16,7 @@
     "typeRoots": ["./@types", "./node_modules/@types"],
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["./components/*"],
-      "@styles/*": ["./styles/*"],
-      "@lib/*": ["./lib/*"],
-      "@data/*": ["./data/*"]
+      "~/*": ["./*"]
     }
   },
   "exclude": ["node_modules"],

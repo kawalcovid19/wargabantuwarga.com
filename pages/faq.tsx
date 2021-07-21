@@ -1,12 +1,13 @@
 import { useMemo } from "react";
 
-import { BackButton } from "@components/layout/back-button";
-import { Page } from "@components/layout/page";
-import { PageContent } from "@components/layout/page-content";
-import { PageHeader } from "@components/layout/page-header";
-import { SearchForm } from "@components/search-form";
-import faqSheets, { FaqData } from "@lib/faq-databases";
-import { useSearch } from "@lib/hooks/use-search";
+import { BackButton } from "~/components/layout/back-button";
+import { Page } from "~/components/layout/page";
+import { PageContent } from "~/components/layout/page-content";
+import { PageHeader } from "~/components/layout/page-header";
+import { SearchForm } from "~/components/search-form";
+import faqSheets, { FaqData } from "~/lib/faq-databases";
+import { useSearch } from "~/lib/hooks/use-search";
+
 import htmr from "htmr";
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";

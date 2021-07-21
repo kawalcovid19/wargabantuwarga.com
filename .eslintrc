@@ -12,7 +12,15 @@
   "rules": {
     "@babel/new-cap": "off",
     "@typescript-eslint/no-explicit-any": "warn",
-    "import/extensions": ["warn", "never", { "css": "ignorePackages" }],
+    "import/extensions": [
+      "warn",
+      "never",
+      {
+        "css": "ignorePackages",
+        "json": "ignorePackages",
+        "md": "ignorePackages"
+      }
+    ],
     "import/newline-after-import": "warn",
     "import/no-extraneous-dependencies": "warn",
     "import/order": "off",
