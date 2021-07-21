@@ -18,7 +18,7 @@ Closed Issues are issues that have been completed or doesn't need further action
 
 Please pay attention on every issue attribute. Every issue might be referenced by other contributors through [Linked Pull Requests](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue). If an issue has a linked pull request, that means the issue is currently being handled. To avoid working on the same issue, contributors were strongly encouraged to submit a [draft pull request](https://github.blog/2019-02-14-introducing-draft-pull-requests/) first when they start working on an issue.
 
-#### For Beginners: `good-first-issue` label
+#### For Beginners: `good first issue` label
 
 As mentioned [here](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/), `good-first-issue` is a label feature from GitHub which created to help beginner contributors in contributing to an open-source project. `good-first-issue` informed us about the difficulty level of an issue. This means, that an issue with `good-first-issue` label suits perfectly for contributors that would like to have their first contribution to an open-source project.
 
