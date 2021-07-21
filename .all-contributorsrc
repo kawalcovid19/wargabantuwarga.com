@@ -69,6 +69,21 @@
         "maintenance",
         "review"
       ]
+    },
+    {
+      "login": "mazipan",
+      "name": "Irfan Maulana",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7221389?v=4",
+      "profile": "https://mazipan.space",
+      "contributions": [
+        "bug",
+        "code",
+        "ideas",
+        "infra",
+        "maintenance",
+        "mentoring",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
