@@ -4,7 +4,7 @@ import { ArrowCircleUpIcon } from "@heroicons/react/solid";
 import clsx from "clsx";
 
 type ScrollArrowProps = {
-  heightThreshold: number;
+  heightThreshold?: number;
 };
 
 export const ScrollArrow = ({ heightThreshold = 400 }: ScrollArrowProps) => {
@@ -31,7 +31,7 @@ export const ScrollArrow = ({ heightThreshold = 400 }: ScrollArrowProps) => {
     <button onClick={scrollTop}>
       <ArrowCircleUpIcon
         className={clsx(
-          "fixed text-blue-600 cursor-pointer bottom-20 right-10 h-16 opacity-60 hover:opacity-100 transition duration-300 ease-in-out",
+          "fixed text-blue-600 cursor-pointer bottom-20 right-10 h-16 opacity-60 hover:opacity-100 transition duration-300 ease-in-out z-50",
           showScroll ? "flex" : "hidden",
         )}
       />
