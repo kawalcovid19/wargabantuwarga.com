@@ -1,11 +1,11 @@
+import { PUBLIC_PATH } from "../constants";
+
 import fs from "fs";
 import globby from "globby";
 import path from "path";
 import prettier from "prettier";
 
 const getDate = new Date().toISOString();
-
-const webrootDomain = "https://www.wargabantuwarga.com";
 
 const formatXml = (sitemap: string) =>
   prettier.format(sitemap, { parser: "html" });
@@ -18,7 +18,7 @@ const formatXml = (sitemap: string) =>
         const sitemapPath = sitemap.replace("public/", "");
         return `
           <sitemap>
-            <loc>${`${webrootDomain}/${sitemapPath}`}</loc>
+            <loc>${`${PUBLIC_PATH}/${sitemapPath}`}</loc>
             <lastmod>${getDate}</lastmod>
           </sitemap>`;
       })
