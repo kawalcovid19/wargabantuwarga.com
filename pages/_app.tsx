@@ -55,10 +55,10 @@ export default function App({ Component, pageProps, router }: AppProps) {
           site_name: meta.siteName,
           images: [
             {
-              url: "https://wargabantuwarga.com/wbw.png",
+              url: "https://wargabantuwarga.com/wbw_og.jpeg",
               alt: meta.siteName,
-              height: 689,
-              width: 601,
+              height: 630,
+              width: 1200,
             },
           ],
         }}
@@ -67,7 +67,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         twitter={{
           handle: "@KawalCOVID19",
           site: "@KawalCOVID19",
-          cardType: "summary",
+          cardType: "summary_large_image",
         }}
       />
       <Head>
