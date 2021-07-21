@@ -1,7 +1,7 @@
 import * as React from "react";
 
-import { makeBreadcrumbJsonLd } from "../../lib/jsonld-generator";
-import { Breadcrumb, BreadcrumbItem } from "../ui/breadcrumb";
+import { Breadcrumb, BreadcrumbItem } from "~/components/ui/breadcrumb";
+import { makeBreadcrumbJsonLd } from "~/lib/jsonld-generator";
 
 import Head from "next/head";
 

@@ -1,9 +1,8 @@
-import { CopyButton } from "../components/copy-button";
-import { anchorTransformer } from "../lib/htmr-transformers";
-import { Contact } from "../lib/provinces";
-import { isNotEmpty, stripTags } from "../lib/string-utils";
-
-import { EmptyState } from "./ui/empty-state";
+import { CopyButton } from "~/components/copy-button";
+import { EmptyState } from "~/components/ui/empty-state";
+import { anchorTransformer } from "~/lib/htmr-transformers";
+import { Contact } from "~/lib/provinces";
+import { isNotEmpty, stripTags } from "~/lib/string-utils";
 
 import {
   BadgeCheckIcon as BadgeCheckIconUnverified,
