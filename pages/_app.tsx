@@ -22,7 +22,7 @@ const meta = {
 
 export default function App({ Component, pageProps, router }: AppProps) {
   useEffect(() => {
-    const handleStart = (_: string, { shallow }: any) => {
+    const handleStart = (_: string, { shallow }: { shallow: boolean }) => {
       if (!shallow) {
         NProgress.start();
       }
