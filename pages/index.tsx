@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const meta = {
-  title: `${config.site_name} | ${config.site_tagline}`,
+  title: `${config.site_tagline} | ${config.site_name}`,
 };
 
 export default function Home(props: HomeProps) {

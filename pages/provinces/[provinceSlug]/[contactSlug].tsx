@@ -19,9 +19,13 @@ type ContactPageProps = {
 };
 
 const getMeta = (provinceName: string, contact: Contact) => {
+  const providerWithSeparator = !!contact.penyedia
+    ? `${contact.penyedia} - `
+    : "";
+
   return {
     // @TODO: change this after got a better title
-    title: `${contact.penyedia} - ${contact.keterangan} di ${provinceName}`,
+    title: `${providerWithSeparator}${contact.keterangan} di ${provinceName}`,
   };
 };
 

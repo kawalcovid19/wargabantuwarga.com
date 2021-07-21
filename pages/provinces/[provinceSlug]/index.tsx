@@ -22,7 +22,7 @@ type ProvinceProps = {
 const getMeta = (provinceName: string) => {
   return {
     // @TODO: change this after got a better title
-    title: `Informasi Faskes & Alkes untuk COVID-19 di provinsi ${provinceName}`,
+    title: `Informasi Faskes & Alkes untuk COVID-19 di Provinsi ${provinceName}`,
   };
 };
 
