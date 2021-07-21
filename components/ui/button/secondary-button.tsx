@@ -13,6 +13,11 @@ import {
 
 import clsx from "clsx";
 
+/**
+ * A secondary button variant for actions that complement the primary button action.
+ *
+ * @link https://tailwindui.com/components/application-ui/elements/buttons#component-9fc8ac3ded8cb313876bfa01742a0570
+ */
 export const SecondaryButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {

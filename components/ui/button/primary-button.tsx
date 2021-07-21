@@ -13,6 +13,11 @@ import {
 
 import clsx from "clsx";
 
+/**
+ * Button component used for primary actions.
+ *
+ * @link https://tailwindui.com/components/application-ui/elements/buttons#component-80fd0d5ac7982f1a83b171bb0fb9e116
+ */
 export const PrimaryButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {

@@ -13,6 +13,11 @@ import {
 
 import clsx from "clsx";
 
+/**
+ * A white-canvas button as an alternative to the secondary variant button, or for other lesser-important actions.
+ *
+ * @link https://tailwindui.com/components/application-ui/elements/buttons#component-109c4104d58d9fedfa8650dbe24c1ae8
+ */
 export const WhiteButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {

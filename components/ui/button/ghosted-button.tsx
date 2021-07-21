@@ -13,6 +13,9 @@ import {
 
 import clsx from "clsx";
 
+/**
+ * A ghosted button with no background when not hovered.
+ */
 export const GhostedButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
