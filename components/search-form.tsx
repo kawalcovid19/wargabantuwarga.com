@@ -11,7 +11,8 @@ import React, {
 } from "react";
 
 import { PrimaryButton, SecondaryButton } from "./ui/button";
-import { Select } from "./ui/select";
+import { InputSelect } from "./ui/forms/input-select";
+import { InputText } from "./ui/forms/input-text";
 
 import { debounce } from "ts-debounce";
 
@@ -123,9 +124,8 @@ export function SearchForm({
           Cari {itemName}:
         </label>
         <div className="flex items-center mt-1">
-          <input
+          <InputText
             autoComplete="off"
-            className="outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full px-2 py-2 sm:text-sm border-gray-300 hover:border-gray-400 border rounded-md"
             id="keywordsInput"
             onChange={handleKeywordsChange}
             type="text"
@@ -156,7 +156,7 @@ export function SearchForm({
                   >
                     {title}
                   </label>
-                  <Select
+                  <InputSelect
                     name={key}
                     onChange={handleFilterChange}
                     title={title}
@@ -193,7 +193,7 @@ export function SearchForm({
                       }
                       return null;
                     })}
-                  </Select>
+                  </InputSelect>
                 </div>
               );
             })}
@@ -210,7 +210,7 @@ export function SearchForm({
             >
               Urut berdasarkan
             </label>
-            <Select
+            <InputSelect
               name="sort-by"
               onChange={handleSortChange}
               title="Urut berdasarkan"
@@ -223,7 +223,7 @@ export function SearchForm({
                   </option>
                 );
               })}
-            </Select>
+            </InputSelect>
           </div>
         </div>
       ) : null}
