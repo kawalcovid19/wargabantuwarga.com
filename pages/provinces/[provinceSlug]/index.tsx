@@ -44,9 +44,14 @@ export default function ProvincePage(props: ProvinceProps) {
           field: "penyedia",
           order: "asc",
         },
+        /*
         verified_first: {
           field: ["verifikasi", "penyedia"],
           order: ["desc", "asc"],
+        },*/
+        verified_first: {
+          field: "verifikasi",
+          order: "desc",
         },
       },
       "verified_first",
