@@ -36,7 +36,7 @@ export default function Faqs(props: FaqsProps) {
   const [filteredQuestions, handleSubmitKeywords, urlParams, filterItems] =
     useSearch(
       faq,
-      ["pertanyaan", "jawaban"],
+      ["kategori_pertanyaan", "pertanyaan", "jawaban"],
       [{ field: "kategori_pertanyaan", title: "Kategori Pertanyaan" }],
     );
 
