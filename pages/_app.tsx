@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
           ],
         }}
         title={config.site_tagline}
-        titleTemplate={`${meta.siteName} | %s`}
+        titleTemplate={`%s | ${meta.siteName}`}
         twitter={{
           handle: "@KawalCOVID19",
           site: "@KawalCOVID19",
