@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 
 import { ArrowCircleUpIcon } from "@heroicons/react/solid";
+import clsx from "clsx";
 
 export const ScrollArrow = () => {
   const [showScroll, setShowScroll] = useState(false);
@@ -26,9 +27,11 @@ export const ScrollArrow = () => {
 
   return (
     <ArrowCircleUpIcon
-      className="fixed cursor-pointer bottom-20 right-10"
+      className={clsx(
+        "fixed cursor-pointer bottom-20 right-10 h-16",
+        showScroll ? "flex" : "hidden",
+      )}
       onClick={scrollTop}
-      style={{ height: 40, display: showScroll ? "flex" : "none" }}
     />
   );
 };
