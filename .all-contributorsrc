@@ -16,6 +16,16 @@
         "doc",
         "review"
       ]
+    },
+    {
+      "login": "resir014",
+      "name": "Resi Respati",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5663877?v=4",
+      "profile": "https://resir014.xyz",
+      "contributions": [
+        "code",
+        "design"
+      ],
     }
   ],
   "contributorsPerLine": 7,
