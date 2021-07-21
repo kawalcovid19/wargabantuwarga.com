@@ -10,8 +10,10 @@ import React, {
   useState,
 } from "react";
 
-import { PrimaryButton, SecondaryButton } from "~/components/ui/button";
-import { Select } from "~/components/ui/select";
+import { PrimaryButton, SecondaryButton } from "./ui/button";
+import { FormLabel } from "./ui/forms/form-label";
+import { InputSelect } from "./ui/forms/input-select";
+import { InputText } from "./ui/forms/input-text";
 
 import { debounce } from "ts-debounce";
 
@@ -116,16 +118,10 @@ export function SearchForm({
       onSubmit={handleSubmit}
     >
       <div className="flex flex-col">
-        <label
-          className="block text-sm font-medium text-gray-700"
-          htmlFor="keywordsInput"
-        >
-          Cari {itemName}:
-        </label>
+        <FormLabel htmlFor="keywordsInput">Cari {itemName}:</FormLabel>
         <div className="flex items-center mt-1">
-          <input
+          <InputText
             autoComplete="off"
-            className="outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full px-2 py-2 sm:text-sm border-gray-300 hover:border-gray-400 border rounded-md"
             id="keywordsInput"
             onChange={handleKeywordsChange}
             type="text"
@@ -150,13 +146,8 @@ export function SearchForm({
               const { title, buckets }: any = value;
               return (
                 <div key={`filter-${idx}`} className="space-y-1">
-                  <label
-                    className="block text-sm font-medium text-gray-700"
-                    htmlFor={`filter-${key}`}
-                  >
-                    {title}
-                  </label>
-                  <Select
+                  <FormLabel htmlFor={`filter-${key}`}>{title}</FormLabel>
+                  <InputSelect
                     name={key}
                     onChange={handleFilterChange}
                     title={title}
@@ -193,7 +184,7 @@ export function SearchForm({
                       }
                       return null;
                     })}
-                  </Select>
+                  </InputSelect>
                 </div>
               );
             })}
@@ -204,13 +195,8 @@ export function SearchForm({
       {sortSettings?.length ? (
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-1">
-            <label
-              className="font-medium text-sm text-gray-700 mr-2"
-              htmlFor="sort-by"
-            >
-              Urut berdasarkan
-            </label>
-            <Select
+            <FormLabel htmlFor="sort-by">Urut berdasarkan</FormLabel>
+            <InputSelect
               name="sort-by"
               onChange={handleSortChange}
               title="Urut berdasarkan"
@@ -223,7 +209,7 @@ export function SearchForm({
                   </option>
                 );
               })}
-            </Select>
+            </InputSelect>
           </div>
         </div>
       ) : null}

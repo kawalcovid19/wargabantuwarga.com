@@ -6,6 +6,18 @@
   "commit": false,
   "contributors": [
     {
+      "login": "zainfathoni",
+      "name": "Zain Fathoni",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6315466?v=4",
+      "profile": "https://zainf.dev",
+      "contributions": [
+        "code",
+        "projectManagement",
+        "doc",
+        "review"
+      ]
+    },
+    {
       "login": "resir014",
       "name": "Resi Respati",
       "avatar_url": "https://avatars.githubusercontent.com/u/5663877?v=4",
@@ -13,7 +25,7 @@
       "contributions": [
         "code",
         "design"
-      ]
+      ],
     }
   ],
   "contributorsPerLine": 7,
