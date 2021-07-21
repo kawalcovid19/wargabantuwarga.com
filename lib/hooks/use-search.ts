@@ -49,6 +49,7 @@ export function useSearch<T = unknown[]>(
   const [lastKeywords, setLastKeywords] = useState<string>("");
   const [filteredItems, setFilteredItems] = useState<T[]>([]);
   const [aggregationData, setAggregationData] = useState<any>({});
+  const [isLoading, setLoading] = useState<boolean>(true);
 
   const aggregate = (keywords?: string) => {
     if (aggregationSettings?.length) {
@@ -68,6 +69,7 @@ export function useSearch<T = unknown[]>(
     };
     const searchResult: any = itemsjs.search(searchParams);
     setFilteredItems(searchResult.data.items as T[]);
+    setLoading(false);
 
     if (updateUrl) {
       const queryParams = [];
@@ -92,6 +94,7 @@ export function useSearch<T = unknown[]>(
   };
 
   useEffect(() => {
+    setLoading(true);
     const queryParams = getQueryParams(window.location.search);
     if (Object.keys(queryParams).length) {
       let keywordsParam: string = "";
@@ -124,6 +127,7 @@ export function useSearch<T = unknown[]>(
     } else {
       setInitialParams({});
       setFilteredItems(items);
+      setLoading(false);
       aggregate();
     }
   }, [items]);
@@ -150,5 +154,6 @@ export function useSearch<T = unknown[]>(
     handleSubmitKeywords,
     initialParams,
     aggregationData,
+    isLoading,
   ] as const;
 }
