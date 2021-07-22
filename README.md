@@ -45,12 +45,15 @@ For any improvements on the website, we should continuously measure its impact o
 
 ## Getting Started
 
-First, clone the repository
+Before getting started, please follow the following steps below.
+
+First, clone the repository,
+
 ```bash
 git clone https://github.com/kawalcovid19/wargabantuwarga.com.git
 ```
 
-Then, install dependencies and fetch data to your local machine
+Then, install dependencies and fetch data to your local machine,
 
 ```bash
 cd wargabantuwarga.com
