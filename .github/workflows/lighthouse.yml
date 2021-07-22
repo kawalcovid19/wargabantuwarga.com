@@ -9,6 +9,7 @@ jobs:
     name: Lighthouse CI
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: "14"
@@ -27,7 +28,7 @@ jobs:
           lhci collect --url=${{ steps.netlify.outputs.url }} -n=1
           echo -e "\n"
           echo "Start asserting score..."
-          lhci assert --config=../lighthouserc.js
+          lhci assert --config=./lighthouserc.js
           echo -e "\n"
           echo "Start uploading the report..."
           lhci upload --target "temporary-public-storage"
