@@ -1,6 +1,6 @@
 on:
-  push:
-    branches: [main]
+  pull_request:
+    types: [opened, synchronize]
 
 name: Lighthouse
 
@@ -41,10 +41,8 @@ jobs:
         with:
           site_name: 'wargabantuwarga'
       - name: "Lighthouse CI (Preview)"
+        id: lhcli
         shell: bash
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           yarn global add @lhci/cli@0.8.x
           echo -e "\n"
@@ -55,5 +53,14 @@ jobs:
           lhci assert --config=./lighthouserc.js
           echo -e "\n"
           echo "Start uploading the report..."
-          lhci upload --target "temporary-public-storage" --githubAppToken "$LHCI_GITHUB_APP_TOKEN"
+          lhci upload --target "temporary-public-storage"
 
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            This is a multi-line test commen
+            ${{ steps.lhcli.outputs }}
+          reactions: '+1'
