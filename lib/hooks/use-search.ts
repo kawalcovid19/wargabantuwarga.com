@@ -113,7 +113,7 @@ export function useSearch<T = unknown[]>({
         }
       });
     }
-    let result;
+    let result: T[];
     // TODO: fix query
     if (searchParams.length) {
       const searchQuery =
