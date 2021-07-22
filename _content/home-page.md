@@ -1,6 +1,10 @@
 ---
 last_updated_time: 2021-07-21T16:35:30.277Z
 ---
+*\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19 dan kontak fasilitas/alat kesehatan di seluruh Indonesia yang dikumpulkan relawan melalui pencarian di internet atau media sosial.*
+
+#### ___
+
 #### Cari Informasi dan Kontak Rumah Sakit, Ambulans, atau Oksigen?
 
 [Lihat database fasilitas/alat kesehatan di sini](https://www.wargabantuwarga.com/provinces).
@@ -71,11 +75,11 @@ Temukan situs atau kontak fasilitas/alat kesehatan untuk COVID-19 di tingkat nas
 * Download aplikasi telemedicine yang didukung Kemenkes: [Alodokter](https://bit.ly/alodokter-isoman)   [GetWell](https://play.google.com/store/apps/details?id=id.paquesid.getwell)   [Good Doctor](https://gooddoctor.onelink.me/Cmiw/efeba7ae)   [GrabHealth](https://grab.onelink.me/2695613898/fe73b8c5)   [Halodoc](https://bit.ly/isoman_halodoc)   [KlikDokter](https://bit.ly/kd-kemenkes-isoman)   [KlinikGo](https://klinikgo.com/isoman)   [Link Sehat](https://link.linksehat.com/mRMf)   [Milvik Dokter](https://milvik.id/about-us/)   [ProSehat](https://prosehat.com/wa)   [SehatQ](https://sehatqapp.onelink.me/bgzy?pid=kemenkes&c=sqkemenkes&deep_link_value=https%3A%2F%2Fwww.sehatq.com%2Ftelemed&af_web_dp=https%3A%2F%2Fwww.sehatq.com%2Ftelemed&af_dp=https%3A%2F%2Fwww.sehatq.com%2Ftelemed)   [YesDok](https://bit.ly/ISOMAN-YesDok)
 * Konsultasi gratis dengan dokter: [lihat jadwal dan kontak dokter di sini](https://docs.google.com/spreadsheets/d/1gGnIiXmCcGpMkB_h98FiHW99uVdwcdTBq_GhIEl_4eM/edit?usp=sharing)
 
-#### Mau Cek Ketersediaan Obat di Daerahmu? 
+#### Mau Cek Ketersediaan Obat di Daerahmu?
 
 [Klik Farma Plus dari Kementerian Kesehatan](https://farmaplus.kemkes.go.id)
 
-#### Mau Vaksin COVID-19? 
+#### Mau Vaksin COVID-19?
 
 * [Cari informasi lokasi vaksin di situs resmi pemerintah di sini](https://covid19.go.id/faskesvaksin)
 * [Klik database layanan vaksin di Yuk Vaksin](https://vaksincovid.carrd.co)
@@ -85,15 +89,15 @@ Temukan situs atau kontak fasilitas/alat kesehatan untuk COVID-19 di tingkat nas
 
 [Lihat daftar layanan dan kontak penyedia jasa konseling di sini](https://docs.google.com/spreadsheets/d/1JRlBNwmqoVimwR70dwIVJ1QAnBbC0Mqp0DmomeO0cWU/edit?usp=sharing)
 
-#### Hotline Kementerian Kesehatan 
+#### Hotline Kementerian Kesehatan
 
 Hubungi 119 ext. 9
 
-#### Butuh informasi layanan Krematorium, Mobil Jenazah, Peti Mati, Bunga Duka, dan Program Bantuan Makanan Isoman? 
+#### Butuh informasi layanan Krematorium, Mobil Jenazah, Peti Mati, Bunga Duka, dan Program Bantuan Makanan Isoman?
 
 [Klik database informasi Lentera Svarga di sini](https://lenterasvarga.carrd.co)
 
-___
+- - -
 
 ## Daftar Kontak Fasilitas & Alat Kesehatan per Provinsi
 
@@ -107,7 +111,7 @@ Daerahmu belum ada dalam di database? Kamu bisa berkontribusi dengan [isi formul
 
 ###### *Disclaimer: Semangat #WargaBantuWarga adalah berbagi informasi untuk warga. Saat ini data yang terkumpul di database adalah hasil pencarian informasi relawan dari beragam sumber terutama via media sosial. Karena keterbatasan kami, tidak semua data yang tampil di database #WargaBantuWarga terverifikasi. Harap berhati-hati saat mengontak atau melakukan transaksi dengan penyedia layanan untuk menghindari hal-hal yang tidak diinginkan.*
 
-___
+- - -
 
 ## Laman Edukasi COVID-19
 
@@ -206,7 +210,7 @@ Kumpulan informasi mengenai donasi, nomor rekening, dan lainnya yang relevan den
 
   Mau mendonorkan darah plasma konvalesen (hanya diisi oleh calon pendonor, bukan penerima donor darah)? [Daftar donor darah di sini](https://forms.gle/dQL8qW3js5ufBRtW8).
 
-___
+- - -
 
 Terima kasih kepada para kolaborator inisiatif [\#WargaBantuWarga](https://twitter.com/hashtag/WargaBantuWarga):
 
