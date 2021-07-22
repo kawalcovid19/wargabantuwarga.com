@@ -70,12 +70,13 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "14"
-      - run: yarn run build
+      # seems we don't need to build, the build process will handled by Netlify
+      # - run: yarn run build
       - name: Wait for the Netlify Preview
         uses: jakepartusch/wait-for-netlify-action@v1
         id: netlify
         with:
-          site_name: 'gallant-panini-bc8593'
+          site_name: 'wargabantuwarga'
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v8
         with:
