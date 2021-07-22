@@ -71,7 +71,7 @@ export function convertToKebabCase(str: string): string {
  */
 export function getKebabCase(str?: string): string {
   return convertToKebabCase(
-    replaceSpecialCharacterWithSpace(str),
+    replaceSpecialCharacterWithSpace(str ?? ""),
   );
 }
 
