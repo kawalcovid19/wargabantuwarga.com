@@ -23,9 +23,13 @@ const getMeta = (provinceName: string, contact: Contact) => {
     ? `${contact.penyedia} - `
     : "";
 
+  const location = contact.lokasi
+    ? `${contact.lokasi}, ${provinceName}`
+    : `${provinceName}`;
+
   return {
     // @TODO: change this after got a better title
-    title: `${providerWithSeparator}${contact.keterangan} di ${provinceName}`,
+    title: `${providerWithSeparator}${contact.keterangan} di ${location}`,
   };
 };
 
