@@ -56,3 +56,31 @@ jobs:
       - run: yarn run type-check
         env:
           CI: true
+
+  lh-ci:
+    name: Lighthouse CI
+    runs-on: ubuntu-latest
+    needs: install-deps
+    steps:
+      - uses: actions/cache@v1
+        id: restore-deps
+        with:
+          path: "."
+          key: ${{ github.sha }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+      - run: yarn run build
+      - name: Wait for the Netlify Preview
+        uses: jakepartusch/wait-for-netlify-action@v1
+        id: netlify
+        with:
+          site_name: 'gallant-panini-bc8593'
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v8
+        with:
+          urls: |
+            ${{ steps.netlify.outputs.url }}
+            ${{ steps.netlify.outputs.url }}/faq/
+          budgetPath: ./budget.json
+          uploadArtifacts: true
