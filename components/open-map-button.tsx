@@ -5,7 +5,7 @@ import { MapIcon } from "@heroicons/react/outline";
 export function OpenMapButton({ address }: { address: string }) {
   function btnClick(e: React.FormEvent<HTMLButtonElement>) {
     e.currentTarget.blur();
-    window.open(`https://www.google.com/maps/place/${address}`);
+    window.open(`https://www.google.com/maps/search/?api=1&query=${address}`);
   }
 
   return (
