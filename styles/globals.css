@@ -56,7 +56,8 @@ img {
   display: none;
 }
 
-.home-page-content [id]:before {
+.home-page-content [id]:before,
+.prose [id]:before {
   content: "";
   display: block;
   position: relative;
