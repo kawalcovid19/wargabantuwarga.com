@@ -45,16 +45,20 @@ For any improvements on the website, we should continuously measure its impact o
 
 ## Getting Started
 
-First, install dependencies and fetch data to your local machine
-
+First, clone the repository
 ```bash
 git clone https://github.com/kawalcovid19/wargabantuwarga.com.git
+```
+
+Then, install dependencies and fetch data to your local machine
+
+```bash
 cd wargabantuwarga.com
 yarn install
 yarn fetch-wbw
 ```
 
-Then, run the development server:
+Finally, run the development server:
 
 ```bash
 yarn dev
