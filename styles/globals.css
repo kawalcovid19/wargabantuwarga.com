@@ -56,6 +56,15 @@ img {
   display: none;
 }
 
+.home-page-content [id]:before {
+  content: "";
+  display: block;
+  position: relative;
+  width: 0;
+  height: 6rem;
+  margin-top: -6rem;
+}
+
 /* override tailwind typography for Google Docs-generated content */
 /*
 .prose table {
