@@ -80,16 +80,3 @@ jobs:
           yarn global add @lhci/cli@0.8.x
           lhci collect --url=${{ steps.netlify.outputs.url }} -n=1
           lhci upload --target "temporary-public-storage"
-        env:
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          # LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # - name: Audit URLs using Lighthouse
-      #   uses: treosh/lighthouse-ci-action@v8
-      #   env:
-      #     PR_NUMBER: ${{ github.event.pull_request.number }}
-      #   with:
-      #     urls: |
-      #       ${{ steps.netlify.outputs.url }}
-      #     budgetPath: '.github/lighthouse/budget.json'
-      #     uploadArtifacts: true
-      #     temporaryPublicStorage: true
