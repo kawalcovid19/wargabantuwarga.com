@@ -21,7 +21,7 @@ last_updated_time: 2021-07-22T10:44:03.583Z
 
 #### Butuh Bantuan Kebutuhan Pokok karena Positif COVID-19?
 
-* [Ajukan bantuan kebutuhan pokok jika positif COVID-19 dengan isi formulir ini](https://sembako.wargabantuwarga.com/). Bantuan baru tersedia untuk warga Jabodetabek, Bandung, Yogyakarta, dan Surabaya. Tim #WargaBantuWarga akan menyeleksi dan memprioritaskan warga yang butuh bantuan.[](https://docs.google.com/spreadsheets/d/1lksiRf7G3c14AGzUI0lVmyG6CQmyWe1iXH90D5LEqq8/edit?usp=sharing)
+* [Ajukan bantuan kebutuhan pokok jika positif COVID-19 dengan isi formulir ini](https://sembako.wargabantuwarga.com/). Bantuan baru tersedia untuk warga Jabodetabek, Bandung, Yogyakarta, dan Surabaya. Tim #WargaBantuWarga akan menyeleksi dan memprioritaskan warga yang butuh bantuan.
 * [Lihat beragam posko bantuan warga jika butuh bantuan makanan saat isoman](https://docs.google.com/spreadsheets/d/1lksiRf7G3c14AGzUI0lVmyG6CQmyWe1iXH90D5LEqq8/edit?usp=sharing)
 
 - - -
@@ -56,7 +56,7 @@ Temukan situs atau kontak fasilitas/alat kesehatan untuk COVID-19 di tingkat nas
 * Hubungi Contact Center BNPB - Donor Konvalesen: 117 ext. 5 
 * [Klik situs ahaha.id untuk cari donor atau mendonorkan plasma](https://ahaha.id)
 * [Klik Blood4Life untuk cari donor atau mendonorkan plasma](https://blood4life.id)
-* [](https://blood4life.id)[Klik situs Reblood untuk cari donor atau mendonorkan plasma](https://reblood.com)
+* [Klik situs Reblood untuk cari donor atau mendonorkan plasma](https://reblood.com)
 * [Klik situs @BantuCovid untuk melihat list orang yang mendonorkan dan membutuhkan donor plasma](https://konvalesenid.wixsite.com/dashboard)
 * [Klik untuk mendonorkan plasma (bukan menerima donor plasma) kolaborasi Satgas COVID-19 dan PMI](https://plasmakonvalesen.covid19.go.id)
 
@@ -112,7 +112,6 @@ Kumpulan informasi terbaru COVID-19, tips menjaga kesehatan selama pandemi, vaks
 * [Perawatan pasien COVID-19 berdasarkan gejala](https://www.instagram.com/p/CQn8H5QM26i/)
 * [Rekomendasi mencegah COVID-19 bagi orang dengan komorbid](https://tirto.id/rekomendasi-cara-mencegah-covid-19-bagi-orang-dengan-komorbid-f6HJ)
 * [Yang harus dilakukan jika terkena COVID-19 saat hamil](https://www.who.int/indonesia/news/novel-coronavirus/qa/qa-during-pregnancy)
-* [](https://www.kompas.com/sains/read/2020/11/11/200600923/ibu-positif-covid-19-masih-boleh-menyusui-simak-7-langkahnya?page=all)[Yang harus dilakukan ](https://www.who.int/indonesia/news/novel-coronavirus/qa/qa-during-pregnancy)j[ika terkena COVID-19 saat masa menyusui](https://www.kompas.com/sains/read/2020/11/11/200600923/ibu-positif-covid-19-masih-boleh-menyusui-simak-7-langkahnya?page=all)
 * [Apa yang harus dilakukan jika bayi positif ](https://kesehatan.kontan.co.id/news/apa-yang-harus-dilakukan-jika-bayi-atau-anak-positif-terinfeksi-virus-corona?page=all)[COVID](https://www.kompas.com/sains/read/2020/11/11/200600923/ibu-positif-covid-19-masih-boleh-menyusui-simak-7-langkahnya?page=all)[\-19](https://kesehatan.kontan.co.id/news/apa-yang-harus-dilakukan-jika-bayi-atau-anak-positif-terinfeksi-virus-corona?page=all)
 * [Penanganan dan pengobatan Covid-19 pada bayi baru lahir](https://www.klikdokter.com/info-sehat/read/3647537/penanganan-dan-pengobatan-covid-19-pada-bayi-baru-lahir)
 * [Yang harus diperhatikan penderita HIV/AIDS jika positif Covid-19](https://www.halodoc.com/artikel/hiv-dan-virus-corona-hal-apa-saja-yang-harus-diperhatikan)
