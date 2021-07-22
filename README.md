@@ -48,6 +48,7 @@ For any improvements on the website, we should continuously measure its impact o
 First, install dependencies and fetch data to your local machine
 
 ```bash
+git clone https://github.com/kawalcovid19/wargabantuwarga.com.git
 cd wargabantuwarga.com
 yarn install
 yarn fetch-wbw
