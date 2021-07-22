@@ -23,10 +23,10 @@ const meta = {
 };
 
 export default function ProvincesPage(props: ProvincesPageProps) {
-  const [filteredProvinces, handleSubmitKeywords, urlParams] = useSearch(
-    props.provincesList,
-    ["name"],
-  );
+  const [filteredProvinces, handleSubmitKeywords, urlParams] = useSearch({
+    items: props.provincesList,
+    fieldNames: ["name"],
+  });
   return (
     <Page>
       <NextSeo openGraph={{ title: meta.title }} title={meta.title} />
