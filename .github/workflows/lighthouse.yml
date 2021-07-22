@@ -1,37 +1,14 @@
 on:
   pull_request_target:
-    types: [opened, synchronize]
+    types: [opened, synchronize, reopened]
 
 name: Lighthouse
 
 jobs:
-  install-deps:
-    name: Install dependencies
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "14"
-      - run: yarn install --frozen-lockfile
-      # Doesn't need to run this???
-      # - run: yarn run fetch-wbw
-      - uses: actions/cache@v1
-        id: cache-deps
-        with:
-          path: "."
-          key: ${{ github.sha }}
-
   lh-ci:
     name: Lighthouse CI
     runs-on: ubuntu-latest
-    needs: install-deps
     steps:
-      - uses: actions/cache@v1
-        id: restore-deps
-        with:
-          path: "."
-          key: ${{ github.sha }}
       - uses: actions/setup-node@v1
         with:
           node-version: "14"
