@@ -1,7 +1,7 @@
 name: Lighthouse
 on:
   workflow_run:
-    workflows: ["trigger-lhcli"]
+    workflows: ["Triggering LHCI"]
     types:
       - completed
 jobs:
@@ -9,9 +9,9 @@ jobs:
     name: Lighthouse CI
     runs-on: ubuntu-latest
 
-    if: >
-      ${{ github.event.workflow_run.event == 'pull_request' &&
-      github.event.workflow_run.conclusion == 'success' }}
+    # if: >
+    #   ${{ github.event.workflow_run.event == 'pull_request' &&
+    #   github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - uses: actions/checkout@v2

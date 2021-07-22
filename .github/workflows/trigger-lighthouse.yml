@@ -1,11 +1,11 @@
-name: trigger-lhcli
+name: Triggering LHCI
 
 on:
   pull_request:
     types: [opened, synchronize, reopened]
 
 jobs:
-  build:
+  pr-and-netlify-domain:
     runs-on: ubuntu-latest
 
     steps:
