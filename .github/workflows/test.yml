@@ -81,11 +81,14 @@ jobs:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
         run: |
           yarn global add @lhci/cli@0.8.x
-          echo "Start collecting LH report...\n"
+          echo ""
+          echo "Start collecting LH report..."
           lhci collect --url=${{ steps.netlify.outputs.url }} -n=1
-          echo "Start asserting score...\n"
+          echo ""
+          echo "Start asserting score..."
           lhci assert --config=./lighthouserc.js
-          echo "Start uploading the report...\n"
-          echo "Check this: $LHCI_GITHUB_APP_TOKEN...\n"
+          echo ""
+          echo "Start uploading the report..."
+          echo "Check this: $LHCI_GITHUB_APP_TOKEN..."
           lhci upload --target "temporary-public-storage" --githubAppToken="$LHCI_GITHUB_APP_TOKEN"
 
