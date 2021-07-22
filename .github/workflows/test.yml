@@ -82,7 +82,7 @@ jobs:
           lhci upload --target "temporary-public-storage"
         env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # - name: Audit URLs using Lighthouse
       #   uses: treosh/lighthouse-ci-action@v8
       #   env:
