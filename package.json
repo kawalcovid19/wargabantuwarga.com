@@ -5,6 +5,7 @@
     "build": "next build",
     "postbuild": "next-sitemap && ts-node etc/create-sitemap-index.ts",
     "dev": "next",
+    "analyze": "ANALYZE=true yarn build",
     "fetch-wbw": "ts-node etc/fetchers/fetch-wbw.ts",
     "format": "prettier --write \"./**/*.{ts,tsx}\"",
     "lint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
@@ -39,6 +40,7 @@
   },
   "devDependencies": {
     "@netlify/plugin-lighthouse": "2.1.2",
+    "@next/bundle-analyzer": "^11.0.1",
     "@types/nprogress": "^0.2.0",
     "@types/prettier": "^2.3.2",
     "@types/react": "17.0.13",
