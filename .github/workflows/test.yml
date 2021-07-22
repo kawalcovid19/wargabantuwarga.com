@@ -79,6 +79,7 @@ jobs:
         run: |
           yarn global add @lhci/cli@0.8.x
           lhci collect --url=${{ steps.netlify.outputs.url }} -n=1
-          lhci upload --target "temporary-public-storage"
+          lhci upload --target "temporary-public-storage" --githubAppToken "$LHCI_GITHUB_APP_TOKEN"
+          lhci assert --config=./lighthouserc.js
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
