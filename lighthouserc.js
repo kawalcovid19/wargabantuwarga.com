@@ -1,7 +1,7 @@
 module.exports = {
   ci: {
     assert: {
-      preset: "lighthouse:no-pwa",
+      // preset: "lighthouse:no-pwa",
       /* Note
       // Read more assertions on:
       // https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/configuration.md#assert
