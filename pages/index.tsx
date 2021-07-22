@@ -1,6 +1,7 @@
 import { attributes, html } from "~/_content/home-page.md";
 import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
+import { bannerBlurData, cloudinaryLoader } from "~/lib/cloudinary-loader";
 import config from "~/lib/config";
 import {
   heading1Transformer,
@@ -10,7 +11,6 @@ import {
   heading5Transformer,
   heading6Transformer,
 } from "~/lib/htmr-transformers";
-import { bannerBlurData, imgixLoader } from "~/lib/imgix-loader";
 
 import { ClockIcon } from "@heroicons/react/outline";
 import htmr from "htmr";
@@ -70,11 +70,10 @@ const HomePage = () => (
                 blurDataURL={bannerBlurData}
                 height={287}
                 layout="responsive"
-                loader={imgixLoader}
+                loader={cloudinaryLoader}
                 placeholder="blur"
                 priority={true}
-                quality={70}
-                src="hero_banner.png"
+                src="v1626975062/hero_banner_pdx3xp.png"
                 width={640}
               />
             </a>

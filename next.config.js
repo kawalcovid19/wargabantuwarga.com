@@ -18,9 +18,9 @@ module.exports = withBundleAnalyzer({
 
   images: {
     deviceSizes: [360, 420, 720],
-    domains: ["firebase-kanvas.imgix.net"],
-    loader: "imgix",
-    path: "https://firebase-kanvas.imgix.net/warga_bantu_warga/",
+    domains: ["firebase-kanvas.imgix.net", "res.cloudinary.com"],
+    loader: "cloudinary",
+    path: "https://res.cloudinary.com/ekafyi/image/upload/", // TODO replace with WBW username
   },
 
   // https://nextjs.org/docs/api-reference/next.config.js/react-strict-mode
