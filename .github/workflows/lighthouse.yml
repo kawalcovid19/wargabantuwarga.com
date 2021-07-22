@@ -61,6 +61,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
-            This is a multi-line test commen
-            ${{ steps.lhcli.outputs }}
+            This is a multi-line test comment
+            PR #${{ github.event.pull_request.number }}
+            ${{join(steps.lhcli.outputs.*, '\n')}}
           reactions: '+1'
