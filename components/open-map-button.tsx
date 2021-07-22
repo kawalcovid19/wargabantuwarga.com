@@ -1,6 +1,6 @@
 import { SecondaryButton } from "./ui/button";
 
-import { ClipboardCopyIcon } from "@heroicons/react/outline";
+import { MapIcon } from "@heroicons/react/outline";
 
 export function OpenMapButton({ address }: { address: string }) {
   function btnClick(e: React.FormEvent<HTMLButtonElement>) {
@@ -13,7 +13,7 @@ export function OpenMapButton({ address }: { address: string }) {
       <SecondaryButton
         aria-label="Buka Map"
         className="relative z-10"
-        icon={ClipboardCopyIcon}
+        icon={MapIcon}
         onClick={btnClick}
         size="xs"
         type="button"
