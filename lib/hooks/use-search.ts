@@ -184,6 +184,7 @@ export function useSearch<T = unknown[]>({
     //setFilteredItems(searchResult.data.items as T[]);
     const searchResult = fuseSearch(searchParams);
     setFilteredItems(searchResult);
+    setLoading(false);
 
     if (updateUrl) {
       const queryParams = [];
