@@ -1,18 +1,15 @@
-name: Lighthouse
+name: Lighthouse CI
+
 on:
   workflow_run:
     workflows: ["Triggering LHCI"]
     types:
       - completed
 jobs:
-  lh-ci:
-    name: Lighthouse CI
+  lhci:
+    name: Run Lighthouse CI
     runs-on: ubuntu-latest
-
-    # if: >
-    #   ${{ github.event.workflow_run.event == 'pull_request' &&
-    #   github.event.workflow_run.conclusion == 'success' }}
-
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -53,7 +50,17 @@ jobs:
           script: |
             var fs = require('fs');
             var netlify = String(fs.readFileSync('./netlify'));
-            console.log(`netlify`)
+            console.log(netlify)
+
+      - name: 'Get PR number'
+        id: prnumber
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            var fs = require('fs');
+            var pr = Number(fs.readFileSync('./pr'));
+            console.log(pr)
 
       - name: "Lighthouse CI (Preview)"
         id: lhci
@@ -84,14 +91,3 @@ jobs:
               issue_number: issue_number,
               body: 'Everything is OK. ${{join(steps.lhci.outputs.*, '\n')}}'
             });
-
-      # - name: Create comment
-      #   uses: peter-evans/create-or-update-comment@v1
-      #   with:
-      #     # token: ${{ secrets.GITHUB_TOKEN }}
-      #     token: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-      #     issue-number: ${{ github.event.pull_request.number }}
-      #     body: |
-      #       Test by mazipan for #${{ github.event.pull_request.number }}
-      #       ${{join(steps.lhcli.outputs.*, '\n')}}
-      #     reactions: '+1'
