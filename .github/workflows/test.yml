@@ -76,10 +76,11 @@ jobs:
         with:
           site_name: 'wargabantuwarga'
       - name: "Lighthouse CI for PR #${{ github.event.pull_request.number }} (Preview)"
+        shell: bash
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
         run: |
           yarn global add @lhci/cli@0.8.x
           lhci collect --url=${{ steps.netlify.outputs.url }} -n=1
           lhci upload --target "temporary-public-storage" --githubAppToken "$LHCI_GITHUB_APP_TOKEN"
-          lhci assert --config=./lighthouserc.js
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+          # lhci assert --config=./lighthouserc.js
