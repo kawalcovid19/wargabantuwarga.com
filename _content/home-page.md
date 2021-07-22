@@ -1,5 +1,5 @@
 ---
-last_updated_time: 2021-07-22T04:14:20.632Z
+last_updated_time: 2021-07-22T07:46:04.769Z
 ---
 *\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19 dan kontak fasilitas/alat kesehatan di seluruh Indonesia yang dikumpulkan relawan melalui pencarian di internet atau media sosial.*
 
@@ -50,11 +50,6 @@ Temukan situs atau kontak fasilitas/alat kesehatan untuk COVID-19 di tingkat nas
 #### Mau Cek Ketersediaan Tempat Tidur Rumah Sakit
 
 [Klik SIRANAP Kemenkes](https://yankes.kemkes.go.id/app/siranap/) 
-
-#### Butuh Oksigen untuk Pasien COVID-19?
-
-* [Klik untuk lihat database oksigen di Info Oksigen](https://oksigen.carrd.co)
-* [Follow Instagram @sejutates untuk info peminjaman oksigen (khusus Jabodetabek)](https://www.instagram.com/sejutates/)
 
 #### Butuh Donor Plasma atau Ingin Donor Plasma?
 
