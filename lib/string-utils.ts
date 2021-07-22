@@ -60,7 +60,7 @@ export function removeSpaces(str: string): string {
  * @returns {string} kebab-cased version of `str`
  */
 export function convertToKebabCase(str: string): string {
-  return str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+  return str.replace(/([a-z])([A-Z])/g, "$1-$2").replace(/[\s_]+/g, '-').toLowerCase();
 }
 
 /**
@@ -71,9 +71,7 @@ export function convertToKebabCase(str: string): string {
  */
 export function getKebabCase(str?: string): string {
   return convertToKebabCase(
-    removeSpaces(
-      replaceSpecialCharacterWithSpace(replaceSpacesWithCamelCase(str ?? "")),
-    ),
+    replaceSpecialCharacterWithSpace(str),
   );
 }
 
