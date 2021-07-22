@@ -1,16 +1,35 @@
-import { attributes, html } from "../_content/home-page.md";
-import { Page } from "../components/layout/page";
-import { PageContent } from "../components/layout/page-content";
-import config from "../lib/config";
-import { bannerBlurData, imgixLoader } from "../lib/imgix-loader";
+import { attributes, html } from "~/_content/home-page.md";
+import { Page } from "~/components/layout/page";
+import { PageContent } from "~/components/layout/page-content";
+import config from "~/lib/config";
+import {
+  heading1Transformer,
+  heading2Transformer,
+  heading3Transformer,
+  heading4Transformer,
+  heading5Transformer,
+  heading6Transformer,
+} from "~/lib/htmr-transformers";
+import { bannerBlurData, imgixLoader } from "~/lib/imgix-loader";
 
 import { ClockIcon } from "@heroicons/react/outline";
+import htmr from "htmr";
+import { HtmrOptions } from "htmr/src/types";
 import Image from "next/image";
 import Link from "next/link";
 import { NextSeo } from "next-seo";
 
 const meta = {
-  title: `${config.site_name} | ${config.site_tagline}`,
+  title: `${config.site_tagline} | ${config.site_name}`,
+};
+
+const htmrTransform: HtmrOptions["transform"] = {
+  h1: heading1Transformer,
+  h2: heading2Transformer,
+  h3: heading3Transformer,
+  h4: heading4Transformer,
+  h5: heading5Transformer,
+  h6: heading6Transformer,
 };
 
 const LastUpdatedAlert = () => (
@@ -66,7 +85,7 @@ const HomePage = () => (
     <PageContent>
       <LastUpdatedAlert />
       <article className="prose prose-indigo p-4 bg-white shadow overflow-hidden rounded-md">
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        {htmr(html, { transform: htmrTransform })};
       </article>
       <style jsx>{`
         article {

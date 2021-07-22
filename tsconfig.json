@@ -13,7 +13,11 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es5",
-    "typeRoots": ["./@types", "./node_modules/@types"]
+    "typeRoots": ["./@types", "./node_modules/@types"],
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["./*"]
+    }
   },
   "exclude": ["node_modules"],
   "include": ["env.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],

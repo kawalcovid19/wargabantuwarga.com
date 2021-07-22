@@ -1,9 +1,9 @@
-import { Page } from "../components/layout/page";
-import { PageContent } from "../components/layout/page-content";
-import { Script } from "../components/script";
-import data from "../data/wbw.json";
-import config from "../lib/config";
-import { bannerBlurData, imgixLoader } from "../lib/imgix-loader";
+import { Page } from "~/components/layout/page";
+import { PageContent } from "~/components/layout/page-content";
+import { Script } from "~/components/script";
+import data from "~/data/wbw.json";
+import config from "~/lib/config";
+import { bannerBlurData, imgixLoader } from "~/lib/imgix-loader";
 
 import { GetStaticProps } from "next";
 import Head from "next/head";
@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const meta = {
-  title: `${config.site_name} | ${config.site_tagline}`,
+  title: `${config.site_tagline} | ${config.site_name}`,
 };
 
 export default function Home(props: HomeProps) {

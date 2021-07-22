@@ -11,7 +11,10 @@ import React, {
 } from "react";
 
 import { PrimaryButton, SecondaryButton } from "./ui/button";
-import { Select } from "./ui/select";
+import { FormLabel } from "./ui/forms/form-label";
+import { InputSelect } from "./ui/forms/input-select";
+import { InputText } from "./ui/forms/input-text";
+import { SelectSkeleton } from "./ui/skeleton-loading";
 
 import { debounce } from "ts-debounce";
 
@@ -30,14 +33,16 @@ type SortSetting = {
 
 export function SearchForm({
   itemName,
+  checkDocSize,
   onSubmitKeywords,
   filterItems,
   sortSettings,
   autoSearch,
   initialValue,
-  checkDocSize,
+  isLoading,
 }: {
   itemName: string;
+  checkDocSize: boolean;
   onSubmitKeywords: (keywords: string, filters?: any, sort_by?: string) => void;
   filterItems?: {};
   sortSettings?: SortSetting[];
@@ -47,7 +52,7 @@ export function SearchForm({
     filters?: {};
     sort?: string;
   };
-  checkDocSize: boolean;
+  isLoading?: boolean;
 }) {
   const defaultSort = sortSettings?.length ? sortSettings[0].value : "";
   const [keywords, setKeywords] = useState<string>("");
@@ -117,16 +122,10 @@ export function SearchForm({
       onSubmit={handleSubmit}
     >
       <div className="flex flex-col">
-        <label
-          className="block text-sm font-medium text-gray-700"
-          htmlFor="keywordsInput"
-        >
-          Cari {itemName}:
-        </label>
+        <FormLabel htmlFor="keywordsInput">Cari {itemName}:</FormLabel>
         <div className="flex items-center mt-1">
-          <input
+          <InputText
             autoComplete="off"
-            className="outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full px-2 py-2 sm:text-sm border-gray-300 hover:border-gray-400 border rounded-md"
             id="keywordsInput"
             onChange={handleKeywordsChange}
             type="text"
@@ -143,7 +142,9 @@ export function SearchForm({
         </div>
       </div>
 
-      {filterItems && Object.keys(filterItems).length ? (
+      {isLoading ? (
+        <SelectSkeleton />
+      ) : filterItems && Object.keys(filterItems).length ? (
         <>
           <span className="block mb-2 font-medium text-gray-700">Filter</span>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -151,13 +152,8 @@ export function SearchForm({
               const { title, buckets }: any = value;
               return (
                 <div key={`filter-${idx}`} className="space-y-1">
-                  <label
-                    className="block text-sm font-medium text-gray-700"
-                    htmlFor={`filter-${key}`}
-                  >
-                    {title}
-                  </label>
-                  <Select
+                  <FormLabel htmlFor={`filter-${key}`}>{title}</FormLabel>
+                  <InputSelect
                     name={key}
                     onChange={handleFilterChange}
                     title={title}
@@ -166,7 +162,22 @@ export function SearchForm({
                     <option value="">Semua</option>
                     {buckets.map((bucket: any, bIdx: number) => {
                       if (bucket.key) {
-                        if (checkDocSize && bucket.doc_count > 0) {
+                        if (checkDocSize) {
+                          if (bucket.doc_count > 0) {
+                            return (
+                              <option
+                                key={`option-${key}-${bIdx + 1}`}
+                                value={bucket.key}
+                              >
+                                {bucket.key}
+                              </option>
+                            );
+                          }
+                          // Do not print, when doc_count = 0 and checkDocSize set to true
+                          return null;
+                        } else {
+                          // FAQ page doesn't check the doc_count
+                          // just pass checkDocSize props to false
                           return (
                             <option
                               key={`option-${key}-${bIdx + 1}`}
@@ -176,20 +187,10 @@ export function SearchForm({
                             </option>
                           );
                         }
-
-                        // FAQ page doesn't check the doc_count
-                        return (
-                          <option
-                            key={`option-${key}-${bIdx + 1}`}
-                            value={bucket.key}
-                          >
-                            {bucket.key}
-                          </option>
-                        );
                       }
                       return null;
                     })}
-                  </Select>
+                  </InputSelect>
                 </div>
               );
             })}
@@ -197,16 +198,13 @@ export function SearchForm({
         </>
       ) : null}
 
-      {sortSettings?.length ? (
+      {isLoading ? (
+        <SelectSkeleton />
+      ) : sortSettings?.length ? (
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-1">
-            <label
-              className="font-medium text-sm text-gray-700 mr-2"
-              htmlFor="sort-by"
-            >
-              Urut berdasarkan
-            </label>
-            <Select
+            <FormLabel htmlFor="sort-by">Urut berdasarkan</FormLabel>
+            <InputSelect
               name="sort-by"
               onChange={handleSortChange}
               title="Urut berdasarkan"
@@ -219,7 +217,7 @@ export function SearchForm({
                   </option>
                 );
               })}
-            </Select>
+            </InputSelect>
           </div>
         </div>
       ) : null}

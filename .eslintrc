@@ -5,13 +5,22 @@
     "kentcdodds",
     "kentcdodds/react",
     "kentcdodds/jsx-a11y",
-    "plugin:@next/next/recommended"
+    "plugin:@next/next/recommended",
+    "plugin:cypress/recommended"
   ],
-  "plugins": ["prettier", "simple-import-sort"],
+  "plugins": ["prettier", "simple-import-sort", "cypress", "chai-friendly"],
   "rules": {
     "@babel/new-cap": "off",
     "@typescript-eslint/no-explicit-any": "warn",
-    "import/extensions": ["warn", "never", { "css": "ignorePackages" }],
+    "import/extensions": [
+      "warn",
+      "never",
+      {
+        "css": "ignorePackages",
+        "json": "ignorePackages",
+        "md": "ignorePackages"
+      }
+    ],
     "import/newline-after-import": "warn",
     "import/no-extraneous-dependencies": "warn",
     "import/order": "off",
@@ -34,7 +43,10 @@
 
     "jsx-a11y/accessible-emoji": "off",
     "react/jsx-sort-props": ["warn", { "reservedFirst": ["key"] }],
-    "react/react-in-jsx-scope": ["off"]
+    "react/react-in-jsx-scope": ["off"],
+    "cypress/no-unnecessary-waiting": "warn",
+    "@babel/no-unused-expressions": 0,
+    "chai-friendly/no-unused-expressions": 2
   },
 
   "overrides": [

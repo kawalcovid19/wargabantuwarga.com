@@ -1,12 +1,12 @@
 import { useMemo } from "react";
 
-import { BackButton } from "../components/layout/back-button";
-import { Page } from "../components/layout/page";
-import { PageContent } from "../components/layout/page-content";
-import { PageHeader } from "../components/layout/page-header";
-import { SearchForm } from "../components/search-form";
-import faqSheets, { FaqData } from "../lib/faq-databases";
-import { useSearch } from "../lib/hooks/use-search";
+import { BackButton } from "~/components/layout/back-button";
+import { Page } from "~/components/layout/page";
+import { PageContent } from "~/components/layout/page-content";
+import { PageHeader } from "~/components/layout/page-header";
+import { SearchForm } from "~/components/search-form";
+import faqSheets, { FaqData } from "~/lib/faq-databases";
+import { useSearch } from "~/lib/hooks/use-search";
 
 import htmr from "htmr";
 import { GetStaticProps } from "next";
@@ -34,11 +34,13 @@ const meta = {
 export default function Faqs(props: FaqsProps) {
   const { faqSheets: faq } = props;
   const [filteredQuestions, handleSubmitKeywords, urlParams, filterItems] =
-    useSearch(
-      faq,
-      ["pertanyaan", "jawaban"],
-      [{ field: "kategori_pertanyaan", title: "Kategori Pertanyaan" }],
-    );
+    useSearch({
+      items: faq,
+      fieldNames: ["kategori_pertanyaan", "pertanyaan", "jawaban"],
+      aggregationSettings: [
+        { field: "kategori_pertanyaan", title: "Kategori Pertanyaan" },
+      ],
+    });
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const listFaqs = useMemo(() => {

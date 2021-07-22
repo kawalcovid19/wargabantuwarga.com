@@ -1,40 +1,10 @@
 import * as React from "react";
 
-import WhatsAppLogo from "../ui/whatsapp-logo";
+import { bottomNavigation } from "~/lib/layout/navigation-data";
 
-import {
-  HomeIcon,
-  QuestionMarkCircleIcon,
-  SearchIcon,
-} from "@heroicons/react/solid";
 import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
-const navigation = [
-  {
-    name: "Home",
-    icon: HomeIcon,
-    href: "/",
-    exact: true,
-  },
-  {
-    name: "Pencarian",
-    icon: SearchIcon,
-    href: "/provinces",
-  },
-  {
-    name: "FAQ",
-    icon: QuestionMarkCircleIcon,
-    href: "/faq",
-  },
-  {
-    name: "WhatsApp",
-    icon: WhatsAppLogo,
-    href: "https://wa.me/6281257579812",
-    external: true,
-  },
-];
 
 export function Navigation() {
   const router = useRouter();
@@ -43,7 +13,7 @@ export function Navigation() {
     <nav className="flex items-center justify-center fixed bottom-0 w-full h-16 px-4 bg-white border-t border-gray-300 z-40">
       <div className="flex items-center justify-center w-full max-w-xl mx-auto">
         <ul className="flex items-center space-x-4">
-          {navigation.map((item) => {
+          {bottomNavigation.map((item) => {
             const isActive = item.exact
               ? item.href === router.asPath
               : router.asPath.startsWith(item.href);

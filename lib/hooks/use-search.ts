@@ -27,13 +27,19 @@ type SortSettings = {
   };
 };
 
-export function useSearch<T = unknown[]>(
-  items: T[],
-  fieldNames: string[],
-  aggregationSettings?: AggregationSetting[],
-  sortSettings?: SortSettings,
-  defaultSort?: string,
-) {
+export function useSearch<T = unknown[]>({
+  items,
+  fieldNames,
+  aggregationSettings,
+  sortSettings,
+  defaultSort,
+}: {
+  items: T[];
+  fieldNames: string[];
+  aggregationSettings?: AggregationSetting[];
+  sortSettings?: SortSettings;
+  defaultSort?: string;
+}) {
   const configuration: any = {
     searchableFields: fieldNames,
     sortings: {
@@ -71,6 +77,7 @@ export function useSearch<T = unknown[]>(
   const [lastKeywords, setLastKeywords] = useState<string>("");
   const [filteredItems, setFilteredItems] = useState<T[]>([]);
   const [aggregationData, setAggregationData] = useState<any>({});
+  const [isLoading, setLoading] = useState<boolean>(true);
 
   const sortResult = (result_items: T[], sort_by: string) => {
     // TODO: fix ordering
@@ -201,6 +208,7 @@ export function useSearch<T = unknown[]>(
   };
 
   useEffect(() => {
+    setLoading(true);
     const queryParams = getQueryParams(window.location.search);
     if (Object.keys(queryParams).length) {
       let keywordsParam: string = "";
@@ -233,6 +241,7 @@ export function useSearch<T = unknown[]>(
     } else {
       setInitialParams({});
       setFilteredItems(items);
+      setLoading(false);
       aggregate();
     }
   }, [items]);
@@ -259,5 +268,6 @@ export function useSearch<T = unknown[]>(
     handleSubmitKeywords,
     initialParams,
     aggregationData,
+    isLoading,
   ] as const;
 }

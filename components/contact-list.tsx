@@ -1,9 +1,9 @@
-import { CopyButton } from "../components/copy-button";
-import { anchorTransformer } from "../lib/htmr-transformers";
-import { Contact } from "../lib/provinces";
-import { isNotEmpty, stripTags } from "../lib/string-utils";
-
-import { EmptyState } from "./ui/empty-state";
+import { CopyButton } from "~/components/copy-button";
+import { EmptyState } from "~/components/ui/empty-state";
+import { ContactListSkeleton } from "~/components/ui/skeleton-loading";
+import { anchorTransformer } from "~/lib/htmr-transformers";
+import { Contact } from "~/lib/provinces";
+import { isNotEmpty, stripTags } from "~/lib/string-utils";
 
 import {
   BadgeCheckIcon as BadgeCheckIconUnverified,
@@ -21,12 +21,17 @@ import Link from "next/link";
 type ContactListProps = {
   data: Contact[];
   provinceSlug: string;
+  isLoading: boolean;
 };
 
 export function ContactList(props: ContactListProps) {
   const htmrTransform: HtmrOptions["transform"] = {
     a: anchorTransformer,
   };
+
+  if (props.isLoading) {
+    return <ContactListSkeleton />;
+  }
 
   if (props.data.length > 0) {
     return (

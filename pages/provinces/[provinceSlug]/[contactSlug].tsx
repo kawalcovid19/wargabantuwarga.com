@@ -1,20 +1,36 @@
 /* eslint-disable no-negated-condition */
-import { ContactDetails } from "../../../components/contact-details";
-import { BackButton } from "../../../components/layout/back-button";
-import { Page } from "../../../components/layout/page";
-import { PageContent } from "../../../components/layout/page-content";
-import { PageHeader } from "../../../components/layout/page-header";
-import { ReportButton } from "../../../components/report-button";
-import provinces, { Contact, getContactsPaths } from "../../../lib/provinces";
-import { getTheLastSegmentFromKebabCase } from "../../../lib/string-utils";
+import { ContactDetails } from "~/components/contact-details";
+import { BackButton } from "~/components/layout/back-button";
+import { Page } from "~/components/layout/page";
+import { PageContent } from "~/components/layout/page-content";
+import { PageHeader } from "~/components/layout/page-header";
+import { ReportButton } from "~/components/report-button";
+import provinces, { Contact, getContactsPaths } from "~/lib/provinces";
+import { getTheLastSegmentFromKebabCase } from "~/lib/string-utils";
 
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/dist/client/router";
+import { NextSeo } from "next-seo";
 
 type ContactPageProps = {
   provinceName: string;
   provinceSlug: string;
   contact: Contact;
+};
+
+const getMeta = (provinceName: string, contact: Contact) => {
+  const providerWithSeparator = !!contact.penyedia
+    ? `${contact.penyedia} - `
+    : "";
+
+  const location = contact.lokasi
+    ? `${contact.lokasi}, ${provinceName}`
+    : `${provinceName}`;
+
+  return {
+    // @TODO: change this after got a better title
+    title: `${providerWithSeparator}${contact.keterangan} di ${location}`,
+  };
 };
 
 export default function ContactPage({
@@ -25,6 +41,10 @@ export default function ContactPage({
 
   return (
     <Page>
+      <NextSeo
+        openGraph={{ title: getMeta(provinceName, contact).title }}
+        title={getMeta(provinceName, contact).title}
+      />
       <PageHeader
         backButton={
           <BackButton href={`/provinces/${router.query.provinceSlug}`} />

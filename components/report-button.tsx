@@ -1,5 +1,7 @@
-import { Contact } from "../lib/provinces";
-import { stripTags } from "../lib/string-utils";
+import { Contact } from "~/lib/provinces";
+import { stripTags } from "~/lib/string-utils";
+
+import { SecondaryButton } from "./ui/button";
 
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
 
@@ -28,16 +30,16 @@ export const ReportButton = (props: ReportButtonProps) => {
   };
 
   return (
-    <div className="flex justify-center">
-      <button
+    <div className="flex justify-center mt-4">
+      <SecondaryButton
         aria-label="Laporkan kesalahan"
-        className="relative z-10 px-2 h-8 mt-2 bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white flex items-center justify-center rounded text-xs space-x-1"
+        className="relative z-10"
+        icon={ExclamationCircleIcon}
         onClick={reportButtonHandler}
         type="button"
       >
-        <ExclamationCircleIcon aria-hidden="true" className="w-5 h-5" />{" "}
         <span>Laporkan kesalahan</span>
-      </button>
+      </SecondaryButton>
     </div>
   );
 };
