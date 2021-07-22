@@ -10,13 +10,19 @@ type AggregationSetting = {
   title: string;
 };
 
-export function useSearch<T = unknown[]>(
-  items: T[],
-  fieldNames: string[],
-  aggregationSettings?: AggregationSetting[],
-  sortSettings?: {},
-  defaultSort?: string,
-) {
+export function useSearch<T = unknown[]>({
+  items,
+  fieldNames,
+  aggregationSettings,
+  sortSettings,
+  defaultSort,
+}: {
+  items: T[];
+  fieldNames: string[];
+  aggregationSettings?: AggregationSetting[];
+  sortSettings?: {};
+  defaultSort?: string;
+}) {
   const configuration: any = {
     searchableFields: fieldNames,
     sortings: {
