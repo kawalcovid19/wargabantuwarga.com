@@ -81,6 +81,7 @@ jobs:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
         run: |
           yarn global add @lhci/cli@0.8.x
+          node ./.github/dummy.js
           echo ""
           echo "Start collecting LH report..."
           lhci collect --url=${{ steps.netlify.outputs.url }} -n=1
