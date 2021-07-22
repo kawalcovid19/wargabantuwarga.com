@@ -29,36 +29,41 @@ const getMeta = (provinceName: string) => {
 export default function ProvincePage(props: ProvinceProps) {
   const { provinceName, provinceSlug, contactList } = props;
   const router = useRouter();
-  const [filteredContacts, handleSubmitKeywords, urlParams, filterItems] =
-    useSearch(
-      contactList,
-      [
-        "kebutuhan",
-        "penyedia",
-        "lokasi",
-        "alamat",
-        "keterangan",
-        "kontak",
-        "link",
-        "tambahan_informasi",
-        "bentuk_verifikasi",
-      ],
-      [
-        { field: "kebutuhan", title: "Kategori" },
-        { field: "lokasi", title: "Lokasi" },
-      ],
-      {
-        penyedia_asc: {
-          field: "penyedia",
-          order: "asc",
-        },
-        verified_first: {
-          field: ["verifikasi", "penyedia"],
-          order: ["desc", "asc"],
-        },
+  const [
+    filteredContacts,
+    handleSubmitKeywords,
+    urlParams,
+    filterItems,
+    isLoading,
+  ] = useSearch({
+    items: contactList,
+    fieldNames: [
+      "kebutuhan",
+      "penyedia",
+      "lokasi",
+      "alamat",
+      "keterangan",
+      "kontak",
+      "link",
+      "tambahan_informasi",
+      "bentuk_verifikasi",
+    ],
+    aggregationSettings: [
+      { field: "kebutuhan", title: "Kategori" },
+      { field: "lokasi", title: "Lokasi" },
+    ],
+    sortSettings: {
+      penyedia_asc: {
+        field: "penyedia",
+        order: "asc",
       },
-      "verified_first",
-    );
+      verified_first: {
+        field: ["verifikasi", "penyedia"],
+        order: ["desc", "asc"],
+      },
+    },
+    defaultSort: "verified_first",
+  });
 
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (provinceName) {
@@ -88,6 +93,7 @@ export default function ProvincePage(props: ProvinceProps) {
             checkDocSize={true}
             filterItems={filterItems}
             initialValue={urlParams}
+            isLoading={isLoading}
             itemName="kontak"
             onSubmitKeywords={handleSubmitKeywords}
             sortSettings={[
@@ -95,7 +101,11 @@ export default function ProvincePage(props: ProvinceProps) {
               { value: "penyedia_asc", label: "Nama" },
             ]}
           />
-          <ContactList data={filteredContacts} provinceSlug={provinceSlug} />
+          <ContactList
+            data={filteredContacts}
+            isLoading={isLoading}
+            provinceSlug={provinceSlug}
+          />
         </PageContent>
       </Page>
     );
