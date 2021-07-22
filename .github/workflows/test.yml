@@ -70,8 +70,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "14"
-      # seems we don't need to build, the build process will handled by Netlify
-      # - run: yarn run build
       - name: Wait for the Netlify Preview
         uses: jakepartusch/wait-for-netlify-action@v1
         id: netlify
@@ -82,6 +80,6 @@ jobs:
         with:
           urls: |
             ${{ steps.netlify.outputs.url }}
-            ${{ steps.netlify.outputs.url }}/faq/
-          budgetPath: ./budget.json
+          budgetPath: '.github/lighthouse/budget.json'
           uploadArtifacts: true
+          temporaryPublicStorage: true
