@@ -14,7 +14,8 @@ jobs:
         with:
           node-version: "14"
       - run: yarn install --frozen-lockfile
-      - run: yarn run fetch-wbw
+      # Doesn't need to run this???
+      # - run: yarn run fetch-wbw
       - uses: actions/cache@v1
         id: cache-deps
         with:
