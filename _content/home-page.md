@@ -3,7 +3,7 @@ last_updated_time: 2021-07-21T16:35:30.277Z
 ---
 *\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19 dan kontak fasilitas/alat kesehatan di seluruh Indonesia yang dikumpulkan relawan melalui pencarian di internet atau media sosial.*
 
-#### ___
+- - -
 
 #### Cari Informasi dan Kontak Rumah Sakit, Ambulans, atau Oksigen?
 
