@@ -90,5 +90,5 @@ jobs:
           lhci assert --config=./lighthouserc.js
           echo -e "\n"
           echo "Start uploading the report..."
-          lhci upload --target "temporary-public-storage" --githubAppToken "$LHCI_GITHUB_APP_TOKEN" --githubToken "$GITHUB_TOKEN"
+          lhci upload --target "temporary-public-storage" --githubAppToken "$LHCI_GITHUB_APP_TOKEN" --githubToken "$LHCI_GITHUB_APP_TOKEN"
 
