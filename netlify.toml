@@ -8,7 +8,7 @@
   [plugins.inputs.thresholds]
     # TEMPORARY - bump back up to 0.72 once we get Netlify CMS running.
     performance = 0.57
-    accessibility = 1
+    accessibility = 0.95
     # TEMPORARY - bump back up to 0.93 once we get Netlify CMS running.
     best-practices = 0.87
     # TEMPORARY - bump back up to 0.9 once we get Netlify CMS running.

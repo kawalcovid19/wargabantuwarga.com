@@ -1,102 +1,87 @@
-import { attributes, html } from "~/_content/home-page.md";
 import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
+import { Script } from "~/components/script";
+import data from "~/data/wbw.json";
 import config from "~/lib/config";
-import {
-  heading1Transformer,
-  heading2Transformer,
-  heading3Transformer,
-  heading4Transformer,
-  heading5Transformer,
-  heading6Transformer,
-} from "~/lib/htmr-transformers";
 import { bannerBlurData, imgixLoader } from "~/lib/imgix-loader";
 
-import { ClockIcon } from "@heroicons/react/outline";
-import htmr from "htmr";
-import { HtmrOptions } from "htmr/src/types";
+import { GetStaticProps } from "next";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { NextSeo } from "next-seo";
+
+type HomeProps = {
+  html: string;
+  css: string;
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      html: data.html,
+      css: data.css,
+    },
+  };
+};
 
 const meta = {
   title: `${config.site_tagline} | ${config.site_name}`,
 };
 
-const htmrTransform: HtmrOptions["transform"] = {
-  h1: heading1Transformer,
-  h2: heading2Transformer,
-  h3: heading3Transformer,
-  h4: heading4Transformer,
-  h5: heading5Transformer,
-  h6: heading6Transformer,
-};
-
-const LastUpdatedAlert = () => (
-  <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-b mb-3">
-    <div className="flex">
-      <div className="flex-shrink-0">
-        <ClockIcon aria-hidden="true" className="h-5 w-5 text-yellow-400" />
-      </div>
-      <div className="ml-3">
-        <p className="text-sm text-yellow-700">
-          Pembaruan terakhir pada{" "}
-          {new Date(attributes.last_updated_time).toLocaleString("id", {
-            weekday: "long",
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-            hour: "2-digit",
-            minute: "2-digit",
-            timeZone: "Asia/Jakarta",
-            timeZoneName: "short",
-          })}
-        </p>
-      </div>
-    </div>
-  </div>
-);
-
-const HomePage = () => (
-  <Page>
-    <NextSeo title={meta.title} titleTemplate="%s" />
-    <header>
-      <div className="max-w-xl mx-auto">
-        <h1 className="p-0">
-          <Link href="/">
-            <a>
-              <Image
-                alt="Warga Bantu Warga"
-                blurDataURL={bannerBlurData}
-                height={287}
-                layout="responsive"
-                loader={imgixLoader}
-                placeholder="blur"
-                priority={true}
-                quality={70}
-                src="hero_banner.png"
-                width={640}
-              />
-            </a>
-          </Link>
-        </h1>
-      </div>
-    </header>
-    <PageContent>
-      <LastUpdatedAlert />
-      <article className="prose prose-indigo p-4 bg-white shadow overflow-hidden rounded-md">
-        {htmr(html, { transform: htmrTransform })};
-      </article>
-      <style jsx>{`
-        article {
-          margin: 0 auto;
-        }
-        h1 {
-          text-align: center;
-        }
-      `}</style>
-    </PageContent>
-  </Page>
-);
-
-export default HomePage;
+export default function Home(props: HomeProps) {
+  return (
+    <Page>
+      <NextSeo title={meta.title} titleTemplate="%s" />
+      <Head>
+        <style dangerouslySetInnerHTML={{ __html: props.css }} />
+      </Head>
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `(function(w,d,s,l,i){w[l] = w[l] || [];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5X4ZPBX');`,
+        }}
+      />
+      <noscript>
+        <iframe
+          height="0"
+          src="https://www.googletagmanager.com/ns.html?id=GTM-5X4ZPBX"
+          style={{ display: "none", visibility: "hidden" }}
+          title="gtm"
+          width="0"
+        />
+      </noscript>
+      <header>
+        <div className="max-w-xl mx-auto">
+          <h1 className="p-0">
+            <Link href="/">
+              <a>
+                <Image
+                  alt="Warga Bantu Warga"
+                  blurDataURL={bannerBlurData}
+                  height={287}
+                  layout="responsive"
+                  loader={imgixLoader}
+                  placeholder="blur"
+                  priority={true}
+                  quality={70}
+                  src="hero_banner.png"
+                  width={640}
+                />
+              </a>
+            </Link>
+          </h1>
+        </div>
+      </header>
+      <PageContent>
+        <article
+          className="home-page-content p-4 bg-white shadow overflow-hidden rounded-md"
+          dangerouslySetInnerHTML={{ __html: props.html }}
+        />
+      </PageContent>
+    </Page>
+  );
+}
