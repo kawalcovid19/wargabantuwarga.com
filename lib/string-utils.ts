@@ -69,10 +69,10 @@ export function convertToKebabCase(str: string): string {
  * @param {string} str input string
  * @returns {string} kebab-cased version of `str`
  */
-export function getKebabCase(str: string): string {
+export function getKebabCase(str?: string): string {
   return convertToKebabCase(
     removeSpaces(
-      replaceSpecialCharacterWithSpace(replaceSpacesWithCamelCase(str)),
+      replaceSpecialCharacterWithSpace(replaceSpacesWithCamelCase(str ?? "")),
     ),
   );
 }
