@@ -64,6 +64,20 @@ export function convertToKebabCase(str: string): string {
 }
 
 /**
+ * Get a kebab-case version of a string
+ *
+ * @param {string} str input string
+ * @returns {string} kebab-cased version of `str`
+ */
+export function getKebabCase(str?: string): string {
+  return convertToKebabCase(
+    removeSpaces(
+      replaceSpecialCharacterWithSpace(replaceSpacesWithCamelCase(str ?? "")),
+    ),
+  );
+}
+
+/**
  * Get slug from slug identifier and slug index
  *
  * @param {string} name slug identifier
@@ -71,11 +85,7 @@ export function convertToKebabCase(str: string): string {
  * @returns {string} slug string
  */
 export function getSlug(name: string, index: number): string {
-  const kebabName = convertToKebabCase(
-    removeSpaces(
-      replaceSpecialCharacterWithSpace(replaceSpacesWithCamelCase(name)),
-    ),
-  );
+  const kebabName = getKebabCase(name);
   return `${kebabName}-${index}`;
 }
 

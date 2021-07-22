@@ -32,14 +32,14 @@ Kementerian Kesehatan meluncurkan SIRANAP terbaru versi 3.0. Melalui SIRANAP 3.0
 
 ## Daftar Isi
 
-1. Situs atau Kontak Penting Terkait COVID-19
-2. [Daftar Kontak Fasilitas dan Alat Kesehatan per Provinsi](#daftar-kontak-fasilitas--alat-kesehatan-per-provinsi)
-3. [Laman Edukasi COVID-19](#laman-edukasi-covid-19)
-4. [Donasi untuk Warga Terdampak](#donasi-dan-penggalangan-dana)
+1. [Situs atau Kontak Penting Terkait COVID-19](#situsatau-kontak-penting-terkait-covid19)
+2. [Daftar Kontak Fasilitas dan Alat Kesehatan per Provinsi](#daftar-kontak-fasilitas-alat-kesehatanper-provinsi)
+3. [Laman Edukasi COVID-19](#laman-edukasi-covid19)
+4. [Donasi untuk Warga Terdampak](#donasidan-penggalangan-dana)
 
 - - -
 
-## Situs atau Kontak Penting Terkait COVID-19[](https://oksigen.carrd.co/)
+## Situs atau Kontak Penting Terkait COVID-19
 
 Temukan situs atau kontak fasilitas/alat kesehatan untuk COVID-19 di tingkat nasional.
 
