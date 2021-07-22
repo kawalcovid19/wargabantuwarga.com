@@ -7,7 +7,7 @@ last_updated_time: 2021-07-21T16:35:30.277Z
 
 #### Cari Informasi dan Kontak Rumah Sakit, Ambulans, atau Oksigen?
 
-[Lihat database fasilitas/alat kesehatan di sini](https://www.wargabantuwarga.com/provinces).
+[Lihat database fasilitas/alat kesehatan di sini](/provinces).
 
 - - -
 
@@ -101,11 +101,11 @@ Hubungi 119 ext. 9
 
 ## Daftar Kontak Fasilitas & Alat Kesehatan per Provinsi
 
-#### **([Lihat selengkapnya di sini](https://www.wargabantuwarga.com/provinces))**
+#### **([Lihat selengkapnya di sini](/provinces))**
 
 Kumpulan informasi ketersediaan tempat tidur di rumah sakit, tabung oksigen, ambulans, hingga kontak layanan kesehatan di daerah.
 
-### [Akses Database Kontak & Alat Kesehatan Per-Provinsi di Sini](https://www.wargabantuwarga.com/provinces)
+### [Akses Database Kontak & Alat Kesehatan Per-Provinsi di Sini](/provinces)
 
 Daerahmu belum ada dalam di database? Kamu bisa berkontribusi dengan [isi formulir ini untuk menambahkan info di daerahmu](https://forms.gle/Z3obzzcf9tY36MCH7). 
 
