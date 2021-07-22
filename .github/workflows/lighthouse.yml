@@ -1,11 +1,9 @@
+name: Lighthouse
 on:
   workflow_run:
     workflows: ["trigger-lhcli"]
     types:
       - completed
-
-name: Lighthouse
-
 jobs:
   lh-ci:
     name: Lighthouse CI
@@ -32,7 +30,7 @@ jobs:
             });
 
             var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
-              return artifact.name == "pr"
+              return artifact.name == "lhartifact"
             })[0];
 
             var download = await github.actions.downloadArtifact({
@@ -43,23 +41,28 @@ jobs:
             });
 
             var fs = require('fs');
-            fs.writeFileSync('${{github.workspace}}/pr.zip', Buffer.from(download.data));
+            fs.writeFileSync('${{github.workspace}}/lhartifact.zip', Buffer.from(download.data));
 
-      - run: unzip pr.zip
+      - run: unzip lhartifact.zip
 
-      - name: Wait for the Netlify Preview
-        uses: jakepartusch/wait-for-netlify-action@v1
+      - name: 'Get netlify preview domain'
         id: netlify
+        uses: actions/github-script@v3
         with:
-          site_name: 'wargabantuwarga'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            var fs = require('fs');
+            var netlify = String(fs.readFileSync('./netlify'));
+            console.log(`netlify`)
+
       - name: "Lighthouse CI (Preview)"
-        id: lhcli
+        id: lhci
         shell: bash
         run: |
           yarn global add @lhci/cli@0.8.x
           echo -e "\n"
           echo "Start collecting LH report..."
-          lhci collect --url=${{ steps.netlify.outputs.url }} -n=1
+          lhci collect --url=${{join(steps.netlify.outputs.*, '')}} -n=1
           echo -e "\n"
           echo "Start asserting score..."
           lhci assert --config=./lighthouserc.js
@@ -73,13 +76,13 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             var fs = require('fs');
-            var issue_number = Number(fs.readFileSync('./NR'));
+            var issue_number = Number(fs.readFileSync('./pr'));
 
             await github.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: issue_number,
-              body: 'Everything is OK. ${{join(steps.lhcli.outputs.*, '\n')}}'
+              body: 'Everything is OK. ${{join(steps.lhci.outputs.*, '\n')}}'
             });
 
       # - name: Create comment
