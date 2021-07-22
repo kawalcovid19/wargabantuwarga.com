@@ -27,7 +27,7 @@ jobs:
           lhci collect --url=${{ steps.netlify.outputs.url }} -n=1
           echo -e "\n"
           echo "Start asserting score..."
-          lhci assert --config=./lighthouserc.js
+          lhci assert --config=../lighthouserc.js
           echo -e "\n"
           echo "Start uploading the report..."
           lhci upload --target "temporary-public-storage"
