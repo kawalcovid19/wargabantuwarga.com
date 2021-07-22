@@ -967,6 +967,13 @@
     "@babel/helper-validator-identifier" "^7.14.5"
     to-fast-properties "^2.0.0"
 
+"@cld-apis/utils@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@cld-apis/utils/-/utils-0.1.3.tgz#a12d26bef6955d4c3e501fb84ad4bf544f07aa10"
+  integrity sha512-e50vj4qE6PLYrado/ypwH+AVHwMRCevvpAz8sqDhRMow9MPiWNTuY9+jnLU8K/ewmX7rgdBsxxqBpMtF/OwhIw==
+  dependencies:
+    lodash.snakecase "^4.1.1"
+
 "@corex/deepmerge@^2.6.20":
   version "2.6.20"
   resolved "https://registry.yarnpkg.com/@corex/deepmerge/-/deepmerge-2.6.20.tgz#a72d1cb5a101fd11160815b96f499a588362ba5b"
@@ -2876,6 +2883,13 @@ clone@^1.0.2:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
   integrity sha1-2jCcwmPfFZlMaIypAheco8fNfH4=
+
+cloudinary-build-url@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/cloudinary-build-url/-/cloudinary-build-url-0.2.1.tgz#3b1949276ee5414cce89aea877e9b6ef745a46f3"
+  integrity sha512-uoUZNe/Leurov74HFbA1Os0P+GYVSHUvyb+X8HWWJTpTDXGmjibat9PdKayz9TdlGPQ8fClRbMPWpqT8o9zl+A==
+  dependencies:
+    "@cld-apis/utils" "^0.1.3"
 
 clsx@^1.1.1:
   version "1.1.1"
@@ -6891,6 +6905,11 @@ lodash.set@^4.3.2:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/lodash.set/-/lodash.set-4.3.2.tgz#d8757b1da807dde24816b0d6a84bea1a76230b23"
   integrity sha1-2HV7HagH3eJIFrDWqEvqGnYjCyM=
+
+lodash.snakecase@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.snakecase/-/lodash.snakecase-4.1.1.tgz#39d714a35357147837aefd64b5dcbb16becd8f8d"
+  integrity sha1-OdcUo1NXFHg3rv1ktdy7Fr7Nj40=
 
 lodash.sortby@^4.7.0:
   version "4.7.0"
