@@ -1,5 +1,5 @@
 ---
-last_updated_time: 2021-07-21T16:35:30.277Z
+last_updated_time: 2021-07-22T07:46:04.769Z
 ---
 *\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19 dan kontak fasilitas/alat kesehatan di seluruh Indonesia yang dikumpulkan relawan melalui pencarian di internet atau media sosial.*
 
@@ -51,11 +51,6 @@ Temukan situs atau kontak fasilitas/alat kesehatan untuk COVID-19 di tingkat nas
 
 [Klik SIRANAP Kemenkes](https://yankes.kemkes.go.id/app/siranap/) 
 
-#### Butuh Oksigen untuk Pasien COVID-19?
-
-* [Klik untuk lihat database oksigen di Info Oksigen](https://oksigen.carrd.co)
-* [Follow Instagram @sejutates untuk info peminjaman oksigen (khusus Jabodetabek)](https://www.instagram.com/sejutates/)
-
 #### Butuh Donor Plasma atau Ingin Donor Plasma?
 
 * Hubungi Contact Center BNPB - Donor Konvalesen: 117 ext. 5 
@@ -64,11 +59,6 @@ Temukan situs atau kontak fasilitas/alat kesehatan untuk COVID-19 di tingkat nas
 * [](https://blood4life.id)[Klik situs Reblood untuk cari donor atau mendonorkan plasma](https://reblood.com)
 * [Klik situs @BantuCovid untuk melihat list orang yang mendonorkan dan membutuhkan donor plasma](https://konvalesenid.wixsite.com/dashboard)
 * [Klik untuk mendonorkan plasma (bukan menerima donor plasma) kolaborasi Satgas COVID-19 dan PMI](https://plasmakonvalesen.covid19.go.id)
-
-#### Butuh Info Alat/Fasilitas Kesehatan?
-
-* [Cari alat/fasilitas kesehatan di database urundayacovid.com](https://urundayacovid.com)
-* [Chat Covidasha Chatbot untuk tanya info alat/fasilitas kesehatan](https://wa.me/+628115370645?text=Hi)
 
 #### Mau Konsultasi Medis dengan Dokter (Telemedicine)?
 
