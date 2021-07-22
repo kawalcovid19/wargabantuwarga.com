@@ -5,7 +5,6 @@ import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import { SearchForm } from "~/components/search-form";
-import { ScrollArrow } from "~/components/ui/scroll-arrow";
 import { useSearch } from "~/lib/hooks/use-search";
 import provinces, { Contact, getProvincesPaths } from "~/lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "~/lib/string-utils";
@@ -98,7 +97,6 @@ export default function ProvincePage(props: ProvinceProps) {
           />
           <ContactList data={filteredContacts} provinceSlug={provinceSlug} />
         </PageContent>
-        <ScrollArrow />
       </Page>
     );
   } else {

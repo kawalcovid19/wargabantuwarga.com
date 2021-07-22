@@ -5,7 +5,6 @@ import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import { SearchForm } from "~/components/search-form";
-import { ScrollArrow } from "~/components/ui/scroll-arrow";
 import faqSheets, { FaqData } from "~/lib/faq-databases";
 import { useSearch } from "~/lib/hooks/use-search";
 
@@ -129,7 +128,6 @@ export default function Faqs(props: FaqsProps) {
           )}
         </div>
       </PageContent>
-      <ScrollArrow />
     </Page>
   );
 }

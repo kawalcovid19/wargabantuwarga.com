@@ -4,7 +4,6 @@ import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import { ProvinceList, ProvinceListItem } from "~/components/province-list";
 import { SearchForm } from "~/components/search-form";
-import { ScrollArrow } from "~/components/ui/scroll-arrow";
 import { useSearch } from "~/lib/hooks/use-search";
 import provinces from "~/lib/provinces";
 import { getInitial, getSlug } from "~/lib/string-utils";
@@ -50,7 +49,6 @@ export default function ProvincesPage(props: ProvincesPageProps) {
         />
         <ProvinceList data={filteredProvinces} />
       </PageContent>
-      <ScrollArrow />
     </Page>
   );
 }
