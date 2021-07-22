@@ -235,6 +235,24 @@
         "infra",
         "projectManagement"
       ]
+    },
+    {
+      "login": "suliskh",
+      "name": "Kukuh Sulistyo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/24476578?v=4",
+      "profile": "https://suliskh.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "ekiriandra-seo",
+      "name": "ekiriandra-seo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/85287011?v=4",
+      "profile": "https://github.com/ekiriandra-seo",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
