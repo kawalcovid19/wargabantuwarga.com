@@ -22,7 +22,7 @@ Please pay attention on every issue attribute. Every issue might be referenced b
 
 As mentioned [here](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/), `good first issue` is a label feature from GitHub which created to help beginner contributors in contributing to an open-source project. `good first issue` informed us about the difficulty level of an issue. This means that an issue with `good first issue` label suits perfectly for contributors that would like to have their first contribution to an open-source project.
 
-How to find issues with `good-first-issue` label:
+How to find issues with `good first issue` label:
 
 1. The easiest way is to go into the `github.com/<owner>/<repository>/contribute` link. In this case, you can go into [this link](https://github.com/kawalcovid19/wargabantuwarga.com/contribute). That link will list all of the issues with the `good-first-issue` label.
 2. Another way is to head over into the [Issues](https://github.com/kawalcovid19/wargabantuwarga.com/issues) section of the repository, then click the Labels section beside Milestones. There you can see a lot of labels for the issues in the repository. Then find and click the `good first issue` label.
