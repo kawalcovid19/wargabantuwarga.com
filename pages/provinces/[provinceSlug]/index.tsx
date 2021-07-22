@@ -35,9 +35,9 @@ export default function ProvincePage(props: ProvinceProps) {
     urlParams,
     filterItems,
     isLoading,
-  ] = useSearch(
-    contactList,
-    [
+  ] = useSearch({
+    items: contactList,
+    fieldNames: [
       "kebutuhan",
       "penyedia",
       "lokasi",
@@ -48,11 +48,11 @@ export default function ProvincePage(props: ProvinceProps) {
       "tambahan_informasi",
       "bentuk_verifikasi",
     ],
-    [
+    aggregationSettings: [
       { field: "kebutuhan", title: "Kategori" },
       { field: "lokasi", title: "Lokasi" },
     ],
-    {
+    sortSettings: {
       penyedia_asc: {
         field: "penyedia",
         order: "asc",
@@ -62,8 +62,8 @@ export default function ProvincePage(props: ProvinceProps) {
         order: ["desc", "asc"],
       },
     },
-    "verified_first",
-  );
+    defaultSort: "verified_first",
+  });
 
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (provinceName) {
