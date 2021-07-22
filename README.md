@@ -1,6 +1,6 @@
 # Warga Bantu Warga
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-22-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-23-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 A society initiative to circulate information about health facilities and devices for COVID-19.
@@ -116,6 +116,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/ekiriandra-seo"><img src="https://avatars.githubusercontent.com/u/85287011?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ekiriandra-seo</b></sub></a><br /><a href="#ideas-ekiriandra-seo" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/syauqy"><img src="https://avatars.githubusercontent.com/u/3627108?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Syauqy Nurul Aziz</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=syauqy" title="Code">💻</a></td>
   </tr>
 </table>
 
