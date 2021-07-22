@@ -78,7 +78,8 @@ jobs:
       - name: "Lighthouse CI for PR #${{ github.event.pull_request.number }} (Preview)"
         run: |
           yarn global add @lhci/cli@0.8.x
-          lhci autorun --upload.target=temporary-public-storage collect --urls ${{ steps.netlify.outputs.url }} || echo "LHCI failed!"
+          lhci collect --urls ${{ steps.netlify.outputs.url }}
+          lhci upload --target "temporary-public-storage"
         env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
