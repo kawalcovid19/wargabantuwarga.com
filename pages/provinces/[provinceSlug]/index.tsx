@@ -6,11 +6,7 @@ import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import { SearchForm } from "~/components/search-form";
 import { SeoText } from "~/components/seo-text";
-import {
-  getCurrentDate,
-  getCurrentMonth,
-  getCurrentYear,
-} from "~/lib/date-utils";
+import { getCurrentLongDate } from "~/lib/date-utils";
 import { useSearch } from "~/lib/hooks/use-search";
 import provinces, { Contact, getProvincesPaths } from "~/lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "~/lib/string-utils";
@@ -118,11 +114,11 @@ export default function ProvincePage(props: ProvinceProps) {
           />
           <SeoText
             textNode={
-              <span>
+              <p>
                 Daftar Informasi Fasilitas Kesehatan (Faskes) & Alat Kesehatan
-                (Alkes) untuk COVID-19 di {provinceName} per {getCurrentDate()}{" "}
-                {getCurrentMonth()} {getCurrentYear()}.
-              </span>
+                (Alkes) untuk COVID-19 di {provinceName} per{" "}
+                {getCurrentLongDate()}.
+              </p>
             }
           />
         </PageContent>

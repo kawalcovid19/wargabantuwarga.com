@@ -1,16 +1,32 @@
-export const monthsString: string =
-  "Januari,Februari,Maret,April,Mei,Juni,Juli,Agustus,September,Oktober,November,Desember";
-export const monthNames: string[] = monthsString.split(",");
+const LOCALE_ID = "id";
+const NUMERIC = "numeric";
+const LONG = "long";
 
-export function getCurrentMonth(): string {
-  const monthIndex = new Date().getMonth();
-  return monthNames[monthIndex];
+const DEFAULT_YEAR_FORMAT = NUMERIC;
+const DEFAULT_DAY_FORMAT = NUMERIC;
+const LONG_MONTH_FORMAT = LONG;
+
+/**
+ * Get current month and year in a single string
+ *
+ * @returns {string} month and year, e.g: Juli 2021
+ */
+export function getCurrentMonthAndYear(): string {
+  return new Date().toLocaleString(LOCALE_ID, {
+    year: DEFAULT_YEAR_FORMAT,
+    month: LONG_MONTH_FORMAT,
+  });
 }
 
-export function getCurrentYear(): number {
-  return new Date().getFullYear();
-}
-
-export function getCurrentDate(): number {
-  return new Date().getDate();
+/**
+ * Get current date, month and year in a single string
+ *
+ * @returns {string} date, month and year, e.g: 23 Juli 2021
+ */
+export function getCurrentLongDate(): string {
+  return new Date().toLocaleString(LOCALE_ID, {
+    year: DEFAULT_YEAR_FORMAT,
+    month: LONG_MONTH_FORMAT,
+    day: DEFAULT_DAY_FORMAT,
+  });
 }
