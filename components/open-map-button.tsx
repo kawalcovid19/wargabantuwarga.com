@@ -11,7 +11,7 @@ export function OpenMapButton({ address }: { address: string }) {
   return (
     <div className="flex items-start">
       <SecondaryButton
-        aria-label="Buka Map"
+        aria-label="Buka Peta"
         className="relative z-10"
         icon={MapIcon}
         onClick={btnClick}
