@@ -51,6 +51,11 @@ There are several reasons we're using English while communicating in GitHub Issu
 2. It accustoms the contributors, which are mostly Indonesian, to communicate in English. It is important to increase our English reading and writing skills because the vast majority of the global open-source communities are using Engish as the main language.
 3. It makes this project easier to be recognised globally. So if we need to get more support from the global communities, they could easily understand what we are doing and help us out with their access and competence. e.g., providing us free credits for their services, advocating us to global leaders, or contributing directly to our codebase.
 
+### What Milestone do whe have to accomplish
+
+Based on github guide, [Milestones](https://guides.github.com/features/issues/#:~:text=Milestones%20are%20groups%20of%20issues,of%20milestones%20on%20GitHub%20include%3A&text=Redesign%20%E2%80%94%20File%20issues%20related%20to,on%20what%20to%20work%20on.)
+are groups of issues that correspond to a project, feature, or time period. We have set our Milestone in this [section](https://github.com/kawalcovid19/wargabantuwarga.com/milestones)
+
 ---
 
 ## Cara berkontribusi
