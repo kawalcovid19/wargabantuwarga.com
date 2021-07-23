@@ -43,7 +43,7 @@ export function SearchForm({
   sortSettings,
 }: {
   itemName: string;
-  placeholderText: string;
+  placeholderText?: string;
   checkDocSize: boolean;
   onSubmitKeywords: (keywords: string, filters?: any, sort_by?: string) => void;
   autoSearch?: boolean;
