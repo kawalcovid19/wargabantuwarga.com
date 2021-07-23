@@ -1,7 +1,7 @@
 import { buildUrl } from "cloudinary-build-url";
 import type { ImageLoaderProps } from "next/image";
 
-const CLOUDINARY_CLOUD_NAME = "ekafyi"; // TODO replace with WBW username
+const CLOUDINARY_CLOUD_NAME = "wargabantuwarga";
 
 const DEFAULT_QUALITY = "auto:eco";
 
