@@ -25,12 +25,12 @@ export function HomepageHeader() {
           </div>
           <div className="flex flex-col absolute top-0 left-0 w-full h-full p-4">
             <div className="flex flex-col flex-1 items-start justify-between">
-              <WBWLogoBlack className="h-8 sm:h-10" />
-              <div className="w-[50%] sm:w-[55%] space-y-1">
-                <h1 className="text-brand-500 text-lg sm:text-xl md:text-2xl">
+              <WBWLogoBlack className="h-8 md:h-10" />
+              <div className="w-[60%] sm:w-[55%] space-y-1">
+                <h1 className="text-brand-500 text-lg sm:text-2xl">
                   Warga<span className="font-semibold">Bantu</span>Warga
                 </h1>
-                <p className="text-xs sm:text-sm md:text-base">
+                <p className="text-xs sm:text-base">
                   Inisiatif warga untuk berbagi informasi dan membantu warga
                   yang terdampak Covid-19.
                 </p>
