@@ -100,6 +100,7 @@ export default function ProvincePage(props: ProvinceProps) {
             isLoading={isLoading}
             itemName="kontak"
             onSubmitKeywords={handleSubmitKeywords}
+            placeholderText="Cari berdasarkan kontak, alamat, provider, dan keterangan"
             sortSettings={[
               { value: "verified_first", label: "Terverifikasi" },
               { value: "penyedia_asc", label: "Nama" },
