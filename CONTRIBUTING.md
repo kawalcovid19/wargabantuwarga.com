@@ -18,6 +18,15 @@ Closed Issues are issues that have been completed or doesn't need further action
 
 Please pay attention on every issue attribute. Every issue might be referenced by other contributors through [Linked Pull Requests](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue). If an issue has a linked pull request, that means the issue is currently being handled. To avoid working on the same issue, contributors were strongly encouraged to submit a [draft pull request](https://github.blog/2019-02-14-introducing-draft-pull-requests/) first when they start working on an issue.
 
+#### For Beginners: `good first issue` label
+
+As mentioned [here](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/), `good first issue` is a label feature from GitHub which created to help beginner contributors in contributing to an open-source project. `good first issue` informed us about the difficulty level of an issue. This means that an issue with `good first issue` label suits perfectly for contributors that would like to have their first contribution to an open-source project.
+
+How to find issues with `good first issue` label:
+
+1. The easiest way is to go into the `github.com/<owner>/<repository>/contribute` link. In this case, you can go into [this link](https://github.com/kawalcovid19/wargabantuwarga.com/contribute). That link will list all of the issues with the `good first issue` label.
+2. Another way is to head over into the [Issues](https://github.com/kawalcovid19/wargabantuwarga.com/issues) section of the repository, then click the Labels section beside Milestones. There you can see a lot of labels for the issues in the repository. Then find and click the `good first issue` label.
+
 ### Start working on issues
 
 Before working on an issue, there are a few things that you need to pay attention to:
@@ -110,6 +119,15 @@ _Open Issues_ merupakan kategori yang membutuhkan perhatian lebih serta penyeles
 _Closed Issues_ merupakan kategori _issue_ yang sudah selesai dikerjakan atau tidak membutuhkan aksi lanjutan. _Issue_ dengan status _closed_ dapat kembali diubah menjadi _open_ ketika kontibutor menemukan _issue_ yang berhubungan di masa mendatang.
 
 Mohon perhatikan tiap atribut _issue_. Tiap _issue_ kemungkinan dikerjakan oleh kontributor lain melalui [_Linked Pull Requests_](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue). Ini berarti _issue_ sedang dalam penanganan. Untuk menghindari pekerjaan yang sama, kontributor sangat dianjurkan untuk mengajukan sebuah [_draft pull request_](https://github.blog/2019-02-14-introducing-draft-pull-requests/) terlebih dahulu setiap kali hendak mengerjakan suatu _issue_.
+
+#### Untuk Pemula: label _`good first issue`_
+
+Seperti yang tertulis [di sini](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/), _`good first issue`_ merupakan sebuah fitur label dari GitHub yang diciptakan untuk membantu para kontributor pemula dalam berkontribusi ke sebuah proyek _open-source_. _`good first issue`_ memberitakan kita mengenai tingkat kesulitan dari sebuah _issue_. Ini berarti, bahwa sebuah _issue_ dengan label _`good first issue`_ cocok sekali bagi kontributor pemula yang ingin melakukan kontribusi pertama mereka ke sebuah proyek _open-source_.
+
+Bagaimana cara mencari _issue_ dengan label _`good first issue`_:
+
+1. Cara paling mudah adalah dengan mengunjungi pranala `github.com/<owner>/<repository>/contribute`. Dalam hal ini, Anda dapat mengunjungi [pranala ini](https://github.com/kawalcovid19/wargabantuwarga.com/contribute). Pranala tersebut akan memberikan daftar dari semua _issue_ dengan label _`good first issue`_.
+2. Atau cara lainnya adalah dengan mengunjungi bagian [_Issues_](https://github.com/kawalcovid19/wargabantuwarga.com/issues) dari sebuah repository, lalu klik bagian _Labels_ di sebelah _Milestones_. Di sana, Anda dapat melihat banyak label untuk _issues_ yang terdapat dalam repository tersebut. Lalu cari dan klik label `good first issue`.
 
 ### Panduan mulai bekerja
 
