@@ -14,7 +14,7 @@ export function Navigation() {
 
   const menuClasses = (isActive: boolean) => {
     return [
-      "inline-flex flex-col items-center justify-center h-12 rounded-md",
+      "inline-flex flex-col items-center justify-center h-12 px-4 rounded-md",
       isActive ? "text-blue-600 font-semibold" : "text-gray-600",
       "hover:text-blue-600",
     ];
