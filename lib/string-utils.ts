@@ -73,9 +73,7 @@ export function convertToKebabCase(str: string): string {
  * @returns {string} kebab-cased version of `str`
  */
 export function getKebabCase(str?: string): string {
-  return convertToKebabCase(
-    replaceSpecialCharacterWithSpace(str ?? "").trim()
-  );
+  return convertToKebabCase(replaceSpecialCharacterWithSpace(str ?? "").trim());
 }
 
 /**
