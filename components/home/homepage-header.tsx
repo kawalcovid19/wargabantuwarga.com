@@ -13,7 +13,7 @@ export function HomepageHeader() {
             <Image
               alt="Background"
               blurDataURL={bannerBlurData}
-              height={287}
+              height={288}
               layout="responsive"
               loader={imgixLoader}
               placeholder="blur"
