@@ -92,7 +92,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 See our contribution guidelines in these languages:
 
-- [English](CONTRIBUTING_EN.md)
+- [English](CONTRIBUTING.md)
 - [Indonesian](CONTRIBUTING_ID.md)
 
 ## Contributors ✨
