@@ -1,12 +1,11 @@
 import * as React from "react";
 
-import WhatsAppLogo from "~/components/ui/whatsapp-logo";
-
 import {
+  ChatAltIcon,
   HomeIcon,
-  QuestionMarkCircleIcon,
   SearchIcon,
-} from "@heroicons/react/solid";
+  ViewGridIcon,
+} from "@heroicons/react/outline";
 
 export interface BottomNavigationItem {
   name: string;
@@ -18,25 +17,25 @@ export interface BottomNavigationItem {
 
 export const bottomNavigation: BottomNavigationItem[] = [
   {
-    name: "Home",
+    name: "Beranda",
     icon: HomeIcon,
     href: "/",
     exact: true,
   },
   {
-    name: "Pencarian",
+    name: "Hotline",
+    icon: ChatAltIcon,
+    href: "https://wa.me/6281257579812",
+    external: true,
+  },
+  {
+    name: "Pusat Data",
     icon: SearchIcon,
     href: "/provinces",
   },
   {
     name: "FAQ",
-    icon: QuestionMarkCircleIcon,
+    icon: ViewGridIcon,
     href: "/faq",
-  },
-  {
-    name: "WhatsApp",
-    icon: WhatsAppLogo,
-    href: "https://wa.me/6281257579812",
-    external: true,
   },
 ];
