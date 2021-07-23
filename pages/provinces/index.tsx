@@ -6,7 +6,7 @@ import { ProvinceList, ProvinceListItem } from "~/components/province-list";
 import { SearchForm } from "~/components/search-form";
 import { useSearch } from "~/lib/hooks/use-search";
 import provinces from "~/lib/provinces";
-import { getInitial, getSlug } from "~/lib/string-utils";
+import { getInitial } from "~/lib/string-utils";
 
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
@@ -54,13 +54,13 @@ export default function ProvincesPage(props: ProvincesPageProps) {
 }
 
 export const getStaticProps: GetStaticProps = () => {
-  const provincesList = provinces.map(({ name, data }, index) => ({
+  const provincesList = provinces.map(({ name, slug, data }) => ({
     initials: getInitial(name),
     name,
-    slug: getSlug(name, index),
+    slug,
     count: data.length,
   }));
-  provincesList.shift();
+
   return {
     props: {
       provincesList,
