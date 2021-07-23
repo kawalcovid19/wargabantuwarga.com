@@ -85,7 +85,7 @@ const HomePage = () => (
     <PageContent>
       <LastUpdatedAlert />
       <article className="prose prose-indigo p-4 bg-white shadow overflow-hidden rounded-md">
-        {htmr(html, { transform: htmrTransform })};
+        {htmr(html, { transform: htmrTransform })}
       </article>
       <style jsx>{`
         article {
