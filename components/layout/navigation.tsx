@@ -15,8 +15,8 @@ export function Navigation() {
   const menuClasses = (isActive: boolean) => {
     return [
       "inline-flex flex-col items-center justify-center h-12 rounded-md",
-      isActive ? "text-blue-600" : "text-gray-600",
-      "hover:text-blue-700",
+      isActive ? "text-blue-600 font-semibold" : "text-gray-600",
+      "hover:text-blue-600",
     ];
   };
 
@@ -47,7 +47,7 @@ export function Navigation() {
                   <a
                     className={clsx(...menuClasses(isActive))}
                     href={item.href}
-                    rel="noreferrer"
+                    rel="nofollow noopener noreferrer"
                     target="_blank"
                   >
                     {renderItem(item)}
