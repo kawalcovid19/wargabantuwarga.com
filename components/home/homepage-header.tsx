@@ -30,7 +30,7 @@ export function HomepageHeader() {
                 <h1 className="text-brand-500 text-lg sm:text-2xl">
                   Warga<span className="font-semibold">Bantu</span>Warga
                 </h1>
-                <p className="text-xs sm:text-base">
+                <p className="text-xs sm:text-sm">
                   Inisiatif warga untuk berbagi informasi dan membantu warga
                   yang terdampak Covid-19.
                 </p>
