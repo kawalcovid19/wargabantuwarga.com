@@ -33,6 +33,7 @@ type SortSetting = {
 
 export function SearchForm({
   itemName,
+  placeholderText,
   checkDocSize,
   onSubmitKeywords,
   filterItems,
@@ -42,6 +43,7 @@ export function SearchForm({
   isLoading,
 }: {
   itemName: string;
+  placeholderText: string;
   checkDocSize: boolean;
   onSubmitKeywords: (keywords: string, filters?: any, sort_by?: string) => void;
   filterItems?: {};
@@ -128,6 +130,7 @@ export function SearchForm({
             autoComplete="off"
             id="keywordsInput"
             onChange={handleKeywordsChange}
+            placeholder={placeholderText}
             type="text"
             value={keywords}
           />
