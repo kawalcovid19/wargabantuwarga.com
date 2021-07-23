@@ -37,7 +37,7 @@ collections:
   - name: "home_page"
     label: "Home Page"
     delete: false
-    preview_path: home-page
+    preview_path: ""
     files:
       - name: "home_page"
         label: "Home Page"

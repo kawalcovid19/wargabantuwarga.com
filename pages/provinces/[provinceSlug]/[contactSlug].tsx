@@ -23,9 +23,15 @@ const getMeta = (provinceName: string, contact: Contact) => {
     ? `${contact.penyedia} - `
     : "";
 
+  const location = contact.lokasi
+    ? `${contact.lokasi}, ${provinceName}`
+    : `${provinceName}`;
+
+  const title = `${providerWithSeparator}${contact.keterangan} di ${location}`;
+
   return {
-    // @TODO: change this after got a better title
-    title: `${providerWithSeparator}${contact.keterangan} di ${provinceName}`,
+    title,
+    description: `Informasi ${title} yang dikumpulkan relawan melalui pencarian di internet atau media sosial.`,
   };
 };
 
@@ -34,12 +40,14 @@ export default function ContactPage({
   provinceName,
 }: ContactPageProps) {
   const router = useRouter();
+  const meta = getMeta(provinceName, contact);
 
   return (
     <Page>
       <NextSeo
-        openGraph={{ title: getMeta(provinceName, contact).title }}
-        title={getMeta(provinceName, contact).title}
+        description={meta.description}
+        openGraph={{ description: meta.description, title: meta.title }}
+        title={meta.title}
       />
       <PageHeader
         backButton={
