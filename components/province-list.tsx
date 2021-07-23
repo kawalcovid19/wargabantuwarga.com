@@ -1,3 +1,5 @@
+import { getProvinceMetaTitle } from "~/pages/provinces/[provinceSlug]";
+
 import { EmptyState } from "./ui/empty-state";
 
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
@@ -27,7 +29,10 @@ export function ProvinceList(props: ProvinceListProps) {
               {province.initials}
             </div>
             <Link href={`/provinces/${province.slug}`}>
-              <a className="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
+              <a
+                className="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate"
+                title={getProvinceMetaTitle(province.name)}
+              >
                 <div className="flex-1 px-4 py-2 text-sm truncate">
                   <span className="text-gray-900 font-semibold hover:text-gray-600">
                     {province.name}

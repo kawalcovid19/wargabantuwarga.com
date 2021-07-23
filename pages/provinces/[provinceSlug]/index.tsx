@@ -19,10 +19,14 @@ type ProvinceProps = {
   contactList: Contact[];
 };
 
+export function getProvinceMetaTitle(provinceName: string) {
+  return `Informasi Faskes & Alkes untuk COVID-19 di Provinsi ${provinceName}`;
+}
+
 const getMeta = (provinceName: string) => {
   return {
     // @TODO: change this after got a better title
-    title: `Informasi Faskes & Alkes untuk COVID-19 di Provinsi ${provinceName}`,
+    title: getProvinceMetaTitle(provinceName),
     description: `Informasi seputar COVID-19 dan kontak fasilitas/alat kesehatan di Provinsi ${provinceName} yang dikumpulkan relawan melalui pencarian di internet atau media sosial.`,
   };
 };
@@ -108,6 +112,7 @@ export default function ProvincePage(props: ProvinceProps) {
           <ContactList
             data={filteredContacts}
             isLoading={isLoading}
+            provinceName={provinceName}
             provinceSlug={provinceSlug}
           />
         </PageContent>

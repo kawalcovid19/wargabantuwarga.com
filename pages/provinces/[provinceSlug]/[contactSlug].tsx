@@ -18,16 +18,21 @@ type ContactPageProps = {
   contact: Contact;
 };
 
-const getMeta = (provinceName: string, contact: Contact) => {
+export function getContactMetaTitle(provinceName: string, contact: Contact) {
   const providerWithSeparator = !!contact.penyedia
     ? `${contact.penyedia} - `
     : "";
 
-  const location = contact.lokasi
-    ? `${contact.lokasi}, ${provinceName}`
-    : `${provinceName}`;
+  const location =
+    contact.lokasi && contact.lokasi != provinceName
+      ? `${contact.lokasi}, ${provinceName}`
+      : `${provinceName}`;
 
-  const title = `${providerWithSeparator}${contact.keterangan} di ${location}`;
+  return `${providerWithSeparator}${contact.keterangan} di ${location}`;
+}
+
+const getMeta = (provinceName: string, contact: Contact) => {
+  const title = getContactMetaTitle(provinceName, contact);
 
   return {
     title,
