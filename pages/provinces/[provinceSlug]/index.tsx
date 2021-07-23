@@ -23,6 +23,7 @@ const getMeta = (provinceName: string) => {
   return {
     // @TODO: change this after got a better title
     title: `Informasi Faskes & Alkes untuk COVID-19 di Provinsi ${provinceName}`,
+    description: `Informasi seputar COVID-19 dan kontak fasilitas/alat kesehatan di Provinsi ${provinceName} yang dikumpulkan relawan melalui pencarian di internet atau media sosial.`,
   };
 };
 
@@ -35,9 +36,9 @@ export default function ProvincePage(props: ProvinceProps) {
     urlParams,
     filterItems,
     isLoading,
-  ] = useSearch(
-    contactList,
-    [
+  ] = useSearch({
+    items: contactList,
+    fieldNames: [
       "kebutuhan",
       "penyedia",
       "lokasi",
@@ -48,11 +49,11 @@ export default function ProvincePage(props: ProvinceProps) {
       "tambahan_informasi",
       "bentuk_verifikasi",
     ],
-    [
+    aggregationSettings: [
       { field: "kebutuhan", title: "Kategori" },
       { field: "lokasi", title: "Lokasi" },
     ],
-    {
+    sortSettings: {
       penyedia_asc: {
         field: "penyedia",
         order: "asc",
@@ -62,16 +63,19 @@ export default function ProvincePage(props: ProvinceProps) {
         order: ["desc", "asc"],
       },
     },
-    "verified_first",
-  );
+    defaultSort: "verified_first",
+  });
 
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (provinceName) {
+    const meta = getMeta(provinceName);
+
     return (
       <Page>
         <NextSeo
-          openGraph={{ title: getMeta(provinceName).title }}
-          title={getMeta(provinceName).title}
+          description={meta.description}
+          openGraph={{ description: meta.description, title: meta.title }}
+          title={meta.title}
         />
         <PageHeader
           backButton={<BackButton href="/provinces" />}
@@ -133,11 +137,12 @@ export const getStaticProps: GetStaticProps = ({ params = {} }) => {
   const province = index ? provinces[index as unknown as number] : null;
   const provinceName = province ? province.name : "";
   const contactList = province
-    ? [...province.data].sort(
-        (a, b) =>
+    ? [...province.data].sort((a, b) => {
+        return (
           b.verifikasi - a.verifikasi ||
-          (a.penyedia ?? "").localeCompare(b.penyedia ?? ""),
-      )
+          (a.penyedia ?? "").localeCompare(b.penyedia ?? "")
+        );
+      })
     : null;
 
   return {

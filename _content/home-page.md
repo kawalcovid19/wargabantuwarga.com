@@ -1,9 +1,13 @@
 ---
-last_updated_time: 2021-07-21T16:35:30.277Z
+last_updated_time: 2021-07-23T05:24:59.924Z
 ---
+*\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19 dan kontak fasilitas/alat kesehatan di seluruh Indonesia yang dikumpulkan relawan melalui pencarian di internet atau media sosial.*
+
+- - -
+
 #### Cari Informasi dan Kontak Rumah Sakit, Ambulans, atau Oksigen?
 
-[Lihat database fasilitas/alat kesehatan di sini](https://www.wargabantuwarga.com/provinces).
+[Lihat database fasilitas/alat kesehatan di sini](/provinces).
 
 - - -
 
@@ -17,7 +21,7 @@ last_updated_time: 2021-07-21T16:35:30.277Z
 
 #### Butuh Bantuan Kebutuhan Pokok karena Positif COVID-19?
 
-* [Ajukan bantuan kebutuhan pokok jika positif COVID-19 dengan isi formulir ini](https://sembako.wargabantuwarga.com/). Bantuan baru tersedia untuk warga Jabodetabek, Bandung, Yogyakarta, dan Surabaya. Tim #WargaBantuWarga akan menyeleksi dan memprioritaskan warga yang butuh bantuan.[](https://docs.google.com/spreadsheets/d/1lksiRf7G3c14AGzUI0lVmyG6CQmyWe1iXH90D5LEqq8/edit?usp=sharing)
+* [Ajukan bantuan kebutuhan pokok jika positif COVID-19 dengan isi formulir ini](https://sembako.wargabantuwarga.com/). Bantuan baru tersedia untuk warga Jabodetabek, Bandung, Yogyakarta, dan Surabaya. Tim #WargaBantuWarga akan menyeleksi dan memprioritaskan warga yang butuh bantuan.
 * [Lihat beragam posko bantuan warga jika butuh bantuan makanan saat isoman](https://docs.google.com/spreadsheets/d/1lksiRf7G3c14AGzUI0lVmyG6CQmyWe1iXH90D5LEqq8/edit?usp=sharing)
 
 - - -
@@ -47,35 +51,25 @@ Temukan situs atau kontak fasilitas/alat kesehatan untuk COVID-19 di tingkat nas
 
 [Klik SIRANAP Kemenkes](https://yankes.kemkes.go.id/app/siranap/) 
 
-#### Butuh Oksigen untuk Pasien COVID-19?
-
-* [Klik untuk lihat database oksigen di Info Oksigen](https://oksigen.carrd.co)
-* [Follow Instagram @sejutates untuk info peminjaman oksigen (khusus Jabodetabek)](https://www.instagram.com/sejutates/)
-
 #### Butuh Donor Plasma atau Ingin Donor Plasma?
 
 * Hubungi Contact Center BNPB - Donor Konvalesen: 117 ext. 5 
 * [Klik situs ahaha.id untuk cari donor atau mendonorkan plasma](https://ahaha.id)
 * [Klik Blood4Life untuk cari donor atau mendonorkan plasma](https://blood4life.id)
-* [](https://blood4life.id)[Klik situs Reblood untuk cari donor atau mendonorkan plasma](https://reblood.com)
+* [Klik situs Reblood untuk cari donor atau mendonorkan plasma](https://reblood.com)
 * [Klik situs @BantuCovid untuk melihat list orang yang mendonorkan dan membutuhkan donor plasma](https://konvalesenid.wixsite.com/dashboard)
 * [Klik untuk mendonorkan plasma (bukan menerima donor plasma) kolaborasi Satgas COVID-19 dan PMI](https://plasmakonvalesen.covid19.go.id)
 
-#### Butuh Info Alat/Fasilitas Kesehatan?
-
-* [Cari alat/fasilitas kesehatan di database urundayacovid.com](https://urundayacovid.com)
-* [Chat Covidasha Chatbot untuk tanya info alat/fasilitas kesehatan](https://wa.me/+628115370645?text=Hi)
-
 #### Mau Konsultasi Medis dengan Dokter (Telemedicine)?
 
-* Download aplikasi telemedicine yang didukung Kemenkes: [Alodokter](https://bit.ly/alodokter-isoman)   [GetWell](https://play.google.com/store/apps/details?id=id.paquesid.getwell)   [Good Doctor](https://gooddoctor.onelink.me/Cmiw/efeba7ae)   [GrabHealth](https://grab.onelink.me/2695613898/fe73b8c5)   [Halodoc](https://bit.ly/isoman_halodoc)   [KlikDokter](https://bit.ly/kd-kemenkes-isoman)   [KlinikGo](https://klinikgo.com/isoman)   [Link Sehat](https://link.linksehat.com/mRMf)   [Milvik Dokter](https://milvik.id/about-us/)   [ProSehat](https://prosehat.com/wa)   [SehatQ](https://sehatqapp.onelink.me/bgzy?pid=kemenkes&c=sqkemenkes&deep_link_value=https%3A%2F%2Fwww.sehatq.com%2Ftelemed&af_web_dp=https%3A%2F%2Fwww.sehatq.com%2Ftelemed&af_dp=https%3A%2F%2Fwww.sehatq.com%2Ftelemed)   [YesDok](https://bit.ly/ISOMAN-YesDok)
+* Download aplikasi telemedicine yang didukung Kemenkes: [Alodokter](https://bit.ly/alodokter-isoman)     [GetWell](https://play.google.com/store/apps/details?id=id.paquesid.getwell)     [Good Doctor](https://gooddoctor.onelink.me/Cmiw/efeba7ae)     [GrabHealth](https://grab.onelink.me/2695613898/fe73b8c5)     [Halodoc](https://bit.ly/isoman_halodoc)     [KlikDokter](https://bit.ly/kd-kemenkes-isoman)     [KlinikGo](https://klinikgo.com/isoman)     [Link Sehat](https://link.linksehat.com/mRMf)     [Milvik Dokter](https://milvik.id/about-us/)     [ProSehat](https://prosehat.com/wa)     [SehatQ](https://sehatqapp.onelink.me/bgzy?pid=kemenkes&c=sqkemenkes&deep_link_value=https%3A%2F%2Fwww.sehatq.com%2Ftelemed&af_web_dp=https%3A%2F%2Fwww.sehatq.com%2Ftelemed&af_dp=https%3A%2F%2Fwww.sehatq.com%2Ftelemed)     [YesDok](https://bit.ly/ISOMAN-YesDok)
 * Konsultasi gratis dengan dokter: [lihat jadwal dan kontak dokter di sini](https://docs.google.com/spreadsheets/d/1gGnIiXmCcGpMkB_h98FiHW99uVdwcdTBq_GhIEl_4eM/edit?usp=sharing)
 
-#### Mau Cek Ketersediaan Obat di Daerahmu? 
+#### Mau Cek Ketersediaan Obat di Daerahmu?
 
 [Klik Farma Plus dari Kementerian Kesehatan](https://farmaplus.kemkes.go.id)
 
-#### Mau Vaksin COVID-19? 
+#### Mau Vaksin COVID-19?
 
 * [Cari informasi lokasi vaksin di situs resmi pemerintah di sini](https://covid19.go.id/faskesvaksin)
 * [Klik database layanan vaksin di Yuk Vaksin](https://vaksincovid.carrd.co)
@@ -85,29 +79,29 @@ Temukan situs atau kontak fasilitas/alat kesehatan untuk COVID-19 di tingkat nas
 
 [Lihat daftar layanan dan kontak penyedia jasa konseling di sini](https://docs.google.com/spreadsheets/d/1JRlBNwmqoVimwR70dwIVJ1QAnBbC0Mqp0DmomeO0cWU/edit?usp=sharing)
 
-#### Hotline Kementerian Kesehatan 
+#### Hotline Kementerian Kesehatan
 
 Hubungi 119 ext. 9
 
-#### Butuh informasi layanan Krematorium, Mobil Jenazah, Peti Mati, Bunga Duka, dan Program Bantuan Makanan Isoman? 
+#### Butuh informasi layanan Krematorium, Mobil Jenazah, Peti Mati, Bunga Duka, dan Program Bantuan Makanan Isoman?
 
 [Klik database informasi Lentera Svarga di sini](https://lenterasvarga.carrd.co)
 
-___
+- - -
 
 ## Daftar Kontak Fasilitas & Alat Kesehatan per Provinsi
 
-#### **([Lihat selengkapnya di sini](https://www.wargabantuwarga.com/provinces))**
+#### **([Lihat selengkapnya di sini](/provinces))**
 
 Kumpulan informasi ketersediaan tempat tidur di rumah sakit, tabung oksigen, ambulans, hingga kontak layanan kesehatan di daerah.
 
-### [Akses Database Kontak & Alat Kesehatan Per-Provinsi di Sini](https://www.wargabantuwarga.com/provinces)
+### [Akses Database Kontak & Alat Kesehatan Per-Provinsi di Sini](/provinces)
 
 Daerahmu belum ada dalam di database? Kamu bisa berkontribusi dengan [isi formulir ini untuk menambahkan info di daerahmu](https://forms.gle/Z3obzzcf9tY36MCH7). 
 
-###### *Disclaimer: Semangat #WargaBantuWarga adalah berbagi informasi untuk warga. Saat ini data yang terkumpul di database adalah hasil pencarian informasi relawan dari beragam sumber terutama via media sosial. Karena keterbatasan kami, tidak semua data yang tampil di database #WargaBantuWarga terverifikasi. Harap berhati-hati saat mengontak atau melakukan transaksi dengan penyedia layanan untuk menghindari hal-hal yang tidak diinginkan.*
+*Disclaimer: Semangat #WargaBantuWarga adalah berbagi informasi untuk warga. Saat ini data yang terkumpul di database adalah hasil pencarian informasi relawan dari beragam sumber terutama via media sosial. Karena keterbatasan kami, tidak semua data yang tampil di database #WargaBantuWarga terverifikasi. Harap berhati-hati saat mengontak atau melakukan transaksi dengan penyedia layanan untuk menghindari hal-hal yang tidak diinginkan.*
 
-___
+- - -
 
 ## Laman Edukasi COVID-19
 
@@ -118,7 +112,6 @@ Kumpulan informasi terbaru COVID-19, tips menjaga kesehatan selama pandemi, vaks
 * [Perawatan pasien COVID-19 berdasarkan gejala](https://www.instagram.com/p/CQn8H5QM26i/)
 * [Rekomendasi mencegah COVID-19 bagi orang dengan komorbid](https://tirto.id/rekomendasi-cara-mencegah-covid-19-bagi-orang-dengan-komorbid-f6HJ)
 * [Yang harus dilakukan jika terkena COVID-19 saat hamil](https://www.who.int/indonesia/news/novel-coronavirus/qa/qa-during-pregnancy)
-* [](https://www.kompas.com/sains/read/2020/11/11/200600923/ibu-positif-covid-19-masih-boleh-menyusui-simak-7-langkahnya?page=all)[Yang harus dilakukan ](https://www.who.int/indonesia/news/novel-coronavirus/qa/qa-during-pregnancy)j[ika terkena COVID-19 saat masa menyusui](https://www.kompas.com/sains/read/2020/11/11/200600923/ibu-positif-covid-19-masih-boleh-menyusui-simak-7-langkahnya?page=all)
 * [Apa yang harus dilakukan jika bayi positif ](https://kesehatan.kontan.co.id/news/apa-yang-harus-dilakukan-jika-bayi-atau-anak-positif-terinfeksi-virus-corona?page=all)[COVID](https://www.kompas.com/sains/read/2020/11/11/200600923/ibu-positif-covid-19-masih-boleh-menyusui-simak-7-langkahnya?page=all)[\-19](https://kesehatan.kontan.co.id/news/apa-yang-harus-dilakukan-jika-bayi-atau-anak-positif-terinfeksi-virus-corona?page=all)
 * [Penanganan dan pengobatan Covid-19 pada bayi baru lahir](https://www.klikdokter.com/info-sehat/read/3647537/penanganan-dan-pengobatan-covid-19-pada-bayi-baru-lahir)
 * [Yang harus diperhatikan penderita HIV/AIDS jika positif Covid-19](https://www.halodoc.com/artikel/hiv-dan-virus-corona-hal-apa-saja-yang-harus-diperhatikan)
@@ -150,7 +143,7 @@ Kumpulan informasi terbaru COVID-19, tips menjaga kesehatan selama pandemi, vaks
 
 #### Pelajari Vaksinasi COVID-19
 
-* [Pertanyaan yang sering diajukan diajukan terkait vaksin dan jawabannya](https://covid19.go.id/tanya-jawab)
+* [Pertanyaan dan jawaban yang sering diajukan soal vaksin](https://covid19.go.id/tanya-jawab)
 * [Cara kerja vaksin](https://www.who.int/indonesia/news/novel-coronavirus/qa/qa-cara-kerja-vaksin)
 * [Perbedaan vaksin-vaksin COVID-19 yang akan digunakan di Indonesia](https://www.alodokter.com/kenali-perbedaan-vaksin-vaksin-covid-19-yang-akan-digunakan-di-indonesia)
 * [Apa yang boleh dan tidak boleh dilakukan sebelum dan setelah vaksinasi COVID-19?](https://www.instagram.com/p/CN34ahBMbRz/)
@@ -206,11 +199,11 @@ Kumpulan informasi mengenai donasi, nomor rekening, dan lainnya yang relevan den
 
   Mau mendonorkan darah plasma konvalesen (hanya diisi oleh calon pendonor, bukan penerima donor darah)? [Daftar donor darah di sini](https://forms.gle/dQL8qW3js5ufBRtW8).
 
-___
+- - -
 
 Terima kasih kepada para kolaborator inisiatif [\#WargaBantuWarga](https://twitter.com/hashtag/WargaBantuWarga):
 
-[@kitabisacom](https://twitter.com/kitabisacom)   [@KawalCOVID19](https://twitter.com/KawalCOVID19)   [@fimnews](https://www.instagram.com/fimnews/)   [@forumzakat](https://twitter.com/forumzakat)   [Baznas](https://baznas.go.id/)   [@KataDotAI](https://twitter.com/KataDotAI)   [@indorelawan](https://twitter.com/indorelawan)   [@pemimpinid](https://twitter.com/pemimpinid_)   [@pandemictalks](https://www.instagram.com/pandemictalks/)   [@laporcovid19](https://www.instagram.com/laporcovid19/)   [@filantropiindonesia](https://www.instagram.com/filantropiindonesia/)   [@BantuCovid](https://twitter.com/BantuCovid)   [Human Initiative Volunteer Energy](https://hive.human-initiative.org/)   [Narasi](https://www.instagram.com/narasi.tv/)   [Qiscus](https://qiscus.io/)   [Humanitarian Forum Indonesia](https://www.instagram.com/humanitarianforumindonesia/?hl=en)   [urundayacovid.com](https://urundayacovid.com/)   [Serikat Buruh Migran Indonesia](https://sbmi.or.id/)   [atmaGO](https://covid19.atmago.com/id)   [Jaringan Semua Murid Semua Guru](https://semuamuridsemuaguru.id/)   [ILUNI UI Psikologi](https://instagram.com/iluniuipsi?utm_medium=copy_link)   [KG Media](https://www.kgmedia.id/)
+[@kitabisacom](https://twitter.com/kitabisacom)     [@KawalCOVID19](https://twitter.com/KawalCOVID19)     [@fimnews](https://www.instagram.com/fimnews/)     [@forumzakat](https://twitter.com/forumzakat)     [Baznas](https://baznas.go.id/)     [@KataDotAI](https://twitter.com/KataDotAI)   [@indorelawan](https://twitter.com/indorelawan)     [@pemimpinid](https://twitter.com/pemimpinid_)     [@pandemictalks](https://www.instagram.com/pandemictalks/)     [@laporcovid19](https://www.instagram.com/laporcovid19/)     [@filantropiindonesia](https://www.instagram.com/filantropiindonesia/)     [@BantuCovid](https://twitter.com/BantuCovid)     [Human Initiative Volunteer Energy](https://hive.human-initiative.org/)     [Narasi](https://www.instagram.com/narasi.tv/)     [Qiscus](https://qiscus.io/)     [Humanitarian Forum Indonesia](https://www.instagram.com/humanitarianforumindonesia/?hl=en)     [urundayacovid.com](https://urundayacovid.com/)     [Serikat Buruh Migran Indonesia](https://sbmi.or.id/)     [atmaGO](https://covid19.atmago.com/id)     [Jaringan Semua Murid Semua Guru](https://semuamuridsemuaguru.id/)     [ILUNI UI Psikologi](https://instagram.com/iluniuipsi?utm_medium=copy_link)     [KG Media](https://www.kgmedia.id/)
 
 - - -
 

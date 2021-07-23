@@ -183,7 +183,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/46273747?v=4",
       "profile": "https://github.com/faizrktm",
       "contributions": [
-        "code"
+        "code",
+        "tool"
       ]
     },
     {
@@ -252,6 +253,15 @@
       "profile": "https://github.com/ekiriandra-seo",
       "contributions": [
         "ideas"
+      ]
+    },
+    {
+      "login": "syauqy",
+      "name": "Syauqy Nurul Aziz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3627108?v=4",
+      "profile": "https://github.com/syauqy",
+      "contributions": [
+        "code"
       ]
     }
   ],

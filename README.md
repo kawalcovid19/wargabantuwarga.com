@@ -1,7 +1,12 @@
 # Warga Bantu Warga
+
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-22-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-23-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
 
 A society initiative to circulate information about health facilities and devices for COVID-19.
 
@@ -45,7 +50,15 @@ For any improvements on the website, we should continuously measure its impact o
 
 ## Getting Started
 
-First, install dependencies and fetch data to your local machine
+To get started running the project locally, please follow the steps below.
+
+First, clone the repository:
+
+```bash
+git clone https://github.com/kawalcovid19/wargabantuwarga.com.git
+```
+
+Then, install dependencies and fetch data to your local machine:
 
 ```bash
 cd wargabantuwarga.com
@@ -53,7 +66,7 @@ yarn install
 yarn fetch-wbw
 ```
 
-Then, run the development server:
+Finally, run the development server:
 
 ```bash
 yarn dev
@@ -106,7 +119,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/Namchee"><img src="https://avatars.githubusercontent.com/u/32661241?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cristopher</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=Namchee" title="Code">💻</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/faizrktm"><img src="https://avatars.githubusercontent.com/u/46273747?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Faiz Azmi Rekatama</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=faizrktm" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/faizrktm"><img src="https://avatars.githubusercontent.com/u/46273747?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Faiz Azmi Rekatama</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=faizrktm" title="Code">💻</a> <a href="#tool-faizrktm" title="Tools">🔧</a></td>
     <td align="center"><a href="https://github.com/ardiwilda"><img src="https://avatars.githubusercontent.com/u/87063733?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ardiwilda</b></sub></a><br /><a href="#content-ardiwilda" title="Content">🖋</a></td>
     <td align="center"><a href="http://linkedin.com/in/kevinmingtarja/"><img src="https://avatars.githubusercontent.com/u/69668484?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kevin Mingtarja</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=kevinmingtarja" title="Code">💻</a></td>
     <td align="center"><a href="https://renggaprakosonugroho.my.id/"><img src="https://avatars.githubusercontent.com/u/14950309?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rengga Prakoso Nugroho</b></sub></a><br /><a href="#content-vzrenggamani" title="Content">🖋</a></td>
@@ -116,6 +129,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/ekiriandra-seo"><img src="https://avatars.githubusercontent.com/u/85287011?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ekiriandra-seo</b></sub></a><br /><a href="#ideas-ekiriandra-seo" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/syauqy"><img src="https://avatars.githubusercontent.com/u/3627108?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Syauqy Nurul Aziz</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=syauqy" title="Code">💻</a></td>
   </tr>
 </table>
 

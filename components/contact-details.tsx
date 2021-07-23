@@ -1,4 +1,5 @@
 import { CopyButton } from "~/components/copy-button";
+import { OpenMapButton } from "~/components/open-map-button";
 import { anchorTransformer } from "~/lib/htmr-transformers";
 import { Contact } from "~/lib/provinces";
 import { isNotEmpty, stripTags } from "~/lib/string-utils";
@@ -29,6 +30,7 @@ type DescriptionItemProps = {
   label: string;
   value?: string;
   withCopyButton?: boolean;
+  withOpenMapButton?: boolean;
 };
 
 const DescriptionItem = (props: DescriptionItemProps) => {
@@ -43,6 +45,11 @@ const DescriptionItem = (props: DescriptionItemProps) => {
       <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
         <span className="flex-grow">
           {htmr(value, { transform: htmrTransform })}
+          {typeof value == "string" &&
+            value.length > 0 &&
+            props.withOpenMapButton && (
+              <OpenMapButton address={stripTags(value)} />
+            )}
         </span>
         {typeof value == "string" &&
           value.length > 0 &&
@@ -60,7 +67,12 @@ export function ContactDetails({ contact }: ContactDetailsProps) {
         <DescriptionItem label="Keterangan" value={contact.keterangan} />
         <DescriptionItem label="Lokasi" value={contact.lokasi} />
         <DescriptionItem label="Kontak" value={contact.kontak} withCopyButton />
-        <DescriptionItem label="Alamat" value={contact.alamat} withCopyButton />
+        <DescriptionItem
+          label="Alamat"
+          value={contact.alamat}
+          withCopyButton
+          withOpenMapButton
+        />
         <DescriptionItem label="Tautan" value={contact.link} />
         <DescriptionItem
           label="Terakhir Update"
