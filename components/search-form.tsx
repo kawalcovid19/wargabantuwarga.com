@@ -36,25 +36,25 @@ export function SearchForm({
   placeholderText,
   checkDocSize,
   onSubmitKeywords,
-  filterItems,
-  sortSettings,
   autoSearch,
+  filterItems,
   initialValue,
   isLoading,
+  sortSettings,
 }: {
   itemName: string;
   placeholderText: string;
   checkDocSize: boolean;
   onSubmitKeywords: (keywords: string, filters?: any, sort_by?: string) => void;
-  filterItems?: {};
-  sortSettings?: SortSetting[];
   autoSearch?: boolean;
+  filterItems?: {};
   initialValue?: {
     query?: string;
     filters?: {};
     sort?: string;
   };
   isLoading?: boolean;
+  sortSettings?: SortSetting[];
 }) {
   const defaultSort = sortSettings?.length ? sortSettings[0].value : "";
   const [keywords, setKeywords] = useState<string>("");
