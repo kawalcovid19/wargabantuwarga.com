@@ -55,3 +55,9 @@ collections:
               widget: "markdown",
               hint: "Page body",
             }
+          - {
+              label: "Banner Image URL",
+              name: "home_banner_image_url",
+              widget: "text",
+              hint: "Image URL from Cloudinary",
+            }
