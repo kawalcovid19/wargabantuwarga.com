@@ -1,7 +1,12 @@
 # Warga Bantu Warga
+
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-23-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
 
 A society initiative to circulate information about health facilities and devices for COVID-19.
 
@@ -45,15 +50,15 @@ For any improvements on the website, we should continuously measure its impact o
 
 ## Getting Started
 
-Before getting started, please follow the following steps below.
+To get started running the project locally, please follow the steps below.
 
-First, clone the repository,
+First, clone the repository:
 
 ```bash
 git clone https://github.com/kawalcovid19/wargabantuwarga.com.git
 ```
 
-Then, install dependencies and fetch data to your local machine,
+Then, install dependencies and fetch data to your local machine:
 
 ```bash
 cd wargabantuwarga.com
