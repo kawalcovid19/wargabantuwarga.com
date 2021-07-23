@@ -18,7 +18,7 @@ export function OpenMapButton({ address }: { address: string }) {
         size="xs"
         type="button"
       >
-        Buka Map
+        Buka Peta
       </SecondaryButton>
     </div>
   );
