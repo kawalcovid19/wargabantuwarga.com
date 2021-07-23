@@ -1,4 +1,4 @@
-# Contributing
+# Contributing to WargaBantuWarga
 
 ## How to contribute
 
@@ -34,11 +34,11 @@ Steps to creating a Draft Pull Request:
 
 1. Commit and push your new changes into the remote repository.
 2. Head over to the Pull requests section on your forked repository, hit New pull request.
-![Hint-1](https://user-images.githubusercontent.com/46013258/126284390-c2bd1aa6-fdc2-4aa6-a945-031f02db038e.png)
+   ![Hint-1](https://user-images.githubusercontent.com/46013258/126284390-c2bd1aa6-fdc2-4aa6-a945-031f02db038e.png)
 3. Pick your forked repository for the head repository, and compare with the branch that you are having changes in.
-![Hint-2](https://user-images.githubusercontent.com/46013258/126285036-27b49325-62a2-4a6c-b216-5bae261788da.png)
+   ![Hint-2](https://user-images.githubusercontent.com/46013258/126285036-27b49325-62a2-4a6c-b216-5bae261788da.png)
 4. Put a title and some description in your pull request, then pick Create draft pull request (like in the image below) and hit the green button.
-![Hint-3](https://user-images.githubusercontent.com/46013258/126286179-04341e30-1224-49cb-9b9a-3c3aee99c308.png)
+   ![Hint-3](https://user-images.githubusercontent.com/46013258/126286179-04341e30-1224-49cb-9b9a-3c3aee99c308.png)
 5. Don't forget to mark your Draft Pull Request as Ready for review after you commit all of the changes.
 
 ## FAQ
@@ -50,6 +50,46 @@ There are several reasons we're using English while communicating in GitHub Issu
 1. It's more natural for software engineers to communicate in English because it involves many technical terms in English. Trying to translate them into Bahasa Indonesia posing a risk of miscommunication, while keeping them in English requires us to do a lot of _italic_ formatting, according to [PUEBI](https://puebi.js.org/huruf/miring).
 2. It accustoms the contributors, which are mostly Indonesian, to communicate in English. It is important to increase our English reading and writing skills because the vast majority of the global open-source communities are using Engish as the main language.
 3. It makes this project easier to be recognised globally. So if we need to get more support from the global communities, they could easily understand what we are doing and help us out with their access and competence. e.g., providing us free credits for their services, advocating us to global leaders, or contributing directly to our codebase.
+
+## Additional Notes
+
+### Issue and Pull Request Labels
+
+Issue labels are a tool to group issues into one or more categories.
+It helps us track and manage issues and pull requests.
+
+Please open an issue on [`kawalcovid19/wargabantuwarga.com`](https://github.com/kawalcovid19/wargabantuwarga.com/issues) if you have suggestions for new labels.
+
+#### Type of Issue and Issue State
+
+| Label name         | `/wargabantuwarga.com`                                                                    | Description                                                                                                          |
+| ------------------ | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `blocked`          | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/blocked)              | Issues blocked by something else.                                                                                    |
+| `bug`              | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/bug)                  | Confirmed bugs or reports that are very likely to be bugs.                                                           |
+| `enhancement`      | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/enhancement)          | New feature or request.                                                                                              |
+| `epic`             | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/epic)                 | A master issue thread which contains other smaller issues.                                                           |
+| `good first issue` | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/good%20first%20issue) | Less complex issues which would be good first issues to work on for users who want to contribute to WargaBantuWarga. |
+| `help wanted`      | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/help%20wanted)        | Issue that need extra attention.                                                                                     |
+| `invalid`          | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/invalid)              | Issues which aren't valid (e.g. user errors).                                                                        |
+| `question`         | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/question)             | More information needs to be collected about these problems or feature requests (e.g. steps to reproduce).           |
+| `wontfix`          | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/wontfix)              | The WargaBantuWarga team will not fix these issues for now.                                                          |
+
+#### Topic Categories
+
+| Label name                    | `/wargabantuwarga.com`                                                                             | Description                                                |
+| ----------------------------- | -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| `ci-cd`                       | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/ci-cd)                         | Continuous Integration & Continuous Delivery.              |
+| `design`                      | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/design)                        | Issue related to design.                                   |
+| `documentation`               | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/documentation)                 | Improvements or additions to documentation.                |
+| `dx`                          | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/dx)                            | Developer Experience.                                      |
+| `ui`                          | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/ui)                            | User interface.                                            |
+| `ux`                          | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/ux)                            | User experience.                                           |
+| `seo`                         | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/seo)                           | Search engine optimization.                                |
+| `scripting`                   | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/scripting)                     | Issue related to the code.                                 |
+| `testing`                     | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/testing)                       | Automated testing.                                         |
+| `netlify-cms/draft`           | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/netlify-cms%2Fdraft)           | Draft for content changes in Netlify CMS.                  |
+| `netlify-cms/pending_publish` | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/netlify-cms%2Fpending_publish) | Content changes ready to be published through Netlify CMS. |
+| `netlify-cms/pending_review`  | [search](https://github.com/kawalcovid19/wargabantuwarga.com/labels/netlify-cms%2Fpending_review)  | Content changes pending review in Netlify CMS.             |
 
 ---
 
@@ -87,11 +127,11 @@ Langkah-langkah untuk membuat _Draft Pull Request_:
 
 1. _Commit_ dan _push_ perubahan terbaru ke _forked repository_ Anda.
 2. Pergi ke bagian _Pull requests_ pada _forked repository_ Anda, dan klik _New pull request_.
-![Petunjuk-1](https://user-images.githubusercontent.com/46013258/126284390-c2bd1aa6-fdc2-4aa6-a945-031f02db038e.png)
+   ![Petunjuk-1](https://user-images.githubusercontent.com/46013258/126284390-c2bd1aa6-fdc2-4aa6-a945-031f02db038e.png)
 3. Pilih _forked repository_ Anda sebagai _head repository_, dan pilih _branch_ tempat Anda membuat perubahan untuk bagian _compare_.
-![Petunjuk-2](https://user-images.githubusercontent.com/46013258/126285036-27b49325-62a2-4a6c-b216-5bae261788da.png)
+   ![Petunjuk-2](https://user-images.githubusercontent.com/46013258/126285036-27b49325-62a2-4a6c-b216-5bae261788da.png)
 4. Berikan sebuah judul dan beberapa deskripsi mengenai _pull request_ Anda, lalu pilih _Create draft pull request_ (seperti pada gambar di bawah) dan klik tombol berwarna hijau.
-![Petunjuk-3](https://user-images.githubusercontent.com/46013258/126286179-04341e30-1224-49cb-9b9a-3c3aee99c308.png)
+   ![Petunjuk-3](https://user-images.githubusercontent.com/46013258/126286179-04341e30-1224-49cb-9b9a-3c3aee99c308.png)
 5. Jangan lupa untuk menandai _Draft Pull Request_ Anda sebagai _Ready for review_ ketika Anda sudah melakukan semua perubahan yang diinginkan.
 
 ## Pertanyaan yang sering ditanyakan
@@ -103,3 +143,42 @@ Ada beberapa alasan mengapa kita menggunakan bahasa Inggris ketika berkomunikasi
 1. Secara alamiah, lebih mudah untuk _software engineer_ berkomunikasi dalam bahasa Inggris, karena terminologi-terminologi teknis yang digunakan dalam pemrograman pun berbahasa Inggris. Menerjemahkannya ke Bahasa Indonesia memunculkan resiko miskomunikasi, sementara menggunakan Bahasa Inggris membutuhkan banyak penyesuaian penulisan dalam bentuk _italic_ mengacu pada [PUEBI](https://puebi.js.org/huruf/miring).
 2. Membiasakan para kontributor yang mayoritas berasal dari Indonesia untuk berkomunikasi dengan bahasa Inggris. Sangat penting untuk mengasah kemampuan menulis dan membaca bahasa Inggris kita karena sebagian besar dari komunitas _open-source_ di seluruh dunia menggunakan bahasa Inggris sebagai bahasa utama mereka.
 3. Menggunakan bahasa Inggris membuat proyek ini lebih mudah diakui secara global. Apabila kita ingin mendapatkan dukungan dari komunitas global, mereka lebih mudah memahami tujuan kita, sehingga mereka lebih mudah untuk meluangkan waktu dan keahlian mereka untuk membantu membuat proyek ini lebih baik. Contohnya menyediakan _free credits_ untuk layanan mereka, mengadvokasikan proyek ini kepada pemimpin dunia, atau berkontribusi langsung ke proyek kita.
+
+## Catatan Tambahan
+
+### Label pada _issue_ dan _pull request_
+
+_Issue labels_ adalah fitur untuk mengelompokkan beberapa _issues_ ke dalam satu atau banyak kategori berbeda. Hal ini memudahkan kita untuk memantau serta mengelola _issues_ dan _pull requests_ yang ada pada _repository_ WargaBantuWarga.
+
+Jika Anda memiliki ide atau saran untuk penambahan label baru yang belum ada di _repository_, mohon untuk membuka _issue_ di [`kawalcovid19/wargabantuwarga.com`](https://github.com/kawalcovid19/wargabantuwarga.com/issues).
+
+#### Tipe _Issue_ and _Issue State_
+
+| Nama label         | `/wargabantuwarga.com`                                                                  | Deskripsi                                                                                                   |
+| ------------------ | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `blocked`          | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/blocked)              | _Issues_ yang terhalang oleh _issue_ lainnya.                                                               |
+| `bug`              | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/bug)                  | Laporan mengenai adanya _bug_ atau kesalahan pada website.                                                  |
+| `enhancement`      | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/enhancement)          | Permintaan untuk penambahan fitur baru.                                                                     |
+| `epic`             | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/epic)                 | Utas utama dari _issue_ yang didalamnya terdiri dari beberapa _issues_ yang lebih sederhana.                |
+| `good first issue` | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/good%20first%20issue) | _Issues_ yang sederhana. Cocok untuk para pemula untuk mulai berkontribusi ke _repository_ WargaBantuWarga. |
+| `help wanted`      | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/help%20wanted)        | _Issues_ yang membutuhkan perhatian lebih dan prioritas.                                                    |
+| `invalid`          | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/invalid)              | _Issues_ yang tidak valid.                                                                                  |
+| `question`         | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/question)             | Membutuhkan informasi tambahan terkait permasalahan yang ada atau terkait permintaan fitur baru.            |
+| `wontfix`          | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/wontfix)              | Tim WargaBantuWarga tidak akan mengerjakan _issue_ tersebut untuk saat ini.                                 |
+
+#### Kategori
+
+| Nama Label                    | `/wargabantuwarga.com`                                                                           | Deskripsi                                                           |
+| ----------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
+| `ci-cd`                       | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/ci-cd)                         | _Continuous Integration & Continuous Delivery_.                     |
+| `design`                      | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/design)                        | _Issues_ yang berkaitan dengan desain.                              |
+| `documentation`               | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/documentation)                 | Perbaikan serta penambahan informasi pada dokumentasi.              |
+| `dx`                          | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/dx)                            | _Issues_ terkait pengalaman developer dalam melakukan pengembangan. |
+| `ui`                          | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/ui)                            | _Issues_ terkait tampilan antar muka pengguna.                      |
+| `ux`                          | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/ux)                            | _Issues_ terkait pengalam pengguna dalam menggunakan website.       |
+| `seo`                         | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/seo)                           | _Search engine optimization_.                                       |
+| `scripting`                   | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/scripting)                     | _Issues_ terkait kode.                                              |
+| `testing`                     | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/testing)                       | _Automated testing_.                                                |
+| `netlify-cms/draft`           | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/netlify-cms%2Fdraft)           | _Draft_ perubahan konten di Netlify CMS.                            |
+| `netlify-cms/pending_publish` | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/netlify-cms%2Fpending_publish) | Perubahan koten siap untuk dipublikasikan melalui Netlify CMS.      |
+| `netlify-cms/pending_review`  | [cari](https://github.com/kawalcovid19/wargabantuwarga.com/labels/netlify-cms%2Fpending_review)  | Perubahan konten sedang dalam peninjauan di Netlify CMS.            |
