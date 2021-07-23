@@ -1,4 +1,4 @@
-# Berkontribusi pada WargaBantuWarga
+# Berkontribusi ke WargaBantuWarga
 
 ## Cara berkontribusi
 
