@@ -1,5 +1,5 @@
 ---
-last_updated_time: 2021-07-23T05:24:59.924Z
+last_updated_time: 2021-07-23T12:21:36.014Z
 ---
 *\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19 dan kontak fasilitas/alat kesehatan di seluruh Indonesia yang dikumpulkan relawan melalui pencarian di internet atau media sosial.*
 
@@ -128,10 +128,11 @@ Kumpulan informasi terbaru COVID-19, tips menjaga kesehatan selama pandemi, vaks
 
 #### Cara Pakai Tabung Oksigen
 
-* [Cara menggunakan tabung oksigen](https://www.alodokter.com/komunitas/topic/penggunaan-tabung-oksigen-1m-)
+* [Cara menggunakan tabung oksigen](https://www.halodoc.com/artikel/begini-cara-menggunakan-tabung-oksigen-di-rumah)
 * [Berapa batas normal saturasi oksigen?](https://www.alodokter.com/penting-diketahui-ini-kadar-oksigen-normal-dalam-darah)
+* [Cara cek saturasi oksigen normal](https://www.halodoc.com/artikel/begini-cara-menggunakan-tabung-oksigen-di-rumah)
 * [Cara mengontrol asupan oksigen melalui oksigen regulator](https://www.medicalogy.com/blog/mengontrol-asupan-oksigen-melalui-oksigen-regulator-dengan-aman/)
-* [Cara menyimpan tabung oksigen di rumah](https://www.alodokter.com/menyimpan-tabung-oksigen-di-rumah-harus-perhatikan-hal-ini)
+* [Cara menyimpan tabung oksigen di rumah](https://www.halodoc.com/artikel/ketahui-cara-penyimpanan-tabung-oksigen-di-rumah)
 * [(VIDEO) Tutorial prosedur pemasangan tabung oksigen ](https://www.youtube.com/watch?v=8tuwfUgb9W8)
 * [(VIDEO) Cara mudah pasang tabung oksigen](https://www.youtube.com/watch?v=4-iB8fMC4jU)
 
@@ -145,13 +146,13 @@ Kumpulan informasi terbaru COVID-19, tips menjaga kesehatan selama pandemi, vaks
 
 * [Pertanyaan dan jawaban yang sering diajukan soal vaksin](https://covid19.go.id/tanya-jawab)
 * [Cara kerja vaksin](https://www.who.int/indonesia/news/novel-coronavirus/qa/qa-cara-kerja-vaksin)
-* [Perbedaan vaksin-vaksin COVID-19 yang akan digunakan di Indonesia](https://www.alodokter.com/kenali-perbedaan-vaksin-vaksin-covid-19-yang-akan-digunakan-di-indonesia)
-* [Apa yang boleh dan tidak boleh dilakukan sebelum dan setelah vaksinasi COVID-19?](https://www.instagram.com/p/CN34ahBMbRz/)
+* [](https://www.halodoc.com/artikel/ketahui-perbandingan-vaksin-corona-vaksin-pfizer-moderna-dan-astrazeneca)[Ketahui perbandingan vaksin Pfizer, Moderna, dan AstraZeneca](https://www.halodoc.com/artikel/ketahui-perbandingan-vaksin-corona-vaksin-pfizer-moderna-dan-astrazeneca)
+* [Perhatikan hal ini setelah mendapatkan Vaksin](https://www.halodoc.com/artikel/perhatikan-hal-ini-setelah-mendapatkan-vaksin-covid-19-1)
 * [Mengapa perlu dua kali dosis penyuntikan vaksin COVID-19?](https://covid19.go.id/p/masyarakat-umum/2-dosis-vaksin-covid-19-ini-tujuannya)
-* [Apa saja efek samping vaksin?](https://www.alodokter.com/komunitas/topic/efek-samping-vaksin-berapa-hari)
+* [Apa saja efek samping vaksin?](https://www.halodoc.com/artikel/efek-samping-vaksinasi-covid-19-ketahui-tentang-kipi)
 * [Cara mengatasi efek samping vaksin](https://www.kompas.com/sains/read/2021/06/20/130100923/efek-samping-vaksin-covid-19-dan-cara-mengatasinya)
 * [Vaksinasi bagi penyintas COVID-19](https://www.instagram.com/p/CNqWH_-Mhhn/)
-* [Vaksinasi bagi ibu hamil](https://nasional.kompas.com/read/2021/07/04/10003951/tak-hanya-sinovac-pogi-rekomendasikan-pemberian-empat-vaksin-covid-19-ini)
+* [](https://www.halodoc.com/artikel/5-jenis-vaksin-covid-19-yang-direkomendasikan-untuk-ibu-hamil)[Jenis vaksin yang direkomendasikan untuk ibu hamil](https://www.halodoc.com/artikel/5-jenis-vaksin-covid-19-yang-direkomendasikan-untuk-ibu-hamil)[](https://www.halodoc.com/artikel/5-jenis-vaksin-covid-19-yang-direkomendasikan-untuk-ibu-hamil)
 * [Vaksinasi bagi ibu menyusui](https://www.republika.co.id/berita/qvd02y463/ibu-menyusui-aman-terima-vaksin-covid19)
 * [Thread Pengalaman ODHA melakukan vaksinasi](https://twitter.com/ayuma_morie/status/1405861747789950980)
 * [Klik di sini untuk cari informasi pelaksanaan vaksinasi per daerah](https://kcov.id/wbw-sheets)
@@ -162,9 +163,9 @@ Kumpulan informasi terbaru COVID-19, tips menjaga kesehatan selama pandemi, vaks
 
 #### Jaga Kesehatan di Masa Pandemi
 
-* [Cara menggunakan masker dobel yang benar](https://www.alodokter.com/cara-menggunakan-masker-dobel-yang-benar-untuk-mencegah-covid-19)
+* [Cara menggunakan masker dobel yang benar](https://www.halodoc.com/artikel/cara-pakai-masker-dobel-yang-benar-untuk-tangkal-covid-19)
 * [Mengenal oximeter dan cara penggunaannya](https://tirto.id/mengenal-oximeter-dan-cara-penggunaannya-menurut-who-f32Z)
-* [Cara jaga kesehatan mental saat pandemi COVID-19](https://www.halodoc.com/artikel/4-cara-jaga-kesehatan-mental-saat-pandemi-covid-19)
+* [Cara jaga kesehatan mental saat menghadapi COVID-19 second wave](https://www.halodoc.com/artikel/cara-jaga-kesehatan-mental-saat-menghadapi-covid-19-second-wave)
 
 #### Prosedur Mendirikan Pusat Karantina
 
