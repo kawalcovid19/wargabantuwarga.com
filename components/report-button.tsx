@@ -1,3 +1,4 @@
+import { REPORT_CONTACT_FORM } from "~/constants/report";
 import { Contact } from "~/lib/provinces";
 import { stripTags } from "~/lib/string-utils";
 
@@ -17,16 +18,16 @@ export const ReportButton = (props: ReportButtonProps) => {
   } = props;
 
   const reportButtonHandler = () => {
-    const formBaseUrl =
-      "https://docs.google.com/forms/d/e/1FAIpQLSeDdZLMD9RTfOiKMItNb8542KAO5w3x9O2ZFQmNyff1rYRZvQ/viewform?usp=pp_url";
-
     const formQuery = `&entry.346789668=${kebutuhan}&entry.323081545=${provinceName}&entry.68818336=${penyedia}&entry.217416134=${stripTags(
       kontak ?? "",
     )}`;
 
     // delete this comment
 
-    return window.open(formBaseUrl.concat(encodeURI(formQuery)), "_blank");
+    return window.open(
+      REPORT_CONTACT_FORM.concat(encodeURI(formQuery)),
+      "_blank",
+    );
   };
 
   return (
