@@ -1,4 +1,4 @@
-import { bannerBlurData, imgixLoader } from "~/lib/imgix-loader";
+import { bannerBlurData, cloudinaryLoader } from "~/lib/cloudinary-loader";
 
 import { WBWLogoBlack } from "../ui/wbw-logo";
 
@@ -15,11 +15,11 @@ export function HomepageHeader() {
               blurDataURL={bannerBlurData}
               height={288}
               layout="responsive"
-              loader={imgixLoader}
+              loader={cloudinaryLoader}
               placeholder="blur"
               priority={true}
               quality={90}
-              src="hero_banner_exp_desktop.png"
+              src="v1627049958/hero_banner_desktop_zat71c.png"
               width={640}
             />
           </div>
