@@ -55,10 +55,10 @@ export default function App({ Component, pageProps, router }: AppProps) {
           site_name: meta.siteName,
           images: [
             {
-              url: "https://wargabantuwarga.com/wbw_og.jpeg",
+              url: "https://wargabantuwarga.com/wbw_og.png",
               alt: meta.siteName,
-              height: 630,
-              width: 1200,
+              height: 640,
+              width: 1427,
             },
           ],
         }}
