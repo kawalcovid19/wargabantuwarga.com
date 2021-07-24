@@ -15,6 +15,7 @@
     "start": "next start",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
+    "test": "jest",
     "test:e2e:dev": "start-server-and-test dev http://localhost:3000 cypress:open",
     "type-check": "tsc --noEmit"
   },
@@ -39,6 +40,8 @@
     "ts-debounce": "^3.0.0"
   },
   "devDependencies": {
+    "@babel/eslint-plugin": "7.14.5",
+    "@babel/preset-react": "7.14.5",
     "@netlify/plugin-lighthouse": "2.1.2",
     "@next/bundle-analyzer": "^11.0.1",
     "@testing-library/jest-dom": "5.14.1",
