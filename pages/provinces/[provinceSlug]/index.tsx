@@ -7,7 +7,6 @@ import { PageHeader } from "~/components/layout/page-header";
 import { SearchForm } from "~/components/search-form";
 import { useSearch } from "~/lib/hooks/use-search";
 import provinces, { Contact, getProvincesPaths } from "~/lib/provinces";
-import { getTheLastSegmentFromKebabCase } from "~/lib/string-utils";
 
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
@@ -133,8 +132,7 @@ export const getStaticPaths: GetStaticPaths = () => {
 
 export const getStaticProps: GetStaticProps = ({ params = {} }) => {
   const { provinceSlug } = params;
-  const index = getTheLastSegmentFromKebabCase(provinceSlug as string);
-  const province = index ? provinces[index as unknown as number] : null;
+  const province = provinces.find((prov) => prov.slug === provinceSlug);
   const provinceName = province ? province.name : "";
   const contactList = province
     ? [...province.data].sort((a, b) => {
