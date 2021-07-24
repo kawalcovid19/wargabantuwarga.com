@@ -5,6 +5,7 @@ import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import { ReportButton } from "~/components/report-button";
+import { getContactMeta } from "~/lib/meta";
 import provinces, { Contact, getContactsPaths } from "~/lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "~/lib/string-utils";
 
@@ -18,34 +19,12 @@ type ContactPageProps = {
   contact: Contact;
 };
 
-export function getContactMetaTitle(provinceName: string, contact: Contact) {
-  const providerWithSeparator = !!contact.penyedia
-    ? `${contact.penyedia} - `
-    : "";
-
-  const location =
-    contact.lokasi && contact.lokasi != provinceName
-      ? `${contact.lokasi}, ${provinceName}`
-      : `${provinceName}`;
-
-  return `${providerWithSeparator}${contact.keterangan} di ${location}`;
-}
-
-const getMeta = (provinceName: string, contact: Contact) => {
-  const title = getContactMetaTitle(provinceName, contact);
-
-  return {
-    title,
-    description: `Informasi ${title} yang dikumpulkan relawan melalui pencarian di internet atau media sosial.`,
-  };
-};
-
 export default function ContactPage({
   contact,
   provinceName,
 }: ContactPageProps) {
   const router = useRouter();
-  const meta = getMeta(provinceName, contact);
+  const meta = getContactMeta(provinceName, contact);
 
   return (
     <Page>

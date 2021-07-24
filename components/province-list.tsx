@@ -1,4 +1,4 @@
-import { getProvinceMetaTitle } from "~/pages/provinces/[provinceSlug]";
+import { getProvinceMetaTitle } from "~/lib/meta";
 
 import { EmptyState } from "./ui/empty-state";
 

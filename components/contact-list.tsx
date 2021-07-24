@@ -2,9 +2,9 @@ import { CopyButton } from "~/components/copy-button";
 import { EmptyState } from "~/components/ui/empty-state";
 import { ContactListSkeleton } from "~/components/ui/skeleton-loading";
 import { anchorTransformer } from "~/lib/htmr-transformers";
+import { getContactMetaTitle } from "~/lib/meta";
 import { Contact } from "~/lib/provinces";
 import { isNotEmpty, stripTags } from "~/lib/string-utils";
-import { getContactMetaTitle } from "~/pages/provinces/[provinceSlug]/[contactSlug]";
 
 import {
   BadgeCheckIcon as BadgeCheckIconUnverified,
