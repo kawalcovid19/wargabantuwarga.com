@@ -76,6 +76,7 @@
     "husky": "7.0.1",
     "is-ci-cli": "2.2.0",
     "jest": "27.0.6",
+    "jest-watch-select-projects": "2.0.0",
     "lint-staged": "11.0.1",
     "netlify-plugin-cache-nextjs": "1.6.1",
     "netlify-plugin-image-optim": "0.4.0",
