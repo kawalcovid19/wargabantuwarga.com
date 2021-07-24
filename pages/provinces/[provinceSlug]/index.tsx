@@ -6,6 +6,7 @@ import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import { SearchForm } from "~/components/search-form";
 import { useSearch } from "~/lib/hooks/use-search";
+import { getProvinceMeta } from "~/lib/meta";
 import provinces, { Contact, getProvincesPaths } from "~/lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "~/lib/string-utils";
 
@@ -19,54 +20,55 @@ type ProvinceProps = {
   contactList: Contact[];
 };
 
-const getMeta = (provinceName: string) => {
-  return {
-    // @TODO: change this after got a better title
-    title: `Informasi Faskes & Alkes untuk COVID-19 di Provinsi ${provinceName}`,
-  };
-};
-
 export default function ProvincePage(props: ProvinceProps) {
   const { provinceName, provinceSlug, contactList } = props;
   const router = useRouter();
-  const [filteredContacts, handleSubmitKeywords, urlParams, filterItems] =
-    useSearch(
-      contactList,
-      [
-        "kebutuhan",
-        "penyedia",
-        "lokasi",
-        "alamat",
-        "keterangan",
-        "kontak",
-        "link",
-        "tambahan_informasi",
-        "bentuk_verifikasi",
-      ],
-      [
-        { field: "kebutuhan", title: "Kategori" },
-        { field: "lokasi", title: "Lokasi" },
-      ],
-      {
-        penyedia_asc: {
-          field: "penyedia",
-          order: "asc",
-        },
-        verified_first: {
-          field: ["verifikasi", "penyedia"],
-          order: ["desc", "asc"],
-        },
+  const [
+    filteredContacts,
+    handleSubmitKeywords,
+    urlParams,
+    filterItems,
+    isLoading,
+  ] = useSearch({
+    items: contactList,
+    fieldNames: [
+      "kebutuhan",
+      "penyedia",
+      "lokasi",
+      "alamat",
+      "keterangan",
+      "kontak",
+      "link",
+      "tambahan_informasi",
+      "bentuk_verifikasi",
+    ],
+    aggregationSettings: [
+      { field: "kebutuhan", title: "Kategori" },
+      { field: "lokasi", title: "Lokasi" },
+    ],
+    sortSettings: {
+      penyedia_asc: {
+        field: "penyedia",
+        order: "asc",
       },
-      "verified_first",
-    );
+      verified_first: {
+        field: ["verifikasi", "penyedia"],
+        order: ["desc", "asc"],
+      },
+    },
+    defaultSort: "verified_first",
+  });
 
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (provinceName) {
+    const meta = getProvinceMeta(provinceName);
+
     return (
       <Page>
         <NextSeo
-          openGraph={{ title: getMeta(provinceName).title }}
-          title={getMeta(provinceName).title}
+          description={meta.description}
+          openGraph={{ description: meta.description, title: meta.title }}
+          title={meta.title}
         />
         <PageHeader
           backButton={<BackButton href="/provinces" />}
@@ -88,14 +90,21 @@ export default function ProvincePage(props: ProvinceProps) {
             checkDocSize={true}
             filterItems={filterItems}
             initialValue={urlParams}
+            isLoading={isLoading}
             itemName="kontak"
             onSubmitKeywords={handleSubmitKeywords}
+            placeholderText="Cari berdasarkan kontak, alamat, provider, dan keterangan"
             sortSettings={[
               { value: "verified_first", label: "Terverifikasi" },
               { value: "penyedia_asc", label: "Nama" },
             ]}
           />
-          <ContactList data={filteredContacts} provinceSlug={provinceSlug} />
+          <ContactList
+            data={filteredContacts}
+            isLoading={isLoading}
+            provinceName={provinceName}
+            provinceSlug={provinceSlug}
+          />
         </PageContent>
       </Page>
     );
@@ -123,11 +132,12 @@ export const getStaticProps: GetStaticProps = ({ params = {} }) => {
   const province = index ? provinces[index as unknown as number] : null;
   const provinceName = province ? province.name : "";
   const contactList = province
-    ? [...province.data].sort(
-        (a, b) =>
+    ? [...province.data].sort((a, b) => {
+        return (
           b.verifikasi - a.verifikasi ||
-          (a.penyedia ?? "").localeCompare(b.penyedia ?? ""),
-      )
+          (a.penyedia ?? "").localeCompare(b.penyedia ?? "")
+        );
+      })
     : null;
 
   return {

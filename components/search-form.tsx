@@ -14,6 +14,7 @@ import { PrimaryButton, SecondaryButton } from "./ui/button";
 import { FormLabel } from "./ui/forms/form-label";
 import { InputSelect } from "./ui/forms/input-select";
 import { InputText } from "./ui/forms/input-text";
+import { SelectSkeleton } from "./ui/skeleton-loading";
 
 import { debounce } from "ts-debounce";
 
@@ -32,24 +33,28 @@ type SortSetting = {
 
 export function SearchForm({
   itemName,
+  placeholderText,
   checkDocSize,
   onSubmitKeywords,
-  filterItems,
-  sortSettings,
   autoSearch,
+  filterItems,
   initialValue,
+  isLoading,
+  sortSettings,
 }: {
   itemName: string;
+  placeholderText?: string;
   checkDocSize: boolean;
   onSubmitKeywords: (keywords: string, filters?: any, sort_by?: string) => void;
-  filterItems?: {};
-  sortSettings?: SortSetting[];
   autoSearch?: boolean;
+  filterItems?: {};
   initialValue?: {
     query?: string;
     filters?: {};
     sort?: string;
   };
+  isLoading?: boolean;
+  sortSettings?: SortSetting[];
 }) {
   const defaultSort = sortSettings?.length ? sortSettings[0].value : "";
   const [keywords, setKeywords] = useState<string>("");
@@ -58,7 +63,8 @@ export function SearchForm({
 
   function handleSubmit(event: FormEvent<UsernameFormElement>) {
     event.preventDefault();
-    onSubmitKeywords(keywords, filters, sortBy);
+    setFilters({});
+    onSubmitKeywords(keywords, {}, sortBy);
   }
 
   function handleReset(event: FormEvent<UsernameFormElement>) {
@@ -124,6 +130,7 @@ export function SearchForm({
             autoComplete="off"
             id="keywordsInput"
             onChange={handleKeywordsChange}
+            placeholder={placeholderText}
             type="text"
             value={keywords}
           />
@@ -138,7 +145,9 @@ export function SearchForm({
         </div>
       </div>
 
-      {filterItems && Object.keys(filterItems).length ? (
+      {isLoading ? (
+        <SelectSkeleton />
+      ) : filterItems && Object.keys(filterItems).length ? (
         <>
           <span className="block mb-2 font-medium text-gray-700">Filter</span>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -192,7 +201,9 @@ export function SearchForm({
         </>
       ) : null}
 
-      {sortSettings?.length ? (
+      {isLoading ? (
+        <SelectSkeleton />
+      ) : sortSettings?.length ? (
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-1">
             <FormLabel htmlFor="sort-by">Urut berdasarkan</FormLabel>

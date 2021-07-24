@@ -5,6 +5,7 @@ import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import { ReportButton } from "~/components/report-button";
+import { getContactMeta } from "~/lib/meta";
 import provinces, { Contact, getContactsPaths } from "~/lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "~/lib/string-utils";
 
@@ -18,28 +19,19 @@ type ContactPageProps = {
   contact: Contact;
 };
 
-const getMeta = (provinceName: string, contact: Contact) => {
-  const providerWithSeparator = !!contact.penyedia
-    ? `${contact.penyedia} - `
-    : "";
-
-  return {
-    // @TODO: change this after got a better title
-    title: `${providerWithSeparator}${contact.keterangan} di ${provinceName}`,
-  };
-};
-
 export default function ContactPage({
   contact,
   provinceName,
 }: ContactPageProps) {
   const router = useRouter();
+  const meta = getContactMeta(provinceName, contact);
 
   return (
     <Page>
       <NextSeo
-        openGraph={{ title: getMeta(provinceName, contact).title }}
-        title={getMeta(provinceName, contact).title}
+        description={meta.description}
+        openGraph={{ description: meta.description, title: meta.title }}
+        title={meta.title}
       />
       <PageHeader
         backButton={
