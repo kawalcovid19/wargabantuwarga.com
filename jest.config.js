@@ -1,5 +1,9 @@
-/** @type {import('@ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
-  preset: "ts-jest",
+  moduleNameMapper: {
+    "~/(.*)": "<rootDir>/$1",
+  },
   testEnvironment: "jest-environment-jsdom",
+  transform: {
+    "^.+\\.(ts|tsx|js|jsx)$": "babel-jest",
+  },
 };
