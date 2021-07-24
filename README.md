@@ -90,7 +90,10 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Contributing
 
-See our [contributing guidelines](CONTRIBUTING.md).
+See our contribution guidelines in these languages:
+
+- [English](CONTRIBUTING.md)
+- [Indonesian](CONTRIBUTING_ID.md)
 
 ## Contributors ✨
 
