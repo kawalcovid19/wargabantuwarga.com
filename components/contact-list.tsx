@@ -6,6 +6,8 @@ import { getContactMetaTitle } from "~/lib/meta";
 import { Contact } from "~/lib/provinces";
 import { isNotEmpty, stripTags } from "~/lib/string-utils";
 
+import { Badge } from "./ui/badge";
+
 import {
   BadgeCheckIcon as BadgeCheckIconUnverified,
   ExclamationCircleIcon,
@@ -56,9 +58,7 @@ export function ContactList(props: ContactListProps) {
                     </a>
                   </Link>
                   <div className="ml-2 flex-shrink-0 flex">
-                    <p className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
-                      {contact.kebutuhan}
-                    </p>
+                    <Badge color="yellow">{contact.kebutuhan}</Badge>
                   </div>
                 </div>
                 <div className="mt-2 sm:flex sm:justify-between">
