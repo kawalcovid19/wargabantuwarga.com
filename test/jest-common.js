@@ -5,5 +5,9 @@ module.exports = {
   moduleNameMapper: {
     "~/(.*)": "<rootDir>/$1",
   },
-  watchPlugins: ["jest-watch-select-projects"],
+  watchPlugins: [
+    "jest-watch-select-projects",
+    "jest-watch-typeahead/filename",
+    "jest-watch-typeahead/testname",
+  ],
 };
