@@ -5,6 +5,8 @@ import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import { SearchForm } from "~/components/search-form";
+import { SeoText } from "~/components/seo-text";
+import { getCurrentLongDate } from "~/lib/date-utils";
 import { useSearch } from "~/lib/hooks/use-search";
 import { getProvinceMeta } from "~/lib/meta";
 import provinces, { Contact, getProvincesPaths } from "~/lib/provinces";
@@ -104,6 +106,15 @@ export default function ProvincePage(props: ProvinceProps) {
             isLoading={isLoading}
             provinceName={provinceName}
             provinceSlug={provinceSlug}
+          />
+          <SeoText
+            textNode={
+              <p>
+                Daftar Informasi Fasilitas Kesehatan (Faskes) & Alat Kesehatan
+                (Alkes) untuk COVID-19 di {provinceName} per{" "}
+                {getCurrentLongDate()}.
+              </p>
+            }
           />
         </PageContent>
       </Page>
