@@ -1,4 +1,5 @@
 module.exports = {
+  collectCoverageFrom: ["./(components|etc|lib|pages)/**/*.(ts|tsx|js|jsx)"],
   moduleNameMapper: {
     "~/(.*)": "<rootDir>/$1",
   },
