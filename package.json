@@ -16,6 +16,7 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "test": "jest",
+    "test:watch": "jest --watch",
     "test:e2e:dev": "start-server-and-test dev http://localhost:3000 cypress:open",
     "type-check": "tsc --noEmit"
   },
