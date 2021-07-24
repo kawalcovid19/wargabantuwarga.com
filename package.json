@@ -93,7 +93,10 @@
     "typescript": "4.3.5"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --cache --fix",
+      "jest --findRelatedTests"
+    ],
     "*.css": "stylelint --fix",
     "*.{js,jsx,ts,tsx,css,md}": "prettier --write"
   },
