@@ -25,6 +25,7 @@ export function useSearch<T = unknown[]>({
 }) {
   const configuration: any = {
     searchableFields: fieldNames,
+    isExactSearch: true,
     sortings: {
       default: {
         field: "id",
