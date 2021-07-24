@@ -1,5 +1,5 @@
 ---
-last_updated_time: 2021-07-24T07:01:09.956Z
+last_updated_time: 2021-07-24T11:47:24.561Z
 ---
 *\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19 dan kontak fasilitas/alat kesehatan di seluruh Indonesia yang dikumpulkan relawan melalui pencarian di internet atau media sosial.*
 
@@ -28,7 +28,12 @@ last_updated_time: 2021-07-24T07:01:09.956Z
 
 #### Informasi Terbaru
 
-Kementerian Kesehatan meluncurkan SIRANAP terbaru versi 3.0. Melalui SIRANAP 3.0, kita dapat memeriksa **ketersediaan IGD di seluruh Indonesia**. Khusus untuk wilayah Jakarta ketersediaan IGD diperbarui setiap 3 jam sekali oleh para relawan lapangan
+\- \[Wilayah Jakarta] Daftar Vaksin di Sentra Vaksinasi SINERGI SEHAT untuk masyarakat usia 12 tahun ke atas. \
+Waktu Pelaksanaan: 22 Juli - 15 September 2021 (Setiap Hari Senin-Jumat pukul 08.30-15.00 WIB). \
+Lokasi: The Media Hotel & Towers (Jln. Gunung Sahari No. 3, RT 16/RW 3, Gunung Sahari Utara).\
+[Klik di sini untuk daftar vaksin Sentra Vaksinasi SINERGI SEHAT](https://sinergisehat.vaksin.siapdok.id/#/). 
+
+\- Kementerian Kesehatan meluncurkan SIRANAP terbaru versi 3.0. Melalui SIRANAP 3.0, kita dapat memeriksa **ketersediaan IGD di seluruh Indonesia**. Khusus untuk wilayah Jakarta ketersediaan IGD diperbarui setiap 3 jam sekali oleh para relawan lapangan
 
 [Klik di sini untuk lihat ketersediaan IGD di Jakarta](https://yankes.kemkes.go.id/app/siranap/rumah_sakit?jenis=1&propinsi=31prop&kabkota=).
 
