@@ -2,6 +2,7 @@ import { CopyButton } from "~/components/copy-button";
 import { EmptyState } from "~/components/ui/empty-state";
 import { ContactListSkeleton } from "~/components/ui/skeleton-loading";
 import { anchorTransformer } from "~/lib/htmr-transformers";
+import { getContactMetaTitle } from "~/lib/meta";
 import { Contact } from "~/lib/provinces";
 import { isNotEmpty, stripTags } from "~/lib/string-utils";
 
@@ -21,6 +22,7 @@ import Link from "next/link";
 type ContactListProps = {
   data: Contact[];
   provinceSlug: string;
+  provinceName: string;
   isLoading: boolean;
 };
 
@@ -44,7 +46,10 @@ export function ContactList(props: ContactListProps) {
                   <Link
                     href={`/provinces/${props.provinceSlug}/${contact.slug}`}
                   >
-                    <a className="text-sm font-semibold text-blue-600 truncate block helper-link-cover">
+                    <a
+                      className="text-sm font-semibold text-blue-600 truncate block helper-link-cover"
+                      title={getContactMetaTitle(props.provinceName, contact)}
+                    >
                       {isNotEmpty(contact.penyedia)
                         ? contact.penyedia
                         : contact.keterangan}
