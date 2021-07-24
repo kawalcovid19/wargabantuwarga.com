@@ -1,5 +1,13 @@
 module.exports = {
   collectCoverageFrom: ["./(components|etc|lib|pages)/**/*.(ts|tsx|js|jsx)"],
+  coverageThreshold: {
+    global: {
+      statements: 7,
+      branches: 4,
+      functions: 9,
+      lines: 7,
+    },
+  },
   moduleNameMapper: {
     "~/(.*)": "<rootDir>/$1",
   },
