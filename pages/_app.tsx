@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
-import "~/styles/fonts.css";
 import "nprogress/nprogress.css";
+
+import "typeface-inter";
 
 import { useEffect } from "react";
 
