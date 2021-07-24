@@ -1,4 +1,5 @@
 module.exports = {
+  ...require("./test/jest-common"),
   collectCoverageFrom: ["./(components|etc|lib|pages)/**/*.(ts|tsx|js|jsx)"],
   coverageThreshold: {
     global: {
@@ -8,12 +9,8 @@ module.exports = {
       lines: 7,
     },
   },
-  moduleNameMapper: {
-    "~/(.*)": "<rootDir>/$1",
-  },
-  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
-  testEnvironment: "jest-environment-jsdom",
   transform: {
     "^.+\\.(ts|tsx|js|jsx)$": "babel-jest",
   },
+  projects: ["./test/jest.client.js", "./test/jest.server.js"],
 };
