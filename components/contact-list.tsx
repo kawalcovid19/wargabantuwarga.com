@@ -2,8 +2,11 @@ import { CopyButton } from "~/components/copy-button";
 import { EmptyState } from "~/components/ui/empty-state";
 import { ContactListSkeleton } from "~/components/ui/skeleton-loading";
 import { anchorTransformer } from "~/lib/htmr-transformers";
+import { getContactMetaTitle } from "~/lib/meta";
 import { Contact } from "~/lib/provinces";
 import { isNotEmpty, stripTags } from "~/lib/string-utils";
+
+import { Badge } from "./ui/badge";
 
 import {
   BadgeCheckIcon as BadgeCheckIconUnverified,
@@ -21,6 +24,7 @@ import Link from "next/link";
 type ContactListProps = {
   data: Contact[];
   provinceSlug: string;
+  provinceName: string;
   isLoading: boolean;
 };
 
@@ -44,16 +48,17 @@ export function ContactList(props: ContactListProps) {
                   <Link
                     href={`/provinces/${props.provinceSlug}/${contact.slug}`}
                   >
-                    <a className="text-sm font-semibold text-blue-600 truncate block helper-link-cover">
+                    <a
+                      className="text-sm font-semibold text-blue-600 truncate block helper-link-cover"
+                      title={getContactMetaTitle(props.provinceName, contact)}
+                    >
                       {isNotEmpty(contact.penyedia)
                         ? contact.penyedia
                         : contact.keterangan}
                     </a>
                   </Link>
                   <div className="ml-2 flex-shrink-0 flex">
-                    <p className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
-                      {contact.kebutuhan}
-                    </p>
+                    <Badge color="yellow">{contact.kebutuhan}</Badge>
                   </div>
                 </div>
                 <div className="mt-2 sm:flex sm:justify-between">

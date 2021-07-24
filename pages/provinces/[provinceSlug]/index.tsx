@@ -5,7 +5,10 @@ import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import { SearchForm } from "~/components/search-form";
+import { SeoText } from "~/components/seo-text";
+import { getCurrentLongDate } from "~/lib/date-utils";
 import { useSearch } from "~/lib/hooks/use-search";
+import { getProvinceMeta } from "~/lib/meta";
 import provinces, { Contact, getProvincesPaths } from "~/lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "~/lib/string-utils";
 
@@ -17,14 +20,6 @@ type ProvinceProps = {
   provinceName: string;
   provinceSlug: string;
   contactList: Contact[];
-};
-
-const getMeta = (provinceName: string) => {
-  return {
-    // @TODO: change this after got a better title
-    title: `Informasi Faskes & Alkes untuk COVID-19 di Provinsi ${provinceName}`,
-    description: `Informasi seputar COVID-19 dan kontak fasilitas/alat kesehatan di Provinsi ${provinceName} yang dikumpulkan relawan melalui pencarian di internet atau media sosial.`,
-  };
 };
 
 export default function ProvincePage(props: ProvinceProps) {
@@ -68,7 +63,7 @@ export default function ProvincePage(props: ProvinceProps) {
 
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (provinceName) {
-    const meta = getMeta(provinceName);
+    const meta = getProvinceMeta(provinceName);
 
     return (
       <Page>
@@ -100,6 +95,7 @@ export default function ProvincePage(props: ProvinceProps) {
             isLoading={isLoading}
             itemName="kontak"
             onSubmitKeywords={handleSubmitKeywords}
+            placeholderText="Cari berdasarkan kontak, alamat, provider, dan keterangan"
             sortSettings={[
               { value: "verified_first", label: "Terverifikasi" },
               { value: "penyedia_asc", label: "Nama" },
@@ -108,7 +104,17 @@ export default function ProvincePage(props: ProvinceProps) {
           <ContactList
             data={filteredContacts}
             isLoading={isLoading}
+            provinceName={provinceName}
             provinceSlug={provinceSlug}
+          />
+          <SeoText
+            textNode={
+              <p>
+                Daftar Informasi Fasilitas Kesehatan (Faskes) & Alat Kesehatan
+                (Alkes) untuk COVID-19 di {provinceName} per{" "}
+                {getCurrentLongDate()}.
+              </p>
+            }
           />
         </PageContent>
       </Page>
