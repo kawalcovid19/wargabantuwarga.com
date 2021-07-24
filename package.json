@@ -47,6 +47,7 @@
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.0.0",
     "@testing-library/user-event": "13.2.0",
+    "@types/jest": "26.0.24",
     "@types/nprogress": "^0.2.0",
     "@types/prettier": "^2.3.2",
     "@types/react": "17.0.13",
@@ -80,6 +81,7 @@
     "stylelint": "13.13.1",
     "stylelint-config-recommended": "5.0.0",
     "tailwindcss": "2.2.4",
+    "ts-jest": "27.0.4",
     "ts-node": "^10.1.0",
     "typescript": "4.3.5"
   },
