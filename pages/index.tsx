@@ -1,4 +1,5 @@
 import { attributes, html } from "~/_content/home-page.md";
+import { HomepageHeader } from "~/components/home/homepage-header";
 import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import config from "~/lib/config";
@@ -10,13 +11,10 @@ import {
   heading5Transformer,
   heading6Transformer,
 } from "~/lib/htmr-transformers";
-import { bannerBlurData, imgixLoader } from "~/lib/imgix-loader";
 
 import { ClockIcon } from "@heroicons/react/outline";
 import htmr from "htmr";
 import { HtmrOptions } from "htmr/src/types";
-import Image from "next/image";
-import Link from "next/link";
 import { NextSeo } from "next-seo";
 
 const meta = {
@@ -60,28 +58,7 @@ const LastUpdatedAlert = () => (
 const HomePage = () => (
   <Page>
     <NextSeo title={meta.title} titleTemplate="%s" />
-    <header>
-      <div className="max-w-xl mx-auto">
-        <h1 className="p-0">
-          <Link href="/">
-            <a>
-              <Image
-                alt="Warga Bantu Warga"
-                blurDataURL={bannerBlurData}
-                height={287}
-                layout="responsive"
-                loader={imgixLoader}
-                placeholder="blur"
-                priority={true}
-                quality={70}
-                src="hero_banner.png"
-                width={640}
-              />
-            </a>
-          </Link>
-        </h1>
-      </div>
-    </header>
+    <HomepageHeader />
     <PageContent>
       <LastUpdatedAlert />
       <article className="prose prose-indigo p-4 bg-white shadow overflow-hidden rounded-md">

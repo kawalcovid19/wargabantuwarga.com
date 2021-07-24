@@ -1,5 +1,5 @@
 ---
-last_updated_time: 2021-07-23T05:24:59.924Z
+last_updated_time: 2021-07-24T11:47:24.561Z
 ---
 *\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19 dan kontak fasilitas/alat kesehatan di seluruh Indonesia yang dikumpulkan relawan melalui pencarian di internet atau media sosial.*
 
@@ -28,7 +28,12 @@ last_updated_time: 2021-07-23T05:24:59.924Z
 
 #### Informasi Terbaru
 
-Kementerian Kesehatan meluncurkan SIRANAP terbaru versi 3.0. Melalui SIRANAP 3.0, kita dapat memeriksa **ketersediaan IGD di seluruh Indonesia**. Khusus untuk wilayah Jakarta ketersediaan IGD diperbarui setiap 3 jam sekali oleh para relawan lapangan
+\- \[Wilayah Jakarta] Daftar Vaksin di Sentra Vaksinasi SINERGI SEHAT untuk masyarakat usia 12 tahun ke atas. \
+Waktu Pelaksanaan: 22 Juli - 15 September 2021 (Setiap Hari Senin-Jumat pukul 08.30-15.00 WIB). \
+Lokasi: The Media Hotel & Towers (Jln. Gunung Sahari No. 3, RT 16/RW 3, Gunung Sahari Utara).\
+[Klik di sini untuk daftar vaksin Sentra Vaksinasi SINERGI SEHAT](https://sinergisehat.vaksin.siapdok.id/#/). 
+
+\- Kementerian Kesehatan meluncurkan SIRANAP terbaru versi 3.0. Melalui SIRANAP 3.0, kita dapat memeriksa **ketersediaan IGD di seluruh Indonesia**. Khusus untuk wilayah Jakarta ketersediaan IGD diperbarui setiap 3 jam sekali oleh para relawan lapangan
 
 [Klik di sini untuk lihat ketersediaan IGD di Jakarta](https://yankes.kemkes.go.id/app/siranap/rumah_sakit?jenis=1&propinsi=31prop&kabkota=).
 
@@ -49,11 +54,11 @@ Temukan situs atau kontak fasilitas/alat kesehatan untuk COVID-19 di tingkat nas
 
 #### Mau Cek Ketersediaan Tempat Tidur Rumah Sakit
 
-[Klik SIRANAP Kemenkes](https://yankes.kemkes.go.id/app/siranap/) 
+[Klik SIRANAP Kemenkes](https://yankes.kemkes.go.id/app/siranap/)
 
 #### Butuh Donor Plasma atau Ingin Donor Plasma?
 
-* Hubungi Contact Center BNPB - Donor Konvalesen: 117 ext. 5 
+* Hubungi Contact Center BNPB - Donor Konvalesen: 117 ext. 5
 * [Klik situs ahaha.id untuk cari donor atau mendonorkan plasma](https://ahaha.id)
 * [Klik Blood4Life untuk cari donor atau mendonorkan plasma](https://blood4life.id)
 * [Klik situs Reblood untuk cari donor atau mendonorkan plasma](https://reblood.com)
@@ -62,7 +67,7 @@ Temukan situs atau kontak fasilitas/alat kesehatan untuk COVID-19 di tingkat nas
 
 #### Mau Konsultasi Medis dengan Dokter (Telemedicine)?
 
-* Download aplikasi telemedicine yang didukung Kemenkes: [Alodokter](https://bit.ly/alodokter-isoman)     [GetWell](https://play.google.com/store/apps/details?id=id.paquesid.getwell)     [Good Doctor](https://gooddoctor.onelink.me/Cmiw/efeba7ae)     [GrabHealth](https://grab.onelink.me/2695613898/fe73b8c5)     [Halodoc](https://bit.ly/isoman_halodoc)     [KlikDokter](https://bit.ly/kd-kemenkes-isoman)     [KlinikGo](https://klinikgo.com/isoman)     [Link Sehat](https://link.linksehat.com/mRMf)     [Milvik Dokter](https://milvik.id/about-us/)     [ProSehat](https://prosehat.com/wa)     [SehatQ](https://sehatqapp.onelink.me/bgzy?pid=kemenkes&c=sqkemenkes&deep_link_value=https%3A%2F%2Fwww.sehatq.com%2Ftelemed&af_web_dp=https%3A%2F%2Fwww.sehatq.com%2Ftelemed&af_dp=https%3A%2F%2Fwww.sehatq.com%2Ftelemed)     [YesDok](https://bit.ly/ISOMAN-YesDok)
+* Download aplikasi telemedicine yang didukung Kemenkes: [Alodokter](https://bit.ly/alodokter-isoman) [GetWell](https://play.google.com/store/apps/details?id=id.paquesid.getwell) [Good Doctor](https://gooddoctor.onelink.me/Cmiw/efeba7ae) [GrabHealth](https://grab.onelink.me/2695613898/fe73b8c5) [Halodoc](https://bit.ly/isoman_halodoc) [KlikDokter](https://bit.ly/kd-kemenkes-isoman) [KlinikGo](https://klinikgo.com/isoman) [Link Sehat](https://link.linksehat.com/mRMf) [Milvik Dokter](https://milvik.id/about-us/) [ProSehat](https://prosehat.com/wa) [SehatQ](https://sehatqapp.onelink.me/bgzy?pid=kemenkes&c=sqkemenkes&deep_link_value=https%3A%2F%2Fwww.sehatq.com%2Ftelemed&af_web_dp=https%3A%2F%2Fwww.sehatq.com%2Ftelemed&af_dp=https%3A%2F%2Fwww.sehatq.com%2Ftelemed) [YesDok](https://bit.ly/ISOMAN-YesDok)
 * Konsultasi gratis dengan dokter: [lihat jadwal dan kontak dokter di sini](https://docs.google.com/spreadsheets/d/1gGnIiXmCcGpMkB_h98FiHW99uVdwcdTBq_GhIEl_4eM/edit?usp=sharing)
 
 #### Mau Cek Ketersediaan Obat di Daerahmu?
@@ -97,7 +102,7 @@ Kumpulan informasi ketersediaan tempat tidur di rumah sakit, tabung oksigen, amb
 
 ### [Akses Database Kontak & Alat Kesehatan Per-Provinsi di Sini](/provinces)
 
-Daerahmu belum ada dalam di database? Kamu bisa berkontribusi dengan [isi formulir ini untuk menambahkan info di daerahmu](https://forms.gle/Z3obzzcf9tY36MCH7). 
+Daerahmu belum ada dalam di database? Kamu bisa berkontribusi dengan [isi formulir ini untuk menambahkan info di daerahmu](https://forms.gle/Z3obzzcf9tY36MCH7).
 
 *Disclaimer: Semangat #WargaBantuWarga adalah berbagi informasi untuk warga. Saat ini data yang terkumpul di database adalah hasil pencarian informasi relawan dari beragam sumber terutama via media sosial. Karena keterbatasan kami, tidak semua data yang tampil di database #WargaBantuWarga terverifikasi. Harap berhati-hati saat mengontak atau melakukan transaksi dengan penyedia layanan untuk menghindari hal-hal yang tidak diinginkan.*
 
@@ -128,10 +133,11 @@ Kumpulan informasi terbaru COVID-19, tips menjaga kesehatan selama pandemi, vaks
 
 #### Cara Pakai Tabung Oksigen
 
-* [Cara menggunakan tabung oksigen](https://www.alodokter.com/komunitas/topic/penggunaan-tabung-oksigen-1m-)
+* [Cara menggunakan tabung oksigen](https://www.halodoc.com/artikel/begini-cara-menggunakan-tabung-oksigen-di-rumah)
 * [Berapa batas normal saturasi oksigen?](https://www.alodokter.com/penting-diketahui-ini-kadar-oksigen-normal-dalam-darah)
+* [Cara cek saturasi oksigen normal](https://www.halodoc.com/artikel/begini-cara-menggunakan-tabung-oksigen-di-rumah)
 * [Cara mengontrol asupan oksigen melalui oksigen regulator](https://www.medicalogy.com/blog/mengontrol-asupan-oksigen-melalui-oksigen-regulator-dengan-aman/)
-* [Cara menyimpan tabung oksigen di rumah](https://www.alodokter.com/menyimpan-tabung-oksigen-di-rumah-harus-perhatikan-hal-ini)
+* [Cara menyimpan tabung oksigen di rumah](https://www.halodoc.com/artikel/ketahui-cara-penyimpanan-tabung-oksigen-di-rumah)
 * [(VIDEO) Tutorial prosedur pemasangan tabung oksigen ](https://www.youtube.com/watch?v=8tuwfUgb9W8)
 * [(VIDEO) Cara mudah pasang tabung oksigen](https://www.youtube.com/watch?v=4-iB8fMC4jU)
 
@@ -145,13 +151,13 @@ Kumpulan informasi terbaru COVID-19, tips menjaga kesehatan selama pandemi, vaks
 
 * [Pertanyaan dan jawaban yang sering diajukan soal vaksin](https://covid19.go.id/tanya-jawab)
 * [Cara kerja vaksin](https://www.who.int/indonesia/news/novel-coronavirus/qa/qa-cara-kerja-vaksin)
-* [Perbedaan vaksin-vaksin COVID-19 yang akan digunakan di Indonesia](https://www.alodokter.com/kenali-perbedaan-vaksin-vaksin-covid-19-yang-akan-digunakan-di-indonesia)
-* [Apa yang boleh dan tidak boleh dilakukan sebelum dan setelah vaksinasi COVID-19?](https://www.instagram.com/p/CN34ahBMbRz/)
+* [](https://www.halodoc.com/artikel/ketahui-perbandingan-vaksin-corona-vaksin-pfizer-moderna-dan-astrazeneca)[Ketahui perbandingan vaksin Pfizer, Moderna, dan AstraZeneca](https://www.halodoc.com/artikel/ketahui-perbandingan-vaksin-corona-vaksin-pfizer-moderna-dan-astrazeneca)
+* [Perhatikan hal ini setelah mendapatkan Vaksin](https://www.halodoc.com/artikel/perhatikan-hal-ini-setelah-mendapatkan-vaksin-covid-19-1)
 * [Mengapa perlu dua kali dosis penyuntikan vaksin COVID-19?](https://covid19.go.id/p/masyarakat-umum/2-dosis-vaksin-covid-19-ini-tujuannya)
-* [Apa saja efek samping vaksin?](https://www.alodokter.com/komunitas/topic/efek-samping-vaksin-berapa-hari)
+* [Apa saja efek samping vaksin?](https://www.halodoc.com/artikel/efek-samping-vaksinasi-covid-19-ketahui-tentang-kipi)
 * [Cara mengatasi efek samping vaksin](https://www.kompas.com/sains/read/2021/06/20/130100923/efek-samping-vaksin-covid-19-dan-cara-mengatasinya)
 * [Vaksinasi bagi penyintas COVID-19](https://www.instagram.com/p/CNqWH_-Mhhn/)
-* [Vaksinasi bagi ibu hamil](https://nasional.kompas.com/read/2021/07/04/10003951/tak-hanya-sinovac-pogi-rekomendasikan-pemberian-empat-vaksin-covid-19-ini)
+* [](https://www.halodoc.com/artikel/5-jenis-vaksin-covid-19-yang-direkomendasikan-untuk-ibu-hamil)[Jenis vaksin yang direkomendasikan untuk ibu hamil](https://www.halodoc.com/artikel/5-jenis-vaksin-covid-19-yang-direkomendasikan-untuk-ibu-hamil)[](https://www.halodoc.com/artikel/5-jenis-vaksin-covid-19-yang-direkomendasikan-untuk-ibu-hamil)
 * [Vaksinasi bagi ibu menyusui](https://www.republika.co.id/berita/qvd02y463/ibu-menyusui-aman-terima-vaksin-covid19)
 * [Thread Pengalaman ODHA melakukan vaksinasi](https://twitter.com/ayuma_morie/status/1405861747789950980)
 * [Klik di sini untuk cari informasi pelaksanaan vaksinasi per daerah](https://kcov.id/wbw-sheets)
@@ -162,9 +168,10 @@ Kumpulan informasi terbaru COVID-19, tips menjaga kesehatan selama pandemi, vaks
 
 #### Jaga Kesehatan di Masa Pandemi
 
-* [Cara menggunakan masker dobel yang benar](https://www.alodokter.com/cara-menggunakan-masker-dobel-yang-benar-untuk-mencegah-covid-19)
-* [Mengenal oximeter dan cara penggunaannya](https://tirto.id/mengenal-oximeter-dan-cara-penggunaannya-menurut-who-f32Z)
-* [Cara jaga kesehatan mental saat pandemi COVID-19](https://www.halodoc.com/artikel/4-cara-jaga-kesehatan-mental-saat-pandemi-covid-19)
+* [Cara menggunakan masker dobel yang benar](https://www.halodoc.com/artikel/cara-pakai-masker-dobel-yang-benar-untuk-tangkal-covid-19)
+* [Mengenal oximeter dan cara penggunaannya](https://tirto.id/mengenal-oximeter-dan-cara-penggunaannya-menurut-who-f32Z) 
+* [Pelajari tentang varian Delta](https://kawalcovid19.id/content/2135/varian-delta-yang-perlu-anda-ketahui) 
+* [Cara jaga kesehatan mental saat menghadapi COVID-19 second wave](https://www.halodoc.com/artikel/cara-jaga-kesehatan-mental-saat-menghadapi-covid-19-second-wave)
 
 #### Prosedur Mendirikan Pusat Karantina
 
@@ -203,7 +210,7 @@ Kumpulan informasi mengenai donasi, nomor rekening, dan lainnya yang relevan den
 
 Terima kasih kepada para kolaborator inisiatif [\#WargaBantuWarga](https://twitter.com/hashtag/WargaBantuWarga):
 
-[@kitabisacom](https://twitter.com/kitabisacom)     [@KawalCOVID19](https://twitter.com/KawalCOVID19)     [@fimnews](https://www.instagram.com/fimnews/)     [@forumzakat](https://twitter.com/forumzakat)     [Baznas](https://baznas.go.id/)     [@KataDotAI](https://twitter.com/KataDotAI)   [@indorelawan](https://twitter.com/indorelawan)     [@pemimpinid](https://twitter.com/pemimpinid_)     [@pandemictalks](https://www.instagram.com/pandemictalks/)     [@laporcovid19](https://www.instagram.com/laporcovid19/)     [@filantropiindonesia](https://www.instagram.com/filantropiindonesia/)     [@BantuCovid](https://twitter.com/BantuCovid)     [Human Initiative Volunteer Energy](https://hive.human-initiative.org/)     [Narasi](https://www.instagram.com/narasi.tv/)     [Qiscus](https://qiscus.io/)     [Humanitarian Forum Indonesia](https://www.instagram.com/humanitarianforumindonesia/?hl=en)     [urundayacovid.com](https://urundayacovid.com/)     [Serikat Buruh Migran Indonesia](https://sbmi.or.id/)     [atmaGO](https://covid19.atmago.com/id)     [Jaringan Semua Murid Semua Guru](https://semuamuridsemuaguru.id/)     [ILUNI UI Psikologi](https://instagram.com/iluniuipsi?utm_medium=copy_link)     [KG Media](https://www.kgmedia.id/)
+[@kitabisacom](https://twitter.com/kitabisacom) [@KawalCOVID19](https://twitter.com/KawalCOVID19) [@fimnews](https://www.instagram.com/fimnews/) [@forumzakat](https://twitter.com/forumzakat) [Baznas](https://baznas.go.id/) [@KataDotAI](https://twitter.com/KataDotAI) [@indorelawan](https://twitter.com/indorelawan) [@pemimpinid](https://twitter.com/pemimpinid_) [@pandemictalks](https://www.instagram.com/pandemictalks/) [@laporcovid19](https://www.instagram.com/laporcovid19/) [@filantropiindonesia](https://www.instagram.com/filantropiindonesia/) [@BantuCovid](https://twitter.com/BantuCovid) [Human Initiative Volunteer Energy](https://hive.human-initiative.org/) [Narasi](https://www.instagram.com/narasi.tv/) [Qiscus](https://qiscus.io/) [Humanitarian Forum Indonesia](https://www.instagram.com/humanitarianforumindonesia/?hl=en) [urundayacovid.com](https://urundayacovid.com/) [Serikat Buruh Migran Indonesia](https://sbmi.or.id/) [atmaGO](https://covid19.atmago.com/id) [Jaringan Semua Murid Semua Guru](https://semuamuridsemuaguru.id/) [ILUNI UI Psikologi](https://instagram.com/iluniuipsi?utm_medium=copy_link) [KG Media](https://www.kgmedia.id/)
 
 - - -
 
