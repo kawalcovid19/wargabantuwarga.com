@@ -11,7 +11,7 @@ import React, {
   useState,
 } from "react";
 
-import { PrimaryButton, SecondaryButton } from "./ui/button";
+import { PrimaryButton } from "./ui/button";
 import { FormLabel } from "./ui/forms/form-label";
 import { InputText } from "./ui/forms/input-text";
 
@@ -19,6 +19,7 @@ import { debounce } from "ts-debounce";
 import { SearchFilterModal, SortSetting } from "./search-filter-modal";
 import { FormGroup } from "./ui/forms/form-group";
 import { FilterIcon } from "@heroicons/react/outline";
+import { SearchFilter } from "~/components/search-filter";
 
 interface FormElements extends HTMLFormControlsCollection {
   keywordsInput: HTMLInputElement;
@@ -42,6 +43,7 @@ interface SearchFormProps {
   };
   isLoading?: boolean;
   sortSettings?: SortSetting[];
+  withFilterModal?: boolean;
 }
 
 export function SearchForm({
@@ -54,6 +56,7 @@ export function SearchForm({
   initialValue,
   isLoading,
   sortSettings,
+  withFilterModal = false,
 }: SearchFormProps) {
   const defaultSort = sortSettings?.length ? sortSettings[0].value : "";
   const [keywords, setKeywords] = useState<string>("");
@@ -65,14 +68,6 @@ export function SearchForm({
     event.preventDefault();
     setFilters({});
     onSubmitKeywords(keywords, {}, sortBy);
-  }
-
-  function handleReset(event: FormEvent<UsernameFormElement>) {
-    event.preventDefault();
-    setKeywords("");
-    setFilters({});
-    setSortBy(defaultSort);
-    onSubmitKeywords("");
   }
 
   const debouncedSearch = useCallback(
@@ -118,11 +113,7 @@ export function SearchForm({
   }, [initialValue]);
 
   return (
-    <form
-      className="pb-8 space-y-4"
-      onReset={handleReset}
-      onSubmit={handleSubmit}
-    >
+    <form className="pb-8 space-y-4" onSubmit={handleSubmit}>
       <div className="flex flex-col sm:flex-row sm:items-end">
         <div className="flex flex-1 items-center mt-1">
           <div className="space-y-1 flex-1">
@@ -138,45 +129,57 @@ export function SearchForm({
                 type="text"
                 value={keywords}
               />
-              {!isLoading && (filterItems || sortSettings?.length) && (
-                <button
-                  className="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium rounded-r-md text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-                  onClick={() => setFilterModalOpen(true)}
-                >
-                  <FilterIcon
-                    aria-hidden="true"
-                    className="h-5 w-5 text-gray-400"
-                  />
-                  <span>Filter</span>
-                </button>
-              )}
+              {withFilterModal &&
+                !isLoading &&
+                (filterItems || sortSettings?.length) && (
+                  <button
+                    className="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium rounded-r-md text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                    onClick={() => setFilterModalOpen(true)}
+                  >
+                    <FilterIcon
+                      aria-hidden="true"
+                      className="h-5 w-5 text-gray-400"
+                    />
+                    <span>Filter</span>
+                  </button>
+                )}
             </FormGroup>
           </div>
         </div>
-        <div className="flex flex-row mt-2 ml-0 sm:mt-0 sm:ml-2">
-          {!autoSearch && (
+        {!autoSearch && (
+          <div className="flex flex-row mt-2 ml-0 sm:mt-0 sm:ml-2">
             <PrimaryButton block className="flex-1" type="submit">
               Cari
             </PrimaryButton>
-          )}
-          <SecondaryButton block className="flex-1 ml-2" type="reset">
-            Reset
-          </SecondaryButton>
-        </div>
+          </div>
+        )}
       </div>
 
-      <SearchFilterModal
-        checkDocSize={checkDocSize}
-        filterItems={filterItems}
-        filters={filters}
-        handleFilterChange={handleFilterChange}
-        handleSortChange={handleSortChange}
-        isLoading={isLoading}
-        isOpen={isFilterModalOpen}
-        onToggle={setFilterModalOpen}
-        sortBy={sortBy}
-        sortSettings={sortSettings}
-      />
+      {withFilterModal ? (
+        <SearchFilterModal
+          checkDocSize={checkDocSize}
+          filterItems={filterItems}
+          filters={filters}
+          handleFilterChange={handleFilterChange}
+          handleSortChange={handleSortChange}
+          isLoading={isLoading}
+          isOpen={isFilterModalOpen}
+          onToggle={setFilterModalOpen}
+          sortBy={sortBy}
+          sortSettings={sortSettings}
+        />
+      ) : (
+        <SearchFilter
+          checkDocSize={checkDocSize}
+          filterItems={filterItems}
+          filters={filters}
+          handleFilterChange={handleFilterChange}
+          handleSortChange={handleSortChange}
+          isLoading={isLoading}
+          sortBy={sortBy}
+          sortSettings={sortSettings}
+        />
+      )}
     </form>
   );
 }
