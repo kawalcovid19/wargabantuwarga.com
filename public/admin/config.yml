@@ -59,5 +59,6 @@ collections:
               label: "Banner Image",
               name: "home_banner_image_path",
               widget: "string",
+              required: false,
               hint: "Cloudinary image path, eg. `v12345/my_file.png`",
             }
