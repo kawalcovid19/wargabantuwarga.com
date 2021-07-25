@@ -39,7 +39,7 @@ export function CustomInstantSearch({
       const queryParams: {} = getQueryParams(window.location.search);
       if (Object.keys(queryParams).length) {
         let keywordsParam: string = "";
-        const filtersParam: any = {};
+        const filtersParam: { [key: string]: string[] } = {};
         const filterFields = filterSettings?.map((cur) => cur.field) ?? [];
         Object.entries(queryParams).forEach(([key, value]) => {
           if (key == "q") {
@@ -53,7 +53,9 @@ export function CustomInstantSearch({
               searchParams.sort = sortParam;
             }
           } else if (filterFields.includes(key)) {
-            filtersParam[key] = value ? [value] : [];
+            if (value) {
+              filtersParam[key] = [value as string];
+            }
           }
         });
         if (Object.keys(filtersParam as {}).length) {
