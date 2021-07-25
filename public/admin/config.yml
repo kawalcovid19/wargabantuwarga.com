@@ -15,7 +15,7 @@ collections:
     files:
       - name: "general"
         label: "Site Configuration"
-        file: "config.json"
+        file: "_content/site-config.json"
         description: "General site settings"
         fields:
           - label: "Site name"
