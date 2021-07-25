@@ -22,18 +22,6 @@ export function toTitleCase(str: string): string {
 }
 
 /**
- * Convert all whitespaces in a string to camelCase
- *
- * @param {string} str input string
- * @returns {string} camelCased and whitespace-free version of `str`
- */
-export function replaceSpacesWithCamelCase(str: string): string {
-  return str.replace(/\s+/g, (s) => {
-    return s.substring(0, 1).toUpperCase() + s.substring(1);
-  });
-}
-
-/**
  * Replace all non-alphanumeric character in a string with space
  *
  * @param {string} str input string
@@ -41,16 +29,6 @@ export function replaceSpacesWithCamelCase(str: string): string {
  */
 export function replaceSpecialCharacterWithSpace(str: string): string {
   return str.replace(/[^a-zA-Z0-9]/g, " ");
-}
-
-/**
- * Remove all whitespaces from a string
- *
- * @param {string} str input string
- * @returns {string} whitespace-free version of `str`
- */
-export function removeSpaces(str: string): string {
-  return str.replace(/\s+/g, "");
 }
 
 /**
@@ -111,19 +89,6 @@ export function toSecond(hrtime: [number, number]): string {
 }
 
 /**
- * Build a function pipeline
- *
- * @param {Function[]} functions array of functions, ordered by the expected
- * order of execution
- * @returns {Function} chained functions
- */
-export function composeFunctions(...functions: Function[]): Function {
-  return (args: unknown) => {
-    return functions.reduce((acc, fn) => fn(acc), args);
-  };
-}
-
-/**
  * Get the last segment from a kebab-cased string
  *
  * @param {string} str input string
@@ -163,7 +128,7 @@ export function getQueryParams(query: string): {} {
   return query
     ? (/^[?#]/.test(query) ? query.slice(1) : query)
         .split("&")
-        .reduce((params: any, param) => {
+        .reduce((params: Record<string, string>, param) => {
           const [key, value] = param.split("=");
           params[key] = value
             ? decodeURIComponent(value.replace(/\+/g, " "))
