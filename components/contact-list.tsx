@@ -1,3 +1,5 @@
+import { useMemo } from "react";
+
 import { CopyButton } from "~/components/copy-button";
 import { EmptyState } from "~/components/ui/empty-state";
 import { ContactListSkeleton } from "~/components/ui/skeleton-loading";
@@ -29,15 +31,10 @@ type ContactListProps = {
 };
 
 export function ContactList(props: ContactListProps) {
-  const htmrTransform: HtmrOptions["transform"] = {
-    a: anchorTransformer,
-  };
-
-  if (props.isLoading) {
-    return <ContactListSkeleton />;
-  }
-
-  if (props.data.length > 0) {
+  const contactList = useMemo(() => {
+    const htmrTransform: HtmrOptions["transform"] = {
+      a: anchorTransformer,
+    };
     return (
       <div className="bg-white shadow overflow-hidden sm:rounded-md">
         <ul className="divide-y divide-gray-200">
@@ -128,6 +125,14 @@ export function ContactList(props: ContactListProps) {
         </ul>
       </div>
     );
+  }, [props.data, props.provinceName, props.provinceSlug]);
+
+  if (props.isLoading) {
+    return <ContactListSkeleton />;
+  }
+
+  if (props.data.length > 0) {
+    return contactList;
   }
 
   return (
