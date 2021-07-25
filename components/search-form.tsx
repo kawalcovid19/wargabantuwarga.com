@@ -43,7 +43,7 @@ interface SearchFormProps {
   };
   isLoading?: boolean;
   sortSettings?: SortSetting[];
-  useFilterModal?: boolean;
+  withFilterModal?: boolean;
 }
 
 export function SearchForm({
@@ -56,7 +56,7 @@ export function SearchForm({
   initialValue,
   isLoading,
   sortSettings,
-  useFilterModal = false,
+  withFilterModal = false,
 }: SearchFormProps) {
   const defaultSort = sortSettings?.length ? sortSettings[0].value : "";
   const [keywords, setKeywords] = useState<string>("");
@@ -129,7 +129,7 @@ export function SearchForm({
                 type="text"
                 value={keywords}
               />
-              {useFilterModal &&
+              {withFilterModal &&
                 !isLoading &&
                 (filterItems || sortSettings?.length) && (
                   <button
@@ -155,7 +155,7 @@ export function SearchForm({
         )}
       </div>
 
-      {useFilterModal ? (
+      {withFilterModal ? (
         <SearchFilterModal
           checkDocSize={checkDocSize}
           filterItems={filterItems}
