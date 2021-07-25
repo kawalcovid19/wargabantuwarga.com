@@ -1,5 +1,6 @@
 import { bannerBlurData, cloudinaryLoader } from "~/lib/cloudinary-loader";
 
+import { Container } from "../layout/container";
 import { WBWLogoBlack } from "../ui/wbw-logo";
 
 import Image from "next/image";
@@ -7,7 +8,7 @@ import Image from "next/image";
 export function HomepageHeader() {
   return (
     <header>
-      <div className="max-w-xl mx-auto">
+      <Container>
         <div className="relative">
           <div aria-hidden className="select-none">
             <Image
@@ -38,7 +39,7 @@ export function HomepageHeader() {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </header>
   );
 }
