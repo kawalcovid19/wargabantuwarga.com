@@ -2,9 +2,13 @@ import React from "react";
 
 import { provinceListItemBuilder } from "~/components/__mocks__/builders/province-list";
 import { dateMockBuilder } from "~/lib/__mocks__/builders/date-mock";
-import ProvincesPage from "~/pages/provinces";
+import provinces from "~/lib/provinces";
+import { getInitial, getSlug } from "~/lib/string-utils";
+import ProvincesPage, { getStaticProps } from "~/pages/provinces";
 
 import { render, screen, within } from "@testing-library/react";
+
+jest.mock("~/lib/provinces");
 
 describe("ProvincesPage", () => {
   const provinceListItem = provinceListItemBuilder();
@@ -59,5 +63,23 @@ describe("ProvincesPage", () => {
     expect(seoText).toHaveTextContent(
       `Cari & Temukan Informasi Fasilitas Kesehatan (Faskes) & Alat Kesehatan (Alkes) untuk COVID-19 di seluruh Indonesia per ${dateStr}`,
     );
+  });
+});
+
+describe("getStaticProps", () => {
+  it("transforms provinces into provinceList props correctly", () => {
+    // TODO: Do a better test because this test is merely a copy of the implementation
+    const provinceList = provinces.map(({ name, data }, index) => ({
+      initials: getInitial(name),
+      name,
+      slug: getSlug(name, index),
+      count: data.length,
+    }));
+    provinceList.shift();
+    expect(getStaticProps({})).toEqual({
+      props: {
+        provincesList: provinceList,
+      },
+    });
   });
 });
