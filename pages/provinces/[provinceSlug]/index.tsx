@@ -10,7 +10,6 @@ import { getCurrentLongDate } from "~/lib/date-utils";
 import { useSearch } from "~/lib/hooks/use-search";
 import { getProvinceMeta } from "~/lib/meta";
 import provinces, { Contact, getProvincesPaths } from "~/lib/provinces";
-import { getTheLastSegmentFromKebabCase } from "~/lib/string-utils";
 
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
@@ -96,10 +95,6 @@ export default function ProvincePage(props: ProvinceProps) {
             itemName="kontak"
             onSubmitKeywords={handleSubmitKeywords}
             placeholderText="Cari berdasarkan kontak, alamat, provider, dan keterangan"
-            sortSettings={[
-              { value: "verified_first", label: "Terverifikasi" },
-              { value: "penyedia_asc", label: "Nama" },
-            ]}
           />
           <ContactList
             data={filteredContacts}
@@ -139,8 +134,7 @@ export const getStaticPaths: GetStaticPaths = () => {
 
 export const getStaticProps: GetStaticProps = ({ params = {} }) => {
   const { provinceSlug } = params;
-  const index = getTheLastSegmentFromKebabCase(provinceSlug as string);
-  const province = index ? provinces[index as unknown as number] : null;
+  const province = provinces.find((prov) => prov.slug === provinceSlug);
   const provinceName = province ? province.name : "";
   const contactList = province
     ? [...province.data].sort((a, b) => {

@@ -7,6 +7,7 @@ export type Provinces = Province[];
 export type Province = {
   readonly id: number;
   readonly name: string;
+  readonly slug: string;
   readonly data: Contact[];
 };
 
@@ -32,13 +33,17 @@ export type ProvincePath = {
   };
 };
 
-export const getProvincesPaths = (): ProvincePath[] =>
-  provinces.map((item, index) => {
-    const provinceSlug = getSlug(item.name, index);
+export const getProvincesPaths = (): ProvincePath[] => {
+  const provincees = provinces as unknown as Province[];
+
+  return provincees.map((province) => {
+    const provinceSlug = province.slug;
+
     return {
       params: { provinceSlug },
     };
   });
+};
 
 export type ContactPath = {
   params: {
