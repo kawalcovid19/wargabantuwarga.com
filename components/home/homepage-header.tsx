@@ -13,7 +13,7 @@ export function HomepageHeader({ src = FALLBACK_SRC }) {
         <div className="relative">
           <div aria-hidden className="select-none">
             <Image
-              alt="Background"
+              alt="WargaBantuWarga background"
               blurDataURL={bannerBlurData}
               height={288}
               layout="responsive"
