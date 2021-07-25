@@ -2,14 +2,19 @@ import * as React from "react";
 
 import clsx from "clsx";
 
-type InputTextProps = React.InputHTMLAttributes<HTMLInputElement>;
+interface InputTextProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  isGroupItem?: boolean;
+}
 
 export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
-  ({ className, type = "text", ...rest }, ref) => {
+  ({ className, type = "text", isGroupItem, ...rest }, ref) => {
     return (
       <input
         className={clsx(
-          "shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md",
+          isGroupItem
+            ? "first:rounded-l-md last:rounded-r-md"
+            : "shadow-sm rounded-md",
+          "focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300",
           className,
         )}
         ref={ref}

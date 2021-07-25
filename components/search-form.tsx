@@ -1,3 +1,4 @@
+/* eslint-disable simple-import-sort/imports */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
@@ -12,11 +13,12 @@ import React, {
 
 import { PrimaryButton, SecondaryButton } from "./ui/button";
 import { FormLabel } from "./ui/forms/form-label";
-import { InputSelect } from "./ui/forms/input-select";
 import { InputText } from "./ui/forms/input-text";
-import { SelectSkeleton } from "./ui/skeleton-loading";
 
 import { debounce } from "ts-debounce";
+import { SearchFilterModal, SortSetting } from "./search-filter-modal";
+import { FormGroup } from "./ui/forms/form-group";
+import { FilterIcon } from "@heroicons/react/outline";
 
 interface FormElements extends HTMLFormControlsCollection {
   keywordsInput: HTMLInputElement;
@@ -26,22 +28,7 @@ interface UsernameFormElement extends HTMLFormElement {
   readonly elements: FormElements;
 }
 
-type SortSetting = {
-  value: string;
-  label: string;
-};
-
-export function SearchForm({
-  itemName,
-  placeholderText,
-  checkDocSize,
-  onSubmitKeywords,
-  autoSearch,
-  filterItems,
-  initialValue,
-  isLoading,
-  sortSettings,
-}: {
+interface SearchFormProps {
   itemName: string;
   placeholderText?: string;
   checkDocSize: boolean;
@@ -55,11 +42,24 @@ export function SearchForm({
   };
   isLoading?: boolean;
   sortSettings?: SortSetting[];
-}) {
+}
+
+export function SearchForm({
+  itemName,
+  placeholderText,
+  checkDocSize,
+  onSubmitKeywords,
+  autoSearch,
+  filterItems,
+  initialValue,
+  isLoading,
+  sortSettings,
+}: SearchFormProps) {
   const defaultSort = sortSettings?.length ? sortSettings[0].value : "";
   const [keywords, setKeywords] = useState<string>("");
   const [filters, setFilters] = useState<any>({});
   const [sortBy, setSortBy] = useState<string>(defaultSort);
+  const [isFilterModalOpen, setFilterModalOpen] = useState<boolean>(false);
 
   function handleSubmit(event: FormEvent<UsernameFormElement>) {
     event.preventDefault();
@@ -123,107 +123,60 @@ export function SearchForm({
       onReset={handleReset}
       onSubmit={handleSubmit}
     >
-      <div className="flex flex-col">
-        <FormLabel htmlFor="keywordsInput">Cari {itemName}:</FormLabel>
-        <div className="flex items-center mt-1">
-          <InputText
-            autoComplete="off"
-            id="keywordsInput"
-            onChange={handleKeywordsChange}
-            placeholder={placeholderText}
-            type="text"
-            value={keywords}
-          />
+      <div className="flex flex-col sm:flex-row sm:items-end">
+        <div className="flex flex-1 items-center mt-1">
+          <div className="space-y-1 flex-1">
+            <FormLabel htmlFor="keywordsInput">Cari {itemName}:</FormLabel>
+            <FormGroup className="w-full">
+              <InputText
+                autoComplete="off"
+                className="focus:z-10"
+                id="keywordsInput"
+                isGroupItem
+                onChange={handleKeywordsChange}
+                placeholder={placeholderText}
+                type="text"
+                value={keywords}
+              />
+              {!isLoading && (filterItems || sortSettings?.length) && (
+                <button
+                  className="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium rounded-r-md text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                  onClick={() => setFilterModalOpen(true)}
+                >
+                  <FilterIcon
+                    aria-hidden="true"
+                    className="h-5 w-5 text-gray-400"
+                  />
+                  <span>Filter</span>
+                </button>
+              )}
+            </FormGroup>
+          </div>
+        </div>
+        <div className="flex flex-row mt-2 ml-0 sm:mt-0 sm:ml-2">
           {!autoSearch && (
-            <PrimaryButton className="ml-2" type="submit">
+            <PrimaryButton block className="flex-1" type="submit">
               Cari
             </PrimaryButton>
           )}
-          <SecondaryButton className="ml-2" type="reset">
+          <SecondaryButton block className="flex-1 ml-2" type="reset">
             Reset
           </SecondaryButton>
         </div>
       </div>
 
-      {isLoading ? (
-        <SelectSkeleton />
-      ) : filterItems && Object.keys(filterItems).length ? (
-        <>
-          <span className="block mb-2 font-medium text-gray-700">Filter</span>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {Object.entries(filterItems).map(([key, value], idx) => {
-              const { title, buckets }: any = value;
-              return (
-                <div key={`filter-${idx}`} className="space-y-1">
-                  <FormLabel htmlFor={`filter-${key}`}>{title}</FormLabel>
-                  <InputSelect
-                    name={key}
-                    onChange={handleFilterChange}
-                    title={title}
-                    value={filters?.[key]?.length ? filters[key][0] : ""}
-                  >
-                    <option value="">Semua</option>
-                    {buckets.map((bucket: any, bIdx: number) => {
-                      if (bucket.key) {
-                        if (checkDocSize) {
-                          if (bucket.doc_count > 0) {
-                            return (
-                              <option
-                                key={`option-${key}-${bIdx + 1}`}
-                                value={bucket.key}
-                              >
-                                {bucket.key}
-                              </option>
-                            );
-                          }
-                          // Do not print, when doc_count = 0 and checkDocSize set to true
-                          return null;
-                        } else {
-                          // FAQ page doesn't check the doc_count
-                          // just pass checkDocSize props to false
-                          return (
-                            <option
-                              key={`option-${key}-${bIdx + 1}`}
-                              value={bucket.key}
-                            >
-                              {bucket.key}
-                            </option>
-                          );
-                        }
-                      }
-                      return null;
-                    })}
-                  </InputSelect>
-                </div>
-              );
-            })}
-          </div>
-        </>
-      ) : null}
-
-      {isLoading ? (
-        <SelectSkeleton />
-      ) : sortSettings?.length ? (
-        <div className="grid grid-cols-2 gap-4">
-          <div className="space-y-1">
-            <FormLabel htmlFor="sort-by">Urut berdasarkan</FormLabel>
-            <InputSelect
-              name="sort-by"
-              onChange={handleSortChange}
-              title="Urut berdasarkan"
-              value={sortBy}
-            >
-              {sortSettings.map((cur, idx) => {
-                return (
-                  <option key={`sort-by-${idx}`} value={cur.value}>
-                    {cur.label}
-                  </option>
-                );
-              })}
-            </InputSelect>
-          </div>
-        </div>
-      ) : null}
+      <SearchFilterModal
+        checkDocSize={checkDocSize}
+        filterItems={filterItems}
+        filters={filters}
+        handleFilterChange={handleFilterChange}
+        handleSortChange={handleSortChange}
+        isLoading={isLoading}
+        isOpen={isFilterModalOpen}
+        onToggle={setFilterModalOpen}
+        sortBy={sortBy}
+        sortSettings={sortSettings}
+      />
     </form>
   );
 }
