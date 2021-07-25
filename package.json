@@ -11,7 +11,7 @@
     "lint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx}\"",
     "mirror-box": "ts-node etc/mirror-box.ts",
-    "netlify-export": "yarn mirror-box && yarn build && next export",
+    "netlify-export": "yarn fetch-wbw && yarn build && next export",
     "prepare": "husky install",
     "start": "next start",
     "cypress:open": "cypress open",
