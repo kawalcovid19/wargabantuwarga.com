@@ -2,10 +2,9 @@ import { BackButton } from "~/components/layout/back-button";
 import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
+import StackedLink from "~/components/layout/stacked-link";
 import config from "~/lib/config";
 
-import { ExternalLinkIcon } from "@heroicons/react/solid";
-import Link from "next/link";
 import { NextSeo } from "next-seo";
 
 const meta = {
@@ -75,45 +74,13 @@ export default function Isoman() {
               mandiri.
             </div>
             <div className="p-2 bg-gray-50 rounded-md">
-              {links.map((link, i) => (
-                <Link key={i} href={link.link}>
-                  <a target="_blank">
-                    <div
-                      className={`${
-                        i > 0 ? "border-t" : ""
-                      }  mx-2 py-4 flex justify-between`}
-                    >
-                      <div className="text-lg text-gray-900">{link.title}</div>
-
-                      <span className="text-brand-500 ml-2">
-                        <ExternalLinkIcon className="h-6 w-6" />
-                      </span>
-                    </div>
-                  </a>
-                </Link>
-              ))}
+              <StackedLink links={links} />
             </div>
             <div className="text-xl font-semibold text-gray-900 pt-6 pb-4">
               Posko Bantuan Warga
             </div>
             <div className="p-2 bg-gray-50 rounded-md">
-              {posko.map((pos, i) => (
-                <Link key={i} href={pos.link}>
-                  <a target="_blank">
-                    <div
-                      className={`${
-                        i > 0 ? "border-t-2" : ""
-                      }  mx-2 py-4 flex justify-between`}
-                    >
-                      <div className="text-lg text-gray-900">{pos.title}</div>
-
-                      <span className="text-brand-500 ml-2">
-                        <ExternalLinkIcon className="h-6 w-6" />
-                      </span>
-                    </div>
-                  </a>
-                </Link>
-              ))}
+              <StackedLink links={posko} />
             </div>
           </div>
         </PageContent>
