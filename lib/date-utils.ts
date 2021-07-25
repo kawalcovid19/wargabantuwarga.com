@@ -1,10 +1,10 @@
-const LOCALE_ID = "id";
+export const LOCALE_ID = "id";
 const NUMERIC = "numeric";
 const LONG = "long";
 
-const DEFAULT_YEAR_FORMAT = NUMERIC;
+export const DEFAULT_YEAR_FORMAT = NUMERIC;
 const DEFAULT_DAY_FORMAT = NUMERIC;
-const LONG_MONTH_FORMAT = LONG;
+export const LONG_MONTH_FORMAT = LONG;
 
 /**
  * Get current month and year in a single string

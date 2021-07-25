@@ -1,16 +1,17 @@
 import React from "react";
 
 import { faqBuilder } from "~/lib/__mocks__/builders/faq";
-import faqSheets from "~/lib/faqs";
+import faqs from "~/lib/faqs";
 
 import FaqPage, { getStaticProps } from "../../pages/faq";
 
 import { perBuild } from "@jackfranklin/test-data-bot";
 import { render, screen } from "@testing-library/react";
 
+jest.mock("~/lib/faqs");
+
 describe("FaqPage", () => {
-  const faq = faqBuilder();
-  const faqs = [faq];
+  const [faq] = faqs;
 
   it("renders the title correctly", () => {
     render(<FaqPage faqSheets={faqs} />);
@@ -60,7 +61,7 @@ describe("FaqPage", () => {
 describe("getStaticProps", () => {
   it("returns the props from the faq-sheets correctly", () => {
     expect(getStaticProps({})).toEqual({
-      props: { faqSheets },
+      props: { faqSheets: faqs },
     });
   });
 });
