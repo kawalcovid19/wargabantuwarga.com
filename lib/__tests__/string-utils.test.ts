@@ -1,4 +1,30 @@
-import { getKebabCase } from "../string-utils";
+import { getKebabCase, toSnakeCase, toTitleCase } from "../string-utils";
+
+describe("toSnakeCase", () => {
+  it.each`
+    input            | expected
+    ${"Foo Bar"}     | ${"foo_bar"}
+    ${"DKI Jakarta"} | ${"dki_jakarta"}
+  `(
+    "should return '$expected' when '$input' is provided",
+    ({ input, expected }) => {
+      expect(toSnakeCase(input as string)).toBe(expected);
+    },
+  );
+});
+
+describe("toTitleCase", () => {
+  it.each`
+    input            | expected
+    ${"foo bar"}     | ${"Foo Bar"}
+    ${"DKI Jakarta"} | ${"DKI Jakarta"}
+  `(
+    "should return '$expected' when '$input' is provided",
+    ({ input, expected }) => {
+      expect(toTitleCase(input as string)).toBe(expected);
+    },
+  );
+});
 
 describe("getKebabCase", () => {
   it.each`
