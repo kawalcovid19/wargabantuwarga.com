@@ -2,7 +2,7 @@ module.exports = {
   ...require("./test/jest-common"),
   collectCoverageFrom: [
     "./(components|etc|lib|pages)/**/*.(ts|tsx|js|jsx)",
-    "./(components|etc|lib|pages)/**/__tests__/*.test.(ts|tsx|js|jsx)",
+    "!./(components|etc|lib|pages)/**/__tests__/*.test.(ts|tsx|js|jsx)",
   ],
   coverageThreshold: {
     global: {
