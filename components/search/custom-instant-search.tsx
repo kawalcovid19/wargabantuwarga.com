@@ -1,17 +1,22 @@
 import { useCallback, useState } from "react";
 
 import CustomHits from "~/components/search/custom-hits";
+import CustomRefinementList from "~/components/search/custom-refinement-list";
 import CustomSearchBox from "~/components/search/custom-search-box";
-import { RefinementModal } from "~/components/search/refinement-modal";
+// import { RefinementModal } from "~/components/search/refinement-modal";
 import { getQueryParams } from "~/lib/string-utils";
 
 import Router from "next/router";
 import {
   Configure,
-  connectRefinementList,
+  // connectRefinementList,
   SearchState,
 } from "react-instantsearch-core";
-import { InstantSearch, InstantSearchProps } from "react-instantsearch-dom";
+import {
+  InstantSearch,
+  InstantSearchProps,
+  RefinementItem,
+} from "react-instantsearch-dom";
 import { debounce } from "ts-debounce";
 
 type FilterSetting = {
@@ -25,7 +30,7 @@ interface CustomInstantSearchProps extends InstantSearchProps {
 }
 
 const DEBOUNCE_TIME = 300;
-const VirtualRefinementList = connectRefinementList(() => null);
+// const VirtualRefinementList = connectRefinementList(() => null);
 
 export function CustomInstantSearch({
   itemName,
@@ -67,10 +72,12 @@ export function CustomInstantSearch({
   };
 
   const [searchState, setSearchState] = useState(urlToSearchState());
+  /*
   const [refinementList, setRefinementList] = useState<{
     [key: string]: string[];
   }>({});
   const [isFilterModalOpen, setFilterModalOpen] = useState<boolean>(false);
+  */
 
   const createURL = (state: SearchState) => {
     let isDefaultRoute: boolean = !state.query && state.page === 1;
@@ -123,11 +130,13 @@ export function CustomInstantSearch({
   );
 
   const onSearchStateChange = (updatedSearchState: SearchState) => {
+    /*
     if (isFilterModalOpen && updatedSearchState.refinementList) {
       setRefinementList(updatedSearchState.refinementList);
     } else {
       updatedSearchState.refinementList = refinementList;
     }
+    */
     void debouncedUpdateUrlParams(updatedSearchState);
     setSearchState(updatedSearchState);
   };
@@ -142,10 +151,11 @@ export function CustomInstantSearch({
     >
       <Configure hitsPerPage={250} />
       <CustomSearchBox
-        hasFilter={filterSettings && filterSettings.length > 0}
+        //hasFilter={filterSettings && filterSettings.length > 0}
         itemName={itemName}
-        onFilterButtonClick={() => setFilterModalOpen(true)}
+        //onFilterButtonClick={() => setFilterModalOpen(true)}
       />
+      {/*
       {filterSettings?.length &&
         filterSettings.map((filter, idx) => {
           return (
@@ -162,6 +172,21 @@ export function CustomInstantSearch({
         isOpen={isFilterModalOpen}
         onToggle={setFilterModalOpen}
       />
+      */}
+      {filterSettings?.length && (
+        <div className="pb-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {filterSettings.map((filterSetting, idx) => (
+            <CustomRefinementList
+              key={`filter-${idx}`}
+              attribute={filterSetting.field}
+              title={filterSetting.title}
+              transformItems={(items: RefinementItem<string>[]) =>
+                items.sort((a, b) => a.label.localeCompare(b.label))
+              }
+            />
+          ))}
+        </div>
+      )}
       <CustomHits />
     </InstantSearch>
   );
