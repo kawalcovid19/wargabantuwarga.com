@@ -7,20 +7,24 @@ module.exports = {
       // https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/configuration.md#assert
       */
       assertions: {
-        "categories:performance": ["warn", { minScore: 0.6 }],
+        "categories:performance": ["error", { minScore: 0.5 }],
+        "categories:accessibility": ["error", { minScore: 0.9 }],
         "categories:seo": ["warn", { minScore: 0.7 }],
-        "categories:accessibility": ["error", { minScore: 1 }],
 
-        // User Timing
-        interactive: ["warn", { minScore: 0.7 }],
-        "largest-contentful-paint": ["warn", { minScore: 0.7 }],
-        "max-potential-fid": ["warn", { minScore: 0.01 }],
+        // Core Web Vitals
+        "cumulative-layout-shift": ["warn", { minScore: 0.5 }],
+        "largest-contentful-paint": ["warn", { minScore: 0.5 }],
+        "total-blocking-time": ["warn", { minScore: 0.5 }],
 
+        // disable assertion
         canonical: "off",
         "crawlable-anchors": "off",
         "csp-xss": "off",
+        interactive: "off",
         "is-crawlable": "off",
         "legacy-javascript": "off",
+        "mainthread-work-breakdown": "off",
+        "max-potential-fid": "off",
         "no-vulnerable-libraries": "off",
         "uses-rel-preload": "off",
         "uses-rel-preconnect": "off",
@@ -28,7 +32,6 @@ module.exports = {
         "unused-javascript": "off",
         "tap-targets": ["warn", { minScore: 0.3 }],
         "dom-size": ["warn", { minScore: 0.5 }],
-        "mainthread-work-breakdown": ["warn", { minScore: 0.5 }],
       },
     },
   },
