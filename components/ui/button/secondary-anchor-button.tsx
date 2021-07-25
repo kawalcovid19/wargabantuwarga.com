@@ -7,6 +7,7 @@ import {
   buttonSizes,
   disabledStyles,
   renderButtonIcon,
+  secondaryButtonColors,
 } from "./utils";
 
 import clsx from "clsx";
@@ -27,6 +28,7 @@ export const SecondaryAnchorButton = React.forwardRef<
       type,
       block,
       size = "md",
+      color = "blue",
       rounded,
       icon,
       children,
@@ -39,7 +41,8 @@ export const SecondaryAnchorButton = React.forwardRef<
         buttonBlockStyles(block),
         buttonSizes(size),
         buttonRoundedStyles(rounded, size),
-        "items-center justify-center border border-transparent font-medium text-blue-700 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
+        "items-center justify-center border border-transparent font-medium focus:outline-none focus:ring-2 focus:ring-offset-2",
+        secondaryButtonColors(color),
         disabledStyles,
         className,
       )}

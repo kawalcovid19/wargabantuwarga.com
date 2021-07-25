@@ -11,7 +11,13 @@ export function HomePageStart() {
           lainnya
         </h2>
         <Link href="/provinces" passHref>
-          <PrimaryAnchorButton block className="mt-4" rounded size="lg">
+          <PrimaryAnchorButton
+            block
+            className="mt-4"
+            color="brand"
+            rounded
+            size="lg"
+          >
             Cek sekarang
           </PrimaryAnchorButton>
         </Link>
