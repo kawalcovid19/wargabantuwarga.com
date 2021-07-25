@@ -24,9 +24,9 @@ export default function StackedLink(list: StackedListProps) {
                 i > 0 ? "border-t" : ""
               }  mx-2 py-4 flex justify-between`}
             >
-              <div className="text-lg text-gray-900">{link.title}</div>
+              <div className="text-base text-gray-900">{link.title}</div>
 
-              <span className="text-brand-500 ml-2">
+              <span className="text-brand-500 ml-4">
                 <ExternalLinkIcon className="h-6 w-6" />
               </span>
             </div>
