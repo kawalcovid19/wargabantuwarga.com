@@ -22,8 +22,10 @@ function RefinementList({
     const filterValue = event.target.value;
     if (filterValue) {
       refine([filterValue]);
+      console.log("refine", filterValue);
     } else {
       refine([]);
+      console.log("clear filter");
     }
   }
 
