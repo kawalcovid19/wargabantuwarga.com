@@ -1,9 +1,9 @@
 import React from "react";
 
 import { faqBuilder } from "~/lib/__mocks__/builders/faq";
-import faqSheets from "~/lib/faq-databases";
+import faqSheets from "~/lib/faqs";
 
-import FaqPage, { getStaticProps } from "../faq";
+import FaqPage, { getStaticProps } from "../../pages/faq";
 
 import { render, screen } from "@testing-library/react";
 

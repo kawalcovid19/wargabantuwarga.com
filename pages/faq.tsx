@@ -5,7 +5,7 @@ import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import { SearchForm } from "~/components/search-form";
-import faqSheets, { FaqData } from "~/lib/faq-databases";
+import faqSheets, { Faq } from "~/lib/faqs";
 import { useSearch } from "~/lib/hooks/use-search";
 
 import htmr from "htmr";
@@ -13,7 +13,7 @@ import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 
 type FaqPageProps = {
-  faqSheets: FaqData[];
+  faqSheets: Faq[];
 };
 
 function groupBy<T, U>(data: T[], key: U) {
@@ -44,7 +44,7 @@ export default function FaqPage(props: FaqPageProps) {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const listFaqs = useMemo(() => {
-    return groupBy<FaqData | unknown, string>(
+    return groupBy<Faq | unknown, string>(
       filteredQuestions,
       "kategori_pertanyaan",
     );
@@ -94,7 +94,7 @@ export default function FaqPage(props: FaqPageProps) {
                   </div>
                 </div>
                 <dl className="divide-y divide-gray-200">
-                  {listFaqs[category].map((question: FaqData) => (
+                  {listFaqs[category].map((question: Faq) => (
                     <div
                       key={question.pertanyaan}
                       className="pt-6 pb-8 md:grid md:grid-cols-12 md:gap-8"

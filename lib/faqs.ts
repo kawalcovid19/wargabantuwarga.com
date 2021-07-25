@@ -1,8 +1,8 @@
 import faqSheets from "~/data/wbw-faq-sheets.json";
 
-export type Databases = FaqData[];
+export type Faqs = Faq[];
 
-export type FaqData = {
+export type Faq = {
   readonly kategori_pertanyaan: string;
   readonly pertanyaan: string;
   readonly jawaban: string;
@@ -12,4 +12,4 @@ export type FaqData = {
   readonly published_date?: string;
 };
 
-export default faqSheets as unknown as Databases;
+export default faqSheets as unknown as Faqs;

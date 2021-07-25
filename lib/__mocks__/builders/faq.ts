@@ -1,8 +1,8 @@
-import { FaqData } from "~/lib/faq-databases";
+import { Faq } from "~/lib/faqs";
 
 import { build, fake } from "@jackfranklin/test-data-bot";
 
-export const faqBuilder = build<FaqData>({
+export const faqBuilder = build<Faq>({
   fields: {
     kategori_pertanyaan: fake((f) => f.lorem.words()),
     pertanyaan: fake((f) => f.lorem.sentence()),
