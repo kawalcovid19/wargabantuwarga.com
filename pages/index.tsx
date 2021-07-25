@@ -2,6 +2,7 @@ import { attributes, html } from "~/_content/home-page.md";
 import { HomePageContent } from "~/components/home/homepage-content";
 import { HomepageHeader } from "~/components/home/homepage-header";
 import { HomePageSection } from "~/components/home/homepage-section";
+import { HomePageStart } from "~/components/home/homepage-start";
 import { Page } from "~/components/layout/page";
 import { Container } from "~/components/ui/container";
 import config from "~/lib/config";
@@ -75,6 +76,7 @@ const HomePage = () => (
     <HomepageHeader src={attributes.home_banner_image_path} />
     <HomePageContent>
       <Container>
+        <HomePageStart />
         <LastUpdatedAlert className="mt-3 mb-3" />
         <HomePageSection>
           <article className="prose prose-indigo">
