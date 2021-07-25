@@ -9,6 +9,7 @@ export type Province = {
   readonly name: string;
   readonly slug: string;
   readonly data: Contact[];
+  slug?: string;
 };
 
 export type Contact = {
