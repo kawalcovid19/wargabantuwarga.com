@@ -5,6 +5,7 @@ import faqSheets from "~/lib/faqs";
 
 import FaqPage, { getStaticProps } from "../../pages/faq";
 
+import { perBuild } from "@jackfranklin/test-data-bot";
 import { render, screen } from "@testing-library/react";
 
 describe("FaqPage", () => {
@@ -30,6 +31,7 @@ describe("FaqPage", () => {
     expect(screen.getByText(faq.pertanyaan)).toBeVisible();
     expect(screen.getByText(faq.jawaban)).toBeVisible();
   });
+
   it("renders the links correctly", () => {
     render(<FaqPage faqSheets={faqs} />);
 
@@ -38,6 +40,20 @@ describe("FaqPage", () => {
     expect(screen.getByText(/sumber:/i)).toBeVisible();
     expect(link).toBeVisible();
     expect(link).toHaveAttribute("href", faq.link);
+  });
+
+  it("renders the source without link correctly", () => {
+    const faqWithoutSourceLink = faqBuilder({
+      overrides: {
+        link: perBuild(() => undefined),
+      },
+    });
+
+    render(<FaqPage faqSheets={[faqWithoutSourceLink]} />);
+
+    expect(
+      screen.getByText(`Sumber: ${faqWithoutSourceLink.sumber}`),
+    ).toBeVisible();
   });
 });
 
