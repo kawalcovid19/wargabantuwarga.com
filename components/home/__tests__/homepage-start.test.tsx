@@ -161,6 +161,31 @@ describe("HomePageStart", () => {
             </li>
           </ul>
         </div>
+        <div
+          class="px-4 py-6"
+        >
+          <a
+            href="https://sembako.wargabantuwarga.com/"
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+          >
+            <div
+              style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="display: block; box-sizing: border-box; padding-top: 35.97560975609756%;"
+              />
+              <img
+                alt="Ajukan bantuan sembako jika positif Covid-19 - Daftar Sekarang"
+                decoding="async"
+                sizes="100vw"
+                src="https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_3840,q_90,cs_tinysrgb,f_auto/v1627206408/sembako-cta-v1_gpmaxg"
+                srcset="https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_640,q_90,cs_tinysrgb,f_auto/v1627206408/sembako-cta-v1_gpmaxg 640w, https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_750,q_90,cs_tinysrgb,f_auto/v1627206408/sembako-cta-v1_gpmaxg 750w, https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_828,q_90,cs_tinysrgb,f_auto/v1627206408/sembako-cta-v1_gpmaxg 828w, https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_1080,q_90,cs_tinysrgb,f_auto/v1627206408/sembako-cta-v1_gpmaxg 1080w, https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_1200,q_90,cs_tinysrgb,f_auto/v1627206408/sembako-cta-v1_gpmaxg 1200w, https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_1920,q_90,cs_tinysrgb,f_auto/v1627206408/sembako-cta-v1_gpmaxg 1920w, https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_2048,q_90,cs_tinysrgb,f_auto/v1627206408/sembako-cta-v1_gpmaxg 2048w, https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_3840,q_90,cs_tinysrgb,f_auto/v1627206408/sembako-cta-v1_gpmaxg 3840w"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+            </div>
+          </a>
+        </div>
       </section>
     `);
   });
