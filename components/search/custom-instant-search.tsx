@@ -27,7 +27,7 @@ type FilterSetting = {
 interface CustomInstantSearchProps extends InstantSearchProps {
   itemName: string;
   filterSettings?: FilterSetting[];
-  useFilterModal: boolean;
+  useFilterModal?: boolean;
 }
 
 const DEBOUNCE_TIME = 300;
