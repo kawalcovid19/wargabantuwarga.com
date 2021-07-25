@@ -13,8 +13,8 @@ module.exports = {
 
         // Core Web Vitals
         "cumulative-layout-shift": ["warn", { minScore: 0.5 }],
-        "largest-contentful-paint": ["warn", { minScore: 0.5 }],
-        "total-blocking-time": ["warn", { minScore: 0.5 }],
+        "largest-contentful-paint": ["warn", { minScore: 0.25 }],
+        "total-blocking-time": ["warn", { minScore: 0.1 }],
 
         // disable assertion
         canonical: "off",
