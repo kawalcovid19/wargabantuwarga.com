@@ -51,7 +51,9 @@ export function FAQList(props: FaqListProps) {
                   </dt>
                   <dd className="mt-2 md:mt-0 md:col-span-7">
                     <p className="text-base text-gray-500">
-                      {htmr(question.jawaban)}
+                      {htmr(
+                        question.jawaban.replace(/(?:\r\n|\r|\n)/g, "<br>"),
+                      )}
                     </p>
                     <small>
                       Sumber:{" "}

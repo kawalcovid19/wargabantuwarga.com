@@ -38,7 +38,7 @@ export function CustomInstantSearch({
   filterSettings,
   indexName,
   searchClient,
-  useFilterModal = true,
+  useFilterModal = false,
 }: CustomInstantSearchProps) {
   const router = useRouter();
   const urlToSearchState = () => {
