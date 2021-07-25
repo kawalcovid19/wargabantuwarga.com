@@ -11,7 +11,7 @@ import React, {
   useState,
 } from "react";
 
-import { PrimaryButton, SecondaryButton } from "./ui/button";
+import { PrimaryButton } from "./ui/button";
 import { FormLabel } from "./ui/forms/form-label";
 import { InputText } from "./ui/forms/input-text";
 
@@ -70,14 +70,6 @@ export function SearchForm({
     onSubmitKeywords(keywords, {}, sortBy);
   }
 
-  function handleReset(event: FormEvent<UsernameFormElement>) {
-    event.preventDefault();
-    setKeywords("");
-    setFilters({});
-    setSortBy(defaultSort);
-    onSubmitKeywords("");
-  }
-
   const debouncedSearch = useCallback(
     debounce(
       (keywordsValue: string, filtersValue?: any, sortValue?: string) =>
@@ -121,11 +113,7 @@ export function SearchForm({
   }, [initialValue]);
 
   return (
-    <form
-      className="pb-8 space-y-4"
-      onReset={handleReset}
-      onSubmit={handleSubmit}
-    >
+    <form className="pb-8 space-y-4" onSubmit={handleSubmit}>
       <div className="flex flex-col sm:flex-row sm:items-end">
         <div className="flex flex-1 items-center mt-1">
           <div className="space-y-1 flex-1">
@@ -158,16 +146,13 @@ export function SearchForm({
             </FormGroup>
           </div>
         </div>
-        <div className="flex flex-row mt-2 ml-0 sm:mt-0 sm:ml-2">
-          {!autoSearch && (
+        {!autoSearch && (
+          <div className="flex flex-row mt-2 ml-0 sm:mt-0 sm:ml-2">
             <PrimaryButton block className="flex-1" type="submit">
               Cari
             </PrimaryButton>
-          )}
-          <SecondaryButton block className="flex-1 ml-2" type="reset">
-            Reset
-          </SecondaryButton>
-        </div>
+          </div>
+        )}
       </div>
 
       {useFilterModal ? (
