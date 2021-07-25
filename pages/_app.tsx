@@ -83,6 +83,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <link href="/manifest.json" rel="manifest" />
         <meta content="#1667C2" name="theme-color" />
       </Head>
+
       <Script
         dangerouslySetInnerHTML={{
           __html: `(function(w,d,s,l,i){w[l] = w[l] || [];w[l].push({'gtm.start':
