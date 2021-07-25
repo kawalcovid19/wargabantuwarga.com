@@ -1,66 +1,35 @@
 name: Lighthouse CI
 
 on:
-  workflow_run:
-    workflows: ["Triggering LHCI"]
-    types:
-      - completed
+  push:
+    branches: [main]
+  pull_request:
+    types: [labeled]
+
 jobs:
   lhci:
     name: Run Lighthouse CI
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    if: ${{ !contains(github.event.pull_request.labels.*.names, 'need-perf-check') }}
+
     steps:
       - uses: actions/checkout@v2
+
       - uses: actions/setup-node@v1
         with:
           node-version: "14"
 
-      - name: 'Download artifact'
-        uses: actions/github-script@v3.1.0
-        with:
-          script: |
-            var artifacts = await github.actions.listWorkflowRunArtifacts({
-               owner: context.repo.owner,
-               repo: context.repo.repo,
-               run_id: ${{github.event.workflow_run.id }},
-            });
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
 
-            var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
-              return artifact.name == "lhartifact"
-            })[0];
-
-            var download = await github.actions.downloadArtifact({
-               owner: context.repo.owner,
-               repo: context.repo.repo,
-               artifact_id: matchArtifact.id,
-               archive_format: 'zip',
-            });
-
-            var fs = require('fs');
-            fs.writeFileSync('${{github.workspace}}/lhartifact.zip', Buffer.from(download.data));
-
-      - run: unzip lhartifact.zip
-
-      - name: 'Get netlify preview domain'
+      - name: Wait for the Netlify Preview
+        uses: jakepartusch/wait-for-netlify-action@v1
         id: netlify
-        uses: actions/github-script@v3
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            var fs = require('fs');
-            var netlify = String(fs.readFileSync('./netlify'));
-            console.log(netlify)
-
-      - name: 'Get PR number'
-        id: prnumber
-        uses: actions/github-script@v3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            var fs = require('fs');
-            var pr = Number(fs.readFileSync('./pr'));
-            console.log(pr)
+          site_name: 'wargabantuwarga'
 
       - name: "Lighthouse CI (Preview)"
         id: lhci
@@ -69,25 +38,14 @@ jobs:
           yarn global add @lhci/cli@0.8.x
           echo -e "\n"
           echo "Start collecting LH report..."
-          lhci collect --url=${{join(steps.netlify.outputs.*, '')}} -n=1
+          lhci collect --url=${{ steps.netlify.outputs.url }} -n=1
           echo -e "\n"
           echo "Start asserting score..."
           lhci assert --config=./lighthouserc.js
           echo -e "\n"
           echo "Start uploading the report..."
-          lhci upload --target "temporary-public-storage"
-
-      - name: 'Comment on PR'
-        uses: actions/github-script@v3
+          lhci upload --target "temporary-public-storage" --githubAppToken "$LHCI_GITHUB_APP_TOKEN"
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            var fs = require('fs');
-            var issue_number = Number(fs.readFileSync('./pr'));
-
-            await github.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: issue_number,
-              body: 'Everything is OK. ${{join(steps.lhci.outputs.*, '\n')}}'
-            });
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
