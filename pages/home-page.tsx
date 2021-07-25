@@ -2,8 +2,8 @@ import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import { Script } from "~/components/script";
 import data from "~/data/wbw.json";
+import { bannerBlurData, cloudinaryLoader } from "~/lib/cloudinary-loader";
 import config from "~/lib/config";
-import { bannerBlurData, imgixLoader } from "~/lib/imgix-loader";
 
 import { GetStaticProps } from "next";
 import Head from "next/head";
@@ -64,11 +64,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   blurDataURL={bannerBlurData}
                   height={287}
                   layout="responsive"
-                  loader={imgixLoader}
+                  loader={cloudinaryLoader}
                   placeholder="blur"
                   priority={true}
-                  quality={70}
-                  src="hero_banner.png"
+                  src="v1626975062/hero_banner_pdx3xp.png"
                   width={640}
                 />
               </a>

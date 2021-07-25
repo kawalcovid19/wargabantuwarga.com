@@ -11,6 +11,7 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    "sourceMap": true,
     "strict": true,
     "target": "es5",
     "typeRoots": ["./@types", "./node_modules/@types"],
@@ -23,7 +24,8 @@
   "include": ["env.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "ts-node": {
     "compilerOptions": {
-      "module": "commonjs"
+      "module": "commonjs",
+      "sourceMap": true
     }
   }
 }
