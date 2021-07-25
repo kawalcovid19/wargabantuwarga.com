@@ -5,7 +5,7 @@ import CustomSearchBox from "~/components/search/custom-search-box";
 import { RefinementModal } from "~/components/search/refinement-modal";
 import { getQueryParams } from "~/lib/string-utils";
 
-import { useRouter } from "next/router";
+import Router from "next/router";
 import {
   Configure,
   connectRefinementList,
@@ -33,7 +33,6 @@ export function CustomInstantSearch({
   indexName,
   searchClient,
 }: CustomInstantSearchProps) {
-  const router = useRouter();
   const urlToSearchState = () => {
     const searchParams: SearchState = {};
     if (typeof window !== "undefined") {
@@ -102,7 +101,7 @@ export function CustomInstantSearch({
       });
     }
 
-    return `${router.basePath}${
+    return `${window.location.pathname}${
       queryParameters.length ? `?${queryParameters.join("&")}` : ``
     }`;
   };
@@ -113,7 +112,7 @@ export function CustomInstantSearch({
   const debouncedUpdateUrlParams = useCallback(
     debounce(
       (updatedSearchState: SearchState) =>
-        router.push(searchStateToUrl(updatedSearchState), undefined, {
+        Router.push(searchStateToUrl(updatedSearchState), undefined, {
           shallow: true,
         }),
       DEBOUNCE_TIME,

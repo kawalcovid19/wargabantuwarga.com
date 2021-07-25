@@ -20,7 +20,6 @@ function SearchBox({
   refine,
   itemName,
   placeholderText,
-  isSearchStalled,
   hasFilter,
   onFilterButtonClick,
 }: CustomSearchBoxProvided) {
@@ -41,7 +40,7 @@ function SearchBox({
                 type="search"
                 value={currentRefinement}
               />
-              {!isSearchStalled && hasFilter && onFilterButtonClick && (
+              {hasFilter && onFilterButtonClick && (
                 <button
                   className="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium rounded-r-md text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
                   onClick={(event) => {
