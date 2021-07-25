@@ -1,6 +1,6 @@
 import { bannerBlurData, cloudinaryLoader } from "~/lib/cloudinary-loader";
 
-import { Container } from "../layout/container";
+import { Container } from "../ui/container";
 import { WBWLogoBlack } from "../ui/wbw-logo";
 
 import Image from "next/image";

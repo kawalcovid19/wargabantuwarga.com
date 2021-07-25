@@ -2,8 +2,8 @@ import { attributes, html } from "~/_content/home-page.md";
 import { HomePageContent } from "~/components/home/homepage-content";
 import { HomepageHeader } from "~/components/home/homepage-header";
 import { HomePageSection } from "~/components/home/homepage-section";
-import { Container } from "~/components/layout/container";
 import { Page } from "~/components/layout/page";
+import { Container } from "~/components/ui/container";
 import config from "~/lib/config";
 import {
   heading1Transformer,

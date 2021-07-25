@@ -3,7 +3,7 @@ import * as React from "react";
 import { Breadcrumb, BreadcrumbItem } from "~/components/ui/breadcrumb";
 import { makeBreadcrumbJsonLd } from "~/lib/jsonld-generator";
 
-import { Container } from "./container";
+import { Container } from "../ui/container";
 
 import Head from "next/head";
 

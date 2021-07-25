@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Container } from "./container";
+import { Container } from "../ui/container";
 
 export const PageContent: React.FC = ({ children }) => {
   return (
