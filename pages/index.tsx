@@ -58,7 +58,7 @@ const LastUpdatedAlert = () => (
 const HomePage = () => (
   <Page>
     <NextSeo title={meta.title} titleTemplate="%s" />
-    <HomepageHeader />
+    <HomepageHeader src={attributes.home_banner_image_path} />
     <PageContent>
       <LastUpdatedAlert />
       <article className="prose prose-indigo p-4 bg-white shadow overflow-hidden rounded-md">

@@ -4,14 +4,16 @@ import { WBWLogoBlack } from "../ui/wbw-logo";
 
 import Image from "next/image";
 
-export function HomepageHeader() {
+const FALLBACK_SRC = "v1627049958/hero_banner_desktop_zat71c.png";
+
+export function HomepageHeader({ src = FALLBACK_SRC }) {
   return (
     <header>
       <div className="max-w-xl mx-auto">
         <div className="relative">
           <div aria-hidden className="select-none">
             <Image
-              alt="Background"
+              alt="WargaBantuWarga background"
               blurDataURL={bannerBlurData}
               height={288}
               layout="responsive"
@@ -19,7 +21,7 @@ export function HomepageHeader() {
               placeholder="blur"
               priority={true}
               quality={90}
-              src="v1627049958/hero_banner_desktop_zat71c.png"
+              src={src}
               width={640}
             />
           </div>
