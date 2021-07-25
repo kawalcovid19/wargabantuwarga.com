@@ -12,7 +12,6 @@ import { getProvinceMeta } from "~/lib/meta";
 import provinces, { Contact, getProvincesPaths } from "~/lib/provinces";
 
 import { GetStaticPaths, GetStaticProps } from "next";
-import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
 
 type ProvinceProps = {
@@ -23,7 +22,6 @@ type ProvinceProps = {
 
 export default function ProvincePage(props: ProvinceProps) {
   const { provinceName, provinceSlug, contactList } = props;
-  const router = useRouter();
   const [
     filteredContacts,
     handleSubmitKeywords,
@@ -80,7 +78,7 @@ export default function ProvincePage(props: ProvinceProps) {
             },
             {
               name: provinceName,
-              href: `/provinces/${router.query.provinceSlug}`,
+              href: `/provinces/${provinceSlug}`,
               current: true,
             },
           ]}
@@ -95,10 +93,6 @@ export default function ProvincePage(props: ProvinceProps) {
             itemName="kontak"
             onSubmitKeywords={handleSubmitKeywords}
             placeholderText="Cari berdasarkan kontak, alamat, provider, dan keterangan"
-            sortSettings={[
-              { value: "verified_first", label: "Terverifikasi" },
-              { value: "penyedia_asc", label: "Nama" },
-            ]}
           />
           <ContactList
             data={filteredContacts}
