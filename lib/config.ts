@@ -1,4 +1,4 @@
-import config from "../config.json";
+import config from "~/_content/site-config.json";
 
 type Config = {
   readonly site_name: string;

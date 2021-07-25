@@ -174,7 +174,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/32661241?v=4",
       "profile": "https://github.com/Namchee",
       "contributions": [
-        "code"
+        "code",
+        "doc"
       ]
     },
     {
@@ -183,7 +184,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/46273747?v=4",
       "profile": "https://github.com/faizrktm",
       "contributions": [
-        "code"
+        "code",
+        "tool"
       ]
     },
     {
@@ -260,7 +262,19 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/3627108?v=4",
       "profile": "https://github.com/syauqy",
       "contributions": [
-        "code"
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "fncolon",
+      "name": "Muhammad Fauzan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/50759463?v=4",
+      "profile": "https://linktr.ee/funfuncfunction",
+      "contributions": [
+        "doc",
+        "code",
+        "ideas"
       ]
     }
   ],

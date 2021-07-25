@@ -1,14 +1,14 @@
 import * as React from "react";
 
-const WhatsAppLogo: React.FC<React.SVGProps<SVGSVGElement>> = ({
+export const WhatsAppLogo: React.FC<React.SVGProps<SVGSVGElement>> = ({
   width,
   height,
-  fill = "#4C5461",
+  fill = "currentColor",
   ...props
 }) => {
   return (
     <svg
-      fill="#000000"
+      fill="none"
       height="24px"
       viewBox="0 0 24 24"
       width="24px"
@@ -22,5 +22,3 @@ const WhatsAppLogo: React.FC<React.SVGProps<SVGSVGElement>> = ({
     </svg>
   );
 };
-
-export default WhatsAppLogo;

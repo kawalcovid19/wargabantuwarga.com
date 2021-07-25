@@ -41,7 +41,7 @@ export const WhiteButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         buttonBlockStyles(block),
         buttonSizes(size),
         buttonRoundedStyles(rounded, size),
-        "items-center border border-transparent font-medium shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
+        "items-center justify-center border border-transparent font-medium shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
         "disabled:cursor-not-allowed",
         disabledStyles,
         className,

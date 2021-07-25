@@ -22,35 +22,13 @@ export function toTitleCase(str: string): string {
 }
 
 /**
- * Convert all whitespaces in a string to camelCase
- *
- * @param {string} str input string
- * @returns {string} camelCased and whitespace-free version of `str`
- */
-export function replaceSpacesWithCamelCase(str: string): string {
-  return str.replace(/\s+/g, (s) => {
-    return s.substring(0, 1).toUpperCase() + s.substring(1);
-  });
-}
-
-/**
  * Replace all non-alphanumeric character in a string with space
  *
  * @param {string} str input string
  * @returns {string} `str`, without non-alphanumeric characters
  */
 export function replaceSpecialCharacterWithSpace(str: string): string {
-  return str.replace(/[^a-zA-Z0-9. ]/g, " ");
-}
-
-/**
- * Remove all whitespaces from a string
- *
- * @param {string} str input string
- * @returns {string} whitespace-free version of `str`
- */
-export function removeSpaces(str: string): string {
-  return str.replace(/\s+/g, "");
+  return str.replace(/[^a-zA-Z0-9]/g, " ");
 }
 
 /**
@@ -60,7 +38,10 @@ export function removeSpaces(str: string): string {
  * @returns {string} kebab-cased version of `str`
  */
 export function convertToKebabCase(str: string): string {
-  return str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+  return str
+    .replace(/([a-z])([A-Z])/g, "$1-$2")
+    .replace(/[\s_.]+/g, "-")
+    .toLowerCase();
 }
 
 /**
@@ -70,11 +51,7 @@ export function convertToKebabCase(str: string): string {
  * @returns {string} kebab-cased version of `str`
  */
 export function getKebabCase(str?: string): string {
-  return convertToKebabCase(
-    removeSpaces(
-      replaceSpecialCharacterWithSpace(replaceSpacesWithCamelCase(str ?? "")),
-    ),
-  );
+  return convertToKebabCase(replaceSpecialCharacterWithSpace(str ?? "").trim());
 }
 
 /**
@@ -109,19 +86,6 @@ export function allIsEmptyString(array: string[]) {
  */
 export function toSecond(hrtime: [number, number]): string {
   return (hrtime[0] + hrtime[1] / 1e9).toFixed(3);
-}
-
-/**
- * Build a function pipeline
- *
- * @param {Function[]} functions array of functions, ordered by the expected
- * order of execution
- * @returns {Function} chained functions
- */
-export function composeFunctions(...functions: Function[]): Function {
-  return (args: unknown) => {
-    return functions.reduce((acc, fn) => fn(acc), args);
-  };
 }
 
 /**
@@ -164,7 +128,7 @@ export function getQueryParams(query: string): {} {
   return query
     ? (/^[?#]/.test(query) ? query.slice(1) : query)
         .split("&")
-        .reduce((params: any, param) => {
+        .reduce((params: Record<string, string>, param) => {
           const [key, value] = param.split("=");
           params[key] = value
             ? decodeURIComponent(value.replace(/\+/g, " "))
