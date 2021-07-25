@@ -8,6 +8,8 @@
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
+[![codecov](https://codecov.io/gh/kawalcovid19/wargabantuwarga.com/branch/main/graph/badge.svg?token=zFsEIQ4bhy)](https://codecov.io/gh/kawalcovid19/wargabantuwarga.com) [![CI](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/test.yml/badge.svg)](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/test.yml) [![Deploy](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/deploy.yml/badge.svg)](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/deploy.yml)
+
 A society initiative to circulate information about health facilities and devices for COVID-19.
 
 ## Purpose and Principles
