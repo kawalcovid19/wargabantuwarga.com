@@ -1,9 +1,9 @@
-import { FaqData } from "~/lib/faq-databases";
+import { Faq } from "~/lib/faqs";
 
 import htmr from "htmr";
 
-type FAQListProps = {
-  data: FaqData[];
+type FaqListProps = {
+  data: Faq[];
 };
 
 function groupBy<T, U>(data: T[], key: U) {
@@ -17,7 +17,7 @@ function groupBy<T, U>(data: T[], key: U) {
   }, {});
 }
 
-export function FAQList(props: FAQListProps) {
+export function FAQList(props: FaqListProps) {
   const listFaqs = groupBy(props.data, "kategori_pertanyaan");
   return (
     <div className="space-y-4">
@@ -41,7 +41,7 @@ export function FAQList(props: FAQListProps) {
               </div>
             </div>
             <dl className="divide-y divide-gray-200">
-              {listFaqs[category].map((question: FaqData) => (
+              {listFaqs[category].map((question: Faq) => (
                 <div
                   key={question.pertanyaan}
                   className="pt-6 pb-8 md:grid md:grid-cols-12 md:gap-8"

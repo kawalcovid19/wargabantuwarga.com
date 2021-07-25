@@ -1,15 +1,15 @@
 import { FAQList } from "~/components/faq-list";
-import { FaqData } from "~/lib/faq-databases";
+import { Faq } from "~/lib/faqs";
 
 import { StateResultsProvided } from "react-instantsearch-core";
 import { connectStateResults } from "react-instantsearch-dom";
 
 function Hits(stateResults: StateResultsProvided) {
   const { searchResults } = stateResults;
-  let results: FaqData[];
+  let results: Faq[];
 
   try {
-    results = searchResults.hits as unknown as FaqData[];
+    results = searchResults.hits as unknown as Faq[];
   } catch (e) {
     results = [];
   }
