@@ -15,7 +15,7 @@ describe("ProvincePage", () => {
       <ProvincePage
         contactList={province.data}
         provinceName={province.name}
-        provinceSlug={province.slug as string}
+        provinceSlug={province.slug}
       />,
     );
 

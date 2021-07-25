@@ -3,7 +3,7 @@ import React from "react";
 import { provinceListItemBuilder } from "~/components/__mocks__/builders/province-list";
 import { dateMockBuilder } from "~/lib/__mocks__/builders/date-mock";
 import provinces from "~/lib/provinces";
-import { getInitial, getSlug } from "~/lib/string-utils";
+import { getInitial } from "~/lib/string-utils";
 import ProvincesPage, { getStaticProps } from "~/pages/provinces";
 
 import { render, screen, within } from "@testing-library/react";
@@ -69,13 +69,12 @@ describe("ProvincesPage", () => {
 describe("getStaticProps", () => {
   it("transforms provinces into provinceList props correctly", () => {
     // TODO: Do a better test because this test is merely a copy of the implementation
-    const provinceList = provinces.map(({ name, data }, index) => ({
+    const provinceList = provinces.map(({ name, data, slug }) => ({
       initials: getInitial(name),
       name,
-      slug: getSlug(name, index),
+      slug,
       count: data.length,
     }));
-    provinceList.shift();
     expect(getStaticProps({})).toEqual({
       props: {
         provincesList: provinceList,

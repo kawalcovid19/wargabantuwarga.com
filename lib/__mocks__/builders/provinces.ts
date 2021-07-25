@@ -1,5 +1,3 @@
-import { getSlug } from "~/lib/string-utils";
-
 import { Contact, Province } from "../../provinces";
 
 import { build, fake, oneOf, sequence } from "@jackfranklin/test-data-bot";
@@ -32,9 +30,5 @@ export const provinceBuilder = build<Province>({
     name: fake((f) => f.address.state()),
     slug: fake((f) => f.lorem.slug()),
     data: [contactBuilder()],
-  },
-  postBuild: (province) => {
-    province.slug = getSlug(province.name, province.id);
-    return province;
   },
 });
