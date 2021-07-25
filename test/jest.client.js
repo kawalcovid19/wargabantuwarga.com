@@ -3,5 +3,8 @@ module.exports = {
   displayName: "client",
   testEnvironment: "jest-environment-jsdom",
   setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
-  testMatch: ["**/(components|pages)/**/__tests__/*.test.(ts|tsx|js|jsx)"],
+  testMatch: [
+    "**/components/**/__tests__/*.test.(ts|tsx|js|jsx)",
+    "**/__tests__/pages/**/*.test.(ts|tsx|js|jsx)",
+  ],
 };
