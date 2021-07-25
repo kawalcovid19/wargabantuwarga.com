@@ -12,7 +12,7 @@ import htmr from "htmr";
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 
-type FaqsProps = {
+type FaqPageProps = {
   faqSheets: FaqData[];
 };
 
@@ -31,7 +31,7 @@ const meta = {
   title: "Pertanyaan yang sering ditanyakan",
 };
 
-export default function Faqs(props: FaqsProps) {
+export default function FaqPage(props: FaqPageProps) {
   const { faqSheets: faq } = props;
   const [filteredQuestions, handleSubmitKeywords, urlParams, filterItems] =
     useSearch({
