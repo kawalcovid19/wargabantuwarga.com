@@ -55,3 +55,9 @@ collections:
               widget: "markdown",
               hint: "Page body",
             }
+          - {
+              label: "Banner Image",
+              name: "home_banner_image_path",
+              widget: "string",
+              hint: "Cloudinary image path, eg. `v12345/my_file.png`",
+            }

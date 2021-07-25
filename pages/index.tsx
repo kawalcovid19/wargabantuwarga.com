@@ -72,7 +72,7 @@ const LastUpdatedAlert = ({ className, style }: LastUpdatedAlertProps) => (
 const HomePage = () => (
   <Page>
     <NextSeo title={meta.title} titleTemplate="%s" />
-    <HomepageHeader />
+    <HomepageHeader src={attributes.home_banner_image_path} />
     <HomePageContent>
       <Container>
         <LastUpdatedAlert className="mt-3 mb-3" />
