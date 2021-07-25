@@ -28,6 +28,7 @@ export const provinceBuilder = build<Province>({
   fields: {
     id: sequence(),
     name: fake((f) => f.address.state()),
+    slug: fake((f) => f.lorem.slug()),
     data: [contactBuilder()],
   },
 });
