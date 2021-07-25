@@ -1,4 +1,4 @@
-import { Contact, Province } from "../provinces";
+import { Contact, Province } from "../../provinces";
 
 import { build, fake, oneOf, sequence } from "@jackfranklin/test-data-bot";
 
