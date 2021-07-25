@@ -19,6 +19,7 @@ import { debounce } from "ts-debounce";
 import { SearchFilterModal, SortSetting } from "./search-filter-modal";
 import { FormGroup } from "./ui/forms/form-group";
 import { FilterIcon } from "@heroicons/react/outline";
+import { SearchFilter } from "~/components/search-filter";
 
 interface FormElements extends HTMLFormControlsCollection {
   keywordsInput: HTMLInputElement;
@@ -42,6 +43,7 @@ interface SearchFormProps {
   };
   isLoading?: boolean;
   sortSettings?: SortSetting[];
+  useFilterModal?: boolean;
 }
 
 export function SearchForm({
@@ -54,6 +56,7 @@ export function SearchForm({
   initialValue,
   isLoading,
   sortSettings,
+  useFilterModal = false,
 }: SearchFormProps) {
   const defaultSort = sortSettings?.length ? sortSettings[0].value : "";
   const [keywords, setKeywords] = useState<string>("");
@@ -138,18 +141,20 @@ export function SearchForm({
                 type="text"
                 value={keywords}
               />
-              {!isLoading && (filterItems || sortSettings?.length) && (
-                <button
-                  className="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium rounded-r-md text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-                  onClick={() => setFilterModalOpen(true)}
-                >
-                  <FilterIcon
-                    aria-hidden="true"
-                    className="h-5 w-5 text-gray-400"
-                  />
-                  <span>Filter</span>
-                </button>
-              )}
+              {useFilterModal &&
+                !isLoading &&
+                (filterItems || sortSettings?.length) && (
+                  <button
+                    className="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium rounded-r-md text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                    onClick={() => setFilterModalOpen(true)}
+                  >
+                    <FilterIcon
+                      aria-hidden="true"
+                      className="h-5 w-5 text-gray-400"
+                    />
+                    <span>Filter</span>
+                  </button>
+                )}
             </FormGroup>
           </div>
         </div>
@@ -165,18 +170,31 @@ export function SearchForm({
         </div>
       </div>
 
-      <SearchFilterModal
-        checkDocSize={checkDocSize}
-        filterItems={filterItems}
-        filters={filters}
-        handleFilterChange={handleFilterChange}
-        handleSortChange={handleSortChange}
-        isLoading={isLoading}
-        isOpen={isFilterModalOpen}
-        onToggle={setFilterModalOpen}
-        sortBy={sortBy}
-        sortSettings={sortSettings}
-      />
+      {useFilterModal ? (
+        <SearchFilterModal
+          checkDocSize={checkDocSize}
+          filterItems={filterItems}
+          filters={filters}
+          handleFilterChange={handleFilterChange}
+          handleSortChange={handleSortChange}
+          isLoading={isLoading}
+          isOpen={isFilterModalOpen}
+          onToggle={setFilterModalOpen}
+          sortBy={sortBy}
+          sortSettings={sortSettings}
+        />
+      ) : (
+        <SearchFilter
+          checkDocSize={checkDocSize}
+          filterItems={filterItems}
+          filters={filters}
+          handleFilterChange={handleFilterChange}
+          handleSortChange={handleSortChange}
+          isLoading={isLoading}
+          sortBy={sortBy}
+          sortSettings={sortSettings}
+        />
+      )}
     </form>
   );
 }
