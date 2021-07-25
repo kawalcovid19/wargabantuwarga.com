@@ -9,7 +9,7 @@ jobs:
     name: Run Lighthouse CI for Pull Request
     runs-on: ubuntu-latest
 
-    if: ${{ !contains(github.event.pull_request.labels.*.names, 'need-perf-check') }}
+    if: ${{ github.event.label.name == 'need-perf-check' }}
 
     steps:
       - uses: actions/checkout@v2

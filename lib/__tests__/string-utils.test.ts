@@ -1,4 +1,12 @@
-import { getKebabCase, toSnakeCase, toTitleCase } from "../string-utils";
+import {
+  allIsEmptyString,
+  getInitial,
+  getKebabCase,
+  getTheLastSegmentFromKebabCase,
+  isNotEmpty,
+  toSnakeCase,
+  toTitleCase,
+} from "../string-utils";
 
 describe("toSnakeCase", () => {
   it.each`
@@ -43,6 +51,58 @@ describe("getKebabCase", () => {
     "should return '$expected' when '$input' is provided",
     ({ input, expected }) => {
       expect(getKebabCase(input as string)).toBe(expected);
+    },
+  );
+});
+
+describe("isNotEmpty", () => {
+  it.each`
+    input            | expected
+    ${""}            | ${false}
+    ${"DKI Jakarta"} | ${true}
+  `(
+    "should return '$expected' when '$input' is provided",
+    ({ input, expected }) => {
+      expect(isNotEmpty(input as string)).toBe(expected);
+    },
+  );
+});
+
+describe("getInitial", () => {
+  it.each`
+    input            | expected
+    ${"dki jakarta"} | ${"D"}
+  `(
+    "should return '$expected' when '$input' is provided",
+    ({ input, expected }) => {
+      expect(getInitial(input as string)).toBe(expected);
+    },
+  );
+});
+
+describe("allIsEmptyString", () => {
+  it.each`
+    input                  | expected
+    ${["dki-jakarta"]}     | ${false}
+    ${["dki-jakarta", ""]} | ${false}
+    ${[""]}                | ${true}
+  `(
+    "should return '$expected' when '$input' is provided",
+    ({ input, expected }) => {
+      expect(allIsEmptyString(input as string[])).toBe(expected);
+    },
+  );
+});
+
+describe("getTheLastSegmentFromKebabCase", () => {
+  it.each`
+    input                    | expected
+    ${"dki-jakarta"}         | ${"jakarta"}
+    ${"jakarta-bukan-pusat"} | ${"pusat"}
+  `(
+    "should return '$expected' when '$input' is provided",
+    ({ input, expected }) => {
+      expect(getTheLastSegmentFromKebabCase(input as string)).toBe(expected);
     },
   );
 });
