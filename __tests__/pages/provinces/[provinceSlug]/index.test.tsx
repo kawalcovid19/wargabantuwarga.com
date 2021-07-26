@@ -1,7 +1,10 @@
 import React from "react";
 
 import provinces from "~/lib/provinces";
-import ProvincePage, { getStaticPaths } from "~/pages/provinces/[provinceSlug]";
+import ProvincePage, {
+  getStaticPaths,
+  getStaticProps,
+} from "~/pages/provinces/[provinceSlug]";
 
 import { render, screen } from "@testing-library/react";
 
@@ -40,6 +43,24 @@ describe("getStaticPaths", () => {
     expect(getStaticPaths({})).toEqual({
       fallback: false,
       paths,
+    });
+  });
+});
+
+describe("getStaticProps", () => {
+  const [province] = provinces;
+  const [unverifiedContact, verifiedContact] = province.data;
+  it("gets the provinceName and sorted contactList from the provinceSlug params", () => {
+    expect(
+      getStaticProps({
+        params: { provinceSlug: province.slug },
+      }),
+    ).toEqual({
+      props: {
+        provinceSlug: province.slug,
+        provinceName: province.name,
+        contactList: [verifiedContact, unverifiedContact],
+      },
     });
   });
 });
