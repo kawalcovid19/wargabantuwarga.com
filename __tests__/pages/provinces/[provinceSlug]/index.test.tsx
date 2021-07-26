@@ -63,4 +63,14 @@ describe("getStaticProps", () => {
       },
     });
   });
+
+  it("returns an empty provinceName and null contactList given a non-existent provinceSlug", () => {
+    expect(getStaticProps({ params: { provinceSlug: "foo" } })).toEqual({
+      props: {
+        provinceSlug: "foo",
+        provinceName: "",
+        contactList: null,
+      },
+    });
+  });
 });
