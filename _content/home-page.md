@@ -1,5 +1,5 @@
 ---
-last_updated_time: 2021-07-26T01:39:48.797Z
+last_updated_time: 2021-07-26T01:50:18.101Z
 ---
 *\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19, kontak fasilitas/alat kesehatan, dan wadah untuk saling bantu antar warga. Data di #WargaBantuWarga dikumpulkan oleh para relawan.* 
 
@@ -54,12 +54,8 @@ Temukan situs atau kontak fasilitas/alat kesehatan untuk COVID-19 di tingkat nas
 
 #### Butuh Donor Plasma atau Ingin Donor Plasma?
 
-* Hubungi Contact Center BNPB - Donor Konvalesen: 117 ext. 5
-* [Klik situs ahaha.id untuk cari donor atau mendonorkan plasma](https://ahaha.id)
-* [Klik Blood4Life untuk cari donor atau mendonorkan plasma](https://blood4life.id)
-* [Klik situs Reblood untuk cari donor atau mendonorkan plasma](https://reblood.com)
-* [Klik situs @BantuCovid untuk melihat list orang yang mendonorkan dan membutuhkan donor plasma](https://konvalesenid.wixsite.com/dashboard)
-* [Klik untuk mendonorkan plasma (bukan menerima donor plasma) kolaborasi Satgas COVID-19 dan PMI](https://plasmakonvalesen.covid19.go.id)
+* Hubungi Contact Center BNPB - Donor Konvalesen: 117 ext
+* [Lihat database layanan donor plasma di sini](https://docs.google.com/spreadsheets/d/16cEvcUm9UjlxEgpP4Gu_5XBdeHW6zCOBzx4frQADD3I/edit?usp=sharing)
 
 #### Mau Konsultasi Medis dengan Dokter (Telemedicine)?
 
@@ -181,17 +177,10 @@ Kumpulan informasi terbaru COVID-19, tips menjaga kesehatan selama pandemi, vaks
 
 ## Donasi dan Penggalangan Dana
 
-Kumpulan informasi mengenai donasi, nomor rekening, dan lainnya yang relevan dengan bantuan COVID-19.
+Kumpulan informasi mengenai donasi, nomor rekening, dan lainnya yang relevan dengan bantuan COVID-19.[](https://kitabisa.com/campaign/wargabantuwarga)
 
-* [Donasi untuk berbagai kebutuhan (RS, Puskesmas, Nakes, dan Warga Terdampak)](https://kitabisa.com/campaign/daruratcovid2021)
-* [Donasi untuk Tenaga Kesehatan](https://kitabisa.com/campaign/seonhohadalawancorona)
-* [Donasi untuk Inisiatif #WargaBantuWarga](https://kitabisa.com/campaign/wargabantuwarga)
-* [Donasi untuk Penyediaan Oksigen Concentrators di Rumah Sakit](https://indonesiapastibisa.com/jaga-oksigen/)
-* [Donasi untuk Relawan dan Penggali Kubur](https://kitabisa.com/apresiasipetugaspemakamancovid19)
-* [Donasi untuk Warga dan Paket Isolasi Mandiri](https://kitabisa.com/campaign/paketisolasimandiriwarga)
-* [Donasi untuk Satwa](https://kitabisa.com/campaign/satwakembalikelaparan)
-* [Donasi Paket Obat Gratis](https://m.benihbaik.com/campaign/paket-obat-gratis)
-* [Donasi via Dompet Dhuafa](https://donasi.dompetdhuafa.org/)
+* [Klik di sini untuk berdonasi ke Aksi Gotong Royong #WargaBantuWarga Hadapi Corona](https://kitabisa.com/campaign/wargabantuwarga)
+* [Klik di sini untuk lihat informasi donasi dan penggalangan dana lainnya](https://docs.google.com/spreadsheets/d/1u7N4rdfJ20yg7lrL7h0KnwbtZSjFXxkZqDZkcdib9fs/edit?usp=sharing)
 
 - - -
 
