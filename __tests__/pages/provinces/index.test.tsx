@@ -65,6 +65,8 @@ describe("ProvincesPage", () => {
       `Cari & Temukan Informasi Fasilitas Kesehatan (Faskes) & Alat Kesehatan (Alkes) untuk COVID-19 di seluruh Indonesia per ${dateStr}`,
     );
   });
+
+  it("performs the search functionality correctly", () => {});
 });
 
 describe("getStaticProps", () => {
