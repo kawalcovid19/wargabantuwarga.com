@@ -1,7 +1,10 @@
 import React from "react";
 
 import provinces from "~/lib/provinces";
-import ProvincePage, { getStaticPaths } from "~/pages/provinces/[provinceSlug]";
+import ProvincePage, {
+  getStaticPaths,
+  getStaticProps,
+} from "~/pages/provinces/[provinceSlug]";
 
 import { render, screen } from "@testing-library/react";
 
@@ -40,6 +43,49 @@ describe("getStaticPaths", () => {
     expect(getStaticPaths({})).toEqual({
       fallback: false,
       paths,
+    });
+  });
+});
+
+describe("getStaticProps", () => {
+  const [province] = provinces;
+  const [unverifiedContact, verifiedContactBravo, verifiedContactAlpha] =
+    province.data;
+
+  it("gets the provinceName and sorted contactList from the provinceSlug params", () => {
+    expect(
+      getStaticProps({
+        params: { provinceSlug: province.slug },
+      }),
+    ).toEqual({
+      props: {
+        provinceSlug: province.slug,
+        provinceName: province.name,
+        contactList: [
+          verifiedContactAlpha,
+          verifiedContactBravo,
+          unverifiedContact,
+        ],
+      },
+    });
+  });
+
+  it("returns an empty provinceName and null contactList given a non-existent provinceSlug", () => {
+    expect(getStaticProps({ params: { provinceSlug: "foo" } })).toEqual({
+      props: {
+        provinceSlug: "foo",
+        provinceName: "",
+        contactList: null,
+      },
+    });
+  });
+
+  it("returns an empty provinceName and null contactList given an empty params", () => {
+    expect(getStaticProps({})).toEqual({
+      props: {
+        provinceName: "",
+        contactList: null,
+      },
     });
   });
 });
