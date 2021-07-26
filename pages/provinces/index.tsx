@@ -11,6 +11,7 @@ import provinces from "~/lib/provinces";
 import { getInitial } from "~/lib/string-utils";
 
 import { GetStaticProps } from "next";
+import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
 
 type ProvincesPageProps = {
@@ -27,6 +28,14 @@ export default function ProvincesPage(props: ProvincesPageProps) {
     items: props.provincesList,
     fieldNames: ["name"],
   });
+
+  const router = useRouter();
+  const hasGeneralInfo =
+    typeof router.query.kebutuhan == "string" &&
+    ["RUMAH SAKIT", "DONOR PLASMA"].includes(
+      router.query.kebutuhan.toUpperCase(),
+    );
+
   return (
     <Page>
       <NextSeo openGraph={{ title: meta.title }} title={meta.title} />
@@ -42,6 +51,11 @@ export default function ProvincesPage(props: ProvincesPageProps) {
         title="Provinsi"
       />
       <PageContent>
+        {hasGeneralInfo && (
+          <section className="bg-pink-200 p-4 border-green-500 border-4 mb-4 text-sm">
+            <p>Butuh Donor Plasma / Ingin Donor Plasma?</p>
+          </section>
+        )}
         <SearchForm
           autoSearch={true}
           checkDocSize={true}
