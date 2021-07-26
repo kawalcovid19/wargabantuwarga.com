@@ -1,5 +1,6 @@
 import { bannerBlurData, cloudinaryLoader } from "~/lib/cloudinary-loader";
 
+import { Container } from "../ui/container";
 import { WBWLogoBlack } from "../ui/wbw-logo";
 
 import Image from "next/image";
@@ -9,7 +10,7 @@ const FALLBACK_SRC = "v1627049958/hero_banner_desktop_zat71c.png";
 export function HomepageHeader({ src = FALLBACK_SRC }) {
   return (
     <header>
-      <div className="max-w-xl mx-auto">
+      <Container>
         <div className="relative">
           <div aria-hidden className="select-none">
             <Image
@@ -40,7 +41,7 @@ export function HomepageHeader({ src = FALLBACK_SRC }) {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </header>
   );
 }
