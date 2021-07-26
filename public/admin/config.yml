@@ -71,7 +71,7 @@ collections:
     files:
       - name: "welcome_message"
         label: "Welcome Message"
-        file: "_content/welcome-message.json"
+        file: "_content/welcome-message.yml"
         fields:
           - {
               label: "Last updated time",
