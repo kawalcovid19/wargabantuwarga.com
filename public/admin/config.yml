@@ -86,6 +86,5 @@ collections:
           - {
               label: "Message Text",
               name: "message_text",
-              widget: "markdown",
-              modes: "raw"
+              widget: "markdown"
             }
