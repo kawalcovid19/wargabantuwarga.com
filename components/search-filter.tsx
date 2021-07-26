@@ -54,11 +54,11 @@ export function SearchFilter({
                   value={filters?.[key]?.length ? filters[key][0] : ""}
                 >
                   <option value="">Semua</option>
-                  {noSelectedFilter && (
+                  {noSelectedFilter ? (
                     <option value={filters?.[key][0]}>
                       {filters?.[key][0]}
                     </option>
-                  )}
+                  ) : null}
                   {buckets.map((bucket: any, bIdx: number) => {
                     if (bucket.key) {
                       if (checkDocSize) {
