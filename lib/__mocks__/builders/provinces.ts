@@ -41,7 +41,16 @@ export const provinceBuilder = build<Province>({
           verifikasi: perBuild(() => 0),
         },
       }),
-      contactBuilder(),
+      contactBuilder({
+        overrides: {
+          penyedia: perBuild(() => "Bravo"),
+        },
+      }),
+      contactBuilder({
+        overrides: {
+          penyedia: perBuild(() => "Alpha"),
+        },
+      }),
     ],
   },
 });

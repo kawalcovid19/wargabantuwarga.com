@@ -49,7 +49,9 @@ describe("getStaticPaths", () => {
 
 describe("getStaticProps", () => {
   const [province] = provinces;
-  const [unverifiedContact, verifiedContact] = province.data;
+  const [unverifiedContact, verifiedContactBravo, verifiedContactAlpha] =
+    province.data;
+
   it("gets the provinceName and sorted contactList from the provinceSlug params", () => {
     expect(
       getStaticProps({
@@ -59,7 +61,11 @@ describe("getStaticProps", () => {
       props: {
         provinceSlug: province.slug,
         provinceName: province.name,
-        contactList: [verifiedContact, unverifiedContact],
+        contactList: [
+          verifiedContactAlpha,
+          verifiedContactBravo,
+          unverifiedContact,
+        ],
       },
     });
   });
