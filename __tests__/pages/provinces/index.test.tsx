@@ -8,6 +8,17 @@ import ProvincesPage, { getStaticProps } from "~/pages/provinces";
 
 import { render, screen, within } from "@testing-library/react";
 
+jest.mock("next/router", () => ({
+  useRouter() {
+    return {
+      route: "/provinces",
+      pathname: "/provinces",
+      query: {},
+      asPath: "/provinces",
+    };
+  },
+}));
+
 jest.mock("~/lib/provinces");
 
 describe("ProvincesPage", () => {

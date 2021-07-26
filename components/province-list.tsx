@@ -23,7 +23,7 @@ export function ProvinceList(props: ProvinceListProps) {
   const router = useRouter();
 
   const kebutuhanQuery = useMemo(
-    () => router.query.kebutuhan as string,
+    () => (router.query.kebutuhan as string) || undefined,
     [router.query],
   );
 
