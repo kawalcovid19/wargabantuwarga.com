@@ -93,15 +93,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-5X4ZPBX');`,
         }}
       />
-      <noscript>
-        <iframe
-          height="0"
-          src="https://www.googletagmanager.com/ns.html?id=GTM-5X4ZPBX"
-          style={{ display: "none", visibility: "hidden" }}
-          title="gtm"
-          width="0"
-        />
-      </noscript>
+
       <Component {...pageProps} />
     </LayoutRoot>
   );
