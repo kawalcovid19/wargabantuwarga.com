@@ -5,6 +5,7 @@ import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import { ReportButton } from "~/components/report-button";
+import { getContactMeta } from "~/lib/meta";
 import provinces, { Contact, getContactsPaths } from "~/lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "~/lib/string-utils";
 
@@ -18,29 +19,12 @@ type ContactPageProps = {
   contact: Contact;
 };
 
-const getMeta = (provinceName: string, contact: Contact) => {
-  const providerWithSeparator = !!contact.penyedia
-    ? `${contact.penyedia} - `
-    : "";
-
-  const location = contact.lokasi
-    ? `${contact.lokasi}, ${provinceName}`
-    : `${provinceName}`;
-
-  const title = `${providerWithSeparator}${contact.keterangan} di ${location}`;
-
-  return {
-    title,
-    description: `Informasi ${title} yang dikumpulkan relawan melalui pencarian di internet atau media sosial.`,
-  };
-};
-
 export default function ContactPage({
   contact,
   provinceName,
 }: ContactPageProps) {
   const router = useRouter();
-  const meta = getMeta(provinceName, contact);
+  const meta = getContactMeta(provinceName, contact);
 
   return (
     <Page>
@@ -90,8 +74,7 @@ export const getStaticPaths: GetStaticPaths = () => {
 
 export const getStaticProps: GetStaticProps = ({ params = {} }) => {
   const { provinceSlug, contactSlug } = params;
-  const index = getTheLastSegmentFromKebabCase(provinceSlug as string);
-  const province = index ? provinces[index as unknown as number] : null;
+  const province = provinces.find((prov) => prov.slug === provinceSlug);
   const provinceName = province ? province.name : "";
   const contactIndex = getTheLastSegmentFromKebabCase(contactSlug as string);
   const contact = province

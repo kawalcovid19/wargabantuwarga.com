@@ -4,9 +4,11 @@ import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import { ProvinceList, ProvinceListItem } from "~/components/province-list";
 import { SearchForm } from "~/components/search-form";
+import { SeoText } from "~/components/seo-text";
+import { getCurrentMonthAndYear } from "~/lib/date-utils";
 import { useSearch } from "~/lib/hooks/use-search";
 import provinces from "~/lib/provinces";
-import { getInitial, getSlug } from "~/lib/string-utils";
+import { getInitial } from "~/lib/string-utils";
 
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
@@ -48,19 +50,28 @@ export default function ProvincesPage(props: ProvincesPageProps) {
           onSubmitKeywords={handleSubmitKeywords}
         />
         <ProvinceList data={filteredProvinces} />
+        <SeoText
+          textNode={
+            <p>
+              Cari & Temukan Informasi Fasilitas Kesehatan (Faskes) & Alat
+              Kesehatan (Alkes) untuk COVID-19 di seluruh Indonesia per{" "}
+              {getCurrentMonthAndYear()}.
+            </p>
+          }
+        />
       </PageContent>
     </Page>
   );
 }
 
 export const getStaticProps: GetStaticProps = () => {
-  const provincesList = provinces.map(({ name, data }, index) => ({
+  const provincesList = provinces.map(({ name, slug, data }) => ({
     initials: getInitial(name),
     name,
-    slug: getSlug(name, index),
+    slug,
     count: data.length,
   }));
-  provincesList.shift();
+
   return {
     props: {
       provincesList,

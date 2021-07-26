@@ -8,6 +8,8 @@
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
+[![codecov](https://codecov.io/gh/kawalcovid19/wargabantuwarga.com/branch/main/graph/badge.svg?token=zFsEIQ4bhy)](https://codecov.io/gh/kawalcovid19/wargabantuwarga.com) [![CI](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/test.yml/badge.svg)](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/test.yml) [![Deploy](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/deploy.yml/badge.svg)](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/deploy.yml)
+
 A society initiative to circulate information about health facilities and devices for COVID-19.
 
 ## Purpose and Principles
@@ -63,7 +65,7 @@ Then, install dependencies and fetch data to your local machine:
 ```bash
 cd wargabantuwarga.com
 yarn install
-yarn fetch-wbw
+yarn mirror-box
 ```
 
 Finally, run the development server:
@@ -87,10 +89,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 - [Measure Web Performance](https://web.dev/measure)
 - [Convert .ico](https://icoconvert.com)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Tailwind UI](https://tailwindui.com/)
 
 ## Contributing
 
-See our [contributing guidelines](CONTRIBUTING.md).
+See our contribution guidelines in these languages:
+
+- [English](CONTRIBUTING.md)
+- [Indonesian](CONTRIBUTING_ID.md)
 
 ## Contributors ✨
 
@@ -116,7 +123,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/emer7"><img src="https://avatars.githubusercontent.com/u/21377166?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gilbert Emerson</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=emer7" title="Tests">⚠️</a></td>
     <td align="center"><a href="https://andriawan.com"><img src="https://avatars.githubusercontent.com/u/13099373?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Muhammad Irwan Andriawan</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=andriawan" title="Documentation">📖</a> <a href="#ideas-andriawan" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/issues?q=author%3Aandriawan" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://tjandradarmo.me"><img src="https://avatars.githubusercontent.com/u/46013258?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tjandra Darmo</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=TjandraD" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/Namchee"><img src="https://avatars.githubusercontent.com/u/32661241?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cristopher</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=Namchee" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Namchee"><img src="https://avatars.githubusercontent.com/u/32661241?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cristopher</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=Namchee" title="Code">💻</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=Namchee" title="Documentation">📖</a></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/faizrktm"><img src="https://avatars.githubusercontent.com/u/46273747?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Faiz Azmi Rekatama</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=faizrktm" title="Code">💻</a> <a href="#tool-faizrktm" title="Tools">🔧</a></td>

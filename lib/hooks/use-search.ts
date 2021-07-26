@@ -25,6 +25,7 @@ export function useSearch<T = unknown[]>({
 }) {
   const configuration: any = {
     searchableFields: fieldNames,
+    isExactSearch: true,
     sortings: {
       default: {
         field: "id",
@@ -73,6 +74,9 @@ export function useSearch<T = unknown[]>({
       per_page: 10000, // return all data, assuming less than 10000
       ...params,
     };
+    if (searchParams.filter) {
+      delete searchParams.filters;
+    }
     const searchResult: any = itemsjs.search(searchParams);
     setFilteredItems(searchResult.data.items as T[]);
     setLoading(false);
@@ -126,6 +130,12 @@ export function useSearch<T = unknown[]>({
       });
       if (Object.keys(filtersParam as {}).length) {
         searchParams.filters = filtersParam;
+        searchParams.filter = (item: { [key: string]: string }) => {
+          return Object.keys(filtersParam as {}).reduce((acc, key) => {
+            acc = acc && item[key] == filtersParam[key];
+            return acc;
+          }, true);
+        };
       }
       setInitialParams(searchParams);
       search(searchParams, false);

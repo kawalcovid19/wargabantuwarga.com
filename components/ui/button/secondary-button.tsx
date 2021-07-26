@@ -9,6 +9,7 @@ import {
   buttonSizes,
   disabledStyles,
   renderButtonIcon,
+  secondaryButtonColors,
 } from "./utils";
 
 import clsx from "clsx";
@@ -26,6 +27,7 @@ export const SecondaryButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
       type,
       block,
       size = "md",
+      color = "blue",
       rounded,
       icon,
       children,
@@ -41,7 +43,8 @@ export const SecondaryButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         buttonBlockStyles(block),
         buttonSizes(size),
         buttonRoundedStyles(rounded, size),
-        "items-center border border-transparent font-medium text-blue-700 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
+        "items-center justify-center border border-transparent font-medium focus:outline-none focus:ring-2 focus:ring-offset-2",
+        secondaryButtonColors(color),
         disabledStyles,
         className,
       )}

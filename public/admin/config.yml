@@ -15,7 +15,7 @@ collections:
     files:
       - name: "general"
         label: "Site Configuration"
-        file: "config.json"
+        file: "_content/site-config.json"
         description: "General site settings"
         fields:
           - label: "Site name"
@@ -54,4 +54,11 @@ collections:
               name: "body",
               widget: "markdown",
               hint: "Page body",
+            }
+          - {
+              label: "Banner Image",
+              name: "home_banner_image_path",
+              widget: "string",
+              required: false,
+              hint: "Cloudinary image path, eg. `v12345/my_file.png`",
             }

@@ -1,5 +1,6 @@
 import {
   allIsEmptyString,
+  getKebabCase,
   getSlug,
   toSnakeCase,
   toTitleCase,
@@ -55,9 +56,11 @@ export async function fetchSheets() {
         })
         .toArray()
         .filter((row) => !allIsEmptyString(row));
+
       return {
         id: sheetId,
         name: sheetName,
+        slug: getKebabCase(sheetName),
         data: sheetRows.map((row, rowIndex) => {
           return sheetColumns.reduce(
             (prev: Record<string, number | string>, col) => {
@@ -83,6 +86,8 @@ export async function fetchSheets() {
       };
     })
     .toArray();
+
+  sheetList.shift();
 
   fs.writeFileSync(
     path.resolve(__dirname, "../../data/wbw-sheets.json"),

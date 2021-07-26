@@ -8,6 +8,7 @@ import {
   buttonRoundedStyles,
   buttonSizes,
   disabledStyles,
+  primaryButtonColors,
   renderButtonIcon,
 } from "./utils";
 
@@ -26,6 +27,7 @@ export const PrimaryButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
       type,
       block,
       size = "md",
+      color = "blue",
       rounded,
       icon,
       isLoading,
@@ -41,8 +43,8 @@ export const PrimaryButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         buttonBlockStyles(block),
         buttonSizes(size),
         buttonRoundedStyles(rounded, size),
-        "items-center border border-transparent font-medium shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
-        "disabled:cursor-not-allowed",
+        "items-center justify-center border border-transparent font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2",
+        primaryButtonColors(color),
         disabledStyles,
         className,
       )}
