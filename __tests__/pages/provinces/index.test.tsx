@@ -9,6 +9,7 @@ import ProvincesPage, { getStaticProps } from "~/pages/provinces";
 import { render, screen, within } from "@testing-library/react";
 
 jest.mock("~/lib/provinces");
+jest.mock("next/router", () => require("next-router-mock"));
 
 describe("ProvincesPage", () => {
   const provinceListItem = provinceListItemBuilder();

@@ -1,9 +1,12 @@
+import { useMemo } from "react";
+
 import { getProvinceMetaTitle } from "~/lib/meta";
 
 import { EmptyState } from "./ui/empty-state";
 
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export type ProvinceListItem = {
   initials: string;
@@ -17,6 +20,13 @@ type ProvinceListProps = {
 };
 
 export function ProvinceList(props: ProvinceListProps) {
+  const router = useRouter();
+
+  const kebutuhanQuery = useMemo(
+    () => (router.query.kebutuhan as string) || undefined,
+    [router.query],
+  );
+
   if (props.data.length > 0) {
     return (
       <ul className="mt-3 grid grid-cols-1 gap-5 sm:gap-6 lg:grid-cols-2">
@@ -28,7 +38,14 @@ export function ProvinceList(props: ProvinceListProps) {
             <div className="bg-blue-500 flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium rounded-l-md">
               {province.initials}
             </div>
-            <Link href={`/provinces/${province.slug}`}>
+            <Link
+              href={{
+                pathname: `/provinces/${province.slug}`,
+                query: {
+                  ...(kebutuhanQuery ? { kebutuhan: kebutuhanQuery } : {}),
+                },
+              }}
+            >
               <a
                 className="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate"
                 title={getProvinceMetaTitle(province.name)}
