@@ -18,8 +18,8 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "test": "is-ci \"test:coverage\" \"test:watch\"",
-    "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --env=jsdom",
+    "test:watch": "jest --watch --env=jsdom",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
     "test:e2e:dev": "start-server-and-test dev http://localhost:3000 cypress:open",
     "type-check": "tsc --noEmit"
@@ -102,7 +102,7 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --cache --fix",
-      "jest --findRelatedTests"
+      "jest --findRelatedTests --env=jsdom"
     ],
     "*.css": "stylelint --fix",
     "*.{js,jsx,ts,tsx,css,md}": "prettier --write"
