@@ -82,8 +82,20 @@ export function useSearch<T = unknown[]>({
     setLoading(false);
 
     if (updateUrl) {
-      const queryParams = [];
+      const queryParams: string[] = [];
       const { query, filters, sort } = searchParams;
+      const urlParams: { [key: string]: string } = getQueryParams(
+        window.location.search,
+      );
+      Object.keys(urlParams).forEach((key) => {
+        if (
+          key !== "q" &&
+          key !== "sort" &&
+          !Object.keys(filters as {}).includes(key)
+        ) {
+          queryParams.push(`${key}=${urlParams[key]}`);
+        }
+      });
       if (query) queryParams.push(`q=${query}`);
       if (filters) {
         Object.keys(filters as {}).forEach((filter) => {
