@@ -234,13 +234,12 @@ describe("HomePageStart", () => {
               <div
                 style="display: block; box-sizing: border-box; padding-top: 35.97560975609756%;"
               />
+              <noscript />
               <img
                 alt="Ajukan bantuan sembako jika positif Covid-19 - Daftar Sekarang"
                 decoding="async"
-                sizes="100vw"
-                src="https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_3840,q_90,cs_tinysrgb,f_auto/v1627206408/sembako-cta-v1_gpmaxg"
-                srcset="https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_640,q_90,cs_tinysrgb,f_auto/v1627206408/sembako-cta-v1_gpmaxg 640w, https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_750,q_90,cs_tinysrgb,f_auto/v1627206408/sembako-cta-v1_gpmaxg 750w, https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_828,q_90,cs_tinysrgb,f_auto/v1627206408/sembako-cta-v1_gpmaxg 828w, https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_1080,q_90,cs_tinysrgb,f_auto/v1627206408/sembako-cta-v1_gpmaxg 1080w, https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_1200,q_90,cs_tinysrgb,f_auto/v1627206408/sembako-cta-v1_gpmaxg 1200w, https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_1920,q_90,cs_tinysrgb,f_auto/v1627206408/sembako-cta-v1_gpmaxg 1920w, https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_2048,q_90,cs_tinysrgb,f_auto/v1627206408/sembako-cta-v1_gpmaxg 2048w, https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_3840,q_90,cs_tinysrgb,f_auto/v1627206408/sembako-cta-v1_gpmaxg 3840w"
-                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; filter: blur(20px); background-size: cover; background-image: url(https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_656,q_2,cs_tinysrgb,f_auto,e_blur:1000/v1627206408/sembako-cta-v1_gpmaxg);"
               />
             </div>
           </a>
