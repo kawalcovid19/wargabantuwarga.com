@@ -14,8 +14,8 @@ export function Navigation() {
 
   const menuClasses = (isActive: boolean) => {
     return [
-      "inline-flex flex-col items-center justify-center h-12 px-4 rounded-md",
-      isActive ? "text-blue-600 font-semibold" : "text-gray-600",
+      "inline-flex flex-col items-center justify-center h-12 px-2 rounded-md",
+      isActive ? "text-blue-600 font-medium" : "text-gray-600",
       "hover:text-blue-600",
     ];
   };
@@ -27,13 +27,13 @@ export function Navigation() {
           className: "w-8 h-8",
           "aria-hidden": true,
         })}
-        <span className="text-xs">{item.name}</span>
+        <span className="text-xs text-center">{item.name}</span>
       </>
     );
   };
 
   return (
-    <nav className="flex items-center justify-center fixed bottom-0 w-full h-16 px-4 bg-white border-t border-gray-300 z-40">
+    <nav className="flex items-center justify-center fixed bottom-0 w-full h-16 px-2 bg-white border-t border-gray-300 z-40">
       <div className="flex items-center justify-center w-full max-w-xl mx-auto">
         <ul className="flex items-center justify-evenly w-full">
           {bottomNavigation.map((item) => {

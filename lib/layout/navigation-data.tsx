@@ -23,7 +23,7 @@ export const bottomNavigation: BottomNavigationItem[] = [
     exact: true,
   },
   {
-    name: "Hotline",
+    name: "Hubungi Kami",
     icon: ChatAltIcon,
     href: "https://wa.me/6281257579812",
     external: true,
@@ -34,7 +34,7 @@ export const bottomNavigation: BottomNavigationItem[] = [
     href: "/provinces",
   },
   {
-    name: "FAQ",
+    name: "Info Umum",
     icon: ViewGridIcon,
     href: "/faq",
   },
