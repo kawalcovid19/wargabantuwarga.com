@@ -13,6 +13,8 @@ const meta = {
 };
 
 export default function Isoman() {
+  const { isoman_contents } = isoman;
+
   return (
     <div>
       <Page>
@@ -30,10 +32,10 @@ export default function Isoman() {
         />
         <PageContent>
           <div className="p-4 bg-white shadow overflow-hidden rounded-md space-y-8">
-            {isoman.map((iso, i) => (
+            {isoman_contents.map((iso, i) => (
               <div key={i}>
                 <div className="text-base font-semibold text-gray-900 my-4">
-                  {iso.category}
+                  {iso.title}
                 </div>
                 <div className="text-sm text-gray-500 mb-4">
                   {iso.description}

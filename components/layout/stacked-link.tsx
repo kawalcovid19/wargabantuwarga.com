@@ -7,7 +7,7 @@ interface StackedListProps {
   links: [
     {
       title: string;
-      link: string;
+      url: string;
     },
   ];
 }
@@ -17,7 +17,7 @@ export default function StackedLink(list: StackedListProps) {
   return (
     <div>
       {links.map((link, i) => (
-        <Link key={i} href={link.link}>
+        <Link key={i} href={link.url}>
           <a target="_blank">
             <div
               className={`${
