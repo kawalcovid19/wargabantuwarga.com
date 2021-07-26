@@ -43,7 +43,7 @@ export function HomePageStart() {
             height={236}
             layout="responsive"
             loader={cloudinaryLoader}
-            priority={true}
+            loading="lazy"
             quality={90}
             src="v1627206408/sembako-cta-v1_gpmaxg.png"
             width={656}
