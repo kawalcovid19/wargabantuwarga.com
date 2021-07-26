@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-import { PrimaryButton } from "../button";
+import { PrimaryButton } from "~/components/ui/button";
 
 import { Dialog, Transition } from "@headlessui/react";
 
