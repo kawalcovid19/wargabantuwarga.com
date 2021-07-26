@@ -2,7 +2,7 @@ import React from "react";
 
 import { cloudinaryLoader, getBlurred } from "~/lib/cloudinary-loader";
 
-import { PrimaryAnchorButton } from "../ui/button/primary-anchor-button";
+import { PrimaryAnchorButton } from "../ui/button";
 
 import { HomePageMenu } from "./homepage-menu";
 
