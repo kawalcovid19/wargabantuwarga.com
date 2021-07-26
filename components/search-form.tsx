@@ -70,6 +70,7 @@ export function SearchForm({
     onSubmitKeywords(keywords, {}, sortBy);
   }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const debouncedSearch = useCallback(
     debounce(
       (keywordsValue: string, filtersValue?: any, sortValue?: string) =>
@@ -110,7 +111,7 @@ export function SearchForm({
     setKeywords(initialValue?.query ?? "");
     setFilters(initialValue?.filters ?? {});
     setSortBy(initialValue?.sort ?? defaultSort);
-  }, [initialValue]);
+  }, [defaultSort, initialValue]);
 
   return (
     <form className="pb-8 space-y-4" onSubmit={handleSubmit}>
