@@ -29,3 +29,9 @@ interface ButtonBaseProps {
 
 export type ButtonProps = ButtonBaseProps &
   React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+export type AnchorButtonProps = Omit<
+  ButtonBaseProps,
+  "isLoading" | "loadingText"
+> &
+  React.AnchorHTMLAttributes<HTMLAnchorElement>;

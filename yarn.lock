@@ -2131,6 +2131,11 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.5.tgz#b59daf6a7ffa461b5648456ca59050ba8e40ed54"
   integrity sha512-bjqH2cX/O33jXT/UmReo2pM7DIJREPMnarixbQ57DOOzzFaI6D2+IcwaJQaJpv0M1E9TIhPCYVxrkcityLjlqA==
 
+"@types/node@^16.4.2":
+  version "16.4.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.4.2.tgz#0a95d7fd950cb1eaca0ce11031d72e8f680b775a"
+  integrity sha512-vxyhOzFCm+jC/T5KugbVsYy1DbQM0h3NCFUrVbu0+pYa/nr+heeucpqxpa8j4pUmIGLPYzboY9zIdOF0niFAjQ==
+
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.1.tgz#d3357479a0fdfdd5907fe67e17e0a85c906e1301"
@@ -9166,6 +9171,11 @@ netlify-plugin-image-optim@0.4.0:
     imagemin-pngquant "^8.0.0"
     imagemin-svgo "^7.1.0"
     table "^5.4.6"
+
+next-router-mock@0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/next-router-mock/-/next-router-mock-0.1.4.tgz#65ccb177d6c2dc201b9732754fc2248827a24ccf"
+  integrity sha512-oMYbd72iIm0Vj4WFQVJJLVeLQ7PiT9jJZiVIpBigiW/E9zZpMTAoHNu08ZSU5OX0vZubYy3ZhJpIfgNqAPsyZA==
 
 next-seo@^4.26.0:
   version "4.26.0"

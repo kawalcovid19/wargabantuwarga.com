@@ -7,8 +7,10 @@ import FaqPage, { getStaticProps } from "../../pages/faq";
 
 import { perBuild } from "@jackfranklin/test-data-bot";
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 jest.mock("~/lib/faqs");
+jest.mock("next/router", () => require("next-router-mock"));
 
 describe("FaqPage", () => {
   const [faq] = faqs;
@@ -55,6 +57,49 @@ describe("FaqPage", () => {
     expect(
       screen.getByText(`Sumber: ${faqWithoutSourceLink.sumber}`),
     ).toBeVisible();
+  });
+
+  it("performs the search functionality correctly", () => {
+    const firstFaq = faqBuilder();
+    const secondFaq = faqBuilder();
+
+    render(<FaqPage faqSheets={[firstFaq, secondFaq]} />);
+
+    expect(screen.getByText(firstFaq.pertanyaan)).toBeVisible();
+
+    userEvent.type(
+      screen.getByRole("textbox", {
+        name: /cari pertanyaan:/i,
+      }),
+      secondFaq.pertanyaan,
+    );
+    userEvent.click(
+      screen.getByRole("button", {
+        name: /cari/i,
+      }),
+    );
+
+    expect(screen.queryByText(firstFaq.pertanyaan)).not.toBeInTheDocument();
+    expect(screen.getByText(secondFaq.pertanyaan)).toBeVisible();
+  });
+
+  it("performs the filter functionality correctly", () => {
+    const firstFaq = faqBuilder();
+    const secondFaq = faqBuilder();
+
+    render(<FaqPage faqSheets={[firstFaq, secondFaq]} />);
+
+    expect(screen.getByText(firstFaq.pertanyaan)).toBeVisible();
+
+    userEvent.selectOptions(
+      screen.getByRole("combobox", {
+        name: /kategori pertanyaan/i,
+      }),
+      secondFaq.kategori_pertanyaan,
+    );
+
+    expect(screen.queryByText(firstFaq.pertanyaan)).not.toBeInTheDocument();
+    expect(screen.getByText(secondFaq.pertanyaan)).toBeVisible();
   });
 });
 
