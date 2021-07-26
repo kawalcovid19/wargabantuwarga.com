@@ -40,6 +40,10 @@ export function SearchFilter({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {Object.entries(filterItems).map(([key, value], idx) => {
             const { title, buckets }: any = value;
+            const noSelectedFilter =
+              filters?.[key]?.length &&
+              buckets.filter((bucket: any) => bucket.key == filters?.[key][0])
+                .length == 0;
             return (
               <div key={`filter-${idx}`} className="space-y-1">
                 <FormLabel htmlFor={`filter-${key}`}>{title}</FormLabel>
@@ -50,6 +54,11 @@ export function SearchFilter({
                   value={filters?.[key]?.length ? filters[key][0] : ""}
                 >
                   <option value="">Semua</option>
+                  {noSelectedFilter ? (
+                    <option value={filters?.[key][0]}>
+                      {filters?.[key][0]}
+                    </option>
+                  ) : null}
                   {buckets.map((bucket: any, bIdx: number) => {
                     if (bucket.key) {
                       if (checkDocSize) {
@@ -118,15 +127,10 @@ export function SearchFilter({
   const renderFilterForms = () => {
     if (isLoading) {
       return (
-        <>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <SelectSkeleton />
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <SelectSkeleton />
-            <SelectSkeleton />
-          </div>
-        </>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <SelectSkeleton />
+          <SelectSkeleton />
+        </div>
       );
     }
 

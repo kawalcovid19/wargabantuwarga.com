@@ -89,6 +89,8 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 - [Measure Web Performance](https://web.dev/measure)
 - [Convert .ico](https://icoconvert.com)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Tailwind UI](https://tailwindui.com/)
 
 ## Contributing
 

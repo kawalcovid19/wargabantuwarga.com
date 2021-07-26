@@ -1,7 +1,5 @@
 import provinces from "~/data/wbw-sheets.json";
 
-import { getSlug } from "./string-utils";
-
 export type Provinces = Province[];
 
 export type Province = {
@@ -54,10 +52,10 @@ export type ContactPath = {
 
 export const getContactsPaths = (): ContactPath[] => {
   const contactsPaths: ContactPath[] = [];
-  provinces.forEach((province, provinceIndex) => {
+  provinces.forEach((province) => {
     province.data.forEach((contact: Contact) => {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-      const provinceSlug = getSlug(province.name, provinceIndex);
+      const provinceSlug = province.slug;
       contactsPaths.push({
         params: { provinceSlug, contactSlug: contact.slug },
       });

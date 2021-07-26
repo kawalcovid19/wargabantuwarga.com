@@ -1,16 +1,19 @@
 import React from "react";
 
 import { faqBuilder } from "~/lib/__mocks__/builders/faq";
-import faqSheets from "~/lib/faqs";
+import faqs from "~/lib/faqs";
 
 import FaqPage, { getStaticProps } from "../../pages/faq";
 
 import { perBuild } from "@jackfranklin/test-data-bot";
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+
+jest.mock("~/lib/faqs");
+jest.mock("next/router", () => require("next-router-mock"));
 
 describe("FaqPage", () => {
-  const faq = faqBuilder();
-  const faqs = [faq];
+  const [faq] = faqs;
 
   it("renders the title correctly", () => {
     render(<FaqPage faqSheets={faqs} />);
@@ -55,12 +58,55 @@ describe("FaqPage", () => {
       screen.getByText(`Sumber: ${faqWithoutSourceLink.sumber}`),
     ).toBeVisible();
   });
+
+  it("performs the search functionality correctly", () => {
+    const firstFaq = faqBuilder();
+    const secondFaq = faqBuilder();
+
+    render(<FaqPage faqSheets={[firstFaq, secondFaq]} />);
+
+    expect(screen.getByText(firstFaq.pertanyaan)).toBeVisible();
+
+    userEvent.type(
+      screen.getByRole("textbox", {
+        name: /cari pertanyaan:/i,
+      }),
+      secondFaq.pertanyaan,
+    );
+    userEvent.click(
+      screen.getByRole("button", {
+        name: /cari/i,
+      }),
+    );
+
+    expect(screen.queryByText(firstFaq.pertanyaan)).not.toBeInTheDocument();
+    expect(screen.getByText(secondFaq.pertanyaan)).toBeVisible();
+  });
+
+  it("performs the filter functionality correctly", () => {
+    const firstFaq = faqBuilder();
+    const secondFaq = faqBuilder();
+
+    render(<FaqPage faqSheets={[firstFaq, secondFaq]} />);
+
+    expect(screen.getByText(firstFaq.pertanyaan)).toBeVisible();
+
+    userEvent.selectOptions(
+      screen.getByRole("combobox", {
+        name: /kategori pertanyaan/i,
+      }),
+      secondFaq.kategori_pertanyaan,
+    );
+
+    expect(screen.queryByText(firstFaq.pertanyaan)).not.toBeInTheDocument();
+    expect(screen.getByText(secondFaq.pertanyaan)).toBeVisible();
+  });
 });
 
 describe("getStaticProps", () => {
   it("returns the props from the faq-sheets correctly", () => {
     expect(getStaticProps({})).toEqual({
-      props: { faqSheets },
+      props: { faqSheets: faqs },
     });
   });
 });

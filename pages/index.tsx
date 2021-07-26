@@ -1,7 +1,10 @@
 import { attributes, html } from "~/_content/home-page.md";
+import { HomePageContent } from "~/components/home/homepage-content";
 import { HomepageHeader } from "~/components/home/homepage-header";
+import { HomePageSection } from "~/components/home/homepage-section";
+import { HomePageStart } from "~/components/home/homepage-start";
 import { Page } from "~/components/layout/page";
-import { PageContent } from "~/components/layout/page-content";
+import { Container } from "~/components/ui/container";
 import config from "~/lib/config";
 import {
   heading1Transformer,
@@ -13,6 +16,7 @@ import {
 } from "~/lib/htmr-transformers";
 
 import { ClockIcon } from "@heroicons/react/outline";
+import clsx from "clsx";
 import htmr from "htmr";
 import { HtmrOptions } from "htmr/src/types";
 import { NextSeo } from "next-seo";
@@ -30,8 +34,19 @@ const htmrTransform: HtmrOptions["transform"] = {
   h6: heading6Transformer,
 };
 
-const LastUpdatedAlert = () => (
-  <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-b mb-3">
+interface LastUpdatedAlertProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+const LastUpdatedAlert = ({ className, style }: LastUpdatedAlertProps) => (
+  <div
+    className={clsx(
+      "bg-yellow-50 border-l-4 border-yellow-400 p-4 sm:rounded",
+      className,
+    )}
+    style={style}
+  >
     <div className="flex">
       <div className="flex-shrink-0">
         <ClockIcon aria-hidden="true" className="h-5 w-5 text-yellow-400" />
@@ -59,20 +74,25 @@ const HomePage = () => (
   <Page>
     <NextSeo title={meta.title} titleTemplate="%s" />
     <HomepageHeader src={attributes.home_banner_image_path} />
-    <PageContent>
-      <LastUpdatedAlert />
-      <article className="prose prose-indigo p-4 bg-white shadow overflow-hidden rounded-md">
-        {htmr(html, { transform: htmrTransform })};
-      </article>
-      <style jsx>{`
-        article {
-          margin: 0 auto;
-        }
-        h1 {
-          text-align: center;
-        }
-      `}</style>
-    </PageContent>
+    <HomePageContent>
+      <Container>
+        <HomePageStart />
+        <LastUpdatedAlert className="mt-3 mb-3" />
+        <HomePageSection>
+          <article className="prose prose-indigo">
+            {htmr(html, { transform: htmrTransform })};
+          </article>
+        </HomePageSection>
+        <style jsx>{`
+          article {
+            margin: 0 auto;
+          }
+          h1 {
+            text-align: center;
+          }
+        `}</style>
+      </Container>
+    </HomePageContent>
   </Page>
 );
 
