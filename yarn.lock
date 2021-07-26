@@ -9172,6 +9172,11 @@ netlify-plugin-image-optim@0.4.0:
     imagemin-svgo "^7.1.0"
     table "^5.4.6"
 
+next-router-mock@0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/next-router-mock/-/next-router-mock-0.1.4.tgz#65ccb177d6c2dc201b9732754fc2248827a24ccf"
+  integrity sha512-oMYbd72iIm0Vj4WFQVJJLVeLQ7PiT9jJZiVIpBigiW/E9zZpMTAoHNu08ZSU5OX0vZubYy3ZhJpIfgNqAPsyZA==
+
 next-seo@^4.26.0:
   version "4.26.0"
   resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.26.0.tgz#4218cfae5651fdc2e330dcdf1cc1b34ce199d41c"
