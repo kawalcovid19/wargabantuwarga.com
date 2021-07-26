@@ -3,6 +3,7 @@ import { HomePageContent } from "~/components/home/homepage-content";
 import { HomepageHeader } from "~/components/home/homepage-header";
 import { HomePageSection } from "~/components/home/homepage-section";
 import { HomePageStart } from "~/components/home/homepage-start";
+import { HomePageWelcome } from "~/components/home/homepage-welcome";
 import { Page } from "~/components/layout/page";
 import { Container } from "~/components/ui/container";
 import config from "~/lib/config";
@@ -78,6 +79,7 @@ const HomePage = () => (
       <Container>
         <HomePageStart />
         <LastUpdatedAlert className="mt-3 mb-3" />
+        <HomePageWelcome />
         <HomePageSection>
           <article className="prose prose-indigo">
             {htmr(html, { transform: htmrTransform })};

@@ -1483,6 +1483,11 @@
     faker "4.1.0"
     lodash "^4.17.15"
 
+"@jackyef/use-intersect@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@jackyef/use-intersect/-/use-intersect-0.0.6.tgz#423b1203ad82a1973be5a68492a9851551ea2846"
+  integrity sha512-rApoeUuQVYiQeZMkbboyJgn5fnvvEl6+ZOAINGR+acHhVBG0kxGGxA6JyeBTEbcyjBaT3eXVjdxy/zxBxzqj3A==
+
 "@jest/console@^27.0.6":
   version "27.0.6"
   resolved "https://registry.yarnpkg.com/@jest/console/-/console-27.0.6.tgz#3eb72ea80897495c3d73dd97aab7f26770e2260f"
