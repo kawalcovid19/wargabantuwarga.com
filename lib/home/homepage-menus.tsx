@@ -1,8 +1,12 @@
 import React from "react";
 
-import { HospitalIcon } from "~/components/ui/icons";
+import {
+  AmbulanceIcon,
+  DonorIcon,
+  HospitalIcon,
+  OxygenIcon,
+} from "~/components/ui/icons";
 
-import { SunIcon, TruckIcon, UserAddIcon } from "@heroicons/react/outline";
 import { UrlObject } from "url";
 
 export interface HomepageMenuItem {
@@ -20,16 +24,16 @@ export const homepageMenus: HomepageMenuItem[] = [
   {
     name: "Ambulans",
     href: "/provinces?kebutuhan=Ambulans",
-    icon: TruckIcon,
+    icon: AmbulanceIcon,
   },
   {
     name: "Info Oksigen",
     href: "/provinces?kebutuhan=Oksigen",
-    icon: SunIcon,
+    icon: OxygenIcon,
   },
   {
     name: "Donor Plasma",
     href: "/provinces?kebutuhan=Donor%20plasma",
-    icon: UserAddIcon,
+    icon: DonorIcon,
   },
 ];
