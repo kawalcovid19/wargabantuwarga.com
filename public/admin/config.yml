@@ -80,6 +80,6 @@ collections:
             }
           - {
               label: "Message Text",
-              name: "message",
+              name: "message_text",
               widget: "markdown",
             }
