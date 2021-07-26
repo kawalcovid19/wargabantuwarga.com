@@ -7,9 +7,11 @@ import { useEffect } from "react";
 
 import { LayoutRoot } from "~/components/layout/layout-root";
 import config from "~/lib/config";
+import { initializeGTM } from "~/lib/gtm";
 
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import Script from "next/script";
 import { DefaultSeo } from "next-seo";
 import NProgress from "nprogress";
 
@@ -42,6 +44,8 @@ export default function App({ Component, pageProps, router }: AppProps) {
       router.events.off("routeChangeError", handleStop);
     };
   }, [router]);
+
+  useEffect(initializeGTM, []);
 
   return (
     <LayoutRoot>
@@ -82,6 +86,9 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <link href="/manifest.json" rel="manifest" />
         <meta content="#1667C2" name="theme-color" />
       </Head>
+
+      <Script src="https://www.googletagmanager.com/gtm.js?id=GTM-5X4ZPBX" />
+
       <Component {...pageProps} />
     </LayoutRoot>
   );

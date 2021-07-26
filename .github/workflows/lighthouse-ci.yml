@@ -1,17 +1,15 @@
-name: Lighthouse CI
+name: Web Perf Check for Pull Request
 
 on:
-  push:
-    branches: [main]
   pull_request:
     types: [labeled]
 
 jobs:
   lhci:
-    name: Run Lighthouse CI
+    name: Run Lighthouse CI for Pull Request
     runs-on: ubuntu-latest
 
-    if: ${{ !contains(github.event.pull_request.labels.*.names, 'need-perf-check') }}
+    if: ${{ github.event.label.name == 'need-perf-check' }}
 
     steps:
       - uses: actions/checkout@v2

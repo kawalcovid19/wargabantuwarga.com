@@ -1,12 +1,11 @@
 import provinces from "~/data/wbw-sheets.json";
 
-import { getSlug } from "./string-utils";
-
 export type Provinces = Province[];
 
 export type Province = {
   readonly id: number;
   readonly name: string;
+  readonly slug: string;
   readonly data: Contact[];
 };
 
@@ -32,13 +31,17 @@ export type ProvincePath = {
   };
 };
 
-export const getProvincesPaths = (): ProvincePath[] =>
-  provinces.map((item, index) => {
-    const provinceSlug = getSlug(item.name, index);
+export const getProvincesPaths = (): ProvincePath[] => {
+  const provincees = provinces as unknown as Province[];
+
+  return provincees.map((province) => {
+    const provinceSlug = province.slug;
+
     return {
       params: { provinceSlug },
     };
   });
+};
 
 export type ContactPath = {
   params: {
@@ -49,10 +52,10 @@ export type ContactPath = {
 
 export const getContactsPaths = (): ContactPath[] => {
   const contactsPaths: ContactPath[] = [];
-  provinces.forEach((province, provinceIndex) => {
+  provinces.forEach((province) => {
     province.data.forEach((contact: Contact) => {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-      const provinceSlug = getSlug(province.name, provinceIndex);
+      const provinceSlug = province.slug;
       contactsPaths.push({
         params: { provinceSlug, contactSlug: contact.slug },
       });

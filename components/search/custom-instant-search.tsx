@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 
 import CustomHits from "~/components/search/custom-hits";
 import CustomRefinementList from "~/components/search/custom-refinement-list";
@@ -27,7 +27,7 @@ type FilterSetting = {
 interface CustomInstantSearchProps extends InstantSearchProps {
   itemName: string;
   filterSettings?: FilterSetting[];
-  useFilterModal?: boolean;
+  withFilterModal?: boolean;
 }
 
 const DEBOUNCE_TIME = 300;
@@ -38,7 +38,7 @@ export function CustomInstantSearch({
   filterSettings,
   indexName,
   searchClient,
-  useFilterModal = false,
+  withFilterModal = false,
 }: CustomInstantSearchProps) {
   const router = useRouter();
   const urlToSearchState = () => {
@@ -132,9 +132,11 @@ export function CustomInstantSearch({
 
   const onSearchStateChange = (updatedSearchState: SearchState) => {
     console.log("updated search state 1", updatedSearchState);
-    if (useFilterModal) {
+    if (withFilterModal) {
       if (isFilterModalOpen && updatedSearchState.refinementList) {
-        setRefinementList(updatedSearchState.refinementList);
+        setRefinementList(
+          updatedSearchState.refinementList as { [key: string]: string[] },
+        );
       } else {
         updatedSearchState.refinementList = refinementList;
       }
@@ -153,48 +155,54 @@ export function CustomInstantSearch({
       searchState={searchState}
     >
       <Configure hitsPerPage={250} />
-      <CustomSearchBox
-        hasFilter={
-          useFilterModal && filterSettings && filterSettings.length > 0
-        }
-        itemName={itemName}
-        onFilterButtonClick={() => setFilterModalOpen(true)}
-      />
-      {useFilterModal ? (
-        <>
-          {filterSettings?.length &&
-            filterSettings.map((filter, idx) => {
-              return (
-                <VirtualRefinementList
-                  key={`virtual-${idx}`}
-                  attribute={filter.field}
-                  defaultRefinement={refinementList[filter.field]}
-                />
-              );
-            })}
-          <RefinementModal
-            defaultRefinementList={refinementList}
-            filterSettings={filterSettings}
-            isOpen={isFilterModalOpen}
-            onToggle={setFilterModalOpen}
-          />
-        </>
-      ) : (
-        filterSettings?.length && (
-          <div className="pb-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {filterSettings.map((filterSetting, idx) => (
-              <CustomRefinementList
-                key={`filter-${idx}`}
-                attribute={filterSetting.field}
-                title={filterSetting.title}
-                transformItems={(items: RefinementItem<string>[]) =>
-                  items.sort((a, b) => a.label.localeCompare(b.label))
-                }
-              />
-            ))}
+      <form className="pb-8 space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-end">
+          <div className="flex flex-1 items-center mt-1">
+            <CustomSearchBox
+              hasFilter={
+                withFilterModal && filterSettings && filterSettings.length > 0
+              }
+              itemName={itemName}
+              onFilterButtonClick={() => setFilterModalOpen(true)}
+            />
           </div>
-        )
-      )}
+        </div>
+        {withFilterModal ? (
+          <>
+            {filterSettings?.length &&
+              filterSettings.map((filter, idx) => {
+                return (
+                  <VirtualRefinementList
+                    key={`virtual-${idx}`}
+                    attribute={filter.field}
+                    defaultRefinement={refinementList[filter.field]}
+                  />
+                );
+              })}
+            <RefinementModal
+              defaultRefinementList={refinementList}
+              filterSettings={filterSettings}
+              isOpen={isFilterModalOpen}
+              onToggle={setFilterModalOpen}
+            />
+          </>
+        ) : (
+          filterSettings?.length && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {filterSettings.map((filterSetting, idx) => (
+                <CustomRefinementList
+                  key={`filter-${idx}`}
+                  attribute={filterSetting.field}
+                  title={filterSetting.title}
+                  transformItems={(items: RefinementItem<string>[]) =>
+                    items.sort((a, b) => a.label.localeCompare(b.label))
+                  }
+                />
+              ))}
+            </div>
+          )
+        )}
+      </form>
       <CustomHits />
     </InstantSearch>
   );

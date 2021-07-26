@@ -3,6 +3,8 @@ import * as React from "react";
 import { Breadcrumb, BreadcrumbItem } from "~/components/ui/breadcrumb";
 import { makeBreadcrumbJsonLd } from "~/lib/jsonld-generator";
 
+import { Container } from "../ui/container";
+
 import Head from "next/head";
 
 interface PageHeaderProps {
@@ -34,7 +36,7 @@ export function PageHeader({
       </Head>
 
       <header className="px-4 pt-4">
-        <div className="max-w-xl mx-auto">
+        <Container>
           <div>
             {backButton}
             {breadcrumbs && <Breadcrumb items={breadcrumbs} />}
@@ -56,7 +58,7 @@ export function PageHeader({
               </div>
             )}
           </div>
-        </div>
+        </Container>
       </header>
     </>
   );
