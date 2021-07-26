@@ -82,6 +82,25 @@ describe("FaqPage", () => {
     expect(screen.queryByText(firstFaq.pertanyaan)).not.toBeInTheDocument();
     expect(screen.getByText(secondFaq.pertanyaan)).toBeVisible();
   });
+
+  it("performs the filter functionality correctly", () => {
+    const firstFaq = faqBuilder();
+    const secondFaq = faqBuilder();
+
+    render(<FaqPage faqSheets={[firstFaq, secondFaq]} />);
+
+    expect(screen.getByText(firstFaq.pertanyaan)).toBeVisible();
+
+    userEvent.selectOptions(
+      screen.getByRole("combobox", {
+        name: /kategori pertanyaan/i,
+      }),
+      secondFaq.kategori_pertanyaan,
+    );
+
+    expect(screen.queryByText(firstFaq.pertanyaan)).not.toBeInTheDocument();
+    expect(screen.getByText(secondFaq.pertanyaan)).toBeVisible();
+  });
 });
 
 describe("getStaticProps", () => {
