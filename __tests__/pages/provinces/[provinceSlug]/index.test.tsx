@@ -79,4 +79,13 @@ describe("getStaticProps", () => {
       },
     });
   });
+
+  it("returns an empty provinceName and null contactList given an empty params", () => {
+    expect(getStaticProps({})).toEqual({
+      props: {
+        provinceName: "",
+        contactList: null,
+      },
+    });
+  });
 });
