@@ -34,6 +34,7 @@ collections:
             name: "site_url"
             widget: "string"
             hint: "The canonical URL of the website, complete with the protocol (e.g. `https://`) and **without** trailing slash (`/`)."
+
   - name: "home_page"
     label: "Home Page"
     delete: false
@@ -61,4 +62,51 @@ collections:
               widget: "string",
               required: false,
               hint: "Cloudinary image path, eg. `v12345/my_file.png`",
+            }
+
+    label: "Config"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "general"
+        label: "Site Configuration"
+        file: "_content/site-config.json"
+        description: "General site settings"
+        fields:
+          - label: "Site name"
+            name: "site_name"
+            widget: "string"
+            hint: "The main name of the website, e.g., **Warga Bantu Warga** | Informasi Faskes & Alkes untuk COVID-19"
+          - label: "Site tagline"
+            name: "site_tagline"
+            widget: "string"
+            hint: "The tagline to accompany the name, e.g., Warga Bantu Warga | **Informasi Faskes & Alkes untuk COVID-19**"
+          - label: "Site description"
+            name: "site_description"
+            widget: "string"
+            hint: "The description of the site to be shown in the URL previews on Google, Facebook, Twitter, WhatsApp, etc."
+          - label: "Site URL"
+            name: "site_url"
+            widget: "string"
+            hint: "The canonical URL of the website, complete with the protocol (e.g. `https://`) and **without** trailing slash (`/`)."
+
+  - name: "welcome_message"
+    label: "Welcome Message"
+    delete: false
+    preview_path: ""
+    files:
+      - name: "welcome_message"
+        label: "Welcome Message"
+        file: "_content/welcome-message.json"
+        fields:
+          - {
+              label: "Last updated time",
+              name: "last_updated_time",
+              widget: "datetime",
+            }
+          - {
+              label: "Message Text",
+              name: "message",
+              widget: "markdown",
             }
