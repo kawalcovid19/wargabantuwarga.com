@@ -29,7 +29,7 @@ export function RefinementModal({
     return (
       <>
         {filterSettings?.length && (
-          <div className="pb-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="pb-8 grid grid-cols-2 gap-4">
             {filterSettings.map((filterSetting, idx) => (
               <CustomRefinementList
                 key={`filter-${idx}`}

@@ -156,7 +156,7 @@ export function CustomInstantSearch({
     >
       <Configure hitsPerPage={250} />
       <form className="pb-8 space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-end">
+        <div className="flex flex-row items-end">
           <div className="flex flex-1 items-center mt-1">
             <CustomSearchBox
               hasFilter={
@@ -188,7 +188,7 @@ export function CustomInstantSearch({
           </>
         ) : (
           filterSettings?.length && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4">
               {filterSettings.map((filterSetting, idx) => (
                 <CustomRefinementList
                   key={`filter-${idx}`}

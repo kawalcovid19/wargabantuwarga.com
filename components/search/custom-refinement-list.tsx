@@ -38,7 +38,9 @@ function RefinementList({
       >
         <option value="">Semua</option>
         {items.map((item) => (
-          <option key={item.label}>{item.label}</option>
+          <option key={item.label} value={item.label}>
+            {item.label}
+          </option>
         ))}
       </InputSelect>
     </div>
