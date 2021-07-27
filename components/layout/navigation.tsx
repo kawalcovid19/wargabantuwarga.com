@@ -1,10 +1,13 @@
 import * as React from "react";
 
-import {
-  bottomNavigation,
-  BottomNavigationItem,
-} from "~/lib/layout/navigation-data";
+import { bottomNavigation, NavigationItem } from "~/lib/layout/navigation-data";
 
+import {
+  navigationMenuClasses,
+  NavigationMenuPopover,
+} from "./navigation-menu";
+
+import { Popover } from "@headlessui/react";
 import { MenuIcon } from "@heroicons/react/outline";
 import clsx from "clsx";
 import Link from "next/link";
@@ -13,15 +16,7 @@ import { useRouter } from "next/router";
 export function Navigation() {
   const router = useRouter();
 
-  const menuClasses = (isActive?: boolean) => {
-    return [
-      "inline-flex flex-col items-center justify-center text-center h-12 px-2 rounded-md",
-      isActive ? "text-blue-600 font-semibold" : "text-gray-600",
-      "hover:text-blue-600",
-    ];
-  };
-
-  const renderItem = (item: Pick<BottomNavigationItem, "icon" | "name">) => {
+  const renderItem = (item: Pick<NavigationItem, "icon" | "name">) => {
     return (
       <>
         {React.createElement(item.icon, {
@@ -46,7 +41,7 @@ export function Navigation() {
               <li key={item.name} className="relative">
                 {item.external ? (
                   <a
-                    className={clsx(...menuClasses(isActive))}
+                    className={clsx(...navigationMenuClasses(isActive))}
                     href={item.href}
                     rel="nofollow noopener noreferrer"
                     target="_blank"
@@ -55,7 +50,7 @@ export function Navigation() {
                   </a>
                 ) : (
                   <Link href={item.href}>
-                    <a className={clsx(...menuClasses(isActive))}>
+                    <a className={clsx(...navigationMenuClasses(isActive))}>
                       {renderItem(item)}
                     </a>
                   </Link>
@@ -63,11 +58,17 @@ export function Navigation() {
               </li>
             );
           })}
-          <li className="relative">
-            <button className={clsx(...menuClasses())} type="button">
-              <MenuIcon aria-hidden className="w-8 h-8" />
-              <span className="text-xs truncate">Menu</span>
-            </button>
+          <li className="relative sm:hidden">
+            <Popover>
+              <Popover.Button
+                className={clsx(...navigationMenuClasses())}
+                type="button"
+              >
+                <MenuIcon aria-hidden className="w-8 h-8" />
+                <span className="text-xs truncate">Menu</span>
+              </Popover.Button>
+              <NavigationMenuPopover />
+            </Popover>
           </li>
         </ul>
       </div>
