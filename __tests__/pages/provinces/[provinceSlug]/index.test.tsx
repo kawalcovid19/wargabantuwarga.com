@@ -6,7 +6,7 @@ import ProvincePage, {
   getStaticProps,
 } from "~/pages/provinces/[provinceSlug]";
 
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 jest.mock("~/lib/provinces");
@@ -74,7 +74,7 @@ describe("ProvincePage", () => {
       />,
     );
     const input = screen.getByLabelText("Cari kontak:");
-    fireEvent.change(input, { target: { value: "keyword" } });
+    userEvent.type(input, "keyword");
     userEvent.click(screen.getByText("Cari"));
     setTimeout(() => {
       expect(window.location.search).toEqual(
