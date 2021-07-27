@@ -137,10 +137,10 @@ describe("Navigation", () => {
               </a>
             </li>
             <li
-              class="relative"
+              class="relative sm:hidden"
             >
               <div
-                class="relative sm:hidden"
+                class="relative"
               >
                 <button
                   aria-expanded="false"

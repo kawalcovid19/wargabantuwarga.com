@@ -72,8 +72,8 @@ export function Navigation() {
               </li>
             );
           })}
-          <li className="relative">
-            <Popover className="relative sm:hidden">
+          <li className="relative sm:hidden">
+            <Popover className="relative">
               {({ open }) => (
                 <>
                   <Popover.Button
