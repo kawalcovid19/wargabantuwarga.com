@@ -1,6 +1,12 @@
 import { Contact, Province } from "../../provinces";
 
-import { build, fake, oneOf, sequence } from "@jackfranklin/test-data-bot";
+import {
+  build,
+  fake,
+  oneOf,
+  perBuild,
+  sequence,
+} from "@jackfranklin/test-data-bot";
 
 export const contactBuilder = build<Contact>({
   fields: {
@@ -29,6 +35,22 @@ export const provinceBuilder = build<Province>({
     id: sequence(),
     name: fake((f) => f.address.state()),
     slug: fake((f) => f.lorem.slug()),
-    data: [contactBuilder()],
+    data: [
+      contactBuilder({
+        overrides: {
+          verifikasi: perBuild(() => 0),
+        },
+      }),
+      contactBuilder({
+        overrides: {
+          penyedia: perBuild(() => "Bravo"),
+        },
+      }),
+      contactBuilder({
+        overrides: {
+          penyedia: perBuild(() => "Alpha"),
+        },
+      }),
+    ],
   },
 });
