@@ -73,26 +73,32 @@ describe("ProvincesPage", () => {
   });
 
   it("performs the search functionality correctly", async () => {
-    const firstProvince = provinceListItemBuilder();
-    const secondProvince = provinceListItemBuilder();
+    const dkiJakarta = provinceListItemBuilder({
+      overrides: {
+        name: "DKI Jakarta",
+      },
+    });
+    const jawaTimur = provinceListItemBuilder({
+      overrides: {
+        name: "Jawa Timur",
+      },
+    });
 
-    render(<ProvincesPage provincesList={[firstProvince, secondProvince]} />);
+    render(<ProvincesPage provincesList={[dkiJakarta, jawaTimur]} />);
 
-    expect(screen.getByText(firstProvince.name)).toBeVisible();
+    expect(screen.getByText(dkiJakarta.name)).toBeVisible();
 
     userEvent.type(
       screen.getByRole("textbox", {
         name: /cari provinsi:/i,
       }),
-      secondProvince.name,
+      jawaTimur.name,
     );
 
-    await waitForElementToBeRemoved(() =>
-      screen.queryByText(firstProvince.name),
-    );
+    await waitForElementToBeRemoved(() => screen.queryByText(dkiJakarta.name));
 
-    expect(screen.queryByText(firstProvince.name)).not.toBeInTheDocument();
-    expect(screen.getByText(secondProvince.name)).toBeVisible();
+    expect(screen.queryByText(dkiJakarta.name)).not.toBeInTheDocument();
+    expect(screen.getByText(jawaTimur.name)).toBeVisible();
   });
 });
 
