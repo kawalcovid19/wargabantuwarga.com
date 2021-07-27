@@ -7,8 +7,10 @@ import ProvincePage, {
 } from "~/pages/provinces/[provinceSlug]";
 
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 jest.mock("~/lib/provinces");
+jest.mock("next/router", () => require("next-router-mock"));
 
 describe("ProvincePage", () => {
   const [province] = provinces;
@@ -27,6 +29,58 @@ describe("ProvincePage", () => {
     expect(breadcrumbs).toBeVisible();
     expect(breadcrumbs).toHaveAttribute("href", `/provinces/${province.slug}`);
     expect(title).toBeVisible();
+  });
+
+  it("renders keyword input & filter value selected based on url parameter", () => {
+    render(
+      <ProvincePage
+        contactList={province.data}
+        provinceName={province.name}
+        provinceSlug={province.slug}
+      />,
+    );
+    const location = {
+      ...window.location,
+      search: `?q=Medika&kebutuhan=${province.data[0].kebutuhan}&lokasi=${province.data[0].lokasi}`,
+    };
+    Object.defineProperty(window, "location", {
+      writable: true,
+      value: location,
+    });
+    setTimeout(() => {
+      const input = screen.getByLabelText("Cari kontak:");
+      expect(input).toHaveValue("Medika");
+      const select1 = screen.getByLabelText("Kategori");
+      expect(select1).toHaveValue(province.data[0].kebutuhan);
+      const select2 = screen.getByLabelText("Lokasi");
+      expect(select2).toHaveValue(province.data[0].lokasi);
+    }, 200);
+  });
+
+  it("preserve additional url parameters", () => {
+    const location = {
+      ...window.location,
+      search: `?q=Medika&kebutuhan=${province.data[0].kebutuhan}&utm_campaign=sdtt&utm_medium=message`,
+    };
+    Object.defineProperty(window, "location", {
+      writable: true,
+      value: location,
+    });
+    render(
+      <ProvincePage
+        contactList={province.data}
+        provinceName={province.name}
+        provinceSlug={province.slug}
+      />,
+    );
+    const input = screen.getByLabelText("Cari kontak:");
+    userEvent.type(input, "keyword");
+    userEvent.click(screen.getByText("Cari"));
+    setTimeout(() => {
+      expect(window.location.search).toEqual(
+        "?q=keyword&utm_campaign=sdtt&utm_medium=message",
+      );
+    }, 200);
   });
 });
 

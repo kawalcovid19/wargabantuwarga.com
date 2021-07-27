@@ -66,7 +66,7 @@ const HomePage = () => (
         <LastUpdatedAlert className="mt-3 mb-3" />
         <HomePageSection>
           <article className="prose prose-indigo">
-            {htmr(html, { transform: htmrTransform })};
+            {htmr(html, { transform: htmrTransform })}
           </article>
         </HomePageSection>
         <style jsx>{`
