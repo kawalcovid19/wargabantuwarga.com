@@ -42,10 +42,10 @@ export function NavigationMenuPopover({
       }
     };
 
-    router.events.on("beforeHistoryChange", handleRouteChange);
+    router.events.on("routeChangeStart", handleRouteChange);
 
     return () => {
-      router.events.off("beforeHistoryChange", handleRouteChange);
+      router.events.off("routeChangeStart", handleRouteChange);
     };
   }, [router, popoverButtonRef]);
 
