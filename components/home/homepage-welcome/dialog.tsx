@@ -1,28 +1,44 @@
-import { Fragment } from "react";
+import { Fragment, useRef } from "react";
 
 import { PrimaryButton } from "~/components/ui/button";
 
 import { Dialog, Transition } from "@headlessui/react";
-import { ShareIcon } from "@heroicons/react/solid";
+import { ShareIcon, XIcon } from "@heroicons/react/solid";
+import htmr, { HtmrOptions } from "htmr";
 
 interface BasicDialogProps {
   isOpen: boolean;
   onToggle: () => void;
+  onCtaClick: () => void;
   title: string;
-  description: React.ReactNode;
+  description: string;
 }
+
+export const paragraphTransformer = (node: JSX.IntrinsicElements["p"]) => {
+  const { children } = node;
+
+  return <p className="mb-2">{children}</p>;
+};
+
+const htmrTransformer: HtmrOptions["transform"] = {
+  p: paragraphTransformer,
+};
 
 export function BasicDialog({
   isOpen,
+  onCtaClick,
   onToggle,
   title,
   description,
 }: BasicDialogProps) {
+  const ctaButtonRef = useRef(null);
+
   return (
     <Transition.Root as={Fragment} show={isOpen}>
       <Dialog
         as="div"
         className="fixed z-50 inset-0 overflow-y-auto"
+        initialFocus={ctaButtonRef}
         onClose={() => onToggle()}
         open={isOpen}
         static
@@ -58,18 +74,34 @@ export function BasicDialog({
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
             <div className="inline-block align-bottom w-full bg-white rounded-lg px-4 pt-5 pb-4 mx-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:p-6">
-              <Dialog.Title className="text-gray-700 text-xl">
-                {title}
-              </Dialog.Title>
-              <Dialog.Description className="text-gray-700 text-sm my-4">
-                {description}
+              <div className="flex justify-between items-center align-center">
+                <Dialog.Title className="text-gray-700 text-xl">
+                  {title}
+                </Dialog.Title>
+
+                <button
+                  aria-label="Tutup"
+                  className="flex justify-center items-center align-center h-6 w-6 text-gray-500"
+                  onClick={() => onToggle()}
+                  type="button"
+                >
+                  <XIcon />
+                </button>
+              </div>
+
+              <Dialog.Description
+                as="div"
+                className="text-gray-700 text-sm my-4"
+              >
+                {htmr(description, { transform: htmrTransformer })}
               </Dialog.Description>
 
               <PrimaryButton
                 aria-label="Sebarkan sekarang"
-                className="w-full"
+                className="w-full mt-2"
                 icon={ShareIcon}
-                onClick={() => onToggle()}
+                onClick={() => onCtaClick()}
+                ref={ctaButtonRef}
                 rounded
                 type="button"
               >
