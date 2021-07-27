@@ -4,6 +4,7 @@ import { HomepageHeader } from "~/components/home/homepage-header";
 import { HomePageSection } from "~/components/home/homepage-section";
 import { HomePageStart } from "~/components/home/homepage-start";
 import { Page } from "~/components/layout/page";
+import { Alert } from "~/components/ui/alert";
 import { Container } from "~/components/ui/container";
 import config from "~/lib/config";
 import {
@@ -16,7 +17,6 @@ import {
 } from "~/lib/htmr-transformers";
 
 import { ClockIcon } from "@heroicons/react/outline";
-import clsx from "clsx";
 import htmr from "htmr";
 import { HtmrOptions } from "htmr/src/types";
 import { NextSeo } from "next-seo";
@@ -36,38 +36,24 @@ const htmrTransform: HtmrOptions["transform"] = {
 
 interface LastUpdatedAlertProps {
   className?: string;
-  style?: React.CSSProperties;
 }
 
-const LastUpdatedAlert = ({ className, style }: LastUpdatedAlertProps) => (
-  <div
-    className={clsx(
-      "bg-yellow-50 border-l-4 border-yellow-400 p-4 sm:rounded",
-      className,
-    )}
-    style={style}
-  >
-    <div className="flex">
-      <div className="flex-shrink-0">
-        <ClockIcon aria-hidden="true" className="h-5 w-5 text-yellow-400" />
-      </div>
-      <div className="ml-3">
-        <p className="text-sm text-yellow-700">
-          Pembaruan terakhir pada{" "}
-          {new Date(attributes.last_updated_time).toLocaleString("id", {
-            weekday: "long",
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-            hour: "2-digit",
-            minute: "2-digit",
-            timeZone: "Asia/Jakarta",
-            timeZoneName: "short",
-          })}
-        </p>
-      </div>
-    </div>
-  </div>
+const LastUpdatedAlert = ({ className }: LastUpdatedAlertProps) => (
+  <Alert accentBorder className={className} icon={ClockIcon}>
+    <p className="text-sm">
+      Pembaruan terakhir pada{" "}
+      {new Date(attributes.last_updated_time).toLocaleString("id", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZone: "Asia/Jakarta",
+        timeZoneName: "short",
+      })}
+    </p>
+  </Alert>
 );
 
 const HomePage = () => (
