@@ -50,6 +50,8 @@ export default function FaqPage(props: FaqPageProps) {
     );
   }, [filteredQuestions]);
 
+  console.log(listFaqs);
+
   return (
     <Page>
       <NextSeo openGraph={{ title: meta.title }} title={meta.title} />
