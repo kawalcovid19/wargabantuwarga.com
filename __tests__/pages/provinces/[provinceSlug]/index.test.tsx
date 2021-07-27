@@ -28,6 +28,28 @@ describe("ProvincePage", () => {
     expect(breadcrumbs).toHaveAttribute("href", `/provinces/${province.slug}`);
     expect(title).toBeVisible();
   });
+
+  it("renders keyword input & filter value selected based on url parameter", () => {
+    const location = {
+      ...window.location,
+      search: "?q=Medika&kebutuhan=Oksigen",
+    };
+    Object.defineProperty(window, "location", {
+      writable: true,
+      value: location,
+    });
+    const wrapper = render(
+      <ProvincePage
+        contactList={province.data}
+        provinceName={province.name}
+        provinceSlug={province.slug}
+      />,
+    );
+    const input = wrapper.getByLabelText("Cari kontak:");
+    expect(input).toHaveValue("Medika");
+    const select = wrapper.getByLabelText("Kategori");
+    expect(select).toHaveValue("Oksigen");
+  });
 });
 
 describe("getStaticPaths", () => {
