@@ -25,10 +25,12 @@ export const navMenuButtonIcon = (isOpen?: boolean) => {
 };
 
 interface NavigationMenuPopoverProps {
+  open?: boolean;
   popoverButtonRef?: RefObject<HTMLButtonElement>;
 }
 
 export function NavigationMenuPopover({
+  open,
   popoverButtonRef,
 }: NavigationMenuPopoverProps) {
   const router = useRouter();
@@ -37,8 +39,10 @@ export function NavigationMenuPopover({
   // since we can't programatically control the `Popover` state.
   useEffect(() => {
     const handleRouteChange = () => {
-      if (popoverButtonRef?.current) {
-        popoverButtonRef.current.click();
+      if (open) {
+        if (popoverButtonRef?.current) {
+          popoverButtonRef.current.click();
+        }
       }
     };
 
@@ -47,7 +51,7 @@ export function NavigationMenuPopover({
     return () => {
       router.events.off("routeChangeStart", handleRouteChange);
     };
-  }, [router.events, popoverButtonRef]);
+  }, [router.events, open, popoverButtonRef]);
 
   return (
     <Popover.Panel

@@ -87,7 +87,10 @@ export function Navigation() {
                     })}
                     <span className="text-xs truncate">Menu</span>
                   </Popover.Button>
-                  <NavigationMenuPopover popoverButtonRef={popoverButtonRef} />
+                  <NavigationMenuPopover
+                    open={open}
+                    popoverButtonRef={popoverButtonRef}
+                  />
                 </>
               )}
             </Popover>

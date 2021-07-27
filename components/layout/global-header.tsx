@@ -34,7 +34,10 @@ export function GlobalHeader() {
                 })}
                 <span className="sr-only">Menu</span>
               </Popover.Button>
-              <NavigationMenuPopover popoverButtonRef={popoverButtonRef} />
+              <NavigationMenuPopover
+                open={open}
+                popoverButtonRef={popoverButtonRef}
+              />
             </>
           )}
         </Popover>
