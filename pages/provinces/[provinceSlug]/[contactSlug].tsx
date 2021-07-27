@@ -6,7 +6,8 @@ import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import { ReportButton } from "~/components/report-button";
 import { getContactMeta } from "~/lib/meta";
-import provinces, { Contact, getContactsPaths } from "~/lib/provinces";
+import { getContactsPaths } from "~/lib/province-utils";
+import provinces, { Contact } from "~/lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "~/lib/string-utils";
 
 import { GetStaticPaths, GetStaticProps } from "next";

@@ -1,7 +1,9 @@
 import React from "react";
 
 import provinces from "~/lib/provinces";
-import ContactPage from "~/pages/provinces/[provinceSlug]/[contactSlug]";
+import ContactPage, {
+  getStaticPaths,
+} from "~/pages/provinces/[provinceSlug]/[contactSlug]";
 
 import { render, screen } from "@testing-library/react";
 
@@ -36,5 +38,22 @@ describe("ContactPage", () => {
       `/provinces/${province.slug}/${contact.slug}`,
     );
     expect(title).toBeVisible();
+  });
+});
+
+describe("getStaticPaths", () => {
+  it("returns the correct paths", () => {
+    const paths = provinces.flatMap((province) =>
+      province.data.map((contact) => ({
+        params: {
+          provinceSlug: province.slug,
+          contactSlug: contact.slug,
+        },
+      })),
+    );
+    expect(getStaticPaths({})).toEqual({
+      fallback: false,
+      paths,
+    });
   });
 });
