@@ -5,6 +5,7 @@ import {
   BottomNavigationItem,
 } from "~/lib/layout/navigation-data";
 
+import { MenuIcon } from "@heroicons/react/outline";
 import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -12,7 +13,7 @@ import { useRouter } from "next/router";
 export function Navigation() {
   const router = useRouter();
 
-  const menuClasses = (isActive: boolean) => {
+  const menuClasses = (isActive?: boolean) => {
     return [
       "inline-flex flex-col items-center justify-center text-center h-12 px-2 rounded-md",
       isActive ? "text-blue-600 font-semibold" : "text-gray-600",
@@ -62,6 +63,12 @@ export function Navigation() {
               </li>
             );
           })}
+          <li className="relative">
+            <button className={clsx(...menuClasses())} type="button">
+              <MenuIcon aria-hidden className="w-8 h-8" />
+              <span className="text-xs">Menu</span>
+            </button>
+          </li>
         </ul>
       </div>
     </nav>
