@@ -101,4 +101,18 @@ describe("SearchForm", () => {
       expect(window.location.search).toEqual("?kebutuhan=Oksigen&q=keyword");
     }, 200);
   });
+
+  it("render filter button if filter as modal", () => {
+    const wrapper = render(
+      <SearchForm
+        checkDocSize={true}
+        filterItems={{ kebutuhan: [], lokasi: [] }}
+        itemName="kontak"
+        onSubmitKeywords={handleSubmitKeyword}
+        withFilterModal={true}
+      />,
+    );
+    const button = wrapper.getByText("Filter");
+    expect(button).toBeVisible();
+  });
 });

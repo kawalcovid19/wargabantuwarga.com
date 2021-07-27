@@ -6,9 +6,11 @@ import ProvincePage, {
   getStaticProps,
 } from "~/pages/provinces/[provinceSlug]";
 
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 jest.mock("~/lib/provinces");
+jest.mock("next/router", () => require("next-router-mock"));
 
 describe("ProvincePage", () => {
   const [province] = provinces;
@@ -39,7 +41,7 @@ describe("ProvincePage", () => {
     );
     const location = {
       ...window.location,
-      search: `?q=Medika&kebutuhan=${province.data[0].kebutuhan}`,
+      search: `?q=Medika&kebutuhan=${province.data[0].kebutuhan}&lokasi=${province.data[0].lokasi}`,
     };
     Object.defineProperty(window, "location", {
       writable: true,
@@ -48,8 +50,36 @@ describe("ProvincePage", () => {
     setTimeout(() => {
       const input = wrapper.getByLabelText("Cari kontak:");
       expect(input).toHaveValue("Medika");
-      const select = wrapper.getByLabelText("Kategori");
-      expect(select).toHaveValue(province.data[0].kebutuhan);
+      const select1 = wrapper.getByLabelText("Kategori");
+      expect(select1).toHaveValue(province.data[0].kebutuhan);
+      const select2 = wrapper.getByLabelText("Lokasi");
+      expect(select2).toHaveValue(province.data[0].lokasi);
+    }, 200);
+  });
+
+  it("preserve additional url parameters", () => {
+    const location = {
+      ...window.location,
+      search: `?q=Medika&kebutuhan=${province.data[0].kebutuhan}&utm_campaign=sdtt&utm_medium=message`,
+    };
+    Object.defineProperty(window, "location", {
+      writable: true,
+      value: location,
+    });
+    const wrapper = render(
+      <ProvincePage
+        contactList={province.data}
+        provinceName={province.name}
+        provinceSlug={province.slug}
+      />,
+    );
+    const input = wrapper.getByLabelText("Cari kontak:");
+    fireEvent.change(input, { target: { value: "keyword" } });
+    userEvent.click(screen.getByText("Cari"));
+    setTimeout(() => {
+      expect(window.location.search).toEqual(
+        "?q=keyword&utm_campaign=sdtt&utm_medium=message",
+      );
     }, 200);
   });
 });
