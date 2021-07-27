@@ -1,39 +1,49 @@
-import * as React from "react";
+import { createElement, useRef } from "react";
 
-import {
-  bottomNavigation,
-  BottomNavigationItem,
-} from "~/lib/layout/navigation-data";
+import { bottomNavigation, NavigationItem } from "~/lib/layout/navigation-data";
 
+import { NavigationMenuPopover } from "./navigation-menu";
+
+import { Popover } from "@headlessui/react";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+const navigationClasses = (isActive?: boolean) => {
+  return [
+    "inline-flex flex-col items-center justify-center text-center h-12 px-2 rounded-md",
+    isActive ? "text-blue-600 font-semibold" : "text-gray-600",
+    "hover:text-blue-600",
+  ];
+};
+
 export function Navigation() {
   const router = useRouter();
+  const popoverButtonRef = useRef<HTMLButtonElement>(null);
 
-  const menuClasses = (isActive: boolean) => {
-    return [
-      "inline-flex flex-col items-center justify-center text-center h-12 px-2 rounded-md",
-      isActive ? "text-blue-600 font-semibold" : "text-gray-600",
-      "hover:text-blue-600",
-    ];
-  };
-
-  const renderItem = (item: BottomNavigationItem) => {
+  const renderItem = (item: Pick<NavigationItem, "icon" | "name">) => {
     return (
       <>
-        {React.createElement(item.icon, {
+        {createElement(item.icon, {
           className: "w-8 h-8",
           "aria-hidden": true,
         })}
-        <span className="text-xs">{item.name}</span>
+        <span className="text-xs truncate">{item.name}</span>
       </>
     );
   };
 
+  const renderNavButtonIcon = (isOpen?: boolean) => {
+    if (isOpen) {
+      return XIcon;
+    }
+
+    return MenuIcon;
+  };
+
   return (
-    <nav className="flex items-center justify-center fixed bottom-0 w-full h-16 px-2 bg-white border-t border-gray-300 z-40">
+    <nav className="flex items-center justify-center fixed bottom-0 w-full h-16 px-2 bg-white border-t border-gray-300 z-30">
       <div className="flex items-center justify-center w-full max-w-xl mx-auto">
         <ul className="flex items-center justify-evenly w-full">
           {bottomNavigation.map((item) => {
@@ -45,7 +55,7 @@ export function Navigation() {
               <li key={item.name} className="relative">
                 {item.external ? (
                   <a
-                    className={clsx(...menuClasses(isActive))}
+                    className={clsx(...navigationClasses(isActive))}
                     href={item.href}
                     rel="nofollow noopener noreferrer"
                     target="_blank"
@@ -54,7 +64,7 @@ export function Navigation() {
                   </a>
                 ) : (
                   <Link href={item.href}>
-                    <a className={clsx(...menuClasses(isActive))}>
+                    <a className={clsx(...navigationClasses(isActive))}>
                       {renderItem(item)}
                     </a>
                   </Link>
@@ -62,6 +72,29 @@ export function Navigation() {
               </li>
             );
           })}
+          <li className="relative sm:hidden">
+            <Popover className="relative">
+              {({ open }) => (
+                <>
+                  <Popover.Button
+                    className={clsx(...navigationClasses())}
+                    ref={popoverButtonRef}
+                    type="button"
+                  >
+                    {createElement(renderNavButtonIcon(open), {
+                      "aria-hidden": true,
+                      className: "w-8 h-8",
+                    })}
+                    <span className="text-xs truncate">Menu</span>
+                  </Popover.Button>
+                  <NavigationMenuPopover
+                    open={open}
+                    popoverButtonRef={popoverButtonRef}
+                  />
+                </>
+              )}
+            </Popover>
+          </li>
         </ul>
       </div>
     </nav>
