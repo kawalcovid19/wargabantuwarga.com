@@ -11,14 +11,22 @@ interface AlertBaseProps {
    * @type {"blue" | "gray" | "green" | "indigo" | "pink" | "purple" | "red" | "yellow" }
    * @default 'primary'
    */
-  color: Colors;
+  color?: Colors;
   /**
    * Toggle the visibility of component.
    *
    * @default true
    */
   visible?: boolean;
+  /**
+   * Set broder style in the left of component.`
+   * @default false
+   */
   accentBorder?: boolean;
+  /**
+   * The icon component (from Heroicons) to use in the button. `icon={PlusIcon}`
+   */
+  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
 export type AlertProps = AlertBaseProps & React.HTMLAttributes<HTMLDivElement>;
