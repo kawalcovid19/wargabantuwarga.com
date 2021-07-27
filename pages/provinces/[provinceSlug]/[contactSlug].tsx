@@ -6,11 +6,10 @@ import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import { ReportButton } from "~/components/report-button";
 import { getContactMeta } from "~/lib/meta";
-import provinces, { Contact, getContactsPaths } from "~/lib/provinces";
-import { getTheLastSegmentFromKebabCase } from "~/lib/string-utils";
+import { getContactsPaths } from "~/lib/province-utils";
+import provinces, { Contact } from "~/lib/provinces";
 
 import { GetStaticPaths, GetStaticProps } from "next";
-import { useRouter } from "next/dist/client/router";
 import { NextSeo } from "next-seo";
 
 type ContactPageProps = {
@@ -22,8 +21,8 @@ type ContactPageProps = {
 export default function ContactPage({
   contact,
   provinceName,
+  provinceSlug,
 }: ContactPageProps) {
-  const router = useRouter();
   const meta = getContactMeta(provinceName, contact);
 
   return (
@@ -34,9 +33,7 @@ export default function ContactPage({
         title={meta.title}
       />
       <PageHeader
-        backButton={
-          <BackButton href={`/provinces/${router.query.provinceSlug}`} />
-        }
+        backButton={<BackButton href={`/provinces/${provinceSlug}`} />}
         breadcrumbs={[
           {
             name: "Provinsi",
@@ -44,13 +41,13 @@ export default function ContactPage({
           },
           {
             name: provinceName,
-            href: `/provinces/${router.query.provinceSlug}`,
+            href: `/provinces/${provinceSlug}`,
           },
           {
             name: contact.penyedia
               ? contact.penyedia
               : contact.keterangan ?? "",
-            href: `/provinces/${router.query.provinceSlug}/${router.query.contactSlug}`,
+            href: `/provinces/${provinceSlug}/${contact.slug}`,
             current: true,
           },
         ]}
@@ -76,10 +73,7 @@ export const getStaticProps: GetStaticProps = ({ params = {} }) => {
   const { provinceSlug, contactSlug } = params;
   const province = provinces.find((prov) => prov.slug === provinceSlug);
   const provinceName = province ? province.name : "";
-  const contactIndex = getTheLastSegmentFromKebabCase(contactSlug as string);
-  const contact = province
-    ? province.data[contactIndex as unknown as number]
-    : null;
+  const contact = province?.data.find((c) => c.slug === contactSlug);
   return {
     props: {
       provinceSlug,
