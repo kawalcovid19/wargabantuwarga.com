@@ -17,6 +17,18 @@ interface AlertBaseProps {
    *
    * @default true
    */
+  /**
+   * Optionally add a close button to alert and allow it to self dismiss.
+   */
+  dismissible?: boolean;
+  /**
+   * Method called before the dissmiss animation has started.
+   */
+  onDismiss?: () => void;
+  /**
+   * Method called after the dissmiss animation has completed and the component is removed from the dom.
+   */
+  onDismissed?: () => void;
   visible?: boolean;
   /**
    * Set broder style in the left of component.`
