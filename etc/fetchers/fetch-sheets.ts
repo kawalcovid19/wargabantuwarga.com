@@ -1,6 +1,7 @@
 import {
   allIsEmptyString,
   getKebabCase,
+  stripTags,
   toSnakeCase,
   toTitleCase,
 } from "../../lib/string-utils";
@@ -69,10 +70,14 @@ export async function fetchSheets() {
                 cellValue = toTitleCase(cellValue);
               }
               prev[colName] = cellValue;
-              if (colName == "penyedia") {
-                prev.slug = getKebabCase(
-                  (prev.penyedia || prev.keterangan) as string,
-                );
+              if (colName == "kontak") {
+                prev.slug = [
+                  getKebabCase(prev.kebutuhan as string),
+                  getKebabCase(prev.keterangan as string),
+                  getKebabCase(prev.lokasi as string),
+                  getKebabCase(prev.penyedia as string),
+                  getKebabCase(stripTags(prev.kontak as string)),
+                ].join("-");
               } else if (colName == "terakhir_update") {
                 prev.verifikasi = cellValue == "" ? 0 : 1;
               }
