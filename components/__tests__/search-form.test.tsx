@@ -79,7 +79,7 @@ describe("SearchForm", () => {
   });
 
   it("preserve url param on search", () => {
-    const wrapper = render(
+    render(
       <SearchForm
         checkDocSize={true}
         itemName="provinsi"
@@ -94,7 +94,7 @@ describe("SearchForm", () => {
       writable: true,
       value: location,
     });
-    const input = wrapper.getByLabelText("Cari provinsi:");
+    const input = screen.getByLabelText("Cari provinsi:");
     fireEvent.change(input, { target: { value: "keyword" } });
     userEvent.click(screen.getByText("Cari"));
     setTimeout(() => {
@@ -103,7 +103,7 @@ describe("SearchForm", () => {
   });
 
   it("render filter button if filter as modal", () => {
-    const wrapper = render(
+    render(
       <SearchForm
         checkDocSize={true}
         filterItems={{ kebutuhan: [], lokasi: [] }}
@@ -112,7 +112,7 @@ describe("SearchForm", () => {
         withFilterModal={true}
       />,
     );
-    const button = wrapper.getByText("Filter");
+    const button = screen.getByText("Filter");
     expect(button).toBeVisible();
   });
 });

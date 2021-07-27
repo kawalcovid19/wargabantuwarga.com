@@ -32,7 +32,7 @@ describe("ProvincePage", () => {
   });
 
   it("renders keyword input & filter value selected based on url parameter", () => {
-    const wrapper = render(
+    render(
       <ProvincePage
         contactList={province.data}
         provinceName={province.name}
@@ -48,11 +48,11 @@ describe("ProvincePage", () => {
       value: location,
     });
     setTimeout(() => {
-      const input = wrapper.getByLabelText("Cari kontak:");
+      const input = screen.getByLabelText("Cari kontak:");
       expect(input).toHaveValue("Medika");
-      const select1 = wrapper.getByLabelText("Kategori");
+      const select1 = screen.getByLabelText("Kategori");
       expect(select1).toHaveValue(province.data[0].kebutuhan);
-      const select2 = wrapper.getByLabelText("Lokasi");
+      const select2 = screen.getByLabelText("Lokasi");
       expect(select2).toHaveValue(province.data[0].lokasi);
     }, 200);
   });
@@ -66,14 +66,14 @@ describe("ProvincePage", () => {
       writable: true,
       value: location,
     });
-    const wrapper = render(
+    render(
       <ProvincePage
         contactList={province.data}
         provinceName={province.name}
         provinceSlug={province.slug}
       />,
     );
-    const input = wrapper.getByLabelText("Cari kontak:");
+    const input = screen.getByLabelText("Cari kontak:");
     fireEvent.change(input, { target: { value: "keyword" } });
     userEvent.click(screen.getByText("Cari"));
     setTimeout(() => {
