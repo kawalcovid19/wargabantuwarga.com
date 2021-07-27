@@ -2,6 +2,8 @@ import { BackButton } from "~/components/layout/back-button";
 import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
+import type { LinksWellProps } from "~/components/links-well";
+import { LinksWell } from "~/components/links-well";
 import { ProvinceList, ProvinceListItem } from "~/components/province-list";
 import { SearchForm } from "~/components/search-form";
 import { SeoText } from "~/components/seo-text";
@@ -23,18 +25,48 @@ const meta = {
   title: "Informasi Faskes & Alkes untuk COVID-19 di semua provinsi Indonesia",
 };
 
+const donorLinksData: LinksWellProps = {
+  title: "Butuh Donor Plasma / Ingin Donor Plasma?",
+  links: [
+    {
+      href: "tel:+117",
+      text: "117 ext 5 - Contact Center BNPB Donor Konvalesen",
+    },
+    {
+      href: "https://docs.google.com/spreadsheets/u/1/d/16cEvcUm9UjlxEgpP4Gu_5XBdeHW6zCOBzx4frQADD3I/edit?usp=sharing",
+      text: "Database Layanan Donor Plasma",
+    },
+  ],
+};
+
+const hospitalLinksData: LinksWellProps = {
+  title: "Cek Ketersediaan Tempat Tidur Rumah Sakit",
+  links: [
+    {
+      href: "https://yankes.kemkes.go.id/app/siranap/",
+      text: "SIRANAP Kemenkes",
+    },
+  ],
+};
+
 export default function ProvincesPage(props: ProvincesPageProps) {
   const [filteredProvinces, handleSubmitKeywords, urlParams] = useSearch({
     items: props.provincesList,
     fieldNames: ["name"],
   });
 
+  let generalLinksData: LinksWellProps | undefined;
+
   const router = useRouter();
-  const hasGeneralInfo =
-    typeof router.query.kebutuhan == "string" &&
-    ["RUMAH SAKIT", "DONOR PLASMA"].includes(
-      router.query.kebutuhan.toUpperCase(),
-    );
+  const needTypeQuery = router.query.kebutuhan;
+
+  if (typeof needTypeQuery == "string") {
+    if (needTypeQuery.toUpperCase() === "RUMAH SAKIT") {
+      generalLinksData = hospitalLinksData;
+    } else if (needTypeQuery.toUpperCase() === "DONOR PLASMA") {
+      generalLinksData = donorLinksData;
+    }
+  }
 
   return (
     <Page>
@@ -51,10 +83,11 @@ export default function ProvincesPage(props: ProvincesPageProps) {
         title="Provinsi"
       />
       <PageContent>
-        {hasGeneralInfo && (
-          <section className="bg-pink-200 p-4 border-green-500 border-4 mb-4 text-sm">
-            <p>Butuh Donor Plasma / Ingin Donor Plasma?</p>
-          </section>
+        {generalLinksData && (
+          <LinksWell
+            links={generalLinksData.links}
+            title={generalLinksData.title}
+          />
         )}
         <SearchForm
           autoSearch={true}
