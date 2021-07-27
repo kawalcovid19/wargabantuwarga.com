@@ -1,4 +1,6 @@
-import { BadgeColor, BadgeSizes } from "./types";
+import { Colors } from "../../types";
+
+import { BadgeSizes } from "./types";
 
 export function badgeRoundedStyles(rounded?: boolean) {
   if (rounded) {
@@ -22,7 +24,7 @@ export function badgeSizes(size?: BadgeSizes) {
   }
 }
 
-export function badgeColors(color?: BadgeColor) {
+export function badgeColors(color?: Colors) {
   switch (color) {
     case "blue": {
       return "bg-blue-100 text-blue-800";
