@@ -76,4 +76,12 @@ describe("getStaticProps", () => {
       },
     });
   });
+
+  it("returns an empty provinceName only given an empty params", () => {
+    expect(getStaticProps({})).toEqual({
+      props: {
+        provinceName: "",
+      },
+    });
+  });
 });
