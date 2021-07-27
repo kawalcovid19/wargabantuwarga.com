@@ -11,7 +11,7 @@ function LinkInWell(props: { link: Link }) {
   const { href, text, internal } = props.link;
   const css = "underline text-gray-900 hover:text-gray-600";
 
-  if (internal || href.startsWith("tel:"))
+  if (internal || href.startsWith("tel:") || !href.startsWith("http"))
     return (
       <a className={css} href={href}>
         {text}
@@ -31,6 +31,9 @@ function LinkInWell(props: { link: Link }) {
 
 export function LinksWell(props: LinksWellProps) {
   const { title, links } = props;
+
+  if (!title || !links.length) return null;
+
   return (
     <section
       aria-label={title}
