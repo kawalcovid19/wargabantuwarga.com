@@ -2,7 +2,7 @@ import React from "react";
 
 import { SearchForm } from "../search-form";
 
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 describe("SearchForm", () => {
@@ -95,7 +95,7 @@ describe("SearchForm", () => {
       value: location,
     });
     const input = screen.getByLabelText("Cari provinsi:");
-    fireEvent.change(input, { target: { value: "keyword" } });
+    userEvent.type(input, "keyword");
     userEvent.click(screen.getByText("Cari"));
     setTimeout(() => {
       expect(window.location.search).toEqual("?kebutuhan=Oksigen&q=keyword");
