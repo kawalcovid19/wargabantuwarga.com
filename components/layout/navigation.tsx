@@ -72,7 +72,7 @@ export function Navigation() {
               </li>
             );
           })}
-          <li>
+          <li className="relative">
             <Popover className="relative sm:hidden">
               {({ open }) => (
                 <>

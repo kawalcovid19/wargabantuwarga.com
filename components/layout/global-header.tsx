@@ -21,7 +21,7 @@ export function GlobalHeader() {
             <WBWLogoWhite aria-hidden height={32} />
           </a>
         </Link>
-        <Popover>
+        <Popover className="relative">
           {({ open }) => (
             <>
               <Popover.Button
