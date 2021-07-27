@@ -7,7 +7,7 @@ import {
   ViewGridIcon,
 } from "@heroicons/react/outline";
 
-export interface BottomNavigationItem {
+export interface NavigationItem {
   name: string;
   icon: React.ComponentType<React.ComponentProps<"svg">>;
   href: string;
@@ -15,7 +15,9 @@ export interface BottomNavigationItem {
   external?: boolean;
 }
 
-export const bottomNavigation: BottomNavigationItem[] = [
+export type NavMenuItem = Omit<NavigationItem, "icon">;
+
+export const bottomNavigation: NavigationItem[] = [
   {
     name: "Beranda",
     icon: HomeIcon,
@@ -37,5 +39,38 @@ export const bottomNavigation: BottomNavigationItem[] = [
     name: "Info Umum",
     icon: ViewGridIcon,
     href: "/faq",
+  },
+];
+
+export const navMenu: NavMenuItem[] = [
+  {
+    name: "Beranda",
+    href: "/",
+    exact: true,
+  },
+  {
+    name: "Daftar Kontak Faskes per Provinsi",
+    href: "/provinces",
+    exact: true,
+  },
+  {
+    name: "Rumah Sakit",
+    href: "/provinces?kebutuhan=Rumah%20sakit",
+    exact: true,
+  },
+  {
+    name: "Ambulans",
+    href: "/provinces?kebutuhan=Ambulans",
+    exact: true,
+  },
+  {
+    name: "Info Oksigen",
+    href: "/provinces?kebutuhan=Oksigen",
+    exact: true,
+  },
+  {
+    name: "Donor Plasma",
+    href: "/provinces?kebutuhan=Donor%20plasma",
+    exact: true,
   },
 ];
