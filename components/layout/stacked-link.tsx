@@ -1,16 +1,13 @@
 import React from "react";
 
+import { URL } from "~/lib/isoman-contents";
+
 import { ExternalLinkIcon } from "@heroicons/react/solid";
 import clsx from "clsx";
 import Link from "next/link";
 
 interface StackedListProps {
-  links: [
-    {
-      title: string;
-      url: string;
-    },
-  ];
+  links: URL[];
 }
 
 const LinkClasses = (i: number) => {
@@ -23,12 +20,17 @@ export default function StackedLink(list: StackedListProps) {
     <div>
       {links.map((link, i) => (
         <Link key={i} href={link.url}>
-          <a target="_blank">
+          <a data-testid={`next-link-${link.title}`} target="_blank">
             <div className={clsx(LinkClasses(i))}>
-              <div className="text-base text-gray-900">{link.title}</div>
+              <div className="text-base text-gray-900 hover:text-gray-700">
+                {link.title}
+              </div>
 
               <span className="text-brand-500 ml-4">
-                <ExternalLinkIcon className="h-6 w-6" />
+                <ExternalLinkIcon
+                  className="h-6 w-6"
+                  data-testid={`external-link-icon-${link.title}`}
+                />
               </span>
             </div>
           </a>

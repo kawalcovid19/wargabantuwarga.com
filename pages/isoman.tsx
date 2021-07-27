@@ -4,17 +4,24 @@ import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import StackedLink from "~/components/layout/stacked-link";
 import config from "~/lib/config";
-import isoman from "~/lib/isoman-contents";
+import isoman, { Category } from "~/lib/isoman-contents";
 
+import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 
 const meta = {
   title: `Pedoman Isolasi Mandiri | ${config.site_name}`,
 };
 
-export default function Isoman() {
-  const { isoman_contents } = isoman;
+type IsomanPageProps = {
+  isoman: {
+    isoman_contents: Category[];
+  };
+};
 
+export default function IsomanPage(props: IsomanPageProps) {
+  const isoman_contents = props.isoman;
+  const isoman_data = isoman_contents.isoman_contents;
   return (
     <div>
       <Page>
@@ -32,7 +39,7 @@ export default function Isoman() {
         />
         <PageContent>
           <div className="p-4 bg-white shadow overflow-hidden rounded-md space-y-8">
-            {isoman_contents.map((iso, i) => (
+            {isoman_data.map((iso, i: number) => (
               <div key={i}>
                 <div className="text-base font-semibold text-gray-900 my-4">
                   {iso.title}
@@ -51,3 +58,11 @@ export default function Isoman() {
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps = () => {
+  return {
+    props: {
+      isoman,
+    },
+  };
+};

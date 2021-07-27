@@ -5,7 +5,6 @@ media_folder: public/images
 public_folder: /images
 publish_mode: editorial_workflow
 display_url: https://www.wargabantuwarga.com
-local_backend: true
 
 collections:
   - name: "config"
