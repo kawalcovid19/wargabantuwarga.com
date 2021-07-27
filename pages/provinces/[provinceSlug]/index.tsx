@@ -9,7 +9,8 @@ import { SeoText } from "~/components/seo-text";
 import { getCurrentLongDate } from "~/lib/date-utils";
 import { useSearch } from "~/lib/hooks/use-search";
 import { getProvinceMeta } from "~/lib/meta";
-import provinces, { Contact, getProvincesPaths } from "~/lib/provinces";
+import { getProvincesPaths } from "~/lib/province-utils";
+import provinces, { Contact } from "~/lib/provinces";
 
 import { GetStaticPaths, GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
