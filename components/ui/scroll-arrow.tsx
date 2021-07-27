@@ -25,7 +25,7 @@ export const ScrollArrow = ({
     } else if (showScroll && window.pageYOffset <= heightThreshold) {
       setShowScroll(false);
     }
-  }, [showScroll]);
+  }, [showScroll, heightThreshold]);
 
   useEffect(() => {
     window.addEventListener("scroll", checkScrollTop);
@@ -42,7 +42,7 @@ export const ScrollArrow = ({
     <button
       className={clsx(
         showScroll ? "inline-flex" : "hidden",
-        "fixed bottom-20 right-5 h-12 w-12 items-center justify-center p-2 border border-transparent rounded-full shadow-lg text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300 ease-in-out z-50",
+        "fixed bottom-20 right-5 h-12 w-12 items-center justify-center p-2 border border-transparent rounded-full shadow-lg text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300 ease-in-out z-30",
       )}
       onClick={scrollTop}
     >
