@@ -6,7 +6,13 @@ import provinces from "~/lib/provinces";
 import { getInitial } from "~/lib/string-utils";
 import ProvincesPage, { getStaticProps } from "~/pages/provinces";
 
-import { render, screen, within } from "@testing-library/react";
+import {
+  render,
+  screen,
+  waitForElementToBeRemoved,
+  within,
+} from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 jest.mock("~/lib/provinces");
 jest.mock("next/router", () => require("next-router-mock"));
@@ -66,7 +72,28 @@ describe("ProvincesPage", () => {
     );
   });
 
-  it("performs the search functionality correctly", () => {});
+  it("performs the search functionality correctly", async () => {
+    const firstProvince = provinceListItemBuilder();
+    const secondProvince = provinceListItemBuilder();
+
+    render(<ProvincesPage provincesList={[firstProvince, secondProvince]} />);
+
+    expect(screen.getByText(firstProvince.name)).toBeVisible();
+
+    userEvent.type(
+      screen.getByRole("textbox", {
+        name: /cari provinsi:/i,
+      }),
+      secondProvince.name,
+    );
+
+    await waitForElementToBeRemoved(() =>
+      screen.queryByText(firstProvince.name),
+    );
+
+    expect(screen.queryByText(firstProvince.name)).not.toBeInTheDocument();
+    expect(screen.getByText(secondProvince.name)).toBeVisible();
+  });
 });
 
 describe("getStaticProps", () => {
