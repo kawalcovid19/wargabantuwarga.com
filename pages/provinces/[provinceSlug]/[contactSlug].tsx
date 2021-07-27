@@ -10,7 +10,6 @@ import provinces, { Contact, getContactsPaths } from "~/lib/provinces";
 import { getTheLastSegmentFromKebabCase } from "~/lib/string-utils";
 
 import { GetStaticPaths, GetStaticProps } from "next";
-import { useRouter } from "next/dist/client/router";
 import { NextSeo } from "next-seo";
 
 type ContactPageProps = {
@@ -22,8 +21,8 @@ type ContactPageProps = {
 export default function ContactPage({
   contact,
   provinceName,
+  provinceSlug,
 }: ContactPageProps) {
-  const router = useRouter();
   const meta = getContactMeta(provinceName, contact);
 
   return (
@@ -34,9 +33,7 @@ export default function ContactPage({
         title={meta.title}
       />
       <PageHeader
-        backButton={
-          <BackButton href={`/provinces/${router.query.provinceSlug}`} />
-        }
+        backButton={<BackButton href={`/provinces/${provinceSlug}`} />}
         breadcrumbs={[
           {
             name: "Provinsi",
@@ -44,13 +41,13 @@ export default function ContactPage({
           },
           {
             name: provinceName,
-            href: `/provinces/${router.query.provinceSlug}`,
+            href: `/provinces/${provinceSlug}`,
           },
           {
             name: contact.penyedia
               ? contact.penyedia
               : contact.keterangan ?? "",
-            href: `/provinces/${router.query.provinceSlug}/${router.query.contactSlug}`,
+            href: `/provinces/${provinceSlug}/${contact.slug}`,
             current: true,
           },
         ]}
