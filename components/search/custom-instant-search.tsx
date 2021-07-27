@@ -131,7 +131,6 @@ export function CustomInstantSearch({
   );
 
   const onSearchStateChange = (updatedSearchState: SearchState) => {
-    console.log("updated search state 1", updatedSearchState);
     if (withFilterModal) {
       if (isFilterModalOpen && updatedSearchState.refinementList) {
         setRefinementList(
@@ -141,7 +140,6 @@ export function CustomInstantSearch({
         updatedSearchState.refinementList = refinementList;
       }
     }
-    console.log("updated search state 2", updatedSearchState);
     void debouncedUpdateUrlParams(updatedSearchState);
     setSearchState(updatedSearchState);
   };
