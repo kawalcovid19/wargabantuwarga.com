@@ -1,4 +1,4 @@
-import { GlobalHeader } from "~/components/layout/global-header";
+import { GlobalHeader } from "../global-header";
 
 import { render } from "@testing-library/react";
 
