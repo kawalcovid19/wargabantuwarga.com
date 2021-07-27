@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import { PrimaryButton } from "~/components/ui/button";
 
 import { Dialog, Transition } from "@headlessui/react";
+import { ShareIcon } from "@heroicons/react/solid";
 
 interface BasicDialogProps {
   isOpen: boolean;
@@ -65,11 +66,14 @@ export function BasicDialog({
               </Dialog.Description>
 
               <PrimaryButton
+                aria-label="Sebarkan sekarang"
                 className="w-full"
+                icon={ShareIcon}
                 onClick={() => onToggle()}
                 rounded
+                type="button"
               >
-                Sebarkan Sekarang
+                Sebarkan sekarang
               </PrimaryButton>
             </div>
           </Transition.Child>

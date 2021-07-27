@@ -84,7 +84,8 @@ collections:
               widget: "string",
             }
           - {
-              label: "Message Text",
-              name: "message_text",
-              widget: "markdown"
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              hint: "Page body",
             }

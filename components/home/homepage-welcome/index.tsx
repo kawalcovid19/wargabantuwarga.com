@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-import welcomeMessage from "~/constants/welcome-message";
+import { attributes, html } from "~/_content/welcome-message.md";
 import useIntersectionObserver from "~/lib/hooks/use-intersection";
 
 import { BasicDialog } from "./dialog";
@@ -27,10 +27,10 @@ export function HomePageWelcome() {
   return (
     <div ref={ref}>
       <BasicDialog
-        description={<p>{welcomeMessage.message_text}</p>}
+        description={<p>{html}</p>}
         isOpen={isOpen}
         onToggle={handleToogle}
-        title={welcomeMessage.title}
+        title={attributes.title}
       />
     </div>
   );
