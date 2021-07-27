@@ -43,7 +43,7 @@ describe("SearchForm", () => {
               >
                 <input
                   autocomplete="off"
-                  class="first:rounded-l-md last:rounded-r-md focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 focus:z-10"
+                  class="first:rounded-l-md last:rounded-r-md focus:ring-blue-500 focus:border-blue-500 block w-full text-sm border-gray-300 focus:z-10"
                   id="keywordsInput"
                   type="text"
                   value=""
