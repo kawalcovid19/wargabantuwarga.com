@@ -26,7 +26,7 @@ export const PrimaryButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
       style,
       type,
       block,
-      size = "md",
+      size,
       color = "blue",
       rounded,
       icon,

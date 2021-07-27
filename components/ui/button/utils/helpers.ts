@@ -32,7 +32,7 @@ export function buttonSizes(size?: ButtonSizes) {
       return "px-6 py-3 text-base";
     }
     default: {
-      return "px-4 py-2 text-sm";
+      return "px-4 py-2 text-base sm:text-sm";
     }
   }
 }
