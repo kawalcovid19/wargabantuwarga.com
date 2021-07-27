@@ -25,6 +25,7 @@ export const contactBuilder = build<Contact>({
       "Tes swab",
     ),
     penyedia: fake((f) => f.company.companyName()),
+    keterangan: fake((f) => f.commerce.productName()),
     kontak: fake((f) => f.phone.phoneNumber()),
     verifikasi: 1,
   },

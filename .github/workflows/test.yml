@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: "14"
       - run: yarn install --frozen-lockfile
-      - run: yarn run mirror-box
+      - run: yarn run fetch-wbw
       - uses: actions/cache@v1
         id: cache-deps
         with:
