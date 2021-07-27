@@ -21,14 +21,14 @@ export function Navigation() {
     ];
   };
 
-  const renderItem = (item: BottomNavigationItem) => {
+  const renderItem = (item: Pick<BottomNavigationItem, "icon" | "name">) => {
     return (
       <>
         {React.createElement(item.icon, {
           className: "w-8 h-8",
           "aria-hidden": true,
         })}
-        <span className="text-xs">{item.name}</span>
+        <span className="text-xs truncate">{item.name}</span>
       </>
     );
   };
@@ -66,7 +66,7 @@ export function Navigation() {
           <li className="relative">
             <button className={clsx(...menuClasses())} type="button">
               <MenuIcon aria-hidden className="w-8 h-8" />
-              <span className="text-xs">Menu</span>
+              <span className="text-xs truncate">Menu</span>
             </button>
           </li>
         </ul>
