@@ -2,7 +2,8 @@ import React from "react";
 
 import { SearchForm } from "../search-form";
 
-import { render } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 describe("SearchForm", () => {
   const handleSubmitKeyword = jest.fn();
@@ -75,5 +76,29 @@ describe("SearchForm", () => {
     );
 
     expect(getByText("Cari provinsi:")).not.toBeNull();
+  });
+
+  it("preserve url param on search", () => {
+    const wrapper = render(
+      <SearchForm
+        checkDocSize={true}
+        itemName="provinsi"
+        onSubmitKeywords={handleSubmitKeyword}
+      />,
+    );
+    const location = {
+      ...window.location,
+      search: "?kebutuhan=Oksigen",
+    };
+    Object.defineProperty(window, "location", {
+      writable: true,
+      value: location,
+    });
+    const input = wrapper.getByLabelText("Cari provinsi:");
+    fireEvent.change(input, { target: { value: "keyword" } });
+    userEvent.click(screen.getByText("Cari"));
+    setTimeout(() => {
+      expect(window.location.search).toEqual("?kebutuhan=Oksigen&q=keyword");
+    }, 200);
   });
 });
