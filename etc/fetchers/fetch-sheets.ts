@@ -1,7 +1,6 @@
 import {
   allIsEmptyString,
   getKebabCase,
-  getSlug,
   toSnakeCase,
   toTitleCase,
 } from "../../lib/string-utils";
@@ -71,9 +70,8 @@ export async function fetchSheets() {
               }
               prev[colName] = cellValue;
               if (colName == "penyedia") {
-                prev.slug = getSlug(
+                prev.slug = getKebabCase(
                   (prev.penyedia || prev.keterangan) as string,
-                  rowIndex,
                 );
               } else if (colName == "terakhir_update") {
                 prev.verifikasi = cellValue == "" ? 0 : 1;

@@ -3,6 +3,7 @@ import React from "react";
 import provinces from "~/lib/provinces";
 import ContactPage, {
   getStaticPaths,
+  getStaticProps,
 } from "~/pages/provinces/[provinceSlug]/[contactSlug]";
 
 import { render, screen } from "@testing-library/react";
@@ -54,6 +55,25 @@ describe("getStaticPaths", () => {
     expect(getStaticPaths({})).toEqual({
       fallback: false,
       paths,
+    });
+  });
+});
+
+describe("getStaticProps", () => {
+  const [province] = provinces;
+  const [contact] = province.data;
+
+  it("gets the contact from the provinceSlug and contactSlug params", () => {
+    expect(
+      getStaticProps({
+        params: { provinceSlug: province.slug, contactSlug: contact.slug },
+      }),
+    ).toEqual({
+      props: {
+        provinceSlug: province.slug,
+        provinceName: province.name,
+        contact,
+      },
     });
   });
 });

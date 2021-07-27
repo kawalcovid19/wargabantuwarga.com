@@ -9,8 +9,8 @@ module.exports = {
     global: {
       statements: 53,
       branches: 44,
-      functions: 56,
-      lines: 53,
+      functions: 57,
+      lines: 54,
     },
   },
   transform: {

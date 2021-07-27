@@ -8,7 +8,6 @@ import { ReportButton } from "~/components/report-button";
 import { getContactMeta } from "~/lib/meta";
 import { getContactsPaths } from "~/lib/province-utils";
 import provinces, { Contact } from "~/lib/provinces";
-import { getTheLastSegmentFromKebabCase } from "~/lib/string-utils";
 
 import { GetStaticPaths, GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
@@ -74,10 +73,7 @@ export const getStaticProps: GetStaticProps = ({ params = {} }) => {
   const { provinceSlug, contactSlug } = params;
   const province = provinces.find((prov) => prov.slug === provinceSlug);
   const provinceName = province ? province.name : "";
-  const contactIndex = getTheLastSegmentFromKebabCase(contactSlug as string);
-  const contact = province
-    ? province.data[contactIndex as unknown as number]
-    : null;
+  const contact = province?.data.find((c) => c.slug === contactSlug);
   return {
     props: {
       provinceSlug,
