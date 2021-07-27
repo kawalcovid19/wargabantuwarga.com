@@ -50,7 +50,10 @@ export function NavigationMenuPopover({
   }, [router.events, popoverButtonRef]);
 
   return (
-    <Popover.Panel className="fixed top-16 bottom-16 left-1/2 transform -translate-x-1/2 w-full max-w-xl z-10">
+    <Popover.Panel
+      className="fixed top-16 bottom-16 left-1/2 transform -translate-x-1/2 w-full max-w-xl z-10"
+      unmount
+    >
       <nav className="flex flex-col w-full h-full flex-1 p-2 bg-white text-gray-900">
         <ul className="space-y-2">
           {navMenu.map((item) => {
