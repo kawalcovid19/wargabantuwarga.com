@@ -1,11 +1,13 @@
 import React from "react";
 
+import { contactBuilder } from "~/lib/__mocks__/builders/provinces";
 import provinces from "~/lib/provinces";
 import ContactPage, {
   getStaticPaths,
   getStaticProps,
 } from "~/pages/provinces/[provinceSlug]/[contactSlug]";
 
+import { perBuild } from "@jackfranklin/test-data-bot";
 import { render, screen } from "@testing-library/react";
 
 jest.mock("~/lib/provinces");
@@ -37,6 +39,39 @@ describe("ContactPage", () => {
     expect(contactBreadcrumbs).toHaveAttribute(
       "href",
       `/provinces/${province.slug}/${contact.slug}`,
+    );
+    expect(title).toBeVisible();
+  });
+
+  it.only("fallbacks to `keterangan` if `penyedia` is not available", () => {
+    const contactWithoutPenyedia = contactBuilder({
+      overrides: {
+        penyedia: perBuild(() => undefined),
+      },
+    });
+
+    render(
+      <ContactPage
+        contact={contactWithoutPenyedia}
+        provinceName={province.name}
+        provinceSlug={province.slug}
+      />,
+    );
+
+    const provinceBreadcrumbs = screen.getByText(province.name);
+    expect(provinceBreadcrumbs).toBeVisible();
+    expect(provinceBreadcrumbs).toHaveAttribute(
+      "href",
+      `/provinces/${province.slug}`,
+    );
+
+    const [contactBreadcrumbs, title] = screen.getAllByText(
+      contactWithoutPenyedia.keterangan as string,
+    );
+    expect(contactBreadcrumbs).toBeVisible();
+    expect(contactBreadcrumbs).toHaveAttribute(
+      "href",
+      `/provinces/${province.slug}/${contactWithoutPenyedia.slug}`,
     );
     expect(title).toBeVisible();
   });
