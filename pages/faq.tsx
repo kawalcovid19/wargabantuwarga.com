@@ -6,6 +6,7 @@ import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import { SearchForm } from "~/components/search-form";
 import { EmptyState } from "~/components/ui/empty-state";
+import { FaqListSkeleton } from "~/components/ui/skeleton-loading";
 import faqSheets, { Faq } from "~/lib/faqs";
 import { useSearch } from "~/lib/hooks/use-search";
 
@@ -35,14 +36,19 @@ const meta = {
 
 export default function FaqPage(props: FaqPageProps) {
   const { faqSheets: faq } = props;
-  const [filteredQuestions, handleSubmitKeywords, urlParams, filterItems] =
-    useSearch({
-      items: faq,
-      fieldNames: ["kategori_pertanyaan", "pertanyaan", "jawaban"],
-      aggregationSettings: [
-        { field: "kategori_pertanyaan", title: "Kategori Pertanyaan" },
-      ],
-    });
+  const [
+    filteredQuestions,
+    handleSubmitKeywords,
+    urlParams,
+    filterItems,
+    isLoading,
+  ] = useSearch({
+    items: faq,
+    fieldNames: ["kategori_pertanyaan", "pertanyaan", "jawaban"],
+    aggregationSettings: [
+      { field: "kategori_pertanyaan", title: "Kategori Pertanyaan" },
+    ],
+  });
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const listFaqs = useMemo(() => {
@@ -130,6 +136,7 @@ export default function FaqPage(props: FaqPageProps) {
               </dl>
             </div>
           ))}
+
           {listFaqsKeys.length === 0 && (
             <div className="px-4">
               <EmptyState
@@ -139,6 +146,8 @@ export default function FaqPage(props: FaqPageProps) {
               />
             </div>
           )}
+
+          {isLoading && <FaqListSkeleton />}
         </div>
       </PageContent>
     </Page>
