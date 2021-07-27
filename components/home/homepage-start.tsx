@@ -41,7 +41,7 @@ export function HomePageStart() {
           <Image
             alt="Ajukan bantuan sembako jika positif Covid-19 - Daftar Sekarang"
             blurDataURL={getBlurred(
-              "v1627206408/sembako-cta-v1_gpmaxg.png",
+              "v1627319803/sembako-cta-v2_czojls.png",
               656,
             )}
             height={236}
@@ -50,7 +50,7 @@ export function HomePageStart() {
             loading="lazy"
             placeholder="blur"
             quality={90}
-            src="v1627206408/sembako-cta-v1_gpmaxg.png"
+            src="v1627319803/sembako-cta-v2_czojls.png"
             width={656}
           />
         </a>
