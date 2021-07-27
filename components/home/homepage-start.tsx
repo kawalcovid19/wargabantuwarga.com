@@ -1,8 +1,8 @@
 import React from "react";
 
-import { cloudinaryLoader } from "~/lib/cloudinary-loader";
+import { cloudinaryLoader, getBlurred } from "~/lib/cloudinary-loader";
 
-import { PrimaryAnchorButton } from "../ui/button/primary-anchor-button";
+import { PrimaryAnchorButton } from "../ui/button";
 
 import { HomePageMenu } from "./homepage-menu";
 
@@ -40,12 +40,17 @@ export function HomePageStart() {
         >
           <Image
             alt="Ajukan bantuan sembako jika positif Covid-19 - Daftar Sekarang"
+            blurDataURL={getBlurred(
+              "v1627319803/sembako-cta-v2_czojls.png",
+              656,
+            )}
             height={236}
             layout="responsive"
             loader={cloudinaryLoader}
-            priority={true}
+            loading="lazy"
+            placeholder="blur"
             quality={90}
-            src="v1627206408/sembako-cta-v1_gpmaxg.png"
+            src="v1627319803/sembako-cta-v2_czojls.png"
             width={656}
           />
         </a>

@@ -1,13 +1,7 @@
 ---
-last_updated_time: 2021-07-26T11:28:25.774Z
+last_updated_time: 2021-07-27T02:22:59.198Z
 ---
-*\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19, kontak fasilitas/alat kesehatan, dan wadah untuk saling bantu antar warga. Data di #WargaBantuWarga dikumpulkan oleh para relawan.* 
-
-- - -
-
-#### Cari Informasi dan Kontak Rumah Sakit, Ambulans, atau Oksigen?
-
-[Lihat database fasilitas/alat kesehatan di sini](/provinces).
+*\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19, kontak fasilitas/alat kesehatan, dan wadah bagi warga untuk saling bantu. Data di #WargaBantuWarga dikumpulkan oleh para relawan.* 
 
 - - -
 
@@ -16,13 +10,6 @@ last_updated_time: 2021-07-26T11:28:25.774Z
 **Chat via WhatsApp 081257579812 atau klik [bit.ly/halowarga](https://bit.ly/halowarga) (Tidak bisa ditelepon)**
 
 *Catatan: Jam operasional hotline pukul 07.30-22.30 WIB. Kami hanya memberikan informasi yang relevan, bukan bantuan langsung/darurat.*
-
-- - -
-
-#### Butuh Bantuan Kebutuhan Pokok karena Positif COVID-19?
-
-* [Ajukan bantuan kebutuhan pokok jika positif COVID-19 dengan isi formulir ini](https://sembako.wargabantuwarga.com/). Bantuan baru tersedia untuk warga Jabodetabek, Bandung, Yogyakarta, dan Surabaya. Tim #WargaBantuWarga akan menyeleksi dan memprioritaskan warga yang butuh bantuan.
-* [Lihat beragam posko bantuan warga jika butuh bantuan makanan saat isoman](https://docs.google.com/spreadsheets/d/1lksiRf7G3c14AGzUI0lVmyG6CQmyWe1iXH90D5LEqq8/edit?usp=sharing)
 
 - - -
 
@@ -83,20 +70,6 @@ Hubungi 119 ext. 9
 #### Butuh informasi layanan Krematorium, Mobil Jenazah, Peti Mati, Bunga Duka, dan Program Bantuan Makanan Isoman?
 
 [Klik database informasi Lentera Svarga di sini](https://lenterasvarga.carrd.co)
-
-- - -
-
-## Daftar Kontak Fasilitas & Alat Kesehatan per Provinsi
-
-#### **([Lihat selengkapnya di sini](/provinces))**
-
-Kumpulan informasi ketersediaan tempat tidur di rumah sakit, tabung oksigen, ambulans, hingga kontak layanan kesehatan di daerah.
-
-### [Akses Database Kontak & Alat Kesehatan Per-Provinsi di Sini](/provinces)
-
-Daerahmu belum ada dalam di database? Kamu bisa berkontribusi dengan [isi formulir ini untuk menambahkan info di daerahmu](https://forms.gle/Z3obzzcf9tY36MCH7).
-
-*Disclaimer: Semangat #WargaBantuWarga adalah berbagi informasi untuk warga. Saat ini data yang terkumpul di database adalah hasil pencarian informasi relawan dari beragam sumber terutama via media sosial. Karena keterbatasan kami, tidak semua data yang tampil di database #WargaBantuWarga terverifikasi. Harap berhati-hati saat mengontak atau melakukan transaksi dengan penyedia layanan untuk menghindari hal-hal yang tidak diinginkan.*
 
 - - -
 
