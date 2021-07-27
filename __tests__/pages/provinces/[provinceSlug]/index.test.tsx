@@ -30,14 +30,6 @@ describe("ProvincePage", () => {
   });
 
   it("renders keyword input & filter value selected based on url parameter", () => {
-    const location = {
-      ...window.location,
-      search: "?q=Medika&kebutuhan=Oksigen",
-    };
-    Object.defineProperty(window, "location", {
-      writable: true,
-      value: location,
-    });
     const wrapper = render(
       <ProvincePage
         contactList={province.data}
@@ -45,10 +37,20 @@ describe("ProvincePage", () => {
         provinceSlug={province.slug}
       />,
     );
-    const input = wrapper.getByLabelText("Cari kontak:");
-    expect(input).toHaveValue("Medika");
-    const select = wrapper.getByLabelText("Kategori");
-    expect(select).toHaveValue("Oksigen");
+    const location = {
+      ...window.location,
+      search: `?q=Medika&kebutuhan=${province.data[0].kebutuhan}`,
+    };
+    Object.defineProperty(window, "location", {
+      writable: true,
+      value: location,
+    });
+    setTimeout(() => {
+      const input = wrapper.getByLabelText("Cari kontak:");
+      expect(input).toHaveValue("Medika");
+      const select = wrapper.getByLabelText("Kategori");
+      expect(select).toHaveValue(province.data[0].kebutuhan);
+    }, 200);
   });
 });
 
