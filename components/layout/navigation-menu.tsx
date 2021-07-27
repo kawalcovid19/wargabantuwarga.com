@@ -39,10 +39,8 @@ export function NavigationMenuPopover({
   // since we can't programatically control the `Popover` state.
   useEffect(() => {
     const handleRouteChange = () => {
-      if (open) {
-        if (popoverButtonRef?.current) {
-          popoverButtonRef.current.click();
-        }
+      if (open && popoverButtonRef?.current) {
+        popoverButtonRef.current.click();
       }
     };
 
