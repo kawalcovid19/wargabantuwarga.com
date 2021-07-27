@@ -47,7 +47,7 @@ export function NavigationMenuPopover({
     return () => {
       router.events.off("routeChangeStart", handleRouteChange);
     };
-  }, [router, popoverButtonRef]);
+  }, [router.events, popoverButtonRef]);
 
   return (
     <Popover.Panel className="fixed top-16 bottom-16 left-1/2 transform -translate-x-1/2 w-full max-w-xl z-10">
