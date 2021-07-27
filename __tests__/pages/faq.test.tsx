@@ -63,13 +63,13 @@ describe("FaqPage", () => {
 
     render(<FaqPage faqSheets={[firstFaq, secondFaq]} />);
 
-    expect(screen.getByText(firstFaq.pertanyaan)).toBeVisible();
+    expect(screen.getByText(firstFaq.jawaban)).toBeVisible();
 
     userEvent.type(
       screen.getByRole("textbox", {
         name: /cari pertanyaan:/i,
       }),
-      secondFaq.pertanyaan,
+      secondFaq.jawaban,
     );
     userEvent.click(
       screen.getByRole("button", {
@@ -77,8 +77,8 @@ describe("FaqPage", () => {
       }),
     );
 
-    expect(screen.queryByText(firstFaq.pertanyaan)).not.toBeInTheDocument();
-    expect(screen.getByText(secondFaq.pertanyaan)).toBeVisible();
+    expect(screen.queryByText(firstFaq.jawaban)).not.toBeInTheDocument();
+    expect(screen.getByText(secondFaq.jawaban)).toBeVisible();
   });
 
   it("performs the filter functionality correctly", () => {
@@ -87,7 +87,7 @@ describe("FaqPage", () => {
 
     render(<FaqPage faqSheets={[firstFaq, secondFaq]} />);
 
-    expect(screen.getByText(firstFaq.pertanyaan)).toBeVisible();
+    expect(screen.getByText(firstFaq.jawaban)).toBeVisible();
 
     userEvent.selectOptions(
       screen.getByRole("combobox", {
@@ -96,8 +96,8 @@ describe("FaqPage", () => {
       secondFaq.kategori_pertanyaan,
     );
 
-    expect(screen.queryByText(firstFaq.pertanyaan)).not.toBeInTheDocument();
-    expect(screen.getByText(secondFaq.pertanyaan)).toBeVisible();
+    expect(screen.queryByText(firstFaq.jawaban)).not.toBeInTheDocument();
+    expect(screen.getByText(secondFaq.jawaban)).toBeVisible();
   });
   */
 });

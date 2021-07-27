@@ -58,67 +58,58 @@ export default function ProvincePage(props: ProvinceProps) {
     defaultSort: "verified_first",
   });
 
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-  if (provinceName) {
-    const meta = getProvinceMeta(provinceName);
+  const meta = getProvinceMeta(provinceName);
 
-    return (
-      <Page>
-        <NextSeo
-          description={meta.description}
-          openGraph={{ description: meta.description, title: meta.title }}
-          title={meta.title}
+  return (
+    <Page>
+      <NextSeo
+        description={meta.description}
+        openGraph={{ description: meta.description, title: meta.title }}
+        title={meta.title}
+      />
+      <PageHeader
+        backButton={<BackButton href="/provinces" />}
+        breadcrumbs={[
+          {
+            name: "Provinsi",
+            href: "/provinces",
+          },
+          {
+            name: provinceName,
+            href: `/provinces/${provinceSlug}`,
+            current: true,
+          },
+        ]}
+        title={provinceName}
+      />
+      <PageContent>
+        <SearchForm
+          checkDocSize={true}
+          filterItems={filterItems}
+          initialValue={urlParams}
+          isLoading={isLoading}
+          itemName="kontak"
+          onSubmitKeywords={handleSubmitKeywords}
+          placeholderText="Cari berdasarkan kontak, alamat, provider, dan keterangan"
         />
-        <PageHeader
-          backButton={<BackButton href="/provinces" />}
-          breadcrumbs={[
-            {
-              name: "Provinsi",
-              href: "/provinces",
-            },
-            {
-              name: provinceName,
-              href: `/provinces/${provinceSlug}`,
-              current: true,
-            },
-          ]}
-          title={provinceName}
+        <ContactList
+          data={filteredContacts}
+          isLoading={isLoading}
+          provinceName={provinceName}
+          provinceSlug={provinceSlug}
         />
-        <PageContent>
-          <SearchForm
-            checkDocSize={true}
-            filterItems={filterItems}
-            initialValue={urlParams}
-            isLoading={isLoading}
-            itemName="kontak"
-            onSubmitKeywords={handleSubmitKeywords}
-            placeholderText="Cari berdasarkan kontak, alamat, provider, dan keterangan"
-          />
-          <ContactList
-            data={filteredContacts}
-            isLoading={isLoading}
-            provinceName={provinceName}
-            provinceSlug={provinceSlug}
-          />
-          <SeoText
-            textNode={
-              <p>
-                Daftar Informasi Fasilitas Kesehatan (Faskes) & Alat Kesehatan
-                (Alkes) untuk COVID-19 di {provinceName} per{" "}
-                {getCurrentLongDate()}.
-              </p>
-            }
-          />
-        </PageContent>
-      </Page>
-    );
-  } else {
-    return (
-      <Page>
-        <h1>Database not found</h1>
-      </Page>
-    );
-  }
+        <SeoText
+          textNode={
+            <p>
+              Daftar Informasi Fasilitas Kesehatan (Faskes) & Alat Kesehatan
+              (Alkes) untuk COVID-19 di {provinceName} per{" "}
+              {getCurrentLongDate()}.
+            </p>
+          }
+        />
+      </PageContent>
+    </Page>
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = () => {

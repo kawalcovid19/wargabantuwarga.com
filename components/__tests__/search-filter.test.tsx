@@ -48,6 +48,7 @@ describe("SearchFilter", () => {
           </label>
           <select
             class="inline-block shadow-sm focus:ring-blue-500 focus:border-blue-500 w-full sm:text-sm border-gray-300 rounded-md"
+            id="filter-kebutuhan"
             name="kebutuhan"
             title="Kategori"
           >
@@ -122,6 +123,7 @@ describe("SearchFilter", () => {
           </label>
           <select
             class="inline-block shadow-sm focus:ring-blue-500 focus:border-blue-500 w-full sm:text-sm border-gray-300 rounded-md"
+            id="filter-kebutuhan"
             name="kebutuhan"
             title="Kategori"
           >

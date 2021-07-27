@@ -48,6 +48,7 @@ export function SearchFilter({
               <div key={`filter-${idx}`} className="space-y-1">
                 <FormLabel htmlFor={`filter-${key}`}>{title}</FormLabel>
                 <InputSelect
+                  id={`filter-${key}`}
                   name={key}
                   onChange={handleFilterChange}
                   title={title}
