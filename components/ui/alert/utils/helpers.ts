@@ -1,4 +1,10 @@
+import * as React from "react";
+
 import { Colors } from "../../types";
+
+import { AlertProps } from "./types";
+
+import clsx from "clsx";
 
 export function accentBorderColors(accentBorder?: boolean, color?: Colors) {
   if (accentBorder) {
@@ -64,4 +70,18 @@ export function alertColors(color?: Colors) {
       return "bg-gray-50 text-gray-700";
     }
   }
+}
+
+export function renderAlertIcon(
+  icon?: AlertProps["icon"],
+  additionalClasses?: string,
+) {
+  if (icon) {
+    return React.createElement(icon, {
+      className: clsx("h-5 w-5", additionalClasses),
+      "aria-hidden": true,
+    });
+  }
+
+  return null;
 }
