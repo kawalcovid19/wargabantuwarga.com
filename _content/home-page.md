@@ -1,5 +1,5 @@
 ---
-last_updated_time: 2021-07-28T12:36:05.896Z
+last_updated_time: 2021-07-28T11:37:10.554Z
 ---
 *\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19, kontak fasilitas/alat kesehatan, dan wadah bagi warga untuk saling bantu. Data di #WargaBantuWarga dikumpulkan oleh para relawan.* 
 
@@ -66,7 +66,15 @@ Hubungi 119 ext. 9
 
 ## Laman Edukasi COVID-19
 
-[Klik di sini untuk lihat kumpulan informasi mengenai COVID-19](https://docs.google.com/spreadsheets/d/1YOIoJcJ6VSyY7wdUySa68MiOdshpzfbC7kl5QIY2jFU/edit?usp=sharing), seperti penanganan jika Anda terkonfirmasi positif COVID-19, panduan melakukan isolasi mandiri, pemakaian tabung oksigen, vaksinasi, hingga tips menjaga kesehatan selama pandemi.
+Kumpulan informasi seputar COVID-19, yaitu:
+
+* [Penanganan jika positif COVID-19](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=1244922827&single=true)
+* [Isolasi mandiri: apa yang harus dilakukan?](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=236754766&single=true)
+* [Informasi seputar oksigen](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=2032388593&single=true)
+* [Tes antigen dan PCR](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=598872232&single=true)
+* [Vaksinasi COVID-19](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=1584366622&single=true)
+* [Jaga kesehatan di masa pandemi](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=1917836112&single=true)
+* [Layanan terkait COVID-19](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=372824836&single=true)
 
 - - -
 
