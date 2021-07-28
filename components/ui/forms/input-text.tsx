@@ -14,7 +14,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
           isGroupItem
             ? "first:rounded-l-md last:rounded-r-md"
             : "shadow-sm rounded-md",
-          "focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300",
+          "focus:ring-blue-500 focus:border-blue-500 block w-full text-sm border-gray-300",
           className,
         )}
         ref={ref}
