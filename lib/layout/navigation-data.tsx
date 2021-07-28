@@ -73,4 +73,8 @@ export const navMenu: NavMenuItem[] = [
     href: "/provinces?kebutuhan=Donor%20plasma",
     exact: true,
   },
+  {
+    name: "Isolasi Mandiri",
+    href: "/isolasi-mandiri",
+  },
 ];
