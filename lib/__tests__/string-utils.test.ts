@@ -2,7 +2,6 @@ import {
   allIsEmptyString,
   getInitial,
   getKebabCase,
-  getTheLastSegmentFromKebabCase,
   isNotEmpty,
   toSnakeCase,
   toTitleCase,
@@ -90,19 +89,6 @@ describe("allIsEmptyString", () => {
     "should return '$expected' when '$input' is provided",
     ({ input, expected }) => {
       expect(allIsEmptyString(input as string[])).toBe(expected);
-    },
-  );
-});
-
-describe("getTheLastSegmentFromKebabCase", () => {
-  it.each`
-    input                    | expected
-    ${"dki-jakarta"}         | ${"jakarta"}
-    ${"jakarta-bukan-pusat"} | ${"pusat"}
-  `(
-    "should return '$expected' when '$input' is provided",
-    ({ input, expected }) => {
-      expect(getTheLastSegmentFromKebabCase(input as string)).toBe(expected);
     },
   );
 });
