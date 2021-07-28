@@ -89,6 +89,9 @@ export function primaryButtonColors(color?: ButtonColors) {
     case "indigo": {
       return "text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500";
     }
+    case "light-blue": {
+      return "text-white bg-light-blue-400 hover:bg-light-blue-500 focus:ring-light-blue-500";
+    }
     case "pink": {
       return "text-white bg-pink-600 hover:bg-pink-700 focus:ring-pink-500";
     }
@@ -124,6 +127,9 @@ export function secondaryButtonColors(color?: ButtonColors) {
     case "indigo": {
       return "text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:ring-indigo-500";
     }
+    case "light-blue": {
+      return "text-light-blue-700 bg-light-blue-100 hover:bg-light-blue-200 focus:ring-light-blue-500";
+    }
     case "pink": {
       return "text-pink-700 bg-pink-100 hover:bg-pink-200 focus:ring-pink-500";
     }
@@ -138,6 +144,44 @@ export function secondaryButtonColors(color?: ButtonColors) {
     }
     default: {
       return "text-gray-700 bg-gray-100 hover:bg-gray-200 focus:ring-gray-500";
+    }
+  }
+}
+
+export function outlineButtonColors(color?: ButtonColors) {
+  switch (color) {
+    case "brand": {
+      return "text-brand-500 border-brand-500 hover:bg-blue-100 focus:ring-brand-500";
+    }
+    case "blue": {
+      return "text-blue-500 border-blue-500 hover:bg-blue-100 focus:ring-blue-500";
+    }
+    case "gray": {
+      return "text-gray-700 border-gray-700 hover:bg-gray-100 focus:ring-gray-500";
+    }
+    case "green": {
+      return "text-green-500 border-green-500 hover:bg-green-100 focus:ring-green-500";
+    }
+    case "indigo": {
+      return "text-indigo-500 border-indigo-500 hover:bg-indigo-100 focus:ring-indigo-500";
+    }
+    case "light-blue": {
+      return "text-light-blue-400 border-light-blue-400 hover:bg-light-blue-100 focus:ring-light-blue-500";
+    }
+    case "pink": {
+      return "text-pink-500 border-pink-500 hover:bg-pink-100 focus:ring-pink-500";
+    }
+    case "purple": {
+      return "text-purple-500 border-purple-500 hover:bg-purple-100 focus:ring-purple-500";
+    }
+    case "red": {
+      return "text-red-500 border-red-500 hover:bg-red-100 focus:ring-red-500";
+    }
+    case "yellow": {
+      return "text-yellow-500 border-yellow-500 hover:bg-yellow-100 focus:ring-yellow-500";
+    }
+    default: {
+      return "text-gray-700 border-gray-700 hover:bg-gray-100 focus:ring-gray-500";
     }
   }
 }

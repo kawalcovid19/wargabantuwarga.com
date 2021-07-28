@@ -1,6 +1,6 @@
 import React from "react";
 
-import { PrimaryButton, SecondaryButton } from "../button";
+import { OutlineButton, PrimaryButton, SecondaryButton } from "../button";
 
 import { render } from "@testing-library/react";
 
@@ -28,6 +28,27 @@ describe("Button", () => {
         "bg-brand-500",
         "hover:bg-brand-600",
         "focus:ring-brand-500",
+      );
+    });
+
+    it("renders proper rounded styles", () => {
+      const { container } = render(
+        <PrimaryButton rounded>test button</PrimaryButton>,
+      );
+
+      expect(container.firstChild).toHaveClass("rounded-full");
+    });
+
+    it("renders with correct sizes", () => {
+      const { container } = render(
+        <PrimaryButton size="sm">test button</PrimaryButton>,
+      );
+
+      expect(container.firstChild).toHaveClass(
+        "px-3",
+        "py-2",
+        "text-sm",
+        "leading-4",
       );
     });
   });
@@ -59,6 +80,50 @@ describe("Button", () => {
         "hover:bg-brand-200",
         "focus:ring-brand-500",
       );
+    });
+
+    it("renders proper rounded styles", () => {
+      const { container } = render(
+        <SecondaryButton rounded>test button</SecondaryButton>,
+      );
+
+      expect(container.firstChild).toHaveClass("rounded-full");
+    });
+  });
+
+  describe("OutlineButton", () => {
+    it("renders correctly", () => {
+      const { container } = render(<OutlineButton>test button</OutlineButton>);
+
+      expect(container.firstChild).toMatchInlineSnapshot(`
+        <button
+          class="inline-flex px-4 py-2 text-sm rounded-md items-center justify-center border border-transparent font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 text-blue-500 border-blue-500 hover:bg-blue-100 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-75"
+          type="button"
+        >
+          test button
+        </button>
+      `);
+    });
+
+    it("renders with correct colors", () => {
+      const { container } = render(
+        <OutlineButton color="brand">test button</OutlineButton>,
+      );
+
+      expect(container.firstChild).toHaveClass(
+        "text-brand-500",
+        "border-brand-500",
+        "hover:bg-blue-100",
+        "focus:ring-brand-500",
+      );
+    });
+
+    it("renders proper rounded styles", () => {
+      const { container } = render(
+        <OutlineButton rounded>test button</OutlineButton>,
+      );
+
+      expect(container.firstChild).toHaveClass("rounded-full");
     });
   });
 });
