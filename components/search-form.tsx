@@ -115,7 +115,7 @@ export function SearchForm({
 
   return (
     <form className="pb-8 space-y-4" onSubmit={handleSubmit}>
-      <div className="flex flex-col sm:flex-row sm:items-end">
+      <div className="flex flex-row items-end">
         <div className="flex flex-1 items-center mt-1">
           <div className="space-y-1 flex-1">
             <FormLabel htmlFor="keywordsInput">Cari {itemName}:</FormLabel>
@@ -148,7 +148,7 @@ export function SearchForm({
           </div>
         </div>
         {!autoSearch && (
-          <div className="flex flex-row mt-2 ml-0 sm:mt-0 sm:ml-2">
+          <div className="flex flex-row mt-0 ml-2">
             <PrimaryButton block className="flex-1" type="submit">
               Cari
             </PrimaryButton>

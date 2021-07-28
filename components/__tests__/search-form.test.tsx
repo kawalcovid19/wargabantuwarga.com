@@ -22,7 +22,7 @@ describe("SearchForm", () => {
         class="pb-8 space-y-4"
       >
         <div
-          class="flex flex-col sm:flex-row sm:items-end"
+          class="flex flex-row items-end"
         >
           <div
             class="flex flex-1 items-center mt-1"
@@ -52,7 +52,7 @@ describe("SearchForm", () => {
             </div>
           </div>
           <div
-            class="flex flex-row mt-2 ml-0 sm:mt-0 sm:ml-2"
+            class="flex flex-row mt-0 ml-2"
           >
             <button
               class="flex px-4 py-2 text-sm rounded-md items-center justify-center border border-transparent font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-75 flex-1"
