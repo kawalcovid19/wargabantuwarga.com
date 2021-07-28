@@ -65,7 +65,7 @@ collections:
   - name: "isoman_page"
     label: "Isoman Page"
     delete: false
-    preview_path: ""
+    preview_path: "isolasi-mandiri"
     files:
       - name: "isoman_page"
         label: "Isoman Page"
