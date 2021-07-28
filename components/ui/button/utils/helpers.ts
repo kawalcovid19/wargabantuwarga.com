@@ -88,7 +88,7 @@ export function buttonIconClasses(
     case "xl": {
       return [
         iconPosition === "right" ? "ml-3 -mr-1" : "-ml-1 mr-3",
-        "-ml-1 mr-3 h-5 w-5",
+        "h-5 w-5",
       ];
     }
     default: {

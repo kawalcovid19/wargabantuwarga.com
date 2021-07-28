@@ -1,10 +1,24 @@
 import {
   buttonBlockStyles,
+  buttonIconClasses,
   outlineButtonColors,
   primaryButtonColors,
   secondaryButtonColors,
 } from "../helpers";
-import { ButtonColors, ButtonIconPositions } from "../types";
+import { ButtonColors, ButtonIconPositions, ButtonSizes } from "../types";
+
+describe("buttonIconClasses", () => {
+  it.each`
+    size    | expected
+    ${"xs"} | ${["-ml-0.5 mr-2", "h-4 w-4"]}
+    ${"sm"} | ${["-ml-0.5 mr-2", "h-4 w-4"]}
+    ${"md"} | ${["-ml-1 mr-2", "h-5 w-5"]}
+    ${"lg"} | ${["-ml-1 mr-3", "h-5 w-5"]}
+    ${"xl"} | ${["-ml-1 mr-3", "h-5 w-5"]}
+  `("return $expected classes when size is $size", ({ size, expected }) => {
+    expect(buttonIconClasses(size as ButtonSizes)).toEqual(expected);
+  });
+});
 
 describe("buttonBlockStyles", () => {
   it.each`
