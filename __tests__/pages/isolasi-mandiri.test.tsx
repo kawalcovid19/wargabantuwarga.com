@@ -12,16 +12,15 @@ describe("IsomanPage", () => {
   const { isoman_contents } = iso;
   const [isoman_data] = isoman_contents;
 
-  it("renders the title correctly", () => {
+  it("renders the title and the breadcrumbs correctly", () => {
     render(<IsomanPage isoman={iso} />);
 
-    expect(screen.getByText(/Pedoman Isolasi Mandiri/i)).toMatchInlineSnapshot(`
-      <h2
-        class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate"
-      >
-        Pedoman Isolasi Mandiri
-      </h2>
-    `);
+    const title = screen.getByText(/Pedoman Isolasi Mandiri/i);
+    expect(title).toBeVisible();
+
+    const breadcrumbs = screen.getByText(/^Isolasi Mandiri$/i);
+    expect(breadcrumbs).toBeVisible();
+    expect(breadcrumbs).toHaveAttribute("href", "/isolasi-mandiri");
   });
 
   it("renders the category and it's description correctly", () => {
