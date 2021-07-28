@@ -8,7 +8,26 @@ import { fireEvent, render } from "@testing-library/react";
 
 test("loads and displays Alert component", async () => {
   const { container } = render(<Alert>Test Alert</Alert>);
-  expect(container).toMatchSnapshot();
+  expect(container).toMatchInlineSnapshot(`
+<div>
+  <div
+    class="bg-yellow-50 text-yellow-700 rounded-md p-4"
+    role="alert"
+  >
+    <div
+      class="flex justify-between"
+    >
+      <div
+        class="flex"
+      >
+        <div>
+          Test Alert
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`);
 });
 
 test("Alert customize", async () => {
@@ -17,7 +36,26 @@ test("Alert customize", async () => {
       Test
     </Alert>,
   );
-  expect(container).toMatchSnapshot();
+  expect(container).toMatchInlineSnapshot(`
+<div>
+  <div
+    class="bg-red-50 text-red-700 border-l-4 border-red-400 rounded-md p-4 newclass"
+    role="alert"
+  >
+    <div
+      class="flex justify-between"
+    >
+      <div
+        class="flex"
+      >
+        <div>
+          Test
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`);
   expect(container.firstChild).toHaveClass("newclass");
   expect(container.firstChild).toHaveClass("border-l-4 border-red-400");
   expect(container.firstChild).toHaveClass("bg-red-50 text-red-700");
