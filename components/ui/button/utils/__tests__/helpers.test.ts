@@ -1,9 +1,25 @@
 import {
+  buttonBlockStyles,
   outlineButtonColors,
   primaryButtonColors,
   secondaryButtonColors,
 } from "../helpers";
-import { ButtonColors } from "../types";
+import { ButtonColors, ButtonIconPositions } from "../types";
+
+describe("buttonBlockStyles", () => {
+  it.each`
+    iconPosition | expected
+    ${"left"}    | ${["inline-flex", "flex-row"]}
+    ${"right"}   | ${["inline-flex", "flex-row-reverse"]}
+  `(
+    "returns $expected classes when iconPosition is $iconPosition",
+    ({ iconPosition, expected }) => {
+      expect(
+        buttonBlockStyles(false, iconPosition as ButtonIconPositions),
+      ).toEqual(expected);
+    },
+  );
+});
 
 describe("primaryButtonColors", () => {
   it.each`

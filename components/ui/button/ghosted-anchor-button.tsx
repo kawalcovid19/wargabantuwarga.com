@@ -27,6 +27,7 @@ export const GhostedAnchorButton = React.forwardRef<
       size = "md",
       rounded,
       icon,
+      iconPosition = "left",
       children,
       ...rest
     },
@@ -34,7 +35,7 @@ export const GhostedAnchorButton = React.forwardRef<
   ) => (
     <a
       className={clsx(
-        buttonBlockStyles(block),
+        buttonBlockStyles(block, iconPosition),
         buttonSizes(size),
         buttonRoundedStyles(rounded, size),
         "items-center border border-transparent font-medium text-blue-700 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
@@ -46,7 +47,7 @@ export const GhostedAnchorButton = React.forwardRef<
       type={type ?? "button"}
       {...rest}
     >
-      {renderButtonIcon(icon, size)}
+      {renderButtonIcon({ icon, size, iconPosition })}
       {children}
     </a>
   ),
