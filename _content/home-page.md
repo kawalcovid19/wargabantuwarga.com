@@ -1,5 +1,5 @@
 ---
-last_updated_time: 2021-07-28T11:37:10.554Z
+last_updated_time: 2021-07-28T12:36:05.896Z
 ---
 *\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19, kontak fasilitas/alat kesehatan, dan wadah bagi warga untuk saling bantu. Data di #WargaBantuWarga dikumpulkan oleh para relawan.* 
 
