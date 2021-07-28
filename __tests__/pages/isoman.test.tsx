@@ -2,7 +2,7 @@ import React from "react";
 
 import StackedLink from "~/components/layout/stacked-link";
 import iso from "~/lib/isoman-contents";
-import IsomanPage, { getStaticProps } from "~/pages/isoman";
+import IsomanPage, { getStaticProps } from "~/pages/isolasi-mandiri";
 
 import { render, screen } from "@testing-library/react";
 
@@ -11,7 +11,6 @@ jest.mock("next/router", () => require("next-router-mock"));
 describe("IsomanPage", () => {
   const { isoman_contents } = iso;
   const [isoman_data] = isoman_contents;
-  console.log(iso, isoman_contents);
 
   it("renders the title correctly", () => {
     render(<IsomanPage isoman={iso} />);
