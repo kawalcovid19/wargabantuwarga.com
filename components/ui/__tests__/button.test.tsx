@@ -30,6 +30,14 @@ describe("Button", () => {
         "focus:ring-brand-500",
       );
     });
+
+    it("renders proper rounded styles", () => {
+      const { container } = render(
+        <PrimaryButton rounded>test button</PrimaryButton>,
+      );
+
+      expect(container.firstChild).toHaveClass("rounded-full");
+    });
   });
 
   describe("SecondaryButton", () => {
@@ -60,6 +68,14 @@ describe("Button", () => {
         "focus:ring-brand-500",
       );
     });
+
+    it("renders proper rounded styles", () => {
+      const { container } = render(
+        <SecondaryButton rounded>test button</SecondaryButton>,
+      );
+
+      expect(container.firstChild).toHaveClass("rounded-full");
+    });
   });
 
   describe("OutlineButton", () => {
@@ -87,6 +103,14 @@ describe("Button", () => {
         "hover:bg-blue-100",
         "focus:ring-brand-500",
       );
+    });
+
+    it("renders proper rounded styles", () => {
+      const { container } = render(
+        <OutlineButton rounded>test button</OutlineButton>,
+      );
+
+      expect(container.firstChild).toHaveClass("rounded-full");
     });
   });
 });
