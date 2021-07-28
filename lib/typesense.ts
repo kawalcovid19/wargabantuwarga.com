@@ -9,7 +9,7 @@ export function typesenseSearch({
 }) {
   const searchAdapter = new TypesenseInstantSearchAdapter({
     server: {
-      apiKey: "FByczfHEjsTCihgkkYlq2YbAgUKMoyVP", // Be sure to use the search-only-api-key
+      apiKey: "FByczfHEjsTCihgkkYlq2YbAgUKMoyVP",
       nodes: [
         {
           host: "public-api.trustmedis.id",

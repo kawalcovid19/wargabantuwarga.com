@@ -1,5 +1,5 @@
 ---
-last_updated_time: 2021-07-27T10:43:07.503Z
+last_updated_time: 2021-07-28T07:41:13.128Z
 ---
 *\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19, kontak fasilitas/alat kesehatan, dan wadah bagi warga untuk saling bantu. Data di #WargaBantuWarga dikumpulkan oleh para relawan.* 
 
@@ -34,15 +34,6 @@ last_updated_time: 2021-07-27T10:43:07.503Z
 ## Situs atau Kontak Penting Terkait COVID-19
 
 Temukan situs atau kontak fasilitas/alat kesehatan untuk COVID-19 di tingkat nasional.
-
-#### Mau Cek Ketersediaan Tempat Tidur Rumah Sakit
-
-[Klik SIRANAP Kemenkes](https://yankes.kemkes.go.id/app/siranap/)
-
-#### Butuh Donor Plasma atau Ingin Donor Plasma?
-
-* Hubungi Contact Center BNPB - Donor Konvalesen: 117 ext
-* [Lihat database layanan donor plasma di sini](https://docs.google.com/spreadsheets/d/16cEvcUm9UjlxEgpP4Gu_5XBdeHW6zCOBzx4frQADD3I/edit?usp=sharing)
 
 #### Mau Konsultasi Medis dengan Dokter (Telemedicine)?
 

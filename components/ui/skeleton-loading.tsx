@@ -29,3 +29,32 @@ export const SelectSkeleton = () => {
     </div>
   );
 };
+
+export const FaqListSkeleton = () => {
+  return (
+    <div className="p-4 bg-white shadow overflow-hidden rounded-md">
+      <div className="relative">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 flex justify-end items-center"
+        >
+          <div className="w-5/6 border-t border-gray-300" />
+        </div>
+        <div className="relative flex items-center">
+          <span className="rounded animate-pulse h-6 w-12 md:h-6 md:w-20 bg-gray-300" />
+        </div>
+      </div>
+      <dl className="divide-y divide-gray-200">
+        <div className="pt-6 pb-8 md:grid md:grid-cols-12 md:gap-8">
+          <dt className="md:col-span-5 animate-pulse h-20 w-64 md:h-32 md:w-44 bg-gray-300 rounded" />
+
+          <dd className="mt-2 md:mt-0 md:col-span-7 space-y-2">
+            <p className="animate-pulse h-32 w-72 bg-gray-300 rounded" />
+            <p className="animate-pulse h-28 w-64 bg-gray-300 rounded" />
+            <div className="animate-pulse h-4 w-24 bg-gray-300 rounded" />
+          </dd>
+        </div>
+      </dl>
+    </div>
+  );
+};

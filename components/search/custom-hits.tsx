@@ -5,7 +5,7 @@ import { StateResultsProvided } from "react-instantsearch-core";
 import { connectStateResults } from "react-instantsearch-dom";
 
 function Hits(stateResults: StateResultsProvided) {
-  const { searchResults } = stateResults;
+  const { searchResults, isSearchStalled } = stateResults;
   let results: Faq[];
 
   try {
@@ -13,7 +13,7 @@ function Hits(stateResults: StateResultsProvided) {
   } catch (e) {
     results = [];
   }
-  return <FAQList data={results} />;
+  return <FAQList data={results} isLoading={isSearchStalled} />;
 }
 
 export default connectStateResults(Hits);

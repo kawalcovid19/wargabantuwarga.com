@@ -11,10 +11,11 @@ const meta = {
   title: "Pertanyaan yang sering ditanyakan",
 };
 
-export default function Faqs() {
+export default function FaqPage() {
   const searchClient = typesenseSearch({
     queryBy: ["kategori_pertanyaan", "pertanyaan", "jawaban"],
   });
+
   return (
     <Page>
       <NextSeo openGraph={{ title: meta.title }} title={meta.title} />

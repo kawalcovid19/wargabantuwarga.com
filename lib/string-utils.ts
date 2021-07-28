@@ -55,18 +55,6 @@ export function getKebabCase(str?: string): string {
 }
 
 /**
- * Get slug from slug identifier and slug index
- *
- * @param {string} name slug identifier
- * @param {number} index slug index
- * @returns {string} slug string
- */
-export function getSlug(name: string, index: number): string {
-  const kebabName = getKebabCase(name);
-  return `${kebabName}-${index}`;
-}
-
-/**
  * Checks if all strings in an array are empty strings
  *
  * @param {string[]} array input array
@@ -86,18 +74,6 @@ export function allIsEmptyString(array: string[]) {
  */
 export function toSecond(hrtime: [number, number]): string {
   return (hrtime[0] + hrtime[1] / 1e9).toFixed(3);
-}
-
-/**
- * Get the last segment from a kebab-cased string
- *
- * @param {string} str input string
- * @returns {string} the last segment of `str`
- */
-export function getTheLastSegmentFromKebabCase(
-  str: string,
-): string | undefined {
-  return str.split("-").pop();
 }
 
 /**

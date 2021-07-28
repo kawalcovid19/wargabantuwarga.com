@@ -1,9 +1,13 @@
+import { EmptyState } from "~/components/ui/empty-state";
+import { FaqListSkeleton } from "~/components/ui/skeleton-loading";
 import { Faq } from "~/lib/faqs";
 
+import { ExclamationCircleIcon } from "@heroicons/react/solid";
 import htmr from "htmr";
 
 type FaqListProps = {
   data: Faq[];
+  isLoading: boolean;
 };
 
 function groupBy<T, U>(data: T[], key: U) {
@@ -18,11 +22,15 @@ function groupBy<T, U>(data: T[], key: U) {
 }
 
 export function FAQList(props: FaqListProps) {
-  const listFaqs = groupBy(props.data, "kategori_pertanyaan");
+  const { data, isLoading } = props;
+  const listFaqs = groupBy(data, "kategori_pertanyaan");
+  const listFaqsKeys = Object.keys(listFaqs as Record<string, unknown>);
   return (
     <div className="space-y-4">
-      {Object.keys(listFaqs as Record<string, unknown>).map(
-        (category: string) => (
+      {isLoading ? (
+        <FaqListSkeleton />
+      ) : listFaqsKeys.length ? (
+        listFaqsKeys.map((category: string) => (
           <div
             key={category}
             className="p-4 bg-white shadow overflow-hidden rounded-md"
@@ -51,9 +59,7 @@ export function FAQList(props: FaqListProps) {
                   </dt>
                   <dd className="mt-2 md:mt-0 md:col-span-7">
                     <p className="text-base text-gray-500">
-                      {htmr(
-                        question.jawaban.replace(/(?:\r\n|\r|\n)/g, "<br>"),
-                      )}
+                      {htmr(question.jawaban)}
                     </p>
                     <small>
                       Sumber:{" "}
@@ -75,7 +81,15 @@ export function FAQList(props: FaqListProps) {
               ))}
             </dl>
           </div>
-        ),
+        ))
+      ) : (
+        <div className="px-4">
+          <EmptyState
+            description="Silakan gunakan kata kunci pencarian lainnya."
+            icon={ExclamationCircleIcon}
+            title="Pertanyaan tidak ditemukan"
+          />
+        </div>
       )}
     </div>
   );
