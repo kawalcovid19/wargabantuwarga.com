@@ -1,0 +1,50 @@
+{
+  "isoman_contents": [
+    {
+      "category": "Panduan Isoman",
+      "title": "Isolasi Mandiri: Apa yang harus dilakukan?",
+      "description": "Kumpulan informasi mengenai hal yang perlu Anda ketahui dan langkah penting yang perlu Anda lakukan untuk melakukan isolasi mandiri",
+      "links": [
+        {
+          "title": "Cara isolasi mandiri yang benar",
+          "url": "https://kawalcovid19.id/content/1931/cara-isolasi-mandiri-yang-benar"
+        },
+        {
+          "title": "Tanya jawab seputar isoman yang disusun oleh beberapa dokter",
+          "url": "https://kcov.id/wbw-faq"
+        },
+        {
+          "title": "Tips isolasi mandiri COVID-19",
+          "url": "https://www.klikdokter.com/info-sehat/read/3644016/tips-isolasi-mandiri-covid-19-siapkan-dan-lakukan-ini"
+        },
+        {
+          "title": "Panduan isolasi mandiri untuk ibu menyusui",
+          "url": "https://kawalcovid19.id/content/1987/panduan-isolasi-mandiri-bagi-ibu-menyusui"
+        },
+        {
+          "title": "Tips isolasi mandiri untuk orang dewasa (Isoman Starter Kit)",
+          "url": "https://www.instagram.com/p/CQ8nOCrnarA/"
+        },
+        {
+          "title": "Protokol dan kegiatan harian isolasi mandiri",
+          "url": "https://www.instagram.com/p/CQ8nTLPHC7c/"
+        },
+        {
+          "title": "Panduan isolasi mandiri untuk anak",
+          "url": "https://www.orami.co.id/magazine/panduan-isolasi-mandiri-untuk-anak-dengan-covid-19/"
+        }
+      ]
+    },
+    {
+      "category": "Posko Bantuan",
+      "title": "Posko Bantuan Warga",
+      "description": "",
+      "links": [
+        {
+          "title": "Lihat beragam posko bantuan warga jika butuh bantuan makanan saat isoman",
+          "url": "https://docs.google.com/spreadsheets/d/1lksiRf7G3c14AGzUI0lVmyG6CQmyWe1iXH90D5LEqq8/edit?usp=sharing"
+        }
+      ]
+    }
+  ]
+}
