@@ -1,6 +1,6 @@
 import React from "react";
 
-import { PrimaryButton, SecondaryButton } from "../button";
+import { OutlineButton, PrimaryButton, SecondaryButton } from "../button";
 
 import { render } from "@testing-library/react";
 
@@ -57,6 +57,34 @@ describe("Button", () => {
         "text-brand-700",
         "bg-brand-100",
         "hover:bg-brand-200",
+        "focus:ring-brand-500",
+      );
+    });
+  });
+
+  describe("OutlineButton", () => {
+    it("renders correctly", () => {
+      const { container } = render(<OutlineButton>test button</OutlineButton>);
+
+      expect(container.firstChild).toMatchInlineSnapshot(`
+        <button
+          class="inline-flex px-4 py-2 text-sm rounded-md items-center justify-center border border-transparent font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 text-blue-500 border-blue-500 hover:bg-blue-100 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-75"
+          type="button"
+        >
+          test button
+        </button>
+      `);
+    });
+
+    it("renders with correct colors", () => {
+      const { container } = render(
+        <OutlineButton color="brand">test button</OutlineButton>,
+      );
+
+      expect(container.firstChild).toHaveClass(
+        "text-brand-500",
+        "border-brand-500",
+        "hover:bg-blue-100",
         "focus:ring-brand-500",
       );
     });
