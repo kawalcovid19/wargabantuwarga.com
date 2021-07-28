@@ -38,6 +38,19 @@ describe("Button", () => {
 
       expect(container.firstChild).toHaveClass("rounded-full");
     });
+
+    it("renders with correct sizes", () => {
+      const { container } = render(
+        <PrimaryButton size="sm">test button</PrimaryButton>,
+      );
+
+      expect(container.firstChild).toHaveClass(
+        "px-3",
+        "py-2",
+        "text-sm",
+        "leading-4",
+      );
+    });
   });
 
   describe("SecondaryButton", () => {
