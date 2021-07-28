@@ -1,4 +1,3 @@
-import { attributes, html } from "~/_content/home-page.md";
 import { HomePageContent } from "~/components/home/homepage-content";
 import { HomePageContributing } from "~/components/home/homepage-contributing";
 import { HomepageHeader } from "~/components/home/homepage-header";
@@ -8,6 +7,7 @@ import { HomePageWelcome } from "~/components/home/homepage-welcome";
 import { Page } from "~/components/layout/page";
 import { Container } from "~/components/ui/container";
 import config from "~/lib/config";
+import { attributes, html } from "~/lib/home-page";
 import {
   heading1Transformer,
   heading2Transformer,
