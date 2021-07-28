@@ -5,6 +5,7 @@ export type ButtonColors =
   | "gray"
   | "green"
   | "indigo"
+  | "light-blue"
   | "pink"
   | "purple"
   | "red"
