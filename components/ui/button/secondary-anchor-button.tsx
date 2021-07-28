@@ -31,6 +31,7 @@ export const SecondaryAnchorButton = React.forwardRef<
       color = "blue",
       rounded,
       icon,
+      iconPosition = "left",
       children,
       ...rest
     },
@@ -38,7 +39,7 @@ export const SecondaryAnchorButton = React.forwardRef<
   ) => (
     <a
       className={clsx(
-        buttonBlockStyles(block),
+        buttonBlockStyles(block, iconPosition),
         buttonSizes(size),
         buttonRoundedStyles(rounded, size),
         "items-center justify-center border border-transparent font-medium focus:outline-none focus:ring-2 focus:ring-offset-2",
@@ -50,7 +51,7 @@ export const SecondaryAnchorButton = React.forwardRef<
       style={style}
       {...rest}
     >
-      {renderButtonIcon(icon, size)}
+      {renderButtonIcon({ icon, size, iconPosition })}
       {children}
     </a>
   ),

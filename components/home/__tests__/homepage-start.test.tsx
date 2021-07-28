@@ -21,7 +21,7 @@ describe("HomePageStart", () => {
             Cek database RS, Puskesmas, Ambulans, Oksigen, dan kontak penting lainnya
           </h2>
           <a
-            class="flex px-4 py-2 text-base rounded-full items-center justify-center border border-transparent font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 text-white bg-brand-500 hover:bg-brand-600 focus:ring-brand-500 disabled:cursor-not-allowed disabled:opacity-75 mt-4"
+            class="flex flex-row px-4 py-2 text-base rounded-full items-center justify-center border border-transparent font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 text-white bg-brand-500 hover:bg-brand-600 focus:ring-brand-500 disabled:cursor-not-allowed disabled:opacity-75 mt-4"
             href="/provinces"
           >
             Cek sekarang

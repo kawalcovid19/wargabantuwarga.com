@@ -1,17 +1,24 @@
 import * as React from "react";
 
-import { ButtonColors, ButtonProps, ButtonSizes } from "./types";
+import {
+  ButtonColors,
+  ButtonIconPositions,
+  ButtonProps,
+  ButtonSizes,
+} from "./types";
 
 import clsx from "clsx";
 
 export const disabledStyles = "disabled:cursor-not-allowed disabled:opacity-75";
 
-export function buttonBlockStyles(block?: boolean) {
-  if (block) {
-    return "flex";
-  }
-
-  return "inline-flex";
+export function buttonBlockStyles(
+  block?: boolean,
+  iconPosition: ButtonIconPositions = "left",
+) {
+  return [
+    block ? "flex" : "inline-flex",
+    iconPosition === "right" ? "flex-row-reverse" : "flex-row",
+  ];
 }
 
 export function buttonSizes(size?: ButtonSizes) {
@@ -49,25 +56,46 @@ export function buttonRoundedStyles(rounded?: boolean, size?: ButtonSizes) {
   return "rounded";
 }
 
-export function buttonIconSizes(size?: ButtonSizes) {
+export function buttonIconClasses(
+  size?: ButtonSizes,
+  iconPosition: ButtonIconPositions = "left",
+) {
   switch (size) {
     case "xs": {
-      return "-ml-0.5 mr-2 h-4 w-4";
+      return [
+        iconPosition === "right" ? "ml-2 -mr-0.5" : "-ml-0.5 mr-2",
+        "h-4 w-4",
+      ];
     }
     case "sm": {
-      return "-ml-0.5 mr-2 h-4 w-4";
+      return [
+        iconPosition === "right" ? "ml-2 -mr-0.5" : "-ml-0.5 mr-2",
+        "h-4 w-4",
+      ];
     }
     case "md": {
-      return "-ml-1 mr-2 h-5 w-5";
+      return [
+        iconPosition === "right" ? "ml-2 -mr-1" : "-ml-1 mr-2",
+        "h-5 w-5",
+      ];
     }
     case "lg": {
-      return "-ml-1 mr-3 h-5 w-5";
+      return [
+        iconPosition === "right" ? "ml-3 -mr-1" : "-ml-1 mr-3",
+        "h-5 w-5",
+      ];
     }
     case "xl": {
-      return "-ml-1 mr-3 h-5 w-5";
+      return [
+        iconPosition === "right" ? "ml-3 -mr-1" : "-ml-1 mr-3",
+        "h-5 w-5",
+      ];
     }
     default: {
-      return "-ml-1 mr-2 h-5 w-5";
+      return [
+        iconPosition === "right" ? "ml-2 -mr-1" : "-ml-1 mr-2",
+        "h-5 w-5",
+      ];
     }
   }
 }
@@ -186,14 +214,20 @@ export function outlineButtonColors(color?: ButtonColors) {
   }
 }
 
-export function renderButtonIcon(
-  icon?: ButtonProps["icon"],
-  size?: ButtonSizes,
-  additionalClasses?: string,
-) {
+export function renderButtonIcon({
+  icon,
+  size,
+  additionalClasses,
+  iconPosition = "left",
+}: {
+  icon?: ButtonProps["icon"];
+  size?: ButtonSizes;
+  additionalClasses?: string;
+  iconPosition?: ButtonIconPositions;
+}) {
   if (icon) {
     return React.createElement(icon, {
-      className: clsx(buttonIconSizes(size), additionalClasses),
+      className: clsx(buttonIconClasses(size, iconPosition), additionalClasses),
       "aria-hidden": true,
     });
   }
