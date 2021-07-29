@@ -5,13 +5,14 @@ import { cloudinaryLoader, getBlurred } from "~/lib/cloudinary-loader";
 import { PrimaryAnchorButton } from "../ui/button";
 
 import { HomePageMenu } from "./homepage-menu";
+import { HomePageSection } from "./homepage-section";
 
 import Image from "next/image";
 import Link from "next/link";
 
 export function HomePageStart() {
   return (
-    <section className="bg-white overflow-hidden">
+    <HomePageSection>
       <div className="px-4 py-6 text-center">
         <h2 className="text-lg sm:text-xl font-semibold sm:mx-6">
           Cek database RS, Puskesmas, Ambulans, Oksigen, dan kontak penting
@@ -55,6 +56,6 @@ export function HomePageStart() {
           />
         </a>
       </div>
-    </section>
+    </HomePageSection>
   );
 }
