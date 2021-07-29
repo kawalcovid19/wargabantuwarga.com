@@ -57,6 +57,7 @@ export function HomePageContributing() {
           href="https://docs.google.com/forms/d/e/1FAIpQLSc_m0WyokBk8xv9jBwYFN1zAt4_u-kE2TI9ZBrAokB4E08AGw/viewform"
           rel="nofollow noopener noreferrer"
           rounded
+          size="lg"
           target="_blank"
         >
           Tambahkan info di sini
