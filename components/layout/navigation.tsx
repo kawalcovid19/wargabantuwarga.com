@@ -1,11 +1,7 @@
-import { createElement, useRef } from "react";
+import { createElement } from "react";
 
 import { bottomNavigation, NavigationItem } from "~/lib/layout/navigation-data";
 
-import { NavigationMenuPopover } from "./navigation-menu";
-
-import { Popover } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -20,7 +16,6 @@ const navigationClasses = (isActive?: boolean) => {
 
 export function Navigation() {
   const router = useRouter();
-  const popoverButtonRef = useRef<HTMLButtonElement>(null);
 
   const renderItem = (item: Pick<NavigationItem, "icon" | "name">) => {
     return (
@@ -32,14 +27,6 @@ export function Navigation() {
         <span className="text-xs truncate">{item.name}</span>
       </>
     );
-  };
-
-  const renderNavButtonIcon = (isOpen?: boolean) => {
-    if (isOpen) {
-      return XIcon;
-    }
-
-    return MenuIcon;
   };
 
   return (
@@ -72,29 +59,6 @@ export function Navigation() {
               </li>
             );
           })}
-          <li className="relative sm:hidden">
-            <Popover className="relative">
-              {({ open }) => (
-                <>
-                  <Popover.Button
-                    className={clsx(...navigationClasses())}
-                    ref={popoverButtonRef}
-                    type="button"
-                  >
-                    {createElement(renderNavButtonIcon(open), {
-                      "aria-hidden": true,
-                      className: "w-8 h-8",
-                    })}
-                    <span className="text-xs truncate">Menu</span>
-                  </Popover.Button>
-                  <NavigationMenuPopover
-                    open={open}
-                    popoverButtonRef={popoverButtonRef}
-                  />
-                </>
-              )}
-            </Popover>
-          </li>
         </ul>
       </div>
     </nav>
