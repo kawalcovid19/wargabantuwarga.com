@@ -1,15 +1,15 @@
 ---
-last_updated_time: 2021-07-29T01:55:38.262Z
+last_updated_time: 2021-07-29T03:03:52.916Z
 ---
 *\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19, kontak fasilitas/alat kesehatan, dan wadah bagi warga untuk saling bantu. Data di #WargaBantuWarga dikumpulkan oleh para relawan.* 
 
 - - -
 
-#### Hubungi Hotline #WargaBantuWarga
+#### Hubungi #WargaBantuWarga
 
 **Chat via WhatsApp 081257579812 atau klik [bit.ly/halowarga](https://bit.ly/halowarga) (Tidak bisa ditelepon)**
 
-*Catatan: Jam operasional hotline pukul 07.30-22.30 WIB. Kami hanya memberikan informasi yang relevan, bukan bantuan langsung/darurat.*
+*Catatan: Jam operasional 07.30-22.30 WIB. Kami hanya menginfokan kontak layanan kesehatan yang ada di database #WargaBantuWarga, belum bisa memberikan bantuan alat/fasilitas kesehatan secara langsung.* 
 
 - - -
 
