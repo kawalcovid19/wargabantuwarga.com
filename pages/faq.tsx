@@ -137,7 +137,7 @@ export default function FaqPage(props: FaqPageProps) {
             </div>
           ))}
 
-          {listFaqsKeys.length === 0 && (
+          {listFaqsKeys.length === 0 && !isLoading && (
             <div className="px-4">
               <EmptyState
                 description="Silakan gunakan kata kunci pencarian lainnya."
