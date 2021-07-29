@@ -30,8 +30,8 @@ export default function IsomanPage(props: IsomanPageProps) {
           backButton={<BackButton href="/" />}
           breadcrumbs={[
             {
-              name: "Isoman",
-              href: "/isoman",
+              name: "Isolasi Mandiri",
+              href: "/isolasi-mandiri",
               current: true,
             },
           ]}

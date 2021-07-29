@@ -2,6 +2,7 @@ import React from "react";
 
 import { OutlineButton, PrimaryButton, SecondaryButton } from "../button";
 
+import { PlusIcon } from "@heroicons/react/outline";
 import { render } from "@testing-library/react";
 
 describe("Button", () => {
@@ -11,7 +12,7 @@ describe("Button", () => {
 
       expect(container.firstChild).toMatchInlineSnapshot(`
         <button
-          class="inline-flex px-4 py-2 text-sm rounded-md items-center justify-center border border-transparent font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-75"
+          class="inline-flex flex-row px-4 py-2 text-sm rounded-md items-center justify-center border border-transparent font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-75"
           type="button"
         >
           test button
@@ -51,6 +52,26 @@ describe("Button", () => {
         "leading-4",
       );
     });
+
+    it("renders right icon with the correct classes", () => {
+      const { container } = render(
+        <PrimaryButton icon={PlusIcon} iconPosition="right">
+          test button
+        </PrimaryButton>,
+      );
+
+      expect(container.firstChild).toHaveClass(
+        "inline-flex",
+        "flex-row-reverse",
+      );
+
+      expect(container.querySelector("svg")).toHaveClass(
+        "ml-2",
+        "-mr-1",
+        "h-5",
+        "w-5",
+      );
+    });
   });
 
   describe("SecondaryButton", () => {
@@ -61,7 +82,7 @@ describe("Button", () => {
 
       expect(container.firstChild).toMatchInlineSnapshot(`
         <button
-          class="inline-flex px-4 py-2 text-sm rounded-md items-center justify-center border border-transparent font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 text-blue-700 bg-blue-100 hover:bg-blue-200 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-75"
+          class="inline-flex flex-row px-4 py-2 text-sm rounded-md items-center justify-center border border-transparent font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 text-blue-700 bg-blue-100 hover:bg-blue-200 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-75"
           type="button"
         >
           test button
@@ -89,6 +110,26 @@ describe("Button", () => {
 
       expect(container.firstChild).toHaveClass("rounded-full");
     });
+
+    it("renders right icon with the correct classes", () => {
+      const { container } = render(
+        <SecondaryButton icon={PlusIcon} iconPosition="right">
+          test button
+        </SecondaryButton>,
+      );
+
+      expect(container.firstChild).toHaveClass(
+        "inline-flex",
+        "flex-row-reverse",
+      );
+
+      expect(container.querySelector("svg")).toHaveClass(
+        "ml-2",
+        "-mr-1",
+        "h-5",
+        "w-5",
+      );
+    });
   });
 
   describe("OutlineButton", () => {
@@ -97,7 +138,7 @@ describe("Button", () => {
 
       expect(container.firstChild).toMatchInlineSnapshot(`
         <button
-          class="inline-flex px-4 py-2 text-sm rounded-md items-center justify-center border border-transparent font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 text-blue-500 border-blue-500 hover:bg-blue-100 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-75"
+          class="inline-flex flex-row px-4 py-2 text-sm rounded-md items-center justify-center border border-transparent font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 text-blue-500 border-blue-500 hover:bg-blue-100 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-75"
           type="button"
         >
           test button
@@ -124,6 +165,26 @@ describe("Button", () => {
       );
 
       expect(container.firstChild).toHaveClass("rounded-full");
+    });
+
+    it("renders right icon with the correct classes", () => {
+      const { container } = render(
+        <OutlineButton icon={PlusIcon} iconPosition="right">
+          test button
+        </OutlineButton>,
+      );
+
+      expect(container.firstChild).toHaveClass(
+        "inline-flex",
+        "flex-row-reverse",
+      );
+
+      expect(container.querySelector("svg")).toHaveClass(
+        "ml-2",
+        "-mr-1",
+        "h-5",
+        "w-5",
+      );
     });
   });
 });
