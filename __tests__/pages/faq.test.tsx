@@ -99,6 +99,30 @@ describe("FaqPage", () => {
     expect(screen.queryByText(firstFaq.jawaban)).not.toBeInTheDocument();
     expect(screen.getByText(secondFaq.jawaban)).toBeVisible();
   });
+
+  it("performs empty state correctly", () => {
+    const firstFaq = faqBuilder();
+    const secondFaq = faqBuilder();
+
+    render(<FaqPage faqSheets={[firstFaq]} />);
+
+    expect(screen.getByText(firstFaq.jawaban)).toBeVisible();
+
+    userEvent.type(
+      screen.getByRole("textbox", {
+        name: /cari pertanyaan:/i,
+      }),
+      secondFaq.jawaban,
+    );
+    userEvent.click(
+      screen.getByRole("button", {
+        name: /cari/i,
+      }),
+    );
+
+    expect(screen.queryByText(firstFaq.jawaban)).not.toBeInTheDocument();
+    expect(screen.getByText(/Pertanyaan tidak ditemukan/i)).toBeVisible();
+  });
 });
 
 describe("getStaticProps", () => {
