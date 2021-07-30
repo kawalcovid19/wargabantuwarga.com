@@ -1,4 +1,4 @@
-import { Colors } from "../../types";
+import { BaseColors } from "../../types";
 
 import { BadgeSizes } from "./types";
 
@@ -24,10 +24,13 @@ export function badgeSizes(size?: BadgeSizes) {
   }
 }
 
-export function badgeColors(color?: Colors) {
+export function badgeColors(color?: BaseColors) {
   switch (color) {
     case "blue": {
       return "bg-blue-100 text-blue-800";
+    }
+    case "light-blue": {
+      return "bg-light-blue-100 text-light-blue-800";
     }
     case "gray": {
       return "bg-gray-100 text-gray-800";

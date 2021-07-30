@@ -1,12 +1,12 @@
 import * as React from "react";
 
-import { Colors } from "../../types";
+import { BaseColors } from "../../types";
 
 import { AlertProps } from "./types";
 
 import clsx from "clsx";
 
-export function accentBorderColors(accentBorder?: boolean, color?: Colors) {
+export function accentBorderColors(accentBorder?: boolean, color?: BaseColors) {
   if (accentBorder) {
     switch (color) {
       case "blue": {
@@ -20,6 +20,9 @@ export function accentBorderColors(accentBorder?: boolean, color?: Colors) {
       }
       case "indigo": {
         return "border-l-4 border-indigo-400";
+      }
+      case "light-blue": {
+        return "border-l-4 border-light-blue-400";
       }
       case "pink": {
         return "border-l-4 border-pink-400";
@@ -40,7 +43,7 @@ export function accentBorderColors(accentBorder?: boolean, color?: Colors) {
   }
 }
 
-export function alertColors(color?: Colors) {
+export function alertColors(color?: BaseColors) {
   switch (color) {
     case "blue": {
       return "bg-blue-50 text-blue-700";
@@ -57,6 +60,9 @@ export function alertColors(color?: Colors) {
     case "pink": {
       return "bg-pink-50 text-pink-700";
     }
+    case "light-blue": {
+      return "bg-light-blue-50 text-light-blue-700";
+    }
     case "purple": {
       return "bg-purple-50 text-purple-700";
     }
@@ -67,7 +73,7 @@ export function alertColors(color?: Colors) {
       return "bg-yellow-50 text-yellow-700";
     }
     default: {
-      return "bg-gray-50 text-gray-700";
+      return "bg-yellow-50 text-yellow-700";
     }
   }
 }
