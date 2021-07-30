@@ -1,6 +1,7 @@
 import { HomePageContent } from "~/components/home/homepage-content";
 import { HomePageContributing } from "~/components/home/homepage-contributing";
 import { HomepageHeader } from "~/components/home/homepage-header";
+import { HomePageLatestNews } from "~/components/home/homepage-latest-news";
 import { HomePageSection } from "~/components/home/homepage-section";
 import { HomePageStart } from "~/components/home/homepage-start";
 import { HomePageWhatsAppCTA } from "~/components/home/homepage-whatsapp-cta";
@@ -9,31 +10,14 @@ import { Alert } from "~/components/ui/alert";
 import { Container } from "~/components/ui/container";
 import config from "~/lib/config";
 import { attributes, html } from "~/lib/home-page";
-import {
-  heading1Transformer,
-  heading2Transformer,
-  heading3Transformer,
-  heading4Transformer,
-  heading5Transformer,
-  heading6Transformer,
-} from "~/lib/htmr-transformers";
+import { htmrTransform } from "~/lib/htmr-transformers";
 
 import { ClockIcon } from "@heroicons/react/outline";
 import htmr from "htmr";
-import { HtmrOptions } from "htmr/src/types";
 import { NextSeo } from "next-seo";
 
 const meta = {
   title: `${config.site_tagline} | ${config.site_name}`,
-};
-
-const htmrTransform: HtmrOptions["transform"] = {
-  h1: heading1Transformer,
-  h2: heading2Transformer,
-  h3: heading3Transformer,
-  h4: heading4Transformer,
-  h5: heading5Transformer,
-  h6: heading6Transformer,
 };
 
 interface LastUpdatedAlertProps {
@@ -65,6 +49,7 @@ const HomePage = () => (
     <HomePageContent>
       <Container className="space-y-3">
         <HomePageStart />
+        <HomePageLatestNews />
         <HomePageContributing />
         <HomePageWhatsAppCTA />
         <LastUpdatedAlert />
