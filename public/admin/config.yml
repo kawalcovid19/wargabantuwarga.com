@@ -37,7 +37,7 @@ collections:
           - label: "WhatsApp Contact URL"
             name: "whatsapp_contact_url"
             widget: "string"
-            hint: "The direct link (`https://` or `tel:`) of the WhatsApp hotline used in navigation and homepage CTA."
+            hint: "The direct link (`https://`) of the WhatsApp hotline used in navigation and homepage CTA."
   - name: "home_page"
     label: "Home Page"
     delete: false
