@@ -87,5 +87,5 @@ collections:
               label: "Body",
               name: "body",
               widget: "markdown",
-              hint: "Page body",
+              hint: "Section body",
             }
