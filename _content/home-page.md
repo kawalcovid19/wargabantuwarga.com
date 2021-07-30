@@ -1,15 +1,15 @@
 ---
-last_updated_time: 2021-07-28T02:26:34.234Z
+last_updated_time: 2021-07-29T10:55:31.678Z
 ---
 *\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19, kontak fasilitas/alat kesehatan, dan wadah bagi warga untuk saling bantu. Data di #WargaBantuWarga dikumpulkan oleh para relawan.* 
 
 - - -
 
-#### Hubungi Hotline #WargaBantuWarga
+#### Hubungi #WargaBantuWarga
 
 **Chat via WhatsApp 081257579812 atau klik [bit.ly/halowarga](https://bit.ly/halowarga) (Tidak bisa ditelepon)**
 
-*Catatan: Jam operasional hotline pukul 07.30-22.30 WIB. Kami hanya memberikan informasi yang relevan, bukan bantuan langsung/darurat.*
+*Catatan: Jam operasional 07.30-22.30 WIB. Kami hanya menginfokan kontak layanan kesehatan yang ada di database #WargaBantuWarga, belum bisa memberikan bantuan alat/fasilitas kesehatan secara langsung.* 
 
 - - -
 
@@ -66,7 +66,15 @@ Hubungi 119 ext. 9
 
 ## Laman Edukasi COVID-19
 
-[Klik di sini untuk lihat kumpulan informasi mengenai COVID-19](https://docs.google.com/spreadsheets/d/1YOIoJcJ6VSyY7wdUySa68MiOdshpzfbC7kl5QIY2jFU/edit?usp=sharing), seperti penanganan jika Anda terkonfirmasi positif COVID-19, panduan melakukan isolasi mandiri, pemakaian tabung oksigen, vaksinasi, hingga tips menjaga kesehatan selama pandemi.
+Kumpulan informasi seputar COVID-19, yaitu:
+
+* [Penanganan jika positif COVID-19](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=1244922827&single=true)
+* [Isolasi mandiri: apa yang harus dilakukan?](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=236754766&single=true)
+* [Informasi seputar oksigen](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=2032388593&single=true)
+* [Tes antigen dan PCR](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=598872232&single=true)
+* [Vaksinasi COVID-19](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=1584366622&single=true)
+* [Jaga kesehatan di masa pandemi](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=1917836112&single=true)
+* [Layanan terkait COVID-19](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=372824836&single=true)
 
 - - -
 
@@ -76,15 +84,6 @@ Kumpulan informasi mengenai donasi, nomor rekening, dan lainnya yang relevan den
 
 * [Klik di sini untuk berdonasi ke Aksi Gotong Royong #WargaBantuWarga Hadapi Corona](https://kitabisa.com/campaign/wargabantuwarga)
 * [Klik di sini untuk lihat informasi donasi dan penggalangan dana lainnya](https://docs.google.com/spreadsheets/d/1u7N4rdfJ20yg7lrL7h0KnwbtZSjFXxkZqDZkcdib9fs/edit?usp=sharing)
-
-- - -
-
-## Cara Berkontribusi
-
-* Mau upload info? [Tambahkan info di sini](https://forms.gle/Z3obzzcf9tY36MCH7).
-* Mau gabung jadi relawan untuk mengumpulkan dan memverifikasi data, atau menjadi tim hotline yang menjawab pertanyaan warga via WhatsApp? [Daftar jadi relawan di sini](https://bit.ly/RelawanTanggapGBC).
-
-  Mau mendonorkan darah plasma konvalesen (hanya diisi oleh calon pendonor, bukan penerima donor darah)? [Daftar donor darah di sini](https://forms.gle/dQL8qW3js5ufBRtW8).
 
 - - -
 

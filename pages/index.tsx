@@ -1,4 +1,5 @@
 import { HomePageContent } from "~/components/home/homepage-content";
+import { HomePageContributing } from "~/components/home/homepage-contributing";
 import { HomepageHeader } from "~/components/home/homepage-header";
 import { HomePageSection } from "~/components/home/homepage-section";
 import { HomePageStart } from "~/components/home/homepage-start";
@@ -61,10 +62,11 @@ const HomePage = () => (
     <NextSeo title={meta.title} titleTemplate="%s" />
     <HomepageHeader src={attributes.home_banner_image_path} />
     <HomePageContent>
-      <Container>
+      <Container className="space-y-3">
         <HomePageStart />
-        <LastUpdatedAlert className="mt-3 mb-3" />
-        <HomePageSection>
+        <HomePageContributing />
+        <LastUpdatedAlert />
+        <HomePageSection className="px-4 py-6">
           <article className="prose prose-indigo">
             {htmr(html, { transform: htmrTransform })}
           </article>

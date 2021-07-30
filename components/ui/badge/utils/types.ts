@@ -11,7 +11,8 @@ interface BadgeBaseProps {
   size?: BadgeSizes;
   /** The color of the badge. Available colors: `"blue" | "gray" | "green" | "indigo" | "pink" | "purple" | "red" | "yellow"` */
   color?: Colors;
-  /** Component used for the root node. Either a string to use a HTML element or a component
+  /**
+   * Component used for the root node. Either a string to use a HTML element or a component
    *
    * @default 'span'
    */
