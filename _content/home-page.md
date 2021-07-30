@@ -5,14 +5,6 @@ last_updated_time: 2021-07-30T01:57:24.771Z
 
 - - -
 
-#### Hubungi #WargaBantuWarga
-
-**Chat via WhatsApp 081257579812 atau klik [bit.ly/halowarga](https://bit.ly/halowarga) (Tidak bisa ditelepon)**
-
-*Catatan: Jam operasional 07.30-22.30 WIB. Kami hanya menginfokan kontak layanan kesehatan yang ada di database #WargaBantuWarga, belum bisa memberikan bantuan alat/fasilitas kesehatan secara langsung.* 
-
-- - -
-
 #### Informasi Terbaru
 
 * **\[Wilayah Jakarta]** Daftar Vaksin di Sentra Vaksinasi SINERGI SEHAT untuk masyarakat usia 12 tahun ke atas:\
