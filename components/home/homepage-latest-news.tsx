@@ -11,7 +11,7 @@ export function HomePageLatestNews() {
   return (
     <HomePageSection className="px-4 py-6 space-y-4">
       <h2 className="text-lg sm:text-xl font-semibold">Informasi Terbaru</h2>
-      {latestNews.map(({ attributes, html }) => (
+      {latestNews.slice(0, 3).map(({ attributes, html }) => (
         <article
           key={attributes.date.toISOString()}
           className="border border-gray-200 rounded-md p-4 space-y-4"
