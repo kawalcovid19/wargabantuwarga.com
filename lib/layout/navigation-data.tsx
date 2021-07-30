@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import config from "../config";
+
 import {
   ChatAltIcon,
   HomeIcon,
@@ -27,7 +29,7 @@ export const bottomNavigation: NavigationItem[] = [
   {
     name: "Hubungi Kami",
     icon: ChatAltIcon,
-    href: "https://wa.me/6281257579812",
+    href: config.whatsapp_contact_url,
     external: true,
   },
   {
