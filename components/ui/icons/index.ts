@@ -4,4 +4,4 @@ export * from "./donor-icon";
 export * from "./education-icon";
 export * from "./hospital-icon";
 export * from "./oxygen-icon";
-export * from "./whatsapp-logo";
+export * from "./whatsapp-icon";
