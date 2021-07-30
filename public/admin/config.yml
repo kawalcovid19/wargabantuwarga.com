@@ -89,3 +89,45 @@ collections:
                 fields:
                   - { label: "Link Title", name: "title", widget: "string" }
                   - { label: "Link URL", name: "url", widget: "string" }
+  - name: "emergency_page"
+    label: "Emergency Contact Page"
+    delete: false
+    preview_path: "kontak-darurat"
+    files:
+      - name: "emergency_contacts"
+        label: "Emergency Contacts"
+        file: "_content/emergency-contacts.json"
+        fields:
+          - name: "emergency_contacts"
+            label: "Emergency Contacts"
+            widget: list
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+              - {
+                  label: "Image",
+                  name: "image",
+                  widget: "image",
+                  choose_url: true,
+                }
+              - { label: "Link URL", name: "url", widget: "string" }
+      - name: "vaccine_section"
+        label: "Vaccine Section"
+        file: "_content/vaccine-information.json"
+        fields:
+          - name: "vaccine_section"
+            label: "Vaccine Section"
+            widget: list
+            fields:
+              - { label: "Link Title", name: "title", widget: "string" }
+              - { label: "Link URL", name: "url", widget: "string" }
+      - name: "oxygen_section"
+        label: "Oxygen Information"
+        file: "_content/oxygen-information.json"
+        fields:
+          - name: "oxygen_section"
+            label: "Oxygen Information"
+            widget: list
+            fields:
+              - { label: "Link Title", name: "title", widget: "string" }
+              - { label: "Link URL", name: "url", widget: "string" }
