@@ -3,6 +3,7 @@ import { HomePageContributing } from "~/components/home/homepage-contributing";
 import { HomepageHeader } from "~/components/home/homepage-header";
 import { HomePageSection } from "~/components/home/homepage-section";
 import { HomePageStart } from "~/components/home/homepage-start";
+import { HomePageWhatsAppCTA } from "~/components/home/homepage-whatsapp-cta";
 import { Page } from "~/components/layout/page";
 import { Container } from "~/components/ui/container";
 import config from "~/lib/config";
@@ -79,6 +80,7 @@ const HomePage = () => (
       <Container className="space-y-3">
         <HomePageStart />
         <HomePageContributing />
+        <HomePageWhatsAppCTA />
         <LastUpdatedAlert />
         <HomePageSection className="px-4 py-6">
           <article className="prose prose-indigo">

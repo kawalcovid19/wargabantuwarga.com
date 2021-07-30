@@ -132,6 +132,9 @@ export function primaryButtonColors(color?: ButtonColors) {
     case "yellow": {
       return "text-white bg-yellow-600 hover:bg-yellow-700 focus:ring-yellow-500";
     }
+    case "none": {
+      return undefined;
+    }
     default: {
       return "text-white bg-gray-600 hover:bg-gray-700 focus:ring-gray-500";
     }
@@ -170,6 +173,9 @@ export function secondaryButtonColors(color?: ButtonColors) {
     case "yellow": {
       return "text-yellow-700 bg-yellow-100 hover:bg-yellow-200 focus:ring-yellow-500";
     }
+    case "none": {
+      return undefined;
+    }
     default: {
       return "text-gray-700 bg-gray-100 hover:bg-gray-200 focus:ring-gray-500";
     }
@@ -207,6 +213,9 @@ export function outlineButtonColors(color?: ButtonColors) {
     }
     case "yellow": {
       return "text-yellow-500 border-yellow-500 hover:bg-yellow-100 focus:ring-yellow-500";
+    }
+    case "none": {
+      return undefined;
     }
     default: {
       return "text-gray-700 border-gray-700 hover:bg-gray-100 focus:ring-gray-500";
