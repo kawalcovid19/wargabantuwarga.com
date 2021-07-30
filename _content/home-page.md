@@ -1,5 +1,5 @@
 ---
-last_updated_time: 2021-07-29T10:55:31.678Z
+last_updated_time: 2021-07-30T01:57:24.771Z
 ---
 *\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19, kontak fasilitas/alat kesehatan, dan wadah bagi warga untuk saling bantu. Data di #WargaBantuWarga dikumpulkan oleh para relawan.* 
 
@@ -87,18 +87,9 @@ Kumpulan informasi mengenai donasi, nomor rekening, dan lainnya yang relevan den
 
 - - -
 
-## Cara Berkontribusi
-
-* Mau upload info? [Tambahkan info di sini](https://forms.gle/Z3obzzcf9tY36MCH7).
-* Mau gabung jadi relawan untuk mengumpulkan dan memverifikasi data, atau menjadi tim hotline yang menjawab pertanyaan warga via WhatsApp? [Daftar jadi relawan di sini](https://bit.ly/RelawanTanggapGBC).
-
-  Mau mendonorkan darah plasma konvalesen (hanya diisi oleh calon pendonor, bukan penerima donor darah)? [Daftar donor darah di sini](https://forms.gle/dQL8qW3js5ufBRtW8).
-
-- - -
-
 Terima kasih kepada para kolaborator inisiatif [\#WargaBantuWarga](https://twitter.com/hashtag/WargaBantuWarga):
 
-[@kitabisacom](https://twitter.com/kitabisacom) [@KawalCOVID19](https://twitter.com/KawalCOVID19) [@fimnews](https://www.instagram.com/fimnews/) [@forumzakat](https://twitter.com/forumzakat) [Baznas](https://baznas.go.id/) [@KataDotAI](https://twitter.com/KataDotAI) [@indorelawan](https://twitter.com/indorelawan) [@pemimpinid](https://twitter.com/pemimpinid_) [@pandemictalks](https://www.instagram.com/pandemictalks/) [@laporcovid19](https://www.instagram.com/laporcovid19/) [@filantropiindonesia](https://www.instagram.com/filantropiindonesia/) [@BantuCovid](https://twitter.com/BantuCovid) [Human Initiative Volunteer Energy](https://hive.human-initiative.org/) [Narasi](https://www.instagram.com/narasi.tv/) [Qiscus](https://qiscus.io/) [Humanitarian Forum Indonesia](https://www.instagram.com/humanitarianforumindonesia/?hl=en) [urundayacovid.com](https://urundayacovid.com/) [Serikat Buruh Migran Indonesia](https://sbmi.or.id/) [atmaGO](https://covid19.atmago.com/id) [Jaringan Semua Murid Semua Guru](https://semuamuridsemuaguru.id/) [ILUNI UI Psikologi](https://instagram.com/iluniuipsi?utm_medium=copy_link) [KG Media](https://www.kgmedia.id/)
+[@kitabisacom](https://twitter.com/kitabisacom) [@KawalCOVID19](https://twitter.com/KawalCOVID19) [@fimnews](https://www.instagram.com/fimnews/) [@forumzakat](https://twitter.com/forumzakat) [Baznas](https://baznas.go.id/) [@KataDotAI](https://twitter.com/KataDotAI) [@indorelawan](https://twitter.com/indorelawan) [@pemimpinid](https://twitter.com/pemimpinid_) [@pandemictalks](https://www.instagram.com/pandemictalks/) [@laporcovid19](https://www.instagram.com/laporcovid19/) [@filantropiindonesia](https://www.instagram.com/filantropiindonesia/) [@BantuCovid](https://twitter.com/BantuCovid) [Human Initiative Volunteer Energy](https://hive.human-initiative.org/) [Narasi](https://www.instagram.com/narasi.tv/) [Qiscus](https://qiscus.io/) [Humanitarian Forum Indonesia](https://www.instagram.com/humanitarianforumindonesia/?hl=en) [urundayacovid.com](https://urundayacovid.com/) [Trustmedis](https://trustmedis.com/) [Serikat Buruh Migran Indonesia](https://sbmi.or.id/) [atmaGO](https://covid19.atmago.com/id) [Jaringan Semua Murid Semua Guru](https://semuamuridsemuaguru.id/) [ILUNI UI Psikologi](https://instagram.com/iluniuipsi?utm_medium=copy_link) [KG Media](https://www.kgmedia.id/)
 
 - - -
 
