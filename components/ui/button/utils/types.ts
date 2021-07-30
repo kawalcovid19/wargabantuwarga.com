@@ -2,11 +2,11 @@ export type ButtonSizes = "lg" | "md" | "sm" | "xl" | "xs";
 export type ButtonColors =
   | "blue"
   | "brand"
-  | "custom"
   | "gray"
   | "green"
   | "indigo"
   | "light-blue"
+  | "none"
   | "pink"
   | "purple"
   | "red"

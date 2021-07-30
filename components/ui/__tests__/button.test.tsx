@@ -77,7 +77,7 @@ describe("Button", () => {
       const { container } = render(
         <PrimaryButton
           className="text-white bg-green-500 focus:ring-green-500"
-          color="custom"
+          color="none"
         >
           test button
         </PrimaryButton>,
@@ -152,7 +152,7 @@ describe("Button", () => {
       const { container } = render(
         <SecondaryButton
           className="text-green-700 bg-green-100 hover:bg-green-200 focus:ring-green-500"
-          color="custom"
+          color="none"
         >
           test button
         </SecondaryButton>,
@@ -226,7 +226,7 @@ describe("Button", () => {
       const { container } = render(
         <OutlineButton
           className="text-green-500 border-green-500 hover:bg-green-100 focus:ring-green-500"
-          color="custom"
+          color="none"
         >
           test button
         </OutlineButton>,

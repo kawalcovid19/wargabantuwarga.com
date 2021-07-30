@@ -10,7 +10,7 @@ export function HomePageWhatsAppCTA() {
       <PrimaryAnchorButton
         block
         className="text-white bg-[#25d366] focus:ring-[#25d366]"
-        color="custom"
+        color="none"
         href="https://bit.ly/hotlinewarga"
         icon={WhatsAppIcon}
         rel="nofollow noopener noreferrer"
