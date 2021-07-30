@@ -1,6 +1,6 @@
-import React, { useMemo } from "react";
+import React from "react";
 
-import { anchorTransformer } from "~/lib/htmr-transformers";
+import { htmrTransform } from "~/lib/htmr-transformers";
 import { getContactMetaTitle } from "~/lib/meta";
 import { Contact } from "~/lib/provinces";
 import { isNotEmpty, stripTags } from "~/lib/string-utils";
@@ -15,7 +15,6 @@ import {
   PhoneIcon,
 } from "@heroicons/react/solid";
 import htmr from "htmr";
-import { HtmrOptions } from "htmr/src/types";
 import Link from "next/link";
 
 interface ContactListItemProps {
@@ -29,12 +28,6 @@ function ContactListItem({
   provinceName,
   provinceSlug,
 }: ContactListItemProps) {
-  const htmrTransform: HtmrOptions["transform"] = useMemo(
-    () => ({
-      a: anchorTransformer,
-    }),
-    [],
-  );
   return (
     <li>
       <div className="px-4 py-4 sm:px-6 relative hover:bg-gray-50">
