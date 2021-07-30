@@ -1,5 +1,6 @@
 import React from "react";
 
+import { HOMEPAGE_START_CTA_URL } from "~/constants";
 import { cloudinaryLoader, getBlurred } from "~/lib/cloudinary-loader";
 
 import { PrimaryAnchorButton } from "../ui/button";
@@ -35,7 +36,7 @@ export function HomePageStart() {
       </div>
       <div className="px-4 py-6">
         <a
-          href="https://sembako.wargabantuwarga.com/"
+          href={HOMEPAGE_START_CTA_URL}
           rel="nofollow noopener noreferrer"
           target="_blank"
         >
