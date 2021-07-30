@@ -1,3 +1,5 @@
+import { useMemo } from "react";
+
 import { latestNews } from "~/lib/home/latest-news";
 
 import { OutlineAnchorButton } from "../ui/button";
@@ -8,10 +10,20 @@ import { ExternalLinkIcon } from "@heroicons/react/outline";
 import htmr from "htmr";
 
 export function HomePageLatestNews() {
+  const sortedNews = useMemo(
+    () =>
+      latestNews
+        .slice(0, 3)
+        .sort(
+          (a, b) => b.attributes.date.getTime() - a.attributes.date.getTime(),
+        ),
+    [],
+  );
+
   return (
     <HomePageSection className="px-4 py-6 space-y-4">
       <h2 className="text-lg sm:text-xl font-semibold">Informasi Terbaru</h2>
-      {latestNews.slice(0, 3).map(({ attributes, html }) => (
+      {sortedNews.map(({ attributes, html }) => (
         <article
           key={attributes.date.toISOString()}
           className="border border-gray-200 rounded-md p-4 space-y-4"
