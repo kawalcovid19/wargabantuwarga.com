@@ -11,7 +11,7 @@ export function HomePageWhatsAppCTA() {
         block
         className="text-white bg-[#25d366] focus:ring-[#25d366]"
         color="custom"
-        href="https://bit.ly/halowarga"
+        href="https://bit.ly/hotlinewarga"
         icon={WhatsAppIcon}
         rel="nofollow noopener noreferrer"
         rounded
