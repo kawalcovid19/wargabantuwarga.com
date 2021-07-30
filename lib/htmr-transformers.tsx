@@ -12,7 +12,7 @@ export const anchorTransformer = (node: JSX.IntrinsicElements["a"]) => {
         <a
           className="text-indigo-600 hover:text-indigo-500 relative"
           href={href}
-          rel="noopener noreferrer"
+          rel="nofollow noopener noreferrer"
           target="_blank"
         >
           {children}
