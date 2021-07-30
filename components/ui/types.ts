@@ -1,8 +1,9 @@
-export type Colors =
+export type BaseColors =
   | "blue"
   | "gray"
   | "green"
   | "indigo"
+  | "light-blue"
   | "pink"
   | "purple"
   | "red"
