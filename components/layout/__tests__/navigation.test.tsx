@@ -136,41 +136,6 @@ describe("Navigation", () => {
                 </span>
               </a>
             </li>
-            <li
-              class="relative sm:hidden"
-            >
-              <div
-                class="relative"
-              >
-                <button
-                  aria-expanded="false"
-                  class="inline-flex flex-col items-center justify-center text-center h-12 px-2 rounded-md text-gray-600 hover:text-blue-600"
-                  id="headlessui-popover-button-1"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="w-8 h-8"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4 6h16M4 12h16M4 18h16"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                    />
-                  </svg>
-                  <span
-                    class="text-xs truncate"
-                  >
-                    Menu
-                  </span>
-                </button>
-              </div>
-            </li>
           </ul>
         </div>
       </nav>

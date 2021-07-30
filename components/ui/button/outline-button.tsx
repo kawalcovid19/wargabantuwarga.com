@@ -8,17 +8,18 @@ import {
   buttonRoundedStyles,
   buttonSizes,
   disabledStyles,
+  outlineButtonColors,
   renderButtonIcon,
 } from "./utils";
 
 import clsx from "clsx";
 
 /**
- * A white-canvas button as an alternative to the secondary variant button, or for other lesser-important actions.
+ * Button component used for primary actions.
  *
- * @link https://tailwindui.com/components/application-ui/elements/buttons#component-109c4104d58d9fedfa8650dbe24c1ae8
+ * @link https://tailwindui.com/components/application-ui/elements/buttons#component-80fd0d5ac7982f1a83b171bb0fb9e116
  */
-export const WhiteButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
+export const OutlineButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       className,
@@ -26,9 +27,10 @@ export const WhiteButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
       type,
       block,
       size = "md",
+      color = "blue",
+      rounded,
       icon,
       iconPosition = "left",
-      rounded,
       isLoading,
       loadingText = "Memuat...",
       disabled,
@@ -42,8 +44,8 @@ export const WhiteButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         buttonBlockStyles(block, iconPosition),
         buttonSizes(size),
         buttonRoundedStyles(rounded, size),
-        "items-center justify-center border border-transparent font-medium shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
-        "disabled:cursor-not-allowed",
+        "items-center justify-center border border-transparent font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2",
+        outlineButtonColors(color),
         disabledStyles,
         className,
       )}
@@ -64,4 +66,4 @@ export const WhiteButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ),
 );
 
-WhiteButton.displayName = "WhiteButton";
+OutlineButton.displayName = "OutlineButton";

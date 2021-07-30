@@ -12,11 +12,9 @@ import {
 import clsx from "clsx";
 
 /**
- * Similar to `WhiteButton`, but acts as a link.
- *
- * @link https://tailwindui.com/components/application-ui/elements/buttons#component-109c4104d58d9fedfa8650dbe24c1ae8
+ * A ghosted button with no background when not hovered.
  */
-export const WhiteAnchorButton = React.forwardRef<
+export const GhostedAnchorButton = React.forwardRef<
   HTMLAnchorElement,
   AnchorButtonProps
 >(
@@ -27,9 +25,9 @@ export const WhiteAnchorButton = React.forwardRef<
       type,
       block,
       size = "md",
+      rounded,
       icon,
       iconPosition = "left",
-      rounded,
       children,
       ...rest
     },
@@ -40,13 +38,13 @@ export const WhiteAnchorButton = React.forwardRef<
         buttonBlockStyles(block, iconPosition),
         buttonSizes(size),
         buttonRoundedStyles(rounded, size),
-        "items-center justify-center border border-transparent font-medium shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
-        "disabled:cursor-not-allowed",
+        "items-center border border-transparent font-medium text-blue-700 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
         disabledStyles,
         className,
       )}
       ref={ref}
       style={style}
+      type={type ?? "button"}
       {...rest}
     >
       {renderButtonIcon({ icon, size, iconPosition })}
@@ -55,4 +53,4 @@ export const WhiteAnchorButton = React.forwardRef<
   ),
 );
 
-WhiteAnchorButton.displayName = "WhiteAnchorButton";
+GhostedAnchorButton.displayName = "GhostedAnchorButton";

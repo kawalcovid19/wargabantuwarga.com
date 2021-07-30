@@ -15,17 +15,15 @@ jest.mock("next/router", () => require("next-router-mock"));
 describe("FaqPage", () => {
   const [faq] = faqs;
 
-  it("renders the title correctly", () => {
+  it("renders the title and breadcrumbs correctly", () => {
     render(<FaqPage faqSheets={faqs} />);
 
-    expect(screen.getByText(/pertanyaan yang sering ditanyakan/i))
-      .toMatchInlineSnapshot(`
-      <h2
-        class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate"
-      >
-        Pertanyaan yang sering ditanyakan
-      </h2>
-    `);
+    const title = screen.getByText(/pertanyaan yang sering ditanyakan/i);
+    expect(title).toBeVisible();
+
+    const breadcrumbs = screen.getByText(/faq/i);
+    expect(breadcrumbs).toBeVisible();
+    expect(breadcrumbs).toHaveAttribute("href", "/faq");
   });
 
   it("renders the questions and answers correctly", () => {
@@ -100,6 +98,30 @@ describe("FaqPage", () => {
 
     expect(screen.queryByText(firstFaq.jawaban)).not.toBeInTheDocument();
     expect(screen.getByText(secondFaq.jawaban)).toBeVisible();
+  });
+
+  it("performs empty state correctly", () => {
+    const firstFaq = faqBuilder();
+    const secondFaq = faqBuilder();
+
+    render(<FaqPage faqSheets={[firstFaq]} />);
+
+    expect(screen.getByText(firstFaq.jawaban)).toBeVisible();
+
+    userEvent.type(
+      screen.getByRole("textbox", {
+        name: /cari pertanyaan:/i,
+      }),
+      secondFaq.jawaban,
+    );
+    userEvent.click(
+      screen.getByRole("button", {
+        name: /cari/i,
+      }),
+    );
+
+    expect(screen.queryByText(firstFaq.jawaban)).not.toBeInTheDocument();
+    expect(screen.getByText(/Pertanyaan tidak ditemukan/i)).toBeVisible();
   });
 });
 

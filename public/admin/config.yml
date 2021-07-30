@@ -63,6 +63,33 @@ collections:
               required: false,
               hint: "Cloudinary image path, eg. `v12345/my_file.png`",
             }
+  - name: "isoman_page"
+    label: "Isoman Page"
+    delete: false
+    preview_path: "isolasi-mandiri"
+    files:
+      - name: "isoman_page"
+        label: "Isoman Page"
+        file: "_content/isoman-page.json"
+        fields:
+          - name: "isoman_contents"
+            label: "Isoman Contents"
+            widget: list
+            fields:
+              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Category Title", name: "title", widget: "string" }
+              - {
+                  label: "Category Description",
+                  name: "description",
+                  widget: "text",
+                  required: false,
+                }
+              - label: "Links List"
+                name: links
+                widget: list
+                fields:
+                  - { label: "Link Title", name: "title", widget: "string" }
+                  - { label: "Link URL", name: "url", widget: "string" }
 
   - name: "welcome_message"
     label: "Welcome Message"
