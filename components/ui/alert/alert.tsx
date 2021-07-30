@@ -7,9 +7,9 @@ import {
   renderAlertIcon,
 } from "./utils";
 
+import { Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
 import clsx from "clsx";
-import { CSSTransition } from "react-transition-group";
 
 export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
   (
@@ -21,8 +21,6 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
       accentBorder = false,
       icon,
       visible = true,
-      onDismiss,
-      onDismissed,
       ...rest
     },
     ref,
@@ -32,17 +30,16 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     const _className = clsx(
       alertColors(color),
       accentBorderColors(accentBorder, color),
-      "rounded-md p-4",
+      "p-4",
       className,
     );
 
     return (
-      <CSSTransition
-        in={_visible}
-        onExit={onDismiss}
-        onExited={onDismissed}
-        timeout={150}
-        unmountOnExit
+      <Transition
+        leave="transition-opacity duration-150"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+        show={_visible}
       >
         <div className={_className} role="alert" {...rest} ref={ref}>
           <div className="flex justify-between">
@@ -65,7 +62,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
             )}
           </div>
         </div>
-      </CSSTransition>
+      </Transition>
     );
   },
 );
