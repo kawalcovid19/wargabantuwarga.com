@@ -111,11 +111,11 @@ export default function FaqPage(props: FaqPageProps) {
                     <dt className="text-base font-semibold text-gray-900 md:col-span-5">
                       {question.pertanyaan}
                     </dt>
-                    <dd className="mt-2 md:mt-0 md:col-span-7">
+                    <dd className="space-y-4 mt-2 md:mt-0 md:col-span-7">
                       <p className="text-base text-gray-500">
                         {htmr(question.jawaban)}
                       </p>
-                      <small>
+                      <small className="block">
                         Sumber:{" "}
                         {question.link ? (
                           <a
