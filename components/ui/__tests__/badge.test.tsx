@@ -1,4 +1,4 @@
-import { Badge } from "../badge";
+import { Badge } from "../badge/badge";
 
 import { render } from "@testing-library/react";
 
@@ -15,7 +15,7 @@ describe("Badge", () => {
     `);
   });
 
-  it("renders with correct colours", () => {
+  it("renders with correct colors", () => {
     const { container } = render(<Badge color="blue">test badge</Badge>);
 
     expect(container.firstChild).toHaveClass("bg-blue-100", "text-blue-800");
