@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import siteConfig from "../site-config";
+import siteConfig from "../content/site-config";
 
 import {
   ChatAltIcon,

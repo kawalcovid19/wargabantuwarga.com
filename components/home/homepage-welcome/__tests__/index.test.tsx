@@ -1,6 +1,6 @@
 import React from "react";
 
-import siteConfig from "~/lib/site-config";
+import siteConfig from "~/lib/content/site-config";
 import { attributes } from "~/lib/welcome-message";
 
 import { HomePageWelcome } from "..";

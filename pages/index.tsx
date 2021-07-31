@@ -9,9 +9,9 @@ import { HomePageWhatsAppCTA } from "~/components/home/homepage-whatsapp-cta";
 import { Page } from "~/components/layout/page";
 import { Alert } from "~/components/ui/alert";
 import { Container } from "~/components/ui/container";
+import siteConfig from "~/lib/content/site-config";
 import { attributes, html } from "~/lib/home-page";
 import { htmrTransform } from "~/lib/htmr-transformers";
-import siteConfig from "~/lib/site-config";
 
 import { ClockIcon } from "@heroicons/react/outline";
 import htmr from "htmr";
