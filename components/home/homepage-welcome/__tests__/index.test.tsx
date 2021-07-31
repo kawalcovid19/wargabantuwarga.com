@@ -1,7 +1,7 @@
 import React from "react";
 
 import siteConfig from "~/lib/content/site-config";
-import { attributes } from "~/lib/welcome-message";
+import { attributes } from "~/lib/content/welcome-message";
 
 import { HomePageWelcome } from "..";
 
@@ -14,7 +14,7 @@ import {
 import userEvent from "@testing-library/user-event";
 import { mockAllIsIntersecting } from "react-intersection-observer/test-utils";
 
-jest.mock("~/lib/welcome-message");
+jest.mock("~/lib/content/welcome-message");
 
 describe("HomePageWelcome", () => {
   const bodyRegexp =
