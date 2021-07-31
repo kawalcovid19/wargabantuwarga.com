@@ -29,8 +29,8 @@ export function HomePageLatestNews() {
           className="border border-gray-200 rounded-md p-4 space-y-4"
         >
           <div className="space-y-2">
-            <div className="flex flex-row">
-              <h3 className="flex-1 text-base font-semibold text-gray-700 truncate">
+            <div className="flex flex-row text-base">
+              <h3 className="flex-1 font-semibold text-gray-700 truncate">
                 {attributes.source}
               </h3>
               <span className="inline-block flex-none text-gray-400 ml-4">
