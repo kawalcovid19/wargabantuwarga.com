@@ -12,7 +12,7 @@ describe("HomePage", () => {
 
     expect(
       screen.getByText(
-        "Pembaruan terakhir pada Tuesday, July 27, 2021, 05:43 PM GMT+7",
+        /Pembaruan terakhir pada Selasa, 27 Juli 2021 17.43 WIB/i,
       ),
     ).toBeVisible();
   });
