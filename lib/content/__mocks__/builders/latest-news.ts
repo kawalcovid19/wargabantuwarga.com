@@ -1,19 +1,10 @@
-type LatestNewsItemAttributes = {
-  title: string;
-  date: Date;
-  description?: string;
-} & ({ link: string; link_text: string } | { link?: never });
-
-export interface LatestNewsItem {
-  attributes: LatestNewsItemAttributes;
-  html: string;
-}
+import { LatestNewsItem } from "../../latest-news";
 
 export const latestNews: LatestNewsItem[] = [
   {
     attributes: {
       title: "Wilayah Jakarta",
-      date: new Date("2021-07-25T15:01:46Z"),
+      date: "2021-07-25T15:01:46Z",
       link: "https://sinergisehat.vaksin.siapdok.id/#/",
       link_text: "Daftar vaksin SINERGI SEHAT",
     },
@@ -22,7 +13,7 @@ export const latestNews: LatestNewsItem[] = [
   {
     attributes: {
       title: "Kementerian Kesehatan",
-      date: new Date("2021-07-14T12:00:00Z"),
+      date: "2021-07-14T12:00:00Z",
       link: "https://yankes.kemkes.go.id/app/siranap/rumah_sakit?jenis=1&propinsi=31prop&kabkota=",
       link_text: "Cek ketersediaan IGD Jakarta",
     },

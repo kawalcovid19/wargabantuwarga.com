@@ -10,8 +10,8 @@ import { Page } from "~/components/layout/page";
 import { Alert } from "~/components/ui/alert";
 import { Container } from "~/components/ui/container";
 import { attributes, html } from "~/lib/content/home-page";
+import { LatestNewsItem } from "~/lib/content/latest-news";
 import siteConfig from "~/lib/content/site-config";
-import { LatestNewsItem } from "~/lib/home/latest-news";
 import { htmrTransform } from "~/lib/htmr-transformers";
 
 import { ClockIcon } from "@heroicons/react/outline";
@@ -82,17 +82,13 @@ const HomePage = (props: HomePageProps) => (
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const fileImports = fs
-    .readdirSync(path.join(process.cwd(), "_content/informasi-terbaru"))
-    .map(
-      (fileName) =>
-        new Promise((resolve) =>
-          import(`./_content/informasi-terbaru/${fileName}`).then(resolve),
-        ),
-    );
-
-  const latestNews = await Promise.all(fileImports).catch(() => null);
-
+  const markdownFiles = await Promise.all(
+    fs
+      .readdirSync(path.join(process.cwd(), "_content/informasi-terbaru"))
+      .map((fileName) => import(`../_content/informasi-terbaru/${fileName}`)),
+  ).catch(() => null);
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  const latestNews = markdownFiles?.map((markdownFile) => markdownFile.default);
   return {
     props: {
       latestNews,

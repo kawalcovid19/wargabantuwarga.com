@@ -1,4 +1,4 @@
-import { latestNews } from "~/lib/home/latest-news";
+import { latestNews } from "~/lib/content/__mocks__/builders/latest-news";
 
 import { HomePageLatestNews } from "../homepage-latest-news";
 

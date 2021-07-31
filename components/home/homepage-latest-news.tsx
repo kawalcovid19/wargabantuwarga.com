@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import { LatestNewsItem } from "~/lib/home/latest-news";
+import { LatestNewsItem } from "~/lib/content/latest-news";
 import { htmrTransform } from "~/lib/htmr-transformers";
 
 import { OutlineAnchorButton } from "../ui/button";
@@ -20,7 +20,9 @@ export function HomePageLatestNews(props: HomePageLatestNewsProps) {
       props.latestNews
         .slice(0, 3)
         .sort(
-          (a, b) => b.attributes.date.getTime() - a.attributes.date.getTime(),
+          (a, b) =>
+            new Date(b.attributes.date).getTime() -
+            new Date(a.attributes.date).getTime(),
         ),
     [],
   );
@@ -30,7 +32,7 @@ export function HomePageLatestNews(props: HomePageLatestNewsProps) {
       <h2 className="text-lg sm:text-xl font-semibold">Informasi Terbaru</h2>
       {sortedNews.map(({ attributes, html }) => (
         <article
-          key={attributes.date.toISOString()}
+          key={attributes.title}
           className="border border-gray-200 rounded-md p-4 space-y-4"
         >
           <div className="space-y-2">
@@ -43,7 +45,7 @@ export function HomePageLatestNews(props: HomePageLatestNewsProps) {
                   day: "numeric",
                   month: "long",
                   year: "numeric",
-                }).format(attributes.date)}
+                }).format(new Date(attributes.date))}
               </span>
             </div>
             <div className="text-gray-600 text-sm">

@@ -41,7 +41,7 @@ collections:
   - name: "informasi_terbaru"
     label: "Informasi Terbaru"
     preview_path: ""
-    folder: "_content/infomasi-terbaru"
+    folder: "_content/informasi-terbaru"
     extension: "md"
     create: true
     fields:

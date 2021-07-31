@@ -1,6 +1,6 @@
 import React from "react";
 
-import { latestNews } from "~/lib/home/latest-news";
+import { latestNews } from "~/lib/content/__mocks__/builders/latest-news";
 import HomePage from "~/pages";
 
 import { render, screen } from "@testing-library/react";
