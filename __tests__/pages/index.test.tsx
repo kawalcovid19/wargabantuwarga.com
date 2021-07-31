@@ -4,7 +4,7 @@ import HomePage from "~/pages";
 
 import { render, screen } from "@testing-library/react";
 
-jest.mock("~/lib/home-page");
+jest.mock("~/lib/content/home-page");
 jest.mock("~/lib/welcome-message");
 
 describe("HomePage", () => {
