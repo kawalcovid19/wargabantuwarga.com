@@ -38,6 +38,39 @@ collections:
             name: "whatsapp_contact_url"
             widget: "string"
             hint: "The direct link (`https://`) of the WhatsApp hotline used in navigation and homepage CTA."
+  - name: "informasi_terbaru"
+    label: "Informasi Terbaru"
+    preview_path: ""
+    folder: "_content/infomasi-terbaru"
+    extension: "md"
+    create: true
+    fields:
+      - {
+          label: "Title",
+          name: "title",
+          widget: "string",
+        }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "date",
+        }
+      - {
+          label: "Link Text",
+          name: "link_text",
+          widget: "string",
+        }
+      - {
+          label: "Link",
+          name: "link",
+          widget: "string",
+        }
+      - {
+          label: "Body",
+          name: "body",
+          widget: "markdown",
+          hint: "Section body",
+        }
   - name: "home_page"
     label: "Home Page"
     delete: false
