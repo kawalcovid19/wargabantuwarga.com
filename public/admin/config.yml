@@ -93,3 +93,29 @@ collections:
                 fields:
                   - { label: "Link Title", name: "title", widget: "string" }
                   - { label: "Link URL", name: "url", widget: "string" }
+
+  - name: "welcome_message"
+    label: "Welcome Message"
+    delete: false
+    preview_path: ""
+    files:
+      - name: "welcome_message"
+        label: "Welcome Message"
+        file: "_content/welcome-message.md"
+        fields:
+          - {
+              label: "Last updated time",
+              name: "last_updated_time",
+              widget: "datetime",
+            }
+          - {
+              label: "Title",
+              name: "title",
+              widget: "string",
+            }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              hint: "Section body",
+            }

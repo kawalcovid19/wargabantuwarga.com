@@ -4,6 +4,7 @@ import { HomepageHeader } from "~/components/home/homepage-header";
 import { HomePageLatestNews } from "~/components/home/homepage-latest-news";
 import { HomePageSection } from "~/components/home/homepage-section";
 import { HomePageStart } from "~/components/home/homepage-start";
+import { HomePageWelcome } from "~/components/home/homepage-welcome";
 import { HomePageWhatsAppCTA } from "~/components/home/homepage-whatsapp-cta";
 import { Page } from "~/components/layout/page";
 import { Alert } from "~/components/ui/alert";
@@ -53,6 +54,7 @@ const HomePage = () => (
         <HomePageContributing />
         <HomePageWhatsAppCTA />
         <LastUpdatedAlert />
+        <HomePageWelcome />
         <HomePageSection className="px-4 py-6">
           <article className="prose prose-indigo">
             {htmr(html, { transform: htmrTransform })}
