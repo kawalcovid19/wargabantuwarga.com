@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
-import { attributes, html } from "~/_content/welcome-message.md";
 import useIntersectionObserver from "~/lib/hooks/use-intersection";
+import { attributes, html } from "~/lib/welcome-message";
 
 import { BasicDialog } from "./dialog";
 

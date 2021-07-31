@@ -5,6 +5,7 @@ import HomePage from "~/pages";
 import { render, screen } from "@testing-library/react";
 
 jest.mock("~/lib/home-page");
+jest.mock("~/lib/welcome-message");
 
 describe("HomePage", () => {
   it("renders the last updated time correctly", () => {
