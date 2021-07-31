@@ -41,15 +41,17 @@ const DescriptionItem = (props: DescriptionItemProps) => {
       <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
         <span className="flex-grow">
           {htmr(value, { transform: htmrTransform })}
+        </span>
+        <div className="flex flex-wrap justify-end space-y-1 content-start">
+          {typeof value == "string" &&
+            value.length > 0 &&
+            props.withCopyButton && <CopyButton text={stripTags(value)} />}
           {typeof value == "string" &&
             value.length > 0 &&
             props.withOpenMapButton && (
               <OpenMapButton address={stripTags(value)} />
             )}
-        </span>
-        {typeof value == "string" &&
-          value.length > 0 &&
-          props.withCopyButton && <CopyButton text={stripTags(value)} />}
+        </div>
       </dd>
     </div>
   );
