@@ -7,10 +7,9 @@ last_updated_time: 2021-07-31T20:44:02.620Z
 
 ## Daftar Isi
 
-1. [Situs atau Kontak Penting Terkait COVID-19](#situsatau-kontak-penting-terkait-covid19)
-2. [Daftar Kontak Fasilitas dan Alat Kesehatan per Provinsi](#daftar-kontak-fasilitas-alat-kesehatanper-provinsi)
-3. [Laman Edukasi COVID-19](#laman-edukasi-covid19)
-4. [Donasi untuk Warga Terdampak](#donasidan-penggalangan-dana)
+1. [Situs atau Kontak Penting Terkait COVID-19](#situs-atau-kontak-penting-terkait-covid-19)
+2. [Laman Edukasi COVID-19](#laman-edukasi-covid-19)
+3. [Donasi untuk Warga Terdampak](#donasi-dan-penggalangan-dana)
 
 - - -
 
