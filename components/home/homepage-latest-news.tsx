@@ -41,7 +41,7 @@ export function HomePageLatestNews() {
                 }).format(attributes.date)}
               </span>
             </div>
-            <div className="text-gray-600">{htmr(html)}</div>
+            <div className="text-gray-600 text-sm">{htmr(html)}</div>
           </div>
           {attributes.link && (
             <OutlineAnchorButton
