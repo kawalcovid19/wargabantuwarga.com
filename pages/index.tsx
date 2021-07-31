@@ -10,7 +10,7 @@ import { Page } from "~/components/layout/page";
 import { Alert } from "~/components/ui/alert";
 import { Container } from "~/components/ui/container";
 import { attributes, html } from "~/lib/content/home-page";
-import { LatestNewsItem } from "~/lib/content/latest-news";
+import { LatestNewsItem } from "~/lib/content/informasi-terbaru";
 import siteConfig from "~/lib/content/site-config";
 import { htmrTransform } from "~/lib/htmr-transformers";
 

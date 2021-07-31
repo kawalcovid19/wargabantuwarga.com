@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import { LatestNewsItem } from "~/lib/content/latest-news";
+import { LatestNewsItem } from "~/lib/content/informasi-terbaru";
 import { htmrTransform } from "~/lib/htmr-transformers";
 
 import { OutlineAnchorButton } from "../ui/button";

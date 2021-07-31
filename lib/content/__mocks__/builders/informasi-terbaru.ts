@@ -1,4 +1,4 @@
-import { LatestNewsItem } from "../../latest-news";
+import { LatestNewsItem } from "../../informasi-terbaru";
 
 export const latestNews: LatestNewsItem[] = [
   {
