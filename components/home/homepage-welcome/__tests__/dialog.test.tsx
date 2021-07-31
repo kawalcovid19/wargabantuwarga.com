@@ -1,5 +1,6 @@
 import React from "react";
 
+import FakeIntersectionObserver from "~/__mocks__/intersection-observer";
 import { attributes, html } from "~/lib/welcome-message";
 
 import { BasicDialog } from "../dialog";
@@ -9,12 +10,8 @@ import userEvent from "@testing-library/user-event";
 
 jest.mock("~/lib/welcome-message");
 
-// @ts-expect-error we only mock the API that's used by the Dialog component
-// https://github.com/tailwindlabs/headlessui/blob/396f889dc3f7ac842961065c3221e5216f22433a/packages/%40headlessui-react/src/components/dialog/dialog.test.tsx#L25-L29
-global.IntersectionObserver = class FakeIntersectionObserver {
-  observe() {}
-  disconnect() {}
-};
+// https://stackoverflow.com/a/64122902/3187014
+global.IntersectionObserver = FakeIntersectionObserver;
 
 describe("BasicDialog", () => {
   const handleToggle = jest.fn();
