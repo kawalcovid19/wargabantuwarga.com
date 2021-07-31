@@ -41,9 +41,9 @@ export function HomePageWelcome() {
 
     if (isSupportNativeShare) {
       const shareObj = {
-        title: "WargaBantuWarga.com",
-        text: "Inisiatif warga untuk berbagi informasi dan membantu warga yang terdampak Covid-19",
-        url: "https://www.wargabantuwarga.com/",
+        title: siteConfig.site_name,
+        text: siteConfig.site_description,
+        url: siteConfig.site_url,
       };
 
       navigator

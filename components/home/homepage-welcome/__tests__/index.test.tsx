@@ -70,15 +70,45 @@ describe("HomePageWelcome", () => {
 
     mockAllIsIntersecting(true);
 
-    jest.spyOn(window, "open").mockImplementation(() => {
-      const safeUrl = encodeURIComponent(siteConfig.site_url);
-      const safeText = encodeURIComponent(siteConfig.site_description);
-      expect(window.open).toHaveBeenCalledWith(
-        `https://twitter.com/intent/tweet?text=${safeText}+%0A+${safeUrl}`,
-      );
-      return window;
-    });
+    jest.spyOn(window, "open").mockImplementation(() => window);
 
     userEvent.click(screen.getByText(/sebarkan sekarang/i));
+
+    const safeUrl = encodeURIComponent(siteConfig.site_url);
+    const safeText = encodeURIComponent(siteConfig.site_description);
+    expect(window.open).toHaveBeenCalledWith(
+      `https://twitter.com/intent/tweet?text=${safeText}+%0A+${safeUrl}`,
+    );
+
+    jest.spyOn(window, "open").mockClear();
+  });
+
+  it("invokes the native sharing mechanism when the browser supports it", async () => {
+    render(<HomePageWelcome />);
+
+    mockAllIsIntersecting(true);
+
+    Object.defineProperty(global.navigator, "share", {
+      writable: true,
+      value: jest.fn().mockImplementation(
+        (shareObj) =>
+          new Promise((resolve) => {
+            expect(shareObj).toEqual({
+              title: siteConfig.site_name,
+              text: siteConfig.site_description,
+              url: siteConfig.site_url,
+            });
+            resolve(null);
+          }),
+      ),
+    });
+
+    jest.spyOn(window, "open").mockImplementation(() => window);
+
+    userEvent.click(screen.getByText(/sebarkan sekarang/i));
+
+    await waitForElementToBeRemoved(() => screen.queryByText(title));
+
+    expect(window.open).not.toHaveBeenCalled();
   });
 });
