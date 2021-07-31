@@ -3,7 +3,7 @@
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-26-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-27-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -14,7 +14,7 @@ A society initiative to circulate information about health facilities and device
 
 ## Purpose and Principles
 
-TThe purpose of this website is to republish publicly accessible Google Docs to be more mobile-friendly and performant.
+The purpose of this website is to republish publicly accessible Google Docs to be more mobile-friendly and performant.
 
 > Why using Google Docs?
 
@@ -26,7 +26,7 @@ We are using Google Docs so that our content contributors can collaborate easily
 
 #### ✅ Performance
 
-Our website must be high-performant because our audience spread across Indonesia with varying types of devices and network speed. A good measurement of it is Google's [Core Web Vitals](https://web.dev/vitals/).
+Our website must be high-performant because our audience is spread across Indonesia with varying types of devices and network speed. A good measurement of it is Google's [Core Web Vitals](https://web.dev/vitals/).
 
 #### ✅ Accessibility
 
@@ -140,6 +140,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://linktr.ee/funfuncfunction"><img src="https://avatars.githubusercontent.com/u/50759463?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Muhammad Fauzan</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=fncolon" title="Documentation">📖</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=fncolon" title="Code">💻</a> <a href="#ideas-fncolon" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://hendraaagil.space"><img src="https://avatars.githubusercontent.com/u/54741166?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hendra Agil Syaputra</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=hendraaagil" title="Code">💻</a></td>
     <td align="center"><a href="http://kusiaga.com"><img src="https://avatars.githubusercontent.com/u/19145812?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Burhan Ahmed</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=burhanahmeed" title="Code">💻</a></td>
+    <td align="center"><a href="http://mukhlis.id"><img src="https://avatars.githubusercontent.com/u/27577560?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mukhlis</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=mukhlisakbr" title="Documentation">📖</a></td>
   </tr>
 </table>
 
