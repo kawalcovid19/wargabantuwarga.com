@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import config from "../config";
+import siteConfig from "../site-config";
 
 import {
   ChatAltIcon,
@@ -29,7 +29,7 @@ export const bottomNavigation: NavigationItem[] = [
   {
     name: "Hubungi Kami",
     icon: ChatAltIcon,
-    href: config.whatsapp_contact_url,
+    href: siteConfig.whatsapp_contact_url,
     external: true,
   },
   {

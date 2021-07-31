@@ -7,9 +7,9 @@ import { HomePageStart } from "~/components/home/homepage-start";
 import { HomePageWhatsAppCTA } from "~/components/home/homepage-whatsapp-cta";
 import { Page } from "~/components/layout/page";
 import { Container } from "~/components/ui/container";
-import config from "~/lib/config";
 import { attributes, html } from "~/lib/home-page";
 import { htmrTransform } from "~/lib/htmr-transformers";
+import siteConfig from "~/lib/site-config";
 
 import { ClockIcon } from "@heroicons/react/outline";
 import clsx from "clsx";
@@ -17,7 +17,7 @@ import htmr from "htmr";
 import { NextSeo } from "next-seo";
 
 const meta = {
-  title: `${config.site_tagline} | ${config.site_name}`,
+  title: `${siteConfig.site_tagline} | ${siteConfig.site_name}`,
 };
 
 interface LastUpdatedAlertProps {

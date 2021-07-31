@@ -1,4 +1,4 @@
-import { SiteConfig } from "../config";
+import { SiteConfig } from "../site-config";
 
 const config: SiteConfig = {
   site_name: "Warga Bantu Warga",

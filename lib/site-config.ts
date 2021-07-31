@@ -1,4 +1,4 @@
-import config from "~/_content/site-config.json";
+import siteConfig from "~/_content/site-config.json";
 
 export type SiteConfig = {
   readonly site_name: string;
@@ -8,4 +8,4 @@ export type SiteConfig = {
   readonly whatsapp_contact_url: string;
 };
 
-export default config as SiteConfig;
+export default siteConfig as SiteConfig;

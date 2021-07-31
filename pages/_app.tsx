@@ -6,8 +6,8 @@ import "typeface-inter";
 import { useEffect } from "react";
 
 import { LayoutRoot } from "~/components/layout/layout-root";
-import config from "~/lib/config";
 import { initializeGTM } from "~/lib/gtm";
+import siteConfig from "~/lib/site-config";
 
 import type { AppProps } from "next/app";
 import Head from "next/head";
@@ -16,11 +16,11 @@ import { DefaultSeo } from "next-seo";
 import NProgress from "nprogress";
 
 const meta = {
-  siteName: config.site_name,
-  title: `${config.site_tagline} | ${config.site_name}`,
-  tagline: config.site_tagline,
-  description: config.site_description,
-  url: config.site_url,
+  siteName: siteConfig.site_name,
+  title: `${siteConfig.site_tagline} | ${siteConfig.site_name}`,
+  tagline: siteConfig.site_tagline,
+  description: siteConfig.site_description,
+  url: siteConfig.site_url,
 };
 
 export default function App({ Component, pageProps, router }: AppProps) {
@@ -67,7 +67,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
             },
           ],
         }}
-        title={config.site_tagline}
+        title={siteConfig.site_tagline}
         titleTemplate={`%s | ${meta.siteName}`}
         twitter={{
           handle: "@KawalCOVID19",

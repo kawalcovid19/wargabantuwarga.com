@@ -1,4 +1,4 @@
-import config from "~/lib/config";
+import siteConfig from "~/lib/site-config";
 
 import { PrimaryAnchorButton } from "../ui/button";
 import { WhatsAppIcon } from "../ui/icons";
@@ -13,7 +13,7 @@ export function HomePageWhatsAppCTA() {
         block
         className="text-white bg-[#25d366] focus:ring-[#25d366]"
         color="none"
-        href={config.whatsapp_contact_url}
+        href={siteConfig.whatsapp_contact_url}
         icon={WhatsAppIcon}
         rel="nofollow noopener noreferrer"
         rounded
