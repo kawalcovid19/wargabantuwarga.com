@@ -1,6 +1,6 @@
-import provinces, { Contact, ProvincePath } from "../provinces";
+import { Contact, ProvincePath, Provinces } from "../provinces";
 
-export const getProvincesPaths = (): ProvincePath[] => {
+export const getProvincesPaths = (provinces: Provinces): ProvincePath[] => {
   return provinces.map((province) => {
     const provinceSlug = province.slug;
 
@@ -17,7 +17,7 @@ export type ContactPath = {
   };
 };
 
-export const getContactsPaths = (): ContactPath[] => {
+export const getContactsPaths = (provinces: Provinces): ContactPath[] => {
   const contactsPaths: ContactPath[] = [];
   provinces.forEach((province) => {
     province.data.forEach((contact: Contact) => {

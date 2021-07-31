@@ -114,7 +114,7 @@ export default function ProvincePage(props: ProvinceProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = () => {
-  const paths = getProvincesPaths();
+  const paths = getProvincesPaths(provinces);
 
   return {
     fallback: false,

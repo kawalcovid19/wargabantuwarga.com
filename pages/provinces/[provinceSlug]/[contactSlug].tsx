@@ -62,7 +62,7 @@ export default function ContactPage({
 }
 
 export const getStaticPaths: GetStaticPaths = () => {
-  const paths = getContactsPaths();
+  const paths = getContactsPaths(provinces);
   return {
     fallback: false,
     paths,
