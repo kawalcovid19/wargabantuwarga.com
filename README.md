@@ -14,7 +14,7 @@ A society initiative to circulate information about health facilities and device
 
 ## Purpose and Principles
 
-TThe purpose of this website is to republish publicly accessible Google Docs to be more mobile-friendly and performant.
+The purpose of this website is to republish publicly accessible Google Docs to be more mobile-friendly and performant.
 
 > Why using Google Docs?
 
@@ -26,7 +26,7 @@ We are using Google Docs so that our content contributors can collaborate easily
 
 #### ✅ Performance
 
-Our website must be high-performant because our audience spread across Indonesia with varying types of devices and network speed. A good measurement of it is Google's [Core Web Vitals](https://web.dev/vitals/).
+Our website must be high-performant because our audience is spread across Indonesia with varying types of devices and network speed. A good measurement of it is Google's [Core Web Vitals](https://web.dev/vitals/).
 
 #### ✅ Accessibility
 
