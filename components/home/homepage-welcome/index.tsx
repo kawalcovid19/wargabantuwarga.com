@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import useIntersectionObserver from "~/lib/hooks/use-intersection";
+import siteConfig from "~/lib/site-config";
 import { attributes, html } from "~/lib/welcome-message";
 
 import { BasicDialog } from "./dialog";
@@ -54,10 +55,8 @@ export function HomePageWelcome() {
         });
     } else {
       // just share to twitter when it' not support native share
-      const safeUrl = encodeURIComponent("https://www.wargabantuwarga.com/");
-      const safeText = encodeURIComponent(
-        "WargaBantuWarga.com - Inisiatif warga untuk berbagi informasi dan membantu warga yang terdampak Covid-19",
-      );
+      const safeUrl = encodeURIComponent(siteConfig.site_url);
+      const safeText = encodeURIComponent(siteConfig.site_description);
 
       window.open(
         `https://twitter.com/intent/tweet?text=${safeText}+%0A+${safeUrl}`,

@@ -69,7 +69,7 @@ describe("BasicDialog", () => {
     setup();
 
     expect(handleCtaClick).toHaveBeenCalledTimes(0);
-    userEvent.click(screen.getByLabelText(/sebarkan sekarang/i));
+    userEvent.click(screen.getByText(/sebarkan sekarang/i));
     expect(handleCtaClick).toHaveBeenCalledTimes(1);
   });
 });

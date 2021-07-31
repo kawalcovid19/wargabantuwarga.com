@@ -1,5 +1,6 @@
 import React from "react";
 
+import siteConfig from "~/lib/site-config";
 import { attributes } from "~/lib/welcome-message";
 
 import { HomePageWelcome } from "..";
@@ -62,5 +63,22 @@ describe("HomePageWelcome", () => {
 
     expect(screen.queryByText(title)).not.toBeInTheDocument();
     expect(screen.queryByText(bodyRegexp)).not.toBeInTheDocument();
+  });
+
+  it("shares to Twitter when the browser doesn't support native share", () => {
+    render(<HomePageWelcome />);
+
+    mockAllIsIntersecting(true);
+
+    jest.spyOn(window, "open").mockImplementation(() => {
+      const safeUrl = encodeURIComponent(siteConfig.site_url);
+      const safeText = encodeURIComponent(siteConfig.site_description);
+      expect(window.open).toHaveBeenCalledWith(
+        `https://twitter.com/intent/tweet?text=${safeText}+%0A+${safeUrl}`,
+      );
+      return window;
+    });
+
+    userEvent.click(screen.getByText(/sebarkan sekarang/i));
   });
 });
