@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import { latestNews } from "~/lib/home/latest-news";
+import { LatestNewsItem } from "~/lib/home/latest-news";
 import { htmrTransform } from "~/lib/htmr-transformers";
 
 import { OutlineAnchorButton } from "../ui/button";
@@ -10,10 +10,14 @@ import { HomePageSection } from "./homepage-section";
 import { ExternalLinkIcon } from "@heroicons/react/outline";
 import htmr from "htmr";
 
-export function HomePageLatestNews() {
+interface HomePageLatestNewsProps {
+  latestNews: LatestNewsItem[];
+}
+
+export function HomePageLatestNews(props: HomePageLatestNewsProps) {
   const sortedNews = useMemo(
     () =>
-      latestNews
+      props.latestNews
         .slice(0, 3)
         .sort(
           (a, b) => b.attributes.date.getTime() - a.attributes.date.getTime(),
