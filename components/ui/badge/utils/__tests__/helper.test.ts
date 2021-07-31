@@ -9,7 +9,7 @@ describe("badgeRoundedStyles", () => {
   });
 
   it(`returns full rounded when badgeRoundedStyles is false`, () => {
-    expect(badgeRoundedStyles(false)).toEqual("badgeRoundedStyles");
+    expect(badgeRoundedStyles(false)).toEqual("rounded-full");
   });
 });
 
@@ -39,8 +39,8 @@ describe("badgeSizes", () => {
     size       | expected
     ${"basic"} | ${"px-2.5 py-0.5 text-xs"}
     ${"large"} | ${"px-3 py-0.5 text-sm"}
-  `("returns $expected classes when size is $size", ({ color, expected }) => {
-    expect(badgeSizes(color as BadgeSizes)).toEqual(expected);
+  `("returns $expected classes when size is $size", ({ size, expected }) => {
+    expect(badgeSizes(size as BadgeSizes)).toEqual(expected);
   });
 
   it(`returns basic size when size is not defined`, () => {
