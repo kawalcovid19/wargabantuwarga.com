@@ -108,14 +108,13 @@ collections:
         label: "Isolasi Mandiri Page"
         file: "_content/isolasi-mandiri.json"
         fields:
-          - name: "content_items"
-            label: "Content Items"
+          - name: "categories"
+            label: "Categories"
             widget: list
             fields:
-              - { label: "Category", name: "category", widget: "string" }
-              - { label: "Category Title", name: "title", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
               - {
-                  label: "Category Description",
+                  label: "Description",
                   name: "description",
                   widget: "text",
                   required: false,

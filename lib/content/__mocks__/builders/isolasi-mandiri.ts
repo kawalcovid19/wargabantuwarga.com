@@ -1,8 +1,4 @@
-import {
-  ContentItem,
-  IsolasiMandiri,
-  URL,
-} from "~/lib/content/isolasi-mandiri";
+import { Category, IsolasiMandiri, URL } from "~/lib/content/isolasi-mandiri";
 
 import { build, fake } from "@jackfranklin/test-data-bot";
 
@@ -13,9 +9,8 @@ export const urlBuilder = build<URL>({
   },
 });
 
-export const contentItemBuilder = build<ContentItem>({
+export const categoryBuilder = build<Category>({
   fields: {
-    category: fake((f) => f.lorem.words()),
     title: fake((f) => f.lorem.sentence()),
     description: fake((f) => f.lorem.paragraph()),
     links: [urlBuilder()],
@@ -24,6 +19,6 @@ export const contentItemBuilder = build<ContentItem>({
 
 export const isolasiMandiriBuilder = build<IsolasiMandiri>({
   fields: {
-    content_items: [contentItemBuilder()],
+    categories: [categoryBuilder()],
   },
 });

@@ -1,7 +1,6 @@
 {
-  "content_items": [
+  "categories": [
     {
-      "category": "Panduan Isoman",
       "title": "Isolasi Mandiri: Apa yang harus dilakukan?",
       "description": "Kumpulan informasi mengenai hal yang perlu Anda ketahui dan langkah penting yang perlu Anda lakukan untuk melakukan isolasi mandiri",
       "links": [
@@ -36,7 +35,6 @@
       ]
     },
     {
-      "category": "Posko Bantuan",
       "title": "Posko Bantuan Warga",
       "description": "",
       "links": [

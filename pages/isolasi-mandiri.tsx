@@ -35,16 +35,16 @@ export default function IsolasiMandiriPage(props: IsolasiMandiriPageProps) {
         />
         <PageContent>
           <div className="p-4 bg-white shadow overflow-hidden rounded-md space-y-8">
-            {props.isolasiMandiri.content_items.map((iso, i: number) => (
+            {props.isolasiMandiri.categories.map((category, i: number) => (
               <div key={i}>
                 <div className="text-base font-semibold text-gray-900 my-4">
-                  {iso.title}
+                  {category.title}
                 </div>
                 <div className="text-sm text-gray-500 mb-4">
-                  {iso.description}
+                  {category.description}
                 </div>
                 <div className="p-2 bg-gray-50 rounded-md">
-                  <StackedLink links={iso.links} />
+                  <StackedLink links={category.links} />
                 </div>
               </div>
             ))}

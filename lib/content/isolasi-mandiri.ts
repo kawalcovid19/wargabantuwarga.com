@@ -3,11 +3,10 @@ import isolasiMandiri from "~/_content/isolasi-mandiri.json";
 export type Isoman = IsolasiMandiri[];
 
 export type IsolasiMandiri = {
-  readonly content_items: ContentItem[];
+  readonly categories: Category[];
 };
 
-export type ContentItem = {
-  readonly category: string;
+export type Category = {
   readonly title: string;
   readonly description: string;
   readonly links: URL[];

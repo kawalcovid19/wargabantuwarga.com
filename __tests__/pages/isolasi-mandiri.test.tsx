@@ -10,8 +10,8 @@ jest.mock("~/lib/content/isolasi-mandiri");
 jest.mock("next/router", () => require("next-router-mock"));
 
 describe("IsomanPage", () => {
-  const { content_items } = isolasiMandiri;
-  const [contentItem] = content_items;
+  const { categories } = isolasiMandiri;
+  const [category] = categories;
 
   it("renders the title and the breadcrumbs correctly", () => {
     render(<IsolasiMandiriPage isolasiMandiri={isolasiMandiri} />);
@@ -26,14 +26,14 @@ describe("IsomanPage", () => {
 
   it("renders the category and it's description correctly", () => {
     render(<IsolasiMandiriPage isolasiMandiri={isolasiMandiri} />);
-    expect(screen.getByText(contentItem.title)).toBeVisible();
-    expect(screen.getByText(contentItem.description)).toBeVisible();
+    expect(screen.getByText(category.title)).toBeVisible();
+    expect(screen.getByText(category.description)).toBeVisible();
   });
 
   it("renders the stacked links correctly", () => {
-    render(<StackedLink links={contentItem.links} />);
+    render(<StackedLink links={category.links} />);
 
-    contentItem.links.forEach((url) => {
+    category.links.forEach((url) => {
       const link = screen.getByTestId(`next-link-${url.title}`);
 
       expect(screen.getByText(url.title)).toBeVisible();
