@@ -32,7 +32,7 @@ export function HomePageLatestNews() {
           <div className="space-y-2">
             <div className="flex flex-row text-base">
               <h3 className="flex-1 font-semibold text-gray-700 truncate">
-                {attributes.source}
+                {attributes.title}
               </h3>
               <span className="inline-block flex-none text-gray-400 ml-4">
                 {new Intl.DateTimeFormat("id-ID", {
