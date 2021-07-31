@@ -115,7 +115,7 @@ export default function FaqPage(props: FaqPageProps) {
                       <p className="text-base text-gray-500">
                         {htmr(question.jawaban)}
                       </p>
-                      <small>
+                      <small className="mt-2 inline-block">
                         Sumber:{" "}
                         {question.link ? (
                           <a
