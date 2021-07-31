@@ -3,7 +3,7 @@
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-25-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-26-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -139,6 +139,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/syauqy"><img src="https://avatars.githubusercontent.com/u/3627108?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Syauqy Nurul Aziz</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=syauqy" title="Code">💻</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=syauqy" title="Documentation">📖</a></td>
     <td align="center"><a href="https://linktr.ee/funfuncfunction"><img src="https://avatars.githubusercontent.com/u/50759463?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Muhammad Fauzan</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=fncolon" title="Documentation">📖</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=fncolon" title="Code">💻</a> <a href="#ideas-fncolon" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://hendraaagil.space"><img src="https://avatars.githubusercontent.com/u/54741166?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hendra Agil Syaputra</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=hendraaagil" title="Code">💻</a></td>
+    <td align="center"><a href="http://kusiaga.com"><img src="https://avatars.githubusercontent.com/u/19145812?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Burhan Ahmed</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=burhanahmeed" title="Code">💻</a></td>
   </tr>
 </table>
 
