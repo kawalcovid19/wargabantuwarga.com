@@ -1,8 +1,9 @@
 import { getKebabCase } from "./string-utils";
 
+import { HtmrOptions } from "htmr";
 import Link from "next/link";
 
-export const anchorTransformer = (node: JSX.IntrinsicElements["a"]) => {
+const a = (node: JSX.IntrinsicElements["a"]) => {
   const { href, children } = node;
 
   if (href) {
@@ -34,39 +35,62 @@ export const anchorTransformer = (node: JSX.IntrinsicElements["a"]) => {
   );
 };
 
-// TODO: Unify these headings transformers into a single generic function
-export const heading1Transformer = (node: JSX.IntrinsicElements["h1"]) => {
+const h1 = (node: JSX.IntrinsicElements["h1"]) => {
   const { children } = node;
 
   return <h1 id={getKebabCase(children?.toString())}>{children}</h1>;
 };
 
-export const heading2Transformer = (node: JSX.IntrinsicElements["h2"]) => {
+const h2 = (node: JSX.IntrinsicElements["h2"]) => {
   const { children } = node;
 
   return <h2 id={getKebabCase(children?.toString())}>{children}</h2>;
 };
 
-export const heading3Transformer = (node: JSX.IntrinsicElements["h3"]) => {
+const h3 = (node: JSX.IntrinsicElements["h3"]) => {
   const { children } = node;
 
   return <h3 id={getKebabCase(children?.toString())}>{children}</h3>;
 };
 
-export const heading4Transformer = (node: JSX.IntrinsicElements["h4"]) => {
+const h4 = (node: JSX.IntrinsicElements["h4"]) => {
   const { children } = node;
 
   return <h4 id={getKebabCase(children?.toString())}>{children}</h4>;
 };
 
-export const heading5Transformer = (node: JSX.IntrinsicElements["h5"]) => {
+const h5 = (node: JSX.IntrinsicElements["h5"]) => {
   const { children } = node;
 
   return <h5 id={getKebabCase(children?.toString())}>{children}</h5>;
 };
 
-export const heading6Transformer = (node: JSX.IntrinsicElements["h6"]) => {
+const h6 = (node: JSX.IntrinsicElements["h6"]) => {
   const { children } = node;
 
   return <h6 id={getKebabCase(children?.toString())}>{children}</h6>;
+};
+
+const b = (node: JSX.IntrinsicElements["b"]) => {
+  const { children } = node;
+
+  return <b className="font-bold text-gray-900">{children}</b>;
+};
+
+const strong = (node: JSX.IntrinsicElements["strong"]) => {
+  const { children } = node;
+
+  return <strong className="font-bold text-gray-900">{children}</strong>;
+};
+
+export const htmrTransform: HtmrOptions["transform"] = {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a,
+  b,
+  strong,
 };

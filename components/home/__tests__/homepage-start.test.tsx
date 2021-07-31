@@ -224,7 +224,7 @@ describe("HomePageStart", () => {
           class="px-4 py-6"
         >
           <a
-            href="https://sembako.wargabantuwarga.com/"
+            href="https://petakebaikan.kitabisa.com"
             rel="nofollow noopener noreferrer"
             target="_blank"
           >

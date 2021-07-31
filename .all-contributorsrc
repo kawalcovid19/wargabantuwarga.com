@@ -276,6 +276,15 @@
         "code",
         "ideas"
       ]
+    },
+    {
+      "login": "hendraaagil",
+      "name": "Hendra Agil Syaputra",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54741166?v=4",
+      "profile": "https://hendraaagil.space",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
