@@ -1,4 +1,4 @@
-import provinces from "../provinces";
+import provinces from "../data/provinces";
 import { getKebabCase, stripTags } from "../string-utils";
 
 describe("provinces", () => {

@@ -1,8 +1,8 @@
 import React from "react";
 
+import { Contact } from "~/lib/data/provinces";
 import { htmrTransform } from "~/lib/htmr-transformers";
 import { getContactMetaTitle } from "~/lib/meta";
-import { Contact } from "~/lib/provinces";
 import { isNotEmpty, stripTags } from "~/lib/string-utils";
 
 import { Badge } from "./ui/badge";

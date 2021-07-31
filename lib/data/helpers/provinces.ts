@@ -1,4 +1,4 @@
-import provinces, { Contact, ProvincePath } from "./provinces";
+import provinces, { Contact, ProvincePath } from "../provinces";
 
 export const getProvincesPaths = (): ProvincePath[] => {
   return provinces.map((province) => {

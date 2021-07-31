@@ -2,7 +2,7 @@ import React from "react";
 
 import { provinceListItemBuilder } from "~/components/__mocks__/builders/province-list";
 import { dateMockBuilder } from "~/lib/__mocks__/builders/date-mock";
-import provinces from "~/lib/provinces";
+import provinces from "~/lib/data/provinces";
 import { getInitial } from "~/lib/string-utils";
 import ProvincesPage, { getStaticProps } from "~/pages/provinces";
 
@@ -14,7 +14,7 @@ import {
 } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-jest.mock("~/lib/provinces");
+jest.mock("~/lib/data/provinces");
 jest.mock("next/router", () => require("next-router-mock"));
 
 describe("ProvincesPage", () => {

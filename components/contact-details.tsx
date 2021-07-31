@@ -1,7 +1,7 @@
 import { CopyButton } from "~/components/copy-button";
 import { OpenMapButton } from "~/components/open-map-button";
+import { Contact } from "~/lib/data/provinces";
 import { htmrTransform } from "~/lib/htmr-transformers";
-import { Contact } from "~/lib/provinces";
 import { isNotEmpty, stripTags } from "~/lib/string-utils";
 
 import htmr from "htmr";
