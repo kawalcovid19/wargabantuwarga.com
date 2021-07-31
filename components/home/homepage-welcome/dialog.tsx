@@ -1,10 +1,11 @@
 import { Fragment, useRef } from "react";
 
 import { PrimaryButton } from "~/components/ui/button";
+import { htmrTransform } from "~/lib/htmr-transformers";
 
 import { Dialog, Transition } from "@headlessui/react";
 import { ShareIcon, XIcon } from "@heroicons/react/solid";
-import htmr, { HtmrOptions } from "htmr";
+import htmr from "htmr";
 
 interface BasicDialogProps {
   isOpen: boolean;
@@ -13,16 +14,6 @@ interface BasicDialogProps {
   title: string;
   description: string;
 }
-
-export const paragraphTransformer = (node: JSX.IntrinsicElements["p"]) => {
-  const { children } = node;
-
-  return <p className="mb-2">{children}</p>;
-};
-
-const htmrTransformer: HtmrOptions["transform"] = {
-  p: paragraphTransformer,
-};
 
 export function BasicDialog({
   isOpen,
@@ -75,7 +66,7 @@ export function BasicDialog({
           >
             <div className="inline-block align-bottom w-full bg-white rounded-lg px-4 pt-5 pb-4 mx-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:p-6">
               <div className="flex justify-between items-center align-center">
-                <Dialog.Title className="text-gray-700 text-xl">
+                <Dialog.Title className="text-gray-700 text-xl mb-4">
                   {title}
                 </Dialog.Title>
 
@@ -89,11 +80,8 @@ export function BasicDialog({
                 </button>
               </div>
 
-              <Dialog.Description
-                as="div"
-                className="text-gray-700 text-sm my-4"
-              >
-                {htmr(description, { transform: htmrTransformer })}
+              <Dialog.Description as="div" className="prose prose-sm mb-4">
+                {htmr(description, { transform: htmrTransform })}
               </Dialog.Description>
 
               <PrimaryButton
