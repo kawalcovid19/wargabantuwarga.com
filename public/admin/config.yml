@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: feature/netlify-cms
 media_folder: public/images
 public_folder: /images
 publish_mode: editorial_workflow
