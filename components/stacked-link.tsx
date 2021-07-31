@@ -18,7 +18,11 @@ export default function StackedLink(link: linkProps) {
   return (
     <div>
       <Link href={link.url}>
-        <a data-testid={`next-link-${link.title}`} target="_blank">
+        <a
+          data-testid={`next-link-${link.title}`}
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+        >
           <div className={clsx(LinkClasses(link.uniqId))}>
             <div className="text-base text-gray-900 hover:text-gray-700">
               {link.title}

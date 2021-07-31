@@ -5,6 +5,7 @@ import { cloudinaryLoader, getBlurred } from "~/lib/cloudinary-loader";
 
 import { PrimaryAnchorButton } from "../ui/button";
 
+import { HomePageEmergencyContactCTA } from "./homepage-emergency-cta";
 import { HomePageMenu } from "./homepage-menu";
 import { HomePageSection } from "./homepage-section";
 
@@ -30,6 +31,9 @@ export function HomePageStart() {
             Cek sekarang
           </PrimaryAnchorButton>
         </Link>
+      </div>
+      <div className="px-4">
+        <HomePageEmergencyContactCTA />
       </div>
       <div className="px-4 py-6">
         <HomePageMenu />
