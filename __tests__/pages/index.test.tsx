@@ -1,6 +1,6 @@
 import React from "react";
 
-import { latestNews } from "~/lib/content/__mocks__/builders/informasi-terbaru";
+import { latestNewsItemBuilder } from "~/lib/content/__mocks__/builders/informasi-terbaru";
 import HomePage from "~/pages";
 
 import { render, screen } from "@testing-library/react";
@@ -10,7 +10,7 @@ jest.mock("~/lib/content/welcome-message");
 
 describe("HomePage", () => {
   it("renders the last updated time correctly", () => {
-    render(<HomePage latestNews={latestNews} />);
+    render(<HomePage latestNews={[latestNewsItemBuilder()]} />);
 
     expect(
       screen.getByText(

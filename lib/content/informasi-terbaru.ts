@@ -1,8 +1,9 @@
-type LatestNewsItemAttributes = {
+export type LatestNewsItemAttributes = {
   title: string;
   date: string;
-  description?: string;
-} & ({ link: string; link_text: string } | { link?: never });
+  link: string;
+  link_text: string;
+};
 
 export interface LatestNewsItem {
   attributes: LatestNewsItemAttributes;
