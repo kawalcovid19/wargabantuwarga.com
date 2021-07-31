@@ -1,6 +1,6 @@
 import React from "react";
 
-import StackedLink from "~/components/layout/stacked-link";
+import StackedLink from "~/components/stacked-link";
 import iso from "~/lib/isoman-contents";
 import IsomanPage, { getStaticProps } from "~/pages/isolasi-mandiri";
 
@@ -30,18 +30,27 @@ describe("IsomanPage", () => {
   });
 
   it("renders the stacked links correctly", () => {
-    render(<StackedLink links={isoman_data.links} />);
+    // eslint-disable-next-line no-lone-blocks
+    {
+      isoman_data.links.forEach((link, i) => {
+        render(
+          <StackedLink key={i} title={link.title} uniqId={i} url={link.url} />,
+        );
+        const linkItem = screen.getByTestId(`next-link-${link.title}`);
+        expect(screen.getByText(link.title)).toBeVisible();
+        expect(linkItem).toBeVisible();
+        expect(linkItem).toHaveAttribute("href", link.url);
+        expect(
+          screen.getByTestId(`external-link-icon-${link.title}`),
+        ).toBeVisible();
+      });
+    }
 
-    isoman_data.links.forEach((isoman) => {
-      const link = screen.getByTestId(`next-link-${isoman.title}`);
+    // isoman_data.links.forEach((isoman) => {
+    //   const link = screen.getByTestId(`next-link-${isoman.title}`);
 
-      expect(screen.getByText(isoman.title)).toBeVisible();
-      expect(link).toBeVisible();
-      expect(link).toHaveAttribute("href", isoman.url);
-      expect(
-        screen.getByTestId(`external-link-icon-${isoman.title}`),
-      ).toBeVisible();
-    });
+    //   });
+    // });
   });
 });
 

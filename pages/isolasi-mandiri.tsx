@@ -2,7 +2,7 @@ import { BackButton } from "~/components/layout/back-button";
 import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
-import StackedLink from "~/components/layout/stacked-link";
+import StackedLink from "~/components/stacked-link";
 import config from "~/lib/config";
 import isoman, { Category } from "~/lib/isoman-contents";
 
@@ -48,7 +48,14 @@ export default function IsomanPage(props: IsomanPageProps) {
                   {iso.description}
                 </div>
                 <div className="p-2 bg-gray-50 rounded-md">
-                  <StackedLink links={iso.links} />
+                  {iso.links.map((link, k: number) => (
+                    <StackedLink
+                      key={k}
+                      title={link.title}
+                      uniqId={k}
+                      url={link.url}
+                    />
+                  ))}
                 </div>
               </div>
             ))}
