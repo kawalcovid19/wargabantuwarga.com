@@ -1,4 +1,4 @@
-import { faqBuilder } from "./builders/faq";
+import { faqBuilder } from "./builders/faqs";
 
 const faqs = [faqBuilder()];
 

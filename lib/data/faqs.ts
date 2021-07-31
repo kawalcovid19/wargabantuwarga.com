@@ -1,4 +1,4 @@
-import faqSheets from "~/data/wbw-faq-sheets.json";
+import faqs from "~/data/wbw-faq-sheets.json";
 
 export type Faqs = Faq[];
 
@@ -12,4 +12,4 @@ export type Faq = {
   readonly published_date?: string;
 };
 
-export default faqSheets as unknown as Faqs;
+export default faqs as unknown as Faqs;
