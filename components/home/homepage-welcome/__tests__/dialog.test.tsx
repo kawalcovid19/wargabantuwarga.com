@@ -1,6 +1,5 @@
 import React from "react";
 
-import FakeIntersectionObserver from "~/__mocks__/intersection-observer";
 import { attributes, html } from "~/lib/welcome-message";
 
 import { BasicDialog } from "../dialog";
@@ -9,9 +8,6 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 jest.mock("~/lib/welcome-message");
-
-// https://stackoverflow.com/a/64122902/3187014
-global.IntersectionObserver = FakeIntersectionObserver;
 
 describe("BasicDialog", () => {
   const handleToggle = jest.fn();
