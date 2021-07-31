@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 
 import { latestNews } from "~/lib/home/latest-news";
+import { htmrTransform } from "~/lib/htmr-transformers";
 
 import { OutlineAnchorButton } from "../ui/button";
 
@@ -41,7 +42,9 @@ export function HomePageLatestNews() {
                 }).format(attributes.date)}
               </span>
             </div>
-            <div className="text-gray-600 text-sm">{htmr(html)}</div>
+            <div className="text-gray-600 text-sm">
+              {htmr(html, { transform: htmrTransform })}
+            </div>
           </div>
           {attributes.link && (
             <OutlineAnchorButton
