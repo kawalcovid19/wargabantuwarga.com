@@ -11,6 +11,7 @@ import { PageHeader } from "~/components/layout/page-header";
 import { Container } from "~/components/ui/container";
 import emergencyContacts, { ContactDetail } from "~/lib/emergency-contacts";
 import oxygenInformation, { OxygenDetail } from "~/lib/oxygen-information";
+import siteConfig from "~/lib/site-config";
 import vaccineInformation, { VaccineDetail } from "~/lib/vaccine-information";
 
 import { GetStaticProps } from "next";
@@ -30,7 +31,7 @@ type KontakDaruratProps = {
 };
 
 const meta = {
-  title: `Situs dan Kontak Penting Terkait COVID-19 | Warga Bantu Warga`,
+  title: `Situs dan Kontak Penting Terkait COVID-19 | ${siteConfig.site_name}`,
 };
 
 export default function KontakDaruratPage(props: KontakDaruratProps) {
