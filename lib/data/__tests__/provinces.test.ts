@@ -1,5 +1,6 @@
-import provinces from "../data/provinces";
-import { getKebabCase, stripTags } from "../string-utils";
+import { getKebabCase, stripTags } from "~/lib/string-utils";
+
+import provinces from "../provinces";
 
 describe("provinces", () => {
   it("should returns a list of provinces with the correct province slug", () => {
