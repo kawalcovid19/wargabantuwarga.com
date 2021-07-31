@@ -62,7 +62,6 @@
     "@types/nprogress": "^0.2.0",
     "@types/prettier": "^2.3.2",
     "@types/react": "17.0.13",
-    "@types/react-transition-group": "^4.4.2",
     "autoprefixer": "10.3.0",
     "chalk": "^4.1.1",
     "cloudinary-build-url": "^0.2.1",
