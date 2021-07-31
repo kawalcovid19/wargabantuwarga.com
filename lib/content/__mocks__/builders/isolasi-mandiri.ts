@@ -1,25 +1,29 @@
-import { Category, Iso, URL } from "~/lib/isoman-contents";
+import {
+  ContentItem,
+  IsolasiMandiri,
+  URL,
+} from "~/lib/content/isolasi-mandiri";
 
 import { build, fake } from "@jackfranklin/test-data-bot";
 
-export const linkBuilder = build<URL>({
+export const urlBuilder = build<URL>({
   fields: {
     title: fake((f) => f.lorem.sentence()),
     url: fake((f) => f.internet.url()),
   },
 });
 
-export const categoryBuilder = build<Category>({
+export const contentItemBuilder = build<ContentItem>({
   fields: {
     category: fake((f) => f.lorem.words()),
     title: fake((f) => f.lorem.sentence()),
     description: fake((f) => f.lorem.paragraph()),
-    links: [linkBuilder()],
+    links: [urlBuilder()],
   },
 });
 
-export const isomanBuilder = build<Iso>({
+export const isolasiMandiriBuilder = build<IsolasiMandiri>({
   fields: {
-    isoman_contents: [categoryBuilder()],
+    content_items: [contentItemBuilder()],
   },
 });

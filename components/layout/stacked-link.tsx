@@ -1,6 +1,6 @@
 import React from "react";
 
-import { URL } from "~/lib/isoman-contents";
+import { URL } from "~/lib/content/isolasi-mandiri";
 
 import { ExternalLinkIcon } from "@heroicons/react/solid";
 import clsx from "clsx";

@@ -66,17 +66,17 @@ collections:
               required: false,
               hint: "Cloudinary image path, eg. `v12345/my_file.png`",
             }
-  - name: "isoman_page"
-    label: "Isoman Page"
+  - name: "isolasi_mandiri_page"
+    label: "Isolasi Mandiri Page"
     delete: false
     preview_path: "isolasi-mandiri"
     files:
-      - name: "isoman_page"
-        label: "Isoman Page"
-        file: "_content/isoman-page.json"
+      - name: "isolasi_mandiri_page"
+        label: "Isolasi Mandiri Page"
+        file: "_content/isolasi-mandiri.json"
         fields:
-          - name: "isoman_contents"
-            label: "Isoman Contents"
+          - name: "content_items"
+            label: "Content Items"
             widget: list
             fields:
               - { label: "Category", name: "category", widget: "string" }

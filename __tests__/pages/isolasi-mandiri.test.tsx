@@ -1,19 +1,20 @@
 import React from "react";
 
 import StackedLink from "~/components/layout/stacked-link";
-import iso from "~/lib/isoman-contents";
-import IsomanPage, { getStaticProps } from "~/pages/isolasi-mandiri";
+import isolasiMandiri from "~/lib/content/isolasi-mandiri";
+import IsolasiMandiriPage, { getStaticProps } from "~/pages/isolasi-mandiri";
 
 import { render, screen } from "@testing-library/react";
 
+jest.mock("~/lib/content/isolasi-mandiri");
 jest.mock("next/router", () => require("next-router-mock"));
 
 describe("IsomanPage", () => {
-  const { isoman_contents } = iso;
-  const [isoman_data] = isoman_contents;
+  const { content_items } = isolasiMandiri;
+  const [contentItem] = content_items;
 
   it("renders the title and the breadcrumbs correctly", () => {
-    render(<IsomanPage isoman={iso} />);
+    render(<IsolasiMandiriPage isolasiMandiri={isolasiMandiri} />);
 
     const title = screen.getByText(/Pedoman Isolasi Mandiri/i);
     expect(title).toBeVisible();
@@ -24,22 +25,22 @@ describe("IsomanPage", () => {
   });
 
   it("renders the category and it's description correctly", () => {
-    render(<IsomanPage isoman={iso} />);
-    expect(screen.getByText(isoman_data.title)).toBeVisible();
-    expect(screen.getByText(isoman_data.description)).toBeVisible();
+    render(<IsolasiMandiriPage isolasiMandiri={isolasiMandiri} />);
+    expect(screen.getByText(contentItem.title)).toBeVisible();
+    expect(screen.getByText(contentItem.description)).toBeVisible();
   });
 
   it("renders the stacked links correctly", () => {
-    render(<StackedLink links={isoman_data.links} />);
+    render(<StackedLink links={contentItem.links} />);
 
-    isoman_data.links.forEach((isoman) => {
-      const link = screen.getByTestId(`next-link-${isoman.title}`);
+    contentItem.links.forEach((url) => {
+      const link = screen.getByTestId(`next-link-${url.title}`);
 
-      expect(screen.getByText(isoman.title)).toBeVisible();
+      expect(screen.getByText(url.title)).toBeVisible();
       expect(link).toBeVisible();
-      expect(link).toHaveAttribute("href", isoman.url);
+      expect(link).toHaveAttribute("href", url.url);
       expect(
-        screen.getByTestId(`external-link-icon-${isoman.title}`),
+        screen.getByTestId(`external-link-icon-${url.title}`),
       ).toBeVisible();
     });
   });
@@ -48,7 +49,7 @@ describe("IsomanPage", () => {
 describe("getStaticProps", () => {
   it("returns the props from the isoman-contents correctly", () => {
     expect(getStaticProps({})).toEqual({
-      props: { isoman: iso },
+      props: { isolasiMandiri },
     });
   });
 });
