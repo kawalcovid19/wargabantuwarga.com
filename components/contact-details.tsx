@@ -1,11 +1,10 @@
 import { CopyButton } from "~/components/copy-button";
 import { OpenMapButton } from "~/components/open-map-button";
-import { anchorTransformer } from "~/lib/htmr-transformers";
+import { htmrTransform } from "~/lib/htmr-transformers";
 import { Contact } from "~/lib/provinces";
 import { isNotEmpty, stripTags } from "~/lib/string-utils";
 
 import htmr from "htmr";
-import { HtmrOptions } from "htmr/src/types";
 
 type ContactDetailsProps = {
   contact: Contact;
@@ -35,9 +34,6 @@ type DescriptionItemProps = {
 
 const DescriptionItem = (props: DescriptionItemProps) => {
   const value = isNotEmpty(props.value) ? (props.value as string) : "";
-  const htmrTransform: HtmrOptions["transform"] = {
-    a: anchorTransformer,
-  };
 
   return (
     <div className="py-4 px-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
