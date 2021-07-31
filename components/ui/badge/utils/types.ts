@@ -1,13 +1,6 @@
+import { BaseColors } from "../../types";
+
 export type BadgeSizes = "basic" | "large";
-export type BadgeColor =
-  | "blue"
-  | "gray"
-  | "green"
-  | "indigo"
-  | "pink"
-  | "purple"
-  | "red"
-  | "yellow";
 
 interface BadgeBaseProps {
   /** A string of all className you want applied to the component */
@@ -16,8 +9,11 @@ interface BadgeBaseProps {
   rounded?: boolean;
   /** The size of the badge. Available sizes: `"basic" | "large"` */
   size?: BadgeSizes;
-  /** The color of the badge. Available colors: `"blue" | "gray" | "green" | "indigo" | "pink" | "purple" | "red" | "yellow"` */
-  color?: BadgeColor;
+  /** The color of the badge.
+   * * @type {"blue" | "gray" | "green" | "indigo" | "pink" | "purple" | "red" | "yellow" | "light blue" }
+   * @default 'gray'
+   */
+  color?: BaseColors;
   /**
    * Component used for the root node. Either a string to use a HTML element or a component
    *

@@ -72,6 +72,23 @@ describe("Button", () => {
         "w-5",
       );
     });
+
+    it("renders custom styles", () => {
+      const { container } = render(
+        <PrimaryButton
+          className="text-white bg-green-500 focus:ring-green-500"
+          color="none"
+        >
+          test button
+        </PrimaryButton>,
+      );
+
+      expect(container.firstChild).toHaveClass(
+        "text-white",
+        "bg-green-500",
+        "focus:ring-green-500",
+      );
+    });
   });
 
   describe("SecondaryButton", () => {
@@ -130,6 +147,24 @@ describe("Button", () => {
         "w-5",
       );
     });
+
+    it("renders custom styles", () => {
+      const { container } = render(
+        <SecondaryButton
+          className="text-green-700 bg-green-100 hover:bg-green-200 focus:ring-green-500"
+          color="none"
+        >
+          test button
+        </SecondaryButton>,
+      );
+
+      expect(container.firstChild).toHaveClass(
+        "text-green-700",
+        "bg-green-100",
+        "hover:bg-green-200",
+        "focus:ring-green-500",
+      );
+    });
   });
 
   describe("OutlineButton", () => {
@@ -184,6 +219,24 @@ describe("Button", () => {
         "-mr-1",
         "h-5",
         "w-5",
+      );
+    });
+
+    it("renders custom styles", () => {
+      const { container } = render(
+        <OutlineButton
+          className="text-green-500 border-green-500 hover:bg-green-100 focus:ring-green-500"
+          color="none"
+        >
+          test button
+        </OutlineButton>,
+      );
+
+      expect(container.firstChild).toHaveClass(
+        "text-green-500",
+        "border-green-500",
+        "hover:bg-green-100",
+        "focus:ring-green-500",
       );
     });
   });

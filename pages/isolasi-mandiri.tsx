@@ -3,14 +3,14 @@ import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import StackedLink from "~/components/layout/stacked-link";
-import config from "~/lib/config";
 import isoman, { Category } from "~/lib/isoman-contents";
+import siteConfig from "~/lib/site-config";
 
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 
 const meta = {
-  title: `Pedoman Isolasi Mandiri | ${config.site_name}`,
+  title: `Pedoman Isolasi Mandiri | ${siteConfig.site_name}`,
 };
 
 type IsomanPageProps = {

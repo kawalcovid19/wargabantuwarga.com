@@ -2,7 +2,7 @@ import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import data from "~/data/wbw.json";
 import { bannerBlurData, cloudinaryLoader } from "~/lib/cloudinary-loader";
-import config from "~/lib/config";
+import siteConfig from "~/lib/site-config";
 
 import { GetStaticProps } from "next";
 import Head from "next/head";
@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const meta = {
-  title: `${config.site_tagline} | ${config.site_name}`,
+  title: `${siteConfig.site_tagline} | ${siteConfig.site_name}`,
 };
 
 export default function Home(props: HomeProps) {
