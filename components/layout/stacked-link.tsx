@@ -16,26 +16,27 @@ const LinkClasses = (i: number) => {
 
 export default function StackedLink(list: StackedListProps) {
   const { links } = list;
-  return (
-    <div>
-      {links.map((link, i) => (
-        <Link key={i} href={link.url}>
-          <a data-testid={`next-link-${link.title}`} target="_blank">
-            <div className={clsx(LinkClasses(i))}>
-              <div className="text-base text-gray-900 hover:text-gray-700">
-                {link.title}
-              </div>
 
-              <span className="text-brand-500 ml-4">
-                <ExternalLinkIcon
-                  className="h-6 w-6"
-                  data-testid={`external-link-icon-${link.title}`}
-                />
-              </span>
-            </div>
-          </a>
-        </Link>
+  return (
+    <ul>
+      {links.map((link, i) => (
+        <li key={i} className={clsx(LinkClasses(i))}>
+          <p className="text-base text-gray-900 hover:text-gray-700">
+            <Link href={link.url}>
+              <a data-testid={`next-link-${link.title}`} target="_blank">
+                {link.title}
+              </a>
+            </Link>
+          </p>
+
+          <div aria-hidden className="text-brand-500 ml-4">
+            <ExternalLinkIcon
+              className="h-6 w-6"
+              data-testid={`external-link-icon-${link.title}`}
+            />
+          </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
