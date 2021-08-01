@@ -303,6 +303,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "nkristoporus",
+      "name": "Kristoporus Nathan Wilianto",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35729243?v=4",
+      "profile": "https://github.com/nkristoporus",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
