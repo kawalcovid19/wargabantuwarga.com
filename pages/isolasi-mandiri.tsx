@@ -10,6 +10,7 @@ import { NextSeo } from "next-seo";
 
 const meta = {
   title: `Pedoman Isolasi Mandiri`,
+  description: `Kumpulan informasi mengenai hal yang perlu Anda ketahui dan langkah penting yang perlu Anda lakukan untuk melakukan isolasi mandiri.`,
 };
 
 type IsolasiMandiriPageProps = {
@@ -20,7 +21,11 @@ export default function IsolasiMandiriPage(props: IsolasiMandiriPageProps) {
   return (
     <div>
       <Page>
-        <NextSeo openGraph={{ title: meta.title }} title={meta.title} />
+        <NextSeo
+          description={meta.description}
+          openGraph={{ title: meta.title, description: meta.description }}
+          title={meta.title}
+        />
         <PageHeader
           backButton={<BackButton href="/" />}
           breadcrumbs={[
