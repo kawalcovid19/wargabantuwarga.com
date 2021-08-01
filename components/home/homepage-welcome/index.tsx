@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
+import siteConfig from "~/lib/content/site-config";
+import { attributes, html } from "~/lib/content/welcome-message";
 import useIntersectionObserver from "~/lib/hooks/use-intersection";
-import siteConfig from "~/lib/site-config";
-import { attributes, html } from "~/lib/welcome-message";
 
 import { BasicDialog } from "./dialog";
 

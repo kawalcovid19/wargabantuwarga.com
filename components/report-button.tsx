@@ -1,5 +1,5 @@
 import { REPORT_CONTACT_FORM } from "~/constants/report";
-import { Contact } from "~/lib/provinces";
+import { Contact } from "~/lib/data/provinces";
 import { stripTags } from "~/lib/string-utils";
 
 import { SecondaryButton } from "./ui/button";

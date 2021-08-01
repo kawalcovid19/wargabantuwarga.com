@@ -18,7 +18,6 @@ export async function mirror(name: string) {
 }
 
 (function main() {
-  void mirror("wbw.json");
   void mirror("wbw-faq-sheets.json");
   void mirror("wbw-sheets.json");
 })();

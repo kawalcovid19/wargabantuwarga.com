@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import { latestNews } from "~/lib/home/latest-news";
+import { LatestNewsItem } from "~/lib/content/informasi-terbaru";
 import { htmrTransform } from "~/lib/htmr-transformers";
 
 import { OutlineAnchorButton } from "../ui/button";
@@ -10,13 +10,19 @@ import { HomePageSection } from "./homepage-section";
 import { ExternalLinkIcon } from "@heroicons/react/outline";
 import htmr from "htmr";
 
-export function HomePageLatestNews() {
+interface HomePageLatestNewsProps {
+  latestNews: LatestNewsItem[];
+}
+
+export function HomePageLatestNews(props: HomePageLatestNewsProps) {
   const sortedNews = useMemo(
     () =>
-      latestNews
+      props.latestNews
         .slice(0, 3)
         .sort(
-          (a, b) => b.attributes.date.getTime() - a.attributes.date.getTime(),
+          (a, b) =>
+            new Date(b.attributes.date).getTime() -
+            new Date(a.attributes.date).getTime(),
         ),
     [],
   );
@@ -26,20 +32,20 @@ export function HomePageLatestNews() {
       <h2 className="text-lg sm:text-xl font-semibold">Informasi Terbaru</h2>
       {sortedNews.map(({ attributes, html }) => (
         <article
-          key={attributes.date.toISOString()}
+          key={attributes.title}
           className="border border-gray-200 rounded-md p-4 space-y-4"
         >
           <div className="space-y-2">
             <div className="flex flex-row text-base">
               <h3 className="flex-1 font-semibold text-gray-700 truncate">
-                {attributes.source}
+                {attributes.title}
               </h3>
               <span className="inline-block flex-none text-gray-400 ml-4">
                 {new Intl.DateTimeFormat("id-ID", {
                   day: "numeric",
                   month: "long",
                   year: "numeric",
-                }).format(attributes.date)}
+                }).format(new Date(attributes.date))}
               </span>
             </div>
             <div className="text-gray-600 text-sm">

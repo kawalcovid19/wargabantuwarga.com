@@ -1,4 +1,4 @@
-import { Faq } from "~/lib/faqs";
+import { Faq } from "~/lib/data/faqs";
 
 import { build, fake } from "@jackfranklin/test-data-bot";
 

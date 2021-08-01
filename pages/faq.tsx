@@ -7,7 +7,7 @@ import { PageHeader } from "~/components/layout/page-header";
 import { SearchForm } from "~/components/search-form";
 import { EmptyState } from "~/components/ui/empty-state";
 import { FaqListSkeleton } from "~/components/ui/skeleton-loading";
-import faqSheets, { Faq } from "~/lib/faqs";
+import faqs, { Faq } from "~/lib/data/faqs";
 import { useSearch } from "~/lib/hooks/use-search";
 
 import { ExclamationCircleIcon } from "@heroicons/react/solid";
@@ -16,7 +16,7 @@ import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 
 type FaqPageProps = {
-  faqSheets: Faq[];
+  faqs: Faq[];
 };
 
 function groupBy<T, U>(data: T[], key: U) {
@@ -35,7 +35,7 @@ const meta = {
 };
 
 export default function FaqPage(props: FaqPageProps) {
-  const { faqSheets: faq } = props;
+  const { faqs: faq } = props;
   const [
     filteredQuestions,
     handleSubmitKeywords,
@@ -157,7 +157,7 @@ export default function FaqPage(props: FaqPageProps) {
 export const getStaticProps: GetStaticProps = () => {
   return {
     props: {
-      faqSheets,
+      faqs,
     },
   };
 };

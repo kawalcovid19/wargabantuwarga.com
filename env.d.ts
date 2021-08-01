@@ -24,3 +24,16 @@ declare module "*/_content/home-page.md" {
   const html: string;
   export { attributes, html };
 }
+
+declare module "*/_content/informasi-terbaru/*.md" {
+  // eslint-disable-next-line one-var
+  const attributes: {
+    title: string;
+    date: string;
+    link_text: string;
+    link: string;
+  };
+  // eslint-disable-next-line one-var
+  const html: string;
+  export { attributes, html };
+}

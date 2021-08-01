@@ -1,8 +1,8 @@
 import React from "react";
 
 import { REPORT_CONTACT_FORM } from "~/constants/report";
-import { provinceBuilder } from "~/lib/__mocks__/builders/provinces";
-import { Contact, Province } from "~/lib/provinces";
+import { provinceBuilder } from "~/lib/data/__mocks__/builders/provinces";
+import { Contact, Province } from "~/lib/data/provinces";
 import { stripTags } from "~/lib/string-utils";
 
 import { ReportButton } from "../report-button";

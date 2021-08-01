@@ -3,8 +3,8 @@ import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import StackedLink from "~/components/layout/stacked-link";
-import isoman, { Category } from "~/lib/isoman-contents";
-import siteConfig from "~/lib/site-config";
+import isolasiMandiri, { IsolasiMandiri } from "~/lib/content/isolasi-mandiri";
+import siteConfig from "~/lib/content/site-config";
 
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
@@ -13,15 +13,11 @@ const meta = {
   title: `Pedoman Isolasi Mandiri | ${siteConfig.site_name}`,
 };
 
-type IsomanPageProps = {
-  isoman: {
-    isoman_contents: Category[];
-  };
+type IsolasiMandiriPageProps = {
+  isolasiMandiri: IsolasiMandiri;
 };
 
-export default function IsomanPage(props: IsomanPageProps) {
-  const isoman_contents = props.isoman;
-  const isoman_data = isoman_contents.isoman_contents;
+export default function IsolasiMandiriPage(props: IsolasiMandiriPageProps) {
   return (
     <div>
       <Page>
@@ -39,16 +35,16 @@ export default function IsomanPage(props: IsomanPageProps) {
         />
         <PageContent>
           <div className="p-4 bg-white shadow overflow-hidden rounded-md space-y-8">
-            {isoman_data.map((iso, i: number) => (
+            {props.isolasiMandiri.categories.map((category, i: number) => (
               <div key={i}>
                 <div className="text-base font-semibold text-gray-900 my-4">
-                  {iso.title}
+                  {category.title}
                 </div>
                 <div className="text-sm text-gray-500 mb-4">
-                  {iso.description}
+                  {category.description}
                 </div>
                 <div className="p-2 bg-gray-50 rounded-md">
-                  <StackedLink links={iso.links} />
+                  <StackedLink links={category.links} />
                 </div>
               </div>
             ))}
@@ -62,7 +58,7 @@ export default function IsomanPage(props: IsomanPageProps) {
 export const getStaticProps: GetStaticProps = () => {
   return {
     props: {
-      isoman,
+      isolasiMandiri,
     },
   };
 };

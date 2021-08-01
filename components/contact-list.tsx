@@ -2,7 +2,7 @@ import { useMemo } from "react";
 
 import { EmptyState } from "~/components/ui/empty-state";
 import { ContactListSkeleton } from "~/components/ui/skeleton-loading";
-import { Contact } from "~/lib/provinces";
+import { Contact } from "~/lib/data/provinces";
 
 import { ContactListItem } from "./contact-list-item";
 

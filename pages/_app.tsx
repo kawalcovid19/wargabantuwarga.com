@@ -6,8 +6,8 @@ import "typeface-inter";
 import { useEffect } from "react";
 
 import { LayoutRoot } from "~/components/layout/layout-root";
+import siteConfig from "~/lib/content/site-config";
 import { initializeGTM } from "~/lib/gtm";
-import siteConfig from "~/lib/site-config";
 
 import type { AppProps } from "next/app";
 import Head from "next/head";

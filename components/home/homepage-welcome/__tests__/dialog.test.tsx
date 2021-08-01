@@ -1,13 +1,13 @@
 import React from "react";
 
-import { attributes, html } from "~/lib/welcome-message";
+import { attributes, html } from "~/lib/content/welcome-message";
 
 import { BasicDialog } from "../dialog";
 
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-jest.mock("~/lib/welcome-message");
+jest.mock("~/lib/content/welcome-message");
 
 describe("BasicDialog", () => {
   const handleToggle = jest.fn();
