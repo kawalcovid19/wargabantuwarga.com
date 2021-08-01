@@ -11,7 +11,10 @@ interface StackedListProps {
 }
 
 const LinkClasses = (i: number) => {
-  return [i > 0 ? "border-t" : undefined, "mx-2 py-4 flex justify-between"];
+  return [
+    i > 0 ? "border-t" : undefined,
+    "mx-2 py-4 flex justify-between relative",
+  ];
 };
 
 export default function StackedLink(list: StackedListProps) {
@@ -23,7 +26,11 @@ export default function StackedLink(list: StackedListProps) {
         <li key={i} className={clsx(LinkClasses(i))}>
           <p className="text-base text-gray-900 hover:text-gray-700">
             <Link href={link.url}>
-              <a data-testid={`next-link-${link.title}`} target="_blank">
+              <a
+                className="helper-link-cover"
+                data-testid={`next-link-${link.title}`}
+                target="_blank"
+              >
                 {link.title}
               </a>
             </Link>
