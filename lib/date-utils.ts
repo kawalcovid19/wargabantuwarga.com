@@ -3,7 +3,7 @@ const NUMERIC = "numeric";
 const LONG = "long";
 
 export const DEFAULT_YEAR_FORMAT = NUMERIC;
-const DEFAULT_DAY_FORMAT = NUMERIC;
+export const DEFAULT_DAY_FORMAT = NUMERIC;
 export const LONG_MONTH_FORMAT = LONG;
 
 /**

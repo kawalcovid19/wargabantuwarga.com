@@ -59,16 +59,16 @@ describe("ProvincesPage", () => {
   });
 
   it("renders the SEO text correctly", () => {
-    const { date, dateStr } = dateMockBuilder();
+    const { date, monthStr } = dateMockBuilder();
 
     jest.setSystemTime(date);
 
     render(<ProvincesPage provincesList={provinceList} />);
 
-    const seoText = screen.getByText(dateStr as string, { exact: false });
+    const seoText = screen.getByText(monthStr as string, { exact: false });
     expect(seoText).toBeVisible();
     expect(seoText).toHaveTextContent(
-      `Cari & Temukan Informasi Fasilitas Kesehatan (Faskes) & Alat Kesehatan (Alkes) untuk COVID-19 di seluruh Indonesia per ${dateStr}`,
+      `Cari & Temukan Informasi Fasilitas Kesehatan (Faskes) & Alat Kesehatan (Alkes) untuk COVID-19 di seluruh Indonesia per ${monthStr}`,
     );
   });
 
