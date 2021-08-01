@@ -3,7 +3,7 @@ import {
   LatestNewsItemAttributes,
 } from "../../informasi-terbaru";
 
-import { build, fake } from "@jackfranklin/test-data-bot";
+import { build, fake, perBuild } from "@jackfranklin/test-data-bot";
 
 const latestNewsItemAttributesBuilder = build<LatestNewsItemAttributes>({
   fields: {
@@ -16,7 +16,7 @@ const latestNewsItemAttributesBuilder = build<LatestNewsItemAttributes>({
 
 export const latestNewsItemBuilder = build<LatestNewsItem>({
   fields: {
-    attributes: latestNewsItemAttributesBuilder(),
+    attributes: perBuild(() => latestNewsItemAttributesBuilder()),
     html: fake(
       (f) => `<p>${f.lorem.paragraph()}</p><p>${f.lorem.paragraph()}</p>`,
     ),
