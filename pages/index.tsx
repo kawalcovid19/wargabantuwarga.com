@@ -87,8 +87,9 @@ export const getStaticProps: GetStaticProps = async () => {
       .readdirSync(path.join(process.cwd(), "_content/informasi-terbaru"))
       .map((fileName) => import(`../_content/informasi-terbaru/${fileName}`)),
   ).catch(() => null);
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  const latestNews = markdownFiles?.map((markdownFile) => markdownFile.default);
+  const latestNews =
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    markdownFiles?.map((markdownFile) => markdownFile.default) ?? [];
   return {
     props: {
       latestNews,

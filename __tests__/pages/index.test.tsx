@@ -21,11 +21,11 @@ describe("HomePage", () => {
 });
 
 describe("getStaticProps", () => {
-  it("gets latestNews props from the markdown files correctly", async () => {
+  // TODO: (ZF) Find a way to load the markdown files in Jest so that we can test the successful case.
+  it("returns an empty array when failing to load the markdown files", async () => {
     expect(await getStaticProps({})).toEqual({
       props: {
-        // TODO: (ZF) Mock the file system to simulate the markdown file
-        latestNews: undefined,
+        latestNews: [],
       },
     });
   });
