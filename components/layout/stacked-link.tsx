@@ -1,6 +1,7 @@
 import React from "react";
 
 import { URL } from "~/lib/content/isolasi-mandiri";
+import { isInternalLink } from "~/lib/string-utils";
 
 import { ExternalLinkIcon } from "@heroicons/react/solid";
 import clsx from "clsx";
@@ -29,7 +30,7 @@ export default function StackedLink(list: StackedListProps) {
               <a
                 className="helper-link-cover"
                 data-testid={`next-link-${link.title}`}
-                target="_blank"
+                target={isInternalLink(link.url) ? "_self" : "_blank"}
               >
                 {link.title}
               </a>
