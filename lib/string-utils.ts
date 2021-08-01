@@ -118,6 +118,9 @@ export function isInternalLink(link: string): boolean {
   const domain = link
     .replace("https://", "")
     .replace("http://", "")
-    .split("/")[0];
-  return link.startsWith("/") || domain.includes("wargabantuwarga.com");
+    .split("/")[0]
+    .split(".")
+    .slice(-2)
+    .join(".");
+  return link.startsWith("/") || domain == "wargabantuwarga.com";
 }
