@@ -70,8 +70,8 @@ export default function App({ Component, pageProps, router }: AppProps) {
         title={siteConfig.site_tagline}
         titleTemplate={`%s | ${meta.siteName}`}
         twitter={{
-          handle: "@KawalCOVID19",
-          site: "@KawalCOVID19",
+          handle: "@WargaBantuWarga",
+          site: "@WargaBantuWarga",
           cardType: "summary_large_image",
         }}
       />
