@@ -2,7 +2,7 @@ import React from "react";
 
 import { Accordion } from "~/components/accordion";
 import StackedLink from "~/components/stacked-link";
-import { VaccineDetail } from "~/lib/vaccine-information";
+import { VaccineDetail } from "~/lib/kontak-darurat/vaccine-information";
 
 type VaccineSectionProps = {
   vaccine_section: VaccineDetail[];

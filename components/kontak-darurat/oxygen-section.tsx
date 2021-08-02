@@ -2,7 +2,7 @@ import React from "react";
 
 import { Accordion } from "~/components/accordion";
 import StackedLink from "~/components/stacked-link";
-import { OxygenDetail } from "~/lib/oxygen-information";
+import { OxygenDetail } from "~/lib/kontak-darurat/oxygen-information";
 
 type OxygenSectionProps = {
   oxygen_section: OxygenDetail[];

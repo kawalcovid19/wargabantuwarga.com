@@ -9,10 +9,15 @@ import { BackButton } from "~/components/layout/back-button";
 import { Page } from "~/components/layout/page";
 import { PageHeader } from "~/components/layout/page-header";
 import { Container } from "~/components/ui/container";
-import emergencyContacts, { ContactDetail } from "~/lib/emergency-contacts";
-import oxygenInformation, { OxygenDetail } from "~/lib/oxygen-information";
-import siteConfig from "~/lib/site-config";
-import vaccineInformation, { VaccineDetail } from "~/lib/vaccine-information";
+import emergencyContacts, {
+  ContactDetail,
+} from "~/lib/kontak-darurat/emergency-contacts";
+import oxygenInformation, {
+  OxygenDetail,
+} from "~/lib/kontak-darurat/oxygen-information";
+import vaccineInformation, {
+  VaccineDetail,
+} from "~/lib/kontak-darurat/vaccine-information";
 
 import { GetStaticProps } from "next";
 // import Image from "next/image";
@@ -31,7 +36,7 @@ type KontakDaruratProps = {
 };
 
 const meta = {
-  title: `Situs dan Kontak Penting Terkait COVID-19 | ${siteConfig.site_name}`,
+  title: `Situs dan Kontak Penting Terkait COVID-19 | Kumpulan informasi situs dan kontak penting terkait fasilitas serta alat kesehatan untuk COVID-19 di level nasional.`,
 };
 
 export default function KontakDaruratPage(props: KontakDaruratProps) {
