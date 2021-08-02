@@ -21,12 +21,7 @@ export function HomePageEmergencyContactCTA() {
           <div className="ml-4 space-y-1">
             <h3 className="text-base leading-5 font-semibold">
               <Link href="/kontak-darurat">
-                <a
-                  className="helper-link-cover"
-                  rel="nofollow noopener noreferrer"
-                >
-                  Kontak Darurat
-                </a>
+                <a className="helper-link-cover">Kontak Darurat</a>
               </Link>
             </h3>
             <p className="text-sm leading-4 text-gray-500">

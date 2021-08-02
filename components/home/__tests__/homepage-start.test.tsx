@@ -70,7 +70,6 @@ describe("HomePageStart", () => {
                     <a
                       class="helper-link-cover"
                       href="/kontak-darurat"
-                      rel="nofollow noopener noreferrer"
                     >
                       Kontak Darurat
                     </a>
