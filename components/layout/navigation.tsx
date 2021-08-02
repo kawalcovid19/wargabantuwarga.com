@@ -1,10 +1,9 @@
 import { createElement } from "react";
 
-import { bottomNavigation, NavigationItem } from "~/lib/layout/navigation-data";
-
 import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { bottomNavigation, NavigationItem } from "~/lib/layout/navigation-data";
 
 const navigationClasses = (isActive?: boolean) => {
   return [

@@ -1,12 +1,10 @@
 import { useMemo } from "react";
 
+import { ExclamationCircleIcon } from "@heroicons/react/outline";
+import { ContactListItem } from "./contact-list-item";
 import { EmptyState } from "~/components/ui/empty-state";
 import { ContactListSkeleton } from "~/components/ui/skeleton-loading";
-import { Contact } from "~/lib/provinces";
-
-import { ContactListItem } from "./contact-list-item";
-
-import { ExclamationCircleIcon } from "@heroicons/react/outline";
+import { Contact } from "~/lib/data/provinces";
 
 type ContactListProps = {
   data: Contact[];

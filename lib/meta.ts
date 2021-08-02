@@ -1,4 +1,4 @@
-import { Contact } from "~/lib/provinces";
+import { Contact } from "~/lib/data/provinces";
 
 export type Meta = {
   title: string;

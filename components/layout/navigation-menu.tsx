@@ -1,13 +1,12 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { RefObject, useEffect } from "react";
 
-import { navMenu } from "~/lib/layout/navigation-data";
-
 import { Popover } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { navMenu } from "~/lib/layout/navigation-data";
 
 const navMenuClasses = (isActive?: boolean) => {
   return [

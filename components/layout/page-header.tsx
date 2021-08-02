@@ -1,11 +1,9 @@
 import * as React from "react";
 
+import Head from "next/head";
+import { Container } from "../ui/container";
 import { Breadcrumb, BreadcrumbItem } from "~/components/ui/breadcrumb";
 import { makeBreadcrumbJsonLd } from "~/lib/jsonld-generator";
-
-import { Container } from "../ui/container";
-
-import Head from "next/head";
 
 interface PageHeaderProps {
   title: string;
@@ -43,9 +41,9 @@ export function PageHeader({
           </div>
           <div className="mt-4 md:flex md:items-center md:justify-between">
             <div className="flex-1 min-w-0">
-              <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
+              <h1 className="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
                 {title}
-              </h2>
+              </h1>
               {subtitle && (
                 <p className="flex items-center text-md text-gray-500">
                   {subtitle}

@@ -38,6 +38,23 @@ collections:
             name: "whatsapp_contact_url"
             widget: "string"
             hint: "The direct link (`https://`) of the WhatsApp hotline used in navigation and homepage CTA."
+  - name: "informasi_terbaru"
+    label: "Informasi Terbaru"
+    preview_path: ""
+    folder: "_content/informasi-terbaru"
+    extension: "md"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "date" }
+      - { label: "Link Text", name: "link_text", widget: "string" }
+      - { label: "Link", name: "link", widget: "string" }
+      - {
+          label: "Body",
+          name: "body",
+          widget: "markdown",
+          hint: "Section body",
+        }
   - name: "home_page"
     label: "Home Page"
     delete: false
@@ -66,23 +83,22 @@ collections:
               required: false,
               hint: "Cloudinary image path, eg. `v12345/my_file.png`",
             }
-  - name: "isoman_page"
-    label: "Isoman Page"
+  - name: "isolasi_mandiri_page"
+    label: "Isolasi Mandiri Page"
     delete: false
     preview_path: "isolasi-mandiri"
     files:
-      - name: "isoman_page"
-        label: "Isoman Page"
-        file: "_content/isoman-page.json"
+      - name: "isolasi_mandiri_page"
+        label: "Isolasi Mandiri Page"
+        file: "_content/isolasi-mandiri.json"
         fields:
-          - name: "isoman_contents"
-            label: "Isoman Contents"
+          - name: "categories"
+            label: "Categories"
             widget: list
             fields:
-              - { label: "Category", name: "category", widget: "string" }
-              - { label: "Category Title", name: "title", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
               - {
-                  label: "Category Description",
+                  label: "Description",
                   name: "description",
                   widget: "text",
                   required: false,
@@ -135,3 +151,25 @@ collections:
             fields:
               - { label: "Link Title", name: "title", widget: "string" }
               - { label: "Link URL", name: "url", widget: "string" }
+
+  - name: "welcome_message"
+    label: "Welcome Message"
+    delete: false
+    preview_path: ""
+    files:
+      - name: "welcome_message"
+        label: "Welcome Message"
+        file: "_content/welcome-message.md"
+        fields:
+          - {
+              label: "Last updated time",
+              name: "last_updated_time",
+              widget: "datetime",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              hint: "Section body",
+            }

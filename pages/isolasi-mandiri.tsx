@@ -1,31 +1,30 @@
+import { GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 import { BackButton } from "~/components/layout/back-button";
 import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
-import StackedLink from "~/components/stacked-link";
-import isoman, { Category } from "~/lib/isoman-contents";
-import siteConfig from "~/lib/site-config";
-
-import { GetStaticProps } from "next";
-import { NextSeo } from "next-seo";
+import StackedLink from "~/components/layout/stacked-link";
+import isolasiMandiri, { IsolasiMandiri } from "~/lib/content/isolasi-mandiri";
 
 const meta = {
-  title: `Pedoman Isolasi Mandiri | ${siteConfig.site_name}`,
+  title: `Pedoman Isolasi Mandiri`,
+  description: `Kumpulan informasi mengenai hal yang perlu Anda ketahui dan langkah penting yang perlu Anda lakukan untuk melakukan isolasi mandiri.`,
 };
 
-type IsomanPageProps = {
-  isoman: {
-    isoman_contents: Category[];
-  };
+type IsolasiMandiriPageProps = {
+  isolasiMandiri: IsolasiMandiri;
 };
 
-export default function IsomanPage(props: IsomanPageProps) {
-  const isoman_contents = props.isoman;
-  const isoman_data = isoman_contents.isoman_contents;
+export default function IsolasiMandiriPage(props: IsolasiMandiriPageProps) {
   return (
     <div>
       <Page>
-        <NextSeo openGraph={{ title: meta.title }} title={meta.title} />
+        <NextSeo
+          description={meta.description}
+          openGraph={{ title: meta.title, description: meta.description }}
+          title={meta.title}
+        />
         <PageHeader
           backButton={<BackButton href="/" />}
           breadcrumbs={[
@@ -39,23 +38,14 @@ export default function IsomanPage(props: IsomanPageProps) {
         />
         <PageContent>
           <div className="p-4 bg-white shadow overflow-hidden rounded-md space-y-8">
-            {isoman_data.map((iso, i: number) => (
-              <div key={i}>
-                <div className="text-base font-semibold text-gray-900 my-4">
-                  {iso.title}
-                </div>
-                <div className="text-sm text-gray-500 mb-4">
-                  {iso.description}
-                </div>
+            {props.isolasiMandiri.categories.map((category, i: number) => (
+              <div key={i} className="space-y-4">
+                <h2 className="text-base font-semibold text-gray-900">
+                  {category.title}
+                </h2>
+                <p className="text-sm text-gray-500">{category.description}</p>
                 <div className="p-2 bg-gray-50 rounded-md">
-                  {iso.links.map((link, k: number) => (
-                    <StackedLink
-                      key={k}
-                      title={link.title}
-                      uniqId={k}
-                      url={link.url}
-                    />
-                  ))}
+                  <StackedLink links={category.links} />
                 </div>
               </div>
             ))}
@@ -69,7 +59,7 @@ export default function IsomanPage(props: IsomanPageProps) {
 export const getStaticProps: GetStaticProps = () => {
   return {
     props: {
-      isoman,
+      isolasiMandiri,
     },
   };
 };

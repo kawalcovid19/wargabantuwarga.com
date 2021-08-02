@@ -1,5 +1,5 @@
 import { getContactMeta, getProvinceMeta, Meta } from "../meta";
-import { Contact } from "../provinces";
+import { Contact } from "~/lib/data/provinces";
 
 describe("getProvinceMeta", () => {
   const fixtures = [

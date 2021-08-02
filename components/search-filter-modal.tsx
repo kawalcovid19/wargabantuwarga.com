@@ -4,10 +4,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { ChangeEventHandler, Fragment, useRef } from "react";
 
-import { SearchFilter } from "~/components/search-filter";
-
 import { Dialog, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/solid";
+import { SearchFilter } from "~/components/search-filter";
 
 export interface SortSetting {
   value: string;

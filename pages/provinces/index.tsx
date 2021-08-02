@@ -1,20 +1,19 @@
+import { GetStaticProps } from "next";
+import { useRouter } from "next/router";
+import { NextSeo } from "next-seo";
+import type { LinksWellProps } from "~/components/links-well";
 import { BackButton } from "~/components/layout/back-button";
 import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
-import type { LinksWellProps } from "~/components/links-well";
 import { LinksWell } from "~/components/links-well";
 import { ProvinceList, ProvinceListItem } from "~/components/province-list";
 import { SearchForm } from "~/components/search-form";
 import { SeoText } from "~/components/seo-text";
+import provinces from "~/lib/data/provinces";
 import { getCurrentMonthAndYear } from "~/lib/date-utils";
 import { useSearch } from "~/lib/hooks/use-search";
-import provinces from "~/lib/provinces";
 import { getInitial } from "~/lib/string-utils";
-
-import { GetStaticProps } from "next";
-import { useRouter } from "next/router";
-import { NextSeo } from "next-seo";
 
 type ProvincesPageProps = {
   provincesList: ProvinceListItem[];

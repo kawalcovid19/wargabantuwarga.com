@@ -1,13 +1,5 @@
 import React from "react";
 
-import { htmrTransform } from "~/lib/htmr-transformers";
-import { getContactMetaTitle } from "~/lib/meta";
-import { Contact } from "~/lib/provinces";
-import { isNotEmpty, stripTags } from "~/lib/string-utils";
-
-import { Badge } from "./ui/badge";
-import { CopyButton } from "./copy-button";
-
 import { BadgeCheckIcon as BadgeCheckIconUnverified } from "@heroicons/react/outline";
 import {
   BadgeCheckIcon,
@@ -16,6 +8,12 @@ import {
 } from "@heroicons/react/solid";
 import htmr from "htmr";
 import Link from "next/link";
+import { CopyButton } from "./copy-button";
+import { Badge } from "./ui/badge";
+import { isNotEmpty, stripTags } from "~/lib/string-utils";
+import { getContactMetaTitle } from "~/lib/meta";
+import { Contact } from "~/lib/data/provinces";
+import { htmrTransform } from "~/lib/htmr-transformers";
 
 interface ContactListItemProps {
   contact: Contact;

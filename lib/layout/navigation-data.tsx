@@ -1,13 +1,12 @@
 import * as React from "react";
 
-import siteConfig from "../site-config";
-
 import {
   ChatAltIcon,
   HomeIcon,
   SearchIcon,
   ViewGridIcon,
 } from "@heroicons/react/outline";
+import siteConfig from "../content/site-config";
 
 export interface NavigationItem {
   name: string;

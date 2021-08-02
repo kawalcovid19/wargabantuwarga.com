@@ -1,8 +1,7 @@
 import { ComponentProps, ComponentType } from "react";
 
-import { DonorIcon } from "~/components/ui/icons";
-
 import { ClipboardListIcon } from "@heroicons/react/outline";
+import { DonorIcon } from "~/components/ui/icons";
 
 export interface ContributingLinkItem {
   title: string;

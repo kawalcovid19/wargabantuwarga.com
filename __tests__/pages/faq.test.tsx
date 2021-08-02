@@ -1,22 +1,20 @@
 import React from "react";
 
-import { faqBuilder } from "~/lib/__mocks__/builders/faq";
-import faqs from "~/lib/faqs";
-
-import FaqPage, { getStaticProps } from "../../pages/faq";
-
 import { perBuild } from "@jackfranklin/test-data-bot";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import FaqPage, { getStaticProps } from "../../pages/faq";
+import { faqBuilder } from "~/lib/data/__mocks__/builders/faqs";
+import faqs from "~/lib/data/faqs";
 
-jest.mock("~/lib/faqs");
+jest.mock("~/lib/data/faqs");
 jest.mock("next/router", () => require("next-router-mock"));
 
 describe("FaqPage", () => {
   const [faq] = faqs;
 
   it("renders the title and breadcrumbs correctly", () => {
-    render(<FaqPage faqSheets={faqs} />);
+    render(<FaqPage faqs={faqs} />);
 
     const title = screen.getByText(/pertanyaan yang sering ditanyakan/i);
     expect(title).toBeVisible();
@@ -27,14 +25,14 @@ describe("FaqPage", () => {
   });
 
   it("renders the questions and answers correctly", () => {
-    render(<FaqPage faqSheets={faqs} />);
+    render(<FaqPage faqs={faqs} />);
 
     expect(screen.getByText(faq.pertanyaan)).toBeVisible();
     expect(screen.getByText(faq.jawaban)).toBeVisible();
   });
 
   it("renders the links correctly", () => {
-    render(<FaqPage faqSheets={faqs} />);
+    render(<FaqPage faqs={faqs} />);
 
     const link = screen.getByText(faq.sumber as string);
 
@@ -50,7 +48,7 @@ describe("FaqPage", () => {
       },
     });
 
-    render(<FaqPage faqSheets={[faqWithoutSourceLink]} />);
+    render(<FaqPage faqs={[faqWithoutSourceLink]} />);
 
     expect(
       screen.getByText(`Sumber: ${faqWithoutSourceLink.sumber}`),
@@ -61,7 +59,7 @@ describe("FaqPage", () => {
     const firstFaq = faqBuilder();
     const secondFaq = faqBuilder();
 
-    render(<FaqPage faqSheets={[firstFaq, secondFaq]} />);
+    render(<FaqPage faqs={[firstFaq, secondFaq]} />);
 
     expect(screen.getByText(firstFaq.jawaban)).toBeVisible();
 
@@ -85,7 +83,7 @@ describe("FaqPage", () => {
     const firstFaq = faqBuilder();
     const secondFaq = faqBuilder();
 
-    render(<FaqPage faqSheets={[firstFaq, secondFaq]} />);
+    render(<FaqPage faqs={[firstFaq, secondFaq]} />);
 
     expect(screen.getByText(firstFaq.jawaban)).toBeVisible();
 
@@ -104,7 +102,7 @@ describe("FaqPage", () => {
     const firstFaq = faqBuilder();
     const secondFaq = faqBuilder();
 
-    render(<FaqPage faqSheets={[firstFaq]} />);
+    render(<FaqPage faqs={[firstFaq]} />);
 
     expect(screen.getByText(firstFaq.jawaban)).toBeVisible();
 
@@ -128,7 +126,7 @@ describe("FaqPage", () => {
 describe("getStaticProps", () => {
   it("returns the props from the faq-sheets correctly", () => {
     expect(getStaticProps({})).toEqual({
-      props: { faqSheets: faqs },
+      props: { faqs },
     });
   });
 });

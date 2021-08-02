@@ -1,9 +1,8 @@
-import { bannerBlurData, cloudinaryLoader } from "~/lib/cloudinary-loader";
-
+import Image from "next/image";
 import { Container } from "../ui/container";
 import { WBWLogoBlack } from "../ui/wbw-logo";
 
-import Image from "next/image";
+import { bannerBlurData, cloudinaryLoader } from "~/lib/cloudinary-loader";
 
 const FALLBACK_SRC = "v1627049958/hero_banner_desktop_zat71c.png";
 

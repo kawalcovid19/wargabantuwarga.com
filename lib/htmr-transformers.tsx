@@ -1,7 +1,6 @@
-import { getKebabCase } from "./string-utils";
-
 import { HtmrOptions } from "htmr";
 import Link from "next/link";
+import { getKebabCase } from "./string-utils";
 
 const a = (node: JSX.IntrinsicElements["a"]) => {
   const { href, children } = node;

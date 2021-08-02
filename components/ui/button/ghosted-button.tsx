@@ -1,7 +1,7 @@
 import * as React from "react";
 
+import clsx from "clsx";
 import { Spinner } from "../spinner";
-
 import {
   buttonBlockStyles,
   ButtonProps,
@@ -10,8 +10,6 @@ import {
   disabledStyles,
   renderButtonIcon,
 } from "./utils";
-
-import clsx from "clsx";
 
 /**
  * A ghosted button with no background when not hovered.

@@ -1,9 +1,8 @@
 import React from "react";
 
-import { SearchForm } from "../search-form";
-
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { SearchForm } from "../search-form";
 
 describe("SearchForm", () => {
   const handleSubmitKeyword = jest.fn();

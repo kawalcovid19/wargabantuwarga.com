@@ -1,8 +1,7 @@
 import * as React from "react";
 
-import { HomePageStart } from "../homepage-start";
-
 import { render } from "@testing-library/react";
+import { HomePageStart } from "../homepage-start";
 
 describe("HomePageStart", () => {
   it("renders correctly", () => {

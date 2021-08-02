@@ -1,6 +1,5 @@
-import { InputText } from "../input-text";
-
 import { render } from "@testing-library/react";
+import { InputText } from "../input-text";
 
 describe("InputText", () => {
   it("renders correctly", () => {

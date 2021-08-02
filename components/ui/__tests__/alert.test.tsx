@@ -1,8 +1,7 @@
 import React from "react";
 
-import { Alert } from "../alert";
-
 import { render } from "@testing-library/react";
+import { Alert } from "../alert";
 
 describe("Alert", () => {
   it("renders correctly", () => {

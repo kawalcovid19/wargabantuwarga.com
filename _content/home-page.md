@@ -1,25 +1,15 @@
 ---
-last_updated_time: 2021-07-31T05:33:17.698Z
+last_updated_time: 2021-08-02T01:58:08.199Z
 ---
-*\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19, kontak fasilitas/alat kesehatan, dan wadah bagi warga untuk saling bantu. Data di #WargaBantuWarga dikumpulkan oleh para relawan.* 
-
-- - -
-
-#### Informasi Terbaru
-
-* **\[Wilayah Jakarta]** Daftar Vaksin di Sentra Vaksinasi SINERGI SEHAT untuk masyarakat usia 12 tahun ke atas:\
-  Waktu Pelaksanaan: 22 Juli-15 September 2021 (Senin-Jumat pukul 08.30-15.00 WIB)\
-  Lokasi: The Media Hotel & Towers (Jln. Gunung Sahari No. 3, RT 16/RW 3, Gunung Sahari Utara). [Klik di sini untuk daftar vaksin Sentra Vaksinasi SINERGI SEHAT](https://sinergisehat.vaksin.siapdok.id/#/). 
-* Kementerian Kesehatan meluncurkan SIRANAP terbaru versi 3.0. Melalui SIRANAP 3.0, kita dapat memeriksa **ketersediaan IGD di seluruh Indonesia**. Khusus untuk wilayah Jakarta ketersediaan IGD diperbarui setiap 3 jam sekali oleh para relawan lapangan. [Klik di sini untuk lihat ketersediaan IGD di Jakarta](https://yankes.kemkes.go.id/app/siranap/rumah_sakit?jenis=1&propinsi=31prop&kabkota=).
+*\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19, kontak fasilitas/alat kesehatan, dan wadah bagi warga untuk saling bantu. Data di #WargaBantuWarga dikumpulkan oleh para relawan.*
 
 - - -
 
 ## Daftar Isi
 
-1. [Situs atau Kontak Penting Terkait COVID-19](#situsatau-kontak-penting-terkait-covid19)
-2. [Daftar Kontak Fasilitas dan Alat Kesehatan per Provinsi](#daftar-kontak-fasilitas-alat-kesehatanper-provinsi)
-3. [Laman Edukasi COVID-19](#laman-edukasi-covid19)
-4. [Donasi untuk Warga Terdampak](#donasidan-penggalangan-dana)
+1. [Situs atau Kontak Penting Terkait COVID-19](#situs-atau-kontak-penting-terkait-covid-19)
+2. [Laman Edukasi COVID-19](#laman-edukasi-covid-19)
+3. [Donasi untuk Warga Terdampak](#donasi-dan-penggalangan-dana)
 
 - - -
 

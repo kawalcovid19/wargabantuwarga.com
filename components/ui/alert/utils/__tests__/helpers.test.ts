@@ -1,6 +1,5 @@
-import { BaseColors } from "~/components/ui/types";
-
 import { accentBorderColors, alertColors } from "../helpers";
+import { BaseColors } from "~/components/ui/types";
 
 describe("accentBorderColors", () => {
   it.each`

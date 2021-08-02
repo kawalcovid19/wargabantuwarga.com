@@ -1,9 +1,8 @@
 import React from "react";
 
-import { OutlineButton, PrimaryButton, SecondaryButton } from "../button";
-
 import { PlusIcon } from "@heroicons/react/outline";
 import { render } from "@testing-library/react";
+import { OutlineButton, PrimaryButton, SecondaryButton } from "../button";
 
 describe("Button", () => {
   describe("PrimaryButton", () => {

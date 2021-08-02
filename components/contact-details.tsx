@@ -1,10 +1,9 @@
+import htmr from "htmr";
 import { CopyButton } from "~/components/copy-button";
 import { OpenMapButton } from "~/components/open-map-button";
+import { Contact } from "~/lib/data/provinces";
 import { htmrTransform } from "~/lib/htmr-transformers";
-import { Contact } from "~/lib/provinces";
 import { isNotEmpty, stripTags } from "~/lib/string-utils";
-
-import htmr from "htmr";
 
 type ContactDetailsProps = {
   contact: Contact;
@@ -41,15 +40,17 @@ const DescriptionItem = (props: DescriptionItemProps) => {
       <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
         <span className="flex-grow">
           {htmr(value, { transform: htmrTransform })}
+        </span>
+        <div className="flex flex-col items-end space-y-1 flex-none ml-2">
+          {typeof value == "string" &&
+            value.length > 0 &&
+            props.withCopyButton && <CopyButton text={stripTags(value)} />}
           {typeof value == "string" &&
             value.length > 0 &&
             props.withOpenMapButton && (
               <OpenMapButton address={stripTags(value)} />
             )}
-        </span>
-        {typeof value == "string" &&
-          value.length > 0 &&
-          props.withCopyButton && <CopyButton text={stripTags(value)} />}
+        </div>
       </dd>
     </div>
   );

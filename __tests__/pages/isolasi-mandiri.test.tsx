@@ -1,19 +1,19 @@
 import React from "react";
 
-import StackedLink from "~/components/stacked-link";
-import iso from "~/lib/isoman-contents";
-import IsomanPage, { getStaticProps } from "~/pages/isolasi-mandiri";
-
 import { render, screen } from "@testing-library/react";
+import StackedLink from "~/components/layout/stacked-link";
+import isolasiMandiri from "~/lib/content/isolasi-mandiri";
+import IsolasiMandiriPage, { getStaticProps } from "~/pages/isolasi-mandiri";
 
+jest.mock("~/lib/content/isolasi-mandiri");
 jest.mock("next/router", () => require("next-router-mock"));
 
 describe("IsomanPage", () => {
-  const { isoman_contents } = iso;
-  const [isoman_data] = isoman_contents;
+  const { categories } = isolasiMandiri;
+  const [category] = categories;
 
   it("renders the title and the breadcrumbs correctly", () => {
-    render(<IsomanPage isoman={iso} />);
+    render(<IsolasiMandiriPage isolasiMandiri={isolasiMandiri} />);
 
     const title = screen.getByText(/Pedoman Isolasi Mandiri/i);
     expect(title).toBeVisible();
@@ -24,40 +24,31 @@ describe("IsomanPage", () => {
   });
 
   it("renders the category and it's description correctly", () => {
-    render(<IsomanPage isoman={iso} />);
-    expect(screen.getByText(isoman_data.title)).toBeVisible();
-    expect(screen.getByText(isoman_data.description)).toBeVisible();
+    render(<IsolasiMandiriPage isolasiMandiri={isolasiMandiri} />);
+    expect(screen.getByText(category.title)).toBeVisible();
+    expect(screen.getByText(category.description)).toBeVisible();
   });
 
   it("renders the stacked links correctly", () => {
-    // eslint-disable-next-line no-lone-blocks
-    {
-      isoman_data.links.forEach((link, i) => {
-        render(
-          <StackedLink key={i} title={link.title} uniqId={i} url={link.url} />,
-        );
-        const linkItem = screen.getByTestId(`next-link-${link.title}`);
-        expect(screen.getByText(link.title)).toBeVisible();
-        expect(linkItem).toBeVisible();
-        expect(linkItem).toHaveAttribute("href", link.url);
-        expect(
-          screen.getByTestId(`external-link-icon-${link.url}`),
-        ).toBeVisible();
-      });
-    }
+    render(<StackedLink links={category.links} />);
 
-    // isoman_data.links.forEach((isoman) => {
-    //   const link = screen.getByTestId(`next-link-${isoman.title}`);
+    category.links.forEach((url) => {
+      const link = screen.getByTestId(`next-link-${url.title}`);
 
-    //   });
-    // });
+      expect(screen.getByText(url.title)).toBeVisible();
+      expect(link).toBeVisible();
+      expect(link).toHaveAttribute("href", url.url);
+      expect(
+        screen.getByTestId(`external-link-icon-${url.title}`),
+      ).toBeVisible();
+    });
   });
 });
 
 describe("getStaticProps", () => {
   it("returns the props from the isoman-contents correctly", () => {
     expect(getStaticProps({})).toEqual({
-      props: { isoman: iso },
+      props: { isolasiMandiri },
     });
   });
 });

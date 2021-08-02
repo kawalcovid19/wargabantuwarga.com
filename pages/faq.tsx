@@ -1,5 +1,9 @@
 import { useMemo } from "react";
 
+import { ExclamationCircleIcon } from "@heroicons/react/solid";
+import htmr from "htmr";
+import { GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 import { BackButton } from "~/components/layout/back-button";
 import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
@@ -7,16 +11,11 @@ import { PageHeader } from "~/components/layout/page-header";
 import { SearchForm } from "~/components/search-form";
 import { EmptyState } from "~/components/ui/empty-state";
 import { FaqListSkeleton } from "~/components/ui/skeleton-loading";
-import faqSheets, { Faq } from "~/lib/faqs";
+import faqs, { Faq } from "~/lib/data/faqs";
 import { useSearch } from "~/lib/hooks/use-search";
 
-import { ExclamationCircleIcon } from "@heroicons/react/solid";
-import htmr from "htmr";
-import { GetStaticProps } from "next";
-import { NextSeo } from "next-seo";
-
 type FaqPageProps = {
-  faqSheets: Faq[];
+  faqs: Faq[];
 };
 
 function groupBy<T, U>(data: T[], key: U) {
@@ -35,7 +34,7 @@ const meta = {
 };
 
 export default function FaqPage(props: FaqPageProps) {
-  const { faqSheets: faq } = props;
+  const { faqs: faq } = props;
   const [
     filteredQuestions,
     handleSubmitKeywords,
@@ -111,11 +110,11 @@ export default function FaqPage(props: FaqPageProps) {
                     <dt className="text-base font-semibold text-gray-900 md:col-span-5">
                       {question.pertanyaan}
                     </dt>
-                    <dd className="mt-2 md:mt-0 md:col-span-7">
+                    <dd className="space-y-4 mt-2 md:mt-0 md:col-span-7">
                       <p className="text-base text-gray-500">
                         {htmr(question.jawaban)}
                       </p>
-                      <small>
+                      <small className="block">
                         Sumber:{" "}
                         {question.link ? (
                           <a
@@ -157,7 +156,7 @@ export default function FaqPage(props: FaqPageProps) {
 export const getStaticProps: GetStaticProps = () => {
   return {
     props: {
-      faqSheets,
+      faqs,
     },
   };
 };
