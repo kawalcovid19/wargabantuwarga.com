@@ -27,10 +27,10 @@
     "import/export": 2,
     "import/namespace": 2,
     "import/named": 2,
-    "import/newline-after-import": "warn",
+    "import/newline-after-import": 2,
     "import/no-unresolved": [2, { "commonjs": true, "amd": true }],
-    "import/no-extraneous-dependencies": "warn",
-    "import/order": "off",
+    "import/no-extraneous-dependencies": 2,
+    "import/order": "error",
 
     "jsx-a11y/anchor-is-valid": "off",
 
