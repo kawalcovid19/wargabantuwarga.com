@@ -3,8 +3,8 @@ import React from "react";
 import { ExternalLinkIcon } from "@heroicons/react/solid";
 import clsx from "clsx";
 import Link from "next/link";
-import { isInternalLink } from "~/lib/string-utils";
 import { URL } from "~/lib/content/isolasi-mandiri";
+import { isInternalLink } from "~/lib/string-utils";
 
 interface StackedListProps {
   links: URL[];
