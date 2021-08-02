@@ -30,7 +30,7 @@ export default function StackedLink(link: linkProps) {
             <span className="text-brand-500 ml-4">
               <ExternalLinkIcon
                 className="h-6 w-6"
-                data-testid={`external-link-icon-${link.title}`}
+                data-testid={`external-link-icon-${link.url}`}
               />
             </span>
           </div>

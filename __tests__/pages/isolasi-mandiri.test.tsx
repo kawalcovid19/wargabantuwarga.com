@@ -41,7 +41,7 @@ describe("IsomanPage", () => {
         expect(linkItem).toBeVisible();
         expect(linkItem).toHaveAttribute("href", link.url);
         expect(
-          screen.getByTestId(`external-link-icon-${link.title}`),
+          screen.getByTestId(`external-link-icon-${link.url}`),
         ).toBeVisible();
       });
     }

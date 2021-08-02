@@ -5,7 +5,9 @@ import {
   SecondaryAnchorButton,
 } from "~/components/ui/button";
 import { PhoneIcon } from "~/components/ui/icons";
-import { ContactDetail } from "~/lib/emergency-contacts";
+import { ContactDetail } from "~/lib/kontak-darurat/emergency-contacts";
+
+import { EmergencyContactCard } from "./emergency-contact-card";
 
 type KontakDaruratProps = {
   emergency_contacts: ContactDetail[];
@@ -23,38 +25,13 @@ export default function EmergencyContactSection(data: KontakDaruratProps) {
       </div>
       <div className="grid grid-cols-2 gap-4">
         {emergency_contacts.map((contact: ContactDetail, i: number) => (
-          <div
+          <EmergencyContactCard
             key={i}
-            className="flex flex-col shadow-md rounded-md overflow-hidden max-w-xs"
-          >
-            <div className="flex-shrink-0 py-2 px-3 md:p-4">
-              <img
-                alt={contact.name}
-                className="h-24 object-scale-down w-full"
-                src={contact.image}
-              />
-            </div>
-            <div className="p-3 text-xs space-y-1 h-0 flex-1">
-              <p className="text-gray-500">{contact.name}</p>
-              <h3 className="font-semibold text-gray-700 text-xs">
-                {contact.description}
-              </h3>
-            </div>
-            <div className="p-3 justify-center">
-              <PrimaryAnchorButton
-                block
-                className="bg-light-blue-400 font-normal focus:bg-light-blue hover:bg-light-blue-600 text-white"
-                color="none"
-                href={contact.url}
-                rel="nofollow noopener noreferrer"
-                rounded
-                size="xs"
-                target="_blank"
-              >
-                Cek Sekarang
-              </PrimaryAnchorButton>
-            </div>
-          </div>
+            description={contact.description}
+            image={contact.image}
+            name={contact.name}
+            url={contact.url}
+          />
         ))}
       </div>
       <div className="space-y-4 text-center">
