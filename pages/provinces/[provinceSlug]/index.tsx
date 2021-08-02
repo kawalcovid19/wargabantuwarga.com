@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import { GetStaticPaths, GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 import { ContactList } from "~/components/contact-list";
 import { BackButton } from "~/components/layout/back-button";
 import { Page } from "~/components/layout/page";
@@ -11,9 +13,6 @@ import provinces, { Contact } from "~/lib/data/provinces";
 import { getCurrentLongDate } from "~/lib/date-utils";
 import { useSearch } from "~/lib/hooks/use-search";
 import { getProvinceMeta } from "~/lib/meta";
-
-import { GetStaticPaths, GetStaticProps } from "next";
-import { NextSeo } from "next-seo";
 
 type ProvinceProps = {
   provinceName: string;

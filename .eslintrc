@@ -6,9 +6,11 @@
     "kentcdodds/react",
     "kentcdodds/jsx-a11y",
     "plugin:@next/next/recommended",
-    "plugin:cypress/recommended"
+    "plugin:cypress/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript"
   ],
-  "plugins": ["prettier", "simple-import-sort", "cypress", "chai-friendly"],
+  "plugins": ["prettier", "cypress", "chai-friendly"],
   "rules": {
     "@babel/new-cap": "off",
     "@typescript-eslint/no-explicit-any": "warn",
@@ -21,25 +23,16 @@
         "md": "ignorePackages"
       }
     ],
-    "import/newline-after-import": "warn",
-    "import/no-extraneous-dependencies": "warn",
-    "import/order": "off",
+    "import/default": 2,
+    "import/export": 2,
+    "import/namespace": 2,
+    "import/named": 2,
+    "import/newline-after-import": 2,
+    "import/no-unresolved": [2, { "commonjs": true, "amd": true }],
+    "import/no-extraneous-dependencies": 2,
+    "import/order": "error",
+
     "jsx-a11y/anchor-is-valid": "off",
-    "simple-import-sort/exports": "warn",
-    "simple-import-sort/imports": [
-      "warn",
-      {
-        "groups": [
-          ["^.+\\.s?css$"],
-          ["^\\u0000"],
-          ["^react$"],
-          ["^~"],
-          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"]
-        ]
-      }
-    ],
-    "sort-imports": "off",
 
     "jsx-a11y/accessible-emoji": "off",
     "react/jsx-sort-props": ["warn", { "reservedFirst": ["key"] }],
@@ -48,7 +41,13 @@
     "@babel/no-unused-expressions": 0,
     "chai-friendly/no-unused-expressions": 2
   },
-
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "project": "./tsconfig.json"
+      }
+    }
+  },
   "overrides": [
     {
       "files": ["**/*.(d.)?ts(x)?"],

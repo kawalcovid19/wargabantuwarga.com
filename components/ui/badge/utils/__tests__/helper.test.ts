@@ -1,7 +1,6 @@
-import { BaseColors } from "~/components/ui/types";
-
 import { badgeColors, badgeRoundedStyles, badgeSizes } from "../helpers";
 import { BadgeSizes } from "../types";
+import { BaseColors } from "~/components/ui/types";
 
 describe("badgeRoundedStyles", () => {
   it(`returns medium rounded when badgeRoundedStyles is true`, () => {

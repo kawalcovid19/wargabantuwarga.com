@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from "react";
+import { BasicDialog } from "./dialog";
 
 import siteConfig from "~/lib/content/site-config";
 import { attributes, html } from "~/lib/content/welcome-message";
 import useIntersectionObserver from "~/lib/hooks/use-intersection";
-
-import { BasicDialog } from "./dialog";
 
 const LOCAL_STORAGE_KEY = "wbw-wm";
 const canUseDOM = typeof window !== "undefined";

@@ -1,11 +1,10 @@
+import { build, fake } from "@jackfranklin/test-data-bot";
 import {
   DEFAULT_DAY_FORMAT,
   DEFAULT_YEAR_FORMAT,
   LOCALE_ID,
   LONG_MONTH_FORMAT,
 } from "~/lib/date-utils";
-
-import { build, fake } from "@jackfranklin/test-data-bot";
 
 interface DateMock {
   date: Date;

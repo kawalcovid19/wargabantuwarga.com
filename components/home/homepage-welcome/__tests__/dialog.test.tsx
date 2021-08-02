@@ -1,11 +1,9 @@
 import React from "react";
 
-import { attributes, html } from "~/lib/content/welcome-message";
-
-import { BasicDialog } from "../dialog";
-
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { BasicDialog } from "../dialog";
+import { attributes, html } from "~/lib/content/welcome-message";
 
 jest.mock("~/lib/content/welcome-message");
 

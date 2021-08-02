@@ -1,8 +1,7 @@
 import React from "react";
 
-import { HomepageHeader } from "../homepage-header";
-
 import { render, screen } from "@testing-library/react";
+import { HomepageHeader } from "../homepage-header";
 
 describe("HomepageHeader", () => {
   it("renders the header image", () => {

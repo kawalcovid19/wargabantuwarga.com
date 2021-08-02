@@ -1,8 +1,7 @@
 import React from "react";
 
-import { LinksWell } from "~/components/links-well";
-
 import { render, screen } from "@testing-library/react";
+import { LinksWell } from "~/components/links-well";
 
 describe("LinksWell", () => {
   it("does not render incomplete data", () => {

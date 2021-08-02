@@ -1,7 +1,7 @@
-import cheerio from "cheerio";
-import fetch from "cross-fetch";
 import fs from "fs";
 import path from "path";
+import cheerio from "cheerio";
+import fetch from "cross-fetch";
 
 const FAQ_LINK = "https://kcov.id/wbw-faq";
 

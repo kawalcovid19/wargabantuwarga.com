@@ -1,6 +1,5 @@
-import { Category, IsolasiMandiri, URL } from "~/lib/content/isolasi-mandiri";
-
 import { build, fake } from "@jackfranklin/test-data-bot";
+import { Category, IsolasiMandiri, URL } from "~/lib/content/isolasi-mandiri";
 
 export const urlBuilder = build<URL>({
   fields: {
