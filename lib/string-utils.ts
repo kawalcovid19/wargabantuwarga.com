@@ -121,7 +121,7 @@ export function isInternalLink(link: string): boolean {
     .split("/")[0];
   return (
     link.startsWith("/") ||
-    domain == "www.wargabantuwarga.com" ||
-    domain == "wargabantuwarga.com"
+    domain === "www.wargabantuwarga.com" ||
+    domain === "wargabantuwarga.com"
   );
 }

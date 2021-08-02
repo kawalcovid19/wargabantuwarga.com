@@ -26,15 +26,26 @@ export default function StackedLink(list: StackedListProps) {
       {links.map((link, i) => (
         <li key={i} className={clsx(LinkClasses(i))}>
           <p className="text-base text-gray-900 hover:text-gray-700">
-            <Link href={link.url}>
+            {isInternalLink(link.url) ? (
+              <Link href={link.url}>
+                <a
+                  className="helper-link-cover"
+                  data-testid={`next-link-${link.title}`}
+                >
+                  {link.title}
+                </a>
+              </Link>
+            ) : (
               <a
                 className="helper-link-cover"
                 data-testid={`next-link-${link.title}`}
-                target={isInternalLink(link.url) ? "_self" : "_blank"}
+                href={link.url}
+                rel="nofollow noopener noreferrer"
+                target="_blank"
               >
                 {link.title}
               </a>
-            </Link>
+            )}
           </p>
 
           <div aria-hidden className="text-brand-500 ml-4">
