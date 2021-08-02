@@ -1,13 +1,12 @@
 import * as React from "react";
 
+import clsx from "clsx";
 import {
   ButtonColors,
   ButtonIconPositions,
   ButtonProps,
   ButtonSizes,
 } from "./types";
-
-import clsx from "clsx";
 
 export const disabledStyles = "disabled:cursor-not-allowed disabled:opacity-75";
 

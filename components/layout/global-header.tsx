@@ -1,13 +1,10 @@
 import { createElement, useRef } from "react";
 
-import { WBWLogoWhite } from "~/components/ui/wbw-logo";
-
-import { Container } from "../ui/container";
-
-import { NavigationMenuPopover, navMenuButtonIcon } from "./navigation-menu";
-
 import { Popover } from "@headlessui/react";
 import Link from "next/link";
+import { Container } from "../ui/container";
+import { NavigationMenuPopover, navMenuButtonIcon } from "./navigation-menu";
+import { WBWLogoWhite } from "~/components/ui/wbw-logo";
 
 export function GlobalHeader() {
   const popoverButtonRef = useRef<HTMLButtonElement>(null);

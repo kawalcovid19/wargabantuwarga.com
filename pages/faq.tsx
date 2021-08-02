@@ -1,5 +1,9 @@
 import { useMemo } from "react";
 
+import { ExclamationCircleIcon } from "@heroicons/react/solid";
+import htmr from "htmr";
+import { GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 import { BackButton } from "~/components/layout/back-button";
 import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
@@ -9,11 +13,6 @@ import { EmptyState } from "~/components/ui/empty-state";
 import { FaqListSkeleton } from "~/components/ui/skeleton-loading";
 import faqs, { Faq } from "~/lib/data/faqs";
 import { useSearch } from "~/lib/hooks/use-search";
-
-import { ExclamationCircleIcon } from "@heroicons/react/solid";
-import htmr from "htmr";
-import { GetStaticProps } from "next";
-import { NextSeo } from "next-seo";
 
 type FaqPageProps = {
   faqs: Faq[];

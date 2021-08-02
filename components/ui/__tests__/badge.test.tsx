@@ -1,6 +1,5 @@
-import { Badge } from "../badge/badge";
-
 import { render } from "@testing-library/react";
+import { Badge } from "../badge/badge";
 
 describe("Badge", () => {
   it("renders correctly", () => {

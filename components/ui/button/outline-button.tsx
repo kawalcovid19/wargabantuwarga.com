@@ -1,7 +1,7 @@
 import * as React from "react";
 
+import clsx from "clsx";
 import { Spinner } from "../spinner";
-
 import {
   buttonBlockStyles,
   ButtonProps,
@@ -11,8 +11,6 @@ import {
   outlineButtonColors,
   renderButtonIcon,
 } from "./utils";
-
-import clsx from "clsx";
 
 /**
  * Button component used for primary actions.

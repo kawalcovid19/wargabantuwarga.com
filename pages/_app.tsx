@@ -5,15 +5,14 @@ import "typeface-inter";
 
 import { useEffect } from "react";
 
-import { LayoutRoot } from "~/components/layout/layout-root";
-import siteConfig from "~/lib/content/site-config";
-import { initializeGTM } from "~/lib/gtm";
-
-import type { AppProps } from "next/app";
 import Head from "next/head";
 import Script from "next/script";
 import { DefaultSeo } from "next-seo";
 import NProgress from "nprogress";
+import type { AppProps } from "next/app";
+import { initializeGTM } from "~/lib/gtm";
+import siteConfig from "~/lib/content/site-config";
+import { LayoutRoot } from "~/components/layout/layout-root";
 
 const meta = {
   siteName: siteConfig.site_name,

@@ -1,9 +1,8 @@
+import { build, fake, perBuild } from "@jackfranklin/test-data-bot";
 import {
   LatestNewsItem,
   LatestNewsItemAttributes,
 } from "../../informasi-terbaru";
-
-import { build, fake, perBuild } from "@jackfranklin/test-data-bot";
 
 const latestNewsItemAttributesBuilder = build<LatestNewsItemAttributes>({
   fields: {

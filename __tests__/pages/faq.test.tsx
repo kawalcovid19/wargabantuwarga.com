@@ -1,13 +1,11 @@
 import React from "react";
 
-import { faqBuilder } from "~/lib/data/__mocks__/builders/faqs";
-import faqs from "~/lib/data/faqs";
-
-import FaqPage, { getStaticProps } from "../../pages/faq";
-
 import { perBuild } from "@jackfranklin/test-data-bot";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import FaqPage, { getStaticProps } from "../../pages/faq";
+import { faqBuilder } from "~/lib/data/__mocks__/builders/faqs";
+import faqs from "~/lib/data/faqs";
 
 jest.mock("~/lib/data/faqs");
 jest.mock("next/router", () => require("next-router-mock"));

@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import clsx from "clsx";
 import {
   AnchorButtonProps,
   buttonBlockStyles,
@@ -8,8 +9,6 @@ import {
   disabledStyles,
   renderButtonIcon,
 } from "./utils";
-
-import clsx from "clsx";
 
 /**
  * Similar to `WhiteButton`, but acts as a link.

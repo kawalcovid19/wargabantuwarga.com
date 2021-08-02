@@ -1,6 +1,5 @@
-import { getKebabCase, stripTags } from "~/lib/string-utils";
-
 import provinces from "../provinces";
+import { getKebabCase, stripTags } from "~/lib/string-utils";
 
 describe("provinces", () => {
   it("should returns a list of provinces with the correct province slug", () => {

@@ -1,8 +1,7 @@
-import { bottomNavigation } from "~/lib/layout/navigation-data";
-
+import { render, screen } from "@testing-library/react";
 import { Navigation } from "../navigation";
 
-import { render, screen } from "@testing-library/react";
+import { bottomNavigation } from "~/lib/layout/navigation-data";
 
 jest.mock("next/router", () => require("next-router-mock"));
 

@@ -1,6 +1,5 @@
-import { ProvinceListItem } from "~/components/province-list";
-
 import { build, fake } from "@jackfranklin/test-data-bot";
+import { ProvinceListItem } from "~/components/province-list";
 
 export const provinceListItemBuilder = build<ProvinceListItem>({
   fields: {

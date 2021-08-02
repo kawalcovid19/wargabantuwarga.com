@@ -1,12 +1,10 @@
 import { useMemo } from "react";
 
-import { getProvinceMetaTitle } from "~/lib/meta";
-
-import { EmptyState } from "./ui/empty-state";
-
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { EmptyState } from "./ui/empty-state";
+import { getProvinceMetaTitle } from "~/lib/meta";
 
 export type ProvinceListItem = {
   initials: string;

@@ -1,8 +1,7 @@
 import * as React from "react";
 
-import { HomePageSection } from "../homepage-section";
-
 import { render } from "@testing-library/react";
+import { HomePageSection } from "../homepage-section";
 
 describe("HomePageSection", () => {
   it("renders correctly", () => {

@@ -1,6 +1,5 @@
-import { SecondaryButton } from "./ui/button";
-
 import { MapIcon } from "@heroicons/react/outline";
+import { SecondaryButton } from "./ui/button";
 
 export function OpenMapButton({ address }: { address: string }) {
   function btnClick(e: React.FormEvent<HTMLButtonElement>) {

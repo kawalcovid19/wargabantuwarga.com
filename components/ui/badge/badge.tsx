@@ -1,13 +1,12 @@
 import * as React from "react";
 
+import clsx from "clsx";
 import {
   badgeColors,
   BadgeProps,
   badgeRoundedStyles,
   badgeSizes,
 } from "./utils";
-
-import clsx from "clsx";
 
 /**
  * Badge component.
