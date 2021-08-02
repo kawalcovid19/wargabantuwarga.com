@@ -2,6 +2,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
+import { debounce } from "ts-debounce";
 import React, {
   ChangeEvent,
   FormEvent,
@@ -9,15 +11,13 @@ import React, {
   useEffect,
   useState,
 } from "react";
-
+import { FilterIcon } from "@heroicons/react/outline";
 import { PrimaryButton } from "./ui/button";
 import { FormLabel } from "./ui/forms/form-label";
 import { InputText } from "./ui/forms/input-text";
 
-import { debounce } from "ts-debounce";
 import { SearchFilterModal, SortSetting } from "./search-filter-modal";
 import { FormGroup } from "./ui/forms/form-group";
-import { FilterIcon } from "@heroicons/react/outline";
 import { SearchFilter } from "~/components/search-filter";
 
 interface FormElements extends HTMLFormControlsCollection {

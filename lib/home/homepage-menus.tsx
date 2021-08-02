@@ -1,3 +1,4 @@
+import { UrlObject } from "url";
 import React from "react";
 
 import {
@@ -6,8 +7,6 @@ import {
   HospitalIcon,
   OxygenIcon,
 } from "~/components/ui/icons";
-
-import { UrlObject } from "url";
 
 export interface HomepageMenuItem {
   name: string;

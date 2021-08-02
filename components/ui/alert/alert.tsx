@@ -1,15 +1,14 @@
 import * as React from "react";
 
+import { Transition } from "@headlessui/react";
+import { XIcon } from "@heroicons/react/outline";
+import clsx from "clsx";
 import {
   accentBorderColors,
   alertColors,
   AlertProps,
   renderAlertIcon,
 } from "./utils";
-
-import { Transition } from "@headlessui/react";
-import { XIcon } from "@heroicons/react/outline";
-import clsx from "clsx";
 
 export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
   (

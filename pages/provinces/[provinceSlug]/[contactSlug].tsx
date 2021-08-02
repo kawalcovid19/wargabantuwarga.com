@@ -1,4 +1,6 @@
 /* eslint-disable no-negated-condition */
+import { GetStaticPaths, GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 import { ContactDetails } from "~/components/contact-details";
 import { BackButton } from "~/components/layout/back-button";
 import { Page } from "~/components/layout/page";
@@ -8,9 +10,6 @@ import { ReportButton } from "~/components/report-button";
 import { getContactsPaths } from "~/lib/data/helpers/provinces";
 import provinces, { Contact } from "~/lib/data/provinces";
 import { getContactMeta } from "~/lib/meta";
-
-import { GetStaticPaths, GetStaticProps } from "next";
-import { NextSeo } from "next-seo";
 
 type ContactPageProps = {
   provinceName: string;

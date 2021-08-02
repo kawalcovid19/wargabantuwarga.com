@@ -1,9 +1,7 @@
-import siteConfig from "~/lib/content/site-config";
-
 import { PrimaryAnchorButton } from "../ui/button";
 import { WhatsAppIcon } from "../ui/icons";
-
 import { HomePageSection } from "./homepage-section";
+import siteConfig from "~/lib/content/site-config";
 
 export function HomePageWhatsAppCTA() {
   return (

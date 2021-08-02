@@ -1,7 +1,7 @@
 import * as React from "react";
 
+import clsx from "clsx";
 import { Spinner } from "../spinner";
-
 import {
   buttonBlockStyles,
   ButtonProps,
@@ -11,8 +11,6 @@ import {
   renderButtonIcon,
   secondaryButtonColors,
 } from "./utils";
-
-import clsx from "clsx";
 
 /**
  * A secondary button variant for actions that complement the primary button action.

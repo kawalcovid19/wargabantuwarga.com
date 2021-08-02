@@ -1,13 +1,12 @@
 import React from "react";
 
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import provinces from "~/lib/data/provinces";
 import ProvincePage, {
   getStaticPaths,
   getStaticProps,
 } from "~/pages/provinces/[provinceSlug]";
-
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 
 jest.mock("~/lib/data/provinces");
 jest.mock("next/router", () => require("next-router-mock"));

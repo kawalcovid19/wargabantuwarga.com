@@ -1,8 +1,7 @@
 import React from "react";
 
-import { homepageMenus } from "~/lib/home/homepage-menus";
-
 import Link from "next/link";
+import { homepageMenus } from "~/lib/home/homepage-menus";
 
 export function HomePageMenu() {
   return (

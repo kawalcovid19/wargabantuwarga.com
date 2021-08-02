@@ -1,6 +1,5 @@
-import { Faq } from "~/lib/data/faqs";
-
 import { build, fake } from "@jackfranklin/test-data-bot";
+import { Faq } from "~/lib/data/faqs";
 
 export const faqBuilder = build<Faq>({
   fields: {

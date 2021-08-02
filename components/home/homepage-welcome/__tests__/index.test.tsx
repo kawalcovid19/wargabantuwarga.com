@@ -1,10 +1,5 @@
 import React from "react";
 
-import siteConfig from "~/lib/content/site-config";
-import { attributes } from "~/lib/content/welcome-message";
-
-import { HomePageWelcome } from "..";
-
 import {
   render,
   screen,
@@ -13,6 +8,9 @@ import {
 } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { mockAllIsIntersecting } from "react-intersection-observer/test-utils";
+import { HomePageWelcome } from "..";
+import siteConfig from "~/lib/content/site-config";
+import { attributes } from "~/lib/content/welcome-message";
 
 jest.mock("~/lib/content/welcome-message");
 

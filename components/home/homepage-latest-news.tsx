@@ -1,14 +1,11 @@
 import { useMemo } from "react";
 
-import { LatestNewsItem } from "~/lib/content/informasi-terbaru";
-import { htmrTransform } from "~/lib/htmr-transformers";
-
-import { OutlineAnchorButton } from "../ui/button";
-
-import { HomePageSection } from "./homepage-section";
-
 import { ExternalLinkIcon } from "@heroicons/react/outline";
 import htmr from "htmr";
+import { OutlineAnchorButton } from "../ui/button";
+import { HomePageSection } from "./homepage-section";
+import { LatestNewsItem } from "~/lib/content/informasi-terbaru";
+import { htmrTransform } from "~/lib/htmr-transformers";
 
 interface HomePageLatestNewsProps {
   latestNews: LatestNewsItem[];

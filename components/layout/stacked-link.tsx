@@ -1,10 +1,9 @@
 import React from "react";
 
-import { URL } from "~/lib/content/isolasi-mandiri";
-
 import { ExternalLinkIcon } from "@heroicons/react/solid";
 import clsx from "clsx";
 import Link from "next/link";
+import { URL } from "~/lib/content/isolasi-mandiri";
 
 interface StackedListProps {
   links: URL[];

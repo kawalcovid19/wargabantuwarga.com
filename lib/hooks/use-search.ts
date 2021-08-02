@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-
-import { getQueryParams } from "../string-utils";
-
-import ItemsJS from "itemsjs";
 import Router from "next/router";
+import ItemsJS from "itemsjs";
+import { getQueryParams } from "../string-utils";
 
 type AggregationSetting = {
   field: string;

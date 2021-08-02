@@ -1,9 +1,8 @@
 import React from "react";
 
+import { render, screen } from "@testing-library/react";
 import { latestNewsItemBuilder } from "~/lib/content/__mocks__/builders/informasi-terbaru";
 import HomePage, { getStaticProps } from "~/pages";
-
-import { render, screen } from "@testing-library/react";
 
 jest.mock("~/lib/content/home-page");
 jest.mock("~/lib/content/welcome-message");

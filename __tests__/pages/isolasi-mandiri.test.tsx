@@ -1,10 +1,9 @@
 import React from "react";
 
+import { render, screen } from "@testing-library/react";
 import StackedLink from "~/components/layout/stacked-link";
 import isolasiMandiri from "~/lib/content/isolasi-mandiri";
 import IsolasiMandiriPage, { getStaticProps } from "~/pages/isolasi-mandiri";
-
-import { render, screen } from "@testing-library/react";
 
 jest.mock("~/lib/content/isolasi-mandiri");
 jest.mock("next/router", () => require("next-router-mock"));

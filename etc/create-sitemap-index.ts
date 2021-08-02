@@ -1,9 +1,8 @@
-import { PUBLIC_PATH } from "../constants";
-
 import fs from "fs";
-import globby from "globby";
 import path from "path";
+import globby from "globby";
 import prettier from "prettier";
+import { PUBLIC_PATH } from "../constants";
 
 const getDate = new Date().toISOString();
 

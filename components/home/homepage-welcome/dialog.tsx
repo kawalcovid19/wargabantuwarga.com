@@ -1,11 +1,10 @@
 import { Fragment, useRef } from "react";
 
-import { PrimaryButton } from "~/components/ui/button";
-import { htmrTransform } from "~/lib/htmr-transformers";
-
 import { Dialog, Transition } from "@headlessui/react";
 import { ShareIcon, XIcon } from "@heroicons/react/solid";
 import htmr from "htmr";
+import { htmrTransform } from "~/lib/htmr-transformers";
+import { PrimaryButton } from "~/components/ui/button";
 
 interface BasicDialogProps {
   isOpen: boolean;
