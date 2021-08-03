@@ -1,5 +1,6 @@
 import React from "react";
 
+import { render, screen } from "@testing-library/react";
 import ChatbotSection from "~/components/kontak-darurat/chatbot-section";
 import { EmergencyContactCard } from "~/components/kontak-darurat/emergency-contact-card";
 import EmergencyContactSection from "~/components/kontak-darurat/emergency-contact-section";
@@ -10,8 +11,6 @@ import contacts from "~/lib/kontak-darurat/emergency-contacts";
 import oxygen from "~/lib/kontak-darurat/oxygen-information";
 import vaccine from "~/lib/kontak-darurat/vaccine-information";
 import KontakDaruratPage, { getStaticProps } from "~/pages/kontak-darurat";
-
-import { render, screen } from "@testing-library/react";
 
 jest.mock("next/router", () => require("next-router-mock"));
 
@@ -103,10 +102,10 @@ describe("KontakDaruratPage", () => {
     );
   });
 
-  it("renders the vaccine accordion correctly", () => {
+  it("renders the vaccine disclosure correctly", () => {
     render(<VaccineSection vaccine_section={vaccine_section} />);
-    const accordion_title = screen.getByText(/Mau Vaksin COVID-19?/i);
-    expect(accordion_title).toBeVisible();
+    const disclosure_title = screen.getByText(/Mau Vaksin COVID-19?/i);
+    expect(disclosure_title).toBeVisible();
   });
 
   it("render the stacked vaccine links correctly", () => {
@@ -128,10 +127,10 @@ describe("KontakDaruratPage", () => {
     }
   });
 
-  it("renders the oxygen accordion correctly", () => {
+  it("renders the oxygen disclosure correctly", () => {
     render(<OxygenSection oxygen_section={oxygen_section} />);
-    const accordion_title = screen.getByText(/Oksigen Untuk Pasien COVID?/i);
-    expect(accordion_title).toBeVisible();
+    const disclosure_title = screen.getByText(/Oksigen Untuk Pasien COVID?/i);
+    expect(disclosure_title).toBeVisible();
   });
 
   it("render the stacked oxygen links correctly", () => {

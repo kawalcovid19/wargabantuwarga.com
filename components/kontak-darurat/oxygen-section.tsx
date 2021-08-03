@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Accordion } from "~/components/accordion";
-import StackedLink from "~/components/stacked-link";
+import { StackedLinkDisclosure } from "~/components/layout/stacked-link-disclosure";
+import StackedLink from "~/components/layout/stacked-link";
 import { OxygenDetail } from "~/lib/kontak-darurat/oxygen-information";
 
 type OxygenSectionProps = {
@@ -9,19 +9,11 @@ type OxygenSectionProps = {
 };
 
 export default function OxygenSection(data: OxygenSectionProps) {
-  const { oxygen_section } = data;
   return (
-    <Accordion title="Oksigen Untuk Pasien COVID?">
+    <StackedLinkDisclosure title="Oksigen Untuk Pasien COVID?">
       <div className="p-2 bg-gray-50 rounded-md">
-        {oxygen_section.map((oxygen, i) => (
-          <StackedLink
-            key={i}
-            title={oxygen.title}
-            uniqId={i}
-            url={oxygen.url}
-          />
-        ))}
+        <StackedLink links={data.oxygen_section} />
       </div>
-    </Accordion>
+    </StackedLinkDisclosure>
   );
 }

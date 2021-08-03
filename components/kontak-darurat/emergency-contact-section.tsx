@@ -1,13 +1,12 @@
 import React from "react";
 
+import { EmergencyContactCard } from "./emergency-contact-card";
 import {
   PrimaryAnchorButton,
   SecondaryAnchorButton,
 } from "~/components/ui/button";
 import { PhoneIcon } from "~/components/ui/icons";
 import { ContactDetail } from "~/lib/kontak-darurat/emergency-contacts";
-
-import { EmergencyContactCard } from "./emergency-contact-card";
 
 type KontakDaruratProps = {
   emergency_contacts: ContactDetail[];

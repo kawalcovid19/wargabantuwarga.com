@@ -1,6 +1,5 @@
-import ChatbotSection from "../chatbot-section";
-
 import { render } from "@testing-library/react";
+import ChatbotSection from "../chatbot-section";
 
 describe("ChatbotSection", () => {
   it("renders section correctly", () => {

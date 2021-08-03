@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Accordion } from "~/components/accordion";
-import StackedLink from "~/components/stacked-link";
+import { StackedLinkDisclosure } from "~/components/layout/stacked-link-disclosure";
+import StackedLink from "~/components/layout/stacked-link";
 import { VaccineDetail } from "~/lib/kontak-darurat/vaccine-information";
 
 type VaccineSectionProps = {
@@ -9,19 +9,11 @@ type VaccineSectionProps = {
 };
 
 export default function VaccineSection(data: VaccineSectionProps) {
-  const { vaccine_section } = data;
   return (
-    <Accordion title="Mau Vaksin COVID-19?">
+    <StackedLinkDisclosure title="Mau Vaksin COVID-19?">
       <div className="p-2 bg-gray-50 rounded-md">
-        {vaccine_section.map((vaccine, i) => (
-          <StackedLink
-            key={i}
-            title={vaccine.title}
-            uniqId={i}
-            url={vaccine.url}
-          />
-        ))}
+        <StackedLink links={data.vaccine_section} />
       </div>
-    </Accordion>
+    </StackedLinkDisclosure>
   );
 }

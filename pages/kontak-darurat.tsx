@@ -1,5 +1,7 @@
 import React from "react";
 
+import { GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 import ChatbotSection from "~/components/kontak-darurat/chatbot-section";
 import { EmergencyContactContent } from "~/components/kontak-darurat/emergency-contact-content";
 import EmergencyContactSection from "~/components/kontak-darurat/emergency-contact-section";
@@ -10,44 +12,37 @@ import { Page } from "~/components/layout/page";
 import { PageHeader } from "~/components/layout/page-header";
 import { Container } from "~/components/ui/container";
 import emergencyContacts, {
-  ContactDetail,
+  Contact,
 } from "~/lib/kontak-darurat/emergency-contacts";
 import oxygenInformation, {
-  OxygenDetail,
+  Oxygen,
 } from "~/lib/kontak-darurat/oxygen-information";
 import vaccineInformation, {
-  VaccineDetail,
+  Vaccine,
 } from "~/lib/kontak-darurat/vaccine-information";
 
-import { GetStaticProps } from "next";
 // import Image from "next/image";
-import { NextSeo } from "next-seo";
 
 type KontakDaruratProps = {
-  emergencyContacts: {
-    emergency_contacts: ContactDetail[];
-  };
-  vaccineInformation: {
-    vaccine_section: VaccineDetail[];
-  };
-  oxygenInformation: {
-    oxygen_section: OxygenDetail[];
-  };
+  emergencyContacts: Contact;
+  vaccineInformation: Vaccine;
+  oxygenInformation: Oxygen;
 };
 
 const meta = {
-  title: `Situs dan Kontak Penting Terkait COVID-19 | Kumpulan informasi situs dan kontak penting terkait fasilitas serta alat kesehatan untuk COVID-19 di level nasional.`,
+  title: `Situs dan Kontak Penting Terkait COVID-19`,
+  description: `Kumpulan informasi situs dan kontak penting terkait fasilitas serta alat kesehatan untuk COVID-19 di level nasional.`,
 };
 
 export default function KontakDaruratPage(props: KontakDaruratProps) {
-  const { emergency_contacts } = props.emergencyContacts;
-  const { vaccine_section } = props.vaccineInformation;
-  const { oxygen_section } = props.oxygenInformation;
-
   return (
     <div>
       <Page>
-        <NextSeo openGraph={{ title: meta.title }} title={meta.title} />
+        <NextSeo
+          description={meta.description}
+          openGraph={{ title: meta.title, description: meta.description }}
+          title={meta.title}
+        />
         <EmergencyContactContent>
           <Container className="space-y-2">
             <PageHeader
@@ -61,11 +56,17 @@ export default function KontakDaruratPage(props: KontakDaruratProps) {
               ]}
               title="Situs dan Kontak Penting Terkait COVID-19"
             />
-            <EmergencyContactSection emergency_contacts={emergency_contacts} />
+            <EmergencyContactSection
+              emergency_contacts={props.emergencyContacts.emergency_contacts}
+            />
             <ChatbotSection />
             <div className="space-y-4 px-4 py-6 bg-white">
-              <VaccineSection vaccine_section={vaccine_section} />
-              <OxygenSection oxygen_section={oxygen_section} />
+              <VaccineSection
+                vaccine_section={props.vaccineInformation.vaccine_section}
+              />
+              <OxygenSection
+                oxygen_section={props.oxygenInformation.oxygen_section}
+              />
             </div>
           </Container>
         </EmergencyContactContent>

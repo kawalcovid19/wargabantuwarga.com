@@ -1,9 +1,8 @@
 import { createElement } from "react";
 
-import { ContactIcon } from "~/components/ui/icons";
-
 import { ChevronRightIcon } from "@heroicons/react/solid";
 import Link from "next/link";
+import { ContactIcon } from "~/components/ui/icons";
 
 export function HomePageEmergencyContactCTA() {
   return (
@@ -29,7 +28,6 @@ export function HomePageEmergencyContactCTA() {
             </p>
           </div>
         </div>
-
         <div
           aria-hidden
           className="flex flex-none items-center justify-center ml-2"
