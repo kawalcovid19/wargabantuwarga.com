@@ -12,9 +12,9 @@ media_library:
     api_key: 959777522745792
     output_filename_only: true
     default_transformations:
-      - crop: scale
-        width: 640
-        quality: auto:eco
+      - - crop: scale
+          width: 640
+          quality: auto:eco
 
 collections:
   - name: "config"
