@@ -9,6 +9,7 @@ import {
   toSnakeCase,
   toTitleCase,
 } from "../../lib/string-utils";
+import { extractGoogleQuery } from "./utils";
 
 export async function fetchSheets() {
   const source = await fetch("https://kcov.id/wbw-sheets");
@@ -68,16 +69,7 @@ export async function fetchSheets() {
               if (colName == "lokasi") {
                 cellValue = toTitleCase(cellValue);
               } else if (["kontak", "link"].includes(colName)) {
-                const $$ = cheerio.load(cellValue);
-                const links = $$("a");
-                links.each((__, link) => {
-                  const linkEl = $$(link);
-                  const href = linkEl.attr("href");
-                  const url = new URL(href as string);
-                  const qer = new URLSearchParams(url.search);
-                  linkEl.attr("href", qer.get("q"));
-                });
-                cellValue = $$("body").html() ?? "";
+                cellValue = extractGoogleQuery(cellValue);
               }
               prev[colName] = cellValue;
               if (colName == "kontak") {
