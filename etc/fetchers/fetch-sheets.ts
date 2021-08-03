@@ -67,7 +67,7 @@ export async function fetchSheets() {
               let cellValue = row[col.index];
               if (colName == "lokasi") {
                 cellValue = toTitleCase(cellValue);
-              } else if (colName == "kontak") {
+              } else if (["kontak", "link"].includes(colName)) {
                 const $$ = cheerio.load(cellValue);
                 const links = $$("a");
                 links.each((__, link) => {
