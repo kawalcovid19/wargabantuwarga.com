@@ -10,6 +10,7 @@ media_library:
   config:
     cloud_name: wargabantuwarga
     api_key: 959777522745792
+    output_filename_only: true
 
 collections:
   - name: "config"
