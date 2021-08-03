@@ -11,15 +11,9 @@ import { BackButton } from "~/components/layout/back-button";
 import { Page } from "~/components/layout/page";
 import { PageHeader } from "~/components/layout/page-header";
 import { Container } from "~/components/ui/container";
-import emergencyContacts, {
-  Contact,
-} from "~/lib/kontak-darurat/emergency-contacts";
-import oxygenInformation, {
-  Oxygen,
-} from "~/lib/kontak-darurat/oxygen-information";
-import vaccineInformation, {
-  Vaccine,
-} from "~/lib/kontak-darurat/vaccine-information";
+import emergencyContacts, { Contact } from "~/lib/content/emergency-contacts";
+import oxygenInformation, { Oxygen } from "~/lib/content/oxygen-section";
+import vaccineInformation, { Vaccine } from "~/lib/content/vaccine-section";
 
 // import Image from "next/image";
 
@@ -30,7 +24,7 @@ type KontakDaruratProps = {
 };
 
 const meta = {
-  title: `Situs dan Kontak Penting Terkait COVID-19`,
+  title: `Kontak Penting Terkait COVID-19`,
   description: `Kumpulan informasi situs dan kontak penting terkait fasilitas serta alat kesehatan untuk COVID-19 di level nasional.`,
 };
 

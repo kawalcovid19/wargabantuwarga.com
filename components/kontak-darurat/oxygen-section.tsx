@@ -2,7 +2,7 @@ import React from "react";
 
 import { StackedLinkDisclosure } from "~/components/layout/stacked-link-disclosure";
 import StackedLink from "~/components/layout/stacked-link";
-import { OxygenDetail } from "~/lib/kontak-darurat/oxygen-information";
+import { OxygenDetail } from "~/lib/content/oxygen-section";
 
 type OxygenSectionProps = {
   oxygen_section: OxygenDetail[];

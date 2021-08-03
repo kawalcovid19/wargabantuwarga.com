@@ -7,9 +7,9 @@ import EmergencyContactSection from "~/components/kontak-darurat/emergency-conta
 import OxygenSection from "~/components/kontak-darurat/oxygen-section";
 import VaccineSection from "~/components/kontak-darurat/vaccine-section";
 import StackedLink from "~/components/stacked-link";
-import contacts from "~/lib/kontak-darurat/emergency-contacts";
-import oxygen from "~/lib/kontak-darurat/oxygen-information";
-import vaccine from "~/lib/kontak-darurat/vaccine-information";
+import contacts from "~/lib/content/emergency-contacts";
+import oxygen from "~/lib/content/oxygen-section";
+import vaccine from "~/lib/content/vaccine-section";
 import KontakDaruratPage, { getStaticProps } from "~/pages/kontak-darurat";
 
 jest.mock("next/router", () => require("next-router-mock"));

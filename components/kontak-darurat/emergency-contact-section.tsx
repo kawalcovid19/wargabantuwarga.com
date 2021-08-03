@@ -6,7 +6,7 @@ import {
   SecondaryAnchorButton,
 } from "~/components/ui/button";
 import { PhoneIcon } from "~/components/ui/icons";
-import { ContactDetail } from "~/lib/kontak-darurat/emergency-contacts";
+import { ContactDetail } from "~/lib/content/emergency-contacts";
 
 type KontakDaruratProps = {
   emergency_contacts: ContactDetail[];

@@ -45,10 +45,26 @@ collections:
     extension: "md"
     create: true
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "date" }
-      - { label: "Link Text", name: "link_text", widget: "string" }
-      - { label: "Link", name: "link", widget: "string" }
+      - {
+          label: "Title",
+          name: "title",
+          widget: "string",
+        }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "date",
+        }
+      - {
+          label: "Link Text",
+          name: "link_text",
+          widget: "string",
+        }
+      - {
+          label: "Link",
+          name: "link",
+          widget: "string",
+        }
       - {
           label: "Body",
           name: "body",
@@ -96,7 +112,11 @@ collections:
             label: "Categories"
             widget: list
             fields:
-              - { label: "Title", name: "title", widget: "string" }
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string"
+                }
               - {
                   label: "Description",
                   name: "description",
@@ -107,51 +127,16 @@ collections:
                 name: links
                 widget: list
                 fields:
-                  - { label: "Link Title", name: "title", widget: "string" }
-                  - { label: "Link URL", name: "url", widget: "string" }
-  - name: "emergency_page"
-    label: "Emergency Contact Page"
-    delete: false
-    preview_path: "kontak-darurat"
-    files:
-      - name: "emergency_contacts"
-        label: "Emergency Contacts"
-        file: "_content/emergency-contacts.json"
-        fields:
-          - name: "emergency_contacts"
-            label: "Emergency Contacts"
-            widget: list
-            fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Description", name: "description", widget: "string" }
-              - {
-                  label: "Image",
-                  name: "image",
-                  widget: "image",
-                  choose_url: true,
-                }
-              - { label: "Link URL", name: "url", widget: "string" }
-      - name: "vaccine_section"
-        label: "Vaccine Section"
-        file: "_content/vaccine-information.json"
-        fields:
-          - name: "vaccine_section"
-            label: "Vaccine Section"
-            widget: list
-            fields:
-              - { label: "Link Title", name: "title", widget: "string" }
-              - { label: "Link URL", name: "url", widget: "string" }
-      - name: "oxygen_section"
-        label: "Oxygen Information"
-        file: "_content/oxygen-information.json"
-        fields:
-          - name: "oxygen_section"
-            label: "Oxygen Information"
-            widget: list
-            fields:
-              - { label: "Link Title", name: "title", widget: "string" }
-              - { label: "Link URL", name: "url", widget: "string" }
-
+                  - {
+                      label: "Link Title",
+                      name: "title",
+                      widget: "string"
+                    }
+                  - {
+                      label: "Link URL",
+                      name: "url",
+                      widget: "string"
+                    }
   - name: "welcome_message"
     label: "Welcome Message"
     delete: false
@@ -166,10 +151,81 @@ collections:
               name: "last_updated_time",
               widget: "datetime",
             }
-          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "Title",
+              name: "title",
+              widget: "string",
+            }
           - {
               label: "Body",
               name: "body",
               widget: "markdown",
               hint: "Section body",
             }
+  - name: "kontak_darurat_page"
+    label: "Kontak Darurat Page"
+    delete: false
+    preview_path: "kontak-darurat"
+    files:
+      - name: "emergency_contacts"
+        label: "Emergency Contacts"
+        file: "_content/kontak-darurat/emergency-contacts.json"
+        fields:
+          - name: "emergency_contacts"
+            label: "Emergency Contacts"
+            widget: list
+            fields:
+              - { label: "Name",
+                  name: "name",
+                  widget: "string"
+                }
+              - { label: "Description",
+                  name: "description",
+                  widget: "string"
+                }
+              - {
+                  label: "Image",
+                  name: "image",
+                  widget: "image",
+                  choose_url: true,
+                }
+              - { label: "Link URL",
+                  name: "url",
+                  widget: "string"
+                }
+      - name: "vaccine_section"
+        label: "Vaccine Section"
+        file: "_content/kontak-darurat/vaccine-section.json"
+        fields:
+          - name: "vaccine_section"
+            label: "Vaccine Section"
+            widget: list
+            fields:
+              - {
+                  label: "Link Title",
+                  name: "title",
+                  widget: "string"
+                }
+              - {
+                  label: "Link URL",
+                  name: "url",
+                  widget: "string"
+                }
+      - name: "oxygen_section"
+        label: "Oxygen Section"
+        file: "_content/kontak-darurat/oxygen-section.json"
+        fields:
+          - name: "oxygen_section"
+            label: "Oxygen Section"
+            widget: list
+            fields:
+              - {
+                  label: "Link Title",
+                  name: "title",
+                  widget: "string"
+                }
+              - {
+                  label: "Link URL",
+                  name: "url",
+                  widget: "string"
+                }

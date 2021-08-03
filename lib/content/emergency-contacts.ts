@@ -1,4 +1,4 @@
-import emergencyContacts from "~/_content/emergency-contacts.json";
+import emergencyContacts from "~/_content/kontak-darurat/emergency-contacts.json";
 
 export type Contacts = Contact[];
 

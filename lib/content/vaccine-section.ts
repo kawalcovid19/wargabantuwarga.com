@@ -1,4 +1,4 @@
-import vaccineInformation from "~/_content/vaccine-information.json";
+import vaccineSection from "~/_content/kontak-darurat/vaccine-section.json";
 
 export type Vaccines = Vaccine[];
 
@@ -10,4 +10,4 @@ export type VaccineDetail = {
   readonly url: string;
 };
 
-export default vaccineInformation as unknown as Vaccine;
+export default vaccineSection as unknown as Vaccine;

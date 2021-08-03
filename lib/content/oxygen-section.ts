@@ -1,4 +1,4 @@
-import oxygenInformation from "~/_content/oxygen-information.json";
+import oxygenSection from "~/_content/kontak-darurat/oxygen-section.json";
 
 export type Oxygens = Oxygen[];
 
@@ -10,4 +10,4 @@ export type OxygenDetail = {
   readonly url: string;
 };
 
-export default oxygenInformation as unknown as Oxygen;
+export default oxygenSection as unknown as Oxygen;

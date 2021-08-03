@@ -2,7 +2,7 @@ import React from "react";
 
 import { StackedLinkDisclosure } from "~/components/layout/stacked-link-disclosure";
 import StackedLink from "~/components/layout/stacked-link";
-import { VaccineDetail } from "~/lib/kontak-darurat/vaccine-information";
+import { VaccineDetail } from "~/lib/content/vaccine-section";
 
 type VaccineSectionProps = {
   vaccine_section: VaccineDetail[];

@@ -1,7 +1,7 @@
 import React from "react";
 
 import { PrimaryAnchorButton } from "~/components/ui/button";
-import { ContactDetail } from "~/lib/kontak-darurat/emergency-contacts";
+import { ContactDetail } from "~/lib/content/emergency-contacts";
 
 export function EmergencyContactCard(contact: ContactDetail) {
   return (
