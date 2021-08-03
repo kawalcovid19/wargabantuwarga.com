@@ -67,6 +67,17 @@ export async function fetchSheets() {
               let cellValue = row[col.index];
               if (colName == "lokasi") {
                 cellValue = toTitleCase(cellValue);
+              } else if (colName == "kontak") {
+                const $$ = cheerio.load(cellValue);
+                const links = $$("a");
+                links.each((__, link) => {
+                  const linkEl = $$(link);
+                  const href = linkEl.attr("href");
+                  const url = new URL(href as string);
+                  const qer = new URLSearchParams(url.search);
+                  linkEl.attr("href", qer.get("q"));
+                });
+                cellValue = $$("body").html() ?? "";
               }
               prev[colName] = cellValue;
               if (colName == "kontak") {
