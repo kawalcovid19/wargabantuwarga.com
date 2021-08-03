@@ -1,18 +1,6 @@
 ---
 last_updated_time: 2021-08-03T02:17:03.467Z
 ---
-*\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19, kontak fasilitas/alat kesehatan, dan wadah bagi warga untuk saling bantu. Data di #WargaBantuWarga dikumpulkan oleh para relawan.*
-
-- - -
-
-## Daftar Isi
-
-1. [Situs atau Kontak Penting Terkait COVID-19](#situs-atau-kontak-penting-terkait-covid-19)
-2. [Laman Edukasi COVID-19](#laman-edukasi-covid-19)
-3. [Donasi untuk Warga Terdampak](#donasi-dan-penggalangan-dana)
-
-- - -
-
 ## Situs atau Kontak Penting Terkait COVID-19
 
 Temukan situs atau kontak fasilitas/alat kesehatan untuk COVID-19 di tingkat nasional.
