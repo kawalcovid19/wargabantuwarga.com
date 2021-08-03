@@ -5,6 +5,11 @@ media_folder: public/images
 public_folder: /images
 publish_mode: editorial_workflow
 display_url: https://www.wargabantuwarga.com
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: wargabantuwarga
+    api_key: 959777522745792
 
 collections:
   - name: "config"
