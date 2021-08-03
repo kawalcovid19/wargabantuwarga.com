@@ -105,6 +105,14 @@ collections:
               required: false,
               hint: "Cloudinary image path, eg. `v12345/my_file.png`",
             }
+          - {
+              label: "New Banner Image",
+              name: "new_home_banner_image_path",
+              widget: "image",
+              required: false,
+              hint: "New Cloudinary integration",
+              tagname: "",
+            }
   - name: "isolasi_mandiri_page"
     label: "Isolasi Mandiri Page"
     delete: false
@@ -118,6 +126,13 @@ collections:
             label: "Categories"
             widget: list
             fields:
+              - {
+                  label: "Temporary Body",
+                  name: "temporary_body",
+                  widget: "markdown",
+                  required: false,
+                  hint: "testing image upload in WYSIWYG editor",
+                }
               - { label: "Title", name: "title", widget: "string" }
               - {
                   label: "Description",
