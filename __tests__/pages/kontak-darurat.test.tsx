@@ -12,6 +12,9 @@ import oxygenSection from "~/lib/content/oxygen-section";
 import vaccineSection from "~/lib/content/vaccine-section";
 import KontakDaruratPage, { getStaticProps } from "~/pages/kontak-darurat";
 
+jest.mock("~/lib/content/emergency-contacts");
+jest.mock("~/lib/content/oxygen-section");
+jest.mock("~/lib/content/vaccine-section");
 jest.mock("next/router", () => require("next-router-mock"));
 
 describe("KontakDaruratPage", () => {
@@ -32,9 +35,7 @@ describe("KontakDaruratPage", () => {
       />,
     );
 
-    const title = screen.getByText(
-      /Situs dan Kontak Penting Terkait COVID-19/i,
-    );
+    const title = screen.getByText(/Kontak Penting Terkait COVID-19/i);
     expect(title).toBeVisible();
 
     const breadcrumbs = screen.getByText(/^Kontak Darurat$/i);

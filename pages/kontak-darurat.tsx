@@ -48,7 +48,7 @@ export default function KontakDaruratPage(props: KontakDaruratProps) {
                   current: true,
                 },
               ]}
-              title="Situs dan Kontak Penting Terkait COVID-19"
+              title="Kontak Penting Terkait COVID-19"
             />
             <EmergencyContactSection
               emergency_contacts={props.emergencyContacts.emergency_contacts}
