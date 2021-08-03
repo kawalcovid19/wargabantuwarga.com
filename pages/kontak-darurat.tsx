@@ -12,15 +12,15 @@ import { Page } from "~/components/layout/page";
 import { PageHeader } from "~/components/layout/page-header";
 import { Container } from "~/components/ui/container";
 import emergencyContacts, { Contact } from "~/lib/content/emergency-contacts";
-import oxygenInformation, { Oxygen } from "~/lib/content/oxygen-section";
-import vaccineInformation, { Vaccine } from "~/lib/content/vaccine-section";
+import oxygenSection, { Oxygen } from "~/lib/content/oxygen-section";
+import vaccineSection, { Vaccine } from "~/lib/content/vaccine-section";
 
 // import Image from "next/image";
 
 type KontakDaruratProps = {
   emergencyContacts: Contact;
-  vaccineInformation: Vaccine;
-  oxygenInformation: Oxygen;
+  vaccineSection: Vaccine;
+  oxygenSection: Oxygen;
 };
 
 const meta = {
@@ -56,10 +56,10 @@ export default function KontakDaruratPage(props: KontakDaruratProps) {
             <ChatbotSection />
             <div className="space-y-4 px-4 py-6 bg-white">
               <VaccineSection
-                vaccine_section={props.vaccineInformation.vaccine_section}
+                vaccine_section={props.vaccineSection.vaccine_section}
               />
               <OxygenSection
-                oxygen_section={props.oxygenInformation.oxygen_section}
+                oxygen_section={props.oxygenSection.oxygen_section}
               />
             </div>
           </Container>
@@ -73,8 +73,8 @@ export const getStaticProps: GetStaticProps = () => {
   return {
     props: {
       emergencyContacts,
-      vaccineInformation,
-      oxygenInformation,
+      vaccineSection,
+      oxygenSection,
     },
   };
 };

@@ -21,6 +21,7 @@ export function StackedLinkDisclosure({ children, title }: DisclosureProps) {
                     ? "transform rotate-180 duration-300 ease"
                     : "transform rotate-0 duration-300 ease"
                 }`}
+                data-testid="chevron-down-icon"
               />
             </span>
           </Disclosure.Button>

@@ -1,30 +1,34 @@
 import React from "react";
 
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import ChatbotSection from "~/components/kontak-darurat/chatbot-section";
 import { EmergencyContactCard } from "~/components/kontak-darurat/emergency-contact-card";
 import EmergencyContactSection from "~/components/kontak-darurat/emergency-contact-section";
 import OxygenSection from "~/components/kontak-darurat/oxygen-section";
 import VaccineSection from "~/components/kontak-darurat/vaccine-section";
-import StackedLink from "~/components/stacked-link";
-import contacts from "~/lib/content/emergency-contacts";
-import oxygen from "~/lib/content/oxygen-section";
-import vaccine from "~/lib/content/vaccine-section";
+import StackedLink from "~/components/layout/stacked-link";
+import emergencyContacts from "~/lib/content/emergency-contacts";
+import oxygenSection from "~/lib/content/oxygen-section";
+import vaccineSection from "~/lib/content/vaccine-section";
 import KontakDaruratPage, { getStaticProps } from "~/pages/kontak-darurat";
 
 jest.mock("next/router", () => require("next-router-mock"));
 
 describe("KontakDaruratPage", () => {
-  const { emergency_contacts } = contacts;
-  const { vaccine_section } = vaccine;
-  const { oxygen_section } = oxygen;
+  const { emergency_contacts } = emergencyContacts;
+  const { oxygen_section } = oxygenSection;
+  const { vaccine_section } = vaccineSection;
+
+  const [contact] = emergency_contacts;
+  const [oxygen] = oxygen_section;
+  const [vaccine] = vaccine_section;
 
   it("renders the title and the breadcrumbs correctly", () => {
     render(
       <KontakDaruratPage
-        emergencyContacts={contacts}
-        oxygenInformation={oxygen}
-        vaccineInformation={vaccine}
+        emergencyContacts={emergencyContacts}
+        oxygenSection={oxygenSection}
+        vaccineSection={vaccineSection}
       />,
     );
 
@@ -57,33 +61,25 @@ describe("KontakDaruratPage", () => {
   });
 
   it("renders the emergency contact card correctly", () => {
-    // eslint-disable-next-line no-lone-blocks
-    {
-      emergency_contacts.forEach((contact, i) => {
-        render(
-          <EmergencyContactCard
-            key={i}
-            description={contact.description}
-            image={contact.image}
-            name={contact.name}
-            url={contact.url}
-          />,
-        );
-        const cardImage = screen.getByAltText(
-          `kontak darurat covid ${contact.name}`,
-        );
-        expect(cardImage).toBeVisible();
-        const contact_name = screen.getByText(contact.name);
-        expect(contact_name).toBeVisible();
-        const contact_description = screen.getByText(contact.description);
-        expect(contact_description).toBeVisible();
-        const contact_button = screen.getByTestId(
-          `contact-button-${contact.name}`,
-        );
-        expect(contact_button).toBeVisible();
-        expect(contact_button).toHaveAttribute("href", contact.url);
-      });
-    }
+    render(
+      <EmergencyContactCard
+        description={contact.description}
+        image={contact.image}
+        name={contact.name}
+        url={contact.url}
+      />,
+    );
+    const cardImage = screen.getByAltText(
+      `kontak darurat covid ${contact.name}`,
+    );
+    expect(cardImage).toBeVisible();
+    const contact_name = screen.getByText(contact.name);
+    expect(contact_name).toBeVisible();
+    const contact_description = screen.getByText(contact.description);
+    expect(contact_description).toBeVisible();
+    const contact_button = screen.getByTestId(`contact-button-${contact.name}`);
+    expect(contact_button).toBeVisible();
+    expect(contact_button).toHaveAttribute("href", contact.url);
   });
 
   it("renders the chatbot section correctly", () => {
@@ -106,50 +102,48 @@ describe("KontakDaruratPage", () => {
     render(<VaccineSection vaccine_section={vaccine_section} />);
     const disclosure_title = screen.getByText(/Mau Vaksin COVID-19?/i);
     expect(disclosure_title).toBeVisible();
+
+    expect(screen.queryByText(vaccine.title)).toBeNull();
+    fireEvent.click(screen.getByTestId("chevron-down-icon"));
+    expect(screen.queryByText(vaccine.title)).toBeVisible();
   });
 
   it("render the stacked vaccine links correctly", () => {
-    // eslint-disable-next-line no-lone-blocks
-    {
-      // eslint-disable-next-line array-callback-return
-      vaccine_section.map((link, i) => {
-        render(
-          <StackedLink key={i} title={link.title} uniqId={i} url={link.url} />,
-        );
-        const linkItem = screen.getByTestId(`next-link-${link.title}`);
-        expect(screen.getByText(link.title)).toBeVisible();
-        expect(linkItem).toBeVisible();
-        expect(linkItem).toHaveAttribute("href", link.url);
-        expect(
-          screen.getByTestId(`external-link-icon-${link.url}`),
-        ).toBeVisible();
-      });
-    }
+    render(<StackedLink links={vaccine_section} />);
+
+    vaccine_section.forEach((url) => {
+      const linkItem = screen.getByTestId(`next-link-${url.title}`);
+      expect(screen.getByText(url.title)).toBeVisible();
+      expect(linkItem).toBeVisible();
+      expect(linkItem).toHaveAttribute("href", url.url);
+      expect(
+        screen.getByTestId(`external-link-icon-${url.title}`),
+      ).toBeVisible();
+    });
   });
 
   it("renders the oxygen disclosure correctly", () => {
     render(<OxygenSection oxygen_section={oxygen_section} />);
     const disclosure_title = screen.getByText(/Oksigen Untuk Pasien COVID?/i);
     expect(disclosure_title).toBeVisible();
+
+    expect(screen.queryByText(oxygen.title)).toBeNull();
+    fireEvent.click(screen.getByTestId("chevron-down-icon"));
+    expect(screen.queryByText(oxygen.title)).toBeVisible();
   });
 
   it("render the stacked oxygen links correctly", () => {
-    // eslint-disable-next-line no-lone-blocks
-    {
-      // eslint-disable-next-line array-callback-return
-      oxygen_section.map((link, i) => {
-        render(
-          <StackedLink key={i} title={link.title} uniqId={i} url={link.url} />,
-        );
-        const linkItem = screen.getByTestId(`next-link-${link.title}`);
-        expect(screen.getByText(link.title)).toBeVisible();
-        expect(linkItem).toBeVisible();
-        expect(linkItem).toHaveAttribute("href", link.url);
-        expect(
-          screen.getByTestId(`external-link-icon-${link.url}`),
-        ).toBeVisible();
-      });
-    }
+    render(<StackedLink links={oxygen_section} />);
+
+    oxygen_section.forEach((url) => {
+      const linkItem = screen.getByTestId(`next-link-${url.title}`);
+      expect(screen.getByText(url.title)).toBeVisible();
+      expect(linkItem).toBeVisible();
+      expect(linkItem).toHaveAttribute("href", url.url);
+      expect(
+        screen.getByTestId(`external-link-icon-${url.title}`),
+      ).toBeVisible();
+    });
   });
 });
 
@@ -157,9 +151,9 @@ describe("getStaticProps", () => {
   it("returns the props from the emergency contacts, vaccines, and oxygen correctly", () => {
     expect(getStaticProps({})).toEqual({
       props: {
-        emergencyContacts: contacts,
-        vaccineInformation: vaccine,
-        oxygenInformation: oxygen,
+        emergencyContacts,
+        oxygenSection,
+        vaccineSection,
       },
     });
   });
