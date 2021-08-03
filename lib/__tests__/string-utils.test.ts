@@ -2,6 +2,7 @@ import {
   allIsEmptyString,
   getInitial,
   getKebabCase,
+  isInternalLink,
   isNotEmpty,
   toSnakeCase,
   toTitleCase,
@@ -89,6 +90,33 @@ describe("allIsEmptyString", () => {
     "should return '$expected' when '$input' is provided",
     ({ input, expected }) => {
       expect(allIsEmptyString(input as string[])).toBe(expected);
+    },
+  );
+});
+
+describe("isInternalLink", () => {
+  it.each`
+    input                                                                     | expected
+    ${"/faq"}                                                                 | ${true}
+    ${"wargabantuwarga.com"}                                                  | ${true}
+    ${"wargabantuwarga.com/faq"}                                              | ${true}
+    ${"www.wargabantuwarga.com"}                                              | ${true}
+    ${"www.wargabantuwarga.com/faq"}                                          | ${true}
+    ${"http://wargabantuwarga.com"}                                           | ${true}
+    ${"http://wargabantuwarga.com/faq"}                                       | ${true}
+    ${"http://www.wargabantuwarga.com"}                                       | ${true}
+    ${"http://www.wargabantuwarga.com/faq"}                                   | ${true}
+    ${"https://www.wargabantuwarga.com"}                                      | ${true}
+    ${"https://www.wargabantuwarga.com/"}                                     | ${true}
+    ${"https://www.wargabantuwarga.com/provinces"}                            | ${true}
+    ${"https://hotline.wargabantuwarga.com"}                                  | ${false}
+    ${"https://hotline-wargabantuwarga.com"}                                  | ${false}
+    ${"https://kawalcovid19.id/content/1931/cara-isolasi-mandiri-yang-benar"} | ${false}
+    ${"https://bit.ly/hotlinewarga"}                                          | ${false}
+  `(
+    "should return '$expected' when '$input' is provided",
+    ({ input, expected }) => {
+      expect(isInternalLink(input as string)).toBe(expected);
     },
   );
 });

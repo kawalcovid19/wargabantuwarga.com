@@ -113,3 +113,15 @@ export function getQueryParams(query: string): {} {
         }, {})
     : {};
 }
+
+export function isInternalLink(link: string): boolean {
+  const domain = link
+    .replace("https://", "")
+    .replace("http://", "")
+    .split("/")[0];
+  return (
+    link.startsWith("/") ||
+    domain === "www.wargabantuwarga.com" ||
+    domain === "wargabantuwarga.com"
+  );
+}
