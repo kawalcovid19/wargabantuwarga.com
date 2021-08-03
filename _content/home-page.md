@@ -1,5 +1,6 @@
 ---
 last_updated_time: 2021-08-03T06:06:00.742Z
+new_home_banner_image_path: https://res.cloudinary.com/wargabantuwarga/image/upload/v1627049958/hero_banner_desktop_zat71c.png
 ---
 ## Situs atau Kontak Penting Terkait COVID-19
 
