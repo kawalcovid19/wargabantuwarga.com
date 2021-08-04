@@ -1,6 +1,7 @@
 import React from "react";
 
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import ChatbotSection from "~/components/kontak-darurat/chatbot-section";
 import { EmergencyContactCard } from "~/components/kontak-darurat/emergency-contact-card";
 import EmergencyContactSection from "~/components/kontak-darurat/emergency-contact-section";
@@ -104,9 +105,9 @@ describe("KontakDaruratPage", () => {
     const disclosure_title = screen.getByText(/Mau Vaksin COVID-19?/i);
     expect(disclosure_title).toBeVisible();
 
-    expect(screen.queryByText(vaccine.title)).toBeNull();
-    fireEvent.click(screen.getByTestId("chevron-down-icon"));
-    expect(screen.queryByText(vaccine.title)).toBeVisible();
+    expect(screen.queryByText(vaccine.title)).not.toBeInTheDocument();
+    userEvent.click(screen.getByTestId("chevron-down-icon"));
+    expect(screen.getByText(vaccine.title)).toBeVisible();
   });
 
   it("render the stacked vaccine links correctly", () => {
@@ -128,9 +129,9 @@ describe("KontakDaruratPage", () => {
     const disclosure_title = screen.getByText(/Oksigen Untuk Pasien COVID?/i);
     expect(disclosure_title).toBeVisible();
 
-    expect(screen.queryByText(oxygen.title)).toBeNull();
-    fireEvent.click(screen.getByTestId("chevron-down-icon"));
-    expect(screen.queryByText(oxygen.title)).toBeVisible();
+    expect(screen.queryByText(oxygen.title)).not.toBeInTheDocument();
+    userEvent.click(screen.getByTestId("chevron-down-icon"));
+    expect(screen.getByText(oxygen.title)).toBeVisible();
   });
 
   it("render the stacked oxygen links correctly", () => {
