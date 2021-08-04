@@ -126,13 +126,6 @@ collections:
             label: "Categories"
             widget: list
             fields:
-              - {
-                  label: "Temporary Body",
-                  name: "temporary_body",
-                  widget: "markdown",
-                  required: false,
-                  hint: "testing image upload in WYSIWYG editor",
-                }
               - { label: "Title", name: "title", widget: "string" }
               - {
                   label: "Description",
