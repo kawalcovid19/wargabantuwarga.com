@@ -11,10 +11,13 @@ media_library:
     cloud_name: wargabantuwarga
     api_key: 959777522745792
     output_filename_only: true
-    default_transformations:
-      - - crop: scale
-          width: 640
-          quality: auto:eco
+    # Enable if needed
+    # default_transformations:
+    #   - - crop: scale
+    #       width: 720
+    #       quality: auto:eco
+    #       color_space: tinysrgb
+    #       format: auto
 
 collections:
   - name: "config"
@@ -104,17 +107,10 @@ collections:
             }
           - {
               label: "Banner Image",
-              name: "home_banner_image_path",
-              widget: "string",
-              required: false,
-              hint: "Cloudinary image path, eg. `v12345/my_file.png`",
-            }
-          - {
-              label: "New Banner Image",
-              name: "new_home_banner_image_path",
+              name: "home_banner_image",
               widget: "image",
               required: false,
-              hint: "New Cloudinary integration",
+              hint: "Heading banner on top of Home page",
               tagname: "",
             }
   - name: "isolasi_mandiri_page"
