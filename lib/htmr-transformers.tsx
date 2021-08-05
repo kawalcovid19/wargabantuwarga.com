@@ -89,16 +89,8 @@ const img = (node: JSX.IntrinsicElements["img"]) => {
   const srcPath = getUniquePath(src);
   if (!srcPath) return <br />; // return an element to avoid type-checking error
   return (
-    <Image
-      alt={alt ?? ""}
-      blurDataURL={grayBlur}
-      height={360}
-      layout="responsive"
-      loading="lazy"
-      placeholder="blur"
-      src={srcPath}
-      width={720}
-    />
+    // prettier-ignore
+    <Image alt={alt ?? ""} blurDataURL={grayBlur} height={360} layout="responsive" loading="lazy" placeholder="blur" src={srcPath} width={720} />
   );
 };
 
