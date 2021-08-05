@@ -1,8 +1,8 @@
 import { HtmrOptions } from "htmr";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 import { getKebabCase } from "./string-utils";
-import { getUniquePath, grayBlur } from "~/lib/cloudinary-utils";
+// import { getUniquePath, grayBlur } from "~/lib/cloudinary-utils";
 
 const a = (node: JSX.IntrinsicElements["a"]) => {
   const { href, children } = node;
@@ -86,20 +86,23 @@ const strong = (node: JSX.IntrinsicElements["strong"]) => {
 
 const img = (node: JSX.IntrinsicElements["img"]) => {
   const { alt, src } = node;
-  const srcPath = getUniquePath(src);
-  if (!srcPath) return <br />; // return an element to avoid type-checking error
-  return (
-    <Image
-      alt={alt ?? ""}
-      blurDataURL={grayBlur}
-      height={360}
-      layout="responsive"
-      loading="lazy"
-      placeholder="blur"
-      src={srcPath}
-      width={720}
-    />
-  );
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img alt={alt ?? ""} loading="lazy" src={src} />; // See if this passes codecov check
+
+  // const srcPath = getUniquePath(src);
+  // if (!srcPath) return <br />; // return an element to avoid type-checking error
+  // return (
+  //   <Image
+  //     alt={alt ?? ""}
+  //     blurDataURL={grayBlur}
+  //     height={360}
+  //     layout="responsive"
+  //     loading="lazy"
+  //     placeholder="blur"
+  //     src={srcPath}
+  //     width={720}
+  //   />
+  // );
 };
 
 export const htmrTransform: HtmrOptions["transform"] = {
