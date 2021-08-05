@@ -81,7 +81,12 @@ export default function App({ Component, pageProps, router }: AppProps) {
           name="google-site-verification"
         />
 
-        <link href="/favicon-72x72.png" rel="apple-touch-icon" sizes="72x72" />
+        <link
+          href="/favicon-72x72.png"
+          rel="apple-touch-icon"
+          sizes="72x72"
+          type="image/png"
+        />
 
         <link
           href="/favicon-96x96.png"
