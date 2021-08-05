@@ -1,8 +1,7 @@
 import { HtmrOptions } from "htmr";
-// import Image from "next/image";
 import Link from "next/link";
 import { getKebabCase } from "./string-utils";
-// import { getUniquePath, grayBlur } from "~/lib/image/cloudinary-utils";
+import { ResponsiveImg } from "~/components/ui/responsive-img";
 
 const a = (node: JSX.IntrinsicElements["a"]) => {
   const { href, children } = node;
@@ -86,23 +85,9 @@ const strong = (node: JSX.IntrinsicElements["strong"]) => {
 
 const img = (node: JSX.IntrinsicElements["img"]) => {
   const { alt, src } = node;
-  // eslint-disable-next-line @next/next/no-img-element
-  return <img alt={alt ?? ""} loading="lazy" src={src} />; // See if this passes codecov check
+  if (!src || typeof src !== "string") return null;
 
-  // const srcPath = getUniquePath(src);
-  // if (!srcPath) return <br />; // return an element to avoid type-checking error
-  // return (
-  //   <Image
-  //     alt={alt ?? ""}
-  //     blurDataURL={grayBlur}
-  //     height={360}
-  //     layout="responsive"
-  //     loading="lazy"
-  //     placeholder="blur"
-  //     src={srcPath}
-  //     width={720}
-  //   />
-  // );
+  return <ResponsiveImg alt={alt ?? ""} src={src} />;
 };
 
 export const htmrTransform: HtmrOptions["transform"] = {
