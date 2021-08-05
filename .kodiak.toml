@@ -1,8 +1,5 @@
 version = 1
 
-[update]
-ignored_usernames = ["dependabot"]
-
 [merge.automerge_dependencies]
 versions = ["minor", "patch"]
 usernames = ["dependabot"]
