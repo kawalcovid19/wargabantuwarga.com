@@ -124,13 +124,13 @@ export function useSearch<T = unknown[]>({
         aggregationSettings?.map((cur) => cur.field) ?? [];
       Object.entries(queryParams).forEach(([key, value]) => {
         if (key == "q") {
-          keywordsParam = value as string;
+          keywordsParam = value;
           if (keywordsParam) {
             searchParams.query = keywordsParam;
             setLastKeywords(keywordsParam);
           }
         } else if (key == "sort") {
-          const sortParam: string = value as string;
+          const sortParam: string = value;
           if (sortParam) {
             searchParams.sort = sortParam;
           }
