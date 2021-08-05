@@ -36,7 +36,7 @@ const a = (node: JSX.IntrinsicElements["a"]) => {
   );
 };
 
-const h1 = (node: JSX.IntrinsicElements["h1"]) => {
+export const h1 = (node: JSX.IntrinsicElements["h1"]) => {
   const { children } = node;
 
   return <h1 id={getKebabCase(children?.toString())}>{children}</h1>;
@@ -86,11 +86,8 @@ const strong = (node: JSX.IntrinsicElements["strong"]) => {
 
 const img = (node: JSX.IntrinsicElements["img"]) => {
   const { alt, src } = node;
-
   const srcPath = getUniquePath(src);
-
   if (!srcPath) return <br />; // return an element to avoid type-checking error
-
   return (
     <Image
       alt={alt ?? ""}
