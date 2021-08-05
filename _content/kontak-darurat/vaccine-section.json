@@ -1,0 +1,16 @@
+{
+  "vaccine_section": [
+    {
+      "title": "Klik informasi lokasi vaksin di situs resmi pemerintah di sini.",
+      "url": "https://covid19.go.id/faskesvaksin"
+    },
+    {
+      "title": "Klik database layanan vaksin di Yuk Vaksin",
+      "url": "https://vaksincovid.carrd.co"
+    },
+    {
+      "title": "Follow dan lihat instagram story @infolokasivaksincovid_19",
+      "url": "https://www.instagram.com/infovaksincovid_19/"
+    }
+  ]
+}

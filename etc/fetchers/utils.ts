@@ -26,3 +26,16 @@ export const parseFAQ = async (html: string): Promise<Faqs> => {
 
   return faqJSON;
 };
+
+export const extractGoogleQuery = (value: string): string => {
+  const $ = cheerio.load(value);
+  const links = $("a");
+  links.each((_, link): void => {
+    const el = $(link);
+    const href = el.attr("href");
+    const url = new URL(href as string);
+    const usp = new URLSearchParams(url.search);
+    el.attr("href", usp.get("q"));
+  });
+  return $("body").html() ?? "";
+};
