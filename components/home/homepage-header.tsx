@@ -2,8 +2,9 @@ import Image from "next/image";
 import { Container } from "../ui/container";
 import { WBWLogoBlack } from "../ui/wbw-logo";
 
-import { bannerBlurData, cloudinaryLoader } from "~/lib/cloudinary-loader";
-import { getUniquePath } from "~/lib/cloudinary-utils";
+import { cloudinaryLoader } from "~/lib/image/cloudinary-loader";
+import { getUniquePath } from "~/lib/image/cloudinary-utils";
+import { HOME_BANNER_BLUR_DATA } from "~/constants/image";
 
 const FALLBACK_PATH = "v1627049958/hero_banner_desktop_zat71c.png";
 
@@ -16,7 +17,7 @@ export function HomepageHeader({ src }: { src?: string }) {
           <div aria-hidden className="select-none">
             <Image
               alt="WargaBantuWarga background"
-              blurDataURL={bannerBlurData}
+              blurDataURL={HOME_BANNER_BLUR_DATA}
               height={288}
               layout="responsive"
               loader={cloudinaryLoader}

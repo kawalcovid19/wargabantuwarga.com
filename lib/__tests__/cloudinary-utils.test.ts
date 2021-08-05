@@ -1,4 +1,4 @@
-import { getUniquePath } from "../cloudinary-utils";
+import { getUniquePath } from "../image/cloudinary-utils";
 
 const CLOUDINARY_URL_EXAMPLES = {
   basic:

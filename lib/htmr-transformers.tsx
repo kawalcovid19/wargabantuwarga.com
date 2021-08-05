@@ -2,7 +2,7 @@ import { HtmrOptions } from "htmr";
 // import Image from "next/image";
 import Link from "next/link";
 import { getKebabCase } from "./string-utils";
-// import { getUniquePath, grayBlur } from "~/lib/cloudinary-utils";
+// import { getUniquePath, grayBlur } from "~/lib/image/cloudinary-utils";
 
 const a = (node: JSX.IntrinsicElements["a"]) => {
   const { href, children } = node;
