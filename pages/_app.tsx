@@ -81,7 +81,38 @@ export default function App({ Component, pageProps, router }: AppProps) {
           name="google-site-verification"
         />
 
-        <link href="/favicon.ico" rel="icon" />
+        <link
+          href="/favicon-72x72.png"
+          rel="apple-touch-icon"
+          sizes="72x72"
+          type="image/png"
+        />
+
+        <link
+          href="/favicon-96x96.png"
+          rel="icon"
+          sizes="96x96"
+          type="image/png"
+        />
+        <link
+          href="/favicon-48x48.png"
+          rel="icon"
+          sizes="48x48"
+          type="image/png"
+        />
+        <link
+          href="/favicon-32x32.png"
+          rel="icon"
+          sizes="32x32"
+          type="image/png"
+        />
+        <link
+          href="/favicon-16x16.png"
+          rel="icon"
+          sizes="16x16"
+          type="image/png"
+        />
+
         <link href="/manifest.json" rel="manifest" />
         <meta content="#1667C2" name="theme-color" />
       </Head>
