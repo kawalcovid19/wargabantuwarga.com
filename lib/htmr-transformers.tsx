@@ -36,7 +36,7 @@ const a = (node: JSX.IntrinsicElements["a"]) => {
   );
 };
 
-export const h1 = (node: JSX.IntrinsicElements["h1"]) => {
+const h1 = (node: JSX.IntrinsicElements["h1"]) => {
   const { children } = node;
 
   return <h1 id={getKebabCase(children?.toString())}>{children}</h1>;
@@ -89,8 +89,16 @@ const img = (node: JSX.IntrinsicElements["img"]) => {
   const srcPath = getUniquePath(src);
   if (!srcPath) return <br />; // return an element to avoid type-checking error
   return (
-    // prettier-ignore
-    <Image alt={alt ?? ""} blurDataURL={grayBlur} height={360} layout="responsive" loading="lazy" placeholder="blur" src={srcPath} width={720} />
+    <Image
+      alt={alt ?? ""}
+      blurDataURL={grayBlur}
+      height={360}
+      layout="responsive"
+      loading="lazy"
+      placeholder="blur"
+      src={srcPath}
+      width={720}
+    />
   );
 };
 
