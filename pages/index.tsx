@@ -54,7 +54,7 @@ interface HomePageProps {
 const HomePage = (props: HomePageProps) => (
   <Page>
     <NextSeo title={meta.title} titleTemplate="%s" />
-    <HomepageHeader src={attributes.home_banner_image_path} />
+    <HomepageHeader src={attributes.home_banner_image} />
     <HomePageContent>
       <Container className="space-y-3">
         <HomePageStart />

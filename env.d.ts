@@ -18,7 +18,7 @@ declare module "*/_content/home-page.md" {
   // eslint-disable-next-line one-var
   const attributes: {
     last_updated_time: string;
-    home_banner_image_path?: string;
+    home_banner_image?: string;
   };
   // eslint-disable-next-line one-var
   const html: string;

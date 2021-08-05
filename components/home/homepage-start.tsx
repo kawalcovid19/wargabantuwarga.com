@@ -7,7 +7,7 @@ import { HomePageSection } from "./homepage-section";
 import { HomePageMenu } from "./homepage-menu";
 import { HomePageEmergencyContactCTA } from "./homepage-emergency-cta";
 import { HOMEPAGE_START_CTA_URL } from "~/constants";
-import { cloudinaryLoader, getBlurred } from "~/lib/cloudinary-loader";
+import { cloudinaryLoader, getBlurred } from "~/lib/image/cloudinary-loader";
 
 export function HomePageStart() {
   return (
