@@ -100,7 +100,7 @@ export function stripTags(str: string): string {
   return str.replace(/(<([^>]+)>)/gi, "");
 }
 
-export function getQueryParams(query: string): {} {
+export function getQueryParams(query: string): Record<string, string> {
   return query
     ? (/^[?#]/.test(query) ? query.slice(1) : query)
         .split("&")
