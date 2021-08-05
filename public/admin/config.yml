@@ -229,3 +229,34 @@ collections:
                   name: "url",
                   widget: "string"
                 }
+  - name: "donasi_page"
+    label: "Donasi Page"
+    delete: false
+    preview_path: "donasi"
+    files:
+      - name: "informasi_donasi"
+        label: "Informasi Donasi"
+        file: "_content/donasi/informasi-donasi.json"
+        fields:
+          - name: "donations"
+            label: "Donations"
+            widget: list
+            fields:
+              - { label: "Name",
+                  name: "name",
+                  widget: "string"
+                }
+              - { label: "Description",
+                  name: "description",
+                  widget: "string"
+                }
+              - {
+                  label: "Image",
+                  name: "image",
+                  widget: "image",
+                  choose_url: true,
+                }
+              - { label: "Link URL",
+                  name: "url",
+                  widget: "string"
+                }

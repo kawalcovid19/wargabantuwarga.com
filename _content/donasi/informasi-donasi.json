@@ -1,0 +1,52 @@
+{
+  "donations": [
+    {
+      "name": "COVID-19",
+      "image": "https://imgix.kitabisa.com/ab30a32d-d156-430a-8924-eb158d839915.jpg?ar=16:9&w=664&auto=format,compress",
+      "description": "Donasi untuk berbagai kebutuhan (RS, puskesmas, nakes, dan warga terdampak)",
+      "url": "https://kitabisa.com/campaign/daruratcovid2021"
+    },
+    {
+      "name": "COVID-19",
+      "image": "https://imgix.kitabisa.com/d79c0c3a-b958-4d4a-9b8c-5a19286f0242.jpg?ar=16:9&w=664&auto=format,compress",
+      "description": "Donasi untuk Tenaga Kesehatan",
+      "url": "https://kitabisa.com/campaign/seonhohadalawancorona"
+    },
+    {
+      "name": "COVID-19",
+      "image": "https://imgix.kitabisa.com/cd48addb-0567-46de-b4a7-f98e68b1cb70.jpg?ar=16:9&w=664&auto=format,compress",
+      "description": "Donasi untuk Inisiatif #WargaBantuWarga",
+      "url": "https://kitabisa.com/campaign/wargabantuwarga"
+    },
+    {
+      "name": "COVID-19",
+      "image": "/images/indonesia-pasti-bisa.png",
+      "description": "Donasi untuk Penyediaan Oksigen Concentrators di Rumah Sakit",
+      "url": "https://indonesiapastibisa.com/jaga-oksigen/"
+    },
+    {
+      "name": "COVID-19",
+      "image": "https://imgix.kitabisa.com/2f5b4184-9be5-4c7d-ad8e-d4e0eab2c3de.jpg?ar=16:9&w=664&auto=format,compress",
+      "description": "Donasi untuk Relawan dan Penggali Kubur",
+      "url": "https://kitabisa.com/apresiasipetugaspemakamancovid19"
+    },
+    {
+      "name": "COVID-19",
+      "image": "https://imgix.kitabisa.com/4bd347ef-fd19-4909-9107-45d5b22f98ae.jpg?ar=16:9&w=664&auto=format,compress",
+      "description": "Donasi untuk Warga dan Paket Isolasi Mandiri",
+      "url": "https://kitabisa.com/campaign/paketisolasimandiriwarga"
+    },
+    {
+      "name": "COVID-19",
+      "image": "https://fastcdn.benihbaik.com/campaign/thumbnail/benihbaik_2021-07-27_1627376657_PT_60ffcc1149ca2.jpg",
+      "description": "Donasi Paket Obat Gratis",
+      "url": "https://m.benihbaik.com/campaign/paket-obat-gratis"
+    },
+    {
+      "name": "COVID-19",
+      "image": "https://donasi.dompetdhuafa.org/wp-content/themes/donasidd/assets/img/logo-dd-with-text.png",
+      "description": "Donasi via Dompet Dhuafa",
+      "url": "https://donasi.dompetdhuafa.org/"
+    }
+  ]
+}
