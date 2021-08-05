@@ -1,4 +1,16 @@
-import { getUniquePath, getCloudName } from "../image/cloudinary-utils";
+import {
+  getCloudName,
+  getDefaultCloudOptions,
+  getDefaultOptions,
+  getDefaultTransformOptions,
+  getUniquePath,
+} from "~/lib/image/cloudinary-utils";
+import {
+  CLOUDINARY_CLOUD_NAME,
+  CLOUDINARY_DEFAULT_COLOR_SPACE,
+  CLOUDINARY_DEFAULT_QUALITY,
+  CLOUDINARY_DEFAULT_RESIZE_TYPE,
+} from "~/constants/image";
 
 const CLOUDINARY_URL_EXAMPLES = {
   basic:
@@ -13,6 +25,17 @@ const CLOUDINARY_URL_EXAMPLES = {
 };
 
 const CLOUDINARY_END_PATH = "v1627049958/hero_banner_desktop_zat71c.png";
+
+const CLOUDINARY_DEFAULT_OPTIONS = {
+  cloud: { cloudName: CLOUDINARY_CLOUD_NAME },
+  transformations: {
+    colorSpace: CLOUDINARY_DEFAULT_COLOR_SPACE,
+    quality: CLOUDINARY_DEFAULT_QUALITY,
+    resize: {
+      type: CLOUDINARY_DEFAULT_RESIZE_TYPE,
+    },
+  },
+};
 
 describe("getUniquePath", () => {
   it.each`
@@ -47,4 +70,57 @@ describe("getCloudName", () => {
       expect(getCloudName(input as string)).toBe(expected);
     },
   );
+});
+
+describe("getDefaultCloudOptions", () => {
+  it("should return default `cloud` options object", () => {
+    expect(getDefaultCloudOptions()).toEqual(CLOUDINARY_DEFAULT_OPTIONS.cloud);
+  });
+
+  it("should return custom `cloud` options object", () => {
+    expect(getDefaultCloudOptions("some-other-name")).toEqual({
+      cloudName: "some-other-name",
+    });
+  });
+});
+
+describe("getDefaultTransformOptions", () => {
+  it("should return default `transformations` options object", () => {
+    expect(getDefaultTransformOptions()).toEqual(
+      CLOUDINARY_DEFAULT_OPTIONS.transformations,
+    );
+  });
+
+  it("should return custom `transformations` options object", () => {
+    expect(getDefaultTransformOptions(555)).toEqual({
+      ...CLOUDINARY_DEFAULT_OPTIONS.transformations,
+      resize: {
+        ...CLOUDINARY_DEFAULT_OPTIONS.transformations.resize,
+        width: 555,
+      },
+    });
+  });
+});
+
+describe("getDefaultOptions", () => {
+  it("should return default options without width", () => {
+    expect(getDefaultOptions()).toEqual(CLOUDINARY_DEFAULT_OPTIONS);
+  });
+
+  it("should return default options with custom width", () => {
+    const customOptions = CLOUDINARY_DEFAULT_OPTIONS;
+    // @ts-expect-error width is optional field; no ready-to-use type definitions for transformations from Cloudinary
+    customOptions.transformations.resize.width = 123;
+
+    expect(getDefaultOptions(123)).toEqual(customOptions);
+  });
+
+  it("should return default options with custom width & cloud name", () => {
+    const customOptions = CLOUDINARY_DEFAULT_OPTIONS;
+    // @ts-expect-error width is optional field; no ready-to-use type definitions for transformations from Cloudinary
+    customOptions.transformations.resize.width = 123;
+    customOptions.cloud.cloudName = "some-other-user";
+
+    expect(getDefaultOptions(123, "some-other-user")).toEqual(customOptions);
+  });
 });
