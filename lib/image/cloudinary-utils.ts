@@ -5,12 +5,6 @@ import {
   CLOUDINARY_DEFAULT_RESIZE_TYPE,
 } from "~/constants/image";
 
-export const getUniquePath = (fullUrl: string = "") => {
-  if (!fullUrl || typeof fullUrl !== "string") return null;
-  const splitPath = fullUrl.split("/v")[1];
-  return splitPath ? `v${splitPath}` : null;
-};
-
 export const getCloudName = (fullUrl: string = "") => {
   if (!fullUrl || typeof fullUrl !== "string") return null;
   const splitPath = fullUrl.split("res.cloudinary.com/")[1];

@@ -3,13 +3,11 @@ import { Container } from "../ui/container";
 import { WBWLogoBlack } from "../ui/wbw-logo";
 
 import { cloudinaryLoader } from "~/lib/image/cloudinary-loader";
-import { getUniquePath } from "~/lib/image/cloudinary-utils";
 import { HOME_BANNER_BLUR_DATA } from "~/constants/image";
 
 const FALLBACK_PATH = "v1627049958/hero_banner_desktop_zat71c.png";
 
 export function HomepageHeader({ src }: { src?: string }) {
-  const srcPath = getUniquePath(src) ?? FALLBACK_PATH;
   return (
     <header>
       <Container>
@@ -24,7 +22,7 @@ export function HomepageHeader({ src }: { src?: string }) {
               placeholder="blur"
               priority={true}
               quality={90}
-              src={srcPath}
+              src={typeof src === "string" ? src : FALLBACK_PATH}
               width={640}
             />
           </div>

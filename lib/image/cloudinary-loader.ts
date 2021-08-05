@@ -1,4 +1,4 @@
-import { buildUrl } from "cloudinary-build-url";
+import { buildUrl, extractPublicId } from "cloudinary-build-url";
 import type { ImageLoaderProps } from "next/image";
 import {
   CLOUDINARY_DEFAULT_QUALITY,
@@ -10,7 +10,7 @@ import {
 } from "~/lib/image/cloudinary-utils";
 
 export const cloudinaryLoader = ({ src, width, quality }: ImageLoaderProps) => {
-  const url = buildUrl(src, {
+  const url = buildUrl(extractPublicId(src), {
     cloud: getDefaultCloudOptions(),
     transformations: {
       ...getDefaultTransformOptions(width),
@@ -22,7 +22,7 @@ export const cloudinaryLoader = ({ src, width, quality }: ImageLoaderProps) => {
 
 /** Programmatically get blurred image URL. Use as value of blurDataURL in Image component. */
 export const getBlurred = (src: string, width: number) => {
-  const url = buildUrl(src, {
+  const url = buildUrl(extractPublicId(src), {
     cloud: getDefaultCloudOptions(),
     transformations: {
       effect: "blur:1000",

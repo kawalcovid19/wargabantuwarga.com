@@ -3,7 +3,6 @@ import {
   getDefaultCloudOptions,
   getDefaultOptions,
   getDefaultTransformOptions,
-  getUniquePath,
 } from "~/lib/image/cloudinary-utils";
 import {
   CLOUDINARY_CLOUD_NAME,
@@ -24,8 +23,6 @@ const CLOUDINARY_URL_EXAMPLES = {
   invalid: "res.cloudinary.com/",
 };
 
-const CLOUDINARY_END_PATH = "v1627049958/hero_banner_desktop_zat71c.png";
-
 const CLOUDINARY_DEFAULT_OPTIONS = {
   cloud: { cloudName: CLOUDINARY_CLOUD_NAME },
   transformations: {
@@ -36,23 +33,6 @@ const CLOUDINARY_DEFAULT_OPTIONS = {
     },
   },
 };
-
-describe("getUniquePath", () => {
-  it.each`
-    input                                       | expected
-    ${CLOUDINARY_URL_EXAMPLES.basic}            | ${CLOUDINARY_END_PATH}
-    ${CLOUDINARY_URL_EXAMPLES.transformed}      | ${CLOUDINARY_END_PATH}
-    ${CLOUDINARY_URL_EXAMPLES.multiTransformed} | ${CLOUDINARY_END_PATH}
-    ${CLOUDINARY_URL_EXAMPLES.invalid}          | ${null}
-    ${null}                                     | ${null}
-    ${123}                                      | ${null}
-  `(
-    "should return '$expected' when '$input' is provided",
-    ({ input, expected }) => {
-      expect(getUniquePath(input as string)).toBe(expected);
-    },
-  );
-});
 
 describe("getCloudName", () => {
   it.each`
