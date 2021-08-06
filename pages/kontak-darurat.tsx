@@ -30,42 +30,41 @@ const meta = {
 
 export default function KontakDaruratPage(props: KontakDaruratProps) {
   return (
-    <div>
-      <Page>
-        <NextSeo
-          description={meta.description}
-          openGraph={{ title: meta.title, description: meta.description }}
-          title={meta.title}
-        />
-        <EmergencyContactContent>
-          <Container className="space-y-2">
-            <PageHeader
-              backButton={<BackButton href="/" />}
-              breadcrumbs={[
-                {
-                  name: "Kontak Darurat",
-                  href: "/kontak-darurat",
-                  current: true,
-                },
-              ]}
-              title="Kontak Penting Terkait COVID-19"
+    <Page>
+      <NextSeo
+        description={meta.description}
+        openGraph={{ title: meta.title, description: meta.description }}
+        title={meta.title}
+      />
+      <PageHeader
+        backButton={<BackButton href="/" />}
+        breadcrumbs={[
+          {
+            name: "Kontak Darurat",
+            href: "/kontak-darurat",
+            current: true,
+          },
+        ]}
+        description={meta.description}
+        title={meta.title}
+      />
+      <EmergencyContactContent>
+        <Container className="space-y-2">
+          <EmergencyContactSection
+            emergency_contacts={props.emergencyContacts.emergency_contacts}
+          />
+          <ChatbotSection />
+          <div className="space-y-4 px-4 py-6 bg-white">
+            <VaccineSection
+              vaccine_section={props.vaccineSection.vaccine_section}
             />
-            <EmergencyContactSection
-              emergency_contacts={props.emergencyContacts.emergency_contacts}
+            <OxygenSection
+              oxygen_section={props.oxygenSection.oxygen_section}
             />
-            <ChatbotSection />
-            <div className="space-y-4 px-4 py-6 bg-white">
-              <VaccineSection
-                vaccine_section={props.vaccineSection.vaccine_section}
-              />
-              <OxygenSection
-                oxygen_section={props.oxygenSection.oxygen_section}
-              />
-            </div>
-          </Container>
-        </EmergencyContactContent>
-      </Page>
-    </div>
+          </div>
+        </Container>
+      </EmergencyContactContent>
+    </Page>
   );
 }
 
