@@ -39,25 +39,31 @@ describe("KontakDaruratPage", () => {
     const title = screen.getByText(/Kontak Penting Terkait COVID-19/i);
     expect(title).toBeVisible();
 
+    const description = screen.getByText(
+      /Kumpulan informasi situs dan kontak penting terkait fasilitas serta alat kesehatan untuk COVID-19 di level nasional./i,
+    );
+    expect(description).toBeVisible();
+
     const breadcrumbs = screen.getByText(/^Kontak Darurat$/i);
     expect(breadcrumbs).toBeVisible();
+
     expect(breadcrumbs).toHaveAttribute("href", "/kontak-darurat");
   });
 
   it("renders the emergency contact sections correctly", () => {
     render(<EmergencyContactSection emergency_contacts={emergency_contacts} />);
-    const description = screen.getByText(
-      /Kumpulan informasi situs dan kontak penting terkait fasilitas serta alat kesehatan untuk COVID-19 di level nasional./i,
-    );
-    expect(description).toBeVisible();
+
     const faskes_title = screen.getByText(
       /Cari kontak penyedia faskes secara detail perprovinsi se-Indonesia/i,
     );
     expect(faskes_title).toBeVisible();
+
     const faskes_button = screen.getByText(/Telusuri Sekarang/i);
     expect(faskes_button).toBeVisible();
+
     const hotline_button = screen.getByText(/Hubungi 119 ext. 9/i);
     expect(hotline_button).toBeVisible();
+
     const hotline_title = screen.getByText(/Hotline Kementerian Kesehatan/i);
     expect(hotline_title).toBeVisible();
   });
