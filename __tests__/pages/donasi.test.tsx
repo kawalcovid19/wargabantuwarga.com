@@ -18,6 +18,11 @@ describe("DonasiPage", () => {
     const title = screen.getByText(/Donasi dan Penggalangan Dana/i);
     expect(title).toBeVisible();
 
+    const description = screen.getByText(
+      /Kumpulan informasi mengenai donasi, nomor rekening, dan lainnya yang relevan dengan bantuan COVID-19./i,
+    );
+    expect(description).toBeVisible();
+
     const breadcrumbs = screen.getByText(/^Donasi$/i);
     expect(breadcrumbs).toBeVisible();
     expect(breadcrumbs).toHaveAttribute("href", "/donasi");
@@ -32,12 +37,16 @@ describe("DonasiPage", () => {
         url={donation.url}
       />,
     );
+
     const cardImage = screen.getByAltText(`donasi covid`);
     expect(cardImage).toBeVisible();
+
     const donation_category = screen.getByText(donation.category);
     expect(donation_category).toBeVisible();
+
     const donation_title = screen.getByText(donation.title);
     expect(donation_title).toBeVisible();
+
     const donation_button = screen.getByTestId(
       `donation-button-${donation.title}`,
     );

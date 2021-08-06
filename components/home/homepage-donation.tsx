@@ -23,7 +23,7 @@ export function HomePageDonation() {
       <div className="p-4 text-center space-y-3">
         <h3 className="text-brand leading-5 font-semibold">
           <Link href="/donasi">
-            <a className="helper-link-cover">Lihat Selengkapnya</a>
+            <a>Lihat Selengkapnya</a>
           </Link>
         </h3>
       </div>

@@ -24,50 +24,44 @@ const meta = {
 
 export default function DonasiPage(props: InformasiDonasiProps) {
   return (
-    <div>
-      <Page>
-        <NextSeo
-          description={meta.description}
-          openGraph={{ title: meta.title, description: meta.description }}
-          title={meta.title}
-        />
-        <InternalPageContent>
-          <Container className="space-y-2">
-            <PageHeader
-              backButton={<BackButton href="/" />}
-              breadcrumbs={[
-                {
-                  name: "Donasi",
-                  href: "/donasi",
-                  current: true,
-                },
-              ]}
-              title="Donasi dan Penggalangan Dana"
-            />
-            <div className="p-4 overflow-hidden rounded-md space-y-6 bg-white">
-              <div>
-                <div className="text-sm text-gray-600 mb-4">
-                  {meta.description}
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                {props.informasiDonasi.donations.map(
-                  (donation: DonationDetail, i: number) => (
-                    <DonationCard
-                      key={i}
-                      category={donation.category}
-                      image={donation.image}
-                      title={donation.title}
-                      url={donation.url}
-                    />
-                  ),
-                )}
-              </div>
+    <Page>
+      <NextSeo
+        description={meta.description}
+        openGraph={{ title: meta.title, description: meta.description }}
+        title={meta.title}
+      />
+      <PageHeader
+        backButton={<BackButton href="/" />}
+        breadcrumbs={[
+          {
+            name: "Donasi",
+            href: "/donasi",
+            current: true,
+          },
+        ]}
+        description={meta.description}
+        title={meta.title}
+      />
+      <InternalPageContent>
+        <Container className="space-y-2">
+          <div className="p-4 overflow-hidden rounded-md space-y-6 bg-white">
+            <div className="grid grid-cols-2 gap-4">
+              {props.informasiDonasi.donations.map(
+                (donation: DonationDetail, i: number) => (
+                  <DonationCard
+                    key={i}
+                    category={donation.category}
+                    image={donation.image}
+                    title={donation.title}
+                    url={donation.url}
+                  />
+                ),
+              )}
             </div>
-          </Container>
-        </InternalPageContent>
-      </Page>
-    </div>
+          </div>
+        </Container>
+      </InternalPageContent>
+    </Page>
   );
 }
 
