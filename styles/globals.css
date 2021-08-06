@@ -66,18 +66,6 @@ img {
   margin-top: -6rem;
 }
 
-/* Hide scroll in contact-details copy box*/
-.copybox {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
-}
-
-.copybox::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  background: transparent; /* Chrome/Safari/Webkit */
-}
-
 /* override tailwind typography for Google Docs-generated content */
 /*
 .prose table {
