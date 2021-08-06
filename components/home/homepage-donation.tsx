@@ -13,9 +13,9 @@ export function HomePageDonation() {
         {informasiDonasi.donations.slice(0, 2).map((donation, i) => (
           <DonationCard
             key={i}
-            description={donation.description}
+            category={donation.category}
             image={donation.image}
-            name={donation.name}
+            title={donation.title}
             url={donation.url}
           />
         ))}

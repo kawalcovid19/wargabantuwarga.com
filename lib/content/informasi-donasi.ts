@@ -6,10 +6,10 @@ export type Donation = {
   readonly donations: DonationDetail[];
 };
 export type DonationDetail = {
-  readonly name: string;
+  readonly category: string;
   readonly url: string;
   readonly image: string;
-  readonly description: string;
+  readonly title: string;
 };
 
 export default informasiDonasi as unknown as Donation;

@@ -189,11 +189,13 @@ collections:
             label: "Emergency Contacts"
             widget: list
             fields:
-              - { label: "Name",
+              - {
+                  label: "Name",
                   name: "name",
                   widget: "string"
                 }
-              - { label: "Description",
+              - {
+                  label: "Description",
                   name: "description",
                   widget: "string"
                 }
@@ -203,7 +205,8 @@ collections:
                   widget: "image",
                   choose_url: true,
                 }
-              - { label: "Link URL",
+              - {
+                  label: "Link URL",
                   name: "url",
                   widget: "string"
                 }
@@ -256,12 +259,14 @@ collections:
             label: "Donations"
             widget: list
             fields:
-              - { label: "Name",
-                  name: "name",
+              - {
+                  label: "Title",
+                  name: "title",
                   widget: "string"
                 }
-              - { label: "Description",
-                  name: "description",
+              - {
+                  label: "Category",
+                  name: "category",
                   widget: "string"
                 }
               - {
@@ -270,7 +275,8 @@ collections:
                   widget: "image",
                   choose_url: true,
                 }
-              - { label: "Link URL",
+              - {
+                  label: "Link URL",
                   name: "url",
                   widget: "string"
                 }

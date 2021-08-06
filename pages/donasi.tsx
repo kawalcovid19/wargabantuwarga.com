@@ -22,7 +22,7 @@ const meta = {
   description: `Kumpulan informasi mengenai donasi, nomor rekening, dan lainnya yang relevan dengan bantuan COVID-19.`,
 };
 
-export default function KontakDaruratPage(props: InformasiDonasiProps) {
+export default function DonasiPage(props: InformasiDonasiProps) {
   return (
     <div>
       <Page>
@@ -55,9 +55,9 @@ export default function KontakDaruratPage(props: InformasiDonasiProps) {
                   (donation: DonationDetail, i: number) => (
                     <DonationCard
                       key={i}
-                      description={donation.description}
+                      category={donation.category}
                       image={donation.image}
-                      name={donation.name}
+                      title={donation.title}
                       url={donation.url}
                     />
                   ),
