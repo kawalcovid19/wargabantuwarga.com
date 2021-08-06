@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import htmr from "htmr";
 import { CopyButton } from "~/components/copy-button";
 import { OpenMapButton } from "~/components/open-map-button";
@@ -29,7 +30,7 @@ type DescriptionItemProps = {
   value?: string;
   withCopyButton?: boolean;
   withOpenMapButton?: boolean;
-  isLink?: boolean;
+  withTruncation?: boolean;
 };
 
 const DescriptionItem = (props: DescriptionItemProps) => {
@@ -39,16 +40,11 @@ const DescriptionItem = (props: DescriptionItemProps) => {
     <div className="py-4 px-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
       <dt className="text-sm font-medium text-gray-500">{props.label}</dt>
       <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-        {props.isLink && value.length > 0 ? (
-          <span className="overflow-y-scroll flex-grow whitespace-nowrap copybox border-b border-brand-500 mr-2">
-            {htmr(value, { transform: htmrTransform })}
-          </span>
-        ) : (
-          <span className="flex-grow">
-            {htmr(value, { transform: htmrTransform })}
-          </span>
-        )}
-
+        <span
+          className={clsx("flex grow", props.withTruncation ? "truncate" : "")}
+        >
+          {htmr(value, { transform: htmrTransform })}
+        </span>
         <div className="flex flex-col items-end space-y-1 flex-none ml-2">
           {typeof value == "string" &&
             value.length > 0 &&
@@ -78,12 +74,7 @@ export function ContactDetails({ contact }: ContactDetailsProps) {
           withCopyButton
           withOpenMapButton
         />
-        <DescriptionItem
-          isLink
-          label="Tautan"
-          value={contact.link}
-          withCopyButton
-        />
+        <DescriptionItem label="Tautan" value={contact.link} withTruncation />
         <DescriptionItem
           label="Terakhir Update"
           value={contact.terakhir_update}
