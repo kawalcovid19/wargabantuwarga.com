@@ -5,6 +5,19 @@ media_folder: public/images
 public_folder: /images
 publish_mode: editorial_workflow
 display_url: https://www.wargabantuwarga.com
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: wargabantuwarga
+    api_key: 959777522745792
+    output_filename_only: true
+    # Enable if needed
+    # default_transformations:
+    #   - - crop: scale
+    #       width: 720
+    #       quality: auto:eco
+    #       color_space: tinysrgb
+    #       format: auto
 
 collections:
   - name: "config"
@@ -94,10 +107,11 @@ collections:
             }
           - {
               label: "Banner Image",
-              name: "home_banner_image_path",
-              widget: "string",
+              name: "home_banner_image",
+              widget: "image",
               required: false,
-              hint: "Cloudinary image path, eg. `v12345/my_file.png`",
+              hint: "Heading banner on top of Home page",
+              tagname: "",
             }
   - name: "isolasi_mandiri_page"
     label: "Isolasi Mandiri Page"
@@ -112,7 +126,11 @@ collections:
             label: "Categories"
             widget: list
             fields:
-              - { label: "Title", name: "title", widget: "string" }
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string"
+                }
               - {
                   label: "Description",
                   name: "description",
@@ -123,9 +141,16 @@ collections:
                 name: links
                 widget: list
                 fields:
-                  - { label: "Link Title", name: "title", widget: "string" }
-                  - { label: "Link URL", name: "url", widget: "string" }
-
+                  - {
+                      label: "Link Title",
+                      name: "title",
+                      widget: "string"
+                    }
+                  - {
+                      label: "Link URL",
+                      name: "url",
+                      widget: "string"
+                    }
   - name: "welcome_message"
     label: "Welcome Message"
     delete: false
@@ -151,3 +176,70 @@ collections:
               widget: "markdown",
               hint: "Section body",
             }
+  - name: "kontak_darurat_page"
+    label: "Kontak Darurat Page"
+    delete: false
+    preview_path: "kontak-darurat"
+    files:
+      - name: "emergency_contacts"
+        label: "Emergency Contacts"
+        file: "_content/kontak-darurat/emergency-contacts.json"
+        fields:
+          - name: "emergency_contacts"
+            label: "Emergency Contacts"
+            widget: list
+            fields:
+              - { label: "Name",
+                  name: "name",
+                  widget: "string"
+                }
+              - { label: "Description",
+                  name: "description",
+                  widget: "string"
+                }
+              - {
+                  label: "Image",
+                  name: "image",
+                  widget: "image",
+                  choose_url: true,
+                }
+              - { label: "Link URL",
+                  name: "url",
+                  widget: "string"
+                }
+      - name: "vaccine_section"
+        label: "Vaccine Section"
+        file: "_content/kontak-darurat/vaccine-section.json"
+        fields:
+          - name: "vaccine_section"
+            label: "Vaccine Section"
+            widget: list
+            fields:
+              - {
+                  label: "Link Title",
+                  name: "title",
+                  widget: "string"
+                }
+              - {
+                  label: "Link URL",
+                  name: "url",
+                  widget: "string"
+                }
+      - name: "oxygen_section"
+        label: "Oxygen Section"
+        file: "_content/kontak-darurat/oxygen-section.json"
+        fields:
+          - name: "oxygen_section"
+            label: "Oxygen Section"
+            widget: list
+            fields:
+              - {
+                  label: "Link Title",
+                  name: "title",
+                  widget: "string"
+                }
+              - {
+                  label: "Link URL",
+                  name: "url",
+                  widget: "string"
+                }

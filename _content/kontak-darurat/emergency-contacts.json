@@ -1,0 +1,28 @@
+{
+  "emergency_contacts": [
+    {
+      "name": "SINARAP V3.0",
+      "url": "https://yankes.kemkes.go.id/app/siranap/",
+      "image": "/images/logo_kemkes_2-1.png",
+      "description": "Situs Sistem Informasi Rawat Inap"
+    },
+    {
+      "name": "Farma Plus",
+      "image": "/images/bumn-1.png",
+      "description": "Situs Ketersediaan Obat di Daerahmu",
+      "url": "https://farmaplus.kemkes.go.id"
+    },
+    {
+      "image": "/images/lentera-svarga.png",
+      "name": "Lentera Svarga",
+      "url": "https://lenterasvarga.carrd.co",
+      "description": "Situs Layanan Krematorium, Mobil Jenazah, Peti Mati"
+    },
+    {
+      "name": "Info Oxygen",
+      "image": "/images/info-oxygen.png",
+      "description": "Informasi Tabung Oksigen di Daerahmu",
+      "url": "https://oksigen.carrd.co/"
+    }
+  ]
+}

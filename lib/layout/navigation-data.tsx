@@ -55,6 +55,10 @@ export const navMenu: NavMenuItem[] = [
     exact: true,
   },
   {
+    name: "Situs/Kontak Penting Terkait Covid-19",
+    href: "/kontak-darurat",
+  },
+  {
     name: "Rumah Sakit",
     href: "/provinces?kebutuhan=Rumah%20sakit",
     exact: true,
