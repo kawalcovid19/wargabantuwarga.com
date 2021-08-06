@@ -41,7 +41,7 @@ const DescriptionItem = (props: DescriptionItemProps) => {
       <dt className="text-sm font-medium text-gray-500">{props.label}</dt>
       <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
         <span
-          className={clsx("flex grow", props.withTruncation ? "truncate" : "")}
+          className={clsx("flex-grow", props.withTruncation ? "truncate" : "")}
         >
           {htmr(value, { transform: htmrTransform })}
         </span>
