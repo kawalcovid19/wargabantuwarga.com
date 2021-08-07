@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import clsx from "clsx";
 import {
   AnchorButtonProps,
   buttonBlockStyles,
@@ -9,8 +10,6 @@ import {
   renderButtonIcon,
   secondaryButtonColors,
 } from "./utils";
-
-import clsx from "clsx";
 
 /**
  * Similar to `SecondaryButton`, but acts as a link.

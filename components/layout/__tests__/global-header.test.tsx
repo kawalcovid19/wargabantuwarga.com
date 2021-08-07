@@ -1,6 +1,5 @@
-import { GlobalHeader } from "../global-header";
-
 import { render } from "@testing-library/react";
+import { GlobalHeader } from "../global-header";
 
 jest.mock("next/router", () => require("next-router-mock"));
 

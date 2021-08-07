@@ -1,13 +1,12 @@
 import * as React from "react";
 
-import siteConfig from "../content/site-config";
-
 import {
   ChatAltIcon,
   HomeIcon,
   SearchIcon,
   ViewGridIcon,
 } from "@heroicons/react/outline";
+import siteConfig from "../content/site-config";
 
 export interface NavigationItem {
   name: string;
@@ -54,6 +53,10 @@ export const navMenu: NavMenuItem[] = [
     name: "Daftar Kontak Faskes per Provinsi",
     href: "/provinces",
     exact: true,
+  },
+  {
+    name: "Situs/Kontak Penting Terkait Covid-19",
+    href: "/kontak-darurat",
   },
   {
     name: "Rumah Sakit",

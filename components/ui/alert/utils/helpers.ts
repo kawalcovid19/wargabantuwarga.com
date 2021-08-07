@@ -1,10 +1,8 @@
 import * as React from "react";
 
-import { BaseColors } from "../../types";
-
-import { AlertProps } from "./types";
-
 import clsx from "clsx";
+import { BaseColors } from "../../types";
+import { AlertProps } from "./types";
 
 export function accentBorderColors(accentBorder?: boolean, color?: BaseColors) {
   if (accentBorder) {

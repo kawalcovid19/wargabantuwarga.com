@@ -1,8 +1,7 @@
-import { latestNewsItemBuilder } from "~/lib/content/__mocks__/builders/informasi-terbaru";
-
+import { render } from "@testing-library/react";
 import { HomePageLatestNews } from "../homepage-latest-news";
 
-import { render } from "@testing-library/react";
+import { latestNewsItemBuilder } from "~/lib/content/__mocks__/builders/informasi-terbaru";
 
 describe("HomePageLatestNews", () => {
   it("doesn't render more than 3 news items", () => {

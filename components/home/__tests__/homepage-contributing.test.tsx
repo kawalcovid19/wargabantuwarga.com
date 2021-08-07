@@ -1,6 +1,5 @@
-import { HomePageContributing } from "../homepage-contributing";
-
 import { render } from "@testing-library/react";
+import { HomePageContributing } from "../homepage-contributing";
 
 describe("HomePageContributing", () => {
   it("renders correctly", () => {

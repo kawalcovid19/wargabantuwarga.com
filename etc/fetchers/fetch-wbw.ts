@@ -1,10 +1,8 @@
-import { toSecond } from "../../lib/string-utils";
-
-import { fetchFaqSheets } from "./fetch-faq-sheets";
-import { fetchSheets } from "./fetch-sheets";
-
 import chalk from "chalk";
 import ora from "ora";
+import { toSecond } from "../../lib/string-utils";
+import { fetchFaqSheets } from "./fetch-faq-sheets";
+import { fetchSheets } from "./fetch-sheets";
 
 (function fetchWbw() {
   const start = process.hrtime();

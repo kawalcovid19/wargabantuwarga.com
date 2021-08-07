@@ -1,10 +1,8 @@
+import { ExclamationCircleIcon } from "@heroicons/react/outline";
+import { SecondaryButton } from "./ui/button";
 import { REPORT_CONTACT_FORM } from "~/constants/report";
 import { Contact } from "~/lib/data/provinces";
 import { stripTags } from "~/lib/string-utils";
-
-import { SecondaryButton } from "./ui/button";
-
-import { ExclamationCircleIcon } from "@heroicons/react/outline";
 
 type ReportButtonProps = {
   contact: Contact;

@@ -1,8 +1,7 @@
 import * as React from "react";
 
-import { HomePageStart } from "../homepage-start";
-
 import { render } from "@testing-library/react";
+import { HomePageStart } from "../homepage-start";
 
 describe("HomePageStart", () => {
   it("renders correctly", () => {
@@ -26,6 +25,80 @@ describe("HomePageStart", () => {
           >
             Cek sekarang
           </a>
+        </div>
+        <div
+          class="px-4"
+        >
+          <div
+            class="rounded-sm"
+          >
+            <div
+              class="flex flex-row relative py-5 px-4 border-gray-100 border-2 rounded-lg justify-between"
+            >
+              <div
+                class="flex flex-row"
+              >
+                <div
+                  aria-hidden="true"
+                  class="flex flex-none items-center justify-center w-12 h-12 bg-blue-50 rounded-full"
+                >
+                  <svg
+                    class="w-6 h-6 text-brand-500"
+                    fill="none"
+                    height="18"
+                    viewBox="0 0 20 18"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 4H3C1.89543 4 1 4.89543 1 6V15C1 16.1046 1.89543 17 3 17H17C18.1046 17 19 16.1046 19 15V6C19 4.89543 18.1046 4 17 4H12M8 4V3C8 1.89543 8.89543 1 10 1C11.1046 1 12 1.89543 12 3V4M8 4C8 5.10457 8.89543 6 10 6C11.1046 6 12 5.10457 12 4M7 12C8.10457 12 9 11.1046 9 10C9 8.89543 8.10457 8 7 8C5.89543 8 5 8.89543 5 10C5 11.1046 5.89543 12 7 12ZM7 12C8.30622 12 9.41741 12.8348 9.82924 14M7 12C5.69378 12 4.58249 12.8348 4.17065 14M13 9H16M13 13H15"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="ml-4 space-y-1"
+                >
+                  <h3
+                    class="text-base leading-5 font-semibold"
+                  >
+                    <a
+                      class="helper-link-cover"
+                      href="/kontak-darurat"
+                    >
+                      Kontak Darurat
+                    </a>
+                  </h3>
+                  <p
+                    class="text-sm leading-4 text-gray-500"
+                  >
+                    Situs dan kontak penting terkait COVID-19
+                  </p>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="flex flex-none items-center justify-center ml-2"
+              >
+                <svg
+                  class="w-6 h-6 text-brand-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
         <div
           class="px-4 py-6"
@@ -224,7 +297,7 @@ describe("HomePageStart", () => {
           class="px-4 py-6"
         >
           <a
-            href="https://petakebaikan.kitabisa.com"
+            href="https://sembako.wargabantuwarga.com"
             rel="nofollow noopener noreferrer"
             target="_blank"
           >
@@ -239,7 +312,7 @@ describe("HomePageStart", () => {
                 alt="Ajukan bantuan sembako jika positif Covid-19 - Daftar Sekarang"
                 decoding="async"
                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; filter: blur(20px); background-size: cover; background-image: url(https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_656,q_2,cs_tinysrgb,f_auto,e_blur:1000/v1627319803/sembako-cta-v2_czojls);"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; filter: blur(20px); background-size: cover; background-image: url(https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_656,q_2,f_auto,e_blur:1000/v1627319803/sembako-cta-v2_czojls);"
               />
             </div>
           </a>

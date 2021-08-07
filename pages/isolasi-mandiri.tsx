@@ -1,12 +1,11 @@
+import { GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 import { BackButton } from "~/components/layout/back-button";
 import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import StackedLink from "~/components/layout/stacked-link";
 import isolasiMandiri, { IsolasiMandiri } from "~/lib/content/isolasi-mandiri";
-
-import { GetStaticProps } from "next";
-import { NextSeo } from "next-seo";
 
 const meta = {
   title: `Pedoman Isolasi Mandiri`,

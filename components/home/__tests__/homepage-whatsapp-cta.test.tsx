@@ -1,6 +1,5 @@
-import { HomePageWhatsAppCTA } from "../homepage-whatsapp-cta";
-
 import { render } from "@testing-library/react";
+import { HomePageWhatsAppCTA } from "../homepage-whatsapp-cta";
 
 describe("HomePageContributing", () => {
   it("renders correctly", () => {

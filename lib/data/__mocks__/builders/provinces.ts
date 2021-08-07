@@ -1,5 +1,3 @@
-import { Contact, Province } from "../../provinces";
-
 import {
   build,
   fake,
@@ -7,6 +5,7 @@ import {
   perBuild,
   sequence,
 } from "@jackfranklin/test-data-bot";
+import { Contact, Province } from "../../provinces";
 
 export const contactBuilder = build<Contact>({
   fields: {

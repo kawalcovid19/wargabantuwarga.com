@@ -1,7 +1,7 @@
-import { getKebabCase } from "./string-utils";
-
 import { HtmrOptions } from "htmr";
 import Link from "next/link";
+import { getKebabCase } from "./string-utils";
+import { ResponsiveImg } from "~/components/ui/responsive-img";
 
 const a = (node: JSX.IntrinsicElements["a"]) => {
   const { href, children } = node;
@@ -83,6 +83,13 @@ const strong = (node: JSX.IntrinsicElements["strong"]) => {
   return <strong className="font-bold text-gray-900">{children}</strong>;
 };
 
+const img = (node: JSX.IntrinsicElements["img"]) => {
+  const { alt, src } = node;
+  if (!src || typeof src !== "string") return null;
+
+  return <ResponsiveImg alt={alt ?? ""} src={src} />;
+};
+
 export const htmrTransform: HtmrOptions["transform"] = {
   h1,
   h2,
@@ -93,4 +100,5 @@ export const htmrTransform: HtmrOptions["transform"] = {
   a,
   b,
   strong,
+  img,
 };

@@ -1,8 +1,7 @@
 import React from "react";
 
-import { SearchFilter } from "../search-filter";
-
 import { render } from "@testing-library/react";
+import { SearchFilter } from "../search-filter";
 
 describe("SearchFilter", () => {
   const handleFilterChange = jest.fn();

@@ -1,12 +1,9 @@
 import { createElement } from "react";
 
-import { contributingLinks } from "~/lib/home/contributing-links";
-
-import { OutlineAnchorButton } from "../ui/button";
-
-import { HomePageSection } from "./homepage-section";
-
 import { ChevronRightIcon } from "@heroicons/react/solid";
+import { OutlineAnchorButton } from "../ui/button";
+import { HomePageSection } from "./homepage-section";
+import { contributingLinks } from "~/lib/home/contributing-links";
 
 export function HomePageContributing() {
   return (

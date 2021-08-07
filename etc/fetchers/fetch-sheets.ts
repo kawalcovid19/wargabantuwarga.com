@@ -1,3 +1,7 @@
+import fs from "fs";
+import path from "path";
+import cheerio from "cheerio";
+import fetch from "cross-fetch";
 import {
   allIsEmptyString,
   getKebabCase,
@@ -5,11 +9,7 @@ import {
   toSnakeCase,
   toTitleCase,
 } from "../../lib/string-utils";
-
-import cheerio from "cheerio";
-import fetch from "cross-fetch";
-import fs from "fs";
-import path from "path";
+import { extractGoogleQuery } from "./utils";
 
 export async function fetchSheets() {
   const source = await fetch("https://kcov.id/wbw-sheets");
@@ -68,6 +68,8 @@ export async function fetchSheets() {
               let cellValue = row[col.index];
               if (colName == "lokasi") {
                 cellValue = toTitleCase(cellValue);
+              } else if (["kontak", "link"].includes(colName)) {
+                cellValue = extractGoogleQuery(cellValue);
               }
               prev[colName] = cellValue;
               if (colName == "kontak") {

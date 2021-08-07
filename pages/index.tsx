@@ -1,3 +1,9 @@
+import fs from "fs";
+import path from "path";
+import { ClockIcon } from "@heroicons/react/outline";
+import htmr from "htmr";
+import { GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 import { HomePageContent } from "~/components/home/homepage-content";
 import { HomePageContributing } from "~/components/home/homepage-contributing";
 import { HomepageHeader } from "~/components/home/homepage-header";
@@ -14,13 +20,6 @@ import { attributes, html } from "~/lib/content/home-page";
 import { LatestNewsItem } from "~/lib/content/informasi-terbaru";
 import siteConfig from "~/lib/content/site-config";
 import { htmrTransform } from "~/lib/htmr-transformers";
-
-import { ClockIcon } from "@heroicons/react/outline";
-import fs from "fs";
-import htmr from "htmr";
-import { GetStaticProps } from "next";
-import { NextSeo } from "next-seo";
-import path from "path";
 
 const meta = {
   title: `${siteConfig.site_tagline} | ${siteConfig.site_name}`,
@@ -55,7 +54,7 @@ interface HomePageProps {
 const HomePage = (props: HomePageProps) => (
   <Page>
     <NextSeo title={meta.title} titleTemplate="%s" />
-    <HomepageHeader src={attributes.home_banner_image_path} />
+    <HomepageHeader src={attributes.home_banner_image} />
     <HomePageContent>
       <Container className="space-y-3">
         <HomePageStart />

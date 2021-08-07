@@ -1,5 +1,4 @@
 import { BaseColors } from "../../types";
-
 import { BadgeSizes } from "./types";
 
 export function badgeRoundedStyles(rounded?: boolean) {
