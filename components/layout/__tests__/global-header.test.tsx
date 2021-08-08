@@ -9,7 +9,7 @@ describe("GlobalHeader", () => {
 
     expect(container.firstChild).toMatchInlineSnapshot(`
       <header
-        class="flex items-center justify-center fixed w-full h-16 px-4 z-40 bg-brand-500 shadow-md"
+        class="flex items-center justify-center fixed w-full h-16 px-4 z-40 bg-brand-500 shadow-md transform duration-200  "
       >
         <div
           class="w-full sm:max-w-xl mx-auto flex items-center justify-between h-full"
@@ -66,7 +66,7 @@ describe("GlobalHeader", () => {
           >
             <button
               aria-expanded="false"
-              class="flex items-center justify-center rounded-md h-10 w-10 ml-4 hover:bg-gray-100 hover:bg-opacity-10 focus:bg-gray-100 focus:bg-opacity-10"
+              class="flex items-center justify-center rounded-md h-10 w-10 ml-4 hover:bg-gray-100 hover:bg-opacity-10 focus:bg-gray-100 focus:bg-opacity-10 focus:outline-none appearance-none"
               id="headlessui-popover-button-1"
               type="button"
             >
