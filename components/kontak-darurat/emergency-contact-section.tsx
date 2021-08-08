@@ -15,13 +15,7 @@ type KontakDaruratProps = {
 export default function EmergencyContactSection(data: KontakDaruratProps) {
   const { emergency_contacts } = data;
   return (
-    <div className="p-4 overflow-hidden rounded-md space-y-6 bg-white">
-      <div>
-        <div className="text-sm text-gray-600 mb-4">
-          Kumpulan informasi situs dan kontak penting terkait fasilitas serta
-          alat kesehatan untuk COVID-19 di level nasional.
-        </div>
-      </div>
+    <div className="p-4 overflow-hidden space-y-6 bg-white">
       <div className="grid grid-cols-2 gap-4">
         {emergency_contacts.map((contact: ContactDetail, i: number) => (
           <EmergencyContactCard
