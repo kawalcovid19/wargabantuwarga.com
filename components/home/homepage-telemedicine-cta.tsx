@@ -14,7 +14,7 @@ export function HomePageTelemedicineCTA() {
           <Image
             alt="Telemedicine Gratis (Inisiatif Beberapa Dokter) - Cek Sekarang"
             blurDataURL={getBlurred(
-              "v1627319803/sembako-cta-v2_czojls.png",
+              "v1628431903/telemedicine-banner_2x_gonhgo.png",
               656,
             )}
             height={236}
@@ -23,7 +23,7 @@ export function HomePageTelemedicineCTA() {
             loading="lazy"
             placeholder="blur"
             quality={90}
-            src="v1627319803/sembako-cta-v2_czojls.png"
+            src="v1628431903/telemedicine-banner_2x_gonhgo.png"
             width={656}
           />
         </a>
