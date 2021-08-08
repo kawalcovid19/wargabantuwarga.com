@@ -90,8 +90,8 @@ function ContactListItem({
           </div>
         )}
         {isNotEmpty(contact.alamat) && (
-          <div className="mt-2 flex justify-between w-full">
-            <p className="mt-2 flex items-start text-sm text-gray-500 sm:mt-0">
+          <div className="mt-4 flex justify-between w-full">
+            <p className="flex items-start text-sm text-gray-500">
               <LocationMarkerIcon
                 aria-hidden="true"
                 className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"

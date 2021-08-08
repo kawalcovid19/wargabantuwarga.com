@@ -45,7 +45,7 @@ const DescriptionItem = (props: DescriptionItemProps) => {
         >
           {htmr(value, { transform: htmrTransform })}
         </span>
-        <div className="flex flex-col items-end space-y-1 flex-none ml-2">
+        <div className="flex flex-col items-end space-y-1 flex-none ml-2 gap-y-4">
           {typeof value == "string" &&
             value.length > 0 &&
             props.withCopyButton && <CopyButton text={stripTags(value)} />}
