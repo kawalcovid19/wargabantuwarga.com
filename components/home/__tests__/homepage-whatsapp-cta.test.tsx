@@ -46,7 +46,7 @@ describe("HomePageContributing", () => {
     `);
   });
 
-  it("should navigate to ", () => {
+  it("navigates to the configured WhatsApp contact URL", () => {
     const { getByText } = render(<HomePageWhatsAppCTA />);
 
     const link = getByText("Hubungi hotline sekarang").closest("a");
