@@ -331,6 +331,15 @@
         "ideas",
         "code"
       ]
+    },
+    {
+      "login": "morezam",
+      "name": "Mohammad Hamzehei",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74182139?v=4",
+      "profile": "https://github.com/morezam",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

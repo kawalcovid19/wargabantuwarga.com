@@ -3,7 +3,7 @@
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-30-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-31-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -146,6 +146,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/abui-am"><img src="https://avatars.githubusercontent.com/u/50738961?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Abui</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=abui-am" title="Code">💻</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/ramarahmanda"><img src="https://avatars.githubusercontent.com/u/12446260?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ramarahmanda</b></sub></a><br /><a href="#ideas-ramarahmanda" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=ramarahmanda" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/morezam"><img src="https://avatars.githubusercontent.com/u/74182139?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mohammad Hamzehei</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=morezam" title="Code">💻</a></td>
   </tr>
 </table>
 
