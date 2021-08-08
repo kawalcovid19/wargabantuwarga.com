@@ -3,6 +3,8 @@ const path = require("path");
 module.exports = {
   rootDir: path.join(__dirname, ".."),
   moduleNameMapper: {
+    "\\.css$": "identity-obj-proxy",
+    "typeface-inter": "identity-obj-proxy",
     "~/(.*)": "<rootDir>/$1",
   },
   watchPlugins: [
