@@ -52,6 +52,9 @@ describe("App", () => {
     });
 
     // TODO: find a way to trigger the handleStart callback
+    // either by submitting a PR to next-router-mock to emit the `routeChangeStart` event as well
+    // https://github.com/scottrippey/next-router-mock/blob/41ed3802502c6aa5920222f132726a42f5bda8a9/src/router.tsx#L13-L23
+    // or by implementing our own fake router.events
     await waitFor(() => expect(progressStartSpy).toHaveBeenCalledTimes(0));
     await waitFor(() => expect(progressDoneSpy).toHaveBeenCalledTimes(1));
 
