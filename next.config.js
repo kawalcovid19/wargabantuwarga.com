@@ -1,5 +1,9 @@
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
+
 /** @type {import("next/dist/next-server/server/config-shared").NextConfig} */
-module.exports = {
+module.exports = withBundleAnalyzer({
   // https://github.com/vercel/next.js/blob/canary/packages/next/server/config-shared.ts#L42-L65
   experimental: {
     optimizeCss: true,
@@ -14,9 +18,9 @@ module.exports = {
 
   images: {
     deviceSizes: [360, 420, 720],
-    domains: ["firebase-kanvas.imgix.net"],
-    loader: "imgix",
-    path: "https://firebase-kanvas.imgix.net/warga_bantu_warga/",
+    domains: ["firebase-kanvas.imgix.net", "res.cloudinary.com"],
+    loader: "cloudinary",
+    path: "https://res.cloudinary.com/wargabantuwarga/image/upload/",
   },
 
   // https://nextjs.org/docs/api-reference/next.config.js/react-strict-mode
@@ -42,4 +46,4 @@ module.exports = {
 
     return config;
   },
-};
+});

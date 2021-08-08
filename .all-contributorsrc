@@ -1,0 +1,332 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "zainfathoni",
+      "name": "Zain Fathoni",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6315466?v=4",
+      "profile": "https://zainf.dev",
+      "contributions": [
+        "code",
+        "projectManagement",
+        "doc",
+        "review",
+        "a11y",
+        "ideas",
+        "maintenance",
+        "mentoring",
+        "security",
+        "tool",
+        "translation"
+      ]
+    },
+    {
+      "login": "resir014",
+      "name": "Resi Respati",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5663877?v=4",
+      "profile": "https://resir014.xyz",
+      "contributions": [
+        "code",
+        "design",
+        "a11y",
+        "doc",
+        "ideas",
+        "maintenance",
+        "mentoring",
+        "projectManagement",
+        "review",
+        "security",
+        "tool",
+        "translation"
+      ]
+    },
+    {
+      "login": "ekamuktia",
+      "name": "ekamuktia",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9606523?v=4",
+      "profile": "https://github.com/ekamuktia",
+      "contributions": [
+        "bug",
+        "code",
+        "ideas",
+        "maintenance",
+        "review"
+      ]
+    },
+    {
+      "login": "ekafyi",
+      "name": "Eka",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6597211?v=4",
+      "profile": "https://dev.to/@ekafyi",
+      "contributions": [
+        "code",
+        "design",
+        "ideas",
+        "maintenance",
+        "review"
+      ]
+    },
+    {
+      "login": "mazipan",
+      "name": "Irfan Maulana",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7221389?v=4",
+      "profile": "https://mazipan.space",
+      "contributions": [
+        "bug",
+        "code",
+        "ideas",
+        "infra",
+        "maintenance",
+        "mentoring",
+        "review"
+      ]
+    },
+    {
+      "login": "adityapurwa",
+      "name": "Aditya Purwa",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6219895?v=4",
+      "profile": "http://taxfix.de",
+      "contributions": [
+        "code",
+        "ideas",
+        "infra",
+        "maintenance",
+        "tool"
+      ]
+    },
+    {
+      "login": "hanihusam",
+      "name": "Hani Husamuddin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25399426?v=4",
+      "profile": "https://www.linkedin.com/in/hanihusam/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "nibraswastaken",
+      "name": "nibraswastaken",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74199335?v=4",
+      "profile": "https://github.com/nibraswastaken",
+      "contributions": [
+        "code",
+        "infra",
+        "tool",
+        "ideas"
+      ]
+    },
+    {
+      "login": "kalwabed",
+      "name": "Kalwabed Rizki",
+      "avatar_url": "https://avatars.githubusercontent.com/u/49640654?v=4",
+      "profile": "http://kalwabed.xyz",
+      "contributions": [
+        "doc",
+        "translation",
+        "code"
+      ]
+    },
+    {
+      "login": "ihsanrabb",
+      "name": "ihsanrabb",
+      "avatar_url": "https://avatars.githubusercontent.com/u/47909781?v=4",
+      "profile": "https://github.com/ihsanrabb",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "emer7",
+      "name": "Gilbert Emerson",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21377166?v=4",
+      "profile": "https://github.com/emer7",
+      "contributions": [
+        "test"
+      ]
+    },
+    {
+      "login": "andriawan",
+      "name": "Muhammad Irwan Andriawan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13099373?v=4",
+      "profile": "https://andriawan.com",
+      "contributions": [
+        "doc",
+        "ideas",
+        "bug"
+      ]
+    },
+    {
+      "login": "TjandraD",
+      "name": "Tjandra Darmo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46013258?v=4",
+      "profile": "https://tjandradarmo.me",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "Namchee",
+      "name": "Cristopher",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32661241?v=4",
+      "profile": "https://github.com/Namchee",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "faizrktm",
+      "name": "Faiz Azmi Rekatama",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46273747?v=4",
+      "profile": "https://github.com/faizrktm",
+      "contributions": [
+        "code",
+        "tool"
+      ]
+    },
+    {
+      "login": "ardiwilda",
+      "name": "ardiwilda",
+      "avatar_url": "https://avatars.githubusercontent.com/u/87063733?v=4",
+      "profile": "https://github.com/ardiwilda",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "kevinmingtarja",
+      "name": "Kevin Mingtarja",
+      "avatar_url": "https://avatars.githubusercontent.com/u/69668484?v=4",
+      "profile": "http://linkedin.com/in/kevinmingtarja/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "vzrenggamani",
+      "name": "Rengga Prakoso Nugroho",
+      "avatar_url": "https://avatars.githubusercontent.com/u/14950309?v=4",
+      "profile": "https://renggaprakosonugroho.my.id/",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "pveyes",
+      "name": "Fatih Kalifa",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1614415?v=4",
+      "profile": "https://fatihkalifa.com",
+      "contributions": [
+        "doc",
+        "design",
+        "review",
+        "code"
+      ]
+    },
+    {
+      "login": "baraeb92",
+      "name": "Bara E. Brahmantika",
+      "avatar_url": "https://avatars.githubusercontent.com/u/23743497?v=4",
+      "profile": "http://kitabisa.com",
+      "contributions": [
+        "ideas",
+        "infra",
+        "projectManagement"
+      ]
+    },
+    {
+      "login": "suliskh",
+      "name": "Kukuh Sulistyo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/24476578?v=4",
+      "profile": "https://suliskh.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "ekiriandra-seo",
+      "name": "ekiriandra-seo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/85287011?v=4",
+      "profile": "https://github.com/ekiriandra-seo",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "syauqy",
+      "name": "Syauqy Nurul Aziz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3627108?v=4",
+      "profile": "https://github.com/syauqy",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "fncolon",
+      "name": "Muhammad Fauzan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/50759463?v=4",
+      "profile": "https://linktr.ee/funfuncfunction",
+      "contributions": [
+        "doc",
+        "code",
+        "ideas"
+      ]
+    },
+    {
+      "login": "hendraaagil",
+      "name": "Hendra Agil Syaputra",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54741166?v=4",
+      "profile": "https://hendraaagil.space",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "burhanahmeed",
+      "name": "Burhan Ahmed",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19145812?v=4",
+      "profile": "http://kusiaga.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "mukhlisakbr",
+      "name": "Mukhlis",
+      "avatar_url": "https://avatars.githubusercontent.com/u/27577560?v=4",
+      "profile": "http://mukhlis.id",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "nkristoporus",
+      "name": "Kristoporus Nathan Wilianto",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35729243?v=4",
+      "profile": "https://github.com/nkristoporus",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "abui-am",
+      "name": "Abui",
+      "avatar_url": "https://avatars.githubusercontent.com/u/50738961?v=4",
+      "profile": "https://github.com/abui-am",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "wargabantuwarga.com",
+  "projectOwner": "kawalcovid19",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

@@ -56,6 +56,16 @@ img {
   display: none;
 }
 
+.home-page-content [id]:before,
+.prose [id]:before {
+  content: "";
+  display: block;
+  position: relative;
+  width: 0;
+  height: 6rem;
+  margin-top: -6rem;
+}
+
 /* override tailwind typography for Google Docs-generated content */
 /*
 .prose table {
@@ -80,3 +90,17 @@ img {
   @apply leading-snug;
 }
  */
+
+/* override nprogress.css */
+#nprogress .bar {
+  background: #f3f4f6 !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 0.625rem #f3f4f6, 0 0 0.3125rem #f3f4f6 !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: #f3f4f6 !important;
+  border-left-color: #f3f4f6 !important;
+}

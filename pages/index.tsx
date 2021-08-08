@@ -1,87 +1,99 @@
-import { Page } from "../components/layout/page";
-import { PageContent } from "../components/layout/page-content";
-import { Script } from "../components/script";
-import data from "../data/wbw.json";
-import config from "../lib/config";
-import { bannerBlurData, imgixLoader } from "../lib/imgix-loader";
-
+import fs from "fs";
+import path from "path";
+import { ClockIcon } from "@heroicons/react/outline";
+import htmr from "htmr";
 import { GetStaticProps } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 import { NextSeo } from "next-seo";
+import { HomePageContent } from "~/components/home/homepage-content";
+import { HomePageContributing } from "~/components/home/homepage-contributing";
+import { HomepageHeader } from "~/components/home/homepage-header";
+import { HomePageLatestNews } from "~/components/home/homepage-latest-news";
+import { HomePageSection } from "~/components/home/homepage-section";
+import { HomePageStart } from "~/components/home/homepage-start";
+import { HomePageWelcome } from "~/components/home/homepage-welcome";
+import { HomePageWhatsAppCTA } from "~/components/home/homepage-whatsapp-cta";
+import { Page } from "~/components/layout/page";
+import { Alert } from "~/components/ui/alert";
+import { Container } from "~/components/ui/container";
+import { attributes, html } from "~/lib/content/home-page";
+import { LatestNewsItem } from "~/lib/content/informasi-terbaru";
+import siteConfig from "~/lib/content/site-config";
+import { htmrTransform } from "~/lib/htmr-transformers";
 
-type HomeProps = {
-  html: string;
-  css: string;
+const meta = {
+  title: `${siteConfig.site_tagline} | ${siteConfig.site_name}`,
 };
 
+interface LastUpdatedAlertProps {
+  className?: string;
+}
+
+const LastUpdatedAlert = ({ className }: LastUpdatedAlertProps) => (
+  <Alert accentBorder className={className} icon={ClockIcon}>
+    <p className="text-sm">
+      Pembaruan terakhir pada{" "}
+      {new Date(attributes.last_updated_time).toLocaleString("id", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZone: "Asia/Jakarta",
+        timeZoneName: "short",
+      })}
+    </p>
+  </Alert>
+);
+
+interface HomePageProps {
+  latestNews: LatestNewsItem[];
+}
+
+const HomePage = (props: HomePageProps) => (
+  <Page>
+    <NextSeo title={meta.title} titleTemplate="%s" />
+    <HomepageHeader src={attributes.home_banner_image} />
+    <HomePageContent>
+      <Container className="space-y-3">
+        <HomePageStart />
+        <HomePageLatestNews latestNews={props.latestNews} />
+        <HomePageContributing />
+        <HomePageWhatsAppCTA />
+        <LastUpdatedAlert />
+        <HomePageWelcome />
+        <HomePageSection className="px-4 py-6">
+          <article className="prose prose-indigo">
+            {htmr(html, { transform: htmrTransform })}
+          </article>
+        </HomePageSection>
+        <style jsx>{`
+          article {
+            margin: 0 auto;
+          }
+          h1 {
+            text-align: center;
+          }
+        `}</style>
+      </Container>
+    </HomePageContent>
+  </Page>
+);
+
 export const getStaticProps: GetStaticProps = async () => {
+  const markdownFiles = await Promise.all(
+    fs
+      .readdirSync(path.join(process.cwd(), "_content/informasi-terbaru"))
+      .map((fileName) => import(`../_content/informasi-terbaru/${fileName}`)),
+  ).catch(() => null);
+  const latestNews =
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    markdownFiles?.map((markdownFile) => markdownFile.default) ?? [];
   return {
     props: {
-      html: data.html,
-      css: data.css,
+      latestNews,
     },
   };
 };
 
-const meta = {
-  title: `${config.site_name} | ${config.site_tagline}`,
-};
-
-export default function Home(props: HomeProps) {
-  return (
-    <Page>
-      <NextSeo title={meta.title} titleTemplate="%s" />
-      <Head>
-        <style dangerouslySetInnerHTML={{ __html: props.css }} />
-      </Head>
-      <Script
-        dangerouslySetInnerHTML={{
-          __html: `(function(w,d,s,l,i){w[l] = w[l] || [];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5X4ZPBX');`,
-        }}
-      />
-      <noscript>
-        <iframe
-          height="0"
-          src="https://www.googletagmanager.com/ns.html?id=GTM-5X4ZPBX"
-          style={{ display: "none", visibility: "hidden" }}
-          title="gtm"
-          width="0"
-        />
-      </noscript>
-      <header>
-        <div className="max-w-xl mx-auto">
-          <h1 className="p-0">
-            <Link href="/">
-              <a>
-                <Image
-                  alt="Warga Bantu Warga"
-                  blurDataURL={bannerBlurData}
-                  height={287}
-                  layout="responsive"
-                  loader={imgixLoader}
-                  placeholder="blur"
-                  priority={true}
-                  quality={70}
-                  src="hero_banner.png"
-                  width={640}
-                />
-              </a>
-            </Link>
-          </h1>
-        </div>
-      </header>
-      <PageContent>
-        <article
-          className="home-page-content p-4 bg-white shadow overflow-hidden rounded-md"
-          dangerouslySetInnerHTML={{ __html: props.html }}
-        />
-      </PageContent>
-    </Page>
-  );
-}
+export default HomePage;

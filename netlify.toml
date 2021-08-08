@@ -2,20 +2,20 @@
   command = "yarn netlify-export"
   publish = "out"
 
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
+# [[plugins]]
+#  package = "@netlify/plugin-lighthouse"
 
-  [plugins.inputs.thresholds]
+#  [plugins.inputs.thresholds]
     # TEMPORARY - bump back up to 0.72 once we get Netlify CMS running.
-    performance = 0.57
-    accessibility = 1
+#    performance = 0.57
+#    accessibility = 1
     # TEMPORARY - bump back up to 0.93 once we get Netlify CMS running.
-    best-practices = 0.87
+#    best-practices = 0.87
     # TEMPORARY - bump back up to 0.9 once we get Netlify CMS running.
-    seo = 0.88
+#    seo = 0.83
 
-  [plugins.inputs.audits]
-    output_path = "lighthouse.html"
+#  [plugins.inputs.audits]
+#    output_path = "lighthouse.html"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
