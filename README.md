@@ -3,7 +3,7 @@
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-28-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-29-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -142,6 +142,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://kusiaga.com"><img src="https://avatars.githubusercontent.com/u/19145812?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Burhan Ahmed</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=burhanahmeed" title="Code">💻</a></td>
     <td align="center"><a href="http://mukhlis.id"><img src="https://avatars.githubusercontent.com/u/27577560?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mukhlis</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=mukhlisakbr" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/nkristoporus"><img src="https://avatars.githubusercontent.com/u/35729243?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kristoporus Nathan Wilianto</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=nkristoporus" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/abui-am"><img src="https://avatars.githubusercontent.com/u/50738961?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Abui</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=abui-am" title="Code">💻</a></td>
   </tr>
 </table>
 

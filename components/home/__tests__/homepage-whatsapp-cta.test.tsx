@@ -15,7 +15,7 @@ describe("HomePageContributing", () => {
           Masih belum dapat info yang kamu cari?
         </h2>
         <a
-          class="flex flex-row px-4 py-2 text-sm rounded-full items-center justify-center border border-transparent font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-75 text-white bg-[#25d366] focus:ring-[#25d366]"
+          class="flex flex-row px-4 py-2 text-sm rounded-full items-center justify-center border border-transparent font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-75 text-gray-800 bg-[#25d366] focus:ring-[#25d366]"
           href="https://bit.ly/hotlinewarga"
           rel="nofollow noopener noreferrer"
           target="_blank"
