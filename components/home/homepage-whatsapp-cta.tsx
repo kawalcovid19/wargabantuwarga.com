@@ -9,7 +9,7 @@ export function HomePageWhatsAppCTA() {
       <h2 className="font-semibold">Masih belum dapat info yang kamu cari?</h2>
       <PrimaryAnchorButton
         block
-        className="text-white bg-[#25d366] focus:ring-[#25d366]"
+        className="text-gray-800 bg-[#25d366] focus:ring-[#25d366]"
         color="none"
         href={siteConfig.whatsapp_contact_url}
         icon={WhatsAppIcon}
