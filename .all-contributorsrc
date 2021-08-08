@@ -340,6 +340,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "rubiagatra",
+      "name": "Doni Rubiagatra",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7299491?v=4",
+      "profile": "http://doni.dev",
+      "contributions": [
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
