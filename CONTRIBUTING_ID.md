@@ -43,11 +43,17 @@ Langkah-langkah untuk membuat _Draft Pull Request_:
 
 1. _Commit_ dan _push_ perubahan terbaru ke _forked repository_ Anda.
 2. Pergi ke bagian _Pull requests_ pada _forked repository_ Anda, dan klik _New pull request_.
+
    ![Petunjuk-1](https://user-images.githubusercontent.com/46013258/126284390-c2bd1aa6-fdc2-4aa6-a945-031f02db038e.png)
+
 3. Pilih _forked repository_ Anda sebagai _head repository_, dan pilih _branch_ tempat Anda membuat perubahan untuk bagian _compare_.
+
    ![Petunjuk-2](https://user-images.githubusercontent.com/46013258/126285036-27b49325-62a2-4a6c-b216-5bae261788da.png)
+
 4. Berikan sebuah judul dan beberapa deskripsi mengenai _pull request_ Anda, lalu pilih _Create draft pull request_ (seperti pada gambar di bawah) dan klik tombol berwarna hijau.
+
    ![Petunjuk-3](https://user-images.githubusercontent.com/46013258/126286179-04341e30-1224-49cb-9b9a-3c3aee99c308.png)
+
 5. Jangan lupa untuk menandai _Draft Pull Request_ Anda sebagai _Ready for review_ ketika Anda sudah melakukan semua perubahan yang diinginkan.
 
 ## Pertanyaan yang sering ditanyakan
