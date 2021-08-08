@@ -1,14 +1,14 @@
 import React from "react";
 
 // import { faqBuilder } from "~/lib/__mocks__/builders/faq";
-// import faqs from "~/lib/faqs";
+// import faqs from "~/lib/data/faqs";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import FaqPage from "../../pages/faq";
 
 // import { perBuild } from "@jackfranklin/test-data-bot";
-import { render, screen } from "@testing-library/react";
-// import userEvent from "@testing-library/user-event";
 
-jest.mock("~/lib/faqs");
+jest.mock("~/lib/data/faqs");
 jest.mock("next/router", () => require("next-router-mock"));
 
 describe("FaqPage", () => {
@@ -17,87 +17,104 @@ describe("FaqPage", () => {
 
     expect(screen.getByText(/pertanyaan yang sering ditanyakan/i))
       .toMatchInlineSnapshot(`
-      <h2
-        class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate"
+      <h1
+        class="text-xl font-bold leading-7 text-gray-900 sm:text-2xl sm:truncate"
       >
         Pertanyaan yang sering ditanyakan
-      </h2>
+      </h1>
     `);
   });
 
-  /*
   it("renders the questions and answers correctly", () => {
     render(<FaqPage />);
 
-    expect(screen.getByText(faq.pertanyaan)).toBeVisible();
-    expect(screen.getByText(faq.jawaban)).toBeVisible();
+    setTimeout(() => {
+      expect(
+        screen.getByText(
+          "Apakah boleh beraktivitas setelah isoman tapi hasil pcr masih positive?",
+        ),
+      ).toBeVisible();
+      expect(
+        screen.getByText(
+          "Asalkan di akhir isolasi anda sudah tidak bergejala, anda dinyatakan sudah bebas isolasi. Tetap patuhi prokes saat beraktivitas.",
+        ),
+      ).toBeVisible();
+    }, 200);
   });
 
   it("renders the links correctly", () => {
     render(<FaqPage />);
 
-    const link = screen.getByText(faq.sumber as string);
+    setTimeout(() => {
+      const link = screen.getByText(
+        "Protokol Tata Laksana COVID-19, Buku Saku Ed. 2",
+      );
 
-    expect(screen.getByText(/sumber:/i)).toBeVisible();
-    expect(link).toBeVisible();
-    expect(link).toHaveAttribute("href", faq.link);
+      expect(screen.getByText(/sumber:/i)).toBeVisible();
+      expect(link).toBeVisible();
+      expect(link).toHaveAttribute(
+        "href",
+        "https://covid19.go.id/p/protokol/protokol-tatalaksana-covid-19-di-indonesia",
+      );
+    }, 200);
   });
 
   it("renders the source without link correctly", () => {
-    const faqWithoutSourceLink = faqBuilder({
-      overrides: {
-        link: perBuild(() => undefined),
-      },
-    });
-
     render(<FaqPage />);
 
-    expect(
-      screen.getByText(`Sumber: ${faqWithoutSourceLink.sumber}`),
-    ).toBeVisible();
+    setTimeout(() => {
+      expect(screen.getByText(`Sumber: Saran Dokter`)).toBeVisible();
+    }, 200);
   });
 
   it("performs the search functionality correctly", () => {
-    const firstFaq = faqBuilder();
-    const secondFaq = faqBuilder();
+    const firstJawaban =
+      "Kontrol di Fasilitas Kesehatan Tingkat Pertama (Puskesmas) setelah 10 hari karantina untuk pemantauan klinis (jika tanpa gejala).";
+    const secondJawaban =
+      "Tanpa gejala / derajat ringan tidak perlu dirawat di rumah sakit. Derajat sedang / berat lebih baik dirawat di rumah sakit.";
 
-    render(<FaqPage faqSheets={[firstFaq, secondFaq]} />);
+    render(<FaqPage />);
 
-    expect(screen.getByText(firstFaq.jawaban)).toBeVisible();
+    setTimeout(() => {
+      expect(screen.getByText(firstJawaban)).toBeVisible();
 
-    userEvent.type(
-      screen.getByRole("textbox", {
-        name: /cari pertanyaan:/i,
-      }),
-      secondFaq.jawaban,
-    );
-    userEvent.click(
-      screen.getByRole("button", {
-        name: /cari/i,
-      }),
-    );
+      userEvent.type(
+        screen.getByRole("textbox", {
+          name: /cari pertanyaan:/i,
+        }),
+        secondJawaban,
+      );
+      userEvent.click(
+        screen.getByRole("button", {
+          name: /cari/i,
+        }),
+      );
 
-    expect(screen.queryByText(firstFaq.jawaban)).not.toBeInTheDocument();
-    expect(screen.getByText(secondFaq.jawaban)).toBeVisible();
+      expect(screen.queryByText(firstJawaban)).not.toBeInTheDocument();
+      expect(screen.getByText(secondJawaban)).toBeVisible();
+    }, 200);
   });
 
   it("performs the filter functionality correctly", () => {
-    const firstFaq = faqBuilder();
-    const secondFaq = faqBuilder();
+    const firstJawaban =
+      "Kontrol di Fasilitas Kesehatan Tingkat Pertama (Puskesmas) setelah 10 hari karantina untuk pemantauan klinis (jika tanpa gejala).";
+    const secondKategori = "Kontak Erat";
+    const secondJawaban = "2-14 hari";
 
-    render(<FaqPage faqSheets={[firstFaq, secondFaq]} />);
+    render(<FaqPage />);
 
-    expect(screen.getByText(firstFaq.jawaban)).toBeVisible();
+    setTimeout(() => {
+      expect(screen.getByText(firstJawaban)).toBeVisible();
 
-    userEvent.selectOptions(
-      screen.getByRole("combobox", {
-        name: /kategori pertanyaan/i,
-      }),
-      secondFaq.kategori_pertanyaan,
-    );
+      userEvent.selectOptions(
+        screen.getByRole("combobox", {
+          name: /kategori pertanyaan/i,
+        }),
+        secondKategori,
+      );
 
-    expect(screen.queryByText(firstFaq.jawaban)).not.toBeInTheDocument();
-    expect(screen.getByText(secondFaq.jawaban)).toBeVisible();
+      expect(screen.queryByText(firstJawaban)).not.toBeInTheDocument();
+      expect(screen.getByText(secondJawaban)).toBeVisible();
+    }, 200);
   });
-  */
 });

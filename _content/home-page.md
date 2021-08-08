@@ -1,36 +1,7 @@
 ---
-last_updated_time: 2021-07-28T07:41:13.128Z
+last_updated_time: 2021-08-07T12:02:41.758Z
+home_banner_image: https://res.cloudinary.com/wargabantuwarga/image/upload/v1627049958/hero_banner_desktop_zat71c.png
 ---
-*\#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19, kontak fasilitas/alat kesehatan, dan wadah bagi warga untuk saling bantu. Data di #WargaBantuWarga dikumpulkan oleh para relawan.* 
-
-- - -
-
-#### Hubungi Hotline #WargaBantuWarga
-
-**Chat via WhatsApp 081257579812 atau klik [bit.ly/halowarga](https://bit.ly/halowarga) (Tidak bisa ditelepon)**
-
-*Catatan: Jam operasional hotline pukul 07.30-22.30 WIB. Kami hanya memberikan informasi yang relevan, bukan bantuan langsung/darurat.*
-
-- - -
-
-#### Informasi Terbaru
-
-* **\[Wilayah Jakarta]** Daftar Vaksin di Sentra Vaksinasi SINERGI SEHAT untuk masyarakat usia 12 tahun ke atas:\
-  Waktu Pelaksanaan: 22 Juli-15 September 2021 (Senin-Jumat pukul 08.30-15.00 WIB)\
-  Lokasi: The Media Hotel & Towers (Jln. Gunung Sahari No. 3, RT 16/RW 3, Gunung Sahari Utara). [Klik di sini untuk daftar vaksin Sentra Vaksinasi SINERGI SEHAT](https://sinergisehat.vaksin.siapdok.id/#/). 
-* Kementerian Kesehatan meluncurkan SIRANAP terbaru versi 3.0. Melalui SIRANAP 3.0, kita dapat memeriksa **ketersediaan IGD di seluruh Indonesia**. Khusus untuk wilayah Jakarta ketersediaan IGD diperbarui setiap 3 jam sekali oleh para relawan lapangan. [Klik di sini untuk lihat ketersediaan IGD di Jakarta](https://yankes.kemkes.go.id/app/siranap/rumah_sakit?jenis=1&propinsi=31prop&kabkota=).
-
-- - -
-
-## Daftar Isi
-
-1. [Situs atau Kontak Penting Terkait COVID-19](#situsatau-kontak-penting-terkait-covid19)
-2. [Daftar Kontak Fasilitas dan Alat Kesehatan per Provinsi](#daftar-kontak-fasilitas-alat-kesehatanper-provinsi)
-3. [Laman Edukasi COVID-19](#laman-edukasi-covid19)
-4. [Donasi untuk Warga Terdampak](#donasidan-penggalangan-dana)
-
-- - -
-
 ## Situs atau Kontak Penting Terkait COVID-19
 
 Temukan situs atau kontak fasilitas/alat kesehatan untuk COVID-19 di tingkat nasional.
@@ -66,7 +37,15 @@ Hubungi 119 ext. 9
 
 ## Laman Edukasi COVID-19
 
-[Klik di sini untuk lihat kumpulan informasi mengenai COVID-19](https://docs.google.com/spreadsheets/d/1YOIoJcJ6VSyY7wdUySa68MiOdshpzfbC7kl5QIY2jFU/edit?usp=sharing), seperti penanganan jika Anda terkonfirmasi positif COVID-19, panduan melakukan isolasi mandiri, pemakaian tabung oksigen, vaksinasi, hingga tips menjaga kesehatan selama pandemi.
+Kumpulan informasi seputar COVID-19, yaitu:
+
+* [Penanganan jika positif COVID-19](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=1244922827&single=true)
+* [Isolasi mandiri: apa yang harus dilakukan?](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=236754766&single=true)
+* [Informasi seputar oksigen](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=2032388593&single=true)
+* [Tes antigen dan PCR](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=598872232&single=true)
+* [Vaksinasi COVID-19](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=1584366622&single=true)
+* [Jaga kesehatan di masa pandemi](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=1917836112&single=true)
+* [Layanan terkait COVID-19](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=372824836&single=true)
 
 - - -
 
@@ -79,18 +58,9 @@ Kumpulan informasi mengenai donasi, nomor rekening, dan lainnya yang relevan den
 
 - - -
 
-## Cara Berkontribusi
-
-* Mau upload info? [Tambahkan info di sini](https://forms.gle/Z3obzzcf9tY36MCH7).
-* Mau gabung jadi relawan untuk mengumpulkan dan memverifikasi data, atau menjadi tim hotline yang menjawab pertanyaan warga via WhatsApp? [Daftar jadi relawan di sini](https://bit.ly/RelawanTanggapGBC).
-
-  Mau mendonorkan darah plasma konvalesen (hanya diisi oleh calon pendonor, bukan penerima donor darah)? [Daftar donor darah di sini](https://forms.gle/dQL8qW3js5ufBRtW8).
-
-- - -
-
 Terima kasih kepada para kolaborator inisiatif [\#WargaBantuWarga](https://twitter.com/hashtag/WargaBantuWarga):
 
-[@kitabisacom](https://twitter.com/kitabisacom) [@KawalCOVID19](https://twitter.com/KawalCOVID19) [@fimnews](https://www.instagram.com/fimnews/) [@forumzakat](https://twitter.com/forumzakat) [Baznas](https://baznas.go.id/) [@KataDotAI](https://twitter.com/KataDotAI) [@indorelawan](https://twitter.com/indorelawan) [@pemimpinid](https://twitter.com/pemimpinid_) [@pandemictalks](https://www.instagram.com/pandemictalks/) [@laporcovid19](https://www.instagram.com/laporcovid19/) [@filantropiindonesia](https://www.instagram.com/filantropiindonesia/) [@BantuCovid](https://twitter.com/BantuCovid) [Human Initiative Volunteer Energy](https://hive.human-initiative.org/) [Narasi](https://www.instagram.com/narasi.tv/) [Qiscus](https://qiscus.io/) [Humanitarian Forum Indonesia](https://www.instagram.com/humanitarianforumindonesia/?hl=en) [urundayacovid.com](https://urundayacovid.com/) [Serikat Buruh Migran Indonesia](https://sbmi.or.id/) [atmaGO](https://covid19.atmago.com/id) [Jaringan Semua Murid Semua Guru](https://semuamuridsemuaguru.id/) [ILUNI UI Psikologi](https://instagram.com/iluniuipsi?utm_medium=copy_link) [KG Media](https://www.kgmedia.id/)
+[@kitabisacom](https://twitter.com/kitabisacom) [@KawalCOVID19](https://twitter.com/KawalCOVID19) [@fimnews](https://www.instagram.com/fimnews/) [@forumzakat](https://twitter.com/forumzakat) [Baznas](https://baznas.go.id/) [@KataDotAI](https://twitter.com/KataDotAI) [@indorelawan](https://twitter.com/indorelawan) [@pemimpinid](https://twitter.com/pemimpinid_) [@pandemictalks](https://www.instagram.com/pandemictalks/) [@laporcovid19](https://www.instagram.com/laporcovid19/) [@filantropiindonesia](https://www.instagram.com/filantropiindonesia/) [@BantuCovid](https://twitter.com/BantuCovid) [Human Initiative Volunteer Energy](https://hive.human-initiative.org/) [Narasi](https://www.instagram.com/narasi.tv/) [Qiscus](https://qiscus.io/) [Humanitarian Forum Indonesia](https://www.instagram.com/humanitarianforumindonesia/?hl=en) [urundayacovid.com](https://urundayacovid.com/) [Trustmedis](https://trustmedis.com/) [Serikat Buruh Migran Indonesia](https://sbmi.or.id/) [atmaGO](https://covid19.atmago.com/id) [Jaringan Semua Murid Semua Guru](https://semuamuridsemuaguru.id/) [ILUNI UI Psikologi](https://instagram.com/iluniuipsi?utm_medium=copy_link) [KG Media](https://www.kgmedia.id/)
 
 - - -
 

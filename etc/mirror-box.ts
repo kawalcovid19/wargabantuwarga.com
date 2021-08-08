@@ -1,10 +1,9 @@
-import { toSecond } from "../lib/string-utils";
-
+import fs from "fs";
+import path from "path";
 import chalk from "chalk";
 import fetch from "cross-fetch";
-import fs from "fs";
 import ora from "ora";
-import path from "path";
+import { toSecond } from "../lib/string-utils";
 
 export async function mirror(name: string) {
   const start = process.hrtime();
@@ -18,7 +17,6 @@ export async function mirror(name: string) {
 }
 
 (function main() {
-  void mirror("wbw.json");
   void mirror("wbw-faq-sheets.json");
   void mirror("wbw-sheets.json");
 })();

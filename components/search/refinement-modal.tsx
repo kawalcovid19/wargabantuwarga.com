@@ -1,10 +1,9 @@
 import { Fragment, useRef } from "react";
 
-import CustomRefinementList from "~/components/search/custom-refinement-list";
-
 import { Dialog, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/solid";
 import { RefinementItem } from "react-instantsearch-dom";
+import CustomRefinementList from "~/components/search/custom-refinement-list";
 
 type FilterSetting = {
   field: string;

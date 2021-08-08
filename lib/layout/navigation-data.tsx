@@ -6,6 +6,7 @@ import {
   SearchIcon,
   ViewGridIcon,
 } from "@heroicons/react/outline";
+import siteConfig from "../content/site-config";
 
 export interface NavigationItem {
   name: string;
@@ -27,7 +28,7 @@ export const bottomNavigation: NavigationItem[] = [
   {
     name: "Hubungi Kami",
     icon: ChatAltIcon,
-    href: "https://wa.me/6281257579812",
+    href: siteConfig.whatsapp_contact_url,
     external: true,
   },
   {
@@ -54,6 +55,10 @@ export const navMenu: NavMenuItem[] = [
     exact: true,
   },
   {
+    name: "Situs/Kontak Penting Terkait Covid-19",
+    href: "/kontak-darurat",
+  },
+  {
     name: "Rumah Sakit",
     href: "/provinces?kebutuhan=Rumah%20sakit",
     exact: true,
@@ -72,5 +77,9 @@ export const navMenu: NavMenuItem[] = [
     name: "Donor Plasma",
     href: "/provinces?kebutuhan=Donor%20plasma",
     exact: true,
+  },
+  {
+    name: "Isolasi Mandiri",
+    href: "/isolasi-mandiri",
   },
 ];

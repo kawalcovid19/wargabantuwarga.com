@@ -1,7 +1,7 @@
 import * as React from "react";
 
+import clsx from "clsx";
 import { Spinner } from "../spinner";
-
 import {
   buttonBlockStyles,
   ButtonProps,
@@ -11,8 +11,6 @@ import {
   primaryButtonColors,
   renderButtonIcon,
 } from "./utils";
-
-import clsx from "clsx";
 
 /**
  * Button component used for primary actions.
@@ -30,6 +28,7 @@ export const PrimaryButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
       color = "blue",
       rounded,
       icon,
+      iconPosition = "left",
       isLoading,
       loadingText = "Memuat...",
       disabled,
@@ -40,7 +39,7 @@ export const PrimaryButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) => (
     <button
       className={clsx(
-        buttonBlockStyles(block),
+        buttonBlockStyles(block, iconPosition),
         buttonSizes(size),
         buttonRoundedStyles(rounded, size),
         "items-center justify-center border border-transparent font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2",
@@ -54,11 +53,12 @@ export const PrimaryButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
       type={type ?? "button"}
       {...rest}
     >
-      {renderButtonIcon(
-        isLoading ? Spinner : icon,
+      {renderButtonIcon({
+        icon: isLoading ? Spinner : icon,
         size,
-        isLoading ? "animate-spin" : undefined,
-      )}
+        additionalClasses: isLoading ? "animate-spin" : undefined,
+        iconPosition,
+      })}
       {isLoading ? loadingText : children}
     </button>
   ),

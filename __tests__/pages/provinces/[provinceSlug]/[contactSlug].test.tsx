@@ -1,16 +1,15 @@
 import React from "react";
 
-import { contactBuilder } from "~/lib/__mocks__/builders/provinces";
-import provinces from "~/lib/provinces";
+import { perBuild } from "@jackfranklin/test-data-bot";
+import { render, screen } from "@testing-library/react";
+import { contactBuilder } from "~/lib/data/__mocks__/builders/provinces";
+import provinces from "~/lib/data/provinces";
 import ContactPage, {
   getStaticPaths,
   getStaticProps,
 } from "~/pages/provinces/[provinceSlug]/[contactSlug]";
 
-import { perBuild } from "@jackfranklin/test-data-bot";
-import { render, screen } from "@testing-library/react";
-
-jest.mock("~/lib/provinces");
+jest.mock("~/lib/data/provinces");
 
 describe("ContactPage", () => {
   const [province] = provinces;

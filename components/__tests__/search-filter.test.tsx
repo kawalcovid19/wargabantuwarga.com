@@ -1,8 +1,7 @@
 import React from "react";
 
-import { SearchFilter } from "../search-filter";
-
 import { render } from "@testing-library/react";
+import { SearchFilter } from "../search-filter";
 
 describe("SearchFilter", () => {
   const handleFilterChange = jest.fn();
@@ -35,7 +34,7 @@ describe("SearchFilter", () => {
 
     expect(container.firstChild).toMatchInlineSnapshot(`
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 gap-4"
+        class="grid grid-cols-2 gap-4"
       >
         <div
           class="space-y-1"
@@ -110,7 +109,7 @@ describe("SearchFilter", () => {
 
     expect(container.firstChild).toMatchInlineSnapshot(`
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 gap-4"
+        class="grid grid-cols-2 gap-4"
       >
         <div
           class="space-y-1"

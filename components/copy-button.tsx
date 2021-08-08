@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 
-import { SecondaryButton } from "./ui/button";
-
 import { CheckIcon, ClipboardCopyIcon } from "@heroicons/react/outline";
+import { SecondaryButton } from "./ui/button";
 
 export function CopyButton({ text }: { text: string }) {
   const [isCopied, setCopied] = useState<boolean>(false);

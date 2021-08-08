@@ -1,11 +1,5 @@
 import React, { useCallback, useState } from "react";
 
-import CustomHits from "~/components/search/custom-hits";
-import CustomRefinementList from "~/components/search/custom-refinement-list";
-import CustomSearchBox from "~/components/search/custom-search-box";
-import { RefinementModal } from "~/components/search/refinement-modal";
-import { getQueryParams } from "~/lib/string-utils";
-
 import { useRouter } from "next/router";
 import {
   Configure,
@@ -18,6 +12,11 @@ import {
   RefinementItem,
 } from "react-instantsearch-dom";
 import { debounce } from "ts-debounce";
+import CustomHits from "~/components/search/custom-hits";
+import CustomRefinementList from "~/components/search/custom-refinement-list";
+import CustomSearchBox from "~/components/search/custom-search-box";
+import { RefinementModal } from "~/components/search/refinement-modal";
+import { getQueryParams } from "~/lib/string-utils";
 
 type FilterSetting = {
   field: string;

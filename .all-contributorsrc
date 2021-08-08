@@ -276,6 +276,70 @@
         "code",
         "ideas"
       ]
+    },
+    {
+      "login": "hendraaagil",
+      "name": "Hendra Agil Syaputra",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54741166?v=4",
+      "profile": "https://hendraaagil.space",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "burhanahmeed",
+      "name": "Burhan Ahmed",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19145812?v=4",
+      "profile": "http://kusiaga.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "mukhlisakbr",
+      "name": "Mukhlis",
+      "avatar_url": "https://avatars.githubusercontent.com/u/27577560?v=4",
+      "profile": "http://mukhlis.id",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "nkristoporus",
+      "name": "Kristoporus Nathan Wilianto",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35729243?v=4",
+      "profile": "https://github.com/nkristoporus",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "abui-am",
+      "name": "Abui",
+      "avatar_url": "https://avatars.githubusercontent.com/u/50738961?v=4",
+      "profile": "https://github.com/abui-am",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "ramarahmanda",
+      "name": "ramarahmanda",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12446260?v=4",
+      "profile": "https://www.linkedin.com/in/ramarahmanda",
+      "contributions": [
+        "ideas",
+        "code"
+      ]
+    },
+    {
+      "login": "morezam",
+      "name": "Mohammad Hamzehei",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74182139?v=4",
+      "profile": "https://github.com/morezam",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

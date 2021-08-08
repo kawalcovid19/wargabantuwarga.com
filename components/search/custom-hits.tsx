@@ -1,8 +1,7 @@
-import { FAQList } from "~/components/faq-list";
-import { Faq } from "~/lib/faqs";
-
 import { StateResultsProvided } from "react-instantsearch-core";
 import { connectStateResults } from "react-instantsearch-dom";
+import { FAQList } from "~/components/faq-list";
+import { Faq } from "~/lib/data/faqs";
 
 function Hits(stateResults: StateResultsProvided) {
   const { searchResults, isSearchStalled } = stateResults;

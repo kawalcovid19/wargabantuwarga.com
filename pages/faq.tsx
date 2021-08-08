@@ -1,11 +1,10 @@
+import { NextSeo } from "next-seo";
 import { BackButton } from "~/components/layout/back-button";
 import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import { CustomInstantSearch } from "~/components/search/custom-instant-search";
 import { typesenseSearch } from "~/lib/typesense";
-
-import { NextSeo } from "next-seo";
 
 const meta = {
   title: "Pertanyaan yang sering ditanyakan",
@@ -14,6 +13,7 @@ const meta = {
 export default function FaqPage() {
   const searchClient = typesenseSearch({
     queryBy: ["kategori_pertanyaan", "pertanyaan", "jawaban"],
+    defaultSort: "order:asc",
   });
 
   return (

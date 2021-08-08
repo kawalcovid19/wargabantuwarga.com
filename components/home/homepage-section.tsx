@@ -1,7 +1,21 @@
-export const HomePageSection: React.FC = ({ children }) => {
+import React from "react";
+
+import clsx from "clsx";
+
+export const HomePageSection = React.forwardRef<
+  HTMLElement,
+  React.ComponentProps<"section">
+>(({ className, style, children, ...rest }, ref) => {
   return (
-    <section className="bg-white overflow-hidden">
-      <div className="px-4 py-5">{children}</div>
+    <section
+      className={clsx("bg-white overflow-hidden", className)}
+      ref={ref}
+      style={style}
+      {...rest}
+    >
+      {children}
     </section>
   );
-};
+});
+
+HomePageSection.displayName = "HomePageSection";

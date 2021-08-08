@@ -1,17 +1,17 @@
 import React from "react";
 
-import { cloudinaryLoader, getBlurred } from "~/lib/cloudinary-loader";
-
-import { PrimaryAnchorButton } from "../ui/button";
-
-import { HomePageMenu } from "./homepage-menu";
-
 import Image from "next/image";
 import Link from "next/link";
+import { PrimaryAnchorButton } from "../ui/button";
+import { HomePageSection } from "./homepage-section";
+import { HomePageMenu } from "./homepage-menu";
+import { HomePageEmergencyContactCTA } from "./homepage-emergency-cta";
+import { HOMEPAGE_START_CTA_URL } from "~/constants";
+import { cloudinaryLoader, getBlurred } from "~/lib/image/cloudinary-loader";
 
 export function HomePageStart() {
   return (
-    <section className="bg-white overflow-hidden">
+    <HomePageSection>
       <div className="px-4 py-6 text-center">
         <h2 className="text-lg sm:text-xl font-semibold sm:mx-6">
           Cek database RS, Puskesmas, Ambulans, Oksigen, dan kontak penting
@@ -25,16 +25,19 @@ export function HomePageStart() {
             rounded
             size="lg"
           >
-            Cek sekarang
+            Telusuri sekarang
           </PrimaryAnchorButton>
         </Link>
+      </div>
+      <div className="px-4">
+        <HomePageEmergencyContactCTA />
       </div>
       <div className="px-4 py-6">
         <HomePageMenu />
       </div>
       <div className="px-4 py-6">
         <a
-          href="https://sembako.wargabantuwarga.com/"
+          href={HOMEPAGE_START_CTA_URL}
           rel="nofollow noopener noreferrer"
           target="_blank"
         >
@@ -55,6 +58,6 @@ export function HomePageStart() {
           />
         </a>
       </div>
-    </section>
+    </HomePageSection>
   );
 }

@@ -1,84 +1,68 @@
-import { attributes, html } from "~/_content/home-page.md";
+import fs from "fs";
+import path from "path";
+import { ClockIcon } from "@heroicons/react/outline";
+import htmr from "htmr";
+import { GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 import { HomePageContent } from "~/components/home/homepage-content";
+import { HomePageContributing } from "~/components/home/homepage-contributing";
 import { HomepageHeader } from "~/components/home/homepage-header";
+import { HomePageLatestNews } from "~/components/home/homepage-latest-news";
 import { HomePageSection } from "~/components/home/homepage-section";
 import { HomePageStart } from "~/components/home/homepage-start";
+import { HomePageWelcome } from "~/components/home/homepage-welcome";
+import { HomePageWhatsAppCTA } from "~/components/home/homepage-whatsapp-cta";
 import { Page } from "~/components/layout/page";
+import { Alert } from "~/components/ui/alert";
 import { Container } from "~/components/ui/container";
-import config from "~/lib/config";
-import {
-  heading1Transformer,
-  heading2Transformer,
-  heading3Transformer,
-  heading4Transformer,
-  heading5Transformer,
-  heading6Transformer,
-} from "~/lib/htmr-transformers";
-
-import { ClockIcon } from "@heroicons/react/outline";
-import clsx from "clsx";
-import htmr from "htmr";
-import { HtmrOptions } from "htmr/src/types";
-import { NextSeo } from "next-seo";
+import { attributes, html } from "~/lib/content/home-page";
+import { LatestNewsItem } from "~/lib/content/informasi-terbaru";
+import siteConfig from "~/lib/content/site-config";
+import { htmrTransform } from "~/lib/htmr-transformers";
 
 const meta = {
-  title: `${config.site_tagline} | ${config.site_name}`,
-};
-
-const htmrTransform: HtmrOptions["transform"] = {
-  h1: heading1Transformer,
-  h2: heading2Transformer,
-  h3: heading3Transformer,
-  h4: heading4Transformer,
-  h5: heading5Transformer,
-  h6: heading6Transformer,
+  title: `${siteConfig.site_tagline} | ${siteConfig.site_name}`,
 };
 
 interface LastUpdatedAlertProps {
   className?: string;
-  style?: React.CSSProperties;
 }
 
-const LastUpdatedAlert = ({ className, style }: LastUpdatedAlertProps) => (
-  <div
-    className={clsx(
-      "bg-yellow-50 border-l-4 border-yellow-400 p-4 sm:rounded",
-      className,
-    )}
-    style={style}
-  >
-    <div className="flex">
-      <div className="flex-shrink-0">
-        <ClockIcon aria-hidden="true" className="h-5 w-5 text-yellow-400" />
-      </div>
-      <div className="ml-3">
-        <p className="text-sm text-yellow-700">
-          Pembaruan terakhir pada{" "}
-          {new Date(attributes.last_updated_time).toLocaleString("id", {
-            weekday: "long",
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-            hour: "2-digit",
-            minute: "2-digit",
-            timeZone: "Asia/Jakarta",
-            timeZoneName: "short",
-          })}
-        </p>
-      </div>
-    </div>
-  </div>
+const LastUpdatedAlert = ({ className }: LastUpdatedAlertProps) => (
+  <Alert accentBorder className={className} icon={ClockIcon}>
+    <p className="text-sm">
+      Pembaruan terakhir pada{" "}
+      {new Date(attributes.last_updated_time).toLocaleString("id", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZone: "Asia/Jakarta",
+        timeZoneName: "short",
+      })}
+    </p>
+  </Alert>
 );
 
-const HomePage = () => (
+interface HomePageProps {
+  latestNews: LatestNewsItem[];
+}
+
+const HomePage = (props: HomePageProps) => (
   <Page>
     <NextSeo title={meta.title} titleTemplate="%s" />
-    <HomepageHeader src={attributes.home_banner_image_path} />
+    <HomepageHeader src={attributes.home_banner_image} />
     <HomePageContent>
-      <Container>
+      <Container className="space-y-3">
         <HomePageStart />
-        <LastUpdatedAlert className="mt-3 mb-3" />
-        <HomePageSection>
+        <HomePageLatestNews latestNews={props.latestNews} />
+        <HomePageContributing />
+        <HomePageWhatsAppCTA />
+        <LastUpdatedAlert />
+        <HomePageWelcome />
+        <HomePageSection className="px-4 py-6">
           <article className="prose prose-indigo">
             {htmr(html, { transform: htmrTransform })}
           </article>
@@ -95,5 +79,21 @@ const HomePage = () => (
     </HomePageContent>
   </Page>
 );
+
+export const getStaticProps: GetStaticProps = async () => {
+  const markdownFiles = await Promise.all(
+    fs
+      .readdirSync(path.join(process.cwd(), "_content/informasi-terbaru"))
+      .map((fileName) => import(`../_content/informasi-terbaru/${fileName}`)),
+  ).catch(() => null);
+  const latestNews =
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    markdownFiles?.map((markdownFile) => markdownFile.default) ?? [];
+  return {
+    props: {
+      latestNews,
+    },
+  };
+};
 
 export default HomePage;

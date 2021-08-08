@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import { GetStaticPaths, GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 import { ContactList } from "~/components/contact-list";
 import { BackButton } from "~/components/layout/back-button";
 import { Page } from "~/components/layout/page";
@@ -6,14 +8,11 @@ import { PageContent } from "~/components/layout/page-content";
 import { PageHeader } from "~/components/layout/page-header";
 import { SearchForm } from "~/components/search-form";
 import { SeoText } from "~/components/seo-text";
+import { getProvincesPaths } from "~/lib/data/helpers/provinces";
+import provinces, { Contact } from "~/lib/data/provinces";
 import { getCurrentLongDate } from "~/lib/date-utils";
 import { useSearch } from "~/lib/hooks/use-search";
 import { getProvinceMeta } from "~/lib/meta";
-import { getProvincesPaths } from "~/lib/province-utils";
-import provinces, { Contact } from "~/lib/provinces";
-
-import { GetStaticPaths, GetStaticProps } from "next";
-import { NextSeo } from "next-seo";
 
 type ProvinceProps = {
   provinceName: string;
@@ -114,7 +113,7 @@ export default function ProvincePage(props: ProvinceProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = () => {
-  const paths = getProvincesPaths();
+  const paths = getProvincesPaths(provinces);
 
   return {
     fallback: false,

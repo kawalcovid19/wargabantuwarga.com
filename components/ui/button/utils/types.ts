@@ -5,10 +5,13 @@ export type ButtonColors =
   | "gray"
   | "green"
   | "indigo"
+  | "light-blue"
+  | "none"
   | "pink"
   | "purple"
   | "red"
   | "yellow";
+export type ButtonIconPositions = "left" | "right";
 
 interface ButtonBaseProps {
   /** Make the button expand the width of the container. */
@@ -25,6 +28,8 @@ interface ButtonBaseProps {
   size?: ButtonSizes;
   /** The icon component (from Heroicons) to use in the button. `icon={PlusIcon}` */
   icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  /** If the button has an icon, change where the icon is placed. Defaults to `"left"`. */
+  iconPosition?: ButtonIconPositions;
 }
 
 export type ButtonProps = ButtonBaseProps &

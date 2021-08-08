@@ -1,53 +1,25 @@
+import { dateMockBuilder } from "../__mocks__/builders/date-mock";
 import { getCurrentLongDate, getCurrentMonthAndYear } from "../date-utils";
 
-describe("getCurrentLongDate", () => {
-  let dateSpy: jest.SpyInstance;
+describe("date-utils", () => {
+  const { date, dateStr, monthStr } = dateMockBuilder();
 
   beforeAll(() => {
-    dateSpy = jest
-      .spyOn(global.Date, "now")
-      .mockImplementation(() => new Date("2021-06-14 00:00:00").getTime());
+    jest.useFakeTimers();
+    jest.setSystemTime(date);
   });
 
   afterAll(() => {
-    dateSpy.mockRestore();
+    jest.useRealTimers();
   });
-
-  // Skip dulu, local malahan failed
-  it.skip("should return correct long date", () => {
-    // Node.js can not return "toLocaleString" correctly using locale id
-    // It will return using default locale en-US
-    // TODO: change this after got a workaround to make this works
-    // expect(getCurrentLongDate()).toBe("June 14, 2021");
-
-    // expect id locale
-    expect(getCurrentLongDate()).toBe("14 Juni 2021");
-    expect(dateSpy).toBeCalledTimes(1);
+  describe("getCurrentLongDate", () => {
+    it("should return correct long date in 'id' locale", () => {
+      expect(getCurrentLongDate()).toEqual(dateStr);
+    });
   });
-});
-
-describe("getCurrentMonthAndYear", () => {
-  let dateSpy: jest.SpyInstance;
-
-  beforeAll(() => {
-    dateSpy = jest
-      .spyOn(global.Date, "now")
-      .mockImplementation(() => Date.parse("2021-06-14"));
-  });
-
-  afterAll(() => {
-    dateSpy.mockRestore();
-  });
-
-  // Skip dulu, local malahan failed
-  it.skip("should return correct month and year", () => {
-    // Node.js can not return "toLocaleString" correctly using locale id
-    // It will return using default locale en-US
-    // TODO: change this after got a workaround to make this works
-    // expect(getCurrentMonthAndYear()).toBe("June 2021");
-
-    // expect id locale
-    expect(getCurrentMonthAndYear()).toBe("Juni 2021");
-    expect(dateSpy).toBeCalledTimes(1);
+  describe("getCurrentMonthAndYear", () => {
+    it("should return correct month and year in 'id' locale", () => {
+      expect(getCurrentMonthAndYear()).toEqual(monthStr);
+    });
   });
 });

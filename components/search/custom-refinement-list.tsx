@@ -1,12 +1,11 @@
 import { ChangeEvent } from "react";
 
-import { FormLabel } from "~/components/ui/forms/form-label";
-import { InputSelect } from "~/components/ui/forms/input-select";
-
 import {
   connectRefinementList,
   RefinementListProvided,
 } from "react-instantsearch-core";
+import { FormLabel } from "~/components/ui/forms/form-label";
+import { InputSelect } from "~/components/ui/forms/input-select";
 
 interface CustomRefinementListProvided extends RefinementListProvided {
   readonly title: string;

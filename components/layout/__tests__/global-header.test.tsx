@@ -1,6 +1,5 @@
-import { GlobalHeader } from "../global-header";
-
 import { render } from "@testing-library/react";
+import { GlobalHeader } from "../global-header";
 
 jest.mock("next/router", () => require("next-router-mock"));
 
@@ -13,7 +12,7 @@ describe("GlobalHeader", () => {
         class="flex items-center justify-center fixed w-full h-16 px-4 z-40 bg-brand-500 shadow-md"
       >
         <div
-          class="w-full sm:max-w-xl mx-auto flex items-center justify-center sm:justify-between h-full"
+          class="w-full sm:max-w-xl mx-auto flex items-center justify-between h-full"
         >
           <a
             class="align-middle"
@@ -67,7 +66,7 @@ describe("GlobalHeader", () => {
           >
             <button
               aria-expanded="false"
-              class="hidden sm:flex items-center justify-center rounded-md h-10 w-10 ml-4 hover:bg-gray-100 hover:bg-opacity-10 focus:bg-gray-100 focus:bg-opacity-10"
+              class="flex items-center justify-center rounded-md h-10 w-10 ml-4 hover:bg-gray-100 hover:bg-opacity-10 focus:bg-gray-100 focus:bg-opacity-10"
               id="headlessui-popover-button-1"
               type="button"
             >

@@ -100,7 +100,7 @@ export function stripTags(str: string): string {
   return str.replace(/(<([^>]+)>)/gi, "");
 }
 
-export function getQueryParams(query: string): {} {
+export function getQueryParams(query: string): Record<string, string> {
   return query
     ? (/^[?#]/.test(query) ? query.slice(1) : query)
         .split("&")
@@ -112,4 +112,16 @@ export function getQueryParams(query: string): {} {
           return params;
         }, {})
     : {};
+}
+
+export function isInternalLink(link: string): boolean {
+  const domain = link
+    .replace("https://", "")
+    .replace("http://", "")
+    .split("/")[0];
+  return (
+    link.startsWith("/") ||
+    domain === "www.wargabantuwarga.com" ||
+    domain === "wargabantuwarga.com"
+  );
 }

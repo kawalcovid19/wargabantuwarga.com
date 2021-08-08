@@ -1,11 +1,10 @@
+import clsx from "clsx";
+import htmr from "htmr";
 import { CopyButton } from "~/components/copy-button";
 import { OpenMapButton } from "~/components/open-map-button";
-import { anchorTransformer } from "~/lib/htmr-transformers";
-import { Contact } from "~/lib/provinces";
+import { Contact } from "~/lib/data/provinces";
+import { htmrTransform } from "~/lib/htmr-transformers";
 import { isNotEmpty, stripTags } from "~/lib/string-utils";
-
-import htmr from "htmr";
-import { HtmrOptions } from "htmr/src/types";
 
 type ContactDetailsProps = {
   contact: Contact;
@@ -31,29 +30,31 @@ type DescriptionItemProps = {
   value?: string;
   withCopyButton?: boolean;
   withOpenMapButton?: boolean;
+  withTruncation?: boolean;
 };
 
 const DescriptionItem = (props: DescriptionItemProps) => {
   const value = isNotEmpty(props.value) ? (props.value as string) : "";
-  const htmrTransform: HtmrOptions["transform"] = {
-    a: anchorTransformer,
-  };
 
   return (
     <div className="py-4 px-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
       <dt className="text-sm font-medium text-gray-500">{props.label}</dt>
       <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-        <span className="flex-grow">
+        <span
+          className={clsx("flex-grow", props.withTruncation ? "truncate" : "")}
+        >
           {htmr(value, { transform: htmrTransform })}
+        </span>
+        <div className="flex flex-col items-end space-y-1 flex-none ml-2">
+          {typeof value == "string" &&
+            value.length > 0 &&
+            props.withCopyButton && <CopyButton text={stripTags(value)} />}
           {typeof value == "string" &&
             value.length > 0 &&
             props.withOpenMapButton && (
               <OpenMapButton address={stripTags(value)} />
             )}
-        </span>
-        {typeof value == "string" &&
-          value.length > 0 &&
-          props.withCopyButton && <CopyButton text={stripTags(value)} />}
+        </div>
       </dd>
     </div>
   );
@@ -73,7 +74,7 @@ export function ContactDetails({ contact }: ContactDetailsProps) {
           withCopyButton
           withOpenMapButton
         />
-        <DescriptionItem label="Tautan" value={contact.link} />
+        <DescriptionItem label="Tautan" value={contact.link} withTruncation />
         <DescriptionItem
           label="Terakhir Update"
           value={contact.terakhir_update}

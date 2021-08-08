@@ -1,12 +1,4 @@
-import React, { useMemo } from "react";
-
-import { anchorTransformer } from "~/lib/htmr-transformers";
-import { getContactMetaTitle } from "~/lib/meta";
-import { Contact } from "~/lib/provinces";
-import { isNotEmpty, stripTags } from "~/lib/string-utils";
-
-import { Badge } from "./ui/badge";
-import { CopyButton } from "./copy-button";
+import React from "react";
 
 import { BadgeCheckIcon as BadgeCheckIconUnverified } from "@heroicons/react/outline";
 import {
@@ -15,8 +7,14 @@ import {
   PhoneIcon,
 } from "@heroicons/react/solid";
 import htmr from "htmr";
-import { HtmrOptions } from "htmr/src/types";
 import Link from "next/link";
+import { CopyButton } from "./copy-button";
+import { Badge } from "./ui/badge";
+import { OpenMapButton } from "./open-map-button";
+import { isNotEmpty, stripTags } from "~/lib/string-utils";
+import { getContactMetaTitle } from "~/lib/meta";
+import { Contact } from "~/lib/data/provinces";
+import { htmrTransform } from "~/lib/htmr-transformers";
 
 interface ContactListItemProps {
   contact: Contact;
@@ -29,12 +27,6 @@ function ContactListItem({
   provinceName,
   provinceSlug,
 }: ContactListItemProps) {
-  const htmrTransform: HtmrOptions["transform"] = useMemo(
-    () => ({
-      a: anchorTransformer,
-    }),
-    [],
-  );
   return (
     <li>
       <div className="px-4 py-4 sm:px-6 relative hover:bg-gray-50">
@@ -109,9 +101,14 @@ function ContactListItem({
                 transform: htmrTransform,
               })}
             </p>
-            {typeof contact.alamat == "string" && (
-              <CopyButton text={stripTags(contact.alamat)} />
-            )}
+            <div className="flex flex-col items-end space-y-1 flex-none ml-2">
+              {typeof contact.alamat == "string" && (
+                <CopyButton text={stripTags(contact.alamat)} />
+              )}
+              {typeof contact.alamat == "string" && (
+                <OpenMapButton address={stripTags(contact.alamat)} />
+              )}
+            </div>
           </div>
         )}
       </div>

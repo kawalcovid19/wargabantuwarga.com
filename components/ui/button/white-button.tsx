@@ -1,7 +1,7 @@
 import * as React from "react";
 
+import clsx from "clsx";
 import { Spinner } from "../spinner";
-
 import {
   buttonBlockStyles,
   ButtonProps,
@@ -10,8 +10,6 @@ import {
   disabledStyles,
   renderButtonIcon,
 } from "./utils";
-
-import clsx from "clsx";
 
 /**
  * A white-canvas button as an alternative to the secondary variant button, or for other lesser-important actions.
@@ -27,6 +25,7 @@ export const WhiteButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
       block,
       size = "md",
       icon,
+      iconPosition = "left",
       rounded,
       isLoading,
       loadingText = "Memuat...",
@@ -38,7 +37,7 @@ export const WhiteButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) => (
     <button
       className={clsx(
-        buttonBlockStyles(block),
+        buttonBlockStyles(block, iconPosition),
         buttonSizes(size),
         buttonRoundedStyles(rounded, size),
         "items-center justify-center border border-transparent font-medium shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
@@ -52,11 +51,12 @@ export const WhiteButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
       type={type ?? "button"}
       {...rest}
     >
-      {renderButtonIcon(
-        isLoading ? Spinner : icon,
+      {renderButtonIcon({
+        icon: isLoading ? Spinner : icon,
         size,
-        isLoading ? "animate-spin" : undefined,
-      )}
+        additionalClasses: isLoading ? "animate-spin" : undefined,
+        iconPosition,
+      })}
       {isLoading ? loadingText : children}
     </button>
   ),

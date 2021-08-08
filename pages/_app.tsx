@@ -5,33 +5,36 @@ import "typeface-inter";
 
 import { useEffect } from "react";
 
-import { LayoutRoot } from "~/components/layout/layout-root";
-import config from "~/lib/config";
-import { initializeGTM } from "~/lib/gtm";
-
-import type { AppProps } from "next/app";
 import Head from "next/head";
 import Script from "next/script";
 import { DefaultSeo } from "next-seo";
 import NProgress from "nprogress";
+import type { AppProps } from "next/app";
+import { initializeGTM } from "~/lib/gtm";
+import siteConfig from "~/lib/content/site-config";
+import { LayoutRoot } from "~/components/layout/layout-root";
 
 const meta = {
-  siteName: config.site_name,
-  title: `${config.site_tagline} | ${config.site_name}`,
-  tagline: config.site_tagline,
-  description: config.site_description,
-  url: config.site_url,
+  siteName: siteConfig.site_name,
+  title: `${siteConfig.site_tagline} | ${siteConfig.site_name}`,
+  tagline: siteConfig.site_tagline,
+  description: siteConfig.site_description,
+  url: siteConfig.site_url,
 };
+
+export const progress = NProgress.configure({
+  showSpinner: false,
+});
 
 export default function App({ Component, pageProps, router }: AppProps) {
   useEffect(() => {
     const handleStart = (_: string, { shallow }: { shallow: boolean }) => {
       if (!shallow) {
-        NProgress.start();
+        progress.start();
       }
     };
     const handleStop = () => {
-      NProgress.done();
+      progress.done();
     };
 
     router.events.on("routeChangeStart", handleStart);
@@ -67,11 +70,11 @@ export default function App({ Component, pageProps, router }: AppProps) {
             },
           ],
         }}
-        title={config.site_tagline}
+        title={siteConfig.site_tagline}
         titleTemplate={`%s | ${meta.siteName}`}
         twitter={{
-          handle: "@KawalCOVID19",
-          site: "@KawalCOVID19",
+          handle: "@WargaBantuWarga",
+          site: "@WargaBantuWarga",
           cardType: "summary_large_image",
         }}
       />
@@ -82,7 +85,38 @@ export default function App({ Component, pageProps, router }: AppProps) {
           name="google-site-verification"
         />
 
-        <link href="/favicon.ico" rel="icon" />
+        <link
+          href="/favicon-72x72.png"
+          rel="apple-touch-icon"
+          sizes="72x72"
+          type="image/png"
+        />
+
+        <link
+          href="/favicon-96x96.png"
+          rel="icon"
+          sizes="96x96"
+          type="image/png"
+        />
+        <link
+          href="/favicon-48x48.png"
+          rel="icon"
+          sizes="48x48"
+          type="image/png"
+        />
+        <link
+          href="/favicon-32x32.png"
+          rel="icon"
+          sizes="32x32"
+          type="image/png"
+        />
+        <link
+          href="/favicon-16x16.png"
+          rel="icon"
+          sizes="16x16"
+          type="image/png"
+        />
+
         <link href="/manifest.json" rel="manifest" />
         <meta content="#1667C2" name="theme-color" />
       </Head>

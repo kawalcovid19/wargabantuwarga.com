@@ -1,8 +1,9 @@
-/* eslint-disable simple-import-sort/imports */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
+import { debounce } from "ts-debounce";
 import React, {
   ChangeEvent,
   FormEvent,
@@ -10,15 +11,13 @@ import React, {
   useEffect,
   useState,
 } from "react";
-
+import { FilterIcon } from "@heroicons/react/outline";
 import { PrimaryButton } from "./ui/button";
 import { FormLabel } from "./ui/forms/form-label";
 import { InputText } from "./ui/forms/input-text";
 
-import { debounce } from "ts-debounce";
 import { SearchFilterModal, SortSetting } from "./search-filter-modal";
 import { FormGroup } from "./ui/forms/form-group";
-import { FilterIcon } from "@heroicons/react/outline";
 import { SearchFilter } from "~/components/search-filter";
 
 interface FormElements extends HTMLFormControlsCollection {
@@ -115,7 +114,7 @@ export function SearchForm({
 
   return (
     <form className="pb-8 space-y-4" onSubmit={handleSubmit}>
-      <div className="flex flex-col sm:flex-row sm:items-end">
+      <div className="flex flex-row items-end">
         <div className="flex flex-1 items-center mt-1">
           <div className="space-y-1 flex-1">
             <FormLabel htmlFor="keywordsInput">Cari {itemName}:</FormLabel>
@@ -148,7 +147,7 @@ export function SearchForm({
           </div>
         </div>
         {!autoSearch && (
-          <div className="flex flex-row mt-2 ml-0 sm:mt-0 sm:ml-2">
+          <div className="flex flex-row mt-0 ml-2">
             <PrimaryButton block className="flex-1" type="submit">
               Cari
             </PrimaryButton>

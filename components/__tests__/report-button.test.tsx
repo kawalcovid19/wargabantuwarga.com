@@ -1,14 +1,12 @@
 import React from "react";
 
-import { REPORT_CONTACT_FORM } from "~/constants/report";
-import { provinceBuilder } from "~/lib/__mocks__/builders/provinces";
-import { Contact, Province } from "~/lib/provinces";
-import { stripTags } from "~/lib/string-utils";
-
-import { ReportButton } from "../report-button";
-
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { ReportButton } from "../report-button";
+import { REPORT_CONTACT_FORM } from "~/constants/report";
+import { provinceBuilder } from "~/lib/data/__mocks__/builders/provinces";
+import { Contact, Province } from "~/lib/data/provinces";
+import { stripTags } from "~/lib/string-utils";
 
 describe("ReportButton", () => {
   const province: Province = provinceBuilder();
@@ -24,7 +22,7 @@ describe("ReportButton", () => {
       >
         <button
           aria-label="Laporkan kesalahan"
-          class="inline-flex px-4 py-2 text-sm rounded-md items-center justify-center border border-transparent font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 text-blue-700 bg-blue-100 hover:bg-blue-200 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-75 relative z-10"
+          class="inline-flex flex-row px-4 py-2 text-sm rounded-md items-center justify-center border border-transparent font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 text-blue-700 bg-blue-100 hover:bg-blue-200 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-75 relative z-10"
           type="button"
         >
           <svg

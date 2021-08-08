@@ -1,31 +1,18 @@
-import cheerio from "cheerio";
-import fetch from "cross-fetch";
 import fs from "fs";
 import path from "path";
+import fetch from "cross-fetch";
+
+import { parseFAQ } from "./utils";
 
 const FAQ_LINK = "https://kcov.id/wbw-faq";
 
 export async function fetchFaqSheets() {
   const source = await fetch(FAQ_LINK);
-  const $ = cheerio.load(await source.text());
-  const faq = $("#sheets-viewport > div#0").find("table tbody tr:not(:first)");
-  const faqJSON = faq
-    .map((_, el) => {
-      const row = $(el).find("td");
-      return {
-        kategori_pertanyaan: $(row.get(0)).text(),
-        pertanyaan: $(row.get(1)).text(),
-        jawaban: $(row.get(2)).html(),
-        created_date: $(row.get(3)).text(),
-        sumber: $(row.get(4)).text(),
-        link: $(row.get(5)).text(),
-        published_date: $(row.get(6)).text(),
-      };
-    })
-    .toArray();
+  const html = await source.text();
+  const faqs = await parseFAQ(html);
 
   fs.writeFileSync(
     path.resolve(__dirname, "../../data/wbw-faq-sheets.json"),
-    JSON.stringify(faqJSON),
+    JSON.stringify(faqs),
   );
 }

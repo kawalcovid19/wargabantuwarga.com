@@ -5,6 +5,19 @@ media_folder: public/images
 public_folder: /images
 publish_mode: editorial_workflow
 display_url: https://www.wargabantuwarga.com
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: wargabantuwarga
+    api_key: 959777522745792
+    output_filename_only: true
+    # Enable if needed
+    # default_transformations:
+    #   - - crop: scale
+    #       width: 720
+    #       quality: auto:eco
+    #       color_space: tinysrgb
+    #       format: auto
 
 collections:
   - name: "config"
@@ -34,6 +47,43 @@ collections:
             name: "site_url"
             widget: "string"
             hint: "The canonical URL of the website, complete with the protocol (e.g. `https://`) and **without** trailing slash (`/`)."
+          - label: "WhatsApp Contact URL"
+            name: "whatsapp_contact_url"
+            widget: "string"
+            hint: "The direct link (`https://`) of the WhatsApp hotline used in navigation and homepage CTA."
+  - name: "informasi_terbaru"
+    label: "Informasi Terbaru"
+    preview_path: ""
+    folder: "_content/informasi-terbaru"
+    extension: "md"
+    create: true
+    fields:
+      - {
+          label: "Title",
+          name: "title",
+          widget: "string",
+        }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "date",
+        }
+      - {
+          label: "Link Text",
+          name: "link_text",
+          widget: "string",
+        }
+      - {
+          label: "Link",
+          name: "link",
+          widget: "string",
+        }
+      - {
+          label: "Body",
+          name: "body",
+          widget: "markdown",
+          hint: "Section body",
+        }
   - name: "home_page"
     label: "Home Page"
     delete: false
@@ -57,8 +107,139 @@ collections:
             }
           - {
               label: "Banner Image",
-              name: "home_banner_image_path",
-              widget: "string",
+              name: "home_banner_image",
+              widget: "image",
               required: false,
-              hint: "Cloudinary image path, eg. `v12345/my_file.png`",
+              hint: "Heading banner on top of Home page",
+              tagname: "",
             }
+  - name: "isolasi_mandiri_page"
+    label: "Isolasi Mandiri Page"
+    delete: false
+    preview_path: "isolasi-mandiri"
+    files:
+      - name: "isolasi_mandiri_page"
+        label: "Isolasi Mandiri Page"
+        file: "_content/isolasi-mandiri.json"
+        fields:
+          - name: "categories"
+            label: "Categories"
+            widget: list
+            fields:
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string"
+                }
+              - {
+                  label: "Description",
+                  name: "description",
+                  widget: "text",
+                  required: false,
+                }
+              - label: "Links List"
+                name: links
+                widget: list
+                fields:
+                  - {
+                      label: "Link Title",
+                      name: "title",
+                      widget: "string"
+                    }
+                  - {
+                      label: "Link URL",
+                      name: "url",
+                      widget: "string"
+                    }
+  - name: "welcome_message"
+    label: "Welcome Message"
+    delete: false
+    preview_path: ""
+    files:
+      - name: "welcome_message"
+        label: "Welcome Message"
+        file: "_content/welcome-message.md"
+        fields:
+          - {
+              label: "Last updated time",
+              name: "last_updated_time",
+              widget: "datetime",
+            }
+          - {
+              label: "Title",
+              name: "title",
+              widget: "string",
+            }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              hint: "Section body",
+            }
+  - name: "kontak_darurat_page"
+    label: "Kontak Darurat Page"
+    delete: false
+    preview_path: "kontak-darurat"
+    files:
+      - name: "emergency_contacts"
+        label: "Emergency Contacts"
+        file: "_content/kontak-darurat/emergency-contacts.json"
+        fields:
+          - name: "emergency_contacts"
+            label: "Emergency Contacts"
+            widget: list
+            fields:
+              - { label: "Name",
+                  name: "name",
+                  widget: "string"
+                }
+              - { label: "Description",
+                  name: "description",
+                  widget: "string"
+                }
+              - {
+                  label: "Image",
+                  name: "image",
+                  widget: "image",
+                  choose_url: true,
+                }
+              - { label: "Link URL",
+                  name: "url",
+                  widget: "string"
+                }
+      - name: "vaccine_section"
+        label: "Vaccine Section"
+        file: "_content/kontak-darurat/vaccine-section.json"
+        fields:
+          - name: "vaccine_section"
+            label: "Vaccine Section"
+            widget: list
+            fields:
+              - {
+                  label: "Link Title",
+                  name: "title",
+                  widget: "string"
+                }
+              - {
+                  label: "Link URL",
+                  name: "url",
+                  widget: "string"
+                }
+      - name: "oxygen_section"
+        label: "Oxygen Section"
+        file: "_content/kontak-darurat/oxygen-section.json"
+        fields:
+          - name: "oxygen_section"
+            label: "Oxygen Section"
+            widget: list
+            fields:
+              - {
+                  label: "Link Title",
+                  name: "title",
+                  widget: "string"
+                }
+              - {
+                  label: "Link URL",
+                  name: "url",
+                  widget: "string"
+                }

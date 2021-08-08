@@ -1,12 +1,11 @@
 import React from "react";
 
-import { FormGroup } from "~/components/ui/forms/form-group";
-import { FormLabel } from "~/components/ui/forms/form-label";
-import { InputText } from "~/components/ui/forms/input-text";
-
 import { FilterIcon } from "@heroicons/react/outline";
 import { SearchBoxProvided } from "react-instantsearch-core";
 import { connectSearchBox } from "react-instantsearch-dom";
+import { FormGroup } from "~/components/ui/forms/form-group";
+import { FormLabel } from "~/components/ui/forms/form-label";
+import { InputText } from "~/components/ui/forms/input-text";
 
 interface CustomSearchBoxProvided extends SearchBoxProvided {
   readonly itemName: string;

@@ -2,8 +2,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { ChangeEventHandler, useMemo } from "react";
 
+import { ChangeEventHandler, useMemo } from "react";
 import { FormLabel } from "./ui/forms/form-label";
 import { InputSelect } from "./ui/forms/input-select";
 import { SelectSkeleton } from "./ui/skeleton-loading";
@@ -37,7 +37,7 @@ export function SearchFilter({
   const filterForms = useMemo(
     () =>
       filterItems && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4">
           {Object.entries(filterItems).map(([key, value], idx) => {
             const { title, buckets }: any = value;
             const noSelectedFilter =
@@ -102,7 +102,7 @@ export function SearchFilter({
   const sortForms = useMemo(
     () =>
       sortSettings?.length && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4">
           <div className="space-y-1">
             <FormLabel htmlFor="sort-by">Urut berdasarkan</FormLabel>
             <InputSelect
