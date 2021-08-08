@@ -22,7 +22,7 @@ const meta = {
   url: siteConfig.site_url,
 };
 
-const progress = NProgress.configure({
+export const progress = NProgress.configure({
   showSpinner: false,
 });
 
