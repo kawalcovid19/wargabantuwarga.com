@@ -1,5 +1,6 @@
-import { useMemo } from "react";
+import { useRef } from "react";
 
+import { useVirtual } from "react-virtual";
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
 import { ContactListItem } from "./contact-list-item";
 import { EmptyState } from "~/components/ui/empty-state";
@@ -14,30 +15,49 @@ type ContactListProps = {
 };
 
 export function ContactList(props: ContactListProps) {
-  const contactList = useMemo(
-    () => (
-      <div className="bg-white shadow overflow-hidden sm:rounded-md">
-        <ul className="divide-y divide-gray-200">
-          {props.data.map((contact, index) => (
-            <ContactListItem
-              key={index}
-              contact={contact}
-              provinceName={props.provinceName}
-              provinceSlug={props.provinceSlug}
-            />
-          ))}
-        </ul>
-      </div>
-    ),
-    [props.data, props.provinceName, props.provinceSlug],
-  );
+  const virtualListContainerRef = useRef<HTMLDivElement>(null);
+
+  const virtualizer = useVirtual({
+    size: props.data.length,
+    parentRef: virtualListContainerRef,
+  });
 
   if (props.isLoading) {
     return <ContactListSkeleton />;
   }
 
   if (props.data.length > 0) {
-    return contactList;
+    return (
+      <div
+        className="bg-white shadow sm:rounded-md max-h-screen relative overflow-y-auto overflow-x-hidden"
+        ref={virtualListContainerRef}
+      >
+        <ul
+          className="divide-y divide-gray-200"
+          style={{
+            height: `${virtualizer.totalSize}px`,
+          }}
+        >
+          {virtualizer.virtualItems.map((virtualRow) => {
+            const contact: Contact = props.data[virtualRow.index];
+
+            return (
+              <ContactListItem
+                key={contact.id}
+                className="absolute top-0 left-0 w-full"
+                contact={contact}
+                provinceName={props.provinceName}
+                provinceSlug={props.provinceSlug}
+                ref={virtualRow.measureRef}
+                style={{
+                  transform: `translateY(${virtualRow.start}px)`,
+                }}
+              />
+            );
+          })}
+        </ul>
+      </div>
+    );
   }
 
   return (
