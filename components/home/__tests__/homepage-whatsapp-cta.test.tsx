@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import { HomePageWhatsAppCTA } from "../homepage-whatsapp-cta";
+import siteConfig from "~/lib/content/site-config";
 
 describe("HomePageContributing", () => {
   it("renders correctly", () => {
@@ -43,5 +44,13 @@ describe("HomePageContributing", () => {
         </p>
       </section>
     `);
+  });
+
+  it("should navigate to ", () => {
+    const { getByText } = render(<HomePageWhatsAppCTA />);
+
+    const link = getByText("Hubungi hotline sekarang").closest("a");
+
+    expect(link).toHaveAttribute("href", siteConfig.whatsapp_contact_url);
   });
 });
