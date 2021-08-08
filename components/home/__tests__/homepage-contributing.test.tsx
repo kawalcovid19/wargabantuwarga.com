@@ -164,7 +164,7 @@ describe("HomePageContributing", () => {
             Mau Upload Info?
           </p>
           <a
-            class="flex flex-row px-4 py-2 text-base rounded-full items-center justify-center border border-transparent font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 text-blue-500 border-blue-500 hover:bg-blue-100 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-75"
+            class="flex flex-row px-4 py-2 text-base rounded-full items-center justify-center border border-transparent font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 text-brand-500 border-brand-500 hover:bg-blue-100 focus:ring-brand-500 disabled:cursor-not-allowed disabled:opacity-75"
             href="https://docs.google.com/forms/d/e/1FAIpQLSc_m0WyokBk8xv9jBwYFN1zAt4_u-kE2TI9ZBrAokB4E08AGw/viewform"
             rel="nofollow noopener noreferrer"
             target="_blank"
