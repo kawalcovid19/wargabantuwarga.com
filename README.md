@@ -54,13 +54,13 @@ For any improvements on the website, we should continuously measure its impact o
 
 To get started running the project locally, please follow the steps below.
 
-First, clone the repository:
+First, clone the repository.
 
 ```bash
 git clone https://github.com/kawalcovid19/wargabantuwarga.com.git
 ```
 
-Then, install dependencies and fetch data to your local machine:
+Then, install dependencies and fetch data to your local machine. **Note that we use Yarn, not npm.**
 
 ```bash
 cd wargabantuwarga.com
@@ -68,7 +68,7 @@ yarn install
 yarn mirror-box
 ```
 
-Finally, run the development server:
+Finally, run the development server.
 
 ```bash
 yarn dev
@@ -98,6 +98,8 @@ See our contribution guidelines in these languages:
 
 - [English](CONTRIBUTING.md)
 - [Indonesian](CONTRIBUTING_ID.md)
+
+When contributing to our project, please use English when communicating with other people in issues and/or pull requests. [Click here](CONTRIBUTING.md#why-are-we-using-english-in-our-issues--prs) to read why. ([Bahasa Indonesia](CONTRIBUTING_ID.md#mengapa-kita-menggunakan-bahasa-inggris-dalam-menulis-issue-dan-pull-request))
 
 ## Contributors ✨
 
