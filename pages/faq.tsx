@@ -85,7 +85,7 @@ export default function FaqPage(props: FaqPageProps) {
           initialValue={urlParams}
           itemName="pertanyaan"
           onSubmitKeywords={handleSubmitKeywords}
-          placeholderText="Masukan Kata Kunci Pencarian"
+          placeholderText="Masukan kata kunci pencarian"
         />
 
         <div className="space-y-4">
