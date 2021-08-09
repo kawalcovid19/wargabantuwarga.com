@@ -1,7 +1,21 @@
-import { getStaticProps } from "~/pages";
+import React from "react";
+
+import { render } from "@testing-library/react";
+import { latestNewsItemBuilder } from "~/lib/content/__mocks__/builders/informasi-terbaru";
+import HomePage, { getStaticProps } from "~/pages";
 
 jest.mock("~/lib/content/home-page");
 jest.mock("~/lib/content/welcome-message");
+
+describe("HomePage", () => {
+  it("home page content rendered properly", () => {
+    const { container } = render(
+      <HomePage latestNews={[latestNewsItemBuilder()]} />,
+    );
+
+    expect(container.firstChild).toHaveClass("flex-1");
+  });
+});
 
 describe("getStaticProps", () => {
   // TODO: (ZF) Find a way to load the markdown files in Jest so that we can test the successful case.
