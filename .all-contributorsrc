@@ -349,6 +349,15 @@
       "contributions": [
         "test"
       ]
+    },
+    {
+      "login": "umarhadi",
+      "name": "Umar Hadi Siswanto",
+      "avatar_url": "https://avatars.githubusercontent.com/u/31447862?v=4",
+      "profile": "https://umarhadi.dev",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
