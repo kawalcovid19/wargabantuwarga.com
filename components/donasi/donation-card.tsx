@@ -1,7 +1,7 @@
 import React from "react";
 
 import { PrimaryAnchorButton } from "~/components/ui/button";
-import { DonationDetail } from "~/lib/content/informasi-donasi";
+import { DonationDetail } from "~/lib/content/donasi";
 
 export function DonationCard(donation: DonationDetail) {
   return (

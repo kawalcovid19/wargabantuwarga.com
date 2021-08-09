@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import { HomePageDonation } from "../homepage-donation";
 import { DonationCard } from "~/components/donasi/donation-card";
-import informasiDonasi from "~/lib/content/informasi-donasi";
+import donasi from "~/lib/content/donasi";
 
 describe("HomePageDonation", () => {
-  const { donations } = informasiDonasi;
+  const { donations } = donasi;
   const [donation] = donations;
   it("render homepage donation widget correctly", () => {
     render(<HomePageDonation />);

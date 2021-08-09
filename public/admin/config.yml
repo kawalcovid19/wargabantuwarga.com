@@ -247,7 +247,7 @@ collections:
     files:
       - name: "informasi_donasi"
         label: "Informasi Donasi"
-        file: "_content/donasi/informasi-donasi.json"
+        file: "_content/donasi.json"
         fields:
           - name: "donations"
             label: "Donations"

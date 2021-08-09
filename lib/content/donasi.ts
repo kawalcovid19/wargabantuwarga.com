@@ -1,4 +1,4 @@
-import informasiDonasi from "~/_content/donasi/informasi-donasi.json";
+import donasi from "~/_content/donasi.json";
 
 export type Donations = Donation[];
 
@@ -12,4 +12,4 @@ export type DonationDetail = {
   readonly title: string;
 };
 
-export default informasiDonasi as unknown as Donation;
+export default donasi as unknown as Donation;

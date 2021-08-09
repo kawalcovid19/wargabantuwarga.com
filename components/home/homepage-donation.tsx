@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { HomePageSection } from "./homepage-section";
 import { DonationCard } from "~/components/donasi/donation-card";
-import informasiDonasi from "~/lib/content/informasi-donasi";
+import donasi from "~/lib/content/donasi";
 
 export function HomePageDonation() {
   return (
@@ -10,7 +10,7 @@ export function HomePageDonation() {
         Donasi Warga Terdampak
       </h2>
       <div className="grid grid-cols-2 gap-4">
-        {informasiDonasi.donations.slice(0, 2).map((donation, i) => (
+        {donasi.donations.slice(0, 2).map((donation, i) => (
           <DonationCard
             key={i}
             category={donation.category}

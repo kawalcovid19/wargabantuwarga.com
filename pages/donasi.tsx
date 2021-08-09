@@ -8,13 +8,10 @@ import { BackButton } from "~/components/layout/back-button";
 import { Page } from "~/components/layout/page";
 import { PageHeader } from "~/components/layout/page-header";
 import { Container } from "~/components/ui/container";
-import informasiDonasi, {
-  Donation,
-  DonationDetail,
-} from "~/lib/content/informasi-donasi";
+import donasi, { Donation, DonationDetail } from "~/lib/content/donasi";
 
 type InformasiDonasiProps = {
-  informasiDonasi: Donation;
+  donasi: Donation;
 };
 
 const meta = {
@@ -46,7 +43,7 @@ export default function DonasiPage(props: InformasiDonasiProps) {
         <Container className="space-y-2">
           <div className="p-4 overflow-hidden rounded-md space-y-6 bg-white">
             <div className="grid grid-cols-2 gap-4">
-              {props.informasiDonasi.donations.map(
+              {props.donasi.donations.map(
                 (donation: DonationDetail, i: number) => (
                   <DonationCard
                     key={i}
@@ -68,7 +65,7 @@ export default function DonasiPage(props: InformasiDonasiProps) {
 export const getStaticProps: GetStaticProps = () => {
   return {
     props: {
-      informasiDonasi,
+      donasi,
     },
   };
 };

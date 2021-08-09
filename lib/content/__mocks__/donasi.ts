@@ -1,4 +1,4 @@
-import { donationBuilder } from "./builders/informasi-donasi";
+import { donationBuilder } from "./builders/donasi";
 
 const informasiDonasi = donationBuilder();
 

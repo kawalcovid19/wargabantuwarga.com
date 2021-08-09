@@ -2,18 +2,18 @@ import React from "react";
 
 import { render, screen } from "@testing-library/react";
 import { DonationCard } from "~/components/donasi/donation-card";
-import informasiDonasi from "~/lib/content/informasi-donasi";
+import donasi from "~/lib/content/donasi";
 import DonasiPage, { getStaticProps } from "~/pages/donasi";
 
-jest.mock("~/lib/content/informasi-donasi");
+jest.mock("~/lib/content/donasi");
 jest.mock("next/router", () => require("next-router-mock"));
 
 describe("DonasiPage", () => {
-  const { donations } = informasiDonasi;
+  const { donations } = donasi;
   const [donation] = donations;
 
   it("renders the title and the breadcrumbs correctly", () => {
-    render(<DonasiPage informasiDonasi={informasiDonasi} />);
+    render(<DonasiPage donasi={donasi} />);
 
     const title = screen.getByText(/Donasi dan Penggalangan Dana/i);
     expect(title).toBeVisible();
@@ -59,7 +59,7 @@ describe("getStaticProps", () => {
   it("returns the props from the donation information", () => {
     expect(getStaticProps({})).toEqual({
       props: {
-        informasiDonasi,
+        donasi,
       },
     });
   });

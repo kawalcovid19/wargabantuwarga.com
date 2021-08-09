@@ -1,5 +1,5 @@
 import { build, fake } from "@jackfranklin/test-data-bot";
-import { Donation, DonationDetail } from "~/lib/content/informasi-donasi";
+import { Donation, DonationDetail } from "~/lib/content/donasi";
 
 export const donationDetailBuilder = build<DonationDetail>({
   fields: {
