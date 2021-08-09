@@ -11,11 +11,11 @@ describe("HomePage", () => {
   it("renders the last updated time correctly", () => {
     render(<HomePage latestNews={[latestNewsItemBuilder()]} />);
 
-    expect(
-      screen.getByText(
-        /Pembaruan terakhir pada Selasa, 27 Juli 2021 17.43 WIB/i,
-      ),
-    ).toBeVisible();
+    const LastUpdatedAlert = screen.queryByText(
+      /Pembaruan terakhir pada Selasa, 27 Juli 2021 17.43 WIB/i,
+    );
+
+    expect(LastUpdatedAlert).not.toBeInTheDocument();
   });
 });
 
