@@ -10,7 +10,7 @@ describe("FooterDiscussionSection", () => {
         class="w-full sm:max-w-xl mx-auto"
       >
         <section
-          class="bg-white overflow-hidden p-4 mt-2"
+          class="bg-white overflow-hidden px-4 mt-2 pt-8 pb-16"
         >
           <span>
             Ada usulan atau laporan terkait website ini? 
