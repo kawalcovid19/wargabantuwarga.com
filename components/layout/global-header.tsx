@@ -2,10 +2,12 @@ import { createElement, useRef, useState } from "react";
 
 import { Popover } from "@headlessui/react";
 import Link from "next/link";
+import clsx from "clsx";
 import { Container } from "../ui/container";
-import useDocumentScrollThrottled from "../ui/scroll-throttled";
 import { NavigationMenuPopover, navMenuButtonIcon } from "./navigation-menu";
 import { WBWLogoWhite } from "~/components/ui/wbw-logo";
+
+import useDocumentScrollThrottled from "~/lib/scroll-throttled";
 
 export function GlobalHeader() {
   const popoverButtonRef = useRef<HTMLButtonElement>(null);
@@ -14,7 +16,7 @@ export function GlobalHeader() {
   const [shouldShowShadow, setShouldShowShadow] = useState(false);
 
   const MINIMUM_SCROLL = 80;
-  const TIMEOUT_DELAY = 400;
+  const TIMEOUT_DELAY = 200;
 
   useDocumentScrollThrottled(
     (callbackData: { previousScrollTop: Number; currentScrollTop: Number }) => {
@@ -30,12 +32,18 @@ export function GlobalHeader() {
     },
   );
 
-  const shadowStyle = shouldShowShadow ? "translate-y-0" : "";
-  const hiddenStyle = shouldHideHeader ? "-translate-y-full" : "";
+  const shadowStyle = shouldShowShadow ? "shadow-xl" : "";
+  const hiddenStyle = shouldHideHeader
+    ? "-translate-y-full overflow-y-hidden"
+    : "";
 
   return (
     <header
-      className={`flex items-center justify-center fixed w-full h-16 px-4 z-40 bg-brand-500 shadow-md transform duration-200 ${shadowStyle} ${hiddenStyle}`}
+      className={clsx(
+        "flex items-center justify-center fixed w-full h-16 px-4 z-40 bg-brand-500 transition duration-200",
+        shadowStyle,
+        hiddenStyle,
+      )}
     >
       <Container className="flex items-center justify-between h-full">
         <Link href="/">
