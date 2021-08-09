@@ -358,6 +358,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "Widi-ps",
+      "name": "Widi-ps",
+      "avatar_url": "https://avatars.githubusercontent.com/u/69189062?v=4",
+      "profile": "https://github.com/Widi-ps",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
