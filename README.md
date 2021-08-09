@@ -3,7 +3,7 @@
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-32-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-33-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -148,6 +148,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.linkedin.com/in/ramarahmanda"><img src="https://avatars.githubusercontent.com/u/12446260?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ramarahmanda</b></sub></a><br /><a href="#ideas-ramarahmanda" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=ramarahmanda" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/morezam"><img src="https://avatars.githubusercontent.com/u/74182139?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mohammad Hamzehei</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=morezam" title="Code">💻</a></td>
     <td align="center"><a href="http://doni.dev"><img src="https://avatars.githubusercontent.com/u/7299491?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Doni Rubiagatra</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=rubiagatra" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://umarhadi.dev"><img src="https://avatars.githubusercontent.com/u/31447862?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Umar Hadi Siswanto</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=umarhadi" title="Documentation">📖</a></td>
   </tr>
 </table>
 
