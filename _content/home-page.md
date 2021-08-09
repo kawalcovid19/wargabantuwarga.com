@@ -11,10 +11,6 @@ home_banner_image: https://res.cloudinary.com/wargabantuwarga/image/upload/v1627
 
 [Lihat daftar layanan dan kontak penyedia jasa konseling di sini](https://docs.google.com/spreadsheets/d/1JRlBNwmqoVimwR70dwIVJ1QAnBbC0Mqp0DmomeO0cWU/edit?usp=sharing)
 
-#### Hotline Kementerian Kesehatan
-
-Hubungi 119 ext. 9
-
 
 
 - - -
