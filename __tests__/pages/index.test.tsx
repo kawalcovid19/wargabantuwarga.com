@@ -8,7 +8,7 @@ jest.mock("~/lib/content/home-page");
 jest.mock("~/lib/content/welcome-message");
 
 describe("HomePage", () => {
-  it("renders the last updated time correctly", () => {
+  it("the last updated alert is not rendered anymore", () => {
     render(<HomePage latestNews={[latestNewsItemBuilder()]} />);
 
     const LastUpdatedAlert = screen.queryByText(
