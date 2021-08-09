@@ -20,7 +20,7 @@ export function Navigation() {
     return (
       <>
         {createElement(item.icon, {
-          className: "w-8 h-8",
+          className: "w-6 h-6 mb-1",
           "aria-hidden": true,
         })}
         <span className="text-xs truncate">{item.name}</span>
@@ -38,7 +38,7 @@ export function Navigation() {
               : router.asPath.startsWith(item.href);
 
             return (
-              <li key={item.name} className="relative">
+              <li key={item.name} className="relative p-4">
                 {item.external ? (
                   <a
                     className={clsx(...navigationClasses(isActive))}

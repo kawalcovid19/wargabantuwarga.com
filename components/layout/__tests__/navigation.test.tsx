@@ -20,7 +20,7 @@ describe("Navigation", () => {
             class="flex items-center justify-evenly w-full"
           >
             <li
-              class="relative"
+              class="relative p-4"
             >
               <a
                 class="inline-flex flex-col items-center justify-center text-center h-12 px-2 rounded-md text-gray-600 hover:text-blue-600"
@@ -28,7 +28,7 @@ describe("Navigation", () => {
               >
                 <svg
                   aria-hidden="true"
-                  class="w-8 h-8"
+                  class="w-6 h-6 mb-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -49,7 +49,7 @@ describe("Navigation", () => {
               </a>
             </li>
             <li
-              class="relative"
+              class="relative p-4"
             >
               <a
                 class="inline-flex flex-col items-center justify-center text-center h-12 px-2 rounded-md text-gray-600 hover:text-blue-600"
@@ -59,7 +59,7 @@ describe("Navigation", () => {
               >
                 <svg
                   aria-hidden="true"
-                  class="w-8 h-8"
+                  class="w-6 h-6 mb-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -80,7 +80,7 @@ describe("Navigation", () => {
               </a>
             </li>
             <li
-              class="relative"
+              class="relative p-4"
             >
               <a
                 class="inline-flex flex-col items-center justify-center text-center h-12 px-2 rounded-md text-gray-600 hover:text-blue-600"
@@ -88,7 +88,7 @@ describe("Navigation", () => {
               >
                 <svg
                   aria-hidden="true"
-                  class="w-8 h-8"
+                  class="w-6 h-6 mb-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -109,7 +109,7 @@ describe("Navigation", () => {
               </a>
             </li>
             <li
-              class="relative"
+              class="relative p-4"
             >
               <a
                 class="inline-flex flex-col items-center justify-center text-center h-12 px-2 rounded-md text-gray-600 hover:text-blue-600"
@@ -117,7 +117,7 @@ describe("Navigation", () => {
               >
                 <svg
                   aria-hidden="true"
-                  class="w-8 h-8"
+                  class="w-6 h-6 mb-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
