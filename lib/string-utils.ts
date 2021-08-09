@@ -125,3 +125,21 @@ export function isInternalLink(link: string): boolean {
     domain === "wargabantuwarga.com"
   );
 }
+
+/**
+ * Mark up text with highlight tag
+ *
+ * @param {string} text original text
+ * @param {string} keyword string to be highlighted
+ * @returns {string} `true` if `value` is empty. `false` otherwise
+ */
+export function markText(text: string, keyword: string): string {
+  if (!keyword || keyword.length == 0) {
+    return text;
+  }
+
+  return text.replace(
+    new RegExp(keyword, "gi"),
+    (match) => `<mark>${match}</mark>`,
+  );
+}

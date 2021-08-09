@@ -4,6 +4,7 @@ import { ExclamationCircleIcon } from "@heroicons/react/solid";
 import htmr from "htmr";
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
+import { useRouter } from "next/router";
 import { BackButton } from "~/components/layout/back-button";
 import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
@@ -13,6 +14,7 @@ import { EmptyState } from "~/components/ui/empty-state";
 import { FaqListSkeleton } from "~/components/ui/skeleton-loading";
 import faqs, { Faq } from "~/lib/data/faqs";
 import { useSearch } from "~/lib/hooks/use-search";
+import { markText } from "~/lib/string-utils";
 
 type FaqPageProps = {
   faqs: Faq[];
@@ -49,6 +51,9 @@ export default function FaqPage(props: FaqPageProps) {
     ],
   });
 
+  const router = useRouter();
+  const searchKeyword = router.query.q;
+
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const listFaqs = useMemo(() => {
     return groupBy<Faq | unknown, string>(
@@ -80,6 +85,7 @@ export default function FaqPage(props: FaqPageProps) {
           initialValue={urlParams}
           itemName="pertanyaan"
           onSubmitKeywords={handleSubmitKeywords}
+          placeholderText="Masukan Kata Kunci Pencarian"
         />
 
         <div className="space-y-4">
@@ -108,11 +114,15 @@ export default function FaqPage(props: FaqPageProps) {
                     className="pt-6 pb-8 md:grid md:grid-cols-12 md:gap-8"
                   >
                     <dt className="text-base font-semibold text-gray-900 md:col-span-5">
-                      {question.pertanyaan}
+                      {htmr(
+                        markText(question.pertanyaan, searchKeyword as string),
+                      )}
                     </dt>
                     <dd className="space-y-4 mt-2 md:mt-0 md:col-span-7">
                       <p className="text-base text-gray-500">
-                        {htmr(question.jawaban)}
+                        {htmr(
+                          markText(question.jawaban, searchKeyword as string),
+                        )}
                       </p>
                       <small className="block">
                         Sumber:{" "}
