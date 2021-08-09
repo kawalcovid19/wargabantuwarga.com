@@ -3,6 +3,7 @@ import React from "react";
 
 import { PrimaryAnchorButton } from "~/components/ui/button";
 import { ContactDetail } from "~/lib/content/telemedicine-contacts";
+import { getContactLink } from "~/lib/home/get-contact-link";
 
 export function TelemedicineContactCard(contact: ContactDetail) {
   return (
@@ -43,7 +44,7 @@ export function TelemedicineContactCard(contact: ContactDetail) {
           className="bg-light-blue-400 font-normal focus:bg-light-blue hover:bg-light-blue-600 text-white"
           color="none"
           data-testid={`contact-button-${contact.doctor_name}`}
-          href={contact.contact}
+          href={getContactLink(contact.platform, contact.contact)}
           rel="nofollow noopener noreferrer"
           rounded
           size="xs"
