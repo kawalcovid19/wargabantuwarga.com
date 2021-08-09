@@ -3,7 +3,6 @@ import { throttle } from "@martinstark/throttle-ts";
 
 function useDocumentScrollThrottled(callback: {
   (callbackData: { previousScrollTop: Number; currentScrollTop: Number }): void;
-  (arg0: { previousScrollTop: number; currentScrollTop: number }): void;
 }) {
   const [, setScrollPosition] = useState(0);
   let previousScrollTop = 0;

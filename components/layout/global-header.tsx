@@ -16,7 +16,7 @@ export function GlobalHeader() {
   const [shouldShowShadow, setShouldShowShadow] = useState(false);
 
   const MINIMUM_SCROLL = 80;
-  const TIMEOUT_DELAY = 200;
+  const TIMEOUT_DELAY = 150;
 
   useDocumentScrollThrottled(
     (callbackData: { previousScrollTop: Number; currentScrollTop: Number }) => {
