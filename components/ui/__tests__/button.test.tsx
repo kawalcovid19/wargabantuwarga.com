@@ -201,6 +201,14 @@ describe("Button", () => {
       expect(container.firstChild).toHaveClass("rounded-full");
     });
 
+    it("renders with correct sizes", () => {
+      const { container } = render(
+        <OutlineButton size="lg">test button</OutlineButton>,
+      );
+
+      expect(container.firstChild).toHaveClass("px-4", "py-2", "text-base");
+    });
+
     it("renders right icon with the correct classes", () => {
       const { container } = render(
         <OutlineButton icon={PlusIcon} iconPosition="right">

@@ -25,7 +25,7 @@ export function HomePageStart() {
             rounded
             size="lg"
           >
-            Cek sekarang
+            Telusuri sekarang
           </PrimaryAnchorButton>
         </Link>
       </div>
