@@ -3,7 +3,7 @@
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-33-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-34-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -54,13 +54,13 @@ For any improvements on the website, we should continuously measure its impact o
 
 To get started running the project locally, please follow the steps below.
 
-First, clone the repository:
+First, clone the repository.
 
 ```bash
 git clone https://github.com/kawalcovid19/wargabantuwarga.com.git
 ```
 
-Then, install dependencies and fetch data to your local machine:
+Then, install dependencies and fetch data to your local machine. **Note that we use Yarn, not npm.**
 
 ```bash
 cd wargabantuwarga.com
@@ -68,7 +68,7 @@ yarn install
 yarn mirror-box
 ```
 
-Finally, run the development server:
+Finally, run the development server.
 
 ```bash
 yarn dev
@@ -98,6 +98,8 @@ See our contribution guidelines in these languages:
 
 - [English](CONTRIBUTING.md)
 - [Indonesian](CONTRIBUTING_ID.md)
+
+When contributing to our project, please use English when communicating with other people in issues and/or pull requests. [Click here](CONTRIBUTING.md#why-are-we-using-english-in-our-issues--prs) to read why. ([Bahasa Indonesia](CONTRIBUTING_ID.md#mengapa-kita-menggunakan-bahasa-inggris-dalam-menulis-issue-dan-pull-request))
 
 ## Contributors ✨
 
@@ -149,6 +151,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/morezam"><img src="https://avatars.githubusercontent.com/u/74182139?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mohammad Hamzehei</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=morezam" title="Code">💻</a></td>
     <td align="center"><a href="http://doni.dev"><img src="https://avatars.githubusercontent.com/u/7299491?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Doni Rubiagatra</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=rubiagatra" title="Tests">⚠️</a></td>
     <td align="center"><a href="https://umarhadi.dev"><img src="https://avatars.githubusercontent.com/u/31447862?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Umar Hadi Siswanto</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=umarhadi" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/Widi-ps"><img src="https://avatars.githubusercontent.com/u/69189062?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Widi-ps</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/issues?q=author%3AWidi-ps" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
