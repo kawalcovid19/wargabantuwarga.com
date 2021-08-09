@@ -27,6 +27,7 @@
   "dependencies": {
     "@headlessui/react": "^1.3.0",
     "@heroicons/react": "1.0.2",
+    "@martinstark/throttle-ts": "^1.2.3",
     "@netlify/plugin-nextjs": "3.7.1",
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/typography": "0.4.1",
@@ -35,7 +36,6 @@
     "globby": "^11.0.4",
     "htmr": "^1.0.0",
     "itemsjs": "^2.1.10",
-    "lodash": "^4.17.21",
     "next": "11.0.1",
     "next-seo": "^4.26.0",
     "nprogress": "^0.2.0",
@@ -58,7 +58,6 @@
     "@testing-library/react": "12.0.0",
     "@testing-library/user-event": "13.2.0",
     "@types/jest": "26.0.24",
-    "@types/lodash": "^4.14.172",
     "@types/node": "^16.4.2",
     "@types/nprogress": "^0.2.0",
     "@types/prettier": "^2.3.2",

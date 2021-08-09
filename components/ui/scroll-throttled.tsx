@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { throttle } from "lodash";
+import { throttle } from "@martinstark/throttle-ts";
+// import { debounce } from "ts-debounce";
 
 function useDocumentScrollThrottled(callback: {
   (callbackData: { previousScrollTop: Number; currentScrollTop: Number }): void;
@@ -19,7 +20,7 @@ function useDocumentScrollThrottled(callback: {
     callback({ previousScrollTop, currentScrollTop });
   }
 
-  const handleDocumentScrollThrottled = throttle(handleDocumentScroll, 250);
+  const [handleDocumentScrollThrottled] = throttle(handleDocumentScroll, 150);
 
   useEffect(() => {
     window.addEventListener("scroll", handleDocumentScrollThrottled);
