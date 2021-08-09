@@ -1,37 +1,17 @@
 ---
-last_updated_time: 2021-08-09T01:49:37.736Z
+last_updated_time: 2021-08-09T02:58:39.509Z
 home_banner_image: https://res.cloudinary.com/wargabantuwarga/image/upload/v1627049958/hero_banner_desktop_zat71c.png
 ---
-## Situs atau Kontak Penting Terkait COVID-19
-
-Temukan situs atau kontak fasilitas/alat kesehatan untuk COVID-19 di tingkat nasional.
-
 #### Mau Konsultasi Medis dengan Dokter (Telemedicine)?
 
 * Download aplikasi telemedicine yang didukung Kemenkes: [Alodokter](https://bit.ly/alodokter-isoman) [GetWell](https://play.google.com/store/apps/details?id=id.paquesid.getwell) [Good Doctor](https://gooddoctor.onelink.me/Cmiw/efeba7ae) [GrabHealth](https://grab.onelink.me/2695613898/fe73b8c5) [Halodoc](https://bit.ly/isoman_halodoc) [KlikDokter](https://bit.ly/kd-kemenkes-isoman) [KlinikGo](https://klinikgo.com/isoman) [Link Sehat](https://link.linksehat.com/mRMf) [Milvik Dokter](https://milvik.id/about-us/) [ProSehat](https://prosehat.com/wa) [SehatQ](https://sehatqapp.onelink.me/bgzy?pid=kemenkes&c=sqkemenkes&deep_link_value=https%3A%2F%2Fwww.sehatq.com%2Ftelemed&af_web_dp=https%3A%2F%2Fwww.sehatq.com%2Ftelemed&af_dp=https%3A%2F%2Fwww.sehatq.com%2Ftelemed) [YesDok](https://bit.ly/ISOMAN-YesDok)
 * Konsultasi gratis dengan dokter: [lihat jadwal dan kontak dokter di sini](https://docs.google.com/spreadsheets/d/1gGnIiXmCcGpMkB_h98FiHW99uVdwcdTBq_GhIEl_4eM/edit?usp=sharing)
 
-#### Mau Cek Ketersediaan Obat di Daerahmu?
-
-[Klik Farma Plus dari Kementerian Kesehatan](https://farmaplus.kemkes.go.id)
-
-#### Mau Vaksin COVID-19?
-
-* [Cari informasi lokasi vaksin di situs resmi pemerintah di sini](https://covid19.go.id/faskesvaksin)
-* [Klik database layanan vaksin di Yuk Vaksin](https://vaksincovid.carrd.co)
-* [Follow dan lihat Instagram story @infolokasivaksincovid_19](https://www.instagram.com/infovaksincovid_19/)
-
 #### Butuh Konseling Bagi Pasien, Keluarga Pasien, atau Tenaga Kesehatan Terdampak COVID-19?
 
 [Lihat daftar layanan dan kontak penyedia jasa konseling di sini](https://docs.google.com/spreadsheets/d/1JRlBNwmqoVimwR70dwIVJ1QAnBbC0Mqp0DmomeO0cWU/edit?usp=sharing)
 
-#### Hotline Kementerian Kesehatan
 
-Hubungi 119 ext. 9
-
-#### Butuh informasi layanan Krematorium, Mobil Jenazah, Peti Mati, Bunga Duka, dan Program Bantuan Makanan Isoman?
-
-[Klik database informasi Lentera Svarga di sini](https://lenterasvarga.carrd.co)
 
 - - -
 
