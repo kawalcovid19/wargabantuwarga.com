@@ -340,6 +340,33 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "rubiagatra",
+      "name": "Doni Rubiagatra",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7299491?v=4",
+      "profile": "http://doni.dev",
+      "contributions": [
+        "test"
+      ]
+    },
+    {
+      "login": "umarhadi",
+      "name": "Umar Hadi Siswanto",
+      "avatar_url": "https://avatars.githubusercontent.com/u/31447862?v=4",
+      "profile": "https://umarhadi.dev",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "Widi-ps",
+      "name": "Widi-ps",
+      "avatar_url": "https://avatars.githubusercontent.com/u/69189062?v=4",
+      "profile": "https://github.com/Widi-ps",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,

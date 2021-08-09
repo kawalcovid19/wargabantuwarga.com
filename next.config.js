@@ -4,7 +4,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 /** @type {import("next/dist/next-server/server/config-shared").NextConfig} */
 module.exports = withBundleAnalyzer({
-  // https://github.com/vercel/next.js/blob/canary/packages/next/server/config-shared.ts#L42-L65
+  // https://github.com/vercel/next.js/blob/v11.0.1/packages/next/next-server/server/config-shared.ts#L42-L65
   experimental: {
     optimizeCss: true,
     optimizeImages: true,

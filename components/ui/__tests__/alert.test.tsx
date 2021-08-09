@@ -1,6 +1,7 @@
 import React from "react";
 
-import { render } from "@testing-library/react";
+import { screen, fireEvent, render } from "@testing-library/react";
+import { BellIcon } from "@heroicons/react/outline";
 import { Alert } from "../alert";
 
 describe("Alert", () => {
@@ -31,11 +32,17 @@ describe("Alert", () => {
 
   it("renders with correct customization", () => {
     const { container } = render(
-      <Alert accentBorder className="babayaga" color="red" visible={true}>
+      <Alert
+        accentBorder
+        className="babayaga"
+        color="red"
+        dismissible={true}
+        icon={BellIcon}
+        visible={true}
+      >
         Test Customize Alert
       </Alert>,
     );
-
     expect(container.firstChild?.firstChild).toHaveClass(
       "bg-red-50",
       "text-red-700",
@@ -45,5 +52,12 @@ describe("Alert", () => {
       "border-red-400",
     );
     expect(container.firstChild?.firstChild).toHaveClass("p-4", "babayaga");
+    expect(
+      container.firstChild?.firstChild?.firstChild?.firstChild?.firstChild,
+    ).toHaveClass("flex-shrink-0 mr-3");
+    expect(
+      container.firstChild?.firstChild?.firstChild?.childNodes[1],
+    ).toHaveClass(`close-button text-red-400 hover:text-red-500`);
+    fireEvent.click(screen.getByRole("button"));
   });
 });
