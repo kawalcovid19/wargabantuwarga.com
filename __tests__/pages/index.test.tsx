@@ -13,7 +13,7 @@ describe("HomePage", () => {
       <HomePage latestNews={[latestNewsItemBuilder()]} />,
     );
 
-    expect(container.firstChild).toHaveClass("flex-1");
+    expect(container.firstChild?.hasChildNodes()).toBeTruthy();
   });
 });
 
