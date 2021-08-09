@@ -70,8 +70,8 @@ export async function fetchSheets() {
                 cellValue = toTitleCase(cellValue);
               } else if (["kontak", "link"].includes(colName)) {
                 cellValue = extractGoogleQuery(cellValue);
-              } else if (colName === "ketersediaan") {
-                cellValue = cellValue === "Tersedia";
+              } else if (colName == "ketersediaan") {
+                cellValue = toTitleCase(cellValue);
               }
               prev[colName] = cellValue;
               if (colName == "kontak") {
