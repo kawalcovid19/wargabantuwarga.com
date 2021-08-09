@@ -63,13 +63,15 @@ export async function fetchSheets() {
         slug: getKebabCase(sheetName),
         data: sheetRows.map((row, rowIndex) => {
           return sheetColumns.reduce(
-            (prev: Record<string, number | string>, col) => {
+            (prev: Record<string, boolean | number | string>, col) => {
               const colName = toSnakeCase(col.name);
-              let cellValue = row[col.index];
+              let cellValue: boolean | number | string = row[col.index];
               if (colName == "lokasi") {
                 cellValue = toTitleCase(cellValue);
               } else if (["kontak", "link"].includes(colName)) {
                 cellValue = extractGoogleQuery(cellValue);
+              } else if (colName === "ketersediaan") {
+                cellValue = cellValue === "Tersedia";
               }
               prev[colName] = cellValue;
               if (colName == "kontak") {
