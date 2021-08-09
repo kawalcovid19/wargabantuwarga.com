@@ -312,6 +312,61 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "abui-am",
+      "name": "Abui",
+      "avatar_url": "https://avatars.githubusercontent.com/u/50738961?v=4",
+      "profile": "https://github.com/abui-am",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "ramarahmanda",
+      "name": "ramarahmanda",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12446260?v=4",
+      "profile": "https://www.linkedin.com/in/ramarahmanda",
+      "contributions": [
+        "ideas",
+        "code"
+      ]
+    },
+    {
+      "login": "morezam",
+      "name": "Mohammad Hamzehei",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74182139?v=4",
+      "profile": "https://github.com/morezam",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "rubiagatra",
+      "name": "Doni Rubiagatra",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7299491?v=4",
+      "profile": "http://doni.dev",
+      "contributions": [
+        "test"
+      ]
+    },
+    {
+      "login": "umarhadi",
+      "name": "Umar Hadi Siswanto",
+      "avatar_url": "https://avatars.githubusercontent.com/u/31447862?v=4",
+      "profile": "https://umarhadi.dev",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "Widi-ps",
+      "name": "Widi-ps",
+      "avatar_url": "https://avatars.githubusercontent.com/u/69189062?v=4",
+      "profile": "https://github.com/Widi-ps",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,

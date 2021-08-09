@@ -26,6 +26,7 @@ export const contactBuilder = build<Contact>({
     penyedia: fake((f) => f.company.companyName()),
     keterangan: fake((f) => f.commerce.productName()),
     kontak: fake((f) => f.phone.phoneNumber()),
+    alamat: fake((f) => f.address.streetAddress()),
     verifikasi: 1,
   },
 });
