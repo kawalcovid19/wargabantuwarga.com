@@ -11,10 +11,9 @@ describe("HomePage", () => {
   it("renders the last updated time correctly", () => {
     render(<HomePage latestNews={[latestNewsItemBuilder()]} />);
 
+    expect(screen.getByText(/Pembaruan terakhir pada/i)).toBeVisible();
     expect(
-      screen.getByText(
-        /Pembaruan terakhir pada Selasa, 27 Juli 2021 17.43 WIB/i,
-      ),
+      screen.getByText(/Tuesday, July 27, 2021, 05:43 PM GMT/i),
     ).toBeVisible();
   });
 });
