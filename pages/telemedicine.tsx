@@ -8,10 +8,12 @@ import { BackButton } from "~/components/layout/back-button";
 import { TelemedicineContent } from "~/components/telemedicine/telemedicine-content";
 import TelemedicineContactSection from "~/components/telemedicine/telemedicine-contact-section";
 import { Container } from "~/components/ui/container";
-import emergencyContacts, { Contact } from "~/lib/content/emergency-contacts";
+import telemedicineContacts, {
+  Contact,
+} from "~/lib/content/telemedicine-contacts";
 
 type TelemedicineProps = {
-  emergencyContacts: Contact;
+  telemedicineContacts: Contact;
 };
 
 const meta = {
@@ -42,7 +44,9 @@ export default function TelemedicinePage(props: TelemedicineProps) {
       <TelemedicineContent>
         <Container className="space-y-2">
           <TelemedicineContactSection
-            emergency_contacts={props.emergencyContacts.emergency_contacts}
+            telemedicine_contacts={
+              props.telemedicineContacts.telemedicine_contacts
+            }
           />
         </Container>
       </TelemedicineContent>
@@ -53,7 +57,7 @@ export default function TelemedicinePage(props: TelemedicineProps) {
 export const getStaticProps: GetStaticProps = () => {
   return {
     props: {
-      emergencyContacts,
+      telemedicineContacts,
     },
   };
 };

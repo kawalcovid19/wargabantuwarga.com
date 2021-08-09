@@ -1,14 +1,14 @@
 import React from "react";
 
 import { TelemedicineContactCard } from "./telemedicine-contact-card";
-import { ContactDetail } from "~/lib/content/emergency-contacts";
+import { ContactDetail } from "~/lib/content/telemedicine-contacts";
 
-type KontakDaruratProps = {
-  emergency_contacts: ContactDetail[];
+type TelemedicineProps = {
+  telemedicine_contacts: ContactDetail[];
 };
 
-export default function TelemedicineContactSection(data: KontakDaruratProps) {
-  const { emergency_contacts } = data;
+export default function TelemedicineContactSection(data: TelemedicineProps) {
+  const { telemedicine_contacts } = data;
   return (
     <div className="p-4 overflow-hidden space-y-6 bg-white">
       <div className="flex-1 min-w-0">
@@ -17,13 +17,14 @@ export default function TelemedicineContactSection(data: KontakDaruratProps) {
         </h1>
       </div>
       <div className="grid grid-cols-none gap-4">
-        {emergency_contacts.map((contact: ContactDetail, i: number) => (
+        {telemedicine_contacts.map((contact: ContactDetail, i: number) => (
           <TelemedicineContactCard
             key={i}
-            description={contact.description}
-            image={contact.image}
-            name={contact.name}
-            url={contact.url}
+            contact={contact.contact}
+            doctor_name={contact.doctor_name}
+            ops_date={contact.ops_date}
+            ops_time={contact.ops_time}
+            platform={contact.platform}
           />
         ))}
       </div>
