@@ -94,12 +94,6 @@ collections:
         file: "_content/home-page.md"
         fields:
           - {
-              label: "Last updated time",
-              name: "last_updated_time",
-              widget: "datetime",
-              hint: "Last updated time",
-            }
-          - {
               label: "Body",
               name: "body",
               widget: "markdown",
