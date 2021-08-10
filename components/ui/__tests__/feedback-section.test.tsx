@@ -7,13 +7,13 @@ describe("FooterDiscussionSection", () => {
 
     expect(container.firstChild).toMatchInlineSnapshot(`
 <div
-  class="flex-1 px-4 pb-2"
+  class="flex-1 px-4 pt-4 pb-12"
 >
   <div
     class="w-full sm:max-w-xl mx-auto"
   >
     <div
-      class="p-4 my-2 bg-white overflow-hidden shadow rounded-md"
+      class="p-4 bg-white overflow-hidden shadow rounded-md"
     >
       <h2
         class="text-center font-semibold text-gray-700 text-lg"
