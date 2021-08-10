@@ -24,4 +24,31 @@ describe("ContactListItem", () => {
     });
     userEvent.click(screen.getByText(/buka peta/i));
   });
+
+  it("renders 'ketersediaan' badge if the property is not empty", () => {
+    const tersediaContact = contactBuilder({
+      overrides: {
+        ketersediaan: "Tersedia",
+      },
+    });
+
+    render(
+      <ContactListItem
+        contact={tersediaContact}
+        provinceName="DKI Jakarta"
+        provinceSlug="dki-jakarta"
+      />,
+    );
+
+    const elem = screen.getByText((content, element) => {
+      return (
+        content == "Tersedia" &&
+        element?.tagName.toLowerCase() == "span" &&
+        element.classList.contains("bg-green-100") &&
+        element.classList.contains("text-green-800")
+      );
+    });
+
+    expect(elem).toBeVisible();
+  });
 });
