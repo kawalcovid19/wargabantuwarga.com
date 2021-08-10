@@ -28,7 +28,7 @@ export default function EmergencyContactSection(data: KontakDaruratProps) {
         ))}
       </div>
       <div className="space-y-4 text-center">
-        <h2 className="text-gray-800 text-sm font-semibold">
+        <h2 className="text-gray-800 text-md font-semibold">
           Cari kontak penyedia faskes secara detail perprovinsi se-Indonesia
         </h2>
         <div className="space-y-3.5">
