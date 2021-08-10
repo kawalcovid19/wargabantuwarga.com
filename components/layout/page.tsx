@@ -1,11 +1,11 @@
 import * as React from "react";
-import { FooterDiscussionSection } from "~/components/ui/footer-discussion-section";
+import { FeedbackSection } from "~/components/ui/feedback-section";
 
 export const Page: React.FC = ({ children }) => {
   return (
-    <section className="flex flex-col flex-1 pb-16 pt-16">
+    <section className="flex flex-col flex-1 py-16">
       {children}
-      <FooterDiscussionSection />
+      <FeedbackSection />
     </section>
   );
 };

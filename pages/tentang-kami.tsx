@@ -1,9 +1,6 @@
 import { NextSeo } from "next-seo";
 import htmr from "htmr";
-import {
-  InformationCircleIcon,
-  SpeakerphoneIcon,
-} from "@heroicons/react/outline";
+import { InformationCircleIcon } from "@heroicons/react/outline";
 
 import { htmrTransform } from "~/lib/htmr-transformers";
 import { attributes, html } from "~/lib/content/about/content";
@@ -15,7 +12,6 @@ import collaboratorsData, {
 } from "~/lib/content/about/collaborators";
 
 import { Alert } from "~/components/ui/alert";
-import { PrimaryAnchorButton } from "~/components/ui/button";
 import { BackButton } from "~/components/layout/back-button";
 import { Page } from "~/components/layout/page";
 import { PageContent } from "~/components/layout/page-content";
@@ -131,27 +127,6 @@ export default function AboutPage() {
                     );
                   },
                 )}
-              </div>
-            </div>
-
-            {/* Submit Feedback Sections --start */}
-            <div className="p-4 space-y-4 bg-white overflow-hidden shadow rounded-md">
-              <h2 className="text-center font-semibold text-gray-700 text-lg">
-                Ada usulan / laporan terkait website ini?
-              </h2>
-              <div className="flex justify-center">
-                <PrimaryAnchorButton
-                  aria-label="Sampaikan masukan Anda"
-                  className="mt-2"
-                  href="https://kcov.id/wbw-discuss"
-                  icon={SpeakerphoneIcon}
-                  rel="nofollow noopener noreferrer"
-                  rounded
-                  target="_blank"
-                  type="button"
-                >
-                  Sampaikan masukan Anda
-                </PrimaryAnchorButton>
               </div>
             </div>
           </div>
