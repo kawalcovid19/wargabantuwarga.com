@@ -1,5 +1,4 @@
 import { NextSeo } from "next-seo";
-import { GetStaticProps } from "next";
 import htmr from "htmr";
 import {
   InformationCircleIcon,
@@ -7,15 +6,13 @@ import {
 } from "@heroicons/react/outline";
 
 import { htmrTransform } from "~/lib/htmr-transformers";
-import {
-  collaborators,
-  videos,
-  content,
-  Video,
+import { attributes, html } from "~/lib/content/about/content";
+
+import videosData, { Video } from "~/lib/content/about/videos";
+
+import collaboratorsData, {
   Collaborator,
-  Videos,
-  Collaborators,
-} from "~/lib/content/about-page";
+} from "~/lib/content/about/collaborators";
 
 import { Alert } from "~/components/ui/alert";
 import { PrimaryAnchorButton } from "~/components/ui/button";
@@ -29,21 +26,7 @@ const meta = {
   description: `#WargaBantuWarga adalah inisiatif warga untuk berbagi informasi dan saling membantu warga membutuhkan yang terdampak Covid-19.`,
 };
 
-type AboutPageProps = {
-  collaborators: Collaborators;
-  videos: Videos;
-  content: {
-    attributes: {
-      title: string;
-      description: string;
-      last_updated_time: string;
-      thumbnail_image: string;
-    };
-    html: string;
-  };
-};
-
-export default function AboutPage(props: AboutPageProps) {
+export default function AboutPage() {
   return (
     <div>
       <Page>
@@ -69,23 +52,21 @@ export default function AboutPage(props: AboutPageProps) {
               <div className="text-gray-400">
                 <div className="p-4 space-y-4">
                   <h2 className="font-bold text-gray-700 text-4xl">
-                    {props.content.attributes.title}
+                    {attributes.title}
                   </h2>
-                  <p className="text-gray-700">
-                    {props.content.attributes.description}
-                  </p>
+                  <p className="text-gray-700">{attributes.description}</p>
                 </div>
 
                 {/* TODO: change to next/image once we get correct Cloudinary Image */}
                 <img
-                  alt={content.attributes.title}
+                  alt={attributes.title}
                   height={236}
-                  src={content.attributes.thumbnail_image}
+                  src={attributes.thumbnail_image}
                   width={656}
                 />
 
                 <article className="p-4 space-y-4">
-                  {htmr(props.content.html, { transform: htmrTransform })}
+                  {htmr(html, { transform: htmrTransform })}
 
                   <Alert color="blue" icon={InformationCircleIcon}>
                     <span className="text-gray-700">
@@ -96,7 +77,7 @@ export default function AboutPage(props: AboutPageProps) {
                 </article>
 
                 <div className="flex p-4 space-x-4 relative">
-                  {props.videos.videos.map((video: Video) => {
+                  {videosData.videos.map((video: Video) => {
                     return (
                       <a
                         key={video.video_url}
@@ -127,7 +108,7 @@ export default function AboutPage(props: AboutPageProps) {
                 Terima kasih kepada para kolaborator inisiatif #WargaBantuWArga
               </h2>
               <div className="flex flex-wrap justify-center items-center space-x-4 relative">
-                {props.collaborators.collaborators.map(
+                {collaboratorsData.collaborators.map(
                   (collaborator: Collaborator) => {
                     return (
                       <a
@@ -136,11 +117,11 @@ export default function AboutPage(props: AboutPageProps) {
                         href={collaborator.link_url}
                         rel="nofollow noopener noreferrer"
                         target="_blank"
-                        title={collaborator.title}
+                        title={collaborator.name}
                       >
                         {/* TODO: change to next/image once we get correct Cloudinary Image */}
                         <img
-                          alt={collaborator.title}
+                          alt={collaborator.name}
                           className="rounded-md"
                           height={80}
                           src={collaborator.thumbnail_image}
@@ -179,13 +160,3 @@ export default function AboutPage(props: AboutPageProps) {
     </div>
   );
 }
-
-export const getStaticProps: GetStaticProps = () => {
-  return {
-    props: {
-      collaborators,
-      videos,
-      content,
-    },
-  };
-};

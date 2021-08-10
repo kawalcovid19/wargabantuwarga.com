@@ -1,6 +1,3 @@
-import { collaboratorsBuilder } from "./builders/collaborators";
-import { videosBuilder } from "./builders/videos";
-
 const html = `
   Inisiatif ini adalah hasil kolaborasi banyak individu, komunitas, dan institusi yang tergerak untuk ikut berkontribusi dalam penanganan pandemi di Indonesia. Kolaborasi #WargaBantuWarga bersifat inklusif, independen, dan non-partisan.
 
@@ -17,6 +14,4 @@ const attributes = {
     "#WargaBantuWarga adalah inisiatif warga untuk berbagi informasi dan saling membantu warga membutuhkan yang terdampak Covid-19.",
 };
 
-export const collaborators = collaboratorsBuilder();
-export const videos = videosBuilder();
-export const content = { attributes, html };
+export { attributes, html };
