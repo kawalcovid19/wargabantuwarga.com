@@ -12,6 +12,10 @@ const securityHeaders = [
     key: "X-Content-Type-Options",
     value: "nosniff",
   },
+  {
+    key: "defaultSrc",
+    valueL: "'self'",
+  },
 ];
 
 /** @type {import("next/dist/next-server/server/config-shared").NextConfig} */
