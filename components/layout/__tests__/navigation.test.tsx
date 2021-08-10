@@ -53,6 +53,7 @@ describe("Navigation", () => {
       >
         <a
           class="inline-flex flex-col items-center justify-center text-center h-12 px-2 rounded-md text-gray-600 hover:text-blue-600"
+          href="https://bit.ly/hotlinewarga"
           rel="nofollow noopener noreferrer"
           target="_blank"
         >
