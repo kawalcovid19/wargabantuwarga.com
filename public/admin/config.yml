@@ -183,11 +183,13 @@ collections:
             label: "Emergency Contacts"
             widget: list
             fields:
-              - { label: "Name",
+              - {
+                  label: "Name",
                   name: "name",
                   widget: "string"
                 }
-              - { label: "Description",
+              - {
+                  label: "Description",
                   name: "description",
                   widget: "string"
                 }
@@ -197,7 +199,8 @@ collections:
                   widget: "image",
                   choose_url: true,
                 }
-              - { label: "Link URL",
+              - {
+                  label: "Link URL",
                   name: "url",
                   widget: "string"
                 }
@@ -231,6 +234,40 @@ collections:
                   label: "Link Title",
                   name: "title",
                   widget: "string"
+                }
+              - {
+                  label: "Link URL",
+                  name: "url",
+                  widget: "string"
+                }
+  - name: "donasi_page"
+    label: "Donasi Page"
+    delete: false
+    preview_path: "donasi"
+    files:
+      - name: "informasi_donasi"
+        label: "Informasi Donasi"
+        file: "_content/donasi.json"
+        fields:
+          - name: "donations"
+            label: "Donations"
+            widget: list
+            fields:
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string"
+                }
+              - {
+                  label: "Category",
+                  name: "category",
+                  widget: "string"
+                }
+              - {
+                  label: "Image",
+                  name: "image",
+                  widget: "image",
+                  choose_url: true,
                 }
               - {
                   label: "Link URL",
