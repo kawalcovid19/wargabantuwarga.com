@@ -3,7 +3,19 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 });
 
 /** @type {import("next/dist/lib/config-shared").Header['headers']} */
+
+const ContentSecurityPolicy = `
+  default-src 'self';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.googletagmanager.com;
+  style-src 'self' 'unsafe-inline';
+  img-src * blob: data: https:;
+`;
+
 const securityHeaders = [
+  {
+    key: "Content-Security-Policy",
+    value: ContentSecurityPolicy.replace(/\n/g, ""),
+  },
   {
     key: "X-Frame-Options",
     value: "DENY",
@@ -11,10 +23,6 @@ const securityHeaders = [
   {
     key: "X-Content-Type-Options",
     value: "nosniff",
-  },
-  {
-    key: "defaultSrc",
-    valueL: "'self'",
   },
 ];
 
