@@ -3,6 +3,7 @@ import {
   CLOUDINARY_DEFAULT_COLOR_SPACE,
   CLOUDINARY_DEFAULT_QUALITY,
   CLOUDINARY_DEFAULT_RESIZE_TYPE,
+  CLOUDINARY_CDN_PREFIX,
 } from "~/constants/image";
 
 export const getCloudName = (fullUrl: string = "") => {
@@ -41,3 +42,13 @@ export const getDefaultOptions = (width = 0, cloudName?: string) => ({
 
 export const grayBlur =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkqAcAAIUAgUW0RjgAAAAASUVORK5CYII=";
+
+export function replaceCloudinaryPrefix(fullPath: string): string {
+  if (fullPath) {
+    if (fullPath.includes(CLOUDINARY_CDN_PREFIX)) {
+      return fullPath.replace(CLOUDINARY_CDN_PREFIX, "");
+    }
+  }
+
+  return fullPath;
+}

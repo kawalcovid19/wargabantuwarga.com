@@ -23,6 +23,22 @@ describe("TentangKamiPage > UI", () => {
 
     expect(screen.getByText(attributes.title)).toBeVisible();
     expect(screen.getByText(attributes.description)).toBeVisible();
+
+    const collaboratorTitle = screen.getByText(
+      "Terima kasih kepada para kolaborator inisiatif #WargaBantuWarga",
+    );
+    expect(collaboratorTitle).toBeVisible();
+
+    const feedbackTitle = screen.getByText(
+      "Ada usulan / laporan terkait website ini?",
+    );
+    expect(feedbackTitle).toBeVisible();
+
+    const buttonFeedback = screen.getByText("Sampaikan masukan Anda");
+    expect(buttonFeedback).toHaveAttribute(
+      "href",
+      "https://kcov.id/wbw-discuss",
+    );
   });
 
   it("renders the videos & collaborators correctly", () => {

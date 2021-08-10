@@ -3,7 +3,9 @@ import {
   getDefaultCloudOptions,
   getDefaultOptions,
   getDefaultTransformOptions,
+  replaceCloudinaryPrefix,
 } from "~/lib/image/cloudinary-utils";
+
 import {
   CLOUDINARY_CLOUD_NAME,
   CLOUDINARY_DEFAULT_COLOR_SPACE,
@@ -103,4 +105,21 @@ describe("getDefaultOptions", () => {
 
     expect(getDefaultOptions(123, "some-other-user")).toEqual(customOptions);
   });
+});
+
+describe("replaceCloudinaryPrefix", () => {
+  it.each`
+    input                                       | expected
+    ${CLOUDINARY_URL_EXAMPLES.basic}            | ${"v1627049958/hero_banner_desktop_zat71c.png"}
+    ${CLOUDINARY_URL_EXAMPLES.transformed}      | ${"c_scale,w_720,q_90,cs_tinysrgb,f_auto/v1627049958/hero_banner_desktop_zat71c.png"}
+    ${CLOUDINARY_URL_EXAMPLES.multiTransformed} | ${"c_scale,w_720/w_900/v1627049958/hero_banner_desktop_zat71c.png"}
+    ${CLOUDINARY_URL_EXAMPLES.otherCloudName}   | ${"https://res.cloudinary.com/some-other-name/image/upload/c_scale,w_720/w_900/v1627049958/hero_banner_desktop_zat71c.png"}
+    ${CLOUDINARY_URL_EXAMPLES.invalid}          | ${"res.cloudinary.com/"}
+    ${null}                                     | ${null}
+  `(
+    "should return '$expected' when '$input' is provided",
+    ({ input, expected }) => {
+      expect(replaceCloudinaryPrefix(input as string)).toBe(expected);
+    },
+  );
 });
