@@ -51,6 +51,7 @@ export function HomePageContributing() {
         <p className="text-base leading-6 font-semibold">Mau Upload Info?</p>
         <OutlineAnchorButton
           block
+          color="brand"
           href="https://docs.google.com/forms/d/e/1FAIpQLSc_m0WyokBk8xv9jBwYFN1zAt4_u-kE2TI9ZBrAokB4E08AGw/viewform"
           rel="nofollow noopener noreferrer"
           rounded

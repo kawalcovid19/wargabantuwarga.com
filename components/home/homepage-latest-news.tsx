@@ -37,7 +37,7 @@ export function HomePageLatestNews(props: HomePageLatestNewsProps) {
               <h3 className="flex-1 font-semibold text-gray-700 truncate">
                 {attributes.title}
               </h3>
-              <span className="inline-block flex-none text-gray-400 ml-4">
+              <span className="inline-block flex-none text-gray-500 ml-4">
                 {new Intl.DateTimeFormat("id-ID", {
                   day: "numeric",
                   month: "long",
@@ -52,7 +52,7 @@ export function HomePageLatestNews(props: HomePageLatestNewsProps) {
           {attributes.link && (
             <OutlineAnchorButton
               block
-              color="light-blue"
+              color="brand"
               href={attributes.link}
               icon={ExternalLinkIcon}
               iconPosition="right"
