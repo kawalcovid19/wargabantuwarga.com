@@ -2,11 +2,14 @@ import React from "react";
 
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
-import { InternalPageContent } from "~/components/layout/internal-page-content";
 import { DonationCard } from "~/components/donasi/donation-card";
 import { BackButton } from "~/components/layout/back-button";
-import { Page } from "~/components/layout/page";
-import { PageHeader } from "~/components/layout/page-header";
+import {
+  Page,
+  InternalPageContent,
+  InternalPageHeader,
+  InternalPageSection,
+} from "~/components/layout/page";
 import { Container } from "~/components/ui/container";
 import donasi, { Donation, DonationDetail } from "~/lib/content/donasi";
 
@@ -27,7 +30,7 @@ export default function DonasiPage(props: InformasiDonasiProps) {
         openGraph={{ title: meta.title, description: meta.description }}
         title={meta.title}
       />
-      <PageHeader
+      <InternalPageHeader
         backButton={<BackButton href="/" />}
         breadcrumbs={[
           {
@@ -41,7 +44,7 @@ export default function DonasiPage(props: InformasiDonasiProps) {
       />
       <InternalPageContent>
         <Container className="space-y-2">
-          <div className="p-4 overflow-hidden rounded-md space-y-6 bg-white">
+          <InternalPageSection className="pb-24 space-y-6 sm:pb-6">
             <div className="grid grid-cols-2 gap-4">
               {props.donasi.donations.map(
                 (donation: DonationDetail, i: number) => (
@@ -55,7 +58,7 @@ export default function DonasiPage(props: InformasiDonasiProps) {
                 ),
               )}
             </div>
-          </div>
+          </InternalPageSection>
         </Container>
       </InternalPageContent>
     </Page>

@@ -3,13 +3,15 @@ import React from "react";
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 import ChatbotSection from "~/components/kontak-darurat/chatbot-section";
-import { EmergencyContactContent } from "~/components/kontak-darurat/emergency-contact-content";
 import EmergencyContactSection from "~/components/kontak-darurat/emergency-contact-section";
 import OxygenSection from "~/components/kontak-darurat/oxygen-section";
 import VaccineSection from "~/components/kontak-darurat/vaccine-section";
 import { BackButton } from "~/components/layout/back-button";
-import { Page } from "~/components/layout/page";
-import { PageHeader } from "~/components/layout/page-header";
+import {
+  Page,
+  InternalPageContent,
+  InternalPageHeader,
+} from "~/components/layout/page";
 import { Container } from "~/components/ui/container";
 import emergencyContacts, { Contact } from "~/lib/content/emergency-contacts";
 import oxygenSection, { Oxygen } from "~/lib/content/oxygen-section";
@@ -36,7 +38,7 @@ export default function KontakDaruratPage(props: KontakDaruratProps) {
         openGraph={{ title: meta.title, description: meta.description }}
         title={meta.title}
       />
-      <PageHeader
+      <InternalPageHeader
         backButton={<BackButton href="/" />}
         breadcrumbs={[
           {
@@ -48,7 +50,7 @@ export default function KontakDaruratPage(props: KontakDaruratProps) {
         description={meta.description}
         title={meta.title}
       />
-      <EmergencyContactContent>
+      <InternalPageContent>
         <Container className="space-y-2">
           <EmergencyContactSection
             emergency_contacts={props.emergencyContacts.emergency_contacts}
@@ -63,7 +65,7 @@ export default function KontakDaruratPage(props: KontakDaruratProps) {
             />
           </div>
         </Container>
-      </EmergencyContactContent>
+      </InternalPageContent>
     </Page>
   );
 }

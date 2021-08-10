@@ -17,9 +17,13 @@ import collaboratorsData, {
 import { Alert } from "~/components/ui/alert";
 import { PrimaryAnchorButton } from "~/components/ui/button";
 import { BackButton } from "~/components/layout/back-button";
-import { Page } from "~/components/layout/page";
-import { PageContent } from "~/components/layout/page-content";
-import { PageHeader } from "~/components/layout/page-header";
+import {
+  AboutPageHeader,
+  InternalPageContent,
+  InternalPageSection,
+  Page,
+} from "~/components/layout/page";
+import { Container } from "~/components/ui/container";
 
 const meta = {
   title: `Tentang Kami`,
@@ -35,7 +39,7 @@ export default function AboutPage() {
           openGraph={{ title: meta.title, description: meta.description }}
           title={meta.title}
         />
-        <PageHeader
+        <AboutPageHeader
           backButton={<BackButton href="/" />}
           breadcrumbs={[
             {
@@ -44,19 +48,14 @@ export default function AboutPage() {
               current: true,
             },
           ]}
-          title="Tentang Kami"
+          description={attributes.description}
+          subtitle="Tentang Kami"
+          title={attributes.title}
         />
-        <PageContent>
-          <div className="space-y-4 bg-gray-100">
-            <div className="bg-white overflow-hidden shadow rounded-md">
-              <div className="text-gray-400">
-                <div className="p-4 space-y-4">
-                  <h2 className="font-bold text-gray-700 text-4xl">
-                    {attributes.title}
-                  </h2>
-                  <p className="text-gray-700">{attributes.description}</p>
-                </div>
-
+        <InternalPageContent>
+          <Container className="space-y-2">
+            <div className="overflow-hidden bg-white">
+              <div className="text-gray-600">
                 {/* TODO: change to next/image once we get correct Cloudinary Image */}
                 <img
                   alt={attributes.title}
@@ -65,7 +64,7 @@ export default function AboutPage() {
                   width={656}
                 />
 
-                <article className="p-4 space-y-4">
+                <article className="px-4 py-6 space-y-4">
                   {htmr(html, { transform: htmrTransform })}
 
                   <Alert color="blue" icon={InformationCircleIcon}>
@@ -76,7 +75,7 @@ export default function AboutPage() {
                   </Alert>
                 </article>
 
-                <div className="flex p-4 space-x-4 relative">
+                <div className="flex px-4 py-6 space-x-4 relative">
                   {videosData.videos.map((video: Video) => {
                     return (
                       <a
@@ -103,7 +102,7 @@ export default function AboutPage() {
             </div>
 
             {/* Collaborators Sections --start */}
-            <div className="p-4 space-y-4 bg-white overflow-hidden shadow rounded-md">
+            <InternalPageSection className="py-6 space-y-4">
               <h2 className="text-center font-semibold text-gray-700 text-lg">
                 Terima kasih kepada para kolaborator inisiatif #WargaBantuWarga
               </h2>
@@ -132,10 +131,10 @@ export default function AboutPage() {
                   },
                 )}
               </div>
-            </div>
+            </InternalPageSection>
 
             {/* Submit Feedback Sections --start */}
-            <div className="p-4 space-y-4 bg-white overflow-hidden shadow rounded-md">
+            <InternalPageSection className="pt-6 pb-24 space-y-2 sm:pb-6">
               <h2 className="text-center font-semibold text-gray-700 text-lg">
                 Ada usulan / laporan terkait website ini?
               </h2>
@@ -153,9 +152,9 @@ export default function AboutPage() {
                   Sampaikan masukan Anda
                 </PrimaryAnchorButton>
               </div>
-            </div>
-          </div>
-        </PageContent>
+            </InternalPageSection>
+          </Container>
+        </InternalPageContent>
       </Page>
     </div>
   );
