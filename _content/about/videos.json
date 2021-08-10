@@ -1,0 +1,14 @@
+{
+  "videos": [
+    {
+      "video_url": "https://youtu.be/MDtVB-bS8SM",
+      "title": "Cek Info Lengkap RS, Oksigen, Donor Plasma hingga Ambulans - Warga Bantu Warga (Part 6) | Mata Najwa",
+      "thumbnail_image": "https://res.cloudinary.com/irfan-maulana/image/upload/v1628520287/wbw-video-1.png"
+    },
+    {
+      "title": "Tak Ada yang Lebih Kuat, Selain Warga Bantu Sesama - Warga Bantu Warga (Part 7) | Mata Najwa",
+      "video_url": "https://youtu.be/rVsg1HKvYAo",
+      "thumbnail_image": "https://res.cloudinary.com/irfan-maulana/image/upload/v1628520287/wbw-video-2.png"
+    }
+  ]
+}

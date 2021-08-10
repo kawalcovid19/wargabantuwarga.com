@@ -1,0 +1,39 @@
+{
+  "collaborators": [
+    {
+      "name": "KitaBisa",
+      "link_url": "https://kitabisa.com/",
+      "thumbnail_image": "https://res.cloudinary.com/irfan-maulana/image/upload/v1628520287/wbw-kitabisa.png"
+    },
+    {
+      "name": "Kawal Covid19",
+      "link_url": "https://kawalcovid19.id/",
+      "thumbnail_image": "https://res.cloudinary.com/irfan-maulana/image/upload/v1628520286/wbw-kawalcovid19.png"
+    },
+    {
+      "name": "Forum Indonesia Muda",
+      "link_url": "http://www.forumindonesiamuda.org/",
+      "thumbnail_image": "https://res.cloudinary.com/irfan-maulana/image/upload/v1628520287/wbw-fmi.png"
+    },
+    {
+      "name": "Forum Zakat",
+      "link_url": "https://forumzakat.org/",
+      "thumbnail_image": "https://res.cloudinary.com/irfan-maulana/image/upload/v1628520286/wbw-forumzakat.png"
+    },
+    {
+      "name": "Kata.ai",
+      "link_url": "https://kata.ai/",
+      "thumbnail_image": "https://res.cloudinary.com/irfan-maulana/image/upload/v1628520286/wbw-kataai.png"
+    },
+    {
+      "name": "IndoRelawan.org",
+      "link_url": "https://www.indorelawan.org/",
+      "thumbnail_image": "https://res.cloudinary.com/irfan-maulana/image/upload/v1628520286/wbw-indorelawan.png"
+    },
+    {
+      "name": "Pemimpin.id",
+      "link_url": "https://twitter.com/pemimpinid_",
+      "thumbnail_image": "https://res.cloudinary.com/irfan-maulana/image/upload/v1628520286/wbw-pemimpinid.png"
+    }
+  ]
+}
