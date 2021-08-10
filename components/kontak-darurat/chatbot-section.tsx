@@ -7,7 +7,7 @@ export default function ChatbotSection() {
   return (
     <div className="space-y-4 px-4 py-6 text-center bg-white">
       <div className="space-y-2">
-        <h2 className="text-gray-800 text-sm font-semibold">
+        <h2 className="text-gray-800 text-lg font-semibold">
           CovidAsha Chatbot 24x7
         </h2>
         <p className="text-gray-600 text-sm">
