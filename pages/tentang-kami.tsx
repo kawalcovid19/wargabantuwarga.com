@@ -105,7 +105,7 @@ export default function AboutPage() {
             {/* Collaborators Sections --start */}
             <div className="p-4 space-y-4 bg-white overflow-hidden shadow rounded-md">
               <h2 className="text-center font-semibold text-gray-700 text-lg">
-                Terima kasih kepada para kolaborator inisiatif #WargaBantuWArga
+                Terima kasih kepada para kolaborator inisiatif #WargaBantuWarga
               </h2>
               <div className="flex flex-wrap justify-center items-center space-x-4 relative">
                 {collaboratorsData.collaborators.map(
