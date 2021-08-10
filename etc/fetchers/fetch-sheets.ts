@@ -63,9 +63,9 @@ export async function fetchSheets() {
         slug: getKebabCase(sheetName),
         data: sheetRows.map((row, rowIndex) => {
           return sheetColumns.reduce(
-            (prev: Record<string, boolean | number | string>, col) => {
+            (prev: Record<string, number | string>, col) => {
               const colName = toSnakeCase(col.name);
-              let cellValue: boolean | number | string = row[col.index];
+              let cellValue = row[col.index];
               if (colName == "lokasi") {
                 cellValue = toTitleCase(cellValue);
               } else if (["kontak", "link"].includes(colName)) {
