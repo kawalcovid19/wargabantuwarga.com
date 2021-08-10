@@ -6,9 +6,9 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.googletagmanager.com;
+  script-src 'self' 'unsafe-inline' *.googletagmanager.com;
   style-src 'self' 'unsafe-inline';
-  img-src * blob: data: https:;
+  img-src 'self' blob: data: https:;
 `;
 
 const securityHeaders = [
