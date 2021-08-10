@@ -74,6 +74,24 @@ describe("ContactPage", () => {
     );
     expect(title).toBeVisible();
   });
+
+  it("renders 'ketersediaan' row when the property is not empty", () => {
+    const contactWithKetersediaan = contactBuilder({
+      overrides: {
+        ketersediaan: "Tersedia",
+      },
+    });
+
+    render(
+      <ContactPage
+        contact={contactWithKetersediaan}
+        provinceName={province.name}
+        provinceSlug={province.slug}
+      />,
+    );
+
+    expect(screen.getByText("Tersedia")).toBeVisible();
+  });
 });
 
 describe("getStaticPaths", () => {
