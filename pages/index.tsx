@@ -5,6 +5,7 @@ import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 import { HomePageContent } from "~/components/home/homepage-content";
 import { HomePageContributing } from "~/components/home/homepage-contributing";
+import { HomePageDonation } from "~/components/home/homepage-donation";
 import { HomepageHeader } from "~/components/home/homepage-header";
 import { HomePageLatestNews } from "~/components/home/homepage-latest-news";
 import { HomePageSection } from "~/components/home/homepage-section";
@@ -35,6 +36,7 @@ const HomePage = (props: HomePageProps) => (
         <HomePageStart />
         <HomePageLatestNews latestNews={props.latestNews} />
         <HomePageContributing />
+        <HomePageDonation />
         <HomePageWhatsAppCTA />
         <HomePageWelcome />
         <HomePageSection className="px-4 py-6">

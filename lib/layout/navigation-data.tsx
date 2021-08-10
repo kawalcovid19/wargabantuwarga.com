@@ -85,5 +85,11 @@ export const navMenu: NavMenuItem[] = [
   {
     name: "Donasi",
     href: "/donasi",
+    exact: true,
+  },
+  {
+    name: "Tentang Kami",
+    href: "/tentang-kami",
+    exact: true,
   },
 ];
