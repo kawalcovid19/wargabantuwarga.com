@@ -10,6 +10,7 @@ import htmr from "htmr";
 import Link from "next/link";
 import { CopyButton } from "./copy-button";
 import { Badge } from "./ui/badge";
+import { OpenMapButton } from "./open-map-button";
 import { isNotEmpty, stripTags } from "~/lib/string-utils";
 import { getContactMetaTitle } from "~/lib/meta";
 import { Contact } from "~/lib/data/provinces";
@@ -100,9 +101,14 @@ function ContactListItem({
                 transform: htmrTransform,
               })}
             </p>
-            {typeof contact.alamat == "string" && (
-              <CopyButton text={stripTags(contact.alamat)} />
-            )}
+            <div className="flex flex-col items-end space-y-1 flex-none ml-2">
+              {typeof contact.alamat == "string" && (
+                <CopyButton text={stripTags(contact.alamat)} />
+              )}
+              {typeof contact.alamat == "string" && (
+                <OpenMapButton address={stripTags(contact.alamat)} />
+              )}
+            </div>
           </div>
         )}
       </div>

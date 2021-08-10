@@ -22,15 +22,19 @@ const meta = {
   url: siteConfig.site_url,
 };
 
+export const progress = NProgress.configure({
+  showSpinner: false,
+});
+
 export default function App({ Component, pageProps, router }: AppProps) {
   useEffect(() => {
     const handleStart = (_: string, { shallow }: { shallow: boolean }) => {
       if (!shallow) {
-        NProgress.start();
+        progress.start();
       }
     };
     const handleStop = () => {
-      NProgress.done();
+      progress.done();
     };
 
     router.events.on("routeChangeStart", handleStart);
