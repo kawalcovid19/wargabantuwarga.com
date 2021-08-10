@@ -134,6 +134,10 @@ export function isInternalLink(link: string): boolean {
  * @returns {string} `true` if `value` is empty. `false` otherwise
  */
 export function markText(text: string, keyword: string): string {
+  if (!text || text.length == 0) {
+    return "";
+  }
+
   if (!keyword || keyword.length == 0) {
     return text;
   }
