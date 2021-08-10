@@ -1,4 +1,5 @@
 import { NextSeo } from "next-seo";
+import { GetStaticProps } from "next";
 import htmr from "htmr";
 import {
   InformationCircleIcon,
@@ -12,6 +13,8 @@ import {
   content,
   Video,
   Collaborator,
+  Videos,
+  Collaborators,
 } from "~/lib/content/about-page";
 
 import { Alert } from "~/components/ui/alert";
@@ -26,7 +29,21 @@ const meta = {
   description: `#WargaBantuWarga adalah inisiatif warga untuk berbagi informasi dan saling membantu warga membutuhkan yang terdampak Covid-19.`,
 };
 
-export default function AboutPage() {
+type AboutPageProps = {
+  collaborators: Collaborators;
+  videos: Videos;
+  content: {
+    attributes: {
+      title: string;
+      description: string;
+      last_updated_time: string;
+      thumbnail_image: string;
+    };
+    html: string;
+  };
+};
+
+export default function AboutPage(props: AboutPageProps) {
   return (
     <div>
       <Page>
@@ -52,10 +69,10 @@ export default function AboutPage() {
               <div className="text-gray-400">
                 <div className="p-4 space-y-4">
                   <h2 className="font-bold text-gray-700 text-4xl">
-                    {content.attributes.title}
+                    {props.content.attributes.title}
                   </h2>
                   <p className="text-gray-700">
-                    {content.attributes.description}
+                    {props.content.attributes.description}
                   </p>
                 </div>
 
@@ -68,7 +85,7 @@ export default function AboutPage() {
                 />
 
                 <article className="p-4 space-y-4">
-                  {htmr(content.html, { transform: htmrTransform })}
+                  {htmr(props.content.html, { transform: htmrTransform })}
 
                   <Alert color="blue" icon={InformationCircleIcon}>
                     <span className="text-gray-700">
@@ -79,7 +96,7 @@ export default function AboutPage() {
                 </article>
 
                 <div className="flex p-4 space-x-4 relative">
-                  {videos.videos.map((video: Video) => {
+                  {props.videos.videos.map((video: Video) => {
                     return (
                       <a
                         key={video.video_url}
@@ -110,7 +127,7 @@ export default function AboutPage() {
                 Terima kasih kepada para kolaborator inisiatif #WargaBantuWArga
               </h2>
               <div className="flex flex-wrap justify-center items-center space-x-4 relative">
-                {collaborators.collaborators.map(
+                {props.collaborators.collaborators.map(
                   (collaborator: Collaborator) => {
                     return (
                       <a
@@ -162,3 +179,13 @@ export default function AboutPage() {
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps = () => {
+  return {
+    props: {
+      collaborators,
+      videos,
+      content,
+    },
+  };
+};
