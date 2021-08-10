@@ -1,15 +1,17 @@
 import { NextSeo } from "next-seo";
+import Image from "next/image";
 import htmr from "htmr";
 import {
   InformationCircleIcon,
   SpeakerphoneIcon,
 } from "@heroicons/react/outline";
 
+import { cloudinaryLoader, getBlurred } from "~/lib/image/cloudinary-loader";
+import { replaceCloudinaryPrefix } from "~/lib/image/cloudinary-utils";
 import { htmrTransform } from "~/lib/htmr-transformers";
+
 import { attributes, html } from "~/lib/content/about/content";
-
 import videosData, { Video } from "~/lib/content/about/videos";
-
 import collaboratorsData, {
   Collaborator,
 } from "~/lib/content/about/collaborators";
@@ -32,130 +34,150 @@ const meta = {
 
 export default function AboutPage() {
   return (
-    <div>
-      <Page>
-        <NextSeo
-          description={meta.description}
-          openGraph={{ title: meta.title, description: meta.description }}
-          title={meta.title}
-        />
-        <AboutPageHeader
-          backButton={<BackButton href="/" />}
-          breadcrumbs={[
-            {
-              name: "Tentang Kami",
-              href: "/tentang-kami",
-              current: true,
-            },
-          ]}
-          description={attributes.description}
-          subtitle="Tentang Kami"
-          title={attributes.title}
-        />
-        <InternalPageContent>
-          <Container className="space-y-2">
-            <div className="overflow-hidden bg-white">
-              <div className="text-gray-600">
-                {/* TODO: change to next/image once we get correct Cloudinary Image */}
-                <img
-                  alt={attributes.title}
-                  height={236}
-                  src={attributes.thumbnail_image}
-                  width={656}
-                />
+    <Page>
+      <NextSeo
+        description={meta.description}
+        openGraph={{ title: meta.title, description: meta.description }}
+        title={meta.title}
+      />
+      <AboutPageHeader
+        backButton={<BackButton href="/" />}
+        breadcrumbs={[
+          {
+            name: "Tentang Kami",
+            href: "/tentang-kami",
+            current: true,
+          },
+        ]}
+        description={attributes.description}
+        subtitle="Tentang Kami"
+        title={attributes.title}
+      />
+      <InternalPageContent>
+        <Container className="space-y-2">
+          <div className="overflow-hidden bg-white">
+            <div className="text-gray-600">
+              <Image
+                alt={attributes.title}
+                blurDataURL={getBlurred(
+                  replaceCloudinaryPrefix(attributes.thumbnail_image),
+                  512,
+                )}
+                height={341}
+                layout="responsive"
+                loader={cloudinaryLoader}
+                placeholder="blur"
+                priority={true}
+                quality={90}
+                src={replaceCloudinaryPrefix(attributes.thumbnail_image)}
+                width={512}
+              />
 
-                <article className="px-4 py-6 space-y-4">
-                  {htmr(html, { transform: htmrTransform })}
+              <article className="px-4 py-6 space-y-4">
+                {htmr(html, { transform: htmrTransform })}
 
-                  <Alert color="blue" icon={InformationCircleIcon}>
-                    <span className="text-gray-700">
-                      Anda bebas menggunakan dan menyebarluaskan informasi yang
-                      ada dalam website ini.
-                    </span>
-                  </Alert>
-                </article>
-
-                <div className="flex px-4 py-6 space-x-4 relative">
-                  {videosData.videos.map((video: Video) => {
-                    return (
-                      <a
-                        key={video.video_url}
-                        className="shadow rounded-md"
-                        href={video.video_url}
-                        rel="nofollow noopener noreferrer"
-                        target="_blank"
-                        title={video.title}
-                      >
-                        {/* TODO: change to next/image once we get correct Cloudinary Image */}
-                        <img
-                          alt={video.title}
-                          className="rounded-md"
-                          height={236}
-                          src={video.thumbnail_image}
-                          width={656}
-                        />
-                      </a>
-                    );
-                  })}
-                </div>
-              </div>
+                <Alert color="blue" icon={InformationCircleIcon}>
+                  <span className="text-gray-700">
+                    Anda bebas menggunakan dan menyebarluaskan informasi yang
+                    ada dalam website ini.
+                  </span>
+                </Alert>
+              </article>
             </div>
 
-            {/* Collaborators Sections --start */}
-            <InternalPageSection className="py-6 space-y-4">
-              <h2 className="text-center font-semibold text-gray-700 text-lg">
-                Terima kasih kepada para kolaborator inisiatif #WargaBantuWarga
-              </h2>
-              <div className="flex flex-wrap justify-center items-center space-x-4 relative">
-                {collaboratorsData.collaborators.map(
-                  (collaborator: Collaborator) => {
-                    return (
-                      <a
-                        key={collaborator.link_url}
-                        className="flex justify-center items-center"
-                        href={collaborator.link_url}
-                        rel="nofollow noopener noreferrer"
-                        target="_blank"
-                        title={collaborator.name}
-                      >
-                        {/* TODO: change to next/image once we get correct Cloudinary Image */}
-                        <img
-                          alt={collaborator.name}
-                          className="rounded-md"
-                          height={80}
-                          src={collaborator.thumbnail_image}
-                          width="auto"
-                        />
-                      </a>
-                    );
-                  },
-                )}
-              </div>
-            </InternalPageSection>
+            <div className="grid grid-cols-2 gap-4 px-4 py-6 relative">
+              {videosData.videos.map((video: Video) => {
+                return (
+                  <a
+                    key={video.video_url}
+                    href={video.video_url}
+                    rel="nofollow noopener noreferrer"
+                    target="_blank"
+                    title={video.title}
+                  >
+                    <Image
+                      alt={video.title}
+                      blurDataURL={getBlurred(
+                        replaceCloudinaryPrefix(video.thumbnail_image),
+                        720,
+                      )}
+                      className="shadow rounded-md"
+                      height={397}
+                      layout="intrinsic"
+                      loader={cloudinaryLoader}
+                      loading="lazy"
+                      placeholder="blur"
+                      quality={90}
+                      src={replaceCloudinaryPrefix(video.thumbnail_image)}
+                      width={720}
+                    />
+                    <p className="text-gray-700 text-xs">{video.title}</p>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
 
-            {/* Submit Feedback Sections --start */}
-            <InternalPageSection className="pt-6 pb-24 space-y-2 sm:pb-6">
-              <h2 className="text-center font-semibold text-gray-700 text-lg">
-                Ada usulan / laporan terkait website ini?
-              </h2>
-              <div className="flex justify-center">
-                <PrimaryAnchorButton
-                  aria-label="Sampaikan masukan Anda"
-                  className="mt-2"
-                  href="https://kcov.id/wbw-discuss"
-                  icon={SpeakerphoneIcon}
-                  rel="nofollow noopener noreferrer"
-                  rounded
-                  target="_blank"
-                  type="button"
-                >
-                  Sampaikan masukan Anda
-                </PrimaryAnchorButton>
-              </div>
-            </InternalPageSection>
-          </Container>
-        </InternalPageContent>
-      </Page>
-    </div>
+          {/* Collaborators Sections --start */}
+          <InternalPageSection className="py-6 space-y-4">
+            <h2 className="text-center font-semibold text-gray-700 text-lg">
+              Terima kasih kepada para kolaborator inisiatif #WargaBantuWarga
+            </h2>
+            <div className="flex flex-wrap justify-center items-center space-x-4 relative">
+              {collaboratorsData.collaborators.map(
+                (collaborator: Collaborator) => {
+                  return (
+                    <a
+                      key={collaborator.link_url}
+                      className="flex justify-center items-center relative h-16 w-24"
+                      href={collaborator.link_url}
+                      rel="nofollow noopener noreferrer"
+                      target="_blank"
+                      title={collaborator.name}
+                    >
+                      <Image
+                        alt={collaborator.name}
+                        className="rounded-md"
+                        // height={80}
+                        layout="fill"
+                        loader={cloudinaryLoader}
+                        loading="lazy"
+                        objectFit="contain"
+                        quality={90}
+                        // width={100}
+                        src={replaceCloudinaryPrefix(
+                          collaborator.thumbnail_image,
+                        )}
+                      />
+                    </a>
+                  );
+                },
+              )}
+            </div>
+          </InternalPageSection>
+
+          {/* Submit Feedback Sections --start */}
+          <InternalPageSection className="pt-6 pb-24 space-y-2 sm:pb-6">
+            <h2 className="text-center font-semibold text-gray-700 text-lg">
+              Ada usulan / laporan terkait website ini?
+            </h2>
+            <div className="flex justify-center">
+              <PrimaryAnchorButton
+                aria-label="Sampaikan masukan Anda"
+                className="mt-2"
+                href="https://kcov.id/wbw-discuss"
+                icon={SpeakerphoneIcon}
+                rel="nofollow noopener noreferrer"
+                rounded
+                target="_blank"
+                type="button"
+              >
+                Sampaikan masukan Anda
+              </PrimaryAnchorButton>
+            </div>
+          </InternalPageSection>
+        </Container>
+      </InternalPageContent>
+    </Page>
   );
 }
