@@ -1,92 +1,32 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { NextSeo } from "next-seo";
+import { GetStaticProps } from "next";
 import { Page } from "~/components/layout/page";
 import { PageHeader } from "~/components/layout/page-header";
 import { PageContent } from "~/components/layout/page-content";
-import { StackedLinkDisclosure } from "~/components/layout/stacked-link-disclosure";
-import StackedLink from "~/components/layout/stacked-link";
+import { EducationItems } from "~/components/education/education-link-items";
 import { cloudinaryLoader, getBlurred } from "~/lib/image/cloudinary-loader";
+import educations, { Educations } from "~/lib/content/education";
 
-const items = [
-  {
-    title: "Jaga Kesehatan di Masa Pandemi",
-    links: [
-      {
-        title: "Mengenal oximeter dan cara penggunaannya",
-        url: "https://www.wargabantuwarga.com/",
-      },
-      {
-        title: "Cara menggunakan masker dobel yang benar",
-        url: "https://www.wargabantuwarga.com/",
-      },
-      {
-        title: "Cara jaga kesehatan mental saat pandemi COVID-19",
-        url: "https://www.wargabantuwarga.com/",
-      },
-    ],
-  },
-  {
-    title: "Pelajari Tentang Vaksinasi COVID-19",
-    links: [
-      {
-        title: "Mengenal oximeter dan cara penggunaannya",
-        url: "https://www.wargabantuwarga.com/",
-      },
-      {
-        title: "Cara menggunakan masker dobel yang benar",
-        url: "https://www.wargabantuwarga.com/",
-      },
-      {
-        title: "Cara jaga kesehatan mental saat pandemi COVID-19",
-        url: "https://www.wargabantuwarga.com/",
-      },
-    ],
-  },
-  {
-    title: "Pelajari Tentang Tes Antigen dan PCR COVID-19",
-    links: [
-      {
-        title: "Mengenal oximeter dan cara penggunaannya",
-        url: "https://www.wargabantuwarga.com/",
-      },
-      {
-        title: "Cara menggunakan masker dobel yang benar",
-        url: "https://www.wargabantuwarga.com/",
-      },
-      {
-        title: "Cara jaga kesehatan mental saat pandemi COVID-19",
-        url: "https://www.wargabantuwarga.com/",
-      },
-    ],
-  },
-  {
-    title: "Penanganan jika positif COVID19",
-    links: [
-      {
-        title: "Mengenal oximeter dan cara penggunaannya",
-        url: "https://www.wargabantuwarga.com/",
-      },
-      {
-        title: "Cara menggunakan masker dobel yang benar",
-        url: "https://www.wargabantuwarga.com/",
-      },
-      {
-        title: "Cara jaga kesehatan mental saat pandemi COVID-19",
-        url: "https://www.wargabantuwarga.com/",
-      },
-    ],
-  },
-];
+interface EducationPageProps {
+  educations: Educations;
+}
 
-export default function EducationPage() {
+const meta = {
+  title: `Laman Edukasi COVID-19`,
+  description: `Kumpulan informasi terbaru COVID-19, tips menjaga kesehatan selama pandemi, vaksinasi, hingga penanganan jika Anda terkonfirmasi positif COVID-19.`,
+};
+
+export default function EducationPage(props: EducationPageProps) {
   return (
     <Page>
-      <PageHeader
-        description="Kumpulan informasi terbaru COVID-19, tips menjaga kesehatan selama
-          pandemi, vaksinasi, hingga penanganan jika Anda terkonfirmasi positif
-          COVID-19."
-        title="Laman Edukasi COVID-19"
+      <NextSeo
+        description={meta.description}
+        openGraph={{ title: meta.title, description: meta.description }}
+        title={meta.title}
       />
+      <PageHeader description={meta.description} title={meta.title} />
       <PageContent>
         <div className="mt-4 mb-8">
           {/* TODO: replace with component from `components/home/homepage-telemedicine-cta.tsx` */}
@@ -111,14 +51,16 @@ export default function EducationPage() {
           </Link>
         </div>
 
-        {items.map((item) => (
-          <StackedLinkDisclosure key={item.title} title={item.title}>
-            <div className="p-2 bg-gray-50 rounded-md">
-              <StackedLink links={item.links} />
-            </div>
-          </StackedLinkDisclosure>
-        ))}
+        <EducationItems educations={props.educations} />
       </PageContent>
     </Page>
   );
 }
+
+export const getStaticProps: GetStaticProps = () => {
+  return {
+    props: {
+      educations,
+    },
+  };
+};
