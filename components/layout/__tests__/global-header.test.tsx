@@ -9,10 +9,10 @@ describe("GlobalHeader", () => {
 
     expect(container.firstChild).toMatchInlineSnapshot(`
       <header
-        class="flex items-center justify-center fixed w-full h-16 px-4 z-40 bg-brand-500 shadow-md"
+        class="flex items-center justify-center fixed w-full h-16 z-40 bg-brand-500 shadow-md"
       >
         <div
-          class="w-full sm:max-w-xl mx-auto flex items-center justify-between h-full"
+          class="w-full sm:max-w-xl mx-auto flex items-center justify-between h-full px-4"
         >
           <a
             class="align-middle"
