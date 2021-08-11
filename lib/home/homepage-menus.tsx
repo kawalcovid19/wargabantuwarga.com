@@ -7,8 +7,8 @@ import {
   HospitalIcon,
   OxygenIcon,
   DonationIcon,
+  ContributionIcon,
 } from "~/components/ui/icons";
-import { ContributionIcon } from "~/components/ui/icons/contribution-icon";
 
 export interface HomepageMenuItem {
   name: string;
