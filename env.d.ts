@@ -37,3 +37,16 @@ declare module "*/_content/informasi-terbaru/*.md" {
   const html: string;
   export { attributes, html };
 }
+
+declare module "*/_content/about/content.md" {
+  // eslint-disable-next-line one-var
+  const attributes: {
+    title: string;
+    description: string;
+    last_updated_time: string;
+    thumbnail_image: string;
+  };
+  // eslint-disable-next-line one-var
+  const html: string;
+  export { attributes, html };
+}
