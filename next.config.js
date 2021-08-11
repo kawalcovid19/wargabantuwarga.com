@@ -2,8 +2,20 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 
+const ContentSecurityPolicy = `
+  default-src 'self';
+  script-src 'self' 'unsafe-inline' *.googletagmanager.com 'unsafe-eval';
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' blob: data: https:;
+  frame-ancestors 'none';
+`;
+
 /** @type {import("next/dist/lib/config-shared").Header['headers']} */
 const securityHeaders = [
+  {
+    key: "Content-Security-Policy",
+    value: ContentSecurityPolicy.replace(/\n/g, ""),
+  },
   {
     key: "X-Frame-Options",
     value: "DENY",
@@ -11,6 +23,12 @@ const securityHeaders = [
   {
     key: "X-Content-Type-Options",
     value: "nosniff",
+  },
+  // Disables camera, microphone, and geolocation.
+  // `interest-cohort=()` opts the website out of Google's FLoC: https://amifloced.org/
+  {
+    key: "Permissions-Policy",
+    value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
   },
 ];
 

@@ -64,8 +64,8 @@ export function BasicDialog({
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
             <div className="inline-block align-bottom w-full bg-white rounded-lg px-4 pt-5 pb-4 mx-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:p-6">
-              <div className="flex justify-between items-center align-center">
-                <Dialog.Title className="text-gray-700 text-xl mb-4">
+              <div className="flex justify-between items-center align-center mb-4">
+                <Dialog.Title className="text-gray-700 text-xl">
                   {title}
                 </Dialog.Title>
 
