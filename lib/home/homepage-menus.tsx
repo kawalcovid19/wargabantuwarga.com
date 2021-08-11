@@ -6,6 +6,7 @@ import {
   DonorIcon,
   HospitalIcon,
   OxygenIcon,
+  DonationIcon,
 } from "~/components/ui/icons";
 
 export interface HomepageMenuItem {
@@ -34,5 +35,10 @@ export const homepageMenus: HomepageMenuItem[] = [
     name: "Donor Plasma",
     href: "/provinces?kebutuhan=Donor%20plasma",
     icon: DonorIcon,
+  },
+  {
+    name: "Donasi",
+    href: "/donasi",
+    icon: DonationIcon,
   },
 ];
