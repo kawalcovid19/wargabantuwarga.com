@@ -2,6 +2,36 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 
+const ContentSecurityPolicy = `
+  default-src 'self';
+  script-src 'self' 'unsafe-inline' *.googletagmanager.com 'unsafe-eval';
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' blob: data: https:;
+  frame-ancestors 'none';
+`;
+
+/** @type {import("next/dist/lib/config-shared").Header['headers']} */
+const securityHeaders = [
+  {
+    key: "Content-Security-Policy",
+    value: ContentSecurityPolicy.replace(/\n/g, ""),
+  },
+  {
+    key: "X-Frame-Options",
+    value: "DENY",
+  },
+  {
+    key: "X-Content-Type-Options",
+    value: "nosniff",
+  },
+  // Disables camera, microphone, and geolocation.
+  // `interest-cohort=()` opts the website out of Google's FLoC: https://amifloced.org/
+  {
+    key: "Permissions-Policy",
+    value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+  },
+];
+
 /** @type {import("next/dist/next-server/server/config-shared").NextConfig} */
 module.exports = withBundleAnalyzer({
   // https://github.com/vercel/next.js/blob/v11.0.1/packages/next/next-server/server/config-shared.ts#L42-L65
@@ -14,6 +44,18 @@ module.exports = withBundleAnalyzer({
   future: {
     // @nibraswastaken told me to add this - @resir014
     strictPostcssConfiguration: true,
+  },
+
+  // This config won't be loaded until Netlify supports the `headers` option on `next.config.js`.
+  // For now, when you make changes here, also make the necessary changes on `netlify.toml`.
+  // https://github.com/netlify/netlify-plugin-nextjs/issues/150
+  headers: async () => {
+    return [
+      {
+        source: "/(.*)",
+        headers: securityHeaders,
+      },
+    ];
   },
 
   images: {

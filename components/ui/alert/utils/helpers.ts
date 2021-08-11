@@ -82,7 +82,7 @@ export function renderAlertIcon(
 ) {
   if (icon) {
     return React.createElement(icon, {
-      className: clsx("h-5 w-5", additionalClasses),
+      className: clsx("h-6 w-5", additionalClasses),
       "aria-hidden": true,
     });
   }
