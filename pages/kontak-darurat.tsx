@@ -56,7 +56,7 @@ export default function KontakDaruratPage(props: KontakDaruratProps) {
             emergency_contacts={props.emergencyContacts.emergency_contacts}
           />
           <ChatbotSection />
-          <div className="space-y-4 px-4 py-6 bg-white">
+          <div className="space-y-4 px-4 pt-6 pb-24 bg-white sm:pb-6">
             <VaccineSection
               vaccine_section={props.vaccineSection.vaccine_section}
             />
