@@ -52,12 +52,15 @@ describe("Alert", () => {
       "border-red-400",
     );
     expect(container.firstChild?.firstChild).toHaveClass("p-4", "babayaga");
+
     expect(
-      container.firstChild?.firstChild?.firstChild?.firstChild?.firstChild,
-    ).toHaveClass("flex-shrink-0 mr-3");
-    expect(
-      container.firstChild?.firstChild?.firstChild?.childNodes[1],
-    ).toHaveClass(`close-button text-red-400 hover:text-red-500`);
+      container.getElementsByClassName("flex-shrink-0 mr-3")[0].hasChildNodes(),
+    ).toBeTruthy();
+
+    expect(screen.getByRole("button")).toHaveClass(
+      `close-button text-red-400 hover:text-red-500`,
+    );
+
     fireEvent.click(screen.getByRole("button"));
   });
 });

@@ -9,3 +9,4 @@ export const CLOUDINARY_CLOUD_NAME = "wargabantuwarga";
 export const CLOUDINARY_DEFAULT_QUALITY = "auto:eco";
 export const CLOUDINARY_DEFAULT_COLOR_SPACE = "tinysrgb";
 export const CLOUDINARY_DEFAULT_RESIZE_TYPE = "scale";
+export const CLOUDINARY_CDN_PREFIX = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload/`;
