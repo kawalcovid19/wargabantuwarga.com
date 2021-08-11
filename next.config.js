@@ -2,8 +2,6 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 
-/** @type {import("next/dist/lib/config-shared").Header['headers']} */
-
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-inline' *.googletagmanager.com 'unsafe-eval';
@@ -12,6 +10,7 @@ const ContentSecurityPolicy = `
   frame-ancestors 'none';
 `;
 
+/** @type {import("next/dist/lib/config-shared").Header['headers']} */
 const securityHeaders = [
   {
     key: "Content-Security-Policy",
