@@ -10,11 +10,7 @@ export function TelemedicineContactCard(contact: ContactDetail) {
     <div className="flex flex-col shadow-md rounded-md overflow-hidden">
       <div className="flex justify-content-between">
         <div className="flex-shrink-0 py-2 px-3 md:p-4">
-          <img
-            alt={`kontak dokter ${contact.doctor_name}`}
-            className="h-24 w-24 rounded-full"
-            src="https://i.pravatar.cc"
-          />
+          <div className="h-24 w-24 rounded-full bg-gray-500" />
         </div>
         <div className="p-3 text-xs space-y-1 h-0 flex-1">
           <p className="font-semibold text-gray-700">{contact.doctor_name}</p>
