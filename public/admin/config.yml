@@ -107,6 +107,92 @@ collections:
               hint: "Heading banner on top of Home page",
               tagname: "",
             }
+  - name: "about_page"
+    label: "About Page"
+    delete: false
+    preview_path: ""
+    files:
+
+      - name: "about_page"
+        label: "About Page"
+        file: "_content/about/content.md"
+        fields:
+          - {
+              label: "Last updated time",
+              name: "last_updated_time",
+              widget: "datetime",
+              hint: "Last updated time",
+            }
+          - {
+              label: "Thumbnail Image",
+              name: "thumbnail_image",
+              widget: "image",
+            }
+          - {
+              label: "Title",
+              name: "title",
+              widget: "string",
+            }
+          - {
+              label: "Description",
+              name: "description",
+              widget: "string",
+            }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              hint: "Page body",
+            }
+
+      - name: "videos_about_page"
+        label: "Videos on About Page"
+        file: "_content/about/videos.json"
+        fields:
+          - name: "videos"
+            label: "Videos"
+            widget: list
+            fields:
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string"
+                }
+              - {
+                  label: "Video URL",
+                  name: "video_url",
+                  widget: "string"
+                }
+              - {
+                  label: "Thumbnail Image",
+                  name: "thumbnail_image",
+                  widget: "image",
+                }
+
+      - name: "collaborators_about_page"
+        label: "Collaborators on About Page"
+        file: "_content/about/collaborators.json"
+        fields:
+          - name: "collaborators"
+            label: "Collaborator"
+            widget: list
+            fields:
+              - {
+                  label: "Name",
+                  name: "name",
+                  widget: "string"
+                }
+              - {
+                  label: "Link URL",
+                  name: "link_url",
+                  widget: "string"
+                }
+              - {
+                  label: "Thumbnail Image",
+                  name: "thumbnail_image",
+                  widget: "image",
+                }
+
   - name: "isolasi_mandiri_page"
     label: "Isolasi Mandiri Page"
     delete: false
@@ -183,11 +269,13 @@ collections:
             label: "Emergency Contacts"
             widget: list
             fields:
-              - { label: "Name",
+              - {
+                  label: "Name",
                   name: "name",
                   widget: "string"
                 }
-              - { label: "Description",
+              - {
+                  label: "Description",
                   name: "description",
                   widget: "string"
                 }
@@ -197,7 +285,8 @@ collections:
                   widget: "image",
                   choose_url: true,
                 }
-              - { label: "Link URL",
+              - {
+                  label: "Link URL",
                   name: "url",
                   widget: "string"
                 }
@@ -231,6 +320,40 @@ collections:
                   label: "Link Title",
                   name: "title",
                   widget: "string"
+                }
+              - {
+                  label: "Link URL",
+                  name: "url",
+                  widget: "string"
+                }
+  - name: "donasi_page"
+    label: "Donasi Page"
+    delete: false
+    preview_path: "donasi"
+    files:
+      - name: "informasi_donasi"
+        label: "Informasi Donasi"
+        file: "_content/donasi.json"
+        fields:
+          - name: "donations"
+            label: "Donations"
+            widget: list
+            fields:
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string"
+                }
+              - {
+                  label: "Category",
+                  name: "category",
+                  widget: "string"
+                }
+              - {
+                  label: "Image",
+                  name: "image",
+                  widget: "image",
+                  choose_url: true,
                 }
               - {
                   label: "Link URL",
