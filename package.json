@@ -27,6 +27,7 @@
   "dependencies": {
     "@headlessui/react": "^1.3.0",
     "@heroicons/react": "1.0.2",
+    "@martinstark/throttle-ts": "^1.2.3",
     "@netlify/plugin-nextjs": "3.7.1",
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/typography": "0.4.1",
@@ -81,7 +82,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "frontmatter-markdown-loader": "3.6.3",
-    "husky": "7.0.1",
+    "husky": "^7.0.1",
     "identity-obj-proxy": "3.0.0",
     "is-ci-cli": "2.2.0",
     "jest": "27.0.6",
