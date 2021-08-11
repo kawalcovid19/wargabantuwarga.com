@@ -1,10 +1,7 @@
 import { NextSeo } from "next-seo";
 import Image from "next/image";
 import htmr from "htmr";
-import {
-  InformationCircleIcon,
-  SpeakerphoneIcon,
-} from "@heroicons/react/outline";
+import { InformationCircleIcon } from "@heroicons/react/outline";
 
 import { cloudinaryLoader, getBlurred } from "~/lib/image/cloudinary-loader";
 import { replaceCloudinaryPrefix } from "~/lib/image/cloudinary-utils";
@@ -17,7 +14,6 @@ import collaboratorsData, {
 } from "~/lib/content/about/collaborators";
 
 import { Alert } from "~/components/ui/alert";
-import { PrimaryAnchorButton } from "~/components/ui/button";
 import { BackButton } from "~/components/layout/back-button";
 import {
   AboutPageHeader,
@@ -26,6 +22,7 @@ import {
   Page,
 } from "~/components/layout/page";
 import { Container } from "~/components/ui/container";
+import { FeedbackSection } from "~/components/ui/feedback-section";
 
 const meta = {
   title: `Tentang Kami`,
@@ -156,26 +153,7 @@ export default function AboutPage() {
             </div>
           </InternalPageSection>
 
-          {/* Submit Feedback Sections --start */}
-          <InternalPageSection className="pt-6 pb-24 space-y-2 sm:pb-6">
-            <h2 className="text-center font-semibold text-gray-700 text-lg">
-              Ada usulan / laporan terkait website ini?
-            </h2>
-            <div className="flex justify-center">
-              <PrimaryAnchorButton
-                aria-label="Sampaikan masukan Anda"
-                className="mt-2"
-                href="https://kcov.id/wbw-discuss"
-                icon={SpeakerphoneIcon}
-                rel="nofollow noopener noreferrer"
-                rounded
-                target="_blank"
-                type="button"
-              >
-                Sampaikan masukan Anda
-              </PrimaryAnchorButton>
-            </div>
-          </InternalPageSection>
+          <FeedbackSection />
         </Container>
       </InternalPageContent>
     </Page>
