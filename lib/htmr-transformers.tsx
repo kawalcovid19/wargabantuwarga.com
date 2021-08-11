@@ -90,6 +90,12 @@ const img = (node: JSX.IntrinsicElements["img"]) => {
   return <ResponsiveImg alt={alt ?? ""} src={src} />;
 };
 
+const mark = (node: JSX.IntrinsicElements["mark"]) => {
+  const { children } = node;
+
+  return <span className="bg-yellow-200">{children}</span>;
+};
+
 export const htmrTransform: HtmrOptions["transform"] = {
   h1,
   h2,
@@ -101,4 +107,5 @@ export const htmrTransform: HtmrOptions["transform"] = {
   b,
   strong,
   img,
+  mark,
 };
