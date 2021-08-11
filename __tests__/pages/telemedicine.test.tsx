@@ -54,10 +54,6 @@ describe("TelemedicinePage", () => {
         platform={contact.platform}
       />,
     );
-    const cardImage = screen.getByAltText(
-      `kontak dokter ${contact.doctor_name}`,
-    );
-    expect(cardImage).toBeVisible();
     const contact_name = screen.getByText(contact.doctor_name);
     expect(contact_name).toBeVisible();
     const contact_ops = screen.getByText(

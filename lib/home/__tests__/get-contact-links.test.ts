@@ -5,10 +5,10 @@ type Platform = "instagram" | "telegram" | "twitter" | "whatsapp";
 describe("getContactLinks", () => {
   it.each`
     platform       | contact         | expected
-    ${"whatsapp"}  | ${"0812345678"} | ${`https://wa.me/${new RegExp(/^628/, "i")}`}
-    ${"telegram"}  | ${"@username"}  | ${`https://t.me/${new RegExp(/^[a-zA-Z][0-9]{4}$/)}`}
-    ${"instagram"} | ${"@username"}  | ${`https://instagram.com/${new RegExp(/[a-zA-Z&&[^@]]+/)}`}
-    ${"twitter"}   | ${"@username"}  | ${`https://twitter.com/${new RegExp(/[a-zA-Z&&[^@]]+/)}`}
+    ${"whatsapp"}  | ${"0812345678"} | ${`https://wa.me/62812345678`}
+    ${"telegram"}  | ${"@username"}  | ${`https://t.me/@username`}
+    ${"instagram"} | ${"@username"}  | ${`https://instagram.com/username`}
+    ${"twitter"}   | ${"@username"}  | ${`https://twitter.com/username`}
   `(
     "returns $expected contact url when platform is $platform",
     ({ platform, contact, expected }) => {
