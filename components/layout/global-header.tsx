@@ -1,38 +1,47 @@
-import { createElement, useRef, useState } from "react";
+import { createElement, useRef, useState, useEffect } from "react";
 
 import { Popover } from "@headlessui/react";
 import Link from "next/link";
 import clsx from "clsx";
+import { throttle } from "@martinstark/throttle-ts";
 import { Container } from "../ui/container";
 import { NavigationMenuPopover, navMenuButtonIcon } from "./navigation-menu";
 import { WBWLogoWhite } from "~/components/ui/wbw-logo";
 
-import useDocumentScrollThrottled from "~/lib/scroll-throttled";
+const MINIMUM_SCROLL = 200; // 64 height header
+const TIMEOUT_DELAY = 150;
 
 export function GlobalHeader() {
   const popoverButtonRef = useRef<HTMLButtonElement>(null);
 
   const [shouldHideHeader, setShouldHideHeader] = useState(false);
-  const [shouldShowShadow, setShouldShowShadow] = useState(false);
+  const [, setScrollPosition] = useState(0);
+  let previousScrollTop = 0;
 
-  const MINIMUM_SCROLL = 80;
-  const TIMEOUT_DELAY = 150;
+  function handleDocumentScroll() {
+    const { scrollTop: currentScrollTop } = document.documentElement;
+    const isScrolledDown = previousScrollTop < currentScrollTop;
+    const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL;
 
-  useDocumentScrollThrottled(
-    (callbackData: { previousScrollTop: Number; currentScrollTop: Number }) => {
-      const { previousScrollTop, currentScrollTop } = callbackData;
-      const isScrolledDown = previousScrollTop < currentScrollTop;
-      const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL;
+    setScrollPosition((previousPosition) => {
+      previousScrollTop = previousPosition;
+      return currentScrollTop;
+    });
 
-      setShouldShowShadow(currentScrollTop > 2);
+    setTimeout(() => {
+      setShouldHideHeader(isScrolledDown && isMinimumScrolled);
+    }, TIMEOUT_DELAY);
+  }
 
-      setTimeout(() => {
-        setShouldHideHeader(isScrolledDown && isMinimumScrolled);
-      }, TIMEOUT_DELAY);
-    },
-  );
+  const [handleDocumentScrollThrottled] = throttle(handleDocumentScroll, 200);
 
-  const shadowStyle = shouldShowShadow ? "shadow-xl" : "";
+  useEffect(() => {
+    window.addEventListener("scroll", handleDocumentScrollThrottled);
+
+    return () =>
+      window.removeEventListener("scroll", handleDocumentScrollThrottled);
+  }, []);
+
   const hiddenStyle = shouldHideHeader
     ? "-translate-y-full overflow-y-hidden"
     : "";
@@ -40,8 +49,7 @@ export function GlobalHeader() {
   return (
     <header
       className={clsx(
-        "flex items-center justify-center fixed w-full h-16 z-40 bg-brand-500 transition duration-200",
-        shadowStyle,
+        "flex items-center justify-center fixed w-full h-16 z-40 bg-brand-500 shadow-md transition duration-200",
         hiddenStyle,
       )}
     >

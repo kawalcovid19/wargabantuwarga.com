@@ -1,15 +1,24 @@
 import { render } from "@testing-library/react";
+import { throttle } from "@martinstark/throttle-ts";
 import { GlobalHeader } from "../global-header";
 
 jest.mock("next/router", () => require("next-router-mock"));
 
 describe("GlobalHeader", () => {
+  test("should run throttle function 1 time", () => {
+    const func = jest.fn();
+    const [throttleFunc] = throttle(func, 200);
+
+    throttleFunc();
+    expect(func).toHaveBeenCalledTimes(1);
+  });
+
   it("renders correctly", () => {
     const { container } = render(<GlobalHeader />);
 
     expect(container.firstChild).toMatchInlineSnapshot(`
       <header
-        class="flex items-center justify-center fixed w-full h-16 z-40 bg-brand-500 transition duration-200"
+        class="flex items-center justify-center fixed w-full h-16 z-40 bg-brand-500 shadow-md transition duration-200"
       >
         <div
           class="w-full sm:max-w-xl mx-auto flex items-center justify-between h-full px-4"
