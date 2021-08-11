@@ -8,7 +8,7 @@ export function HomePageEmergencyContactCTA() {
   return (
     <div className="rounded-sm">
       <div className="flex flex-row relative py-5 px-4 border-gray-100 border-2 rounded-lg justify-between">
-        <div className="flex flex-row">
+        <div className="flex flex-row items-center">
           <div
             aria-hidden
             className="flex flex-none items-center justify-center w-12 h-12 bg-blue-50 rounded-full"
