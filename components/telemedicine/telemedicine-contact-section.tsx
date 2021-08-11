@@ -1,5 +1,6 @@
 import React from "react";
 
+import { InternalPageSection } from "../layout/page";
 import { TelemedicineContactCard } from "./telemedicine-contact-card";
 import { ContactDetail } from "~/lib/content/telemedicine-contacts";
 
@@ -10,8 +11,8 @@ type TelemedicineProps = {
 export default function TelemedicineContactSection(data: TelemedicineProps) {
   const { telemedicine_contacts } = data;
   return (
-    <div className="p-4 overflow-hidden space-y-6 bg-white">
-      <div className="flex-1 min-w-0">
+    <InternalPageSection className="pb-6 space-y-6">
+      <div className="flex-1 min-w-0 mb-5">
         <h1 className="text-xl font-bold leading-7 text-gray-900 sm:text-2xl sm:truncate">
           Jadwal & kontak dokter
         </h1>
@@ -28,6 +29,6 @@ export default function TelemedicineContactSection(data: TelemedicineProps) {
           />
         ))}
       </div>
-    </div>
+    </InternalPageSection>
   );
 }

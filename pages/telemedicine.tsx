@@ -2,10 +2,12 @@ import React from "react";
 
 import { NextSeo } from "next-seo";
 import { GetStaticProps } from "next";
-import { Page } from "~/components/layout/page";
-import { PageHeader } from "~/components/layout/page-header";
+import {
+  InternalPageHeader,
+  InternalPageContent,
+  Page,
+} from "~/components/layout/page";
 import { BackButton } from "~/components/layout/back-button";
-import { TelemedicineContent } from "~/components/telemedicine/telemedicine-content";
 import TelemedicineContactSection from "~/components/telemedicine/telemedicine-contact-section";
 import { Container } from "~/components/ui/container";
 import telemedicineContacts, {
@@ -29,7 +31,7 @@ export default function TelemedicinePage(props: TelemedicineProps) {
         openGraph={{ title: meta.title, description: meta.description }}
         title={meta.title}
       />
-      <PageHeader
+      <InternalPageHeader
         backButton={<BackButton href="/" />}
         breadcrumbs={[
           {
@@ -41,7 +43,7 @@ export default function TelemedicinePage(props: TelemedicineProps) {
         description={meta.description}
         title={meta.title}
       />
-      <TelemedicineContent>
+      <InternalPageContent>
         <Container className="space-y-2">
           <TelemedicineContactSection
             telemedicine_contacts={
@@ -49,7 +51,7 @@ export default function TelemedicinePage(props: TelemedicineProps) {
             }
           />
         </Container>
-      </TelemedicineContent>
+      </InternalPageContent>
     </Page>
   );
 }

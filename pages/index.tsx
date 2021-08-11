@@ -19,6 +19,7 @@ import { attributes, html } from "~/lib/content/home-page";
 import { LatestNewsItem } from "~/lib/content/informasi-terbaru";
 import siteConfig from "~/lib/content/site-config";
 import { htmrTransform } from "~/lib/htmr-transformers";
+import { HomePageTelemedicineCTA } from "~/components/home/homepage-telemedicine-cta";
 
 const meta = {
   title: `${siteConfig.site_tagline} | ${siteConfig.site_name}`,
@@ -38,6 +39,7 @@ const HomePage = (props: HomePageProps) => (
         <HomePageLatestNews latestNews={props.latestNews} />
         <HomePageContributing />
         <HomePageDonation />
+        <HomePageTelemedicineCTA />
         <HomePageWhatsAppCTA />
         <HomePageWelcome />
         <HomePageSection className="px-4 py-6">
