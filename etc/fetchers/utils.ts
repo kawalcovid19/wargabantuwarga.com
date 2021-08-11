@@ -1,5 +1,16 @@
 import cheerio from "cheerio";
-import { Faq, Faqs } from "~/lib/data/faqs";
+import {
+  getKebabCase,
+  stripTags,
+  toSnakeCase,
+  toTitleCase,
+} from "./../../lib/string-utils";
+import { Faq, Faqs } from "./../../lib/data/faqs";
+
+interface SheetColumn {
+  name: string;
+  index: number;
+}
 
 export const parseFAQ = async (html: string): Promise<Faqs> => {
   const $ = cheerio.load(html);
@@ -38,4 +49,31 @@ export const extractGoogleQuery = (value: string): string => {
     el.attr("href", usp.get("q"));
   });
   return $("body").html() ?? "";
+};
+
+export const contactReducer = (row: string[]) => {
+  return (prev: Record<string, number | string>, col: SheetColumn) => {
+    const colName = toSnakeCase(col.name);
+    let cellValue = row[col.index];
+    if (colName == "lokasi") {
+      cellValue = toTitleCase(cellValue);
+    } else if (["kontak", "link"].includes(colName)) {
+      cellValue = extractGoogleQuery(cellValue);
+    } else if (colName == "ketersediaan") {
+      cellValue = toTitleCase(cellValue);
+    }
+    prev[colName] = cellValue;
+    if (colName == "kontak") {
+      prev.slug = [
+        getKebabCase(prev.kebutuhan as string),
+        getKebabCase(prev.keterangan as string),
+        getKebabCase(prev.lokasi as string),
+        getKebabCase(prev.penyedia as string),
+        getKebabCase(stripTags(prev.kontak as string)),
+      ].join("-");
+    } else if (colName == "terakhir_update") {
+      prev.verifikasi = cellValue == "" ? 0 : 1;
+    }
+    return prev;
+  };
 };
