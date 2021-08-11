@@ -24,6 +24,12 @@ const securityHeaders = [
     key: "X-Content-Type-Options",
     value: "nosniff",
   },
+  // Disables camera, microphone, and geolocation.
+  // `interest-cohort=()` opts the website out of Google's FLoC: https://amifloced.org/
+  {
+    key: "Permissions-Policy",
+    value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+  },
 ];
 
 /** @type {import("next/dist/next-server/server/config-shared").NextConfig} */
