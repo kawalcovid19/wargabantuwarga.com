@@ -5,6 +5,25 @@ import { GlobalHeader } from "../global-header";
 jest.mock("next/router", () => require("next-router-mock"));
 
 describe("GlobalHeader", () => {
+  test("test func handleDocumentScroll", () => {
+    // currentScrollTop
+    // isScrolledDown
+    // isMinimumScrolled
+  });
+
+  test("test setScrollPosition value", () => {
+    // previousScrollTop
+    // currentScrollTop
+  });
+
+  test("test setTimeout", () => {
+    // setShouldHideHeader
+  });
+
+  test("test shouldHideHeader", () => {
+    // -translate-y-full overflow-y-hidden
+  });
+
   test("should run throttle function 1 time", () => {
     const func = jest.fn();
     const [throttleFunc] = throttle(func, 200);

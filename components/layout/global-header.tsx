@@ -18,7 +18,7 @@ export function GlobalHeader() {
   const [, setScrollPosition] = useState(0);
   let previousScrollTop = 0;
 
-  function handleDocumentScroll() {
+  const handleDocumentScroll = () => {
     const { scrollTop: currentScrollTop } = document.documentElement;
     const isScrolledDown = previousScrollTop < currentScrollTop;
     const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL;
@@ -31,7 +31,7 @@ export function GlobalHeader() {
     setTimeout(() => {
       setShouldHideHeader(isScrolledDown && isMinimumScrolled);
     }, TIMEOUT_DELAY);
-  }
+  };
 
   const [handleDocumentScrollThrottled] = throttle(handleDocumentScroll, 200);
 
