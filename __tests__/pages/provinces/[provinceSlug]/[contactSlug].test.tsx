@@ -42,7 +42,7 @@ describe("ContactPage", () => {
     expect(title).toBeVisible();
   });
 
-  it("fallbacks to `keterangan` if `penyedia` is not available", () => {
+  it.only("fallbacks to `keterangan` if `penyedia` is not available", () => {
     const contactWithoutPenyedia = contactBuilder({
       overrides: {
         penyedia: perBuild(() => undefined),
@@ -73,42 +73,6 @@ describe("ContactPage", () => {
       `/provinces/${province.slug}/${contactWithoutPenyedia.slug}`,
     );
     expect(title).toBeVisible();
-  });
-
-  it("renders 'ketersediaan' row when the property is not empty", () => {
-    const contactWithKetersediaan = contactBuilder({
-      overrides: {
-        ketersediaan: "Tersedia",
-      },
-    });
-
-    render(
-      <ContactPage
-        contact={contactWithKetersediaan}
-        provinceName={province.name}
-        provinceSlug={province.slug}
-      />,
-    );
-
-    expect(screen.getByText("Tersedia")).toBeVisible();
-  });
-
-  it("does not render 'ketersediaan' row when the property is empty", () => {
-    const contactWithKetersediaan = contactBuilder({
-      overrides: {
-        ketersediaan: perBuild(() => ""),
-      },
-    });
-
-    render(
-      <ContactPage
-        contact={contactWithKetersediaan}
-        provinceName={province.name}
-        provinceSlug={province.slug}
-      />,
-    );
-
-    expect(screen.queryByText("Tersedia")).toBeNull();
   });
 });
 
