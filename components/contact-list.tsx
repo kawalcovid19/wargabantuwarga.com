@@ -16,7 +16,7 @@ type ContactListProps = {
 export function ContactList(props: ContactListProps) {
   const contactList = useMemo(
     () => (
-      <div className="bg-white shadow overflow-hidden sm:rounded-md">
+      <div className="bg-white shadow overflow-hidden rounded-md">
         <ul className="divide-y divide-gray-200">
           {props.data.map((contact, index) => (
             <ContactListItem

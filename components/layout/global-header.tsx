@@ -10,8 +10,8 @@ export function GlobalHeader() {
   const popoverButtonRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <header className="flex items-center justify-center fixed w-full h-16 px-4 z-40 bg-brand-500 shadow-md">
-      <Container className="flex items-center justify-between h-full">
+    <header className="flex items-center justify-center fixed w-full h-16 z-40 bg-brand-500 shadow-md">
+      <Container className="flex items-center justify-between h-full px-4">
         <Link href="/">
           <a className="align-middle">
             <h1 className="sr-only">Warga Bantu Warga</h1>

@@ -15,9 +15,14 @@ import collaboratorsData, {
 
 import { Alert } from "~/components/ui/alert";
 import { BackButton } from "~/components/layout/back-button";
-import { Page } from "~/components/layout/page";
-import { PageContent } from "~/components/layout/page-content";
-import { PageHeader } from "~/components/layout/page-header";
+import {
+  AboutPageHeader,
+  InternalPageContent,
+  InternalPageSection,
+  Page,
+} from "~/components/layout/page";
+import { Container } from "~/components/ui/container";
+import { FeedbackSection } from "~/components/ui/feedback-section";
 
 const meta = {
   title: `Tentang Kami`,
@@ -26,34 +31,29 @@ const meta = {
 
 export default function AboutPage() {
   return (
-    <div>
-      <Page>
-        <NextSeo
-          description={meta.description}
-          openGraph={{ title: meta.title, description: meta.description }}
-          title={meta.title}
-        />
-        <PageHeader
-          backButton={<BackButton href="/" />}
-          breadcrumbs={[
-            {
-              name: "Tentang Kami",
-              href: "/tentang-kami",
-              current: true,
-            },
-          ]}
-          title="Tentang Kami"
-        />
-        <PageContent>
-          <div className="space-y-4 bg-gray-100">
-            <div className="bg-white overflow-hidden shadow rounded-md">
-              <div className="p-4 space-y-4">
-                <h2 className="font-bold text-gray-700 text-2xl sm:text-3xl">
-                  {attributes.title}
-                </h2>
-                <p className="text-gray-700">{attributes.description}</p>
-              </div>
-
+    <Page>
+      <NextSeo
+        description={meta.description}
+        openGraph={{ title: meta.title, description: meta.description }}
+        title={meta.title}
+      />
+      <AboutPageHeader
+        backButton={<BackButton href="/" />}
+        breadcrumbs={[
+          {
+            name: "Tentang Kami",
+            href: "/tentang-kami",
+            current: true,
+          },
+        ]}
+        description={attributes.description}
+        subtitle="Tentang Kami"
+        title={attributes.title}
+      />
+      <InternalPageContent>
+        <Container className="space-y-2">
+          <div className="overflow-hidden bg-white">
+            <div className="text-gray-600">
               <Image
                 alt={attributes.title}
                 blurDataURL={getBlurred(
@@ -70,7 +70,7 @@ export default function AboutPage() {
                 width={512}
               />
 
-              <article className="p-4 space-y-4">
+              <article className="px-4 py-6 space-y-4">
                 {htmr(html, { transform: htmrTransform })}
 
                 <Alert color="blue" icon={InformationCircleIcon}>
@@ -80,80 +80,82 @@ export default function AboutPage() {
                   </span>
                 </Alert>
               </article>
-
-              <div className="grid grid-cols-2 gap-4 p-4 relative">
-                {videosData.videos.map((video: Video) => {
-                  return (
-                    <a
-                      key={video.video_url}
-                      href={video.video_url}
-                      rel="nofollow noopener noreferrer"
-                      target="_blank"
-                      title={video.title}
-                    >
-                      <Image
-                        alt={video.title}
-                        blurDataURL={getBlurred(
-                          replaceCloudinaryPrefix(video.thumbnail_image),
-                          720,
-                        )}
-                        className="shadow rounded-md"
-                        height={397}
-                        layout="intrinsic"
-                        loader={cloudinaryLoader}
-                        loading="lazy"
-                        placeholder="blur"
-                        quality={90}
-                        src={replaceCloudinaryPrefix(video.thumbnail_image)}
-                        width={720}
-                      />
-                      <p className="text-gray-700 text-xs">{video.title}</p>
-                    </a>
-                  );
-                })}
-              </div>
             </div>
 
-            {/* Collaborators Sections --start */}
-            <div className="p-4 space-y-4 bg-white overflow-hidden shadow rounded-md">
-              <h2 className="text-center font-semibold text-gray-700 text-lg">
-                Terima kasih kepada para kolaborator inisiatif #WargaBantuWarga
-              </h2>
-              <div className="flex flex-wrap justify-center items-center space-x-4 relative">
-                {collaboratorsData.collaborators.map(
-                  (collaborator: Collaborator) => {
-                    return (
-                      <a
-                        key={collaborator.link_url}
-                        className="flex justify-center items-center relative h-16 w-24"
-                        href={collaborator.link_url}
-                        rel="nofollow noopener noreferrer"
-                        target="_blank"
-                        title={collaborator.name}
-                      >
-                        <Image
-                          alt={collaborator.name}
-                          className="rounded-md"
-                          // height={80}
-                          layout="fill"
-                          loader={cloudinaryLoader}
-                          loading="lazy"
-                          objectFit="contain"
-                          quality={90}
-                          // width={100}
-                          src={replaceCloudinaryPrefix(
-                            collaborator.thumbnail_image,
-                          )}
-                        />
-                      </a>
-                    );
-                  },
-                )}
-              </div>
+            <div className="grid grid-cols-2 gap-4 px-4 py-6 relative">
+              {videosData.videos.map((video: Video) => {
+                return (
+                  <a
+                    key={video.video_url}
+                    href={video.video_url}
+                    rel="nofollow noopener noreferrer"
+                    target="_blank"
+                    title={video.title}
+                  >
+                    <Image
+                      alt={video.title}
+                      blurDataURL={getBlurred(
+                        replaceCloudinaryPrefix(video.thumbnail_image),
+                        720,
+                      )}
+                      className="shadow rounded-md"
+                      height={397}
+                      layout="intrinsic"
+                      loader={cloudinaryLoader}
+                      loading="lazy"
+                      placeholder="blur"
+                      quality={90}
+                      src={replaceCloudinaryPrefix(video.thumbnail_image)}
+                      width={720}
+                    />
+                    <p className="text-gray-700 text-xs">{video.title}</p>
+                  </a>
+                );
+              })}
             </div>
           </div>
-        </PageContent>
-      </Page>
-    </div>
+
+          {/* Collaborators Sections --start */}
+          <InternalPageSection className="py-6 space-y-4">
+            <h2 className="text-center font-semibold text-gray-700 text-lg">
+              Terima kasih kepada para kolaborator inisiatif #WargaBantuWarga
+            </h2>
+            <div className="flex flex-wrap justify-center items-center space-x-4 relative">
+              {collaboratorsData.collaborators.map(
+                (collaborator: Collaborator) => {
+                  return (
+                    <a
+                      key={collaborator.link_url}
+                      className="flex justify-center items-center relative h-16 w-24"
+                      href={collaborator.link_url}
+                      rel="nofollow noopener noreferrer"
+                      target="_blank"
+                      title={collaborator.name}
+                    >
+                      <Image
+                        alt={collaborator.name}
+                        className="rounded-md"
+                        // height={80}
+                        layout="fill"
+                        loader={cloudinaryLoader}
+                        loading="lazy"
+                        objectFit="contain"
+                        quality={90}
+                        // width={100}
+                        src={replaceCloudinaryPrefix(
+                          collaborator.thumbnail_image,
+                        )}
+                      />
+                    </a>
+                  );
+                },
+              )}
+            </div>
+          </InternalPageSection>
+
+          <FeedbackSection />
+        </Container>
+      </InternalPageContent>
+    </Page>
   );
 }

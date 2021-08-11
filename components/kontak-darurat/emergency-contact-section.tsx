@@ -1,5 +1,6 @@
 import React from "react";
 
+import { InternalPageSection } from "../layout/page";
 import { EmergencyContactCard } from "./emergency-contact-card";
 import {
   PrimaryAnchorButton,
@@ -15,7 +16,7 @@ type KontakDaruratProps = {
 export default function EmergencyContactSection(data: KontakDaruratProps) {
   const { emergency_contacts } = data;
   return (
-    <div className="p-4 overflow-hidden space-y-6 bg-white">
+    <InternalPageSection className="pb-6 space-y-6">
       <div className="grid grid-cols-2 gap-4">
         {emergency_contacts.map((contact: ContactDetail, i: number) => (
           <EmergencyContactCard
@@ -61,6 +62,6 @@ export default function EmergencyContactSection(data: KontakDaruratProps) {
           <p className="text-gray-500 text-xs">Hotline Kementerian Kesehatan</p>
         </div>
       </div>
-    </div>
+    </InternalPageSection>
   );
 }

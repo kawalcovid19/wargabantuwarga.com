@@ -1,11 +1,11 @@
 import * as React from "react";
 
 import Head from "next/head";
-import { Container } from "../ui/container";
+import { Container } from "../../ui/container";
 import { Breadcrumb, BreadcrumbItem } from "~/components/ui/breadcrumb";
 import { makeBreadcrumbJsonLd } from "~/lib/jsonld-generator";
 
-interface PageHeaderProps {
+export interface PageHeaderProps {
   title: string;
   description?: string;
   backButton?: React.ReactNode;
@@ -45,7 +45,7 @@ export function PageHeader({
                 {title}
               </h1>
               {description && (
-                <p className="flex items-center mt-2 text-sm text-gray-500">
+                <p className="flex items-center mt-2 text-sm text-gray-600">
                   {description}
                 </p>
               )}
