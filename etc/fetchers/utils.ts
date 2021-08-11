@@ -7,7 +7,7 @@ import {
 } from "./../../lib/string-utils";
 import { Faq, Faqs } from "./../../lib/data/faqs";
 
-interface SheetColumn {
+export interface SheetColumn {
   name: string;
   index: number;
 }
