@@ -9,8 +9,8 @@
     "analyze": "cross-env ANALYZE=true yarn build",
     "fetch-wbw": "ts-node etc/fetchers/fetch-wbw.ts",
     "format": "prettier --write \"./**/*.{ts,tsx}\"",
-    "lint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
-    "lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx}\"",
+    "lint": "eslint \"**/*.{js,jsx,ts,tsx,yml,yaml}\"",
+    "lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx,yml,yaml}\"",
     "mirror-box": "ts-node etc/mirror-box.ts",
     "netlify-export": "yarn mirror-box && yarn build && next export",
     "prepare": "husky install",
@@ -80,6 +80,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-yml": "^0.10.0",
     "frontmatter-markdown-loader": "3.6.3",
     "husky": "7.0.1",
     "identity-obj-proxy": "^3.0.0",
@@ -104,7 +105,7 @@
     "typescript": "4.3.5"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "*.{js,jsx,ts,tsx,yml,yaml}": [
       "eslint --cache --fix",
       "jest --findRelatedTests"
     ],

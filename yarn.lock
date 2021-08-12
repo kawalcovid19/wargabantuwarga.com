@@ -5257,6 +5257,16 @@ eslint-plugin-testing-library@^4.9.0:
   dependencies:
     "@typescript-eslint/experimental-utils" "^4.24.0"
 
+eslint-plugin-yml@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-yml/-/eslint-plugin-yml-0.10.0.tgz#edab6f859121fb66740a631d27bfb68d42316e1d"
+  integrity sha512-N3F9Zcq9SeEphK02FdLWAg4eMbOzXTZ9K6QrPuv27mW212yOmEIrTiqzA29w2NBQGsfKMxfEQRV86JVfJmWJ8w==
+  dependencies:
+    debug "^4.1.1"
+    lodash "^4.17.19"
+    natural-compare "^1.4.0"
+    yaml-eslint-parser "^0.4.0"
+
 eslint-rule-composer@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/eslint-rule-composer/-/eslint-rule-composer-0.3.0.tgz#79320c927b0c5c0d3d3d2b76c8b4a488f25bbaf9"
@@ -13123,6 +13133,15 @@ yallist@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-4.0.0.tgz#9bb92790d9c0effec63be73519e11a35019a3a72"
   integrity sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
+
+yaml-eslint-parser@^0.4.0:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/yaml-eslint-parser/-/yaml-eslint-parser-0.4.1.tgz#66966662010ac6ab372e61b99618e59dc903ccf1"
+  integrity sha512-GoJ/p1EW8O2tbTbuhfxjo1XhfUFU3uX3kwvfEQoOaZjO2Lubx8POjlsSqB+18b3SxkujAdQYT9r9nURaUWNYWQ==
+  dependencies:
+    eslint-visitor-keys "^2.1.0"
+    lodash "^4.17.20"
+    yaml "^1.10.0"
 
 yaml@^1.10.0, yaml@^1.10.2:
   version "1.10.2"
