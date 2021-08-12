@@ -11,10 +11,36 @@ export type ProvinceListItem = {
   name: string;
   slug: string;
   count: number;
+  ambulansCount: number;
+  rsCount: number;
+  donorPlasmaCount: number;
+  oksigenCount: number;
 };
 
 type ProvinceListProps = {
   data: ProvinceListItem[];
+};
+
+const getProvinceContactsCount = (
+  province: ProvinceListItem,
+  kebutuhan?: string[] | string,
+) => {
+  if (typeof kebutuhan === "string") {
+    switch (kebutuhan) {
+      case "Ambulans":
+        return province.ambulansCount;
+      case "Oksigen":
+        return province.oksigenCount;
+      case "Donor plasma":
+        return province.donorPlasmaCount;
+      case "Rumah sakit":
+        return province.rsCount;
+      default:
+        return province.count;
+    }
+  }
+
+  return province.count;
 };
 
 export function ProvinceList(props: ProvinceListProps) {
@@ -24,6 +50,8 @@ export function ProvinceList(props: ProvinceListProps) {
     () => (router.query.kebutuhan as string) || undefined,
     [router.query],
   );
+
+  const kebutuhan = router.query.kebutuhan;
 
   if (props.data.length > 0) {
     return (
@@ -52,7 +80,9 @@ export function ProvinceList(props: ProvinceListProps) {
                   <span className="text-gray-900 font-semibold hover:text-gray-600">
                     {province.name}
                   </span>
-                  <p className="text-gray-500">{province.count} Entri</p>
+                  <p className="text-gray-500">
+                    {getProvinceContactsCount(province, kebutuhan)} Entri
+                  </p>
                 </div>
               </a>
             </Link>

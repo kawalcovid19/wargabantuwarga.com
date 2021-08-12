@@ -8,7 +8,7 @@ import { LinksWell } from "~/components/links-well";
 import { ProvinceList, ProvinceListItem } from "~/components/province-list";
 import { SearchForm } from "~/components/search-form";
 import { SeoText } from "~/components/seo-text";
-import provinces from "~/lib/data/provinces";
+import provinces, { Contact } from "~/lib/data/provinces";
 import { getCurrentMonthAndYear } from "~/lib/date-utils";
 import { useSearch } from "~/lib/hooks/use-search";
 import { getInitial } from "~/lib/string-utils";
@@ -108,12 +108,23 @@ export default function ProvincesPage(props: ProvincesPageProps) {
   );
 }
 
+const getProvinceKebutuhanContactsCount = (
+  contacts: Contact[],
+  kebutuhan: string,
+) => {
+  return contacts.filter((contact) => contact.kebutuhan === kebutuhan).length;
+};
+
 export const getStaticProps: GetStaticProps = () => {
   const provincesList = provinces.map(({ name, slug, data }) => ({
     initials: getInitial(name),
     name,
     slug,
     count: data.length,
+    ambulansCount: getProvinceKebutuhanContactsCount(data, "Ambulans"),
+    rsCount: getProvinceKebutuhanContactsCount(data, "Rumah sakit"),
+    donorPlasmaCount: getProvinceKebutuhanContactsCount(data, "Donor plasma"),
+    oksigenCount: getProvinceKebutuhanContactsCount(data, "Oksigen"),
   }));
 
   return {

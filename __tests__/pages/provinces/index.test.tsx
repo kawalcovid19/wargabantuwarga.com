@@ -109,6 +109,15 @@ describe("getStaticProps", () => {
       name,
       slug,
       count: data.length,
+      ambulansCount: data.filter((contact) => contact.kebutuhan === "Ambulans")
+        .length,
+      rsCount: data.filter((contact) => contact.kebutuhan === "Rumah sakit")
+        .length,
+      donorPlasmaCount: data.filter(
+        (contact) => contact.kebutuhan === "Donor plasma",
+      ).length,
+      oksigenCount: data.filter((contact) => contact.kebutuhan === "Oksigen")
+        .length,
     }));
     expect(getStaticProps({})).toEqual({
       props: {
