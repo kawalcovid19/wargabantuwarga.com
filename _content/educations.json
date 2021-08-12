@@ -63,6 +63,40 @@
           "url": "https://www.orami.co.id/magazine/panduan-isolasi-mandiri-untuk-anak-dengan-covid-19/"
         }
       ]
+    },
+    {
+      "topic": "Informasi Seputar Oksigen",
+      "description": "\tKumpulan informasi mengenai kebutuhan oksigen untuk pasien COVID-19, mulai dari cara pakai hingga cara menyimpan tabung oksigen",
+      "contents": [
+        {
+          "title": "Cara menggunakan tabung oksigen",
+          "url": "https://www.halodoc.com/artikel/begini-cara-menggunakan-tabung-oksigen-di-rumah"
+        },
+        {
+          "title": "Berapa batas normal saturasi oksigen?",
+          "url": "https://www.alodokter.com/penting-diketahui-ini-kadar-oksigen-normal-dalam-darah"
+        },
+        {
+          "title": "Cara cek saturasi oksigen normal",
+          "url": "https://www.halodoc.com/artikel/begini-cara-menggunakan-tabung-oksigen-di-rumah"
+        },
+        {
+          "title": "Cara mengontrol asupan oksigen melalui oksigen regulator",
+          "url": "https://www.medicalogy.com/blog/mengontrol-asupan-oksigen-melalui-oksigen-regulator-dengan-aman/"
+        },
+        {
+          "title": "Cara menyimpan tabung oksigen di rumah",
+          "url": "https://www.halodoc.com/artikel/ketahui-cara-penyimpanan-tabung-oksigen-di-rumah"
+        },
+        {
+          "title": "VIDEO Tutorial prosedur pemasangan tabung oksigen",
+          "url": "https://youtu.be/8tuwfUgb9W8"
+        },
+        {
+          "title": "VIDEO Cara mudah pasang tabung oksigen",
+          "url": "https://youtu.be/4-iB8fMC4jU"
+        }
+      ]
     }
   ]
 }
