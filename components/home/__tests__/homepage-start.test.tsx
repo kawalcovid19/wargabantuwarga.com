@@ -36,7 +36,7 @@ describe("HomePageStart", () => {
               class="flex flex-row relative py-5 px-4 border-gray-100 border-2 rounded-lg justify-between"
             >
               <div
-                class="flex flex-row"
+                class="flex flex-row items-center"
               >
                 <div
                   aria-hidden="true"

@@ -7,7 +7,7 @@ describe("ChatbotSection", () => {
 
     expect(container.firstChild).toMatchInlineSnapshot(`
       <div
-        class="space-y-4 px-4 py-6 text-center bg-white"
+        class="px-4 overflow-hidden bg-white py-6 space-y-4 text-center"
       >
         <div
           class="space-y-2"
