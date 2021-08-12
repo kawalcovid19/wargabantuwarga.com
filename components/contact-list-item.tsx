@@ -41,7 +41,14 @@ function ContactListItem({
                 : contact.keterangan}
             </a>
           </Link>
-          <div className="ml-2 flex-shrink-0 flex">
+          <div className="flex-shrink-0 flex space-x-2">
+            {isNotEmpty(contact.ketersediaan) && (
+              <Badge
+                color={contact.ketersediaan === "Tersedia" ? "green" : "red"}
+              >
+                {contact.ketersediaan}
+              </Badge>
+            )}
             <Badge color="yellow">{contact.kebutuhan}</Badge>
           </div>
         </div>

@@ -13,6 +13,10 @@
     Referrer-Policy = "same-origin"
     Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' *.googletagmanager.com; img-src 'self' blob: data: https:; frame-ancestors 'none'; "
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
