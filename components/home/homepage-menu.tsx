@@ -19,11 +19,22 @@ export function HomePageMenu() {
               className: "h-6 w-6 text-brand-500",
             })}
           </div>
-          <Link href={item.href}>
-            <a className="text-gray-900 font-semibold text-xs mt-3 helper-link-cover">
+          {item.external ? (
+            <a
+              className="text-gray-900 font-semibold text-xs mt-3 helper-link-cover"
+              href={item.href}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               {item.name}
             </a>
-          </Link>
+          ) : (
+            <Link href={item.href}>
+              <a className="text-gray-900 font-semibold text-xs mt-3 helper-link-cover">
+                {item.name}
+              </a>
+            </Link>
+          )}
         </li>
       ))}
     </ul>
