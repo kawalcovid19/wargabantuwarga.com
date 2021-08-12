@@ -3,7 +3,7 @@
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-35-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-36-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -159,6 +159,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://umarhadi.dev"><img src="https://avatars.githubusercontent.com/u/31447862?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Umar Hadi Siswanto</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=umarhadi" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/Widi-ps"><img src="https://avatars.githubusercontent.com/u/69189062?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Widi-ps</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/issues?q=author%3AWidi-ps" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://www.ryanadhi.tech/"><img src="https://avatars.githubusercontent.com/u/35433920?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ryan Adhi</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=ryanadhi" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/maziyank"><img src="https://avatars.githubusercontent.com/u/3317904?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bakhtiar Amaludin</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=maziyank" title="Code">💻</a></td>
   </tr>
 </table>
 
