@@ -31,6 +31,8 @@ describe("EducationPage", () => {
   });
 
   it("renders the topics correctly", () => {
+    render(<EducationPage educations={educations} />);
+
     topics.forEach((topic) => {
       expect(screen.getByText(topic.topic)).toBeVisible();
 
