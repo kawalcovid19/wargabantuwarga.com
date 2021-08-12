@@ -20,343 +20,339 @@ media_library:
     #       format: auto
 
 collections:
-  - name: "config"
-    label: "Config"
+  - name: config
+    label: Config
     delete: false
     editor:
       preview: false
     files:
-      - name: "general"
-        label: "Site Configuration"
-        file: "_content/site-config.json"
-        description: "General site settings"
+      - name: general
+        label: Site Configuration
+        file: _content/site-config.json
+        description: General site settings
         fields:
-          - label: "Site name"
-            name: "site_name"
-            widget: "string"
+          - label: Site name
+            name: site_name
+            widget: string
             hint: "The main name of the website, e.g., **Warga Bantu Warga** | Informasi Faskes & Alkes untuk COVID-19"
-          - label: "Site tagline"
-            name: "site_tagline"
-            widget: "string"
+          - label: Site tagline
+            name: site_tagline
+            widget: string
             hint: "The tagline to accompany the name, e.g., Warga Bantu Warga | **Informasi Faskes & Alkes untuk COVID-19**"
-          - label: "Site description"
-            name: "site_description"
-            widget: "string"
+          - label: Site description
+            name: site_description
+            widget: string
             hint: "The description of the site to be shown in the URL previews on Google, Facebook, Twitter, WhatsApp, etc."
-          - label: "Site URL"
-            name: "site_url"
-            widget: "string"
+          - label: Site URL
+            name: site_url
+            widget: string
             hint: "The canonical URL of the website, complete with the protocol (e.g. `https://`) and **without** trailing slash (`/`)."
-          - label: "WhatsApp Contact URL"
-            name: "whatsapp_contact_url"
-            widget: "string"
+          - label: WhatsApp Contact URL
+            name: whatsapp_contact_url
+            widget: string
             hint: "The direct link (`https://`) of the WhatsApp hotline used in navigation and homepage CTA."
-  - name: "informasi_terbaru"
-    label: "Informasi Terbaru"
+  - name: informasi_terbaru
+    label: Informasi Terbaru
     preview_path: ""
-    folder: "_content/informasi-terbaru"
-    extension: "md"
+    folder: _content/informasi-terbaru
+    extension: md
     create: true
     fields:
-      - {
-          label: "Title",
-          name: "title",
-          widget: "string",
-        }
-      - {
-          label: "Date",
-          name: "date",
-          widget: "date",
-        }
-      - {
-          label: "Link Text",
-          name: "link_text",
-          widget: "string",
-        }
-      - {
-          label: "Link",
-          name: "link",
-          widget: "string",
-        }
-      - {
-          label: "Body",
-          name: "body",
-          widget: "markdown",
-          hint: "Section body",
-        }
-  - name: "home_page"
-    label: "Home Page"
+      - label: Title
+        name: title
+        widget: string
+      - label: Date
+        name: date
+        widget: date
+      - label: Link Text
+        name: link_text
+        widget: string
+      - label: Link
+        name: link
+        widget: string
+      - label: Body
+        name: body
+        widget: markdown
+        hint: Section body
+  - name: home_page
+    label: Home Page
     delete: false
     preview_path: ""
     files:
-      - name: "home_page"
-        label: "Home Page"
-        file: "_content/home-page.md"
+      - name: home_page
+        label: Home Page
+        file: _content/home-page.md
         fields:
-          - {
-              label: "Body",
-              name: "body",
-              widget: "markdown",
-              hint: "Page body",
-            }
-          - {
-              label: "Banner Image",
-              name: "home_banner_image",
-              widget: "image",
-              required: false,
-              hint: "Heading banner on top of Home page",
-              tagname: "",
-            }
-  - name: "about_page"
-    label: "About Page"
+          - label: Body
+            name: body
+            widget: markdown
+            hint: Page body
+          - label: Banner Image
+            name: home_banner_image
+            widget: image
+            required: false
+            hint: Heading banner on top of Home page
+            tagname: ""
+  - name: about_page
+    label: About Page
     delete: false
-    preview_path: ""
+    preview_path: tentang-kami
     files:
-
-      - name: "about_page"
-        label: "About Page"
-        file: "_content/about/content.md"
+      - name: about_page
+        label: About Page
+        file: _content/about/content.md
         fields:
-          - {
-              label: "Last updated time",
-              name: "last_updated_time",
-              widget: "datetime",
-              hint: "Last updated time",
-            }
-          - {
-              label: "Thumbnail Image",
-              name: "thumbnail_image",
-              widget: "image",
-            }
-          - {
-              label: "Title",
-              name: "title",
-              widget: "string",
-            }
-          - {
-              label: "Description",
-              name: "description",
-              widget: "string",
-            }
-          - {
-              label: "Body",
-              name: "body",
-              widget: "markdown",
-              hint: "Page body",
-            }
+          - label: Last updated time
+            name: last_updated_time
+            widget: datetime
+            hint: Last updated time
+          - label: Thumbnail Image
+            name: thumbnail_image
+            widget: image
+          - label: Title
+            name: title
+            widget: string
+          - label: Description
+            name: description
+            widget: string
+          - label: Body
+            name: body
+            widget: markdown
+            hint: Page body
 
-      - name: "videos_about_page"
-        label: "Videos on About Page"
-        file: "_content/about/videos.json"
+      - name: videos_about_page
+        label: Videos on About Page
+        file: _content/about/videos.json
         fields:
-          - name: "videos"
-            label: "Videos"
+          - name: videos
+            label: Videos
             widget: list
             fields:
-              - {
-                  label: "Title",
-                  name: "title",
-                  widget: "string"
-                }
-              - {
-                  label: "Video URL",
-                  name: "video_url",
-                  widget: "string"
-                }
-              - {
-                  label: "Thumbnail Image",
-                  name: "thumbnail_image",
-                  widget: "image",
-                }
+              - label: Title
+                name: title
+                widget: string
+              - label: Video URL
+                name: video_url
+                widget: string
+              - label: Thumbnail Image
+                name: thumbnail_image
+                widget: image
 
-      - name: "collaborators_about_page"
-        label: "Collaborators on About Page"
-        file: "_content/about/collaborators.json"
+      - name: collaborators_about_page
+        label: Collaborators on About Page
+        file: _content/about/collaborators.json
         fields:
-          - name: "collaborators"
-            label: "Collaborator"
+          - name: collaborators
+            label: Collaborator
             widget: list
             fields:
-              - {
-                  label: "Name",
-                  name: "name",
-                  widget: "string"
-                }
-              - {
-                  label: "Link URL",
-                  name: "link_url",
-                  widget: "string"
-                }
-              - {
-                  label: "Thumbnail Image",
-                  name: "thumbnail_image",
-                  widget: "image",
-                }
-
-  - name: "isolasi_mandiri_page"
-    label: "Isolasi Mandiri Page"
+              - label: Name
+                name: name
+                widget: string
+              - label: Link URL
+                name: link_url
+                widget: string
+              - label: Thumbnail Image
+                name: thumbnail_image
+                widget: image
+  - name: isolasi_mandiri_page
+    label: Isolasi Mandiri Page
     delete: false
-    preview_path: "isolasi-mandiri"
+    preview_path: isolasi-mandiri
     files:
-      - name: "isolasi_mandiri_page"
-        label: "Isolasi Mandiri Page"
-        file: "_content/isolasi-mandiri.json"
+      - name: isolasi_mandiri_page
+        label: Isolasi Mandiri Page
+        file: _content/isolasi-mandiri.json
         fields:
-          - name: "categories"
-            label: "Categories"
+          - name: categories
+            label: Categories
             widget: list
             fields:
-              - {
-                  label: "Title",
-                  name: "title",
-                  widget: "string"
-                }
-              - {
-                  label: "Description",
-                  name: "description",
-                  widget: "text",
-                  required: false,
-                }
-              - label: "Links List"
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+                required: false
+              - label: Links List
                 name: links
                 widget: list
                 fields:
-                  - {
-                      label: "Link Title",
-                      name: "title",
-                      widget: "string"
-                    }
-                  - {
-                      label: "Link URL",
-                      name: "url",
-                      widget: "string"
-                    }
-  - name: "welcome_message"
-    label: "Welcome Message"
+                  - label: Link Title
+                    name: title
+                    widget: string
+                  - label: Link URL
+                    name: url
+                    widget: string
+  - name: welcome_message
+    label: Welcome Message
     delete: false
     preview_path: ""
     files:
-      - name: "welcome_message"
-        label: "Welcome Message"
-        file: "_content/welcome-message.md"
+      - name: welcome_message
+        label: Welcome Message
+        file: _content/welcome-message.md
         fields:
-          - {
-              label: "Last updated time",
-              name: "last_updated_time",
-              widget: "datetime",
-            }
-          - {
-              label: "Title",
-              name: "title",
-              widget: "string",
-            }
-          - {
-              label: "Body",
-              name: "body",
-              widget: "markdown",
-              hint: "Section body",
-            }
-  - name: "kontak_darurat_page"
-    label: "Kontak Darurat Page"
+          - label: Last updated time
+            name: last_updated_time
+            widget: datetime
+          - label: Title
+            name: title
+            widget: string
+          - label: Body
+            name: body
+            widget: markdown
+            hint: Section body
+  - name: kontak_darurat_page
+    label: Kontak Darurat Page
     delete: false
-    preview_path: "kontak-darurat"
+    preview_path: kontak-darurat
     files:
-      - name: "emergency_contacts"
-        label: "Emergency Contacts"
-        file: "_content/kontak-darurat/emergency-contacts.json"
+      - name: emergency_contacts
+        label: Emergency Contacts
+        file: _content/kontak-darurat/emergency-contacts.json
         fields:
-          - name: "emergency_contacts"
-            label: "Emergency Contacts"
+          - name: emergency_contacts
+            label: Emergency Contacts
             widget: list
             fields:
-              - {
-                  label: "Name",
-                  name: "name",
-                  widget: "string"
-                }
-              - {
-                  label: "Description",
-                  name: "description",
-                  widget: "string"
-                }
-              - {
-                  label: "Image",
-                  name: "image",
-                  widget: "image",
-                  choose_url: true,
-                }
-              - {
-                  label: "Link URL",
-                  name: "url",
-                  widget: "string"
-                }
-      - name: "vaccine_section"
-        label: "Vaccine Section"
-        file: "_content/kontak-darurat/vaccine-section.json"
+              - label: Name
+                name: name
+                widget: string
+              - label: Description
+                name: description
+                widget: string
+              - label: Image
+                name: image
+                widget: image
+                choose_url: true
+              - label: Link URL
+                name: url
+                widget: string
+      - name: vaccine_section
+        label: Vaccine Section
+        file: _content/kontak-darurat/vaccine-section.json
         fields:
-          - name: "vaccine_section"
-            label: "Vaccine Section"
+          - name: vaccine_section
+            label: Vaccine Section
             widget: list
             fields:
-              - {
-                  label: "Link Title",
-                  name: "title",
-                  widget: "string"
-                }
-              - {
-                  label: "Link URL",
-                  name: "url",
-                  widget: "string"
-                }
-      - name: "oxygen_section"
-        label: "Oxygen Section"
-        file: "_content/kontak-darurat/oxygen-section.json"
+              - label: Link Title
+                name: title
+                widget: string
+              - label: Link URL
+                name: url
+                widget: string
+      - name: oxygen_section
+        label: Oxygen Section
+        file: _content/kontak-darurat/oxygen-section.json
         fields:
-          - name: "oxygen_section"
-            label: "Oxygen Section"
+          - name: oxygen_section
+            label: Oxygen Section
             widget: list
             fields:
-              - {
-                  label: "Link Title",
-                  name: "title",
-                  widget: "string"
-                }
-              - {
-                  label: "Link URL",
-                  name: "url",
-                  widget: "string"
-                }
-  - name: "donasi_page"
-    label: "Donasi Page"
+              - label: Link Title
+                name: title
+                widget: string
+              - label: Link URL
+                name: url
+                widget: string
+  - name: donasi_page
+    label: Donasi Page
     delete: false
-    preview_path: "donasi"
+    preview_path: donasi
     files:
-      - name: "informasi_donasi"
-        label: "Informasi Donasi"
-        file: "_content/donasi.json"
+      - name: informasi_donasi
+        label: Informasi Donasi
+        file: _content/donasi.json
         fields:
-          - name: "donations"
-            label: "Donations"
+          - name: donations
+            label: Donations
             widget: list
             fields:
-              - {
-                  label: "Title",
-                  name: "title",
-                  widget: "string"
-                }
-              - {
-                  label: "Category",
-                  name: "category",
-                  widget: "string"
-                }
-              - {
-                  label: "Image",
-                  name: "image",
-                  widget: "image",
-                  choose_url: true,
-                }
-              - {
-                  label: "Link URL",
-                  name: "url",
-                  widget: "string"
-                }
+              - label: Title
+                name: title
+                widget: string
+              - label: Category
+                name: category
+                widget: string
+              - label: Image
+                name: image
+                widget: image
+                choose_url: true
+              - label: Link URL
+                name: url
+                widget: string
+
+      - name: emergency_contacts
+        label: Emergency Contacts
+        file: _content/kontak-darurat/emergency-contacts.json
+        fields:
+          - name: emergency_contacts
+            label: Emergency Contacts
+            widget: list
+            fields:
+              - label: Name
+                name: name
+                widget: string
+              - label: Description
+                name: description
+                widget: string
+              - label: Image
+                name: image
+                widget: image
+                choose_url: true
+              - label: Link URL
+                name: url
+                widget: string
+      - name: vaccine_section
+        label: Vaccine Section
+        file: _content/kontak-darurat/vaccine-section.json
+        fields:
+          - name: vaccine_section
+            label: Vaccine Section
+            widget: list
+            fields:
+              - label: Link Title
+                name: title
+                widget: string
+              - label: Link URL
+                name: url
+                widget: string
+      - name: oxygen_section
+        label: Oxygen Section
+        file: _content/kontak-darurat/oxygen-section.json
+        fields:
+          - name: oxygen_section
+            label: Oxygen Section
+            widget: list
+            fields:
+              - label: Link Title
+                name: title
+                widget: string
+              - label: Link URL
+                name: url
+                widget: string
+  - name: education_page
+    label: Education Page
+    delete: false
+    preview_path: edukasi
+    files:
+      - name: education_contents
+        label: Education Links
+        file: _content/educations.json
+        fields:
+          - label: Group Title
+            name: group
+            widget: string
+          - name: contents
+            label: Contents
+            widget: list
+            fields:
+              - label: Link Title
+                name: title
+                widget: string
+              - label: Link URL
+                name: url
+                widget: string

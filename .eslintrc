@@ -8,7 +8,9 @@
     "plugin:@next/next/recommended",
     "plugin:cypress/recommended",
     "plugin:import/recommended",
-    "plugin:import/typescript"
+    "plugin:import/typescript",
+    "plugin:yml/standard",
+    "plugin:yml/prettier"
   ],
   "plugins": ["prettier", "cypress", "chai-friendly"],
   "rules": {
@@ -56,6 +58,10 @@
         "project": "./tsconfig.json"
       },
       "rules": {}
+    },
+    {
+      "files": ["*.yaml", "*.yml"],
+      "parser": "yaml-eslint-parser"
     }
   ]
 }
