@@ -1,0 +1,34 @@
+{
+  "topics": [
+    {
+      "topic": "Penanganan jika positif COVID-19",
+      "description": "Kumpulan informasi mengenai tindakan yang perlu Anda lakukan jika terkonfirmasi positif COVID-19",
+      "contents": [
+        {
+          "title": "Perawatan pasien COVID-19 berdasarkan gejala",
+          "url": "https://www.instagram.com/p/CQn8H5QM26"
+        },
+        {
+          "title": "Yang harus dilakukan jika terkena COVID-19 saat hamil",
+          "url": "https://www.who.int/indonesia/news/novel-coronavirus/qa/qa-during-pregnancy"
+        },
+        {
+          "title": "Apa yang harus dilakukan jika bayi positif ",
+          "url": "https://kesehatan.kontan.co.id/news/apa-yang-harus-dilakukan-jika-bayi-atau-anak-positif-terinfeksi-virus-corona"
+        },
+        {
+          "title": "Penanganan dan pengobatan Covid-19 pada bayi baru lahir",
+          "url": "https://www.klikdokter.com/info-sehat/read/3647537/penanganan-dan-pengobatan-covid-19-pada-bayi-baru-lahir"
+        },
+        {
+          "title": "Yang harus diperhatikan penderita HIV/AIDS jika positif Covid-19",
+          "url": "https://www.halodoc.com/artikel/hiv-dan-virus-corona-hal-apa-saja-yang-harus-diperhatikan"
+        },
+        {
+          "title": "Hal-hal yang perlu diketahui soal klaim biaya Pasien COVID-19",
+          "url": "https://www.kompas.com/tren/read/2020/07/25/093000665/5-hal-yang-perlu-diketahui-soal-klaim-biaya-pasien-covid-19-di-rumah-sakit?page=all"
+        }
+      ]
+    }
+  ]
+}
