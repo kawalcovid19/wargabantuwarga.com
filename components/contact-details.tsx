@@ -87,6 +87,9 @@ export function ContactDetails({ contact }: ContactDetailsProps) {
           label="Tambahan Informasi"
           value={contact.tambahan_informasi}
         />
+        {isNotEmpty(contact.ketersediaan) && (
+          <DescriptionItem label="Ketersediaan" value={contact.ketersediaan} />
+        )}
       </dl>
     </div>
   );
