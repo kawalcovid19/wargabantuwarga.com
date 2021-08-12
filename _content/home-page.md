@@ -5,13 +5,10 @@ home_banner_image: https://res.cloudinary.com/wargabantuwarga/image/upload/v1627
 #### Mau Konsultasi Medis dengan Dokter (Telemedicine)?
 
 * Download aplikasi telemedicine yang didukung Kemenkes: [Alodokter](https://bit.ly/alodokter-isoman) [GetWell](https://play.google.com/store/apps/details?id=id.paquesid.getwell) [Good Doctor](https://gooddoctor.onelink.me/Cmiw/efeba7ae) [GrabHealth](https://grab.onelink.me/2695613898/fe73b8c5) [Halodoc](https://bit.ly/isoman_halodoc) [KlikDokter](https://bit.ly/kd-kemenkes-isoman) [KlinikGo](https://klinikgo.com/isoman) [Link Sehat](https://link.linksehat.com/mRMf) [Milvik Dokter](https://milvik.id/about-us/) [ProSehat](https://prosehat.com/wa) [SehatQ](https://sehatqapp.onelink.me/bgzy?pid=kemenkes&c=sqkemenkes&deep_link_value=https%3A%2F%2Fwww.sehatq.com%2Ftelemed&af_web_dp=https%3A%2F%2Fwww.sehatq.com%2Ftelemed&af_dp=https%3A%2F%2Fwww.sehatq.com%2Ftelemed) [YesDok](https://bit.ly/ISOMAN-YesDok)
-* Konsultasi gratis dengan dokter: [lihat jadwal dan kontak dokter di sini](https://docs.google.com/spreadsheets/d/1gGnIiXmCcGpMkB_h98FiHW99uVdwcdTBq_GhIEl_4eM/edit?usp=sharing)
 
 #### Butuh Konseling Bagi Pasien, Keluarga Pasien, atau Tenaga Kesehatan Terdampak COVID-19?
 
 [Lihat daftar layanan dan kontak penyedia jasa konseling di sini](https://docs.google.com/spreadsheets/d/1JRlBNwmqoVimwR70dwIVJ1QAnBbC0Mqp0DmomeO0cWU/edit?usp=sharing)
-
-
 
 - - -
 
@@ -26,15 +23,6 @@ Kumpulan informasi seputar COVID-19, yaitu:
 * [Vaksinasi COVID-19](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=1584366622&single=true)
 * [Jaga kesehatan di masa pandemi](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=1917836112&single=true)
 * [Layanan terkait COVID-19](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=372824836&single=true)
-
-- - -
-
-## Donasi dan Penggalangan Dana
-
-Kumpulan informasi mengenai donasi, nomor rekening, dan lainnya yang relevan dengan bantuan COVID-19.[](https://kitabisa.com/campaign/wargabantuwarga)
-
-* [Klik di sini untuk berdonasi ke Aksi Gotong Royong #WargaBantuWarga Hadapi Corona](https://kitabisa.com/campaign/wargabantuwarga)
-* [Klik di sini untuk lihat informasi donasi dan penggalangan dana lainnya](https://docs.google.com/spreadsheets/d/1u7N4rdfJ20yg7lrL7h0KnwbtZSjFXxkZqDZkcdib9fs/edit?usp=sharing)
 
 - - -
 
