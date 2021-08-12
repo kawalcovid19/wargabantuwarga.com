@@ -23,6 +23,7 @@ export type Contact = {
   readonly terakhir_update?: string;
   readonly bentuk_verifikasi?: string;
   readonly verifikasi: number;
+  readonly ketersediaan?: "Tersedia" | "Tidak Tersedia";
 };
 
 export type ProvincePath = {

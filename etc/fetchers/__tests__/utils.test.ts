@@ -1,6 +1,11 @@
 import cheerio from "cheerio";
 
-import { extractGoogleQuery, parseFAQ } from "../utils";
+import {
+  contactReducer,
+  extractGoogleQuery,
+  parseFAQ,
+  SheetColumn,
+} from "../utils";
 
 describe("utils > parseFAQ", () => {
   it("should return correct JSON", async () => {
@@ -90,5 +95,64 @@ describe("utils > extractGoogleQuery", () => {
 
     const extracted = extractGoogleQuery(el);
     expect(el).toBe(extracted);
+  });
+});
+
+describe("utils > contactReducer", () => {
+  const data = [
+    "Rumah Sakit",
+    "",
+    "Rumah Sakit Rujukan",
+    "jakarta timur",
+    "RS WargaBantuWarga.com",
+    "(0123) 456789",
+    "Jl. Palsu, No. 9",
+    "",
+    "",
+    "19/7/2021",
+    "layanan palsu",
+    "tidak tersedia",
+  ];
+  const reducer = contactReducer(data);
+
+  it("should transform 'lokasi' value to title case", () => {
+    const obj: Record<string, number | string> = {};
+    const col: SheetColumn = {
+      name: "LOKASI",
+      index: 3,
+    };
+
+    const result = reducer(obj, col);
+
+    expect(result).toHaveProperty("lokasi");
+    expect(result.lokasi).toBe("Jakarta Timur");
+  });
+
+  it("should transform 'ketersediaan' value to title case", () => {
+    const obj: Record<string, number | string> = {};
+    const col: SheetColumn = {
+      name: "kEtErSediaan",
+      index: 11,
+    };
+
+    const result = reducer(obj, col);
+
+    expect(result).toHaveProperty("ketersediaan");
+    expect(result.ketersediaan).toBe("Tidak Tersedia");
+  });
+
+  it("should set 'verifikasi' to `true` if 'terakhir_update' is not empty", () => {
+    const obj: Record<string, number | string> = {};
+    const col: SheetColumn = {
+      name: "Terakhir Update",
+      index: 9,
+    };
+
+    const result = reducer(obj, col);
+
+    expect(result).toHaveProperty("terakhir_update");
+    expect(result.terakhir_update).toBe("19/7/2021");
+    expect(result).toHaveProperty("verifikasi");
+    expect(result.verifikasi).toBe(1);
   });
 });
