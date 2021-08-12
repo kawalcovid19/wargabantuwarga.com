@@ -5,9 +5,10 @@ import {
   Page,
   InternalPageContent,
   InternalPageHeader,
+  InternalPageSection,
 } from "~/components/layout/page";
 import { Container } from "~/components/ui/container";
-import { HomePageTelemedicineCTA } from "~/components/home/homepage-telemedicine-cta";
+import { TelemedicineCTA } from "~/components/telemedicine/telemedicine-cta";
 import { EducationSection } from "~/components/education/education-link-section";
 import educations, { Education } from "~/lib/content/educations";
 
@@ -42,7 +43,9 @@ export default function EducationPage(props: EducationPageProps) {
       />
       <InternalPageContent>
         <Container>
-          <HomePageTelemedicineCTA />
+          <InternalPageSection className="pb-8">
+            <TelemedicineCTA />
+          </InternalPageSection>
           <EducationSection educations={props.educations} />
         </Container>
       </InternalPageContent>
