@@ -10,8 +10,12 @@ interface EducationSectionProps {
 export function EducationSection(props: EducationSectionProps) {
   return (
     <InternalPageSection>
-      {props.educations.topics.map((education) => (
-        <StackedLinkDisclosure key={education.topic} title={education.topic}>
+      {props.educations.topics.map((education, index) => (
+        <StackedLinkDisclosure
+          key={education.topic}
+          defaultOpen={index === 0}
+          title={education.topic}
+        >
           <div className="p-2 bg-gray-50 rounded-md">
             <StackedLink links={education.contents} />
           </div>
