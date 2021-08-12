@@ -5,13 +5,10 @@ home_banner_image: https://res.cloudinary.com/wargabantuwarga/image/upload/v1627
 #### Mau Konsultasi Medis dengan Dokter (Telemedicine)?
 
 * Download aplikasi telemedicine yang didukung Kemenkes: [Alodokter](https://bit.ly/alodokter-isoman) [GetWell](https://play.google.com/store/apps/details?id=id.paquesid.getwell) [Good Doctor](https://gooddoctor.onelink.me/Cmiw/efeba7ae) [GrabHealth](https://grab.onelink.me/2695613898/fe73b8c5) [Halodoc](https://bit.ly/isoman_halodoc) [KlikDokter](https://bit.ly/kd-kemenkes-isoman) [KlinikGo](https://klinikgo.com/isoman) [Link Sehat](https://link.linksehat.com/mRMf) [Milvik Dokter](https://milvik.id/about-us/) [ProSehat](https://prosehat.com/wa) [SehatQ](https://sehatqapp.onelink.me/bgzy?pid=kemenkes&c=sqkemenkes&deep_link_value=https%3A%2F%2Fwww.sehatq.com%2Ftelemed&af_web_dp=https%3A%2F%2Fwww.sehatq.com%2Ftelemed&af_dp=https%3A%2F%2Fwww.sehatq.com%2Ftelemed) [YesDok](https://bit.ly/ISOMAN-YesDok)
-* Konsultasi gratis dengan dokter: [lihat jadwal dan kontak dokter di sini](https://docs.google.com/spreadsheets/d/1gGnIiXmCcGpMkB_h98FiHW99uVdwcdTBq_GhIEl_4eM/edit?usp=sharing)
 
 #### Butuh Konseling Bagi Pasien, Keluarga Pasien, atau Tenaga Kesehatan Terdampak COVID-19?
 
 [Lihat daftar layanan dan kontak penyedia jasa konseling di sini](https://docs.google.com/spreadsheets/d/1JRlBNwmqoVimwR70dwIVJ1QAnBbC0Mqp0DmomeO0cWU/edit?usp=sharing)
-
-
 
 - - -
 
@@ -29,19 +26,6 @@ Kumpulan informasi seputar COVID-19, yaitu:
 
 - - -
 
-## Donasi dan Penggalangan Dana
-
-Kumpulan informasi mengenai donasi, nomor rekening, dan lainnya yang relevan dengan bantuan COVID-19.[](https://kitabisa.com/campaign/wargabantuwarga)
-
-* [Klik di sini untuk berdonasi ke Aksi Gotong Royong #WargaBantuWarga Hadapi Corona](https://kitabisa.com/campaign/wargabantuwarga)
-* [Klik di sini untuk lihat informasi donasi dan penggalangan dana lainnya](https://docs.google.com/spreadsheets/d/1u7N4rdfJ20yg7lrL7h0KnwbtZSjFXxkZqDZkcdib9fs/edit?usp=sharing)
-
-- - -
-
 Terima kasih kepada para kolaborator inisiatif [\#WargaBantuWarga](https://twitter.com/hashtag/WargaBantuWarga):
 
 [@kitabisacom](https://twitter.com/kitabisacom) [@KawalCOVID19](https://twitter.com/KawalCOVID19) [@fimnews](https://www.instagram.com/fimnews/) [@forumzakat](https://twitter.com/forumzakat) [Baznas](https://baznas.go.id/) [@KataDotAI](https://twitter.com/KataDotAI) [@indorelawan](https://twitter.com/indorelawan) [@pemimpinid](https://twitter.com/pemimpinid_) [@pandemictalks](https://www.instagram.com/pandemictalks/) [@laporcovid19](https://www.instagram.com/laporcovid19/) [@filantropiindonesia](https://www.instagram.com/filantropiindonesia/) [@BantuCovid](https://twitter.com/BantuCovid) [Human Initiative Volunteer Energy](https://hive.human-initiative.org/) [Narasi](https://www.instagram.com/narasi.tv/) [Qiscus](https://qiscus.io/) [Humanitarian Forum Indonesia](https://www.instagram.com/humanitarianforumindonesia/?hl=en) [urundayacovid.com](https://urundayacovid.com/) [Trustmedis](https://trustmedis.com/) [Serikat Buruh Migran Indonesia](https://sbmi.or.id/) [atmaGO](https://covid19.atmago.com/id) [Jaringan Semua Murid Semua Guru](https://semuamuridsemuaguru.id/) [ILUNI UI Psikologi](https://instagram.com/iluniuipsi?utm_medium=copy_link) [KG Media](https://www.kgmedia.id/)
-
-- - -
-
-Ada usulan atau laporan terkait website ini? [Sampaikan masukan Anda di sini.](https://kcov.id/wbw-discuss)

@@ -82,7 +82,7 @@
     "eslint-plugin-react": "^7.24.0",
     "frontmatter-markdown-loader": "3.6.3",
     "husky": "7.0.1",
-    "identity-obj-proxy": "3.0.0",
+    "identity-obj-proxy": "^3.0.0",
     "is-ci-cli": "2.2.0",
     "jest": "27.0.6",
     "jest-watch-select-projects": "2.0.0",

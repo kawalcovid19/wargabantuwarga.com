@@ -367,6 +367,24 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "ryanadhi",
+      "name": "Ryan Adhi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35433920?v=4",
+      "profile": "https://www.ryanadhi.tech/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "maziyank",
+      "name": "Bakhtiar Amaludin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3317904?v=4",
+      "profile": "https://github.com/maziyank",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

@@ -6,6 +6,7 @@ import {
   isNotEmpty,
   toSnakeCase,
   toTitleCase,
+  markText,
 } from "../string-utils";
 
 describe("toSnakeCase", () => {
@@ -117,6 +118,30 @@ describe("isInternalLink", () => {
     "should return '$expected' when '$input' is provided",
     ({ input, expected }) => {
       expect(isInternalLink(input as string)).toBe(expected);
+    },
+  );
+});
+
+describe("markText", () => {
+  it.each`
+    input                                               | expected
+    ${["covid sangat berbahaya", "covid"]}              | ${"<mark>covid</mark> sangat berbahaya"}
+    ${["COVID sangat berbahaya", "covid"]}              | ${"<mark>COVID</mark> sangat berbahaya"}
+    ${["Covid sangat berbahaya", "covid"]}              | ${"<mark>Covid</mark> sangat berbahaya"}
+    ${["covid sangat berbahaya covid", "covid"]}        | ${"<mark>covid</mark> sangat berbahaya <mark>covid</mark>"}
+    ${['"covid" sangat berbahaya', "covid"]}            | ${'"<mark>covid</mark>" sangat berbahaya'}
+    ${["<b>covid</b> sangat berbahaya", "covid"]}       | ${"<b><mark>covid</mark></b> sangat berbahaya"}
+    ${["<span>covid</span> sangat berbahaya", "covid"]} | ${"<span><mark>covid</mark></span> sangat berbahaya"}
+    ${["covid sangat berbahaya", ""]}                   | ${"covid sangat berbahaya"}
+    ${["", "covid"]}                                    | ${""}
+    ${["", ""]}                                         | ${""}
+    ${[undefined, ""]}                                  | ${""}
+    ${["", undefined]}                                  | ${""}
+  `(
+    "should return '$expected' when '$input' is provided",
+    ({ input, expected }) => {
+      const args = input as string[];
+      expect(markText(args[0], args[1])).toBe(expected);
     },
   );
 });

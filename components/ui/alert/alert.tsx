@@ -55,7 +55,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
                 className={`close-button text-${color}-400 hover:text-${color}-500`}
                 onClick={() => setVisible(false)}
               >
-                <XIcon aria-hidden="true" className="flex-shrink-0 h-5 w-5" />
+                <XIcon aria-hidden="true" className="flex-shrink-0 h-6 w-5" />
                 <span className="sr-only">Close</span>
               </button>
             )}

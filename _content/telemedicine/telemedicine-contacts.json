@@ -1,0 +1,380 @@
+{
+  "telemedicine_contacts" : [
+  {
+
+    "doctor_name": "Dr. dr. Febri Endra Budi S, M.Kes.",
+    "ops_date": "Setiap hari",
+    "ops_time": "09.00-21.00 WIB",
+    "platform": "WhatsApp",
+    "contact": "08123216803"
+  },
+  {
+
+    "doctor_name": "dr. Tirta",
+    "ops_date": "Setiap hari",
+    "ops_time": "10.00-20.00 WIB",
+    "platform": "WhatsApp",
+    "contact": "08995550079"
+  },
+  {
+
+    "doctor_name": "dr. Kevin Darmawan",
+    "ops_date": "Senin-kamis",
+    "ops_time": "16.00-20.00 WIB",
+    "platform": "WhatsApp",
+    "contact": "085325293483"
+  },
+  {
+
+    "doctor_name": "dr. Kevin Darmawan",
+    "ops_date": "Jumat-Minggu",
+    "ops_time": "18.00-21.00 WIB",
+    "platform": "WhatsApp",
+    "contact": "085325293483"
+  },
+  {
+
+    "doctor_name": "dr. Natasha",
+    "ops_date": "Setiap hari",
+    "ops_time": "20.00-22.00 WIB",
+    "platform": "Instagram",
+    "contact": "@natashasutedja"
+  },
+  {
+
+    "doctor_name": "dr. Yanty",
+    "ops_date": "Senin-Kamis dan Sabtu",
+    "ops_time": "09.00-21.00 WIB",
+    "platform": "Twitter",
+    "contact": "@mediclsherry"
+  },
+  {
+
+    "doctor_name": "dr. Nadia Kemalasari",
+    "ops_date": "Senin-Jumat",
+    "ops_time": "13.00-20.00 WIB",
+    "platform": "WhatsApp",
+    "contact": "082267401050"
+  },
+  {
+
+    "doctor_name": "dr. Riyan Adiputra",
+    "ops_date": "Senin-Jumat",
+    "ops_time": "13.00-17.00 WIB",
+    "platform": "WhatsApp",
+    "contact": "082137308818"
+  },
+  {
+
+    "doctor_name": "dr. Evans Suryani",
+    "ops_date": "Senin-Jumat",
+    "ops_time": "17.00-20.00 WIB",
+    "platform": "Telegram",
+    "contact": "@evansevansevans"
+  },
+  {
+
+    "doctor_name": "dr. Michael Aaron Romulo",
+    "ops_date": "Senin-Jumat",
+    "ops_time": "18.00-20.00 WIB",
+    "platform": "WhatsApp",
+    "contact": "08112555698"
+  },
+  {
+
+    "doctor_name": "dr. Daniel Sutanto",
+    "ops_date": "Senin-Jumat",
+    "ops_time": "18.00-20.00 WIB",
+    "platform": "WhatsApp",
+    "contact": "085158006796"
+  },
+  {
+
+    "doctor_name": "dr. Dixon Hovin",
+    "ops_date": "Senin-Jumat",
+    "ops_time": "18.00-20.00 WIB",
+    "platform": "WhatsApp",
+    "contact": "085972731970"
+  },
+  {
+
+    "doctor_name": "dr. Angelia Giovanni Susanto",
+    "ops_date": "Senin-Jumat",
+    "ops_time": "18.00-20.00 WIB",
+    "platform": "Telegram",
+    "contact": "@angelia_gs"
+  },
+  {
+
+    "doctor_name": "dr. Conroy Surya W",
+    "ops_date": "Senin-Jumat",
+    "ops_time": "18.00-20.00 WIB",
+    "platform": "Telegram",
+    "contact": "@conroysurya"
+  },
+  {
+
+    "doctor_name": "dr. Flora Asri Wardianti",
+    "ops_date": "Senin-Jumat",
+    "ops_time": "13.00-15.00 WIB",
+    "platform": "Telegram",
+    "contact": "@floraacii"
+  },
+  {
+
+    "doctor_name": "dr. Susdiaman",
+    "ops_date": "Senin-Jumat",
+    "ops_time": "19.00-22.00 WIB",
+    "platform": "Line",
+    "contact": "@s.diaman"
+  },
+  {
+
+    "doctor_name": "dr. Rangga Ferdyennizar",
+    "ops_date": "Jumat-Senin",
+    "ops_time": "08.00-12.00 WIB",
+    "platform": "WhatsApp",
+    "contact": "081912320936"
+  },
+  {
+
+    "doctor_name": "dr. Rangga Ferdyennizar",
+    "ops_date": "Jumat-Senin",
+    "ops_time": "08.00-12.00 WIB",
+    "platform": "WhatsApp",
+    "contact": "@hotcm2shot"
+  },
+  {
+
+    "doctor_name": "dr. Shinta Anggia Prawesti",
+    "ops_date": "Senin-Kamis",
+    "ops_time": "13.00-20.00 WIB",
+    "platform": "WhatsApp",
+    "contact": "082182560223"
+  },
+  {
+
+    "doctor_name": "dr. Riyo Pungki Irawan",
+    "ops_date": "Senin-Kamis",
+    "ops_time": "07.00-08.00 WIB",
+    "platform": "WhatsApp",
+    "contact": "081902835039"
+  },
+  {
+
+    "doctor_name": "dr. Asrina Monalisa",
+    "ops_date": "Senin-Kamis",
+    "ops_time": "20.00-22.00 WIB",
+    "platform": "WhatsApp",
+    "contact": "082311736482"
+  },
+  {
+
+    "doctor_name": "dr. Habibah",
+    "ops_date": "Senin-Kamis",
+    "ops_time": "17.00-20.00 WIB",
+    "platform": "Telegram",
+    "contact": "@habbaisma"
+  },
+  {
+
+    "doctor_name": "dr. Valeria Injilita",
+    "ops_date": "Selasa, Kamis, Sabtu, Minggu",
+    "ops_time": "10.00-12.00 dan 20.00-21.00 WIB",
+    "platform": "Telegram",
+    "contact": "@injilitavaleria"
+  },
+  {
+
+    "doctor_name": "dr. Dhiya Khoirunnisa",
+    "ops_date": "Senin-Kamis",
+    "ops_time": "15.00-17.00 WIB",
+    "platform": "Line",
+    "contact": "@dkhoirunnisa"
+  },
+  {
+
+    "doctor_name": "dr. Fortunia Mona Eviani",
+    "ops_date": "Senin-Kamis",
+    "ops_time": "19.00-21.00 WIB",
+    "platform": "Line",
+    "contact": "@fotuniamona"
+  },
+  {
+
+    "doctor_name": "dr. Natalia Stefanie",
+    "ops_date": "Rabu-Jumat",
+    "ops_time": "17.00-21.00 WIB",
+    "platform": "WhatsApp",
+    "contact": "085922803423"
+  },
+  {
+
+    "doctor_name": "dr. Ririn Enggy Yulianti",
+    "ops_date": "Senin, Rabu, Sabtu",
+    "ops_time": "08.00-09.00 dan 16.00-17.30 WIB",
+    "platform": "WhatsApp",
+    "contact": "082134690484"
+  },
+  {
+
+    "doctor_name": "dr. Femmy Legie",
+    "ops_date": "Senin, Rabu, Jumat",
+    "ops_time": "10.00-17.00 WIB",
+    "platform": "Telegram",
+    "contact": "@femmylegie09"
+  },
+  {
+
+    "doctor_name": "dr. Niken Rahmatia",
+    "ops_date": "Senin, Rabu, Jumat",
+    "ops_time": "10.00-17.00 WIB",
+    "platform": "Telegram",
+    "contact": "@nikenrahmatia"
+  },
+  {
+
+    "doctor_name": "dr. Rizki Marfira",
+    "ops_date": "Senin-Rabu",
+    "ops_time": "08.00-12.00 WIB",
+    "platform": "Telegram",
+    "contact": "@dokter_kiki"
+  },
+  {
+
+    "doctor_name": "dr. Stella Adevita",
+    "ops_date": "Senin, Rabu, Jumat",
+    "ops_time": "18.00-20.00 WIB",
+    "platform": "Telegram",
+    "contact": "@stelladevita"
+  },
+  {
+
+    "doctor_name": "dr. Wafa Luthfiananda",
+    "ops_date": "Senin-Rabu",
+    "ops_time": "19.00-21.00 WIB",
+    "platform": "Telegram",
+    "contact": "@luthfiawafa"
+  },
+  {
+
+    "doctor_name": "dr. Tiara Permatasari",
+    "ops_date": "Senin-Rabu",
+    "ops_time": "19.00-21.00 WIB",
+    "platform": "Telegram",
+    "contact": "@permatasari20"
+  },
+  {
+
+    "doctor_name": "dr. Desy Islamiati",
+    "ops_date": "Jumat-Minggu",
+    "ops_time": "19.00-22.00 WIB",
+    "platform": "Telegram",
+    "contact": "@DesyIsl"
+  },
+  {
+
+    "doctor_name": "dr. Jennifer Tiosanna",
+    "ops_date": "Rabu-Jumat",
+    "ops_time": "13.00-15.00 WIB",
+    "platform": "WhatsApp",
+    "contact": "087888521485"
+  },
+  {
+
+    "doctor_name": "dr. Darlene Bahri",
+    "ops_date": "Rabu dan Jumat",
+    "ops_time": "17.00-20.00 WIB",
+    "platform": "WhatsApp",
+    "contact": "085893026295"
+  },
+  {
+
+    "doctor_name": "dr. Ade Saputri",
+    "ops_date": "Sabtu-Minggu",
+    "ops_time": "16.00-18.00 WIB",
+    "platform": "WhatsApp",
+    "contact": "081359175823"
+  },
+  {
+
+    "doctor_name": "dr. Pertiwi Permata Putri",
+    "ops_date": "Senin dan Rabu",
+    "ops_time": "09.00-21.00 WIB",
+    "platform": "Telegram",
+    "contact": "@pertiwipermata"
+  },
+  {
+
+    "doctor_name": "dr. Azzahra Afifah",
+    "ops_date": "Selasa-Rabu",
+    "ops_time": "19.00-21.00 WIB",
+    "platform": "Telegram",
+    "contact": "@zahraaff97"
+  },
+  {
+
+    "doctor_name": "dr. Puspa Anggraini",
+    "ops_date": "Kamis-Jumat",
+    "ops_time": "16.00-19.00 WIB",
+    "platform": "Telegram",
+    "contact": "@puspahbb27"
+  },
+  {
+
+    "doctor_name": "dr. Thalia Viotama",
+    "ops_date": "Kamis-Jumat",
+    "ops_time": "16.00-19.00 WIB",
+    "platform": "Telegram",
+    "contact": "@thaliavix"
+  },
+  {
+
+    "doctor_name": "dr. Ade Dhani Nuraini",
+    "ops_date": "Kamis dan Jumat",
+    "ops_time": "08.00-12.00 dan 17.00-20.00 WIB",
+    "platform": "Telegram",
+    "contact": "@ade_dhani"
+  },
+  {
+
+    "doctor_name": "dr. Widyan Putra A",
+    "ops_date": "Selasa dan Kamis",
+    "ops_time": "19.00-21.00 dan 17.00-19.00 WIB",
+    "platform": "Telegram",
+    "contact": "@anantawikrama27"
+  },
+  {
+
+    "doctor_name": "dr. Noverian Yoshua",
+    "ops_date": "Senin dan Jumat",
+    "ops_time": "17.00-20.00 WIB",
+    "platform": "Telegram",
+    "contact": "@kayumanis6"
+  },
+  {
+
+    "doctor_name": "dr. Abed Nego O Sebayang",
+    "ops_date": "Sabtu-Minggu",
+    "ops_time": "19.00-20.00 WIB",
+    "platform": "Instagram",
+    "contact": "@abednego_okthara"
+  },
+  {
+
+    "doctor_name": "dr. Dara A. Maharani",
+    "ops_date": "Selasa dan Rabu",
+    "ops_time": "12.00-14.00 WIB",
+    "platform": "Telegram",
+    "contact": "@DaraMaharani"
+  },
+  {
+
+    "doctor_name": "dr. Andina Dewanty",
+    "ops_date": "Kamis dan Sabtu",
+    "ops_time": "16.00-18.00 WIB",
+    "platform": "Telegram",
+    "contact": "@Dinahopesfor"
+  }
+]
+}
