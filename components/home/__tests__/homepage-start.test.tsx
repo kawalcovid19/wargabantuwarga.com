@@ -355,7 +355,7 @@ describe("HomePageStart", () => {
                 </svg>
               </div>
               <a
-                class="text-gray-900 font-semibold text-xs mt-3 helper-link-cover cursor-pointer"
+                class="text-gray-900 font-semibold text-xs mt-3 helper-link-cover"
                 href="https://www.indorelawan.org/activity/60e2ed45164da80018b0e246"
                 rel="noopener noreferrer nofollow"
                 target="_blank"

@@ -21,7 +21,7 @@ export function HomePageMenu() {
           </div>
           {item.external ? (
             <a
-              className="text-gray-900 font-semibold text-xs mt-3 helper-link-cover cursor-pointer"
+              className="text-gray-900 font-semibold text-xs mt-3 helper-link-cover"
               href={item.href as string}
               rel="noopener noreferrer nofollow"
               target="_blank"
