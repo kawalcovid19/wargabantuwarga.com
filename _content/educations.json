@@ -169,6 +169,28 @@
         }
       ],
       "description": "Kumpulan informasi mengenai vaksinasi, mulai dari jenis, cara kerja, efek samping vaksin hingga cara melakukan vaksinasi"
+    },
+    {
+      "topic": "Jaga Kesehatan di Masa Pandemi",
+      "description": "Kumpulan informasi mengenai cara menjaga kesehatan selama masa pandemi COVID-19",
+      "contents": [
+        {
+          "title": "Cara menggunakan masker dobel yang benar",
+          "url": "https://www.halodoc.com/artikel/cara-pakai-masker-dobel-yang-benar-untuk-tangkal-covid-19"
+        },
+        {
+          "title": "Mengenal oximeter dan cara penggunaannya",
+          "url": "https://tirto.id/mengenal-oximeter-dan-cara-penggunaannya-menurut-who-f32Z"
+        },
+        {
+          "title": "Pelajari tentang varian Delta",
+          "url": "https://kawalcovid19.id/content/2135/varian-delta-yang-perlu-anda-ketahui"
+        },
+        {
+          "url": "https://www.halodoc.com/artikel/cara-jaga-kesehatan-mental-saat-menghadapi-covid-19-second-wave",
+          "title": "Cara jaga kesehatan mental saat menghadapi COVID-19 second wave"
+        }
+      ]
     }
   ]
 }
