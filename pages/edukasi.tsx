@@ -41,7 +41,7 @@ export default function EducationPage(props: EducationPageProps) {
         title={meta.title}
       />
       <InternalPageContent>
-        <Container className="space-y-2">
+        <Container>
           <HomePageTelemedicineCTA />
           <EducationSection educations={props.educations} />
         </Container>
