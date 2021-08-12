@@ -115,6 +115,24 @@
           "url": "https://docs.google.com/spreadsheets/d/1VzBCx1dpf05qdhr0VW_KmIliIeiWEXtPjwLWOxhqn6Q/"
         }
       ]
+    },
+    {
+      "topic": "Vaksinasi COVID-19",
+      "contents": [
+        {
+          "title": "Pertanyaan dan jawaban yang sering diajukan soal vaksin",
+          "url": "https://covid19.go.id/tanya-jawab"
+        },
+        {
+          "title": "Cara kerja vaksin",
+          "url": "https://www.who.int/indonesia/news/novel-coronavirus/qa/qa-cara-kerja-vaksin"
+        },
+        {
+          "title": "Ketahui perbandingan vaksin Pfizer, Moderna, dan AstraZeneca",
+          "url": "https://www.halodoc.com/artikel/ketahui-perbandingan-vaksin-corona-vaksin-pfizer-moderna-dan-astrazeneca"
+        }
+      ],
+      "description": "3 \t\tKumpulan informasi mengenai vaksinasi, mulai dari jenis, cara kerja, efek samping vaksin hingga cara melakukan vaksinasi"
     }
   ]
 }
