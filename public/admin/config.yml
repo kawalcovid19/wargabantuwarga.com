@@ -293,16 +293,24 @@ collections:
         label: Education Links
         file: _content/educations.json
         fields:
-          - label: Group Title
-            name: group
-            widget: string
-          - name: contents
-            label: Contents
+          - label: Add new topic
+            name: topics
             widget: list
             fields:
-              - label: Link Title
-                name: title
+              - label: Topic Title
+                name: topic
                 widget: string
-              - label: Link URL
-                name: url
+              - label: Description
+                name: description
                 widget: string
+                required: false
+              - name: contents
+                label: Contents
+                widget: list
+                fields:
+                  - label: Link Title
+                    name: title
+                    widget: string
+                  - label: Link URL
+                    name: url
+                    widget: string
