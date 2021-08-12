@@ -20,7 +20,11 @@ export function HomePageMenu() {
             })}
           </div>
           <Link href={item.href}>
-            <a className="text-gray-900 font-semibold text-xs mt-3 helper-link-cover">
+            <a
+              className="text-gray-900 font-semibold text-xs mt-3 helper-link-cover"
+              rel={item.external ? "noopener noreferrer nofollow" : undefined}
+              target={item.external ? "_blank" : undefined}
+            >
               {item.name}
             </a>
           </Link>
