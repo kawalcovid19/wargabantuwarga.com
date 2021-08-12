@@ -130,9 +130,81 @@
         {
           "title": "Ketahui perbandingan vaksin Pfizer, Moderna, dan AstraZeneca",
           "url": "https://www.halodoc.com/artikel/ketahui-perbandingan-vaksin-corona-vaksin-pfizer-moderna-dan-astrazeneca"
+        },
+        {
+          "title": "Perhatikan hal ini setelah mendapatkan Vaksin",
+          "url": "https://www.halodoc.com/artikel/perhatikan-hal-ini-setelah-mendapatkan-vaksin-covid-19-1"
+        },
+        {
+          "title": "Mengapa perlu dua kali dosis penyuntikan vaksin COVID-19?",
+          "url": "https://covid19.go.id/p/masyarakat-umum/2-dosis-vaksin-covid-19-ini-tujuannya"
+        },
+        {
+          "title": "Apa saja efek samping vaksin?",
+          "url": "https://www.halodoc.com/artikel/efek-samping-vaksinasi-covid-19-ketahui-tentang-kipi"
+        },
+        {
+          "title": "Cara mengatasi efek samping vaksin",
+          "url": "https://www.kompas.com/sains/read/2021/06/20/130100923/efek-samping-vaksin-covid-19-dan-cara-mengatasinya"
+        },
+        {
+          "title": "Vaksinasi bagi penyintas COVID-19",
+          "url": "https://www.instagram.com/p/CNqWH_-Mhhn/"
+        },
+        {
+          "title": "Jenis vaksin yang direkomendasikan untuk ibu hamil",
+          "url": "https://www.halodoc.com/artikel/5-jenis-vaksin-covid-19-yang-direkomendasikan-untuk-ibu-hamil"
+        },
+        {
+          "title": "Vaksinasi bagi ibu menyusui",
+          "url": "https://www.republika.co.id/berita/qvd02y463/ibu-menyusui-aman-terima-vaksin-covid19"
+        },
+        {
+          "title": "Thread Pengalaman ODHA melakukan vaksinasi",
+          "url": "https://twitter.com/ayuma_morie/status/1405861747789950980"
+        },
+        {
+          "title": "Klik di sini untuk cari informasi pelaksanaan vaksinasi per daerah",
+          "url": "https://kcov.id/wbw-sheets"
         }
       ],
-      "description": "3 \t\tKumpulan informasi mengenai vaksinasi, mulai dari jenis, cara kerja, efek samping vaksin hingga cara melakukan vaksinasi"
+      "description": "Kumpulan informasi mengenai vaksinasi, mulai dari jenis, cara kerja, efek samping vaksin hingga cara melakukan vaksinasi"
+    },
+    {
+      "topic": "Jaga Kesehatan di Masa Pandemi",
+      "description": "Kumpulan informasi mengenai cara menjaga kesehatan selama masa pandemi COVID-19",
+      "contents": [
+        {
+          "title": "Cara menggunakan masker dobel yang benar",
+          "url": "https://www.halodoc.com/artikel/cara-pakai-masker-dobel-yang-benar-untuk-tangkal-covid-19"
+        },
+        {
+          "title": "Mengenal oximeter dan cara penggunaannya",
+          "url": "https://tirto.id/mengenal-oximeter-dan-cara-penggunaannya-menurut-who-f32Z"
+        },
+        {
+          "title": "Pelajari tentang varian Delta",
+          "url": "https://kawalcovid19.id/content/2135/varian-delta-yang-perlu-anda-ketahui"
+        },
+        {
+          "url": "https://www.halodoc.com/artikel/cara-jaga-kesehatan-mental-saat-menghadapi-covid-19-second-wave",
+          "title": "Cara jaga kesehatan mental saat menghadapi COVID-19 second wave"
+        }
+      ]
+    },
+    {
+      "topic": "Layanan Terkait COVID-19",
+      "contents": [
+        {
+          "title": "Prosedur mendirikan pusat karantina di luar fasilitas kesehatan",
+          "url": "https://kawalcovid19.id/content/960/prosedur-mendirikan-pusat-karantina-di-luar-fasilitas-kesehatan#reach-skip-nav"
+        },
+        {
+          "title": "Pedoman Kemenkes terkait pemulasaran dan penguburan jenazah akibat COVID-19",
+          "url": "https://promkes.kemkes.go.id/download/eqep/files547914May_Guidebook%20Jenazah_Kemenkes.pdf"
+        }
+      ],
+      "description": "Kumpulan informasi mengenai layanan terkait COVID-19"
     }
   ]
 }
