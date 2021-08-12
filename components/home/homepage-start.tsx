@@ -7,7 +7,7 @@ import { HomePageSection } from "./homepage-section";
 import { HomePageMenu } from "./homepage-menu";
 import { HomePageEmergencyContactCTA } from "./homepage-emergency-cta";
 import { HOMEPAGE_START_CTA_URL } from "~/constants";
-import { cloudinaryLoader, getBlurred } from "~/lib/image/cloudinary-loader";
+import { cloudinaryLoader } from "~/lib/image/cloudinary-loader";
 
 export function HomePageStart() {
   return (
@@ -43,15 +43,10 @@ export function HomePageStart() {
         >
           <Image
             alt="Ajukan bantuan sembako jika positif Covid-19 - Daftar Sekarang"
-            blurDataURL={getBlurred(
-              "v1627319803/sembako-cta-v2_czojls.png",
-              656,
-            )}
             height={236}
             layout="responsive"
             loader={cloudinaryLoader}
             loading="lazy"
-            placeholder="blur"
             quality={90}
             src="v1627319803/sembako-cta-v2_czojls.png"
             width={656}
