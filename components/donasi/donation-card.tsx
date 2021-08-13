@@ -22,6 +22,7 @@ export function DonationCard(donation: DonationDetail) {
       <div className="p-3 justify-center">
         <PrimaryAnchorButton
           block
+          className="font-normal"
           color="brand"
           data-testid={`donation-button-${donation.title}`}
           href={donation.url}
