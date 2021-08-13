@@ -1,8 +1,6 @@
 import "~/styles/globals.css";
 import "nprogress/nprogress.css";
 
-import "typeface-inter";
-
 import { useEffect } from "react";
 
 import Head from "next/head";
