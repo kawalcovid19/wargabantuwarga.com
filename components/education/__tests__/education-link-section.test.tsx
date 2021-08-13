@@ -7,7 +7,7 @@ import educations from "~/lib/content/educations";
 const { topics } = educations;
 const [topic] = topics;
 
-it("renders correctly", () => {
+it("renders correctly and the first list should be shown", () => {
   render(<EducationSection educations={educations} />);
 
   expect(screen.getAllByRole("list").length).toBe(1);
