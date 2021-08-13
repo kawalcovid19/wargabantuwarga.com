@@ -142,6 +142,7 @@ export default function AboutPage() {
                         loading="lazy"
                         objectFit="contain"
                         quality={90}
+                        sizes="200px"
                         src={replaceCloudinaryPrefix(
                           collaborator.thumbnail_image,
                         )}
