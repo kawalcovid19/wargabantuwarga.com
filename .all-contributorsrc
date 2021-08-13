@@ -404,6 +404,15 @@
         "example",
         "data"
       ]
+    },
+    {
+      "login": "nasrulgunawan",
+      "name": "Nasrul Gunawan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13805020?v=4",
+      "profile": "http://www.narainvitation.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
