@@ -32,7 +32,7 @@ jobs:
           yarn global add @lhci/cli@0.8.x
           echo -e "\n"
           echo "Start collecting LH report..."
-          lhci collect --url=${{ steps.netlify.outputs.url }} --url=${{ steps.netlify.outputs.url }}/tentang-kami --url=${{ steps.netlify.outputs.url }}/donasi --url=${{ steps.netlify.outputs.url }}/faq --url=${{ steps.netlify.outputs.url }}/provinces -n=1
+          lhci collect --url=${{ steps.netlify.outputs.url }} --url=${{ steps.netlify.outputs.url }}/tentang-kami --url=${{ steps.netlify.outputs.url }}/donasi --url=${{ steps.netlify.outputs.url }}/faq --url=${{ steps.netlify.outputs.url }}/provinces -n=5
           echo -e "\n"
           echo "Start asserting LH score..."
           lhci assert --config=./lighthouserc.js
