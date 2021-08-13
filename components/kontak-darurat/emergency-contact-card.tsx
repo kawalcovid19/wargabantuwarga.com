@@ -13,9 +13,9 @@ export function EmergencyContactCard(contact: ContactDetail) {
           src={contact.image}
         />
       </div>
-      <div className="p-3 text-xs space-y-1 h-0 flex-1">
-        <p className="text-gray-500">{contact.name}</p>
-        <h3 className="font-semibold text-gray-700 text-xs">
+      <div className="p-3 space-y-1 h-0 flex-1">
+        <p className="text-gray-500 text-xs sm:text-sm">{contact.name}</p>
+        <h3 className="font-semibold text-gray-700 text-sm sm:text-base">
           {contact.description}
         </h3>
       </div>
