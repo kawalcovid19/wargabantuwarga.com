@@ -9,17 +9,3 @@ home_banner_image: https://res.cloudinary.com/wargabantuwarga/image/upload/v1627
 #### Butuh Konseling Bagi Pasien, Keluarga Pasien, atau Tenaga Kesehatan Terdampak COVID-19?
 
 [Lihat daftar layanan dan kontak penyedia jasa konseling di sini](https://docs.google.com/spreadsheets/d/1JRlBNwmqoVimwR70dwIVJ1QAnBbC0Mqp0DmomeO0cWU/edit?usp=sharing)
-
-- - -
-
-## Laman Edukasi COVID-19
-
-Kumpulan informasi seputar COVID-19, yaitu:
-
-* [Penanganan jika positif COVID-19](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=1244922827&single=true)
-* [Isolasi mandiri: apa yang harus dilakukan?](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=236754766&single=true)
-* [Informasi seputar oksigen](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=2032388593&single=true)
-* [Tes antigen dan PCR](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=598872232&single=true)
-* [Vaksinasi COVID-19](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=1584366622&single=true)
-* [Jaga kesehatan di masa pandemi](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=1917836112&single=true)
-* [Layanan terkait COVID-19](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=372824836&single=true)
