@@ -42,7 +42,7 @@ describe("ContactPage", () => {
     expect(title).toBeVisible();
   });
 
-  it.only("fallbacks to `keterangan` if `penyedia` is not available", () => {
+  it("fallbacks to `keterangan` if `penyedia` is not available", () => {
     const contactWithoutPenyedia = contactBuilder({
       overrides: {
         penyedia: perBuild(() => undefined),
