@@ -93,6 +93,23 @@ collections:
             required: false
             hint: Heading banner on top of Home page
             tagname: ""
+      - name: official_supported_apps
+        label: Official Supported Apps by Kemenkes
+        file: _content/official_supported_apps.json
+        fields:
+          - label: Application
+            name: application
+            widget: list
+            fields:
+              - label: Application Name
+                name: name
+                widget: string
+              - label: Download Link
+                name: link
+                widget: string
+              - label: Application Logo
+                name: logo
+                widget: image
   - name: about_page
     label: About Page
     delete: false
@@ -293,7 +310,7 @@ collections:
         label: Education Links
         file: _content/educations.json
         fields:
-          - label: Add new topic
+          - label: Topic
             name: topics
             widget: list
             fields:
