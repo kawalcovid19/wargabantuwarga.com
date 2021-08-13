@@ -3,7 +3,7 @@
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-41-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-42-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -168,6 +168,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://www.narainvitation.com"><img src="https://avatars.githubusercontent.com/u/13805020?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nasrul Gunawan</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=nasrulgunawan" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/iamyuu"><img src="https://avatars.githubusercontent.com/u/45778229?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yusuf</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=iamyuu" title="Code">💻</a></td>
     <td align="center"><a href="https://fadil.dev/"><img src="https://avatars.githubusercontent.com/u/10627998?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nur Fadillah Fajar</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=fadillicious" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/renomureza"><img src="https://avatars.githubusercontent.com/u/49445216?v=4?s=100" width="100px;" alt=""/><br /><sub><b>R.M. Reza</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=renomureza" title="Code">💻</a></td>
   </tr>
 </table>
 
