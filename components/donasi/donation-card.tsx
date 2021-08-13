@@ -7,11 +7,7 @@ export function DonationCard(donation: DonationDetail) {
   return (
     <div className="flex flex-col shadow-md rounded-md overflow-hidden max-w-xs">
       <div className="flex-shrink-0">
-        <img
-          alt="donasi covid"
-          className="h-24 object-cover w-full md:h-32"
-          src={donation.image}
-        />
+        <div className="h-24 object-cover w-full md:h-32 bg-gray-500" />
       </div>
       <div className="p-3 space-y-1 h-0 flex-1">
         <p className="text-gray-500 text-xs sm:text-sm">{donation.category}</p>
