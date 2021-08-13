@@ -423,6 +423,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "fadillicious",
+      "name": "Nur Fadillah Fajar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10627998?v=4",
+      "profile": "https://fadil.dev/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
