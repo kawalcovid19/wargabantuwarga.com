@@ -27,15 +27,23 @@ Bagaimana cara mencari _issue_ dengan label _`good first issue`_:
 1. Cara paling mudah adalah dengan mengunjungi pranala `github.com/<owner>/<repository>/contribute`. Dalam hal ini, Anda dapat mengunjungi [pranala ini](https://github.com/kawalcovid19/wargabantuwarga.com/contribute). Pranala tersebut akan memberikan daftar dari semua _issue_ dengan label _`good first issue`_.
 2. Atau cara lainnya adalah dengan mengunjungi bagian [_Issues_](https://github.com/kawalcovid19/wargabantuwarga.com/issues) dari sebuah repository, lalu klik bagian _Labels_ di sebelah _Milestones_. Di sana, Anda dapat melihat banyak label untuk _issues_ yang terdapat dalam repository tersebut. Lalu cari dan klik label `good first issue`.
 
-### Panduan mulai bekerja
+### Panduan bekerja
 
-Sebelum mengerjakan sebuah _issue_, ada hal yang harus diperhatikan:
+#### Persiapan
 
-1. Apakah ada kontributor lain yang sedang mengerjakannya? Anda dapat mencari apakah ada _pull request_ terkait sebelum memutuskan untuk mulai mengerjakan _issue_ tersebut.
-2. Untuk mulai mengerjakannya, pastikan **_create branch_** dari `main`, lalu segera _commit_ dan _push_ perubahannya **sesegera mungkin** sekecil apapun itu.
-3. Kemudian **buat _pull request_** baru dengan [menjadikannya sebagai **_draft pull request_**](https://github.blog/2019-02-14-introducing-draft-pull-requests/) untuk memberikan sinyal kepada kontributor lainnya bahwa [_pull request_ ini masih sedang dalam pengerjaan](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request). Dengan demikian, orang lain yang ingin mengerjakan _issue_ yang sama akan berpikir dua kali sebelum ikut mengerjakannya.
+Sebelum mengerjakan sebuah _issue_, pastikan hal-hal berikut:
 
-### Memanfaatkan _Draft Pull Requests_ untuk Berkomunikasi
+1. _Fork_ repositorynya dengan benar. Meskipun Anda sudah pernah melakukannya, kami masih menyarankan untuk membaca [manual resminya](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository).
+2. _Clone_ _forked repository_ Anda dan ikuti [_Getting Started guide_](https://github.com/kawalcovid19/wargabantuwarga.com#getting-started).
+3. Periksa di [_pull requests_](https://github.com/kawalcovid19/wargabantuwarga.com/pulls) dan tidak ada orang lain yang sedang mengerjakan _issue_ tersebut.
+4. Buat _branch_ baru dari `main`.
+
+#### Beberapa praktik yang bagus
+
+- Upayakan untuk segera _commit_ dan _push_ perubahannya **sesegera mungkin** sekecil apapun itu.
+- **Buat _pull request_** baru dengan [menjadikannya sebagai **_draft pull request_**](https://github.blog/2019-02-14-introducing-draft-pull-requests/) untuk memberikan sinyal kepada kontributor lainnya bahwa [_pull request_ ini masih sedang dalam pengerjaan](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request). Dengan demikian, orang lain yang ingin mengerjakan _issue_ dapat melihat sejauh mana yang sudah dilakukan dan berdiskusi / bekerjasama dalam mengerjakannya.
+
+#### Memanfaatkan _Draft Pull Requests_ untuk Berkomunikasi
 
 _Draft Pull Requests_ merupakan sebuah fitur yang disediakan oleh GitHub, yang bertujuan sebagai alat berkomunikasi bagi para kontributor. Ketika kita membuat sebuah _Draft Pull Request_, kita tidak bisa menggabungkannya melainkan kita sudah menandainya sebagai _Ready for review_. Ini merupakan pendekatan yang lebih baik untuk menggunakannya sebagai alat berkomunikasi antar kontributor, dan kita juga bisa memberikan informasi bahwa kita sedang mengatasi sebuah isu.
 
