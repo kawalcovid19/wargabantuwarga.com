@@ -23,9 +23,3 @@ Kumpulan informasi seputar COVID-19, yaitu:
 * [Vaksinasi COVID-19](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=1584366622&single=true)
 * [Jaga kesehatan di masa pandemi](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=1917836112&single=true)
 * [Layanan terkait COVID-19](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBCnCsD6yaTN45t7iu--2MB2jqu9l-Ux5yrB9qUBF556mBmGScpBtHxSC_ZFT6tp2MCTtHC7tVhyuE/pubhtml?gid=372824836&single=true)
-
-- - -
-
-Terima kasih kepada para kolaborator inisiatif [\#WargaBantuWarga](https://twitter.com/hashtag/WargaBantuWarga):
-
-[@kitabisacom](https://twitter.com/kitabisacom) [@KawalCOVID19](https://twitter.com/KawalCOVID19) [@fimnews](https://www.instagram.com/fimnews/) [@forumzakat](https://twitter.com/forumzakat) [Baznas](https://baznas.go.id/) [@KataDotAI](https://twitter.com/KataDotAI) [@indorelawan](https://twitter.com/indorelawan) [@pemimpinid](https://twitter.com/pemimpinid_) [@pandemictalks](https://www.instagram.com/pandemictalks/) [@laporcovid19](https://www.instagram.com/laporcovid19/) [@filantropiindonesia](https://www.instagram.com/filantropiindonesia/) [@BantuCovid](https://twitter.com/BantuCovid) [Human Initiative Volunteer Energy](https://hive.human-initiative.org/) [Narasi](https://www.instagram.com/narasi.tv/) [Qiscus](https://qiscus.io/) [Humanitarian Forum Indonesia](https://www.instagram.com/humanitarianforumindonesia/?hl=en) [urundayacovid.com](https://urundayacovid.com/) [Trustmedis](https://trustmedis.com/) [Serikat Buruh Migran Indonesia](https://sbmi.or.id/) [atmaGO](https://covid19.atmago.com/id) [Jaringan Semua Murid Semua Guru](https://semuamuridsemuaguru.id/) [ILUNI UI Psikologi](https://instagram.com/iluniuipsi?utm_medium=copy_link) [KG Media](https://www.kgmedia.id/)
