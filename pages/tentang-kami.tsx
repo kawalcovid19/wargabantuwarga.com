@@ -1,5 +1,5 @@
 import { NextSeo } from "next-seo";
-import Image from "next/image";
+import Image, { ImageLoaderProps } from "next/image";
 import htmr from "htmr";
 import { InformationCircleIcon } from "@heroicons/react/outline";
 
@@ -94,16 +94,11 @@ export default function AboutPage() {
                   >
                     <Image
                       alt={video.title}
-                      blurDataURL={getBlurred(
-                        replaceCloudinaryPrefix(video.thumbnail_image),
-                        720,
-                      )}
                       className="shadow rounded-md"
                       height={397}
                       layout="intrinsic"
                       loader={cloudinaryLoader}
                       loading="lazy"
-                      placeholder="blur"
                       quality={90}
                       src={replaceCloudinaryPrefix(video.thumbnail_image)}
                       width={720}
@@ -120,7 +115,7 @@ export default function AboutPage() {
             <h2 className="text-center font-semibold text-gray-700 text-lg">
               Terima kasih kepada para kolaborator inisiatif #WargaBantuWarga
             </h2>
-            <div className="flex flex-wrap justify-center items-center space-x-4 relative">
+            <div className="flex flex-wrap justify-center items-center space-x-4 space-y-4 relative">
               {collaboratorsData.collaborators.map(
                 (collaborator: Collaborator) => {
                   return (
@@ -135,13 +130,19 @@ export default function AboutPage() {
                       <Image
                         alt={collaborator.name}
                         className="rounded-md"
-                        // height={80}
                         layout="fill"
-                        loader={cloudinaryLoader}
+                        loader={({ src }: ImageLoaderProps) => {
+                          return cloudinaryLoader({
+                            src,
+                            // Force to show image in width 200 for smaller size
+                            width: 200,
+                            quality: 90,
+                          });
+                        }}
                         loading="lazy"
                         objectFit="contain"
                         quality={90}
-                        // width={100}
+                        sizes="200px"
                         src={replaceCloudinaryPrefix(
                           collaborator.thumbnail_image,
                         )}

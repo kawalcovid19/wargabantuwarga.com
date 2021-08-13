@@ -3,12 +3,12 @@
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-36-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-41-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
-[![codecov](https://codecov.io/gh/kawalcovid19/wargabantuwarga.com/branch/main/graph/badge.svg?token=zFsEIQ4bhy)](https://codecov.io/gh/kawalcovid19/wargabantuwarga.com) [![CI](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/test.yml/badge.svg)](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/test.yml) [![Deploy](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/deploy.yml/badge.svg)](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/deploy.yml)
+[![codecov](https://codecov.io/gh/kawalcovid19/wargabantuwarga.com/branch/main/graph/badge.svg?token=zFsEIQ4bhy)](https://codecov.io/gh/kawalcovid19/wargabantuwarga.com) [![CI](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/test.yml/badge.svg)](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/test.yml) [![Deploy](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/deploy.yml/badge.svg)](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/deploy.yml) [![Web Perf Check](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/lighthouse-ci-prod.yml/badge.svg)](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/lighthouse-ci-prod.yml)
 
 A society initiative to circulate information about health facilities and devices for COVID-19.
 
@@ -88,6 +88,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ### Frequently Used Tools
 
 - [Measure Web Performance](https://web.dev/measure)
+- [Measure Web Security](https://securityheaders.com/?q=https%3A%2F%2Fwww.wargabantuwarga.com%2F&followRedirects=on)
 - [Convert .ico](https://icoconvert.com)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Tailwind UI](https://tailwindui.com/)
@@ -161,7 +162,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.ryanadhi.tech/"><img src="https://avatars.githubusercontent.com/u/35433920?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ryan Adhi</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=ryanadhi" title="Code">💻</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/maziyank"><img src="https://avatars.githubusercontent.com/u/3317904?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bakhtiar Amaludin</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=maziyank" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/maziyank"><img src="https://avatars.githubusercontent.com/u/3317904?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bakhtiar Amaludin</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=maziyank" title="Code">💻</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/issues?q=author%3Amaziyank" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/asaadam"><img src="https://avatars.githubusercontent.com/u/1397612?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adam Akbar</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=asaadam" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/dekwahdimas"><img src="https://avatars.githubusercontent.com/u/56619123?v=4?s=100" width="100px;" alt=""/><br /><sub><b>IGN Bagus Dimas W.</b></sub></a><br /><a href="#example-dekwahdimas" title="Examples">💡</a> <a href="#data-dekwahdimas" title="Data">🔣</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=dekwahdimas" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://www.narainvitation.com"><img src="https://avatars.githubusercontent.com/u/13805020?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nasrul Gunawan</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=nasrulgunawan" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/iamyuu"><img src="https://avatars.githubusercontent.com/u/45778229?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yusuf</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=iamyuu" title="Code">💻</a></td>
+    <td align="center"><a href="https://fadil.dev/"><img src="https://avatars.githubusercontent.com/u/10627998?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nur Fadillah Fajar</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=fadillicious" title="Code">💻</a></td>
   </tr>
 </table>
 

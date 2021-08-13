@@ -383,6 +383,54 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/3317904?v=4",
       "profile": "https://github.com/maziyank",
       "contributions": [
+        "code",
+        "bug"
+      ]
+    },
+    {
+      "login": "asaadam",
+      "name": "Adam Akbar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1397612?v=4",
+      "profile": "https://github.com/asaadam",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "dekwahdimas",
+      "name": "IGN Bagus Dimas W.",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56619123?v=4",
+      "profile": "https://github.com/dekwahdimas",
+      "contributions": [
+        "example",
+        "data",
+        "doc"
+      ]
+    },
+    {
+      "login": "nasrulgunawan",
+      "name": "Nasrul Gunawan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13805020?v=4",
+      "profile": "http://www.narainvitation.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "iamyuu",
+      "name": "Yusuf",
+      "avatar_url": "https://avatars.githubusercontent.com/u/45778229?v=4",
+      "profile": "https://github.com/iamyuu",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "fadillicious",
+      "name": "Nur Fadillah Fajar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10627998?v=4",
+      "profile": "https://fadil.dev/",
+      "contributions": [
         "code"
       ]
     }

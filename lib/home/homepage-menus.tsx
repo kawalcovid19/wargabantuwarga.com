@@ -7,12 +7,15 @@ import {
   HospitalIcon,
   OxygenIcon,
   DonationIcon,
+  ContributionIcon,
+  EducationIcon,
 } from "~/components/ui/icons";
 
 export interface HomepageMenuItem {
   name: string;
   href: UrlObject | string;
   icon: React.ComponentType<React.ComponentProps<"svg">>;
+  external?: boolean;
 }
 
 export const homepageMenus: HomepageMenuItem[] = [
@@ -37,8 +40,19 @@ export const homepageMenus: HomepageMenuItem[] = [
     icon: DonorIcon,
   },
   {
+    name: "Edukasi",
+    href: "/edukasi",
+    icon: EducationIcon,
+  },
+  {
     name: "Donasi",
     href: "/donasi",
     icon: DonationIcon,
+  },
+  {
+    name: "Kontribusi",
+    href: "https://www.indorelawan.org/activity/60e2ed45164da80018b0e246",
+    icon: ContributionIcon,
+    external: true,
   },
 ];

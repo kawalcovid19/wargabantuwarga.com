@@ -12,10 +12,12 @@ export function TelemedicineContactCard(contact: ContactDetail) {
         <div className="flex-shrink-0 py-2 px-3 md:p-4">
           <div className="h-24 w-24 rounded-full bg-gray-500" />
         </div>
-        <div className="p-3 text-xs space-y-1 h-0 flex-1">
-          <p className="font-semibold text-gray-700">{contact.doctor_name}</p>
+        <div className="p-3 space-y-1 h-0 flex-1">
+          <p className="font-semibold text-gray-700 text-sm sm:text-base">
+            {contact.doctor_name}
+          </p>
           <div className="mt-2 flex justify-between w-full">
-            <p className="flex items-center text-sm text-gray-500">
+            <p className="flex items-center text-xs text-gray-500 sm:text-sm">
               <ClockIcon
                 aria-hidden="true"
                 className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"
@@ -24,7 +26,7 @@ export function TelemedicineContactCard(contact: ContactDetail) {
             </p>
           </div>
           <div className="mt-2 flex justify-between w-full">
-            <p className="flex items-center text-sm text-gray-500">
+            <p className="flex items-center text-xs text-gray-500 sm:text-sm">
               <ChatAlt2Icon
                 aria-hidden="true"
                 className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"

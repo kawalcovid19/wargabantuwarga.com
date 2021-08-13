@@ -106,7 +106,7 @@ describe("utils > contactReducer", () => {
     "jakarta timur",
     "RS WargaBantuWarga.com",
     "(0123) 456789",
-    "Jl. Palsu, No. 9",
+    '<div class="alamat">Jl. Palsu, No. 9</div>',
     "",
     "",
     "19/7/2021",
@@ -154,5 +154,17 @@ describe("utils > contactReducer", () => {
     expect(result.terakhir_update).toBe("19/7/2021");
     expect(result).toHaveProperty("verifikasi");
     expect(result.verifikasi).toBe(1);
+  });
+
+  it("should remove html tag from alamat", () => {
+    const obj: Record<string, number | string> = {};
+    const col: SheetColumn = {
+      name: "alamat",
+      index: 6,
+    };
+
+    const result = reducer(obj, col);
+
+    expect(result.alamat).toBe("Jl. Palsu, No. 9");
   });
 });
