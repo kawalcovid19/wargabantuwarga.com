@@ -88,6 +88,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ### Frequently Used Tools
 
 - [Measure Web Performance](https://web.dev/measure)
+- [Measure Web Security](https://securityheaders.com/?q=https%3A%2F%2Fwww.wargabantuwarga.com%2F&followRedirects=on)
 - [Convert .ico](https://icoconvert.com)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Tailwind UI](https://tailwindui.com/)
