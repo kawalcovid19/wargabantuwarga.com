@@ -8,7 +8,7 @@
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
-[![codecov](https://codecov.io/gh/kawalcovid19/wargabantuwarga.com/branch/main/graph/badge.svg?token=zFsEIQ4bhy)](https://codecov.io/gh/kawalcovid19/wargabantuwarga.com) [![CI](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/test.yml/badge.svg)](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/test.yml) [![Deploy](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/deploy.yml/badge.svg)](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/deploy.yml)
+[![codecov](https://codecov.io/gh/kawalcovid19/wargabantuwarga.com/branch/main/graph/badge.svg?token=zFsEIQ4bhy)](https://codecov.io/gh/kawalcovid19/wargabantuwarga.com) [![CI](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/test.yml/badge.svg)](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/test.yml) [![Deploy](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/deploy.yml/badge.svg)](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/deploy.yml) [![Web Perf Check](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/lighthouse-ci-prod.yml/badge.svg)](https://github.com/kawalcovid19/wargabantuwarga.com/actions/workflows/lighthouse-ci-prod.yml)
 
 A society initiative to circulate information about health facilities and devices for COVID-19.
 
@@ -88,6 +88,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ### Frequently Used Tools
 
 - [Measure Web Performance](https://web.dev/measure)
+- [Measure Web Security](https://securityheaders.com/?q=https%3A%2F%2Fwww.wargabantuwarga.com%2F&followRedirects=on)
 - [Convert .ico](https://icoconvert.com)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Tailwind UI](https://tailwindui.com/)
