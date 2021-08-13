@@ -61,6 +61,8 @@ export const contactReducer = (row: string[]) => {
       cellValue = extractGoogleQuery(cellValue);
     } else if (colName == "ketersediaan") {
       cellValue = toTitleCase(cellValue);
+    } else if (colName == "alamat") {
+      cellValue = stripTags(cellValue);
     }
     prev[colName] = cellValue;
     if (colName == "kontak") {
