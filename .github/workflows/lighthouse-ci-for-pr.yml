@@ -1,8 +1,8 @@
 name: Web Perf Check for Pull Request
 
 on:
-  #pull_request:
-  pull_request_target:
+  pull_request:
+    # pull_request_target:
     types: [labeled]
 
 jobs:
