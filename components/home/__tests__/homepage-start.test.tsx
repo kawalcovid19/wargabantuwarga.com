@@ -301,8 +301,6 @@ describe("HomePageStart", () => {
           <svg
             class="h-6 w-6 text-brand-500"
             fill="none"
-<<<<<<< HEAD
-=======
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -335,7 +333,6 @@ describe("HomePageStart", () => {
           <svg
             class="h-6 w-6 text-brand-500"
             fill="none"
->>>>>>> bed9dfd (feat: edukasi entry point)
             height="24"
             viewBox="0 0 24 24"
             width="24"
@@ -419,11 +416,7 @@ describe("HomePageStart", () => {
           alt="Ajukan bantuan sembako jika positif Covid-19 - Daftar Sekarang"
           decoding="async"
           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-<<<<<<< HEAD
           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-=======
-          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; filter: blur(20px); background-size: cover; background-image: url(https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_656,q_2,f_auto,e_blur:1000/v1627319803/sembako-cta-v2_czojls);"
->>>>>>> bed9dfd (feat: edukasi entry point)
         />
       </div>
     </a>
