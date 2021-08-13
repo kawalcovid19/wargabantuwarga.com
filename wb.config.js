@@ -9,10 +9,9 @@ module.exports = {
   publicExcludes: [
     "/robots.txt",
     "/sitemap.xml",
-    /\/sitemap-.*$/,
+    "/sitemap-*.xml",
     "/google6feea491511f41d3.html",
-    /\/images\/.*$/,
-    /\/admin\/.*$/,
+    "/admin/**/*",
   ],
   runtimeCaching: [
     {
