@@ -6,6 +6,7 @@ import clsx from "clsx";
 interface DisclosureProps {
   children: React.ReactNode;
   title?: string;
+  defaultOpen?: boolean;
 }
 
 const ChevronIconClass = (open: boolean) => {
@@ -18,9 +19,13 @@ const ChevronIconClass = (open: boolean) => {
   ];
 };
 
-export function StackedLinkDisclosure({ children, title }: DisclosureProps) {
+export function StackedLinkDisclosure({
+  children,
+  title,
+  defaultOpen = false,
+}: DisclosureProps) {
   return (
-    <Disclosure>
+    <Disclosure defaultOpen={defaultOpen}>
       {({ open }) => (
         <>
           <Disclosure.Button className="py-2 flex justify-between w-full">
