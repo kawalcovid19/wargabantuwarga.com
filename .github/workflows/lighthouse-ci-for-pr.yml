@@ -2,11 +2,12 @@ name: Web Perf Check for Pull Request
 
 on:
   pull_request:
+    # pull_request_target:
     types: [labeled]
 
 jobs:
   lhci:
-    name: Run Lighthouse CI for Pull Request
+    name: Run Lighthouse CI againts Pull Request
     runs-on: ubuntu-latest
 
     if: ${{ github.event.label.name == 'need-perf-check' }}
@@ -22,7 +23,7 @@ jobs:
         uses: jakepartusch/wait-for-netlify-action@v1
         id: netlify
         with:
-          site_name: 'wargabantuwarga'
+          site_name: "wargabantuwarga"
 
       - name: "Lighthouse CI assertion"
         id: lhci
@@ -31,7 +32,7 @@ jobs:
           yarn global add @lhci/cli@0.8.x
           echo -e "\n"
           echo "Start collecting LH report..."
-          lhci collect --url=${{ steps.netlify.outputs.url }} -n=1
+          lhci collect --url=${{ steps.netlify.outputs.url }} --url=${{ steps.netlify.outputs.url }}/tentang-kami --url=${{ steps.netlify.outputs.url }}/donasi --url=${{ steps.netlify.outputs.url }}/faq --url=${{ steps.netlify.outputs.url }}/provinces -n=1
           echo -e "\n"
           echo "Start asserting LH score..."
           lhci assert --config=./lighthouserc.js
