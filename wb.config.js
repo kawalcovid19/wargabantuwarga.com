@@ -16,7 +16,7 @@ module.exports = {
   ],
   runtimeCaching: [
     {
-      urlPattern: /^https:\/\/res.cloudinary.com\//,
+      urlPattern: /^https:\/\/res\.cloudinary\.com\//,
       handler: "CacheFirst",
       options: {
         cacheName: "wbw-images",
