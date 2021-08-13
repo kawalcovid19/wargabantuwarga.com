@@ -27,15 +27,23 @@ How to find issues with `good first issue` label:
 1. The easiest way is to go into the `github.com/<owner>/<repository>/contribute` link. In this case, you can go into [this link](https://github.com/kawalcovid19/wargabantuwarga.com/contribute). That link will list all of the issues with the `good first issue` label.
 2. Another way is to head over into the [Issues](https://github.com/kawalcovid19/wargabantuwarga.com/issues) section of the repository, then click the Labels section beside Milestones. There you can see a lot of labels for the issues in the repository. Then find and click the `good first issue` label.
 
-### Start working on issues
+### Working on issues
 
-Before working on an issue, there are a few things that you need to pay attention to:
+#### Get ready
 
-1. Is there any other contributors working on it? You can try to find any existing pull requests before deciding to start working on the issue.
-2. To start working on it, ensure that you create a new branch from the `main` branch, then commit and push your changes **as soon as possible** no matter how small they are.
-3. Then **create a new pull request** while [marking it as a **draft pull request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/) to signal the other contributors that [it's a work in progress](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request). This is necessary to signal the other contributors that there are work in progress for that particular issue.
+Before working on an issue, please make sure to:
 
-### Utilising Draft Pull Requests for Communication
+1. fork the repo properly. Even you have done it before, it's still advised that you read / skim [the official guide](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository).
+2. clone **your forked repository** and set it up by following the [Getting Started guide](https://github.com/kawalcovid19/wargabantuwarga.com#getting-started).
+3. check any open [pull requests](https://github.com/kawalcovid19/wargabantuwarga.com/pulls) that no one is working on the issue.
+4. create a new branch from the `main` branch.
+
+#### Good practices
+
+- Try to commit and push your changes **as soon as possible** no matter how small they are.
+- **Create a new pull request** while [marking it as a **draft pull request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/) to signal the other contributors that [it's a work in progress](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request). This is necessary to signal the other contributors that there are work in progress for that particular issue.
+
+#### Utilising Draft Pull Requests for Communication
 
 Draft Pull Requests is a feature provided by GitHub as a means to communicate with contributors. When we create a Draft Pull Request, we can't merge it until it's marked as Ready for review. This is a better approach to use as a communication tool between contributors, and we can provide information that we are currently working on an issue.
 
