@@ -33,10 +33,10 @@ How to find issues with `good first issue` label:
 
 Before working on an issue, please make sure to:
 
-1. fork the repo properly. Even you have done it before, it's still advised that you read / skim [the official guide](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository).
-2. clone **your forked repository** and set it up by following the [Getting Started guide](https://github.com/kawalcovid19/wargabantuwarga.com#getting-started).
-3. check any open [pull requests](https://github.com/kawalcovid19/wargabantuwarga.com/pulls) that no one is working on the issue.
-4. create a new branch from the `main` branch.
+1. Fork the repo properly. Even you have done it before, it's still advised that you read / skim [the official guide](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository).
+2. Clone **your forked repository** and set it up by following the [Getting Started guide](https://github.com/kawalcovid19/wargabantuwarga.com#getting-started).
+3. Check any open [pull requests](https://github.com/kawalcovid19/wargabantuwarga.com/pulls) that no one is working on the issue.
+4. Create a new branch from the `main` branch.
 
 #### Good practices
 
