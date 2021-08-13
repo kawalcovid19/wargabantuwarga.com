@@ -7,7 +7,7 @@ on:
 
 jobs:
   lhci:
-    name: Run Lighthouse CI for Pull Request
+    name: Run Lighthouse CI againts Pull Request
     runs-on: ubuntu-latest
 
     if: ${{ github.event.label.name == 'need-perf-check' }}
