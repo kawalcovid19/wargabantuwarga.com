@@ -7,6 +7,13 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="UTF-8" />
           <meta content="ie=edge" httpEquiv="X-UA-Compatible" />
+          <link
+            as="font"
+            crossOrigin="anonymous"
+            href="/fonts/inter-var-latin.woff2"
+            rel="preload"
+            type="font/woff2"
+          />
         </Head>
         <body>
           <noscript>
