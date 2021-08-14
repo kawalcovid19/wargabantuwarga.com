@@ -2,8 +2,6 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 
-const workboxConfig = require("./wb.config");
-
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.netlify.com unpkg.com media-library.cloudinary.com analytics.google.com *.google-analytics.com;
@@ -67,8 +65,6 @@ module.exports = withBundleAnalyzer({
     loader: "cloudinary",
     path: "https://res.cloudinary.com/wargabantuwarga/image/upload/",
   },
-
-  pwa: workboxConfig,
 
   // https://nextjs.org/docs/api-reference/next.config.js/react-strict-mode
   reactStrictMode: true,
