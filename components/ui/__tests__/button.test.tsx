@@ -1,22 +1,15 @@
 import React from "react";
 
 import { PlusIcon } from "@heroicons/react/outline";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { OutlineButton, PrimaryButton, SecondaryButton } from "../button";
 
 describe("Button", () => {
   describe("PrimaryButton", () => {
     it("renders correctly", () => {
-      const { container } = render(<PrimaryButton>test button</PrimaryButton>);
+      render(<PrimaryButton>test button</PrimaryButton>);
 
-      expect(container.firstChild).toMatchInlineSnapshot(`
-        <button
-          class="inline-flex flex-row px-4 py-2 text-sm rounded-md items-center justify-center border border-transparent font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-75"
-          type="button"
-        >
-          test button
-        </button>
-      `);
+      expect(screen.getByText("test button")).toBeInTheDocument();
     });
 
     it("renders with correct colors", () => {
