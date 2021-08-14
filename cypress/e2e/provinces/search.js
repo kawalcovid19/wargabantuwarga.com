@@ -7,32 +7,26 @@ describe("provinces page typed search", () => {
     cy.findByRole("textbox", {
       name: /cari provinsi:/i,
     }).type("Sumatera Utara");
-    cy.get("ul").first().children().should("have.length", 1);
-    cy.get("ul")
-      .first()
-      .children()
-      .first()
-      .should("contains.text", "Sumatera Utara");
+
+    cy.findByText(/sumatera utara/i)
+      .closest("a")
+      .should("have.attr", "href", "/provinces/sumatera-utara");
   });
 
   it("gives 3 result of Jawa Barat, Tengah, Timur when search keyword is Jawa", () => {
     cy.findByRole("textbox", {
       name: /cari provinsi:/i,
     }).type("Jawa");
-    cy.get("ul").first().children().should("have.length", 3);
-    cy.get("ul")
-      .first()
-      .children()
-      .each((liElement) => {
-        cy.wrap(liElement).should("contains.text", "Jawa");
-      });
+
+    cy.findAllByText(/jawa/i).should("have.length", 3);
   });
 
   it("gives no result when search keyword does not correspond to any provinces in Indonesia", () => {
     cy.findByRole("textbox", {
       name: /cari provinsi:/i,
     }).type("asdf");
-    cy.contains("Provinsi tidak ditemukan").should("exist");
+
+    cy.findByText(/Provinsi tidak ditemukan/i).should("exist");
   });
 });
 
@@ -40,29 +34,20 @@ describe("provinces page query param search", () => {
   it("gives only one result of DKI Jakarta when search keyword is dki", () => {
     cy.visit("/provinces?q=dki");
 
-    cy.get("ul").first().children().should("have.length", 1);
-    cy.get("ul")
-      .first()
-      .children()
-      .first()
-      .should("contains.text", "DKI Jakarta");
+    cy.findByText(/dki jakarta/i)
+      .closest("a")
+      .should("have.attr", "href", "/provinces/dki-jakarta");
   });
 
   it("gives 5 result of Sulawesi Utara, Tengah, Selatan, Tenggara, Barat when search keyword is sulawesi", () => {
     cy.visit("/provinces?q=sulawesi");
 
-    cy.get("ul").first().children().should("have.length", 5);
-    cy.get("ul")
-      .first()
-      .children()
-      .each((liElement) => {
-        cy.wrap(liElement).should("contains.text", "Sulawesi");
-      });
+    cy.findAllByText(/sulawesi/i).should("have.length", 5);
   });
 
   it("gives no result when search keyword does not correspond to any provinces in Indonesia", () => {
     cy.visit("/provinces?q=asdf");
 
-    cy.contains("Provinsi tidak ditemukan").should("exist");
+    cy.findByText(/Provinsi tidak ditemukan/i).should("exist");
   });
 });
