@@ -124,6 +124,27 @@ There are several reasons we're using English while communicating in GitHub Issu
 
 ## Additional Notes
 
+### Commitlint
+
+In a repository with many contributors like this, it's important to understand
+what's going on in it and navigate between commits. Moreover, with various
+levels of contributors & their backgrounds, the commit messages can easily be
+confusing and the structure may follow different approaches.
+
+To overcome these issues, the maintainers adopt [commit conventions](https://www.conventionalcommits.org/en/)
+to allow contributors to add more semantic meaning to our git history. They use
+[commitlint](https://commitlint.js.org/) to lint the git commit messages.
+To enforce the conventions, the maintainers use a git hook to run the
+commitlint upon a git commit command. The git hook prevents the commit the
+staged files if the commit message failed to comply with the conventions.
+
+It's adviseable to read the [commit conventions](https://www.conventionalcommits.org/en/v1.0.0)
+briefly to further understand the other benefits from them. However, if you're
+having problems with it or what have you, you can use [this
+tool](https://commitlint.io/) to help you.
+
+## References
+
 ### Issue and Pull Request Labels
 
 Issue labels are a tool to group issues into one or more categories.
