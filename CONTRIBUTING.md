@@ -41,7 +41,7 @@ Draft Pull Requests is a feature provided by GitHub as a means to communicate wi
 
 Steps to creating a Draft Pull Request:
 
-1. Commit and push your new changes into the remote repository.
+1. Commit and push your new changes into the remote repository. Please refer to [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional) for your commit message.
 2. Head over to the Pull requests section on your forked repository, hit New pull request.
    ![Hint-1](https://user-images.githubusercontent.com/46013258/126284390-c2bd1aa6-fdc2-4aa6-a945-031f02db038e.png)
 3. Pick your forked repository for the head repository, and compare with the branch that you are having changes in.

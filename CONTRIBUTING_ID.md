@@ -41,7 +41,7 @@ _Draft Pull Requests_ merupakan sebuah fitur yang disediakan oleh GitHub, yang b
 
 Langkah-langkah untuk membuat _Draft Pull Request_:
 
-1. _Commit_ dan _push_ perubahan terbaru ke _forked repository_ Anda.
+1. _Commit_ dan _push_ perubahan terbaru ke _forked repository_ Anda. Mohon merujuk ke [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional) untuk membuat pesan _commit_.
 2. Pergi ke bagian _Pull requests_ pada _forked repository_ Anda, dan klik _New pull request_.
 
    ![Petunjuk-1](https://user-images.githubusercontent.com/46013258/126284390-c2bd1aa6-fdc2-4aa6-a945-031f02db038e.png)
