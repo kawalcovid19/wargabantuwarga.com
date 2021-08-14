@@ -171,7 +171,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/renomureza"><img src="https://avatars.githubusercontent.com/u/49445216?v=4?s=100" width="100px;" alt=""/><br /><sub><b>R.M. Reza</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=renomureza" title="Code">💻</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="http://adindap.com"><img src="https://avatars.githubusercontent.com/u/70412?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adinda Praditya</b></sub></a><br /><a href="#security-apraditya" title="Security">🛡️</a></td>
+    <td align="center"><a href="http://adindap.com"><img src="https://avatars.githubusercontent.com/u/70412?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adinda Praditya</b></sub></a><br /><a href="#security-apraditya" title="Security">🛡️</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=apraditya" title="Documentation">📖</a></td>
     <td align="center"><a href="http://albarranaufala.github.io/albarra-portfolio"><img src="https://avatars.githubusercontent.com/u/54704525?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Albarra Naufala Erdanto</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/issues?q=author%3Aalbarranaufala" title="Bug reports">🐛</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=albarranaufala" title="Code">💻</a></td>
   </tr>
 </table>
