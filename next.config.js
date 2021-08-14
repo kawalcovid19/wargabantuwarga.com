@@ -4,7 +4,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.netlify.com unpkg.com media-library.cloudinary.com analytics.google.com *.google-analytics.com;
+  script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.netlify.com unpkg.com media-library.cloudinary.com res.cloudinary.com analytics.google.com *.google-analytics.com;
   style-src 'self' 'unsafe-inline';
   frame-src 'self' cloudinary.com;
   img-src 'self' blob: data: https:;
