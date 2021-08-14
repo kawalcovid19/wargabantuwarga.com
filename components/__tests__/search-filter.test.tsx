@@ -1,6 +1,6 @@
 import React from "react";
 
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { SearchFilter } from "../search-filter";
 
 describe("SearchFilter", () => {
@@ -8,7 +8,7 @@ describe("SearchFilter", () => {
   const handleSortChange = jest.fn();
 
   it("renders correctly", () => {
-    const { container } = render(
+    render(
       <SearchFilter
         filterItems={{
           kebutuhan: {
@@ -32,58 +32,11 @@ describe("SearchFilter", () => {
       />,
     );
 
-    expect(container.firstChild).toMatchInlineSnapshot(`
-      <div
-        class="grid grid-cols-2 gap-4"
-      >
-        <div
-          class="space-y-1"
-        >
-          <label
-            class="block text-sm font-medium text-gray-700"
-            for="filter-kebutuhan"
-          >
-            Kategori
-          </label>
-          <select
-            class="inline-block shadow-sm focus:ring-blue-500 focus:border-blue-500 w-full text-sm border-gray-300 rounded-md"
-            id="filter-kebutuhan"
-            name="kebutuhan"
-            title="Kategori"
-          >
-            <option
-              value=""
-            >
-              Semua
-            </option>
-            <option
-              value="Ambulans"
-            >
-              Ambulans
-            </option>
-            <option
-              value="Donor plasma"
-            >
-              Donor plasma
-            </option>
-            <option
-              value="Kontak penting"
-            >
-              Kontak penting
-            </option>
-            <option
-              value="Rumah sakit"
-            >
-              Rumah sakit
-            </option>
-          </select>
-        </div>
-      </div>
-    `);
+    expect(screen.getByText(/kategori/gi)).toBeInTheDocument();
   });
 
   it("renders non existing filter correctly", () => {
-    const { container } = render(
+    render(
       <SearchFilter
         filterItems={{
           kebutuhan: {
@@ -107,58 +60,7 @@ describe("SearchFilter", () => {
       />,
     );
 
-    expect(container.firstChild).toMatchInlineSnapshot(`
-      <div
-        class="grid grid-cols-2 gap-4"
-      >
-        <div
-          class="space-y-1"
-        >
-          <label
-            class="block text-sm font-medium text-gray-700"
-            for="filter-kebutuhan"
-          >
-            Kategori
-          </label>
-          <select
-            class="inline-block shadow-sm focus:ring-blue-500 focus:border-blue-500 w-full text-sm border-gray-300 rounded-md"
-            id="filter-kebutuhan"
-            name="kebutuhan"
-            title="Kategori"
-          >
-            <option
-              value=""
-            >
-              Semua
-            </option>
-            <option
-              value="Oksigen"
-            >
-              Oksigen
-            </option>
-            <option
-              value="Ambulans"
-            >
-              Ambulans
-            </option>
-            <option
-              value="Donor plasma"
-            >
-              Donor plasma
-            </option>
-            <option
-              value="Kontak penting"
-            >
-              Kontak penting
-            </option>
-            <option
-              value="Rumah sakit"
-            >
-              Rumah sakit
-            </option>
-          </select>
-        </div>
-      </div>
-    `);
+    expect(screen.getByText(/kategori/gi)).toBeInTheDocument();
+    expect(screen.getAllByRole("option")).toHaveLength(6);
   });
 });
