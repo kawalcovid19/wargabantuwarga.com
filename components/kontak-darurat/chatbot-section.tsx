@@ -18,7 +18,7 @@ export default function ChatbotSection() {
       </div>
       <PrimaryAnchorButton
         block
-        className="text-white bg-[#25d366] focus:ring-[#25d366]"
+        className="text-white bg-[#128c7e] hover:bg-[#075e54] focus:ring-[#075e54]"
         color="none"
         href="https://bit.ly/hotlinewarga"
         icon={WhatsAppIcon}
