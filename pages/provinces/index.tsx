@@ -8,10 +8,11 @@ import { LinksWell } from "~/components/links-well";
 import { ProvinceList, ProvinceListItem } from "~/components/province-list";
 import { SearchForm } from "~/components/search-form";
 import { SeoText } from "~/components/seo-text";
-import provinces, { Contact } from "~/lib/data/provinces";
+import provinces from "~/lib/data/provinces";
 import { getCurrentMonthAndYear } from "~/lib/date-utils";
 import { useSearch } from "~/lib/hooks/use-search";
 import { getInitial } from "~/lib/string-utils";
+import { getProvinceKebutuhanContactsCount } from "~/lib/data/helpers/provinces";
 
 type ProvincesPageProps = {
   provincesList: ProvinceListItem[];
@@ -107,13 +108,6 @@ export default function ProvincesPage(props: ProvincesPageProps) {
     </Page>
   );
 }
-
-const getProvinceKebutuhanContactsCount = (
-  contacts: Contact[],
-  kebutuhan: string,
-) => {
-  return contacts.filter((contact) => contact.kebutuhan === kebutuhan).length;
-};
 
 export const getStaticProps: GetStaticProps = () => {
   const provincesList = provinces.map(({ name, slug, data }) => ({

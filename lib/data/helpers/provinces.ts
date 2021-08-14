@@ -30,3 +30,10 @@ export const getContactsPaths = (provinces: Provinces): ContactPath[] => {
   });
   return contactsPaths;
 };
+
+export const getProvinceKebutuhanContactsCount = (
+  contacts: Contact[],
+  kebutuhan: string,
+): number => {
+  return contacts.filter((contact) => contact.kebutuhan === kebutuhan).length;
+};
