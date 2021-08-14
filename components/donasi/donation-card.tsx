@@ -13,17 +13,17 @@ export function DonationCard(donation: DonationDetail) {
           src={donation.image}
         />
       </div>
-      <div className="p-3 text-xs space-y-1 h-0 flex-1">
-        <p className="text-gray-500">{donation.category}</p>
-        <h3 className="font-semibold text-gray-700 text-xs">
+      <div className="p-3 space-y-1 h-0 flex-1">
+        <p className="text-gray-500 text-xs sm:text-sm">{donation.category}</p>
+        <h3 className="font-semibold text-gray-700 text-sm sm:text-base">
           {donation.title}
         </h3>
       </div>
       <div className="p-3 justify-center">
         <PrimaryAnchorButton
           block
-          className="bg-light-blue-400 font-normal focus:bg-light-blue hover:bg-light-blue-600 text-white"
-          color="none"
+          className="font-normal"
+          color="brand"
           data-testid={`donation-button-${donation.title}`}
           href={donation.url}
           rel="nofollow noopener noreferrer"
