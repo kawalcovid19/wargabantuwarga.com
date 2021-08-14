@@ -38,14 +38,24 @@ Before working on an issue, please make sure to:
 3. Check any open [pull requests](https://github.com/kawalcovid19/wargabantuwarga.com/pulls) that no one is working on the issue.
 4. Create a new branch from the `main` branch.
 
-#### Good practices
+#### Issue assignment & Communication
 
-- Try to commit and push your changes **as soon as possible** no matter how small they are.
-- **Create a new pull request** while [marking it as a **draft pull request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/) to signal the other contributors that [it's a work in progress](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request). This is necessary to signal the other contributors that there are work in progress for that particular issue.
+Once you're ready with your branch and have something to contribute, you'll want to
+let everyone know that you are working on the issue. To communicate this, we
+are using GitHub's Draft Pull Requests.
 
-#### Utilising Draft Pull Requests for Communication
+Draft Pull Request is like a regular Pull Request but it can't be merged until
+it's marked as "ready for review". It signals other contributors that [it's a
+work in progress](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request).
+This is necessary to signal other contributors that the work for the particular
+issue has started and it is still in progress. Also, it is a better approach to
+use as a communication tool between contributors because we can provide
+additional information other than viewing the changed files.
 
-Draft Pull Requests is a feature provided by GitHub as a means to communicate with contributors. When we create a Draft Pull Request, we can't merge it until it's marked as Ready for review. This is a better approach to use as a communication tool between contributors, and we can provide information that we are currently working on an issue.
+Therefore, when you have at least one commit **it's important to create a Draft
+Pull Request** to let everyone know that the issue is assigned to you.
+
+#### Creating a Draft Pull Request
 
 Steps to creating a Draft Pull Request:
 
