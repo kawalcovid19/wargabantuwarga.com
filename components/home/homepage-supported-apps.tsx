@@ -19,7 +19,7 @@ export function HomepageSupportedApps() {
             className="inline-flex flex-col items-center justify-center text-center relative  py-3 px-2"
           >
             <a
-              className="border-solid border-2 border-gray-300 border-opacity-75 rounded-lg hover:border-light-blue-700 min-w-full h-20"
+              className="border-solid border-2 border-gray-300 border-opacity-75 rounded-lg hover:border-light-blue-700 min-w-full h-20 relative"
               href={app.link}
               rel="nofollow noopener noreferrer"
               target="_blank"
@@ -28,19 +28,20 @@ export function HomepageSupportedApps() {
               <Image
                 alt={app.name}
                 className="rounded-md"
-                layout="fill"
-                loader={({ src }: ImageLoaderProps) => {
+                height={72}
+                layout="intrinsic"
+                loader={({ src, width, quality }: ImageLoaderProps) => {
                   return cloudinaryLoader({
                     src,
-                    width: 64,
-                    quality: 90,
+                    width,
+                    quality,
                   });
                 }}
                 loading="lazy"
-                objectFit="scale-down"
+                objectFit="contain"
                 quality={90}
                 src={replaceCloudinaryPrefix(app.logo)}
-                width={64}
+                width={72}
               />
             </a>
           </li>
