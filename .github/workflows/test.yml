@@ -90,7 +90,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "14"
-      - name: Cypress run
+      - name: Install Cypress
+        run: yarn cypress install
+      - name: Run Cypress
         uses: cypress-io/github-action@v2
         with:
           record: true
