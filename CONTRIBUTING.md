@@ -64,9 +64,26 @@ Steps to creating a Draft Pull Request:
    ![Hint-1](https://user-images.githubusercontent.com/46013258/126284390-c2bd1aa6-fdc2-4aa6-a945-031f02db038e.png)
 3. Pick your forked repository for the head repository, and compare with the branch that you are having changes in.
    ![Hint-2](https://user-images.githubusercontent.com/46013258/126285036-27b49325-62a2-4a6c-b216-5bae261788da.png)
-4. Put a title and some description in your pull request, then pick Create draft pull request (like in the image below) and hit the green button.
+4. Put a clear title and description in your pull request. Make sure the
+   description follows [our guide below](#formatting-pull-request-description).
    ![Hint-3](https://user-images.githubusercontent.com/46013258/126286179-04341e30-1224-49cb-9b9a-3c3aee99c308.png)
-5. Don't forget to mark your Draft Pull Request as Ready for review after you commit all of the changes.
+5. Pick Create draft pull request (like in the image above) and hit the green button.
+6. Don't forget to mark your Draft Pull Request as Ready for review after you commit all of the changes.
+
+#### Formatting Pull Request Description
+
+To properly [link a pull request to an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue), there is one tiny requirement text to put in a Pull Request description.
+Please make sure to mention the issue that you're working on correctly. Replace
+this text `<!-- mention the issue that you're trying to close with this PR -->`
+from the template with the issue number. Example:
+
+```markdown
+Closes #318
+
+## Description
+
+Update **`Start working on Issues`** section with clearer instructions on getting ready to work on an issue.
+```
 
 ## FAQ
 
