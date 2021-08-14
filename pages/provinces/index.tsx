@@ -12,6 +12,7 @@ import provinces from "~/lib/data/provinces";
 import { getCurrentMonthAndYear } from "~/lib/date-utils";
 import { useSearch } from "~/lib/hooks/use-search";
 import { getInitial } from "~/lib/string-utils";
+import { getProvinceKebutuhanContactsCount } from "~/lib/data/helpers/provinces";
 
 type ProvincesPageProps = {
   provincesList: ProvinceListItem[];
@@ -114,6 +115,10 @@ export const getStaticProps: GetStaticProps = () => {
     name,
     slug,
     count: data.length,
+    ambulansCount: getProvinceKebutuhanContactsCount(data, "Ambulans"),
+    rsCount: getProvinceKebutuhanContactsCount(data, "Rumah sakit"),
+    donorPlasmaCount: getProvinceKebutuhanContactsCount(data, "Donor plasma"),
+    oksigenCount: getProvinceKebutuhanContactsCount(data, "Oksigen"),
   }));
 
   return {
