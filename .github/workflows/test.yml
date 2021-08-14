@@ -76,3 +76,27 @@ jobs:
       - uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+
+  e2e:
+    name: End-to-end tests
+    runs-on: ubuntu-latest
+    needs: install-deps
+    steps:
+      - uses: actions/cache@v1
+        id: restore-deps
+        with:
+          path: "."
+          key: ${{ github.sha }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          record: true
+          start: yarn dev
+          wait-on: 'http://localhost:3000'
+        env:
+          CI: true
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
