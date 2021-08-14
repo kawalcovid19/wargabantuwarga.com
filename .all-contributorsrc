@@ -374,7 +374,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/35433920?v=4",
       "profile": "https://www.ryanadhi.tech/",
       "contributions": [
-        "code"
+        "code",
+        "doc"
       ]
     },
     {
@@ -450,7 +451,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/70412?v=4",
       "profile": "http://adindap.com",
       "contributions": [
-        "security"
+        "security",
+        "doc"
       ]
     },
     {
