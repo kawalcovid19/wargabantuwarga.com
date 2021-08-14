@@ -25,22 +25,18 @@ const getProvinceContactsCount = (
   province: ProvinceListItem,
   kebutuhan?: string[] | string,
 ) => {
-  if (typeof kebutuhan === "string") {
-    switch (kebutuhan) {
-      case "Ambulans":
-        return province.ambulansCount;
-      case "Oksigen":
-        return province.oksigenCount;
-      case "Donor plasma":
-        return province.donorPlasmaCount;
-      case "Rumah sakit":
-        return province.rsCount;
-      default:
-        return province.count;
-    }
+  switch (kebutuhan) {
+    case "Ambulans":
+      return province.ambulansCount;
+    case "Oksigen":
+      return province.oksigenCount;
+    case "Donor plasma":
+      return province.donorPlasmaCount;
+    case "Rumah sakit":
+      return province.rsCount;
+    default:
+      return province.count;
   }
-
-  return province.count;
 };
 
 export function ProvinceList(props: ProvinceListProps) {
