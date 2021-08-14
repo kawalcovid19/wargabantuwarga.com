@@ -38,14 +38,27 @@ Sebelum mengerjakan sebuah _issue_, pastikan hal-hal berikut:
 3. Periksa di [_pull requests_](https://github.com/kawalcovid19/wargabantuwarga.com/pulls) dan tidak ada orang lain yang sedang mengerjakan _issue_ tersebut.
 4. Buat _branch_ baru dari `main`.
 
-#### Beberapa praktik yang bagus
+#### Penugasan _issue_ & komunikasi
 
-- Upayakan untuk segera _commit_ dan _push_ perubahannya **sesegera mungkin** sekecil apapun itu.
-- **Buat _pull request_** baru dengan [menjadikannya sebagai **_draft pull request_**](https://github.blog/2019-02-14-introducing-draft-pull-requests/) untuk memberikan sinyal kepada kontributor lainnya bahwa [_pull request_ ini masih sedang dalam pengerjaan](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request). Dengan demikian, orang lain yang ingin mengerjakan _issue_ dapat melihat sejauh mana yang sudah dilakukan dan berdiskusi / bekerjasama dalam mengerjakannya.
+Saat Anda sudah siap dengan _branch_ dan memiliki sesuatu untuk berkontribusi,
+Anda perlu untuk memberitahu orang-orang bahwa Anda sedang mengerjakan _issue_
+tersebut. Untuk mengkomunikasikan hal ini, kami menggunakan _Draft Pull Requests_
+dari GitHub.
 
-#### Memanfaatkan _Draft Pull Requests_ untuk Berkomunikasi
+_Draft Pull Request_ merupakan _pull request_ biasa, namun ia tidak dapat
+digabungkan ke _branch_ utama sampai statusnya diubah menjadi "ready for
+review". _Draft Pull Request_ menandakan bahwa _pull request_ ini [masih sedang dalam pengerjaan](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request).
+Hal ini diperlukan untuk memberikan sinyal kepada kontributor lainnya bahwa
+pekerjaan dalam menyelesaikan _issue_ tersebut sudah dimulai dan masih
+dikerjakan. Membuat _Draft Pull Request_ juga merupakan cara yang lebih baik sebagai
+media komunikasi antar kontributor karena informasi tambahan bisa disediakan di
+sana, selain melihat perubahan file-file.
 
-_Draft Pull Requests_ merupakan sebuah fitur yang disediakan oleh GitHub, yang bertujuan sebagai alat berkomunikasi bagi para kontributor. Ketika kita membuat sebuah _Draft Pull Request_, kita tidak bisa menggabungkannya melainkan kita sudah menandainya sebagai _Ready for review_. Ini merupakan pendekatan yang lebih baik untuk menggunakannya sebagai alat berkomunikasi antar kontributor, dan kita juga bisa memberikan informasi bahwa kita sedang mengatasi sebuah isu.
+Dengan demikian, ketika Anda memiliki setidaknya 1 _commit_, sangat penting
+bagi Anda untuk membuat suatu _Draft Pull Request_ untuk mengumumkan kepada
+orang-orang bahwa _issue_ itu sedang Anda kerjakan.
+
+#### Pembuatan _Draft Pull Request_
 
 Langkah-langkah untuk membuat _Draft Pull Request_:
 
@@ -58,11 +71,29 @@ Langkah-langkah untuk membuat _Draft Pull Request_:
 
    ![Petunjuk-2](https://user-images.githubusercontent.com/46013258/126285036-27b49325-62a2-4a6c-b216-5bae261788da.png)
 
-4. Berikan sebuah judul dan beberapa deskripsi mengenai _pull request_ Anda, lalu pilih _Create draft pull request_ (seperti pada gambar di bawah) dan klik tombol berwarna hijau.
+4. Berikan judul dan deskripsi yang jelas mengenai _pull request_ Anda.
+   Pastikan Anda mengikuti pengisian deskripsi seperti [keterangan di
+   bawah](#pemberian-deskripsi-pull-request).
 
    ![Petunjuk-3](https://user-images.githubusercontent.com/46013258/126286179-04341e30-1224-49cb-9b9a-3c3aee99c308.png)
 
-5. Jangan lupa untuk menandai _Draft Pull Request_ Anda sebagai _Ready for review_ ketika Anda sudah melakukan semua perubahan yang diinginkan.
+5. Pilih _Create draft pull request_ (seperti pada gambar di atas) dan klik tombol berwarna hijau.
+6. Jangan lupa untuk menandai _Draft Pull Request_ Anda sebagai _Ready for review_ ketika Anda sudah melakukan semua perubahan yang diinginkan.
+
+#### Pemberian Deskripsi _Pull Request_
+
+Agar _pull request_ dapat berkaitan dengan _issue_, ada 1 syarat teks yang
+harus dimasukkan ke dalam deskripsinya. Harap pastikan Anda menyebutkan nomor
+_issue_ yang Anda kerjakan dengan benar. Ubah teks `<!-- mention the issue that you're trying to close with this PR -->` yang disediakan dari _template_
+menjadi nomor _issue_. Contoh:
+
+```markdown
+Closes #318
+
+## Description
+
+Update **`Start working on Issues`** section with clearer instructions on getting ready to work on an issue.
+```
 
 ## Pertanyaan yang sering ditanyakan
 
