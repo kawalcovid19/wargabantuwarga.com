@@ -442,6 +442,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "apraditya",
+      "name": "Adinda Praditya",
+      "avatar_url": "https://avatars.githubusercontent.com/u/70412?v=4",
+      "profile": "http://adindap.com",
+      "contributions": [
+        "security"
+      ]
     }
   ],
   "contributorsPerLine": 7,
