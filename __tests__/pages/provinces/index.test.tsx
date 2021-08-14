@@ -7,6 +7,7 @@ import {
   within,
 } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import router from "next/router";
 import { provinceListItemBuilder } from "~/components/__mocks__/builders/province-list";
 import { dateMockBuilder } from "~/lib/__mocks__/builders/date-mock";
 import provinces from "~/lib/data/provinces";
@@ -55,6 +56,45 @@ describe("ProvincesPage", () => {
     expect(
       within(provinceLink).getByText(`${provinceListItem.count} Entri`),
     ).toBeVisible();
+  });
+
+  it("renders the provinces list kebutuhan entry count correctly", async () => {
+    const checkRenderKebutuhanEntryCount = async (
+      kebutuhan: string,
+      entryCount: number,
+    ) => {
+      await router.push(`/provinces?kebutuhan=${kebutuhan}`);
+      const { unmount } = render(
+        <ProvincesPage provincesList={provinceList} />,
+      );
+
+      const provinceLink = screen.getByRole("link", {
+        name: /informasi faskes & alkes untuk covid-19 di provinsi/i,
+      });
+
+      expect(
+        within(provinceLink).getByText(`${entryCount} Entri`),
+      ).toBeVisible();
+
+      unmount();
+    };
+
+    await checkRenderKebutuhanEntryCount(
+      "Ambulans",
+      provinceListItem.ambulansCount,
+    );
+    await checkRenderKebutuhanEntryCount(
+      "Rumah%20sakit",
+      provinceListItem.rsCount,
+    );
+    await checkRenderKebutuhanEntryCount(
+      "Oksigen",
+      provinceListItem.oksigenCount,
+    );
+    await checkRenderKebutuhanEntryCount(
+      "Donor%20plasma",
+      provinceListItem.donorPlasmaCount,
+    );
   });
 
   it("renders the SEO text correctly", () => {
