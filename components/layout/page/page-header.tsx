@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Container } from "../../ui/container";
 import { Breadcrumb, BreadcrumbItem } from "~/components/ui/breadcrumb";
-import { WebpageJsonLd } from "~/components/jsonld-webpage";
+import { JsonLdWebpage } from "~/components/json-ld/webpage";
 
 export interface PageHeaderProps {
   title: string;
@@ -20,7 +20,7 @@ export function PageHeader({
 }: PageHeaderProps) {
   return (
     <>
-      <WebpageJsonLd
+      <JsonLdWebpage
         breadcrumbs={breadcrumbs}
         description={description}
         title={title}

@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { containerStyles } from "../../ui/container";
 import { PageHeaderProps } from ".";
 import { Breadcrumb } from "~/components/ui/breadcrumb";
-import { WebpageJsonLd } from "~/components/jsonld-webpage";
+import { JsonLdWebpage } from "~/components/json-ld/webpage";
 
 interface AboutPageHeaderProps extends PageHeaderProps {
   subtitle?: string;
@@ -19,7 +19,7 @@ export function AboutPageHeader({
 }: AboutPageHeaderProps) {
   return (
     <>
-      <WebpageJsonLd
+      <JsonLdWebpage
         breadcrumbs={breadcrumbs}
         description={description}
         title={title}

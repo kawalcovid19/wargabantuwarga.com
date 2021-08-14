@@ -1,5 +1,5 @@
-import { JsonLdBuilder } from "./jsonld-builder";
-import { BreadcrumbItem } from "./ui/breadcrumb";
+import { BreadcrumbItem } from "../ui/breadcrumb";
+import { JsonLdBuilder } from "./builder";
 import {
   makeBreadcrumbJsonLd,
   makeOrganizationJsonLd,
@@ -7,17 +7,17 @@ import {
   makeWebsiteJsonLd,
 } from "~/lib/jsonld-generator";
 
-interface WebpageJsonLd {
+interface JsonLdWebpage {
   title: string;
   description: string;
   breadcrumbs: BreadcrumbItem[];
 }
 
-export function WebpageJsonLd({
+export function JsonLdWebpage({
   title,
   description,
   breadcrumbs,
-}: WebpageJsonLd) {
+}: JsonLdWebpage) {
   const path = breadcrumbs.find((breadcrumb) => breadcrumb.current)?.href ?? "";
   return JsonLdBuilder({
     jsonsLd: [

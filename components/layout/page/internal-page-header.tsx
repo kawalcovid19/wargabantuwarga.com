@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { containerStyles } from "../../ui/container";
 import { PageHeaderProps } from "../page";
 import { Breadcrumb } from "~/components/ui/breadcrumb";
-import { WebpageJsonLd } from "~/components/jsonld-webpage";
+import { JsonLdWebpage } from "~/components/json-ld/webpage";
 
 type InternalPageHeaderProps = PageHeaderProps;
 
@@ -16,7 +16,7 @@ export function InternalPageHeader({
 }: InternalPageHeaderProps) {
   return (
     <>
-      <WebpageJsonLd
+      <JsonLdWebpage
         breadcrumbs={breadcrumbs}
         description={description}
         title={title}
