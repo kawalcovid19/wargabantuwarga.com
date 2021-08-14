@@ -18,8 +18,8 @@ export function DonationCard(donation: DonationDetail) {
       <div className="p-3 justify-center">
         <PrimaryAnchorButton
           block
-          className="bg-light-blue-400 font-normal focus:bg-light-blue hover:bg-light-blue-600 text-white"
-          color="none"
+          className="font-normal"
+          color="brand"
           data-testid={`donation-button-${donation.title}`}
           href={donation.url}
           rel="nofollow noopener noreferrer"

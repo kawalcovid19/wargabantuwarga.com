@@ -11,7 +11,7 @@ describe("Navigation", () => {
 
     expect(container.firstChild).toMatchInlineSnapshot(`
 <nav
-  class="flex items-center justify-center fixed bottom-0 w-full h-16 px-2 bg-white border-t border-gray-300 z-30"
+  class="flex items-center justify-center fixed bottom-0 w-full h-16 px-2 bg-white border-t border-gray-300 z-40"
 >
   <div
     class="flex items-center justify-center w-full max-w-xl mx-auto"

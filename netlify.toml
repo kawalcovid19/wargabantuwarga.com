@@ -26,6 +26,11 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
 
 [[headers]]
+  for = "/fonts/inter-var-latin.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
    for = "/_next/static/*"
    [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"

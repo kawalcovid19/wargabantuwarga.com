@@ -7,6 +7,7 @@ import {
   within,
 } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import router from "next/router";
 import { provinceListItemBuilder } from "~/components/__mocks__/builders/province-list";
 import { dateMockBuilder } from "~/lib/__mocks__/builders/date-mock";
 import provinces from "~/lib/data/provinces";
@@ -56,6 +57,26 @@ describe("ProvincesPage", () => {
       within(provinceLink).getByText(`${provinceListItem.count} Entri`),
     ).toBeVisible();
   });
+
+  it.each`
+    kebutuhan           | count
+    ${"Ambulans"}       | ${provinceListItem.ambulansCount}
+    ${"Rumah%20sakit"}  | ${provinceListItem.rsCount}
+    ${"Oksigen"}        | ${provinceListItem.oksigenCount}
+    ${"Donor%20plasma"} | ${provinceListItem.donorPlasmaCount}
+  `(
+    "renders the entry count of kebutuhan $kebutuhan in province list correctly",
+    async ({ kebutuhan, count }) => {
+      await router.push(`/provinces?kebutuhan=${kebutuhan}`);
+      render(<ProvincesPage provincesList={provinceList} />);
+
+      const provinceLink = screen.getByRole("link", {
+        name: /informasi faskes & alkes untuk covid-19 di provinsi/i,
+      });
+
+      expect(within(provinceLink).getByText(`${count} Entri`)).toBeVisible();
+    },
+  );
 
   it("renders the SEO text correctly", () => {
     const { date, monthStr } = dateMockBuilder();
@@ -109,6 +130,15 @@ describe("getStaticProps", () => {
       name,
       slug,
       count: data.length,
+      ambulansCount: data.filter((contact) => contact.kebutuhan === "Ambulans")
+        .length,
+      rsCount: data.filter((contact) => contact.kebutuhan === "Rumah sakit")
+        .length,
+      donorPlasmaCount: data.filter(
+        (contact) => contact.kebutuhan === "Donor plasma",
+      ).length,
+      oksigenCount: data.filter((contact) => contact.kebutuhan === "Oksigen")
+        .length,
     }));
     expect(getStaticProps({})).toEqual({
       props: {
