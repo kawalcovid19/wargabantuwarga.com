@@ -71,7 +71,7 @@
     "cloudinary-build-url": "^0.2.1",
     "critters": "^0.0.10",
     "cross-env": "^7.0.3",
-    "cypress": "^7.7.0",
+    "cypress": "8.2.0",
     "eslint": "7.30.0",
     "eslint-config-kentcdodds": "^19.1.0",
     "eslint-config-next": "11.0.1",
