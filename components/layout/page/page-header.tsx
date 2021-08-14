@@ -1,15 +1,13 @@
 import * as React from "react";
-
-import Head from "next/head";
 import { Container } from "../../ui/container";
 import { Breadcrumb, BreadcrumbItem } from "~/components/ui/breadcrumb";
-import { makeBreadcrumbJsonLd } from "~/lib/jsonld-generator";
+import { WebpageJsonLd } from "~/components/jsonld-webpage";
 
 export interface PageHeaderProps {
   title: string;
-  description?: string;
+  description: string;
   backButton?: React.ReactNode;
-  breadcrumbs?: BreadcrumbItem[];
+  breadcrumbs: BreadcrumbItem[];
   actions?: React.ReactNode;
 }
 
@@ -22,22 +20,16 @@ export function PageHeader({
 }: PageHeaderProps) {
   return (
     <>
-      <Head>
-        {breadcrumbs ? (
-          <script
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(makeBreadcrumbJsonLd(breadcrumbs)),
-            }}
-            type="application/ld+json"
-          />
-        ) : null}
-      </Head>
-
+      <WebpageJsonLd
+        breadcrumbs={breadcrumbs}
+        description={description}
+        title={title}
+      />
       <header className="px-4 py-4">
         <Container>
           <div>
             {backButton}
-            {breadcrumbs && <Breadcrumb items={breadcrumbs} />}
+            <Breadcrumb items={breadcrumbs} />
           </div>
           <div className="mt-4 md:flex md:items-center md:justify-between">
             <div className="flex-1 min-w-0">

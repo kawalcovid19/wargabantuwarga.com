@@ -1,11 +1,9 @@
 import * as React from "react";
-
-import Head from "next/head";
 import clsx from "clsx";
 import { containerStyles } from "../../ui/container";
 import { PageHeaderProps } from "../page";
 import { Breadcrumb } from "~/components/ui/breadcrumb";
-import { makeBreadcrumbJsonLd } from "~/lib/jsonld-generator";
+import { WebpageJsonLd } from "~/components/jsonld-webpage";
 
 type InternalPageHeaderProps = PageHeaderProps;
 
@@ -18,21 +16,15 @@ export function InternalPageHeader({
 }: InternalPageHeaderProps) {
   return (
     <>
-      <Head>
-        {breadcrumbs ? (
-          <script
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(makeBreadcrumbJsonLd(breadcrumbs)),
-            }}
-            type="application/ld+json"
-          />
-        ) : null}
-      </Head>
-
+      <WebpageJsonLd
+        breadcrumbs={breadcrumbs}
+        description={description}
+        title={title}
+      />
       <header className={clsx("px-4 py-4 bg-white", containerStyles)}>
         <div>
           {backButton}
-          {breadcrumbs && <Breadcrumb items={breadcrumbs} />}
+          <Breadcrumb items={breadcrumbs} />
         </div>
         <div className="mt-4 md:flex md:items-center md:justify-between">
           <div className="flex-1 min-w-0">

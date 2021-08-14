@@ -20,6 +20,8 @@ type ProvincesPageProps = {
 const meta = {
   // @TODO: change this after got a better title
   title: "Informasi Faskes & Alkes untuk COVID-19 di semua provinsi Indonesia",
+  description:
+    "Informasi Faskes dan Alkes Covid-19 di semua provinsi Indonesia seperti rumah sakit, puskesmas, ambulans, donor plasma, oksigen, bantuan, dan lainnya.",
 };
 
 const donorLinksData: LinksWellProps = {
@@ -65,18 +67,25 @@ export default function ProvincesPage(props: ProvincesPageProps) {
     }
   }
 
+  const breadcrumbs = [
+    {
+      name: "Provinsi",
+      href: "/provinces",
+      current: true,
+    },
+  ];
+
   return (
     <Page>
-      <NextSeo openGraph={{ title: meta.title }} title={meta.title} />
+      <NextSeo
+        description={meta.description}
+        openGraph={{ title: meta.title }}
+        title={meta.title}
+      />
       <PageHeader
         backButton={<BackButton href="/" />}
-        breadcrumbs={[
-          {
-            name: "Provinsi",
-            href: "/provinces",
-            current: true,
-          },
-        ]}
+        breadcrumbs={breadcrumbs}
+        description={meta.description}
         title="Provinsi"
       />
       <PageContent>
