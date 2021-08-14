@@ -393,7 +393,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/1397612?v=4",
       "profile": "https://github.com/asaadam",
       "contributions": [
-        "code"
+        "code",
+        "security"
       ]
     },
     {
@@ -440,6 +441,25 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/49445216?v=4",
       "profile": "https://github.com/renomureza",
       "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "apraditya",
+      "name": "Adinda Praditya",
+      "avatar_url": "https://avatars.githubusercontent.com/u/70412?v=4",
+      "profile": "http://adindap.com",
+      "contributions": [
+        "security"
+      ]
+    },
+    {
+      "login": "albarranaufala",
+      "name": "Albarra Naufala Erdanto",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54704525?v=4",
+      "profile": "http://albarranaufala.github.io/albarra-portfolio",
+      "contributions": [
+        "bug",
         "code"
       ]
     }

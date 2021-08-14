@@ -1,0 +1,64 @@
+{
+  "application": [
+    {
+      "logo": "https://res.cloudinary.com/wargabantuwarga/image/upload/v1628867367/apps_supported/Alodokter_b7llry.png",
+      "link": "https://bit.ly/alodokter-isoman",
+      "name": "Alodokter"
+    },
+    {
+      "name": "Halodoc",
+      "link": "https://bit.ly/isoman_halodoc",
+      "logo": "https://res.cloudinary.com/wargabantuwarga/image/upload/v1628867367/apps_supported/Halodoc_jq3ods.png"
+    },
+    {
+      "name": "GetWell",
+      "link": "https://play.google.com/store/apps/details?id=id.paquesid.getwell",
+      "logo": "https://res.cloudinary.com/wargabantuwarga/image/upload/v1628867367/apps_supported/Getwell_bgfpiu.png"
+    },
+    {
+      "name": "KlinikGo",
+      "link": "https://klinikgo.com/isoman",
+      "logo": "https://res.cloudinary.com/wargabantuwarga/image/upload/v1628867367/apps_supported/Klinikgo_tpc4eg.png"
+    },
+    {
+      "name": "KlikDokter",
+      "link": "https://bit.ly/kd-kemenkes-isoman",
+      "logo": "https://res.cloudinary.com/wargabantuwarga/image/upload/v1628867367/apps_supported/Klikdokter_nyruus.png"
+    },
+    {
+      "name": "GrabHealth",
+      "link": "https://grab.onelink.me/2695613898/fe73b8c5",
+      "logo": "https://res.cloudinary.com/wargabantuwarga/image/upload/v1628867366/apps_supported/GrabHealth_n1g3qv.png"
+    },
+    {
+      "name": "Link Sehat",
+      "link": "https://link.linksehat.com/mRMf",
+      "logo": "https://res.cloudinary.com/wargabantuwarga/image/upload/v1628867366/apps_supported/Link_Sehat_d6e0qe.png"
+    },
+    {
+      "name": "Good Doctor",
+      "link": "https://gooddoctor.onelink.me/Cmiw/efeba7ae",
+      "logo": "https://res.cloudinary.com/wargabantuwarga/image/upload/v1628867366/apps_supported/Good_Doctor_k5qksj.png"
+    },
+    {
+      "name": "Milvik Dokter",
+      "link": "https://milvik.id/about-us/",
+      "logo": "https://res.cloudinary.com/wargabantuwarga/image/upload/v1628867366/apps_supported/Milvik_qkh3vv.png"
+    },
+    {
+      "name": "ProSehat",
+      "link": "https://prosehat.com/wa",
+      "logo": "https://res.cloudinary.com/wargabantuwarga/image/upload/v1628867366/apps_supported/Prosehat_p4unej.png"
+    },
+    {
+      "name": "SehatQ",
+      "logo": "https://res.cloudinary.com/wargabantuwarga/image/upload/v1628867366/apps_supported/SehatQ_wbltsx.png",
+      "link": "https://sehatqapp.onelink.me/bgzy?pid=kemenkes&c=sqkemenkes&deep_link_value=https%3A%2F%2Fwww.sehatq.com%2Ftelemed&af_web_dp=https%3A%2F%2Fwww.sehatq.com%2Ftelemed&af_dp=https%3A%2F%2Fwww.sehatq.com%2Ftelemed"
+    },
+    {
+      "name": "YesDok",
+      "link": "https://bit.ly/ISOMAN-YesDok",
+      "logo": "https://res.cloudinary.com/wargabantuwarga/image/upload/v1628867366/apps_supported/YesDok_m1eu0b.png"
+    }
+  ]
+}
