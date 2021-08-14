@@ -1,5 +1,22 @@
 # Contributing to WargaBantuWarga
 
+- [How to contribute](#how-to-contribute)
+  - [Finding or creating issues](#finding-or-creating-issues)
+    - [Open Issues](#open-issues)
+    - [Closed Issues](#closed-issues)
+    - [For Beginners: `good first issue` label](#for-beginners-good-first-issue-label)
+  - [Working on issues](#working-on-issues)
+    - [Getting ready](#getting-ready)
+    - [Issue assignment & Communication](#issue-assignment--communication)
+    - [Creating a Draft Pull Request](#creating-a-draft-pull-request)
+    - [Formatting Pull Request Description](#formatting-pull-request-description)
+- [FAQ](#faq)
+  - [Why are we using English in our issues & PRs?](#why-are-we-using-english-in-our-issues--prs)
+- [Additional Notes](#additional-notes)
+  - [Issue and Pull Request Labels](#issue-and-pull-request-labels)
+    - [Type of Issue and Issue State](#type-of-issue-and-issue-state)
+    - [Topic Categories](#topic-categories)
+
 ## How to contribute
 
 In this project, we are heavily utilising GitHub features to document and signal any progress in the website development.
@@ -29,7 +46,7 @@ How to find issues with `good first issue` label:
 
 ### Working on issues
 
-#### Get ready
+#### Getting ready
 
 Before working on an issue, please make sure to:
 

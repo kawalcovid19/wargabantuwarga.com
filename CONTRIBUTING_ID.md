@@ -1,5 +1,22 @@
 # Berkontribusi ke WargaBantuWarga
 
+- [Cara berkontribusi](#cara-berkontribusi)
+  - [Menemukan atau membuat _issues_](#menemukan-atau-membuat-issues)
+    - [_Open Issues_](#open-issues)
+    - [_Closed Issues_](#closed-issues)
+    - [Untuk Pemula: label _`good first issue`_](#untuk-pemula-label-good-first-issue)
+  - [Panduan bekerja](#panduan-bekerja)
+    - [Persiapan](#persiapan)
+    - [Penugasan _issue_ & komunikasi](#penugasan-issue--komunikasi)
+    - [Pembuatan _Draft Pull Request_](#pembuatan-draft-pull-request)
+    - [Pemberian deskripsi _pull pequest_](#pemberian-deskripsi-pull-request)
+- [Pertanyaan yang sering ditanyakan](#pertanyaan-yang-sering-ditanyakan)
+  - [Mengapa kita menggunakan bahasa Inggris dalam menulis _issue_ dan _pull request_?](#mengapa-kita-menggunakan-bahasa-inggris-dalam-menulis-issue-dan-pull-request)
+- [Catatan Tambahan](#catatan-tambahan)
+  - [Label pada _issue_ dan _pull request_](#label-pada-issue-dan-pull-request)
+    - [Tipe _Issue_ and _Issue State_](#tipe-issue-and-issue-state)
+    - [Kategori](#kategori)
+
 ## Cara berkontribusi
 
 Dalam proyek ini, kita memaksimalkan penggunaan fitur-fitur GitHub untuk mendokumentasikan dan memberikan sinyal terhadap kemajuan apapun dalam pengerjaan website ini.
@@ -80,7 +97,7 @@ Langkah-langkah untuk membuat _Draft Pull Request_:
 5. Pilih _Create draft pull request_ (seperti pada gambar di atas) dan klik tombol berwarna hijau.
 6. Jangan lupa untuk menandai _Draft Pull Request_ Anda sebagai _Ready for review_ ketika Anda sudah melakukan semua perubahan yang diinginkan.
 
-#### Pemberian Deskripsi _Pull Request_
+#### Pemberian deskripsi _pull request_
 
 Agar _pull request_ dapat berkaitan dengan _issue_, ada 1 syarat teks yang
 harus dimasukkan ke dalam deskripsinya. Harap pastikan Anda menyebutkan nomor
