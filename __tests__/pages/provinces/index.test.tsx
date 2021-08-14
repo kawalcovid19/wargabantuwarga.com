@@ -58,44 +58,25 @@ describe("ProvincesPage", () => {
     ).toBeVisible();
   });
 
-  it("renders the provinces list kebutuhan entry count correctly", async () => {
-    const checkRenderKebutuhanEntryCount = async (
-      kebutuhan: string,
-      entryCount: number,
-    ) => {
+  it.each`
+    kebutuhan           | count
+    ${"Ambulans"}       | ${provinceListItem.ambulansCount}
+    ${"Rumah%20sakit"}  | ${provinceListItem.rsCount}
+    ${"Oksigen"}        | ${provinceListItem.oksigenCount}
+    ${"Donor%20plasma"} | ${provinceListItem.donorPlasmaCount}
+  `(
+    "renders the entry count of kebutuhan $kebutuhan in province list correctly",
+    async ({ kebutuhan, count }) => {
       await router.push(`/provinces?kebutuhan=${kebutuhan}`);
-      const { unmount } = render(
-        <ProvincesPage provincesList={provinceList} />,
-      );
+      render(<ProvincesPage provincesList={provinceList} />);
 
       const provinceLink = screen.getByRole("link", {
         name: /informasi faskes & alkes untuk covid-19 di provinsi/i,
       });
 
-      expect(
-        within(provinceLink).getByText(`${entryCount} Entri`),
-      ).toBeVisible();
-
-      unmount();
-    };
-
-    await checkRenderKebutuhanEntryCount(
-      "Ambulans",
-      provinceListItem.ambulansCount,
-    );
-    await checkRenderKebutuhanEntryCount(
-      "Rumah%20sakit",
-      provinceListItem.rsCount,
-    );
-    await checkRenderKebutuhanEntryCount(
-      "Oksigen",
-      provinceListItem.oksigenCount,
-    );
-    await checkRenderKebutuhanEntryCount(
-      "Donor%20plasma",
-      provinceListItem.donorPlasmaCount,
-    );
-  });
+      expect(within(provinceLink).getByText(`${count} Entri`)).toBeVisible();
+    },
+  );
 
   it("renders the SEO text correctly", () => {
     const { date, monthStr } = dateMockBuilder();
