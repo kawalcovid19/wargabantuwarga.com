@@ -1,5 +1,22 @@
 # Contributing to WargaBantuWarga
 
+- [How to contribute](#how-to-contribute)
+  - [Finding or creating issues](#finding-or-creating-issues)
+    - [Open Issues](#open-issues)
+    - [Closed Issues](#closed-issues)
+    - [For Beginners: `good first issue` label](#for-beginners-good-first-issue-label)
+  - [Working on issues](#working-on-issues)
+    - [Getting ready](#getting-ready)
+    - [Issue assignment & Communication](#issue-assignment--communication)
+    - [Creating a Draft Pull Request](#creating-a-draft-pull-request)
+    - [Formatting Pull Request Description](#formatting-pull-request-description)
+- [FAQ](#faq)
+  - [Why are we using English in our issues & PRs?](#why-are-we-using-english-in-our-issues--prs)
+- [Additional Notes](#additional-notes)
+  - [Issue and Pull Request Labels](#issue-and-pull-request-labels)
+    - [Type of Issue and Issue State](#type-of-issue-and-issue-state)
+    - [Topic Categories](#topic-categories)
+
 ## How to contribute
 
 In this project, we are heavily utilising GitHub features to document and signal any progress in the website development.
@@ -27,17 +44,35 @@ How to find issues with `good first issue` label:
 1. The easiest way is to go into the `github.com/<owner>/<repository>/contribute` link. In this case, you can go into [this link](https://github.com/kawalcovid19/wargabantuwarga.com/contribute). That link will list all of the issues with the `good first issue` label.
 2. Another way is to head over into the [Issues](https://github.com/kawalcovid19/wargabantuwarga.com/issues) section of the repository, then click the Labels section beside Milestones. There you can see a lot of labels for the issues in the repository. Then find and click the `good first issue` label.
 
-### Start working on issues
+### Working on issues
 
-Before working on an issue, there are a few things that you need to pay attention to:
+#### Getting ready
 
-1. Is there any other contributors working on it? You can try to find any existing pull requests before deciding to start working on the issue.
-2. To start working on it, ensure that you create a new branch from the `main` branch, then commit and push your changes **as soon as possible** no matter how small they are.
-3. Then **create a new pull request** while [marking it as a **draft pull request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/) to signal the other contributors that [it's a work in progress](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request). This is necessary to signal the other contributors that there are work in progress for that particular issue.
+Before working on an issue, please make sure to:
 
-### Utilising Draft Pull Requests for Communication
+1. Fork the repo properly. Even you have done it before, it's still advised that you read / skim [the official guide](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository).
+2. Clone **your forked repository** and set it up by following the [Getting Started guide](https://github.com/kawalcovid19/wargabantuwarga.com#getting-started).
+3. Check any open [pull requests](https://github.com/kawalcovid19/wargabantuwarga.com/pulls) that no one is working on the issue.
+4. Create a new branch from the `main` branch.
 
-Draft Pull Requests is a feature provided by GitHub as a means to communicate with contributors. When we create a Draft Pull Request, we can't merge it until it's marked as Ready for review. This is a better approach to use as a communication tool between contributors, and we can provide information that we are currently working on an issue.
+#### Issue assignment & Communication
+
+Once you're ready with your branch and have something to contribute, you'll want to
+let everyone know that you are working on the issue. To communicate this, we
+are using GitHub's Draft Pull Requests.
+
+Draft Pull Request is like a regular Pull Request but it can't be merged until
+it's marked as "ready for review". It signals other contributors that [it's a
+work in progress](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request).
+This is necessary to signal other contributors that the work for the particular
+issue has started and it is still in progress. Also, it is a better approach to
+use as a communication tool between contributors because we can provide
+additional information other than viewing the changed files.
+
+Therefore, when you have at least one commit **it's important to create a Draft
+Pull Request** to let everyone know that the issue is assigned to you.
+
+#### Creating a Draft Pull Request
 
 Steps to creating a Draft Pull Request:
 
@@ -46,9 +81,26 @@ Steps to creating a Draft Pull Request:
    ![Hint-1](https://user-images.githubusercontent.com/46013258/126284390-c2bd1aa6-fdc2-4aa6-a945-031f02db038e.png)
 3. Pick your forked repository for the head repository, and compare with the branch that you are having changes in.
    ![Hint-2](https://user-images.githubusercontent.com/46013258/126285036-27b49325-62a2-4a6c-b216-5bae261788da.png)
-4. Put a title and some description in your pull request, then pick Create draft pull request (like in the image below) and hit the green button.
+4. Put a clear title and description in your pull request. Make sure the
+   description follows [our guide below](#formatting-pull-request-description).
    ![Hint-3](https://user-images.githubusercontent.com/46013258/126286179-04341e30-1224-49cb-9b9a-3c3aee99c308.png)
-5. Don't forget to mark your Draft Pull Request as Ready for review after you commit all of the changes.
+5. Pick Create draft pull request (like in the image above) and hit the green button.
+6. Don't forget to mark your Draft Pull Request as Ready for review after you commit all of the changes.
+
+#### Formatting Pull Request Description
+
+To properly [link a pull request to an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue), there is one tiny requirement text to put in a Pull Request description.
+Please make sure to mention the issue that you're working on correctly. Replace
+this text `<!-- mention the issue that you're trying to close with this PR -->`
+from the template with the issue number. Example:
+
+```markdown
+Closes #318
+
+## Description
+
+Update **`Start working on Issues`** section with clearer instructions on getting ready to work on an issue.
+```
 
 ## FAQ
 
