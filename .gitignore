@@ -53,3 +53,7 @@ public/sitemap-*.xml
 # service-worker.js
 service-worker.js.map
 workbox-*
+
+# Cypress
+cypress/videos
+cypress/screenshots
