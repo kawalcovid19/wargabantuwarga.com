@@ -37,7 +37,7 @@ export const GhostedAnchorButton = React.forwardRef<
         buttonBlockStyles(block, iconPosition),
         buttonSizes(size),
         buttonRoundedStyles(rounded, size),
-        "items-center border border-transparent font-medium text-blue-700 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
+        "items-center justify-center border border-transparent font-medium text-blue-700 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
         disabledStyles,
         className,
       )}

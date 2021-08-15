@@ -13,11 +13,13 @@ jobs:
     if: ${{ github.event.label.name == 'need-perf-check' }}
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
+      - name: Setup Node.js 14.x
+        uses: actions/setup-node@v1
         with:
-          node-version: "14"
+          node-version: "14.x"
 
       - name: Wait for the Netlify Preview
         uses: jakepartusch/wait-for-netlify-action@v1
