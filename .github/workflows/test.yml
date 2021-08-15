@@ -11,13 +11,22 @@ jobs:
     name: Install dependencies
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js 14.x
+        uses: actions/setup-node@v1
         with:
-          node-version: "14"
-      - run: yarn install --frozen-lockfile
-      - run: yarn run mirror-box
-      - uses: actions/cache@v1
+          node-version: "14.x"
+
+      - name: Install locked dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Fetch the latest data
+        run: yarn run mirror-box
+
+      - name: Cache dependencies
+        uses: actions/cache@v1
         id: cache-deps
         with:
           path: "."
@@ -28,15 +37,20 @@ jobs:
     runs-on: ubuntu-latest
     needs: install-deps
     steps:
-      - uses: actions/cache@v1
+      - name: Restore cached dependencies
+        uses: actions/cache@v1
         id: restore-deps
         with:
           path: "."
           key: ${{ github.sha }}
-      - uses: actions/setup-node@v1
+
+      - name: Setup Node.js 14.x
+        uses: actions/setup-node@v1
         with:
-          node-version: "14"
-      - run: yarn run lint
+          node-version: "14.x"
+
+      - name: Lint files
+        run: yarn run lint
         env:
           CI: true
 
@@ -45,15 +59,20 @@ jobs:
     runs-on: ubuntu-latest
     needs: install-deps
     steps:
-      - uses: actions/cache@v1
+      - name: Restore cached dependencies
+        uses: actions/cache@v1
         id: restore-deps
         with:
           path: "."
           key: ${{ github.sha }}
-      - uses: actions/setup-node@v1
+
+      - name: Setup Node.js 14.x
+        uses: actions/setup-node@v1
         with:
-          node-version: "14"
-      - run: yarn run type-check
+          node-version: "14.x"
+
+      - name: Perform type checking
+        run: yarn run type-check
         env:
           CI: true
 
@@ -62,17 +81,55 @@ jobs:
     runs-on: ubuntu-latest
     needs: install-deps
     steps:
-      - uses: actions/cache@v1
+      - name: Restore cached dependencies
+        uses: actions/cache@v1
         id: restore-deps
         with:
           path: "."
           key: ${{ github.sha }}
-      - uses: actions/setup-node@v1
+
+      - name: Setup Node.js 14.x
+        uses: actions/setup-node@v1
         with:
-          node-version: "14"
-      - run: yarn run test
+          node-version: "14.x"
+
+      - name: Run Jest
+        run: yarn run test
         env:
           CI: true
-      - uses: codecov/codecov-action@v2
+
+      - name: Upload code coverage reports to Codecov
+        uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+
+  e2e:
+    name: End-to-end tests
+    runs-on: ubuntu-latest
+    needs: install-deps
+    steps:
+      - name: Restore cached dependencies
+        uses: actions/cache@v1
+        id: restore-deps
+        with:
+          path: "."
+          key: ${{ github.sha }}
+
+      - name: Setup Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+
+      - name: Install Cypress
+        run: yarn cypress install
+
+      - name: Run Cypress
+        uses: cypress-io/github-action@v2
+        with:
+          record: true
+          start: yarn dev
+          wait-on: 'http://localhost:3000'
+        env:
+          CI: true
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
