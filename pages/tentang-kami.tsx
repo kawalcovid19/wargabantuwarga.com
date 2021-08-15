@@ -115,13 +115,13 @@ export default function AboutPage() {
             <h2 className="text-center font-semibold text-gray-700 text-lg">
               Terima kasih kepada para kolaborator inisiatif #WargaBantuWarga
             </h2>
-            <div className="flex flex-wrap justify-center items-center space-x-4 space-y-4 relative">
+            <div className="flex flex-wrap justify-center items-center relative">
               {collaboratorsData.collaborators.map(
                 (collaborator: Collaborator) => {
                   return (
                     <a
                       key={collaborator.link_url}
-                      className="flex justify-center items-center relative h-16 w-24"
+                      className="flex justify-center items-center relative h-16 w-24 m-1"
                       href={collaborator.link_url}
                       rel="nofollow noopener noreferrer"
                       target="_blank"
