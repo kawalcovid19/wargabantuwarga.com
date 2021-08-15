@@ -14,7 +14,7 @@ describe("ReportButton", () => {
   it("renders correctly", () => {
     render(<ReportButton contact={contact} provinceName={province.name} />);
 
-    expect(screen.getByText(/laporkan kesalahan/gi)).toBeInTheDocument();
+    expect(screen.getByText(/laporkan kesalahan/i)).toBeVisible();
   });
 
   it("opens the form link with correct query params on click", () => {

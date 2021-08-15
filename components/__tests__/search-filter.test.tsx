@@ -32,7 +32,7 @@ describe("SearchFilter", () => {
       />,
     );
 
-    expect(screen.getByText(/kategori/gi)).toBeInTheDocument();
+    expect(screen.getByText(/kategori/i)).toBeVisible();
   });
 
   it("renders non existing filter correctly", () => {
@@ -60,7 +60,7 @@ describe("SearchFilter", () => {
       />,
     );
 
-    expect(screen.getByText(/kategori/gi)).toBeInTheDocument();
+    expect(screen.getByText(/kategori/i)).toBeVisible();
     expect(screen.getAllByRole("option")).toHaveLength(6);
   });
 });

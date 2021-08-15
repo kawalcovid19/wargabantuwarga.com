@@ -8,10 +8,9 @@ describe("HomePageTelemedicineCta", () => {
       "Telemedicine Gratis (Inisiatif Beberapa Dokter) - Cek Sekarang",
     );
 
-    expect(imgTelemedicine).toBeInTheDocument();
-    expect(imgTelemedicine).toHaveAttribute(
-      "src",
-      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    );
+    const navigationImg = imgTelemedicine.closest("a");
+
+    expect(imgTelemedicine).toBeVisible();
+    expect(navigationImg).toHaveAttribute("href", "/telemedicine");
   });
 });

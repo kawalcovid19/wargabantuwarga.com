@@ -7,6 +7,8 @@ describe("GlobalHeader", () => {
   it("renders correctly", () => {
     render(<GlobalHeader />);
 
-    expect(screen.getByText("Warga Bantu Warga")).toBeInTheDocument();
+    const homeText = screen.getByText("Warga Bantu Warga");
+    expect(homeText).toBeVisible();
+    expect(homeText.closest("a")).toHaveAttribute("href", "/");
   });
 });

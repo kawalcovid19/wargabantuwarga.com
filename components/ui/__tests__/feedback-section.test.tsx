@@ -7,7 +7,7 @@ describe("FooterDiscussionSection", () => {
     const textSection = screen.getByText("Sampaikan masukan Anda");
     const anchorTextSection = textSection.closest("a");
 
-    expect(textSection).toBeInTheDocument();
+    expect(textSection).toBeVisible();
     expect(anchorTextSection).toHaveAttribute(
       "href",
       "https://kcov.id/wbw-discuss",

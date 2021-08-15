@@ -5,7 +5,7 @@ describe("ChatbotSection", () => {
   it("renders section correctly", () => {
     render(<ChatbotSection />);
 
-    expect(screen.getByText("CovidAsha Chatbot 24x7")).toBeInTheDocument();
+    expect(screen.getByText("CovidAsha Chatbot 24x7")).toBeVisible();
     expect(screen.getByRole("link")).toHaveAttribute(
       "href",
       "https://bit.ly/hotlinewarga",

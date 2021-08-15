@@ -5,16 +5,31 @@ import { bottomNavigation } from "~/lib/layout/navigation-data";
 
 jest.mock("next/router", () => require("next-router-mock"));
 
+const navigations = bottomNavigation.map((item) => [
+  item.name,
+  item.href,
+  Boolean(item.external),
+]);
+
 describe("Navigation", () => {
-  it("renders the styling correctly", () => {
-    render(<Navigation />);
+  it.each(navigations)(
+    "should render %s and link it to %s correctly",
+    (name, href, external) => {
+      render(<Navigation />);
+      const navigationItem = screen.getByText(name as string);
+      const navigationLink = navigationItem.closest("a");
 
-    const homeText = screen.getByText("Beranda");
-    const anchorHome = homeText.closest("a");
+      expect(navigationItem).toBeVisible();
 
-    expect(homeText).toBeInTheDocument();
-    expect(anchorHome).toHaveAttribute("href", "/");
-  });
+      if (external) {
+        expect(navigationLink).toHaveAttribute("target", "_blank");
+        expect(navigationLink).toHaveAttribute(
+          "rel",
+          "nofollow noopener noreferrer",
+        );
+      } else expect(navigationLink).toHaveAttribute("href", href);
+    },
+  );
 
   it.each(
     bottomNavigation.map((item) => [item.name, item.href, item.external]),

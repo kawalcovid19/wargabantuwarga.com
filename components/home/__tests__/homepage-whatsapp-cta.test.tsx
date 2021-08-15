@@ -6,8 +6,12 @@ describe("HomePageContributing", () => {
   it("renders correctly", () => {
     render(<HomePageWhatsAppCTA />);
 
-    const infoText = screen.getByText("Masih belum dapat info yang kamu cari?");
-    expect(infoText).toBeInTheDocument();
+    const infoText = screen.getByText("Hubungi hotline sekarang");
+    expect(infoText).toBeVisible();
+    expect(infoText.closest("a")).toHaveAttribute(
+      "href",
+      "https://bit.ly/hotlinewarga",
+    );
   });
 
   it("navigates to the configured WhatsApp contact URL", () => {

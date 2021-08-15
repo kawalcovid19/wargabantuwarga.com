@@ -16,7 +16,8 @@ describe("SearchForm", () => {
       />,
     );
 
-    expect(screen.getByText(/cari provinsi/gi)).toBeInTheDocument();
+    const searchForm = screen.getByRole("textbox", { name: /cari provinsi/i });
+    expect(searchForm).toBeVisible();
   });
 
   it("has the correct form label based on type", () => {

@@ -8,7 +8,7 @@ describe("Alert", () => {
   it("renders correctly", () => {
     render(<Alert>Test Alert</Alert>);
 
-    expect(screen.getByText("Test Alert")).toBeInTheDocument();
+    expect(screen.getByRole("alert")).toBeVisible();
   });
 
   it("renders with correct customization", () => {

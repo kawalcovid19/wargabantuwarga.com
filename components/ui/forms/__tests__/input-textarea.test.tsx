@@ -1,10 +1,15 @@
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { InputTextarea } from "../input-textarea";
 
 describe("InputText", () => {
   it("renders correctly", () => {
-    render(<InputTextarea />);
+    const { container } = render(<InputTextarea />);
 
-    expect(screen.getByRole("textbox")).toBeInTheDocument();
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      <textarea
+        class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full text-sm border-gray-300 rounded-md"
+        rows="4"
+      />
+    `);
   });
 });
