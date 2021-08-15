@@ -16,8 +16,10 @@ describe("Navigation", () => {
     "should render %s and link it to %s correctly",
     (name, href, external) => {
       render(<Navigation />);
-      const navigationItem = screen.getByText(name as string);
-      const navigationLink = navigationItem.closest("a");
+      const nameItem = name as string;
+
+      const navigationItem = screen.getByText(nameItem);
+      const navigationLink = screen.getByRole("link", { name: nameItem });
 
       expect(navigationItem).toBeVisible();
 
