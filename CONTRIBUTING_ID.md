@@ -112,6 +112,15 @@ Closes #318
 Update **`Start working on Issues`** section with clearer instructions on getting ready to work on an issue.
 ```
 
+### GitHub Action
+
+Kami menganjurkan untuk menonaktifkan GitHub Action pada _repository_ yang telah di-_forked_
+
+1.  Masuk ke _Setting_ pada _repository_ yang telah di-_forked_
+2.  Pilih _Action_ pada _sidebar_
+3.  _Disable Actions_
+    ![Disable-actions](https://user-images.githubusercontent.com/35433920/129485485-ca7d1202-5dbc-46f7-b823-978d3f4ed600.png)
+
 ## Pertanyaan yang sering ditanyakan
 
 ### Mengapa kita menggunakan bahasa Inggris dalam menulis _issue_ dan _pull request_?

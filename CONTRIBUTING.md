@@ -102,6 +102,15 @@ Closes #318
 Update **`Start working on Issues`** section with clearer instructions on getting ready to work on an issue.
 ```
 
+### GitHub Action
+
+We recommend contributors to disable GitHub action on your forked repository.
+
+1.  Go to Setting on your forked repository
+2.  Choose Action on sidebar
+3.  Disable Actions
+    ![Disable-actions](https://user-images.githubusercontent.com/35433920/129485485-ca7d1202-5dbc-46f7-b823-978d3f4ed600.png)
+
 ## FAQ
 
 ### Why are we using English in our issues & PRs?
