@@ -8,21 +8,29 @@ on:
 
 jobs:
   deploy:
+    name: Scheduled Deployment
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Use Node.js 14.x
+      - name: Setup Node.js 14.x
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
 
-      - run: yarn
-      - run: yarn run netlify-export
+      - name: Install dependencies
+        run: yarn
 
-      - run: yarn global add netlify-cli@4.1.2
-      - run: netlify deploy --prod --dir=out --message "GitHub Actions"
+      - name: Build and export static assets
+        run: yarn run netlify-export
+
+      - name: Install Netlify CLI
+        run: yarn global add netlify-cli@4.1.2
+
+      - name: Deploy to Netlify
+        run: netlify deploy --prod --dir=out --message "GitHub Actions"
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
