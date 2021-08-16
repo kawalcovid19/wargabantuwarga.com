@@ -9,11 +9,16 @@
     - [Persiapan](#persiapan)
     - [Penugasan _issue_ & komunikasi](#penugasan-issue--komunikasi)
     - [Pembuatan _Draft Pull Request_](#pembuatan-draft-pull-request)
-    - [Pemberian deskripsi _pull pequest_](#pemberian-deskripsi-pull-request)
+    - [Pemberian deskripsi _pull request_](#pemberian-deskripsi-pull-request)
     - [Menonaktifkan GitHub Actions](#menonaktifkan-github-actions)
 - [Pertanyaan yang sering ditanyakan](#pertanyaan-yang-sering-ditanyakan)
   - [Mengapa kita menggunakan bahasa Inggris dalam menulis _issue_ dan _pull request_?](#mengapa-kita-menggunakan-bahasa-inggris-dalam-menulis-issue-dan-pull-request)
 - [Catatan Tambahan](#catatan-tambahan)
+  - [_Commitlint_](#commitlint)
+- [Referensi](#referensi)
+  - [_Conventional Commits_](#conventional-commits)
+    - [_Commit types_](#commit-types)
+    - [_Commit scopes_](#commit-scopes)
   - [Label pada _issue_ dan _pull request_](#label-pada-issue-dan-pull-request)
     - [Tipe _Issue_ and _Issue State_](#tipe-issue-and-issue-state)
     - [Kategori](#kategori)
@@ -133,6 +138,88 @@ Ada beberapa alasan mengapa kita menggunakan bahasa Inggris ketika berkomunikasi
 3. Menggunakan bahasa Inggris membuat proyek ini lebih mudah diakui secara global. Apabila kita ingin mendapatkan dukungan dari komunitas global, mereka lebih mudah memahami tujuan kita, sehingga mereka lebih mudah untuk meluangkan waktu dan keahlian mereka untuk membantu membuat proyek ini lebih baik. Contohnya menyediakan _free credits_ untuk layanan mereka, mengadvokasikan proyek ini kepada pemimpin dunia, atau berkontribusi langsung ke proyek kita.
 
 ## Catatan Tambahan
+
+### _Commitlint_
+
+Pada _repository_ dengan kontributor yang banyak seperti ini, memahami
+apa yang terjadi di dalamnya dan dapat menyelusuri di antara _commits_
+adalah hal yang sangat penting. Terlebih lagi dengan berbagai macam tingkat
+dan latar belakang, pesan _commit_ bisa membingungkan dan strukturnya bisa
+mengikuti pendekatan yang berbeda.
+
+Untuk menangani hal ini, pengurus mengadopsi [commit conventions](https://www.conventionalcommits.org/en/)
+agar para kontributor dapat menambahkan makna yang berkaitan (_semantic_)
+pada _git history_. Kita menggunakan [commitlint](https://commitlint.js.org/)
+untuk me-_lint_ pesan-pesan _commit_. Dalam menggalakkan konvensi ini, kita
+menggunakan _git hook_ untuk menjalankan _commitlint_ pada saat _git commit_.
+_git_hook_ ini mencegah proses _commit_ jika pesannya tidak memenuhi konvensi
+itu.
+
+Membaca sekilas [commit conventions](https://www.conventionalcommits.org/en/)
+adalah disarankan untuk mengetahui lebih lanjut manfaat-manfaatnya. Jika Anda
+memiliki kendala apapun dengan konvensi ini, Anda bisa menggunakan [situs ini](https://commitlint.io/)
+untuk membantu.
+
+Harap merujuk kepada daftar [commit types](#commit-types) dan [scopes](#commit-scopes)
+yang kita pakai untuk menghindari penambahan _scope_ baru yang bermakna
+serupa atau yang merupakan sinonim dari _scope_ yang sudah dipakai.
+
+## Referensi
+
+### _Conventional Commits_
+
+Spesifikasi konvensi seperti ini:
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+#### _Commit types_
+
+Ini adalah _commit types_ yang kita pakai:
+
+- `build`
+- `chore`
+- `docs`
+- `feat`
+- `fix`
+- `perf`
+- `refactor`
+- `style`
+- `test`
+
+#### _Commit scopes_
+
+Ini adalah _commit scopes_ yang kita pakai:
+
+- `assets`
+- `ci`
+- `cms`
+- `components`
+  - `donasi`
+  - `education`
+  - `home`
+  - `json-ld`
+  - `kontak-darurat`
+  - `layout`
+  - `telemedicine`
+- `cypress`
+- `deps`
+- `dx`
+- `e2e`
+- `fetcher`
+- `pages`
+  - `faq`
+  - `isoman`
+- `security`
+- `seo`
+- `ui`
+
+**Catatan:** Jika ada _scope_ terdaftar di level kedua, cukup gunakan level terendah (yang kedua tersebut).
 
 ### Label pada _issue_ dan _pull request_
 
