@@ -16,7 +16,7 @@ export function HomepageSupportedApps() {
         {supportedApps.application.map((app, index) => (
           <li
             key={index}
-            className="inline-flex flex-col items-center justify-center text-center relative  py-3 px-2"
+            className="inline-flex flex-col items-center justify-center text-center relative"
           >
             <a
               className="border-solid border-2 border-gray-300 border-opacity-75 rounded-lg hover:border-light-blue-700 min-w-full h-20 relative"
