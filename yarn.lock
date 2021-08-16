@@ -2357,6 +2357,11 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
+"@kawalcovid19/tailwind-preset-wbw@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@kawalcovid19/tailwind-preset-wbw/-/tailwind-preset-wbw-0.1.1.tgz#5ba64d99e0277c432d59d9351115797a45afae73"
+  integrity sha512-97o2v2PAcUcaeOw8f11P0hjpEZzwybwAGuN79Kfe+Ct7fabko9VHpRm9eKi1dGTYVKo7j6V/TmJOjhBStDrzlw==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
