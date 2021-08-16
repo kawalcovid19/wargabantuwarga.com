@@ -1,6 +1,6 @@
 ---
 last_updated_time: 2021-08-09T15:00:00.655Z
-thumbnail_image: https://res.cloudinary.com/wargabantuwarga/image/upload/v1628562337/128723750-85eeba33-e7fc-48c3-bcac-bec153de705b_ptasae.png
+thumbnail_image: https://res.cloudinary.com/wargabantuwarga/image/upload/v1629108304/banners/about-page_ebdrzr.png
 title: "#WargaBantuWarga"
 description: "#WargaBantuWarga adalah inisiatif warga untuk berbagi informasi
   dan saling membantu warga membutuhkan yang terdampak Covid-19. "
