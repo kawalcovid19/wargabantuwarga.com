@@ -12,6 +12,7 @@ import { HomePageSection } from "~/components/home/homepage-section";
 import { HomePageStart } from "~/components/home/homepage-start";
 // import { HomePageTelemedicineCTA } from "~/components/home/homepage-telemedicine-cta";
 import { HomePageWelcome } from "~/components/home/homepage-welcome";
+import { HomepageSupportedApps } from "~/components/home/homepage-supported-apps";
 import { HomePageWhatsAppCTA } from "~/components/home/homepage-whatsapp-cta";
 import { Page } from "~/components/layout/page";
 import { Container } from "~/components/ui/container";
@@ -42,6 +43,7 @@ const HomePage = (props: HomePageProps) => (
         <HomePageContributing />
         <HomePageDonation />
         <HomePageTelemedicineCTA />
+        <HomepageSupportedApps />
         <HomePageWhatsAppCTA />
         <HomePageWelcome />
         <HomePageSection className="px-4 py-6">
