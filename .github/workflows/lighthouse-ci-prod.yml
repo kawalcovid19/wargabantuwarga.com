@@ -6,6 +6,7 @@ on:
 
 jobs:
   lhci:
+    if: github.repository == 'kawalcovid19/wargabantuwarga.com'
     name: Run Lighthouse CI on Production
     runs-on: ubuntu-latest
 
