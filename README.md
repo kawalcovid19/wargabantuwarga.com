@@ -12,7 +12,7 @@
 
 A society initiative to circulate information about health facilities and devices for COVID-19.
 
-## Purpose and Principles
+## Purpose, Principles, and Guidelines
 
 The purpose of this website is to republish publicly accessible Google Docs to be more mobile-friendly and performant.
 
@@ -49,6 +49,16 @@ We must carefully consider any additional client-side libraries that we include 
 #### ❌ Unmeasured Improvements
 
 For any improvements on the website, we should continuously measure its impact on the [Core Web Vitals](https://web.dev/vitals/). If proven to hurt the metrics, we should revert the changes and find another way to implement them without degrading the performance.
+
+### Testing Guidelines
+
+In general, these are three guidelines that we need to pay attention to:
+
+1. [Query priorities](https://testing-library.com/docs/queries/about#priority)
+2. [Testing appearance and disappearance](https://testing-library.com/docs/guide-disappearance/)
+3. [Opting in for interactions instead of events](https://testing-library.com/docs/guide-events/#interactions-vs-events)
+
+Please ensure that all queries and assertions in your test files comply with those testing guidelines.
 
 ## Getting Started
 
@@ -93,11 +103,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Tailwind UI](https://tailwindui.com/)
 
-## Supporter
+## Supporters
 
-Special thanks goes to our supporter.
+Special thanks goes to our supporters.
 
-<p align="center"><a href="https://www.gitbook.com/" target="_blank" rel="noopener noreferrer"><img width="300" src="https://user-images.githubusercontent.com/56619123/128886904-5887e9e2-e444-4db5-81f8-5cd33a3d79ad.png" alt="GitBook Logo"></a></p>
+<p align="center"><a href="https://www.gitbook.com/" target="_blank" rel="noopener noreferrer"><img height="80" src="https://user-images.githubusercontent.com/56619123/128886904-5887e9e2-e444-4db5-81f8-5cd33a3d79ad.png" alt="GitBook Logo"></a> <a href="https://www.cypress.io/" target="_blank" rel="noopener noreferrer"><img height="80" alt="Cypress" src="https://user-images.githubusercontent.com/5663877/129580266-2c4ac4a9-8a9b-4e2d-b0cd-2e3ea8568333.png" /></a></p>
 
 ## Contributing
 
