@@ -107,7 +107,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 Special thanks goes to our supporter.
 
-<p align="center"><a href="https://www.gitbook.com/" target="_blank" rel="noopener noreferrer"><img width="300" src="https://user-images.githubusercontent.com/56619123/128886904-5887e9e2-e444-4db5-81f8-5cd33a3d79ad.png" alt="GitBook Logo"></a></p>
+<p align="center"><a href="https://www.gitbook.com/" target="_blank" rel="noopener noreferrer"><img height="80" src="https://user-images.githubusercontent.com/56619123/128886904-5887e9e2-e444-4db5-81f8-5cd33a3d79ad.png" alt="GitBook Logo"></a> <a href="https://www.cypress.io/" target="_blank" rel="noopener noreferrer"><img height="80" alt="Cypress" src="https://user-images.githubusercontent.com/5663877/129580266-2c4ac4a9-8a9b-4e2d-b0cd-2e3ea8568333.png" /></a></p>
 
 ## Contributing
 
