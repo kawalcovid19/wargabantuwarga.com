@@ -48,6 +48,7 @@ export default function ContactPage({
             current: true,
           },
         ]}
+        description={meta.description}
         title={contact.penyedia ?? "N/A"}
       />
       <PageContent>
