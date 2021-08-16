@@ -10,6 +10,7 @@
     - [Penugasan _issue_ & komunikasi](#penugasan-issue--komunikasi)
     - [Pembuatan _Draft Pull Request_](#pembuatan-draft-pull-request)
     - [Pemberian deskripsi _pull pequest_](#pemberian-deskripsi-pull-request)
+    - [Menonaktifkan GitHub Action](#menonaktifkan-github-action)
 - [Pertanyaan yang sering ditanyakan](#pertanyaan-yang-sering-ditanyakan)
   - [Mengapa kita menggunakan bahasa Inggris dalam menulis _issue_ dan _pull request_?](#mengapa-kita-menggunakan-bahasa-inggris-dalam-menulis-issue-dan-pull-request)
 - [Catatan Tambahan](#catatan-tambahan)
@@ -112,7 +113,7 @@ Closes #318
 Update **`Start working on Issues`** section with clearer instructions on getting ready to work on an issue.
 ```
 
-### GitHub Action
+### Menonaktifkan GitHub Action
 
 Kami menganjurkan untuk menonaktifkan GitHub Action pada _repository_ yang telah di-_forked_
 
