@@ -102,12 +102,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 - [Convert .ico](https://icoconvert.com)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Tailwind UI](https://tailwindui.com/)
+- [Testing Playground](https://testing-playground.com/)
 
 ## Supporters
 
 Special thanks goes to our supporters.
 
-<p align="center"><a href="https://www.gitbook.com/" target="_blank" rel="noopener noreferrer"><img height="80" src="https://user-images.githubusercontent.com/56619123/128886904-5887e9e2-e444-4db5-81f8-5cd33a3d79ad.png" alt="GitBook Logo"></a> <a href="https://www.cypress.io/" target="_blank" rel="noopener noreferrer"><img height="80" alt="Cypress" src="https://user-images.githubusercontent.com/5663877/129580266-2c4ac4a9-8a9b-4e2d-b0cd-2e3ea8568333.png" /></a></p>
+<p align="center">
+  <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer"><img height="80" src="https://user-images.githubusercontent.com/5663877/129595637-48c212e9-ac98-4e2f-943e-2c04b80ea888.png" alt="Netlify"></a>
+  <a href="https://www.gitbook.com/" target="_blank" rel="noopener noreferrer"><img height="80" src="https://user-images.githubusercontent.com/56619123/128886904-5887e9e2-e444-4db5-81f8-5cd33a3d79ad.png" alt="GitBook Logo"></a>
+  <a href="https://www.cypress.io/" target="_blank" rel="noopener noreferrer"><img height="80" alt="Cypress" src="https://user-images.githubusercontent.com/5663877/129580266-2c4ac4a9-8a9b-4e2d-b0cd-2e3ea8568333.png" /></a>
+</p>
 
 ## Contributing
 
