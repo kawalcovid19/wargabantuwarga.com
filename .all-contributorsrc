@@ -464,6 +464,15 @@
         "bug",
         "code"
       ]
+    },
+    {
+      "login": "adibfirman",
+      "name": "Adib Firman",
+      "avatar_url": "https://avatars.githubusercontent.com/u/24794196?v=4",
+      "profile": "http://adibfirman.github.io",
+      "contributions": [
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
