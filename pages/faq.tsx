@@ -31,6 +31,8 @@ function groupBy<T, U>(data: T[], key: U) {
 
 const meta = {
   title: "Pertanyaan yang sering ditanyakan",
+  description:
+    "Pertanyaan dan jawaban terkait isoman, PCR, vaksinasi, tanda bahaya, dan terapi COVID-19.",
 };
 
 export default function FaqPage(props: FaqPageProps) {
@@ -74,6 +76,7 @@ export default function FaqPage(props: FaqPageProps) {
             current: true,
           },
         ]}
+        description={meta.description}
         title="Pertanyaan yang sering ditanyakan"
       />
       <PageContent>

@@ -37,6 +37,7 @@ export default function IsolasiMandiriPage(props: IsolasiMandiriPageProps) {
             current: true,
           },
         ]}
+        description={meta.description}
         title="Pedoman Isolasi Mandiri"
       />
       <InternalPageContent>

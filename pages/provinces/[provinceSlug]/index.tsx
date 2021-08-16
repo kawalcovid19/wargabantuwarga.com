@@ -78,6 +78,7 @@ export default function ProvincePage(props: ProvinceProps) {
             current: true,
           },
         ]}
+        description={meta.description}
         title={provinceName}
       />
       <PageContent>
