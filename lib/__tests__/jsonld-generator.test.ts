@@ -5,12 +5,13 @@ describe("jsonLdGenerator", () => {
     const param = [
       {
         name: "Province",
-        href: "/provinces/",
+        href: "/provinces",
+        current: true,
       },
     ];
     const result = makeBreadcrumbJsonLd(param);
     const expectedResult = {
-      "@context": "https://schema.org",
+      "@id": "https://www.wargabantuwarga.com/provinces/#breadcrumb",
       "@type": "BreadcrumbList",
       itemListElement: [
         {
@@ -21,13 +22,12 @@ describe("jsonLdGenerator", () => {
         },
         {
           "@type": "ListItem",
-          item: "https://www.wargabantuwarga.com/provinces/",
+          item: "https://www.wargabantuwarga.com/provinces",
           name: "Province",
           position: 2,
         },
       ],
     };
-
     expect(result).toStrictEqual(expectedResult);
   });
 });
