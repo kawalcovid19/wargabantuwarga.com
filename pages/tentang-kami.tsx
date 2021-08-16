@@ -131,11 +131,10 @@ export default function AboutPage() {
                         alt={collaborator.name}
                         className="rounded-md"
                         layout="fill"
-                        loader={({ src }: ImageLoaderProps) => {
+                        loader={({ src, width }: ImageLoaderProps) => {
                           return cloudinaryLoader({
                             src,
-                            // Force to show image in width 200 for smaller size
-                            width: 200,
+                            width,
                             quality: 90,
                           });
                         }}
