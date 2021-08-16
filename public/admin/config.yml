@@ -93,9 +93,9 @@ collections:
             required: false
             hint: Heading banner on top of Home page
             tagname: ""
-      - name: official_supported_apps
-        label: Official Supported Apps by Kemenkes
-        file: _content/official_supported_apps.json
+      - name: officially_supported_apps
+        label: Officially Supported Apps by Kemenkes
+        file: _content/officially_supported_apps.json
         fields:
           - label: Application
             name: application
