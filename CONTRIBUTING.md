@@ -141,9 +141,70 @@ staged files if the commit message failed to comply with the conventions.
 It's adviseable to read the [commit conventions](https://www.conventionalcommits.org/en/v1.0.0)
 briefly to further understand the other benefits from them. However, if you're
 having problems with it or what have you, you can use [this
-tool](https://commitlint.io/) to help you.
+tool](https://commitlint.io/) to help.
+
+Furthermore, please refer to the list of [commit types](#commit-types) and
+[scopes](#commit-scopes) that we use to avoid adding a new scope that has similar
+meaning or is synonym to the existing one.
 
 ## References
+
+### Conventional Commits
+
+The convention specification looks like this:
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+#### Commit types
+
+Here are what we use for the commit types:
+
+- `build`
+- `chore`
+- `docs`
+- `feat`
+- `fix`
+- `perf`
+- `refactor`
+- `style`
+- `test`
+
+#### Commit scopes
+
+Here are what we use for the scopes:
+
+- `ci`
+- `cms`
+- `cypress`
+- `deps`
+- `dialog`
+- `donasi`
+- `dx`
+- `e2e`
+- `education`
+- `eslint`
+- `faq`
+- `favicon`
+- `fetcher`
+- `fix`
+- `gtm`
+- `id`
+- `image`
+- `isoman`
+- `kodiak`
+- `layout`
+- `security`
+- `StackedLink`
+- `seo`
+- `test`
+- `text`
+- `ui`
 
 ### Issue and Pull Request Labels
 
