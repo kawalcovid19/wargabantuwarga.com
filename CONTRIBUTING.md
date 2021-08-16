@@ -184,32 +184,30 @@ Here are what we use for the commit types:
 
 Here are what we use for the scopes:
 
+- `assets`
 - `ci`
 - `cms`
+- `components`
+  - `donasi`
+  - `education`
+  - `home`
+  - `json-ld`
+  - `kontak-darurat`
+  - `layout`
+  - `telemedicine`
 - `cypress`
 - `deps`
-- `dialog`
-- `donasi`
 - `dx`
 - `e2e`
-- `education`
-- `eslint`
-- `faq`
-- `favicon`
 - `fetcher`
-- `fix`
-- `gtm`
-- `id`
-- `image`
-- `isoman`
-- `kodiak`
-- `layout`
+- `pages`
+  - `faq`
+  - `isoman`
 - `security`
-- `StackedLink`
 - `seo`
-- `test`
-- `text`
 - `ui`
+
+**Note:** If there's a second level in a list, only the lowest level gets to be used.
 
 ### Issue and Pull Request Labels
 
