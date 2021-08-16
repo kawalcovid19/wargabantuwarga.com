@@ -10,7 +10,7 @@
     - [Issue assignment & Communication](#issue-assignment--communication)
     - [Creating a Draft Pull Request](#creating-a-draft-pull-request)
     - [Formatting Pull Request Description](#formatting-pull-request-description)
-    - [Disabling GitHub Action](#disabling-github-action)
+    - [Disabling GitHub Actions](#disabling-github-actions)
 - [FAQ](#faq)
   - [Why are we using English in our issues & PRs?](#why-are-we-using-english-in-our-issues--prs)
 - [Additional Notes](#additional-notes)
@@ -103,7 +103,7 @@ Closes #318
 Update **`Start working on Issues`** section with clearer instructions on getting ready to work on an issue.
 ```
 
-### Disabling GitHub Action
+### Disabling GitHub Actions
 
 We recommend contributors to disable GitHub action on your forked repository.
 
