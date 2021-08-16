@@ -9,7 +9,7 @@ describe("HomepageHeader", () => {
 
     const headerImage = screen.getByAltText("WargaBantuWarga background");
 
-    expect(headerImage).toBeInTheDocument();
+    expect(headerImage).toBeVisible();
     expect(headerImage).toMatchInlineSnapshot(`
 <img
   alt="WargaBantuWarga background"
