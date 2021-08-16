@@ -1,4 +1,4 @@
-import supportedApps from "~/_content/official_supported_apps.json";
+import supportedApps from "~/_content/officially_supported_apps.json";
 
 export type SupportedApps = SupportedApp[];
 

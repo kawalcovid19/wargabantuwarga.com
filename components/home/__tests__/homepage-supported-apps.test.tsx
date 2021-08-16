@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { HomepageSupportedApps } from "../homepage-supported-apps";
-import supportedApps from "~/lib/content/official-supported-apps";
+import supportedApps from "~/lib/content/officially-supported-apps";
 
 describe("HomepageSupportedApps", () => {
   it("render homepage donation widget correctly", () => {

@@ -1,6 +1,6 @@
 import Image, { ImageLoaderProps } from "next/image";
 import { HomePageSection } from "./homepage-section";
-import supportedApps from "~/lib/content/official-supported-apps";
+import supportedApps from "~/lib/content/officially-supported-apps";
 import { cloudinaryLoader } from "~/lib/image/cloudinary-loader";
 import { replaceCloudinaryPrefix } from "~/lib/image/cloudinary-utils";
 
