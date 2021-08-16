@@ -21,6 +21,7 @@ import { LatestNewsItem } from "~/lib/content/informasi-terbaru";
 import siteConfig from "~/lib/content/site-config";
 import { htmrTransform } from "~/lib/htmr-transformers";
 import { HomePageTelemedicineCTA } from "~/components/home/homepage-telemedicine-cta";
+import { JsonLdWebsite } from "~/components/json-ld/website";
 
 const meta = {
   title: `${siteConfig.site_tagline} | ${siteConfig.site_name}`,
@@ -33,6 +34,7 @@ interface HomePageProps {
 const HomePage = (props: HomePageProps) => (
   <Page>
     <NextSeo title={meta.title} titleTemplate="%s" />
+    <JsonLdWebsite />
     <HomepageHeader src={attributes.home_banner_image} />
     <HomePageContent>
       <Container className="space-y-3">

@@ -4,7 +4,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  connect-src 'self' analytics.google.com;
+  connect-src 'self' analytics.google.com stats.g.doubleclick.net;
   script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.netlify.com unpkg.com media-library.cloudinary.com analytics.google.com *.google-analytics.com;
   style-src 'self' 'unsafe-inline';
   frame-src 'self' cloudinary.com;
