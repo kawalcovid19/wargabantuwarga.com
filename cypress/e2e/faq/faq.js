@@ -3,16 +3,6 @@ describe("Checking information on every category faq", () => {
     cy.visit("/faq");
   });
 
-  it("gives all information without filter category (last update August 16, 2021)", () => {
-    cy.get("div.space-y-4 > div")
-      .each((info) => {
-        cy.wrap(info);
-      })
-      .then((item) => {
-        expect(item).to.have.length(9);
-      });
-  });
-
   it("gives information on category isoman", () => {
     cy.get("select#filter-kategori_pertanyaan").select("Isoman");
     cy.get("div.relative").should("contains.text", "Isoman");
