@@ -14,6 +14,11 @@
 - [FAQ](#faq)
   - [Why are we using English in our issues & PRs?](#why-are-we-using-english-in-our-issues--prs)
 - [Additional Notes](#additional-notes)
+  - [Commitlint](#commitlint)
+- [References](#references)
+  - [Conventional Commits](#conventional-commits)
+    - [Commit types](#commit-types)
+    - [Commit scopes](#commit-scopes)
   - [Issue and Pull Request Labels](#issue-and-pull-request-labels)
     - [Type of Issue and Issue State](#type-of-issue-and-issue-state)
     - [Topic Categories](#topic-categories)
@@ -123,6 +128,86 @@ There are several reasons we're using English while communicating in GitHub Issu
 3. It makes this project easier to be recognised globally. So if we need to get more support from the global communities, they could easily understand what we are doing and help us out with their access and competence. e.g., providing us free credits for their services, advocating us to global leaders, or contributing directly to our codebase.
 
 ## Additional Notes
+
+### Commitlint
+
+In a repository with many contributors like this, it's important to understand
+what's going on in it and navigate between commits. Moreover, with various
+levels of contributors & their backgrounds, the commit messages can easily be
+confusing and the structure may follow different approaches.
+
+To overcome these issues, the maintainers adopt [commit conventions](https://www.conventionalcommits.org/en/)
+to allow contributors to add more semantic meaning to our git history. They use
+[commitlint](https://commitlint.js.org/) to lint the git commit messages.
+To enforce the conventions, the maintainers use a git hook to run the
+commitlint upon a git commit command. The git hook prevents the commit the
+staged files if the commit message failed to comply with the conventions.
+
+It's adviseable to read the [commit conventions](https://www.conventionalcommits.org/en/v1.0.0)
+briefly to further understand the other benefits from them. However, if you're
+having problems with it, you can use [this
+tool](https://commitlint.io/) to help.
+
+Furthermore, please refer to the list of [commit types](#commit-types) and
+[scopes](#commit-scopes) that we use to avoid adding a new scope that has similar
+meaning or is synonym to the existing one.
+
+## References
+
+### Conventional Commits
+
+The convention specification looks like this:
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+#### Commit types
+
+Here are what we use for the commit types:
+
+- `build`
+- `chore`
+- `docs`
+- `feat`
+- `fix`
+- `perf`
+- `refactor`
+- `style`
+- `test`
+
+#### Commit scopes
+
+Here are what we use for the scopes:
+
+- `assets`
+- `ci`
+- `cms`
+- `components`
+  - `donasi`
+  - `education`
+  - `home`
+  - `json-ld`
+  - `kontak-darurat`
+  - `layout`
+  - `telemedicine`
+- `cypress`
+- `deps`
+- `dx`
+- `e2e`
+- `fetcher`
+- `pages`
+  - `faq`
+  - `isoman`
+- `security`
+- `seo`
+- `ui`
+
+**Note:** If there's a second level in a list, only the lowest level gets to be used.
 
 ### Issue and Pull Request Labels
 
