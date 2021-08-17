@@ -145,7 +145,7 @@ staged files if the commit message failed to comply with the conventions.
 
 It's adviseable to read the [commit conventions](https://www.conventionalcommits.org/en/v1.0.0)
 briefly to further understand the other benefits from them. However, if you're
-having problems with it or what have you, you can use [this
+having problems with it, you can use [this
 tool](https://commitlint.io/) to help.
 
 Furthermore, please refer to the list of [commit types](#commit-types) and
