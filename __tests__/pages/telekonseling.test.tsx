@@ -26,10 +26,8 @@ describe("TelecounselingPage", () => {
     const breadcrumbs = screen.getByRole("link", {
       name: "Curhat/Telekonseling",
     });
-    // const breadcrumbs = screen.getByText(/^Curhat atau Telekonseling$/i);
     expect(breadcrumbs).toBeVisible();
     expect(breadcrumbs).toHaveAttribute("href", "/telekonseling");
-    // breadcrumbs.getAttribute("href") === "telekonseling";
   });
 
   it("renders the supports correctly", () => {

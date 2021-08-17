@@ -5,7 +5,6 @@ import {
   Page,
   InternalPageContent,
   InternalPageHeader,
-  // InternalPageSection,
 } from "~/components/layout/page";
 import { Container } from "~/components/ui/container";
 import { TelecounselingSection } from "~/components/telekonseling/telekonseling-link-section";
