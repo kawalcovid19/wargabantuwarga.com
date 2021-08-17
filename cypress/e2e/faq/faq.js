@@ -1,6 +1,6 @@
 describe("Checking information on every category faq", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000/faq");
+    cy.visit("/faq");
   });
 
   it("gives all information without filter category (last update August 16, 2021)", () => {
@@ -53,7 +53,7 @@ describe("Checking information on every category faq", () => {
 
 describe("Search keyword on page faq", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000/faq");
+    cy.visit("/faq");
   });
 
   it("gives information with keyword isoman", () => {
