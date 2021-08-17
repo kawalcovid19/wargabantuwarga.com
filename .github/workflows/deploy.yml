@@ -4,7 +4,8 @@ name: Deploy
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/30 0-17,23 * * *"
+    - cron: "*/60 18-22 * * *"
 
 jobs:
   deploy:

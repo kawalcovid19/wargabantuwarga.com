@@ -3,7 +3,7 @@
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-45-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-46-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -189,6 +189,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://adindap.com"><img src="https://avatars.githubusercontent.com/u/70412?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adinda Praditya</b></sub></a><br /><a href="#security-apraditya" title="Security">🛡️</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=apraditya" title="Documentation">📖</a></td>
     <td align="center"><a href="http://albarranaufala.github.io/albarra-portfolio"><img src="https://avatars.githubusercontent.com/u/54704525?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Albarra Naufala Erdanto</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/issues?q=author%3Aalbarranaufala" title="Bug reports">🐛</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=albarranaufala" title="Code">💻</a></td>
     <td align="center"><a href="http://adibfirman.github.io"><img src="https://avatars.githubusercontent.com/u/24794196?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adib Firman</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=adibfirman" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://github.com/ranggarppb"><img src="https://avatars.githubusercontent.com/u/44335152?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rangga Putra Pertama</b></sub></a><br /><a href="#tool-ranggarppb" title="Tools">🔧</a></td>
   </tr>
 </table>
 
