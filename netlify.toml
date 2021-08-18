@@ -26,6 +26,11 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
 
 [[headers]]
+  for = "/service-worker.js"
+  [headers.values]
+    Cache-Control = "no-store, max-age=0"
+
+[[headers]]
   for = "/fonts/inter-var-latin.woff2"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
