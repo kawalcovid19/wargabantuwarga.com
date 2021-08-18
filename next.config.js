@@ -6,7 +6,7 @@ const workboxConfig = require("./wb.config");
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  connect-src 'self' analytics.google.com stats.g.doubleclick.net;
+  connect-src 'self' analytics.google.com stats.g.doubleclick.net res.cloudinary.com;
   script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.netlify.com unpkg.com media-library.cloudinary.com analytics.google.com *.google-analytics.com;
   style-src 'self' 'unsafe-inline';
   frame-src 'self' cloudinary.com;
