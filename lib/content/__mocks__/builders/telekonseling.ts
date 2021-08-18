@@ -1,5 +1,8 @@
 import { build, fake } from "@jackfranklin/test-data-bot";
-import { Telecounseling, TelecounselingSupport, TelecounselingContents } from "~/lib/content/telekonseling";
+import { Telecounseling,
+  TelecounselingSupport,
+  TelecounselingContents,
+} from "~/lib/content/telekonseling";
 
 export const telecounselingContentsBuilder = build<TelecounselingContents>({
   fields: {
