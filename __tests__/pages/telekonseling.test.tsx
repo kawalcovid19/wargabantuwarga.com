@@ -37,13 +37,13 @@ describe("TelecounselingPage", () => {
       expect(screen.getByText(support.support)).toBeVisible();
 
       support.contents.forEach((content) => {
-        const link = screen.getByRole("link", { name: /{content.title}/i });
+        const link = screen.getByTestId(`next-link-${content.title}`);
 
         expect(screen.getByText(content.title)).toBeVisible();
         expect(link).toBeVisible();
         expect(link).toHaveAttribute("href", content.url);
         expect(
-          screen.getByRole("link", { name: /{content.title}/i }),
+          screen.getByTestId(`external-link-icon-${content.title}`),
         ).toBeVisible();
       });
     });
