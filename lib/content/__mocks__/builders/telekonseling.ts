@@ -1,5 +1,6 @@
 import { build, fake } from "@jackfranklin/test-data-bot";
-import { Telecounseling,
+import {
+  Telecounseling,
   TelecounselingSupport,
   TelecounselingContents,
 } from "~/lib/content/telekonseling";
