@@ -13,6 +13,9 @@ module.exports = {
     "/google6feea491511f41d3.html",
     "/admin/**/*",
   ],
+  fallback: {
+    document: "/_error",
+  },
   runtimeCaching: [
     {
       urlPattern: /^https:\/\/res\.cloudinary\.com\/.*\/image\/upload\//,
