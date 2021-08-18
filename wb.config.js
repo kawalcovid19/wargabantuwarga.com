@@ -13,7 +13,7 @@ module.exports = {
     "/google6feea491511f41d3.html",
     "/admin/**/*",
   ],
-  fallback: {
+  fallbacks: {
     document: "/_error",
   },
   runtimeCaching: [
