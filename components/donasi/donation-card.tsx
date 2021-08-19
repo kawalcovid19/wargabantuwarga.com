@@ -12,7 +12,7 @@ export function DonationCard(donation: DonationDetail) {
       <div className="flex-shrink-0">
         <Image
           alt="donasi covid"
-          className="shadow rounded-md"
+          className="shadow rounded-tr-md rounded-tl-md"
           height={397}
           layout="intrinsic"
           loader={cloudinaryLoader}
