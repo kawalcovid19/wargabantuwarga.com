@@ -59,6 +59,10 @@ module.exports = withPWA(
     headers: async () => {
       return [
         {
+          source: "/(.*)",
+          headers: securityHeaders,
+        },
+        {
           source: "/service-worker.js",
           headers: [
             {
@@ -66,10 +70,6 @@ module.exports = withPWA(
               value: "no-store, max-age=0",
             },
           ],
-        },
-        {
-          source: "/(.*)",
-          headers: securityHeaders,
         },
       ];
     },
