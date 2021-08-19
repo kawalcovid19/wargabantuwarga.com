@@ -59,6 +59,15 @@ module.exports = withPWA(
     headers: async () => {
       return [
         {
+          source: "/service-worker.js",
+          headers: [
+            {
+              key: "Cache-Control",
+              value: "no-store, max-age=0",
+            },
+          ],
+        },
+        {
           source: "/(.*)",
           headers: securityHeaders,
         },
