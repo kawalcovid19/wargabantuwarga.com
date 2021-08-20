@@ -1,3 +1,5 @@
+import React from "react";
+
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 import { BackButton } from "~/components/layout/back-button";
@@ -7,7 +9,7 @@ import {
   InternalPageHeader,
   InternalPageSection,
 } from "~/components/layout/page";
-import TelekonselingCard from "~/components/telekonseling/telekonseling-card";
+import { TelekonselingCard } from "~/components/telekonseling/telekonseling-card";
 import { Container } from "~/components/ui/container";
 import telekonseling, {
   Konseling,
