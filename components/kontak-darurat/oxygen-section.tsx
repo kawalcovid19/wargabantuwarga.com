@@ -9,7 +9,6 @@ type OxygenSectionProps = {
 };
 
 export default function OxygenSection(data: OxygenSectionProps) {
-  console.log(data);
   return (
     <StackedLinkDisclosure title="Oksigen Untuk Pasien COVID?">
       <div className="p-2 bg-gray-50 rounded-md">
