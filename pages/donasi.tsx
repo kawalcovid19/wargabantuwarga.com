@@ -23,7 +23,6 @@ const meta = {
 };
 
 export default function DonasiPage(props: InformasiDonasiProps) {
-  console.log(props);
   return (
     <Page>
       <NextSeo
