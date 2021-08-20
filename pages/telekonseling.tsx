@@ -1,8 +1,5 @@
-import React from "react";
-
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
-import { DonationCard } from "~/components/donasi/donation-card";
 import { BackButton } from "~/components/layout/back-button";
 import {
   Page,
@@ -10,20 +7,23 @@ import {
   InternalPageHeader,
   InternalPageSection,
 } from "~/components/layout/page";
+import TelekonselingCard from "~/components/telekonseling/telekonseling-card";
 import { Container } from "~/components/ui/container";
-import donasi, { Donation, DonationDetail } from "~/lib/content/donasi";
+import telekonseling, {
+  Konseling,
+  TelekonselingDetail,
+} from "~/lib/content/telekonseling";
 
-type InformasiDonasiProps = {
-  donasi: Donation;
+type InformasiTelekonselingProps = {
+  telekonseling: Konseling;
 };
 
 const meta = {
-  title: `Donasi dan Penggalangan Dana`,
+  title: `Curhat/telekonseling Bagi Pasien, Keluarga Pasien, Maupun Tenaga Kesehatan Terdampak COVID-19`,
   description: `Kumpulan informasi mengenai donasi, nomor rekening, dan lainnya yang relevan dengan bantuan COVID-19.`,
 };
 
-export default function DonasiPage(props: InformasiDonasiProps) {
-  console.log(props);
+export default function TelekonselingPage(props: InformasiTelekonselingProps) {
   return (
     <Page>
       <NextSeo
@@ -35,8 +35,8 @@ export default function DonasiPage(props: InformasiDonasiProps) {
         backButton={<BackButton href="/" />}
         breadcrumbs={[
           {
-            name: "Donasi",
-            href: "/donasi",
+            name: "Telekonseling",
+            href: "/telekonseling",
             current: true,
           },
         ]}
@@ -46,15 +46,15 @@ export default function DonasiPage(props: InformasiDonasiProps) {
       <InternalPageContent>
         <Container className="space-y-2">
           <InternalPageSection className="pb-24 space-y-6 sm:pb-6">
-            <div className="grid grid-cols-2 gap-4">
-              {props.donasi.donations.map(
-                (donation: DonationDetail, i: number) => (
-                  <DonationCard
+            <div className="flex flex-col bg-gray-50">
+              {props.telekonseling.telekonselings.map(
+                (konseling: TelekonselingDetail, i: number) => (
+                  <TelekonselingCard
                     key={i}
-                    category={donation.category}
-                    image={donation.image}
-                    title={donation.title}
-                    url={donation.url}
+                    jenislayanan={konseling.jenislayanan}
+                    kontak={konseling.kontak}
+                    penyelenggara={konseling.penyelenggara}
+                    url={konseling.url}
                   />
                 ),
               )}
@@ -69,7 +69,7 @@ export default function DonasiPage(props: InformasiDonasiProps) {
 export const getStaticProps: GetStaticProps = () => {
   return {
     props: {
-      donasi,
+      telekonseling,
     },
   };
 };
