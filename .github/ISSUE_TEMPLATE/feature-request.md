@@ -1,10 +1,8 @@
 ---
 name: Feature Request
 about: Propose feature additions to the project.
-title: ''
+title: ""
 labels: enhancement
-assignees: zainfathoni
-
 ---
 
 ## Description
