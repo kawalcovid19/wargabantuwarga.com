@@ -3,3 +3,8 @@ version = 1
 [merge.automerge_dependencies]
 versions = ["minor", "patch"]
 usernames = ["dependabot"]
+
+# https://kodiakhq.com/docs/recipes#better-merge-messages
+[merge.message]
+title = "pull_request_title"
+include_pr_number = true
