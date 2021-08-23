@@ -13,10 +13,13 @@ import { FaqListSkeleton } from "~/components/ui/skeleton-loading";
 import faqs, { Faq } from "~/lib/data/faqs";
 import { useSearch } from "~/lib/hooks/use-search";
 import { markText } from "~/lib/string-utils";
+import { REPORT_FAQ_FORM } from "~/constants/report";
 
 type FaqPageProps = {
   faqs: Faq[];
 };
+
+type ReportLinkProps = { category: string; question: string };
 
 function groupBy<T, U>(data: T[], key: U) {
   return data.reduce((acc: any, currentValue: any) => {
@@ -140,6 +143,10 @@ export default function FaqPage(props: FaqPageProps) {
                           question.sumber
                         )}
                       </small>
+                      <ReportLink
+                        category={category}
+                        question={question.pertanyaan}
+                      />
                     </dd>
                   </div>
                 ))}
@@ -161,6 +168,34 @@ export default function FaqPage(props: FaqPageProps) {
         </div>
       </PageContent>
     </Page>
+  );
+}
+
+function ReportLink(props: ReportLinkProps) {
+  const { category, question } = props;
+
+  const formUrl = REPORT_FAQ_FORM.concat(
+    encodeURI(
+      // Space must be converted to plus here for form prefilling
+      `&entry.559240717=${category.replace(
+        /\s/g,
+        "+",
+      )}&entry.1970670964=${question}`,
+    ),
+  );
+
+  return (
+    <small className="block">
+      Menemukan kesalahan informasi?{" "}
+      <a
+        className="underline text-blue-800"
+        href={formUrl}
+        rel="noreferrer"
+        target="_blank"
+      >
+        Laporkan disini
+      </a>
+    </small>
   );
 }
 
