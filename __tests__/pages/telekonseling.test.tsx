@@ -43,6 +43,7 @@ describe("TelecounselingPage", () => {
 
         expect(link).toBeVisible();
         expect(link).toHaveAttribute("href", content.url);
+        expect(link).toHaveAttribute("target", "_blank");
         expect(
           screen.getByTestId(`external-link-icon-${content.title}`),
         ).toBeVisible();
