@@ -17,7 +17,7 @@ interface TelecounselingPageProps {
 const meta = {
   title: "Curhat atau Telekonseling",
   description:
-   "Informasi mengenai relawan COVID-19 yang memberikan bantuan berupa layanan konsultasi psikologi, kesehatan, agama, dan lainnya yang relevan untuk membantu kesehatan mental terdampak COVID-19.",
+    "Informasi mengenai relawan COVID-19 yang memberikan bantuan berupa layanan konsultasi psikologi, kesehatan, agama, dan lainnya yang relevan untuk membantu kesehatan mental terdampak COVID-19.",
 };
 
 export default function TelecounselingPage(props: TelecounselingPageProps) {
