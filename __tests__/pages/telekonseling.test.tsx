@@ -37,9 +37,10 @@ describe("TelecounselingPage", () => {
       expect(screen.getByText(support.support)).toBeVisible();
 
       support.contents.forEach((content) => {
-        const link = screen.getByTestId(`next-link-${content.title}`);
+        const link = screen.getByRole("link", {
+          name: content.title,
+        });
 
-        expect(screen.getByText(content.title)).toBeVisible();
         expect(link).toBeVisible();
         expect(link).toHaveAttribute("href", content.url);
         expect(
