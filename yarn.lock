@@ -10242,17 +10242,17 @@ netlify-plugin-image-optim@0.4.0:
     imagemin-svgo "^7.1.0"
     table "^5.4.6"
 
-next-pwa@^5.2.24:
-  version "5.2.24"
-  resolved "https://registry.yarnpkg.com/next-pwa/-/next-pwa-5.2.24.tgz#bc78d9905ba29b585dffc0f6076cd2a7e5692cb7"
-  integrity sha512-gDGcRfoCsNUjgzH7HQVqJxEN4mR1uA3i+AeK1sgiwSeamQu3hl4fgu9wclPjRj2R5iyWs2EkTfHum7Qy712NbQ==
+next-pwa@^5.3.1:
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/next-pwa/-/next-pwa-5.3.1.tgz#5bcd854422a452fd1fd56500d1c483664d9733d9"
+  integrity sha512-Os6bf/lEYoztvsILYkAhDjiYfLNTprqEumxuv5DjhoFh4OpIzO7U0GKRI6MZluH4SfAoe0IdHz9knnZxybSnag==
   dependencies:
     babel-loader "^8.2.2"
     clean-webpack-plugin "^3.0.0"
     globby "^11.0.4"
     terser-webpack-plugin "^5.1.4"
-    workbox-webpack-plugin "^6.1.5"
-    workbox-window "^6.1.5"
+    workbox-webpack-plugin "^6.2.4"
+    workbox-window "^6.2.4"
 
 next-router-mock@0.1.4:
   version "0.1.4"
@@ -14408,7 +14408,7 @@ workbox-sw@6.2.4:
   resolved "https://registry.yarnpkg.com/workbox-sw/-/workbox-sw-6.2.4.tgz#d7ae4cfc1c02ad6e47b7b9f7ac5be56b4715d928"
   integrity sha512-OlWLHNNM+j44sN2OaVXnVcf2wwhJUzcHlXrTrbWDu1JWnrQJ/rLicdc/sbxkZoyE0EbQm7Xr1BXcOjsB7PNlXQ==
 
-workbox-webpack-plugin@^6.1.5:
+workbox-webpack-plugin@^6.2.4:
   version "6.2.4"
   resolved "https://registry.yarnpkg.com/workbox-webpack-plugin/-/workbox-webpack-plugin-6.2.4.tgz#50ceed32fc0e1f928feae6da45961deae0689775"
   integrity sha512-G6yeOZDYEbtqgNasqwxHFnma0Vp237kMxpsf8JV/YIhvhUuMwnh1WKv4VnFeqmYaWW/ITx0qj92IEMWB/O1mAA==
@@ -14420,7 +14420,7 @@ workbox-webpack-plugin@^6.1.5:
     webpack-sources "^1.4.3"
     workbox-build "6.2.4"
 
-workbox-window@6.2.4, workbox-window@^6.1.5:
+workbox-window@6.2.4, workbox-window@^6.2.4:
   version "6.2.4"
   resolved "https://registry.yarnpkg.com/workbox-window/-/workbox-window-6.2.4.tgz#377e792158ec83670b6f810e0077a45c1a948d1b"
   integrity sha512-9jD6THkwGEASj1YP56ZBHYJ147733FoGpJlMamYk38k/EBFE75oc6K3Vs2tGOBx5ZGq54+mHSStnlrtFG3IiOg==
