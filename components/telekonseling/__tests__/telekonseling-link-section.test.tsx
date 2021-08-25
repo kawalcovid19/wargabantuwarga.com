@@ -4,6 +4,8 @@ import { render, screen } from "@testing-library/react";
 import { TelecounselingSection } from "../telekonseling-link-section";
 import telekonseling from "~/lib/content/telekonseling";
 
+jest.mock("~/lib/content/telekonseling");
+
 const { supports } = telekonseling;
 const [support] = supports;
 
