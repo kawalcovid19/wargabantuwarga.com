@@ -57,3 +57,8 @@ workbox-*
 # Cypress
 cypress/videos
 cypress/screenshots
+
+# service workers
+service-worker.js
+service-worker.js.map
+workbox-*
