@@ -18,6 +18,6 @@ describe("HomepageSupportedApps", () => {
     render(<HomepageSupportedApps />);
 
     const list_supported_apps = screen.getAllByRole("link");
-    expect(list_supported_apps).toHaveLength(supportedApps.application.length);
+    expect(list_supported_apps).toHaveLength((supportedApps.application.length) + 1);
   });
 });
