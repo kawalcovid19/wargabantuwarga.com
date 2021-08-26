@@ -44,13 +44,8 @@ const HomePage = (props: HomePageProps) => (
         <HomePageDonation />
         <HomePageTelemedicineCTA />
         <HomepageSupportedApps />
-        <HomePageWhatsAppCTA />
         <HomePageWelcome />
-        <HomePageSection className="px-4 py-6">
-          <article className="prose prose-indigo">
-            {htmr(html, { transform: htmrTransform })}
-          </article>
-        </HomePageSection>
+        <HomePageWhatsAppCTA />
         <style jsx>{`
           article {
             margin: 0 auto;
