@@ -49,7 +49,10 @@ export function HomepageSupportedApps() {
         ))}
       </ul>
       <div className="p-4 bg-blue-50 text-center rounded-md space-y-3">
-        <p className="text-base leading-6 font-semibold">Butuh Konseling Bagi Pasien, Keluarga Pasien, atau Tenaga Kesehatan Terdampak COVID-19?</p>
+        <p className="text-base leading-6 font-semibold">
+          Butuh Konseling Bagi Pasien, Keluarga Pasien, atau Tenaga Kesehatan
+          Terdampak COVID-19?
+        </p>
         <OutlineAnchorButton
           block
           color="brand"
