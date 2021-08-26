@@ -4,4 +4,4 @@ home_banner_image: https://res.cloudinary.com/wargabantuwarga/image/upload/v1627
 ---
 #### Butuh Konseling Bagi Pasien, Keluarga Pasien, atau Tenaga Kesehatan Terdampak COVID-19?
 
-[Lihat daftar layanan dan kontak penyedia jasa konseling di sini](https://docs.google.com/spreadsheets/d/1JRlBNwmqoVimwR70dwIVJ1QAnBbC0Mqp0DmomeO0cWU/edit?usp=sharing)
+[Lihat daftar layanan dan kontak penyedia jasa konseling di sini](https://wargabantuwarga.com/telekonseling )
