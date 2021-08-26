@@ -338,7 +338,7 @@ collections:
     files:
       - name: telekonseling_contents
         label: Telekonseling Links
-        file: _content/educations.json
+        file: _content/telekonseling.json
         fields:
           - label: Support
             name: supports
