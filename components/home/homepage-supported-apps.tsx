@@ -1,4 +1,5 @@
 import Image, { ImageLoaderProps } from "next/image";
+import Link from "next/link";
 import { OutlineAnchorButton } from "../ui/button";
 import { HomePageSection } from "./homepage-section";
 import supportedApps from "~/lib/content/officially-supported-apps";
@@ -53,17 +54,11 @@ export function HomepageSupportedApps() {
           Butuh Konseling Bagi Pasien, Keluarga Pasien, atau Tenaga Kesehatan
           Terdampak COVID-19?
         </p>
-        <OutlineAnchorButton
-          block
-          color="brand"
-          href="https://wargabantuwarga.com/telekonseling"
-          rel="nofollow noopener noreferrer"
-          rounded
-          size="lg"
-          target="_blank"
-        >
-          Lihat daftar di sini
-        </OutlineAnchorButton>
+        <Link href="/telekonseling" passHref>
+          <OutlineAnchorButton color="brand" rounded size="lg">
+            Lihat daftar di sini
+          </OutlineAnchorButton>
+        </Link>
       </div>
     </HomePageSection>
   );
