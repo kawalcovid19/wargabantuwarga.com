@@ -36,6 +36,12 @@ Our website must be accessible so that we can reach more users and help more peo
 
 Any information posted on our website must be up-to-date to the latest version that our content editors published. We can tolerate delays to a certain degree for the sake of web performance, but it should be limited to less than an hour.
 
+#### ✅ Iterative, Incremental Changes
+
+Software development is **complex, cognitive work**. The simpler we can make something, then generally the easier it is to do. Similarly, the less amount of moving parts a software component has, the less prone it is to errors, and the less maintenance burden it gives us.
+
+One of the simplest ways to reduce complexity is to reduce the scope. We can often postpone the less valuable parts of a large issue and do them later in order to get the most valuable parts into our user's hands faster.
+
 > What we're going against:
 
 #### ❌ Counter-productive Cosmetics
