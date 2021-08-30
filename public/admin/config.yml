@@ -331,3 +331,33 @@ collections:
                   - label: Link URL
                     name: url
                     widget: string
+  - name: telekonseling
+    label: Telekonseling Page
+    delete: false
+    preview_path: telekonseling
+    files:
+      - name: telekonseling_contents
+        label: Telekonseling Links
+        file: _content/telekonseling.json
+        fields:
+          - label: Support
+            name: supports
+            widget: list
+            fields:
+              - label: Support Title
+                name: support
+                widget: string
+              - label: Description
+                name: description
+                widget: string
+                required: false
+              - name: contents
+                label: Contents
+                widget: list
+                fields:
+                  - label: Link Title
+                    name: title
+                    widget: string
+                  - label: Link URL
+                    name: url
+                    widget: string
