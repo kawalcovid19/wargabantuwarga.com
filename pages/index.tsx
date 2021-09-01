@@ -8,7 +8,7 @@ import { HomePageDonation } from "~/components/home/homepage-donation";
 import { HomepageHeader } from "~/components/home/homepage-header";
 import { HomePageLatestNews } from "~/components/home/homepage-latest-news";
 import { HomePageStart } from "~/components/home/homepage-start";
-// import { HomePageTelemedicineCTA } from "~/components/home/homepage-telemedicine-cta";
+import { HomePageTelemedicineCTA } from "~/components/home/homepage-telemedicine-cta";
 import { HomePageWelcome } from "~/components/home/homepage-welcome";
 import { HomepageSupportedApps } from "~/components/home/homepage-supported-apps";
 import { HomePageWhatsAppCTA } from "~/components/home/homepage-whatsapp-cta";
@@ -17,7 +17,6 @@ import { Container } from "~/components/ui/container";
 import { attributes } from "~/lib/content/home-page";
 import { LatestNewsItem } from "~/lib/content/informasi-terbaru";
 import siteConfig from "~/lib/content/site-config";
-import { HomePageTelemedicineCTA } from "~/components/home/homepage-telemedicine-cta";
 import { JsonLdWebsite } from "~/components/json-ld/website";
 
 const meta = {
