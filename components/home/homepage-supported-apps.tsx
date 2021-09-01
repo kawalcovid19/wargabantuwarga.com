@@ -55,7 +55,7 @@ export function HomepageSupportedApps() {
           Terdampak COVID-19?
         </p>
         <Link href="/telekonseling" passHref>
-          <OutlineAnchorButton color="brand" rounded size="lg">
+          <OutlineAnchorButton block color="brand" rounded size="lg">
             Lihat daftar di sini
           </OutlineAnchorButton>
         </Link>
