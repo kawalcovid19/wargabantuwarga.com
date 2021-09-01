@@ -15,7 +15,7 @@ export async function fetchDatabase() {
     .map((_, li) => {
       const sheetId = ($(li).attr("id") as string).replace("sheet-button-", "");
       const sheetName = $(li).text();
-      const sheetColumns = $(`#${sheetId} tbody > tr:nth-child(1)`)
+      const sheetColumns = $(`#${sheetId} tbody > tr:nth-child(0)`)
         .find("td")
         .map((colIndex, td) => {
           colMap[colIndex] = $(td).text();
