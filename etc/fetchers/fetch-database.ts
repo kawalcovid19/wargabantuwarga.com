@@ -6,7 +6,7 @@ import { allIsEmptyString, getKebabCase } from "../../lib/string-utils";
 import { contactReducer } from "./utils";
 
 export async function fetchDatabase() {
-  const source = await fetch("https://kcov.id/wbw-sheets");
+  const source = await fetch("https://kcov.id/wbw-database");
   const $ = cheerio.load(await source.text());
 
   const colMap: Record<string, string> = {};
@@ -64,10 +64,8 @@ export async function fetchDatabase() {
     })
     .toArray();
 
-  sheetList.shift();
-
   fs.writeFileSync(
-    path.resolve(__dirname, "../../data/wbw-sheets.json"),
+    path.resolve(__dirname, "../../data/wbw-database.json"),
     JSON.stringify(sheetList),
   );
 }
