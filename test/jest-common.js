@@ -1,6 +1,7 @@
 const path = require("path");
 
 module.exports = {
+  automock: false,
   rootDir: path.join(__dirname, ".."),
   moduleNameMapper: {
     "\\.css$": "identity-obj-proxy",
