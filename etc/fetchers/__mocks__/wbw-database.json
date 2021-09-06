@@ -1,0 +1,57 @@
+[
+  {
+    "id": "1011184764",
+    "name": "Aceh",
+    "slug": "aceh",
+    "data": [
+      {
+        "id": "0",
+        "kebutuhan": "Kontak penting",
+        "keterangan": "Call Center",
+        "lokasi": "Banda Aceh",
+        "penyedia": "Aceh Tanggap Covid-19",
+        "kontak": "(0651) 7319111, (0651) 22118",
+        "slug": "kontak-penting-call-center-banda-aceh-aceh-tanggap-covid-19-0651-7319111-0651-22118",
+        "alamat": "",
+        "link": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://covid19.acehprov.go.id/\">https://covid19.acehprov.go.id/</a>",
+        "tambahan_informasi": "",
+        "terakhir_update": "",
+        "verifikasi": 0,
+        "bentuk_verifikasi": "",
+        "ketersediaan": ""
+      },
+      {
+        "id": "1",
+        "kebutuhan": "Kontak penting",
+        "keterangan": "Kontak Penting",
+        "lokasi": "Aceh",
+        "penyedia": "Dinas Kesehatan Provinsi Aceh",
+        "kontak": "(0651) 22421",
+        "slug": "kontak-penting-kontak-penting-aceh-dinas-kesehatan-provinsi-aceh-0651-22421",
+        "alamat": "Jl. Tgk. Syech Mudawali No 6 Fax 34005",
+        "link": "<a target=\"_blank\" rel=\"noreferrer\" href=\"http://dinkes.acehprov.go.id/\">dinkes.acehprov.go.id</a>",
+        "tambahan_informasi": "",
+        "terakhir_update": "",
+        "verifikasi": 0,
+        "bentuk_verifikasi": "",
+        "ketersediaan": ""
+      },
+      {
+        "id": "2",
+        "kebutuhan": "Kontak penting",
+        "keterangan": "Kontak Penting",
+        "lokasi": "Aceh",
+        "penyedia": "Badan Penanggulangan Bencana Aceh (BPBA)",
+        "kontak": "(0651) 34783",
+        "slug": "kontak-penting-kontak-penting-aceh-badan-penanggulangan-bencana-aceh-bpba-0651-34783",
+        "alamat": "Jalan Teungku Daud Beureueh No. 18 Kuta Alam Banda Aceh Kota 23121",
+        "link": "",
+        "tambahan_informasi": "",
+        "terakhir_update": "",
+        "verifikasi": 0,
+        "bentuk_verifikasi": "",
+        "ketersediaan": ""
+      }
+    ]
+  }
+]

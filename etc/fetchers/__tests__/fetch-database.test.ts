@@ -4,8 +4,15 @@ import fetchMock from "jest-fetch-mock";
 import { fetchDatabase } from "../fetch-database";
 
 describe("fetchDatabase", () => {
+  const writeFileSyncSpy = jest.spyOn(fs, "writeFileSync");
+
   beforeEach(() => {
     fetchMock.resetMocks();
+    writeFileSyncSpy.mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    writeFileSyncSpy.mockRestore();
   });
 
   it("fetches database from https://kcov.id/wbw-database correctly", async () => {
@@ -20,6 +27,17 @@ describe("fetchDatabase", () => {
     expect(fetchMock).toHaveBeenCalledTimes(1);
     expect(fetchMock).toHaveBeenCalledWith("https://kcov.id/wbw-database");
 
-    // TODO: perform better assertions for the file contents
+    expect(writeFileSyncSpy).toHaveBeenCalledTimes(1);
+    expect(writeFileSyncSpy).toHaveBeenCalledWith(
+      path.resolve(__dirname, "../../../data/wbw-database.json"),
+      JSON.stringify(
+        JSON.parse(
+          fs.readFileSync(
+            path.resolve(__dirname, "../__mocks__/wbw-database.json"),
+            "utf-8",
+          ),
+        ),
+      ),
+    );
   });
 });
