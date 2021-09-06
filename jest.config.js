@@ -4,7 +4,7 @@ module.exports = {
     "./(components|etc|lib|pages)/**/*.(ts|tsx|js|jsx)",
     "!./(components|etc|lib|pages)/**/__tests__/**/*.test.(ts|tsx|js|jsx)",
     "!./(components|etc|lib|pages)/**/__mocks__/**/*.(ts|tsx|js|jsx)",
-    "!./etc/fetchers/fetch-wbw.json",
+    "!./etc/fetchers/fetch-wbw.ts",
   ],
   coverageThreshold: {
     global: {
