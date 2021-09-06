@@ -5,7 +5,7 @@ import siteConfig from "~/lib/content/site-config";
 
 export function HomePageWhatsAppCTA() {
   return (
-    <HomePageSection className="px-4 py-6 space-y-4 text-center">
+    <HomePageSection className="px-4 pt-6 pb-24 space-y-4 text-center sm:pb-6">
       <h2 className="font-semibold">Masih belum dapat info yang kamu cari?</h2>
       <PrimaryAnchorButton
         block
