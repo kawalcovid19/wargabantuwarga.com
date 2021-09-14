@@ -22,4 +22,24 @@ describe("contacts page typed search", () => {
         ),
     );
   });
+
+  it.only("search by address", () => {
+    cy.findByRole("textbox", {
+      name: /cari kontak:/i,
+    }).type("Sudirman");
+
+    cy.findByRole("button", {
+      name: /cari/i,
+    }).click();
+
+    cy.findByTestId("contact-list").within(() =>
+      cy
+        .get("li")
+        .each((contact) =>
+          cy
+            .wrap(contact)
+            .within(() => cy.findAllByText(/sudirman/i).should("be.visible")),
+        ),
+    );
+  });
 });
