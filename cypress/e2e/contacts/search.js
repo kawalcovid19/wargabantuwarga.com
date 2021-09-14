@@ -27,7 +27,7 @@ describe("contacts page typed search", () => {
     );
   });
 
-  it("search by penyedia", () => {
+  it("search by provider", () => {
     cy.findByRole("textbox", {
       name: /cari kontak:/i,
     }).type("dompet dhuafa{enter}");
