@@ -23,7 +23,7 @@ describe("contacts page typed search", () => {
     );
   });
 
-  it.only("search by address", () => {
+  it("search by address", () => {
     cy.findByRole("textbox", {
       name: /cari kontak:/i,
     }).type("Sudirman");
@@ -39,6 +39,28 @@ describe("contacts page typed search", () => {
           cy
             .wrap(contact)
             .within(() => cy.findAllByText(/sudirman/i).should("be.visible")),
+        ),
+    );
+  });
+
+  it("search by penyedia", () => {
+    cy.findByRole("textbox", {
+      name: /cari kontak:/i,
+    }).type("dompet dhuafa");
+
+    cy.findByRole("button", {
+      name: /cari/i,
+    }).click();
+
+    cy.findByTestId("contact-list").within(() =>
+      cy
+        .get("li")
+        .each((contact) =>
+          cy
+            .wrap(contact)
+            .within(() =>
+              cy.findAllByText(/dompet dhuafa/i).should("be.visible"),
+            ),
         ),
     );
   });
