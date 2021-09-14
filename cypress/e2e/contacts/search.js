@@ -36,4 +36,14 @@ describe("contacts page typed search", () => {
       cy.findAllByText(/dompet dhuafa/i).should("be.visible"),
     );
   });
+
+  it("displays the empty state when the search keyword matches nothing", () => {
+    cy.findByRole("textbox", {
+      name: /cari kontak:/i,
+    }).type("aoeu{enter}");
+
+    cy.findByRole("heading", {
+      name: /fasilitas tidak ditemukan/i,
+    }).should("be.visible");
+  });
 });
