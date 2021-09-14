@@ -26,11 +26,7 @@ describe("contacts page typed search", () => {
   it("search by address", () => {
     cy.findByRole("textbox", {
       name: /cari kontak:/i,
-    }).type("Sudirman");
-
-    cy.findByRole("button", {
-      name: /cari/i,
-    }).click();
+    }).type("Sudirman{enter}");
 
     cy.findByTestId("contact-list").within(() =>
       cy
@@ -46,11 +42,7 @@ describe("contacts page typed search", () => {
   it("search by penyedia", () => {
     cy.findByRole("textbox", {
       name: /cari kontak:/i,
-    }).type("dompet dhuafa");
-
-    cy.findByRole("button", {
-      name: /cari/i,
-    }).click();
+    }).type("dompet dhuafa{enter}");
 
     cy.findByTestId("contact-list").within(() =>
       cy
