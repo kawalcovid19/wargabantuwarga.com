@@ -7602,10 +7602,10 @@ htmlparser2@^6.0.0, htmlparser2@^6.1.0:
     domutils "^2.5.2"
     entities "^2.0.0"
 
-htmr@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/htmr/-/htmr-1.0.0.tgz#f3bf63a1a434b791aacf766e71d380e7c6bddaef"
-  integrity sha512-lEEVDMOwOhyqIdLx5caDxKP5yqt5CODI/e2cWrSOmh/3OGzycayLBBlFLozV1BStH94KaUnrTOzk8sEW4Xpe1g==
+htmr@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/htmr/-/htmr-1.0.1.tgz#8083bacf74130bbd040aa0ffb32f26ed794f8c22"
+  integrity sha512-7YF4lq4xlwKs+0AYu9cRnBAIh5bPrjArgMwiZIbSrF3z9MhCzbeqoCp4mYnHdK22DMkcwYakE07PJTYbITOhqA==
   dependencies:
     html-entities "^2.1.0"
     htmlparser2 "^6.0.0"
