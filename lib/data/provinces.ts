@@ -21,6 +21,7 @@ export type Contact = {
   readonly link?: string;
   readonly tambahan_informasi?: string;
   readonly terakhir_update?: string;
+  readonly tanggal_verifikasi?: string;
   readonly bentuk_verifikasi?: string;
   readonly verifikasi: number;
   readonly ketersediaan?: "Tersedia" | "Tidak Tersedia";

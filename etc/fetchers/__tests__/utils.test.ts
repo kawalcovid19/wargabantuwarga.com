@@ -141,17 +141,17 @@ describe("utils > contactReducer", () => {
     expect(result.ketersediaan).toBe("Tidak Tersedia");
   });
 
-  it("should set 'verifikasi' to `true` if 'terakhir_update' is not empty", () => {
+  it("should set 'verifikasi' to `true` if 'tanggal_verifikasi' is not empty", () => {
     const obj: Record<string, number | string> = {};
     const col: SheetColumn = {
-      name: "Terakhir Update",
+      name: "Tanggal Verifikasi",
       index: 9,
     };
 
     const result = reducer(obj, col);
 
-    expect(result).toHaveProperty("terakhir_update");
-    expect(result.terakhir_update).toBe("19/7/2021");
+    expect(result).toHaveProperty("tanggal_verifikasi");
+    expect(result.tanggal_verifikasi).toBe("19/7/2021");
     expect(result).toHaveProperty("verifikasi");
     expect(result.verifikasi).toBe(1);
   });

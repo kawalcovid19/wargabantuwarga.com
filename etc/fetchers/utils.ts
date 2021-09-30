@@ -73,7 +73,7 @@ export const contactReducer = (row: string[]) => {
         getKebabCase(prev.penyedia as string),
         getKebabCase(stripTags(prev.kontak as string)),
       ].join("-");
-    } else if (colName == "terakhir_update") {
+    } else if (colName == "tanggal_verifikasi") {
       prev.verifikasi = cellValue == "" ? 0 : 1;
     }
     return prev;

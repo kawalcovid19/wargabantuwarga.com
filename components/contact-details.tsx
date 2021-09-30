@@ -76,8 +76,10 @@ export function ContactDetails({ contact }: ContactDetailsProps) {
         />
         <DescriptionItem label="Tautan" value={contact.link} withTruncation />
         <DescriptionItem
-          label="Terakhir Update"
-          value={contact.terakhir_update}
+          label="Status Verifikasi"
+          value={
+            contact.tanggal_verifikasi ? "Terverifikasi" : "Belum terverifikasi"
+          }
         />
         <DescriptionItem
           label="Bentuk Verifikasi"

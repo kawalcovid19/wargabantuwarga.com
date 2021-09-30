@@ -28,14 +28,11 @@ describe("fetchDatabase", () => {
     expect(fetchMock).toHaveBeenCalledWith("https://kcov.id/wbw-database");
 
     expect(writeFileSyncSpy).toHaveBeenCalledTimes(1);
-    expect(writeFileSyncSpy).toHaveBeenCalledWith(
-      path.resolve(__dirname, "../../../data/wbw-database.json"),
-      JSON.stringify(
-        JSON.parse(
-          fs.readFileSync(
-            path.resolve(__dirname, "../__mocks__/wbw-database.json"),
-            "utf-8",
-          ),
+    expect(JSON.parse(writeFileSyncSpy.mock.calls[0][1] as string)).toEqual(
+      JSON.parse(
+        fs.readFileSync(
+          path.resolve(__dirname, "../__mocks__/wbw-database.json"),
+          "utf-8",
         ),
       ),
     );

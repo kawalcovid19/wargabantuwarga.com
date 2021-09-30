@@ -56,20 +56,13 @@ function ContactListItem({
           <p className="text-sm font-medium text-gray-600 truncate">
             {contact.keterangan}
           </p>
-          {isNotEmpty(contact.terakhir_update) ? (
+          {isNotEmpty(contact.tanggal_verifikasi) ? (
             <div className="mt-2 mb-3 flex items-center text-xs text-gray-500 sm:my-0">
               <BadgeCheckIcon
                 aria-hidden="true"
                 className="flex-shrink-0 h-4 w-4 sm:order-2 text-green-400"
               />
-              <p className="ml-2 mr-1">
-                Terverifikasi{" "}
-                {contact.terakhir_update && (
-                  <time dateTime={contact.terakhir_update}>
-                    {contact.terakhir_update}
-                  </time>
-                )}
-              </p>
+              <p className="ml-2 mr-1">Terverifikasi</p>
             </div>
           ) : (
             <div className="mt-2 mb-3 flex items-center text-xs text-gray-400 sm:my-0">
