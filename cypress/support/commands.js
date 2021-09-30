@@ -23,3 +23,9 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("forEachContactItem", (assertionFn) => {
+  cy.findByTestId("contact-list").within(() =>
+    cy.get("li").each((contact) => cy.wrap(contact).within(assertionFn)),
+  );
+});
