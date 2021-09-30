@@ -5,27 +5,27 @@ import { ContactDetails } from "~/components/contact-details";
 import { contactBuilder } from "~/lib/data/__mocks__/builders/provinces";
 
 describe("ContactDetails", () => {
-  it("renders 'ketersediaan' row when the property is not empty", () => {
-    const contactWithKetersediaan = contactBuilder({
+  it("renders 'Catatan Ketersediaan' row when the property is not empty", () => {
+    const contactWithCatatanKetersediaan = contactBuilder({
       overrides: {
-        ketersediaan: "Tersedia",
+        catatan_ketersediaan: "Harus membayar uang muka",
       },
     });
 
     render(
       <ContactDetails
-        contact={contactWithKetersediaan}
+        contact={contactWithCatatanKetersediaan}
         provinceName="DKI Jakarta"
       />,
     );
 
-    expect(screen.getByText("Tersedia")).toBeVisible();
+    expect(screen.getByText("Harus membayar uang muka")).toBeVisible();
   });
 
-  it("does not render 'ketersediaan' row when the property is empty", () => {
+  it("does not render 'Catatan Ketersediaan' row when the property is empty", () => {
     const contactWithKetersediaan = contactBuilder({
       overrides: {
-        ketersediaan: perBuild(() => ""),
+        catatan_ketersediaan: perBuild(() => ""),
       },
     });
 
@@ -36,6 +36,8 @@ describe("ContactDetails", () => {
       />,
     );
 
-    expect(screen.queryByText("Tersedia")).toBeNull();
+    expect(
+      screen.queryByText("Harus membayar uang muka"),
+    ).not.toBeInTheDocument();
   });
 });

@@ -28,7 +28,7 @@ export const contactBuilder = build<Contact>({
     kontak: fake((f) => f.phone.phoneNumber()),
     alamat: fake((f) => f.address.streetAddress()),
     verifikasi: 1,
-    ketersediaan: oneOf("Tersedia", "Tidak Tersedia", ""),
+    catatan_ketersediaan: fake((f) => f.lorem.sentence()),
   },
 });
 

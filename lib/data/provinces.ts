@@ -24,7 +24,7 @@ export type Contact = {
   readonly tanggal_verifikasi?: string;
   readonly bentuk_verifikasi?: string;
   readonly verifikasi: number;
-  readonly ketersediaan?: "Tersedia" | "Tidak Tersedia";
+  readonly catatan_ketersediaan?: string;
 };
 
 export type ProvincePath = {
