@@ -19,7 +19,7 @@ export type Contact = {
   readonly kontak?: string;
   readonly alamat?: string;
   readonly link?: string;
-  readonly tambahan_informasi?: string;
+  readonly informasi_2?: string;
   readonly terakhir_update?: string;
   readonly tanggal_verifikasi?: string;
   readonly bentuk_verifikasi?: string;
