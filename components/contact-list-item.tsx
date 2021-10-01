@@ -9,6 +9,7 @@ import {
 import htmr from "htmr";
 import Link from "next/link";
 import { CopyButton } from "./copy-button";
+import { Badge } from "./ui/badge";
 import { OpenMapButton } from "./open-map-button";
 import { isNotEmpty, stripTags } from "~/lib/string-utils";
 import { getContactMetaTitle } from "~/lib/meta";
@@ -40,6 +41,9 @@ function ContactListItem({
                 : contact.keterangan}
             </a>
           </Link>
+          <div className="flex-shrink-0 flex space-x-2">
+            <Badge color="yellow">{contact.kebutuhan}</Badge>
+          </div>
         </div>
         <div className="mt-2 sm:flex sm:justify-between">
           <p className="text-sm font-medium text-gray-600 truncate">
