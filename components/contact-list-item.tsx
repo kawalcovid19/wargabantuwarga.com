@@ -9,7 +9,6 @@ import {
 import htmr from "htmr";
 import Link from "next/link";
 import { CopyButton } from "./copy-button";
-import { Badge } from "./ui/badge";
 import { OpenMapButton } from "./open-map-button";
 import { isNotEmpty, stripTags } from "~/lib/string-utils";
 import { getContactMetaTitle } from "~/lib/meta";
@@ -41,35 +40,18 @@ function ContactListItem({
                 : contact.keterangan}
             </a>
           </Link>
-          <div className="flex-shrink-0 flex space-x-2">
-            {isNotEmpty(contact.ketersediaan) && (
-              <Badge
-                color={contact.ketersediaan === "Tersedia" ? "green" : "red"}
-              >
-                {contact.ketersediaan}
-              </Badge>
-            )}
-            <Badge color="yellow">{contact.kebutuhan}</Badge>
-          </div>
         </div>
         <div className="mt-2 sm:flex sm:justify-between">
           <p className="text-sm font-medium text-gray-600 truncate">
             {contact.keterangan}
           </p>
-          {isNotEmpty(contact.terakhir_update) ? (
+          {isNotEmpty(contact.tanggal_verifikasi) ? (
             <div className="mt-2 mb-3 flex items-center text-xs text-gray-500 sm:my-0">
               <BadgeCheckIcon
                 aria-hidden="true"
                 className="flex-shrink-0 h-4 w-4 sm:order-2 text-green-400"
               />
-              <p className="ml-2 mr-1">
-                Terverifikasi{" "}
-                {contact.terakhir_update && (
-                  <time dateTime={contact.terakhir_update}>
-                    {contact.terakhir_update}
-                  </time>
-                )}
-              </p>
+              <p className="ml-2 mr-1">Terverifikasi</p>
             </div>
           ) : (
             <div className="mt-2 mb-3 flex items-center text-xs text-gray-400 sm:my-0">

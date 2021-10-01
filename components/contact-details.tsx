@@ -76,8 +76,10 @@ export function ContactDetails({ contact }: ContactDetailsProps) {
         />
         <DescriptionItem label="Tautan" value={contact.link} withTruncation />
         <DescriptionItem
-          label="Terakhir Update"
-          value={contact.terakhir_update}
+          label="Status Verifikasi"
+          value={
+            contact.tanggal_verifikasi ? "Terverifikasi" : "Belum terverifikasi"
+          }
         />
         <DescriptionItem
           label="Bentuk Verifikasi"
@@ -85,10 +87,17 @@ export function ContactDetails({ contact }: ContactDetailsProps) {
         />
         <DescriptionItem
           label="Tambahan Informasi"
-          value={contact.tambahan_informasi}
+          value={contact.informasi_2}
         />
-        {isNotEmpty(contact.ketersediaan) && (
-          <DescriptionItem label="Ketersediaan" value={contact.ketersediaan} />
+        <DescriptionItem
+          label="Terakhir Update"
+          value={contact.terakhir_update}
+        />
+        {isNotEmpty(contact.catatan_ketersediaan) && (
+          <DescriptionItem
+            label="Catatan Ketersediaan"
+            value={stripTags(contact.catatan_ketersediaan as string)}
+          />
         )}
       </dl>
     </div>
