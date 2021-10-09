@@ -6,15 +6,17 @@ import {
   VaccinationRegion,
 } from "../../lib/data/vaccination";
 
+const vaksinId = "https://api.vaksinasi.id";
+
 export async function fetchVaccinationDatabase() {
   const regions = (await (
-    await fetch("https://api.vaksinasi.id/regions")
+    await fetch(`${vaksinId}/regions`)
   ).json()) as VaccinationRegionsResponse;
 
   const promisedLocations = [];
   for (const { province } of regions.data) {
     promisedLocations.push(
-      fetch(`https://api.vaksinasi.id/locations/${province}`).then(
+      fetch(`${vaksinId}/locations/${province}`).then(
         (res) => res.json() as unknown as VaccinationRegion,
       ),
     );
