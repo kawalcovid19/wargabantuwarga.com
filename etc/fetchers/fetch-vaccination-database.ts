@@ -4,7 +4,7 @@ import fetch from "cross-fetch";
 
 interface VaccinationRegions {
   province: string;
-  city: Array<`${"Kota" | "Kab."} ${string}`>;
+  city: Array<`${"Kab." | "Kota"} ${string}`>;
 }
 
 interface VaccinationRegionsResponse {
