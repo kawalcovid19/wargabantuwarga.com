@@ -10,6 +10,19 @@ import { fetchVaccinationDatabase } from "./fetch-vaccination-database";
   const start = process.hrtime();
   const spinner = ora(`${chalk.yellowBright("Fetching all data...")}`).start();
 
+  fetchVaccinationDatabase()
+    .then(() => {
+      const end = `${toSecond(process.hrtime(start))} seconds`;
+      spinner.succeed(
+        `Fetching vaccination database (vaksinasi.id) done in ${chalk.greenBright(
+          end,
+        )}`,
+      );
+    })
+    .catch((err) => {
+      chalk.red(err);
+    });
+
   fetchFaqSheets()
     .then(() => {
       const end = `${toSecond(process.hrtime(start))} seconds`;
@@ -34,20 +47,6 @@ import { fetchVaccinationDatabase } from "./fetch-vaccination-database";
     .then(() => {
       const end = `${toSecond(process.hrtime(start))} seconds`;
       spinner.succeed(`Fetching Sheets done in ${chalk.greenBright(end)}`);
-      spinner.start(`${chalk.yellowBright("Fetching next data...")}`);
-    })
-    .catch((err) => {
-      chalk.red(err);
-    });
-
-  fetchVaccinationDatabase()
-    .then(() => {
-      const end = `${toSecond(process.hrtime(start))} seconds`;
-      spinner.succeed(
-        `Fetching vaccination database (vaksinasi.id) done in ${chalk.greenBright(
-          end,
-        )}`,
-      );
     })
     .catch((err) => {
       chalk.red(err);
