@@ -1,22 +1,28 @@
+type City = `${"Kab." | "Kota"} ${string}`;
+type DateString = `${number}-${number}-${number}`;
+type TimeString = `${number}:${number}:${number}`;
+type VaccinationAgeRange = Array<`${string} (${number}-${
+  | number
+  | null} Tahun)`>;
+
 export interface VaccinationRegions {
   province: string;
-  city: Array<`${"Kab." | "Kota"} ${string}`>;
+  city: Array<City>;
 }
 
 export interface VaccinationRegionsResponse {
   data: Array<VaccinationRegions>;
 }
-
 export interface VaccinationLocation {
   province: string;
-  city: string;
+  city: City;
   title: string;
-  datestart: `${number}-${number}-${number}`;
-  dateend: `${number}-${number}-${number}`;
-  timestart: `${number}:${number}:${number}`;
-  timeend: `${number}:${number}:${number}`;
+  datestart: DateString;
+  dateend: DateString;
+  timestart: TimeString;
+  timeend: TimeString;
   registration: string;
-  agerange: Array<`${string} (${number}-${number | null} Tahun)`>;
+  agerange: VaccinationAgeRange;
   description: string;
   link: string;
   address: string;
@@ -24,7 +30,7 @@ export interface VaccinationLocation {
   isFree: boolean;
   isvalid: boolean;
   code: string;
-  dateadded: `${number}-${number}-${number}`;
+  dateadded: DateString;
 }
 
 export interface VaccinationRegion {
