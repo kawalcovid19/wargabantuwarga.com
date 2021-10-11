@@ -1,20 +1,25 @@
 [
   {
-    "alamat": "Jalan Inong Balee No.38 Darussalam Banda Aceh",
-    "lokasi": "Kota Banda Aceh",
-    "buka_waktu": "08:00:00",
-    "id": "0",
-    "informasi_2": "-Senin dan Sabtu (bisa berubah sewaktu-waktu)\n-Dibeikan bagi warga dengan kriteria:\n1.petugas pelayanan publik\n2. Pra lansia &lansia\n3. Masyarakat Banda Aceh di utamakan yang berdomisili di wilayah Puskesmas Kopelma Darussalam,Rukoh,ie masen kayee adang,Lamgugob & Deah raya\n-Membawa KTP\n-informasi tambahan bisa dilihat di akun Instagram https://instagram.com/puskesmaskopelmadarussalam?utm_medium=copy_link",
-    "keterangan": "Lokasi Vaksinasi COVID-19",
-    "link": "https://www.instagram.com/p/CQgFAepnZkQ/?utm_medium=copy_link",
-    "map": "https://goo.gl/maps/9hViESZJ9rYwGypb9",
-    "mulai_tanggal": "2021-06-24",
-    "penyedia": "UPTD PUSKESMAS KOPELMA DARUSSALAM",
-    "rentang_umur": ["Dewasa (18-59 Tahun)", "Lansia (60-)"],
-    "selesai_tanggal": "2022-03-31",
-    "slug": "uptd-puskesmas-kopelma-darussalam",
-    "terakhir_update": "2021-07-30",
-    "tutup_waktu": "12:00:00",
-    "verifikasi": 1
+    "name": "Aceh",
+    "data": [
+      {
+        "alamat": "Jalan Inong Balee No.38 Darussalam Banda Aceh",
+        "lokasi": "Kota Banda Aceh",
+        "buka_waktu": "08:00:00",
+        "id": "0",
+        "informasi_2": "-Senin dan Sabtu (bisa berubah sewaktu-waktu)\n-Dibeikan bagi warga dengan kriteria:\n1.petugas pelayanan publik\n2. Pra lansia &lansia\n3. Masyarakat Banda Aceh di utamakan yang berdomisili di wilayah Puskesmas Kopelma Darussalam,Rukoh,ie masen kayee adang,Lamgugob & Deah raya\n-Membawa KTP\n-informasi tambahan bisa dilihat di akun Instagram https://instagram.com/puskesmaskopelmadarussalam?utm_medium=copy_link",
+        "keterangan": "Lokasi Vaksinasi COVID-19",
+        "link": "https://www.instagram.com/p/CQgFAepnZkQ/?utm_medium=copy_link",
+        "map": "https://goo.gl/maps/9hViESZJ9rYwGypb9",
+        "mulai_tanggal": "2021-06-24",
+        "penyedia": "UPTD PUSKESMAS KOPELMA DARUSSALAM",
+        "rentang_umur": ["Dewasa (18-59 Tahun)", "Lansia (60-)"],
+        "selesai_tanggal": "2022-03-31",
+        "slug": "uptd-puskesmas-kopelma-darussalam",
+        "terakhir_update": "2021-07-30",
+        "tutup_waktu": "12:00:00",
+        "verifikasi": 1
+      }
+    ]
   }
 ]

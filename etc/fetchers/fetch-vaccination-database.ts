@@ -4,7 +4,7 @@ import fetch from "cross-fetch";
 import {
   VaccinationRegionsResponse,
   VaccinationRegion,
-  VaccinationContact,
+  PartialVaccinationProvince,
 } from "../../lib/data/vaccination";
 import { getKebabCase } from "../../lib/string-utils";
 
@@ -24,32 +24,29 @@ export async function fetchVaccinationDatabase() {
     );
   }
 
-  const locations: VaccinationContact[] = [];
-  for (const region of await Promise.all(promisedLocations)) {
-    for (const location of region.data) {
-      locations.push({
-        id: `${region.data.findIndex(
-          (index) => location.title === index.title,
-        )}`,
-        keterangan: "Lokasi Vaksinasi COVID-19",
-        lokasi: location.city,
-        verifikasi: location.isvalid ? 1 : 0,
-        penyedia: location.title,
-        alamat: location.address,
-        slug: getKebabCase(location.title),
-        informasi_2: location.description,
-        terakhir_update: location.dateadded,
-        rentang_umur: location.agerange,
-        buka_waktu: location.timestart,
-        tutup_waktu: location.timeend,
-        mulai_tanggal: location.datestart,
-        selesai_tanggal: location.dateend,
-        link: location.link,
-        map: location.map,
-      });
-    }
-  }
-
+  const locations: PartialVaccinationProvince[] = (
+    await Promise.all(promisedLocations)
+  ).map((region) => ({
+    name: region.data[0].province,
+    data: region.data.map((location) => ({
+      id: `${region.data.findIndex((index) => location.title === index.title)}`,
+      keterangan: "Lokasi Vaksinasi COVID-19",
+      lokasi: location.city,
+      verifikasi: location.isvalid ? 1 : 0,
+      penyedia: location.title,
+      alamat: location.address,
+      slug: getKebabCase(location.title),
+      informasi_2: location.description,
+      terakhir_update: location.dateadded,
+      rentang_umur: location.agerange,
+      buka_waktu: location.timestart,
+      tutup_waktu: location.timeend,
+      mulai_tanggal: location.datestart,
+      selesai_tanggal: location.dateend,
+      link: location.link,
+      map: location.map,
+    })),
+  }));
   const text = JSON.stringify(locations);
 
   fs.writeFileSync(
