@@ -41,8 +41,13 @@ describe("fetchVaksinasiDB", () => {
     );
 
     expect(writeFileSyncSpy).toHaveBeenCalledTimes(1);
-    expect(JSON.parse(writeFileSyncSpy.mock.calls[0][1] as string)).toEqual([
-      JSON.parse(mockedResponses["/locations/Aceh"]),
-    ]);
+    expect(JSON.parse(writeFileSyncSpy.mock.calls[0][1] as string)).toEqual(
+      JSON.parse(
+        fs.readFileSync(
+          path.resolve(__dirname, "../__mocks__/wbw-vaccination-db.json"),
+          "utf-8",
+        ),
+      ),
+    );
   });
 });

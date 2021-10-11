@@ -1,3 +1,5 @@
+import { Contact } from "./provinces";
+
 type City = `${"Kab." | "Kota"} ${string}`;
 type DateString = `${number}-${number}-${number}`;
 type TimeString = `${number}:${number}:${number}`;
@@ -33,6 +35,19 @@ export interface VaccinationLocation {
   dateadded: DateString;
 }
 
+type _location = VaccinationLocation;
 export interface VaccinationRegion {
   data: Array<VaccinationLocation>;
+}
+
+export interface VaccinationContact extends Contact {
+  rentang_umur: _location["agerange"];
+  buka_waktu: _location["timestart"];
+  tutup_waktu: _location["timeend"];
+  mulai_tanggal: _location["datestart"];
+  selesai_tanggal: _location["dateend"];
+  kode?: _location["code"];
+  gratis?: _location["isFree"];
+  map: _location["map"];
+  link: _location["link"];
 }
