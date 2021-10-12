@@ -2,6 +2,7 @@ import React from "react";
 
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
+import ChatbotSection from "~/components/kontak-darurat/chatbot-section";
 import EmergencyContactSection from "~/components/kontak-darurat/emergency-contact-section";
 import OxygenSection from "~/components/kontak-darurat/oxygen-section";
 import VaccineSection from "~/components/kontak-darurat/vaccine-section";
@@ -54,6 +55,7 @@ export default function KontakDaruratPage(props: KontakDaruratProps) {
           <EmergencyContactSection
             emergency_contacts={props.emergencyContacts.emergency_contacts}
           />
+          <ChatbotSection />
           <div className="space-y-4 px-4 pt-6 pb-24 bg-white sm:pb-6">
             <VaccineSection
               vaccine_section={props.vaccineSection.vaccine_section}
