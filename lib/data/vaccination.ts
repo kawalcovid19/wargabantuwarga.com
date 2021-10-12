@@ -12,11 +12,6 @@ export interface VaccinationRegions {
   city: Array<City>;
 }
 
-export interface PartialVaccinationProvince {
-  name: string;
-  data: VaccinationContact[];
-}
-
 export interface VaccinationRegionsResponse {
   data: Array<VaccinationRegions>;
 }

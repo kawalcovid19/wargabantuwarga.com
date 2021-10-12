@@ -4,7 +4,7 @@ import fetch from "cross-fetch";
 import {
   VaccinationRegionsResponse,
   VaccinationRegion,
-  PartialVaccinationProvince,
+  VaccinationContact,
 } from "../../lib/data/vaccination";
 import { getKebabCase } from "../../lib/string-utils";
 
@@ -24,11 +24,10 @@ export async function fetchVaccinationDatabase() {
     );
   }
 
-  const locations: PartialVaccinationProvince[] = (
-    await Promise.all(promisedLocations)
-  ).map((region) => ({
-    name: region.data[0].province,
-    data: region.data.map((location) => ({
+  const locations: { [province: string]: VaccinationContact[] } = {};
+
+  for (const region of await Promise.all(promisedLocations)) {
+    locations[region.data[0].province] = region.data.map((location) => ({
       id: `${region.data.findIndex((index) => location.title === index.title)}`,
       keterangan: "Lokasi Vaksinasi COVID-19",
       lokasi: location.city,
@@ -45,8 +44,8 @@ export async function fetchVaccinationDatabase() {
       selesai_tanggal: location.dateend,
       link: location.link,
       map: location.map,
-    })),
-  }));
+    }));
+  }
   const text = JSON.stringify(locations);
 
   fs.writeFileSync(
