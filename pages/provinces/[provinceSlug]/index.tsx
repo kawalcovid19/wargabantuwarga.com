@@ -36,7 +36,7 @@ export default function ProvincePage(props: ProvinceProps) {
       "keterangan",
       "kontak",
       "link",
-      "tambahan_informasi",
+      "informasi_2",
       "bentuk_verifikasi",
     ],
     aggregationSettings: [

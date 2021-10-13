@@ -1,4 +1,4 @@
-import provinces from "~/data/wbw-sheets.json";
+import provinces from "~/data/wbw-database.json";
 
 export type Provinces = Province[];
 
@@ -19,11 +19,12 @@ export type Contact = {
   readonly kontak?: string;
   readonly alamat?: string;
   readonly link?: string;
-  readonly tambahan_informasi?: string;
+  readonly informasi_2?: string;
   readonly terakhir_update?: string;
+  readonly tanggal_verifikasi?: string;
   readonly bentuk_verifikasi?: string;
   readonly verifikasi: number;
-  readonly ketersediaan?: "Tersedia" | "Tidak Tersedia";
+  readonly catatan_ketersediaan?: string;
 };
 
 export type ProvincePath = {

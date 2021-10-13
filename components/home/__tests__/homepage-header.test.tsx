@@ -13,7 +13,7 @@ describe("HomepageHeader", () => {
     expect(headerImage).toMatchInlineSnapshot(`
 <img
   alt="WargaBantuWarga background"
-  data-nimg="true"
+  data-nimg="responsive"
   decoding="async"
   sizes="100vw"
   src="https://res.cloudinary.com/wargabantuwarga/image/upload/c_scale,w_3840,q_90,cs_tinysrgb,f_auto/v1627049958/hero_banner_desktop_zat71c"

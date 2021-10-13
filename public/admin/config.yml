@@ -93,6 +93,23 @@ collections:
             required: false
             hint: Heading banner on top of Home page
             tagname: ""
+      - name: officially_supported_apps
+        label: Officially Supported Apps by Kemenkes
+        file: _content/officially_supported_apps.json
+        fields:
+          - label: Application
+            name: application
+            widget: list
+            fields:
+              - label: Application Name
+                name: name
+                widget: string
+              - label: Download Link
+                name: link
+                widget: string
+              - label: Application Logo
+                name: logo
+                widget: image
   - name: about_page
     label: About Page
     delete: false
@@ -293,12 +310,42 @@ collections:
         label: Education Links
         file: _content/educations.json
         fields:
-          - label: Add new topic
+          - label: Topic
             name: topics
             widget: list
             fields:
               - label: Topic Title
                 name: topic
+                widget: string
+              - label: Description
+                name: description
+                widget: string
+                required: false
+              - name: contents
+                label: Contents
+                widget: list
+                fields:
+                  - label: Link Title
+                    name: title
+                    widget: string
+                  - label: Link URL
+                    name: url
+                    widget: string
+  - name: telekonseling
+    label: Telekonseling Page
+    delete: false
+    preview_path: telekonseling
+    files:
+      - name: telekonseling_contents
+        label: Telekonseling Links
+        file: _content/telekonseling.json
+        fields:
+          - label: Support
+            name: supports
+            widget: list
+            fields:
+              - label: Support Title
+                name: support
                 widget: string
               - label: Description
                 name: description

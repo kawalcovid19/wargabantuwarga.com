@@ -1,10 +1,9 @@
 ---
 name: Epic
 about: A master issue thread which contains other smaller issues.
-title: ''
+title: ""
 labels: epic
 assignees: zainfathoni
-
 ---
 
 ## Overview
@@ -13,7 +12,7 @@ assignees: zainfathoni
 
 ## Current Tasks
 
-<!-- List all the tasks here in markdown checkboxes. These can later be spun off into their own issue threads through the GitHub UI. -->
+<!-- List all the tasks here in markdown checkboxes. We can later spin-off these into their own issue threads through the GitHub UI. -->
 
 - [ ] (task 1)
 - [ ] (task 2)

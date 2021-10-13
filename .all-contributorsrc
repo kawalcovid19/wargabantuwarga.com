@@ -473,6 +473,24 @@
       "contributions": [
         "test"
       ]
+    },
+    {
+      "login": "ranggarppb",
+      "name": "Rangga Putra Pertama",
+      "avatar_url": "https://avatars.githubusercontent.com/u/44335152?v=4",
+      "profile": "https://github.com/ranggarppb",
+      "contributions": [
+        "tool"
+      ]
+    },
+    {
+      "login": "svspicious",
+      "name": "Anvaqta Tangguh Wisesa",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35674157?v=4",
+      "profile": "https://wisesa.dev",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

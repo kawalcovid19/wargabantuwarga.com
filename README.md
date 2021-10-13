@@ -3,7 +3,7 @@
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-45-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-47-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -12,7 +12,7 @@
 
 A society initiative to circulate information about health facilities and devices for COVID-19.
 
-## Purpose and Principles
+## Purpose, Principles, and Guidelines
 
 The purpose of this website is to republish publicly accessible Google Docs to be more mobile-friendly and performant.
 
@@ -36,6 +36,12 @@ Our website must be accessible so that we can reach more users and help more peo
 
 Any information posted on our website must be up-to-date to the latest version that our content editors published. We can tolerate delays to a certain degree for the sake of web performance, but it should be limited to less than an hour.
 
+#### ✅ Iterative, Incremental Changes
+
+Software development is **complex, cognitive work**. The simpler we can make something, then generally the easier it is to do. Similarly, the less amount of moving parts a software component has, the less prone it is to errors, and the less maintenance burden it gives us.
+
+One of the simplest ways to reduce complexity is to reduce the scope. We can often postpone the less valuable parts of a large issue and do them later in order to get the most valuable parts into our user's hands faster.
+
 > What we're going against:
 
 #### ❌ Counter-productive Cosmetics
@@ -49,6 +55,16 @@ We must carefully consider any additional client-side libraries that we include 
 #### ❌ Unmeasured Improvements
 
 For any improvements on the website, we should continuously measure its impact on the [Core Web Vitals](https://web.dev/vitals/). If proven to hurt the metrics, we should revert the changes and find another way to implement them without degrading the performance.
+
+### Testing Guidelines
+
+In general, these are three guidelines that we need to pay attention to:
+
+1. [Query priorities](https://testing-library.com/docs/queries/about#priority)
+2. [Testing appearance and disappearance](https://testing-library.com/docs/guide-disappearance/)
+3. [Opting in for interactions instead of events](https://testing-library.com/docs/guide-events/#interactions-vs-events)
+
+Please ensure that all queries and assertions in your test files comply with those testing guidelines.
 
 ## Getting Started
 
@@ -92,12 +108,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 - [Convert .ico](https://icoconvert.com)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Tailwind UI](https://tailwindui.com/)
+- [Testing Playground](https://testing-playground.com/)
 
-## Supporter
+## Supporters
 
-Special thanks goes to our supporter.
+Special thanks goes to our supporters.
 
-<p align="center"><a href="https://www.gitbook.com/" target="_blank" rel="noopener noreferrer"><img width="300" src="https://user-images.githubusercontent.com/56619123/128886904-5887e9e2-e444-4db5-81f8-5cd33a3d79ad.png" alt="GitBook Logo"></a></p>
+<p align="center">
+  <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer"><img height="80" src="https://user-images.githubusercontent.com/5663877/129595637-48c212e9-ac98-4e2f-943e-2c04b80ea888.png" alt="Netlify"></a>
+  <a href="https://www.gitbook.com/" target="_blank" rel="noopener noreferrer"><img height="80" src="https://user-images.githubusercontent.com/56619123/128886904-5887e9e2-e444-4db5-81f8-5cd33a3d79ad.png" alt="GitBook Logo"></a>
+  <a href="https://www.cypress.io/" target="_blank" rel="noopener noreferrer"><img height="80" alt="Cypress" src="https://user-images.githubusercontent.com/5663877/129580266-2c4ac4a9-8a9b-4e2d-b0cd-2e3ea8568333.png" /></a>
+</p>
 
 ## Contributing
 
@@ -174,6 +195,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://adindap.com"><img src="https://avatars.githubusercontent.com/u/70412?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adinda Praditya</b></sub></a><br /><a href="#security-apraditya" title="Security">🛡️</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=apraditya" title="Documentation">📖</a></td>
     <td align="center"><a href="http://albarranaufala.github.io/albarra-portfolio"><img src="https://avatars.githubusercontent.com/u/54704525?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Albarra Naufala Erdanto</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/issues?q=author%3Aalbarranaufala" title="Bug reports">🐛</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=albarranaufala" title="Code">💻</a></td>
     <td align="center"><a href="http://adibfirman.github.io"><img src="https://avatars.githubusercontent.com/u/24794196?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adib Firman</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=adibfirman" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://github.com/ranggarppb"><img src="https://avatars.githubusercontent.com/u/44335152?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rangga Putra Pertama</b></sub></a><br /><a href="#tool-ranggarppb" title="Tools">🔧</a></td>
+    <td align="center"><a href="https://wisesa.dev"><img src="https://avatars.githubusercontent.com/u/35674157?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anvaqta Tangguh Wisesa</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=svspicious" title="Code">💻</a></td>
   </tr>
 </table>
 

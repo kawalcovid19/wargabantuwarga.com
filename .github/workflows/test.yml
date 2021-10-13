@@ -8,6 +8,7 @@ name: CI
 
 jobs:
   install-deps:
+    if: github.repository == 'kawalcovid19/wargabantuwarga.com'
     name: Install dependencies
     runs-on: ubuntu-latest
     steps:
@@ -33,6 +34,7 @@ jobs:
           key: ${{ github.sha }}
 
   lint:
+    if: github.repository == 'kawalcovid19/wargabantuwarga.com'
     name: ESLint
     runs-on: ubuntu-latest
     needs: install-deps
@@ -55,6 +57,7 @@ jobs:
           CI: true
 
   type-check:
+    if: github.repository == 'kawalcovid19/wargabantuwarga.com'
     name: Type check
     runs-on: ubuntu-latest
     needs: install-deps
@@ -128,7 +131,7 @@ jobs:
         with:
           record: true
           start: yarn dev
-          wait-on: 'http://localhost:3000'
+          wait-on: "http://localhost:3000"
         env:
           CI: true
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}

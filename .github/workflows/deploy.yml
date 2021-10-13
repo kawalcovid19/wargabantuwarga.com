@@ -4,11 +4,13 @@ name: Deploy
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: "*/30 0-17,23 * * *"
+    - cron: "*/60 18-22 * * *"
 
 jobs:
   deploy:
     name: Scheduled Deployment
+    if: github.repository == 'kawalcovid19/wargabantuwarga.com'
     runs-on: ubuntu-latest
 
     steps:
