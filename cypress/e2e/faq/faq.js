@@ -4,40 +4,63 @@ describe("Checking information on every category faq", () => {
   });
 
   it("gives information on category isoman", () => {
-    cy.get("select#filter-kategori_pertanyaan").select("Isoman");
-    cy.get("div.relative").should("contains.text", "Isoman");
+    cy.findByRole("combobox", { name: /kategori pertanyaan/i }).select(
+      "Isoman",
+    );
+    cy.findAllByText("Isoman").should("have.length", 2);
+    cy.url().should("include", "/faq?kategori_pertanyaan=Isoman");
   });
   it("gives information on category kontak erat", () => {
-    cy.get("select#filter-kategori_pertanyaan").select("Kontak Erat");
-    cy.get("div.relative").should("contains.text", "Kontak Erat");
+    cy.findByRole("combobox", { name: /kategori pertanyaan/i }).select(
+      "Kontak Erat",
+    );
+    cy.findAllByText("Kontak Erat").should("have.length", 2);
+    cy.url().should("include", "/faq?kategori_pertanyaan=Kontak%20Erat");
   });
   it("gives information on category pcr", () => {
-    cy.get("select#filter-kategori_pertanyaan").select("PCR");
-    cy.get("div.relative").should("contains.text", "PCR");
+    cy.findByRole("combobox", { name: /kategori pertanyaan/i }).select("PCR");
+    cy.findAllByText("PCR").should("have.length", 2);
+    cy.url().should("include", "/faq?kategori_pertanyaan=PCR");
   });
   it("gives information on category pasca isoman", () => {
-    cy.get("select#filter-kategori_pertanyaan").select("Pasca Isoman");
-    cy.get("div.relative").should("contains.text", "Pasca Isoman");
+    cy.findByRole("combobox", { name: /kategori pertanyaan/i }).select(
+      "Pasca Isoman",
+    );
+    cy.findAllByText("Pasca Isoman").should("have.length", 2);
+    cy.url().should("include", "/faq?kategori_pertanyaan=Pasca%20Isoman");
   });
   it("gives information on category tanda bahaya", () => {
-    cy.get("select#filter-kategori_pertanyaan").select("Tanda Bahaya");
-    cy.get("div.relative").should("contains.text", "Tanda Bahaya");
+    cy.findByRole("combobox", { name: /kategori pertanyaan/i }).select(
+      "Tanda Bahaya",
+    );
+    cy.findAllByText("Tanda Bahaya").should("have.length", 2);
+    cy.url().should("include", "/faq?kategori_pertanyaan=Tanda%20Bahaya");
   });
   it("gives information on category tatalaksana isoman", () => {
-    cy.get("select#filter-kategori_pertanyaan").select("Tatalaksana Isoman");
-    cy.get("div.relative").should("contains.text", "Tatalaksana Isoman");
+    cy.findByRole("combobox", { name: /kategori pertanyaan/i }).select(
+      "Tatalaksana Isoman",
+    );
+    cy.findAllByText("Tatalaksana Isoman").should("have.length", 2);
+    cy.url().should("include", "/faq?kategori_pertanyaan=Tatalaksana%20Isoman");
   });
   it("gives information on category terapi", () => {
-    cy.get("select#filter-kategori_pertanyaan").select("Terapi");
-    cy.get("div.relative").should("contains.text", "Terapi");
+    cy.findByRole("combobox", { name: /kategori pertanyaan/i }).select(
+      "Terapi",
+    );
+    cy.findAllByText("Terapi").should("have.length", 2);
+    cy.url().should("include", "/faq?kategori_pertanyaan=Terapi");
   });
   it("gives information on category umum", () => {
-    cy.get("select#filter-kategori_pertanyaan").select("Umum");
-    cy.get("div.relative").should("contains.text", "Umum");
+    cy.findByRole("combobox", { name: /kategori pertanyaan/i }).select("Umum");
+    cy.findAllByText("Umum").should("have.length", 2);
+    cy.url().should("include", "/faq?kategori_pertanyaan=Umum");
   });
   it("gives information on category vaksinasi", () => {
-    cy.get("select#filter-kategori_pertanyaan").select("Vaksinasi");
-    cy.get("div.relative").should("contains.text", "Vaksinasi");
+    cy.findByRole("combobox", { name: /kategori pertanyaan/i }).select(
+      "Vaksinasi",
+    );
+    cy.findAllByText("Vaksinasi").should("have.length", 2);
+    cy.url().should("include", "/faq?kategori_pertanyaan=Vaksinasi");
   });
 });
 
@@ -47,28 +70,33 @@ describe("Search keyword on page faq", () => {
   });
 
   it("gives information with keyword isoman", () => {
-    cy.get("input#keywordsInput").type("Isoman");
-    cy.get("button").contains("Cari").click();
-    cy.get("div.space-y-4").children().should("have.length", 4);
+    cy.findByRole("textbox", {
+      name: /cari pertanyaan:/i,
+    }).type("Isoman {enter}");
+    cy.findAllByText(/^isoman$/).should("have.length", 11);
+    cy.url().should("include", "/faq?q=Isoman");
   });
 
   it("gives information with keyword 'Dok apakah saya bisa tertular lagi setelah selesai isoman?'", () => {
-    cy.get("input#keywordsInput").type(
-      "Dok apakah saya bisa tertular lagi setelah selesai isoman?",
+    cy.findByRole("textbox", {
+      name: /cari pertanyaan:/i,
+    }).type(
+      "Dok apakah saya bisa tertular lagi setelah selesai isoman? {enter}",
     );
-    cy.get("button").contains("Cari").click();
-    cy.get("div.space-y-4")
-      .first()
-      .children()
-      .should(
-        "contains.text",
-        "YA. Anda masih bisa tertular apabila tidak menerapkan 5M. Jadi walaupun Anda sudah mempunyai antibodi di dalam tubuh, Anda masih bisa tertular dan harus isolasi kembali",
-      );
+    cy.findByText(
+      "YA. Anda masih bisa tertular apabila tidak menerapkan 5M. Jadi walaupun Anda sudah mempunyai antibodi di dalam tubuh, Anda masih bisa tertular dan harus isolasi kembali",
+    );
+    cy.url().should(
+      "include",
+      "/faq?q=Dok%20apakah%20saya%20bisa%20tertular%20lagi%20setelah%20selesai%20isoman?",
+    );
   });
 
   it("gives no result when search keyword is qwerty", () => {
-    cy.get("input#keywordsInput").type("qwerty");
-    cy.get("button").contains("Cari").click();
-    cy.contains("Pertanyaan tidak ditemukan").should("exist");
+    cy.findByRole("textbox", {
+      name: /cari pertanyaan:/i,
+    }).type("qwerty {enter}");
+    cy.findByText(/Pertanyaan tidak ditemukan/i).should("exist");
+    cy.url().should("include", "/faq?q=qwerty");
   });
 });
