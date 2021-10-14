@@ -491,6 +491,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "afifalfiano",
+      "name": "Afif Alfiano",
+      "avatar_url": "https://avatars.githubusercontent.com/u/47497276?v=4",
+      "profile": "https://behance.net/afifalfiano",
+      "contributions": [
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,

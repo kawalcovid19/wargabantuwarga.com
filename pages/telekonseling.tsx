@@ -37,8 +37,8 @@ export default function TelecounselingPage(props: TelecounselingPageProps) {
             current: true,
           },
         ]}
-        title={meta.title}
         description={meta.description}
+        title={meta.title}
       />
       <InternalPageContent>
         <Container className="flex flex-col flex-1">
