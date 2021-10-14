@@ -11,7 +11,6 @@ import { HomePageStart } from "~/components/home/homepage-start";
 import { HomePageTelemedicineCTA } from "~/components/home/homepage-telemedicine-cta";
 import { HomePageWelcome } from "~/components/home/homepage-welcome";
 import { HomepageSupportedApps } from "~/components/home/homepage-supported-apps";
-import { HomePageWhatsAppCTA } from "~/components/home/homepage-whatsapp-cta";
 import { Page } from "~/components/layout/page";
 import { Container } from "~/components/ui/container";
 import { attributes } from "~/lib/content/home-page";
@@ -41,7 +40,6 @@ const HomePage = (props: HomePageProps) => (
         <HomePageTelemedicineCTA />
         <HomepageSupportedApps />
         <HomePageWelcome />
-        <HomePageWhatsAppCTA />
         <style jsx>{`
           article {
             margin: 0 auto;
