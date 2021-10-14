@@ -51,3 +51,48 @@ describe("provinces page query param search", () => {
     cy.findByText(/Provinsi tidak ditemukan/i).should("exist");
   });
 });
+
+describe("Detail information about ambulans on every provinces for example DKI Jakarta", () => {
+  beforeEach(() => {
+    cy.visit("/provinces/dki-jakarta");
+  });
+
+  it("gives all detail information on DKI Jakarta with all category and location", () => {
+    cy.findByRole("combobox", { name: /kategori/i }).select("Ambulans");
+    // eslint-disable-next-line chai-friendly/no-unused-expressions
+    cy.findAllByText("Ambulans").eq(1).parent().parent().click();
+    cy.url().should(
+      "include",
+      "/provinces/dki-jakarta/ambulans-ambulans-non-covid-serang-ambulance-pospera-081285556116",
+    );
+  });
+
+  it("gives a contact ambulance on every location either verified and not verified", () => {
+    cy.findByRole("combobox", { name: /kategori/i }).select("Ambulans");
+    cy.findAllByText("Ambulans").should("have.length", 31);
+    cy.url().should("include", "/provinces/dki-jakarta?kebutuhan=Ambulans");
+  });
+
+  it("gives a contact ambulance on every location with verified contact", () => {
+    cy.findByRole("combobox", { name: /kategori/i }).select("Ambulans");
+    cy.findAllByText("Terverifikasi").should("have.length", 11);
+    cy.url().should("include", "/provinces/dki-jakarta?kebutuhan=Ambulans");
+  });
+
+  it("gives a contact ambulance on every location with unverified contact", () => {
+    cy.findByRole("combobox", { name: /kategori/i }).select("Ambulans");
+    cy.findAllByText("Belum terverifkasi").should("have.length", 14);
+    cy.url().should("include", "/provinces/dki-jakarta?kebutuhan=Ambulans");
+  });
+
+  it("More detail about ambulans", () => {
+    cy.findByRole("combobox", { name: /kategori/i }).select("Ambulans");
+    cy.findByRole("link", {
+      name: /ambulance pospera - ambulans non covid di serang, dki jakarta/i,
+    }).click();
+    cy.url().should(
+      "include",
+      "/provinces/dki-jakarta/ambulans-ambulans-non-covid-serang-ambulance-pospera-081285556116",
+    );
+  });
+});
