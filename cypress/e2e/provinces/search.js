@@ -159,3 +159,435 @@ describe("Detail information about bantuan kebutuhan pokok on every provinces fo
     );
   });
 });
+
+describe("Detail information about Donor plasma on every provinces for example DKI Jakarta", () => {
+  beforeEach(() => {
+    cy.visit("/provinces/dki-jakarta");
+  });
+
+  it("gives all detail information on DKI Jakarta with all category and location", () => {
+    cy.getDetailProvinces(
+      /kategori/i,
+      "Donor plasma",
+      "/provinces/dki-jakarta/donor-plasma-donor-plasma-tangerang-pmi-kota-tangerang-021-5531310",
+    );
+  });
+
+  it("gives a contact Donor plasma on every location either verified and not verified", () => {
+    cy.getAllContact(
+      /kategori/i,
+      "Donor plasma",
+      "/provinces/dki-jakarta?kebutuhan=Donor%20plasma",
+      10,
+    );
+  });
+
+  it("gives a contact Donor plasma on every location with verified contact", () => {
+    cy.getAllContactWithStatus(
+      /kategori/i,
+      "Donor plasma",
+      "/provinces/dki-jakarta?kebutuhan=Donor%20plasma",
+      2,
+      "Terverifikasi",
+    );
+  });
+
+  it("gives a contact Donor plasma on every location with unverified contact", () => {
+    cy.getAllContactWithStatus(
+      /kategori/i,
+      "Donor plasma",
+      "/provinces/dki-jakarta?kebutuhan=Donor%20plasma",
+      3,
+      "Belum terverifkasi",
+    );
+  });
+
+  it("More detail about Donor plasma", () => {
+    cy.getDescriptionContact(
+      /kategori/i,
+      "Donor plasma",
+      /pmi kota tangerang/i,
+      "/provinces/dki-jakarta/donor-plasma-donor-plasma-tangerang-pmi-kota-tangerang-021-5531310",
+      /pmi kota tangerang/i,
+      /Informasi PMI Kota Tangerang - Donor plasma di Tangerang, DKI Jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial\./i,
+    );
+  });
+});
+
+describe("Detail information about Kontak penting on every provinces for example DKI Jakarta", () => {
+  beforeEach(() => {
+    cy.visit("/provinces/dki-jakarta");
+  });
+
+  it("gives all detail information on DKI Jakarta with all category and location", () => {
+    cy.getDetailProvinces(
+      /kategori/i,
+      "Kontak penting",
+      "/provinces/dki-jakarta/kontak-penting-call-center-covid-19-pandeglang-dinas-kesehatan-kab-pandeglang-081386866024",
+    );
+  });
+
+  it("gives a contact Kontak penting on every location either verified and not verified", () => {
+    cy.getAllContact(
+      /kategori/i,
+      "Kontak penting",
+      "/provinces/dki-jakarta?kebutuhan=Kontak%20penting",
+      17,
+    );
+  });
+
+  it("gives a contact Kontak penting on every location with verified contact", () => {
+    cy.getAllContactWithStatus(
+      /kategori/i,
+      "Kontak penting",
+      "/provinces/dki-jakarta?kebutuhan=Kontak%20penting",
+      6,
+      "Terverifikasi",
+    );
+  });
+
+  it("gives a contact Kontak penting on every location with unverified contact", () => {
+    cy.getAllContactWithStatus(
+      /kategori/i,
+      "Kontak penting",
+      "/provinces/dki-jakarta?kebutuhan=Kontak%20penting",
+      10,
+      "Belum terverifkasi",
+    );
+  });
+
+  it("More detail about Kontak penting", () => {
+    cy.getDescriptionContact(
+      /kategori/i,
+      "Kontak penting",
+      /dinas kesehatan kab\. pandeglang/i,
+      "/provinces/dki-jakarta/kontak-penting-call-center-covid-19-pandeglang-dinas-kesehatan-kab-pandeglang-081386866024",
+      /dinas kesehatan kab\. pandeglang/i,
+      /Informasi Dinas Kesehatan Kab. Pandeglang - Call center COVID-19 di Pandeglang, DKI Jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial\./i,
+    );
+  });
+});
+
+describe("Detail information about Oksigen on every provinces for example DKI Jakarta", () => {
+  beforeEach(() => {
+    cy.visit("/provinces/dki-jakarta");
+  });
+
+  it("gives all detail information on DKI Jakarta with all category and location", () => {
+    cy.getDetailProvinces(
+      /kategori/i,
+      "Oksigen",
+      "/provinces/dki-jakarta/oksigen-isi-ulang-serang-berkah-jaya-gas-081219231827",
+    );
+  });
+
+  it("gives a contact Oksigen on every location either verified and not verified", () => {
+    cy.getAllContact(
+      /kategori/i,
+      "Oksigen",
+      "/provinces/dki-jakarta?kebutuhan=Oksigen",
+      95,
+    );
+  });
+
+  it("gives a contact Oksigen on every location with verified contact", () => {
+    cy.getAllContactWithStatus(
+      /kategori/i,
+      "Oksigen",
+      "/provinces/dki-jakarta?kebutuhan=Oksigen",
+      31,
+      "Terverifikasi",
+    );
+  });
+
+  it("gives a contact Oksigen on every location with unverified contact", () => {
+    cy.getAllContactWithStatus(
+      /kategori/i,
+      "Oksigen",
+      "/provinces/dki-jakarta?kebutuhan=Oksigen",
+      51,
+      "Belum terverifkasi",
+    );
+  });
+
+  it("More detail about Oksigen", () => {
+    cy.getDescriptionContact(
+      /kategori/i,
+      "Oksigen",
+      /berkah jaya gas/i,
+      "/provinces/dki-jakarta/oksigen-isi-ulang-serang-berkah-jaya-gas-081219231827",
+      /berkah jaya gas/i,
+      /Informasi Berkah Jaya Gas - Isi Ulang di Serang, DKI Jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial\./i,
+    );
+  });
+});
+
+describe("Detail information about Pemakaman on every provinces for example DKI Jakarta", () => {
+  beforeEach(() => {
+    cy.visit("/provinces/dki-jakarta");
+  });
+
+  it("gives all detail information on DKI Jakarta with all category and location", () => {
+    cy.getDetailProvinces(
+      /kategori/i,
+      "Pemakaman",
+      "/provinces/dki-jakarta/pemakaman-peti-jenazah-tangerang-bapak-hasan-081213011977",
+    );
+  });
+
+  it("gives a contact Pemakaman on every location either verified and not verified", () => {
+    cy.getAllContact(
+      /kategori/i,
+      "Pemakaman",
+      "/provinces/dki-jakarta?kebutuhan=Pemakaman",
+      3,
+    );
+  });
+
+  it("gives a contact Pemakaman on every location with verified contact", () => {
+    cy.getAllContactWithStatus(
+      /kategori/i,
+      "Pemakaman",
+      "/provinces/dki-jakarta?kebutuhan=Pemakaman",
+      2,
+      "Terverifikasi",
+    );
+  });
+
+  it("gives a contact Pemakaman on every location with unverified contact", () => {
+    cy.getAllContactWithStatus(
+      /kategori/i,
+      "Pemakaman",
+      "/provinces/dki-jakarta?kebutuhan=Pemakaman",
+      0,
+      "Belum terverifkasi",
+    );
+  });
+
+  it("More detail about Pemakaman", () => {
+    cy.getDescriptionContact(
+      /kategori/i,
+      "Pemakaman",
+      /bapak hasan/i,
+      "/provinces/dki-jakarta/pemakaman-peti-jenazah-tangerang-bapak-hasan-081213011977",
+      /bapak hasan/i,
+      /Informasi Bapak Hasan - Peti Jenazah di Tangerang, DKI Jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial\./i,
+    );
+  });
+});
+
+describe("Detail information about Rumah sakit on every provinces for example DKI Jakarta", () => {
+  beforeEach(() => {
+    cy.visit("/provinces/dki-jakarta");
+  });
+
+  it("gives all detail information on DKI Jakarta with all category and location", () => {
+    cy.getDetailProvinces(
+      /kategori/i,
+      "Rumah sakit",
+      "/provinces/dki-jakarta/rumah-sakit-rs-lapangan-tangerang-dompet-dhuafa-crisis-center-08111617104",
+    );
+  });
+
+  it("gives a contact Rumah sakit on every location either verified and not verified", () => {
+    cy.getAllContact(
+      /kategori/i,
+      "Rumah sakit",
+      "/provinces/dki-jakarta?kebutuhan=Rumah%20sakit",
+      18,
+    );
+  });
+
+  it("gives a contact Rumah sakit on every location with verified contact", () => {
+    cy.getAllContactWithStatus(
+      /kategori/i,
+      "Rumah sakit",
+      "/provinces/dki-jakarta?kebutuhan=Rumah%20sakit",
+      14,
+      "Terverifikasi",
+    );
+  });
+
+  it("gives a contact Rumah sakit on every location with unverified contact", () => {
+    cy.getAllContactWithStatus(
+      /kategori/i,
+      "Rumah sakit",
+      "/provinces/dki-jakarta?kebutuhan=Rumah%20sakit",
+      3,
+      "Belum terverifkasi",
+    );
+  });
+
+  it("More detail about Rumah sakit", () => {
+    cy.getDescriptionContact(
+      /kategori/i,
+      "Rumah sakit",
+      /dompet dhuafa crisis center/i,
+      "/provinces/dki-jakarta/rumah-sakit-rs-lapangan-tangerang-dompet-dhuafa-crisis-center-08111617104",
+      /dompet dhuafa crisis center/i,
+      /Informasi Dompet Dhuafa Crisis Center - RS Lapangan di Tangerang, DKI Jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial\./i,
+    );
+  });
+});
+
+describe("Detail information about Tempat isolasi mandiri on every provinces for example DKI Jakarta", () => {
+  beforeEach(() => {
+    cy.visit("/provinces/dki-jakarta");
+  });
+
+  it("gives all detail information on DKI Jakarta with all category and location", () => {
+    cy.getDetailProvinces(
+      /kategori/i,
+      "Tempat isolasi mandiri",
+      "/provinces/dki-jakarta/tempat-isolasi-mandiri-paket-isolasi-mandiri-berbayar-tangerang-mayapada-hospital-tangerang-082114123910",
+    );
+  });
+
+  it("gives a contact Tempat isolasi mandiri on every location either verified and not verified", () => {
+    cy.getAllContact(
+      /kategori/i,
+      "Tempat isolasi mandiri",
+      "/provinces/dki-jakarta?kebutuhan=Tempat%20isolasi%20mandiri",
+      26,
+    );
+  });
+
+  it("gives a contact Tempat isolasi mandiri on every location with verified contact", () => {
+    cy.getAllContactWithStatus(
+      /kategori/i,
+      "Tempat isolasi mandiri",
+      "/provinces/dki-jakarta?kebutuhan=Tempat%20isolasi%20mandiri",
+      7,
+      "Terverifikasi",
+    );
+  });
+
+  it("gives a contact Tempat isolasi mandiri on every location with unverified contact", () => {
+    cy.getAllContactWithStatus(
+      /kategori/i,
+      "Tempat isolasi mandiri",
+      "/provinces/dki-jakarta?kebutuhan=Tempat%20isolasi%20mandiri",
+      18,
+      "Belum terverifkasi",
+    );
+  });
+
+  it("More detail about Tempat isolasi mandiri", () => {
+    cy.getDescriptionContact(
+      /kategori/i,
+      "Tempat isolasi mandiri",
+      /mayapada hospital tangerang/i,
+      "/provinces/dki-jakarta/tempat-isolasi-mandiri-paket-isolasi-mandiri-berbayar-tangerang-mayapada-hospital-tangerang-082114123910",
+      /mayapada hospital tangerang/i,
+      /Informasi Mayapada Hospital Tangerang - Paket isolasi mandiri berbayar di Tangerang, DKI Jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial\./i,
+    );
+  });
+});
+
+describe("Detail information about Tempat vaksin on every provinces for example DKI Jakarta", () => {
+  beforeEach(() => {
+    cy.visit("/provinces/dki-jakarta");
+  });
+
+  it("gives all detail information on DKI Jakarta with all category and location", () => {
+    cy.getDetailProvinces(
+      /kategori/i,
+      "Tempat vaksin",
+      "/provinces/dki-jakarta/tempat-vaksin-layanan-vaksinasi-tangerang-selatan-gor-stadion-benteng-taruna-",
+    );
+  });
+
+  it("gives a contact Tempat vaksin on every location either verified and not verified", () => {
+    cy.getAllContact(
+      /kategori/i,
+      "Tempat vaksin",
+      "/provinces/dki-jakarta?kebutuhan=Tempat%20vaksin",
+      125,
+    );
+  });
+
+  it("gives a contact Tempat vaksin on every location with verified contact", () => {
+    cy.getAllContactWithStatus(
+      /kategori/i,
+      "Tempat vaksin",
+      "/provinces/dki-jakarta?kebutuhan=Tempat%20vaksin",
+      27,
+      "Terverifikasi",
+    );
+  });
+
+  it("gives a contact Tempat vaksin on every location with unverified contact", () => {
+    cy.getAllContactWithStatus(
+      /kategori/i,
+      "Tempat vaksin",
+      "/provinces/dki-jakarta?kebutuhan=Tempat%20vaksin",
+      89,
+      "Belum terverifkasi",
+    );
+  });
+
+  it("More detail about Tempat vaksin", () => {
+    cy.getDescriptionContact(
+      /kategori/i,
+      "Tempat vaksin",
+      /gor stadion benteng taruna/i,
+      "/provinces/dki-jakarta/tempat-vaksin-layanan-vaksinasi-tangerang-selatan-gor-stadion-benteng-taruna-",
+      /gor stadion benteng taruna/i,
+      /Informasi GOR Stadion Benteng Taruna - Layanan vaksinasi di Tangerang Selatan, DKI Jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial\./i,
+    );
+  });
+});
+
+describe("Detail information about Tes swab on every provinces for example DKI Jakarta", () => {
+  beforeEach(() => {
+    cy.visit("/provinces/dki-jakarta");
+  });
+
+  it("gives all detail information on DKI Jakarta with all category and location", () => {
+    cy.getDetailProvinces(
+      /kategori/i,
+      "Tes swab",
+      "/provinces/dki-jakarta/tes-swab-pcr-swab-test-drive-thru-kab-tangerang-drive-thru-covid-19-bsd-085574677403",
+    );
+  });
+
+  it("gives a contact Tes swab on every location either verified and not verified", () => {
+    cy.getAllContact(
+      /kategori/i,
+      "Tes swab",
+      "/provinces/dki-jakarta?kebutuhan=Tes%20swab",
+      15,
+    );
+  });
+
+  it("gives a contact Tes swab on every location with verified contact", () => {
+    cy.getAllContactWithStatus(
+      /kategori/i,
+      "Tes swab",
+      "/provinces/dki-jakarta?kebutuhan=Tes%20swab",
+      8,
+      "Terverifikasi",
+    );
+  });
+
+  it("gives a contact Tes swab on every location with unverified contact", () => {
+    cy.getAllContactWithStatus(
+      /kategori/i,
+      "Tes swab",
+      "/provinces/dki-jakarta?kebutuhan=Tes%20swab",
+      6,
+      "Belum terverifkasi",
+    );
+  });
+
+  it("More detail about Tes swab", () => {
+    cy.getDescriptionContact(
+      /kategori/i,
+      "Tes swab",
+      /drive thru covid-19 bsd/i,
+      "/provinces/dki-jakarta/tes-swab-pcr-swab-test-drive-thru-kab-tangerang-drive-thru-covid-19-bsd-085574677403",
+      /drive thru covid-19 bsd/i,
+      /informasi drive thru covid./i,
+    );
+  });
+});

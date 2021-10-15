@@ -59,9 +59,11 @@ Cypress.Commands.add(
   "getDescriptionContact",
   (element, category, link, href, heading, description) => {
     cy.findByRole("combobox", { name: element }).select(category);
-    cy.findByRole("link", {
+    cy.findAllByRole("link", {
       name: link,
-    }).click();
+    })
+      .first()
+      .click();
     cy.url().should("include", href);
     cy.findByRole("heading", {
       name: heading,
