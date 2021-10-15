@@ -15,41 +15,44 @@ export async function fetchVaccinationDatabase() {
     await fetch(`${vaksinId}/regions`)
   ).json()) as VaccinationRegionsResponse;
 
+  const locations: { [province: string]: VaccinationContact[] } = {};
+
   const promisedLocations = [];
   for (const { province } of regions.data) {
     console.log(province);
     promisedLocations.push(
-      fetch(`${vaksinId}/locations/${province}`).then(
-        (res) => res.json() as unknown as VaccinationRegion,
-      ),
+      fetch(`${vaksinId}/locations/${province}`)
+        .then((res) => res.json() as unknown as VaccinationRegion)
+        .then((region) => {
+          console.log(`${region.data[0].province} ${region.data.length}`);
+
+          locations[region.data[0].province] = region.data.map((location) => ({
+            id: `${region.data.findIndex(
+              (index) => location.title === index.title,
+            )}`,
+            keterangan: "Lokasi Vaksinasi COVID-19",
+            lokasi: location.city,
+            verifikasi: location.isvalid ? 1 : 0,
+            penyedia: location.title,
+            alamat: location.address,
+            slug: getKebabCase(location.title),
+            informasi_2: location.description,
+            terakhir_update: location.dateadded,
+            rentang_umur: location.agerange,
+            buka_waktu: location.timestart,
+            tutup_waktu: location.timeend,
+            mulai_tanggal: location.datestart,
+            selesai_tanggal: location.dateend,
+            link: location.link,
+            map: location.map,
+          }));
+        }),
     );
   }
 
-  const locations: { [province: string]: VaccinationContact[] } = {};
+  await Promise.all(promisedLocations);
 
-  for (const region of await Promise.all(promisedLocations)) {
-    console.log(`${region.data[0].province} ${region.data.length}`);
-    locations[region.data[0].province] = region.data.map((location) => ({
-      id: `${region.data.findIndex((index) => location.title === index.title)}`,
-      keterangan: "Lokasi Vaksinasi COVID-19",
-      lokasi: location.city,
-      verifikasi: location.isvalid ? 1 : 0,
-      penyedia: location.title,
-      alamat: location.address,
-      slug: getKebabCase(location.title),
-      informasi_2: location.description,
-      terakhir_update: location.dateadded,
-      rentang_umur: location.agerange,
-      buka_waktu: location.timestart,
-      tutup_waktu: location.timeend,
-      mulai_tanggal: location.datestart,
-      selesai_tanggal: location.dateend,
-      link: location.link,
-      map: location.map,
-    }));
-  }
   const text = JSON.stringify(locations);
-  console.log(text);
   fs.writeFileSync(
     path.resolve(__dirname, "../../data/wbw-vaccination-database.json"),
     text,
