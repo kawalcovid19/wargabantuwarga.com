@@ -1,12 +1,6 @@
 import * as React from "react";
 
-import {
-  ChatAltIcon,
-  HomeIcon,
-  SearchIcon,
-  ViewGridIcon,
-} from "@heroicons/react/outline";
-import siteConfig from "../content/site-config";
+import { HomeIcon, SearchIcon, ViewGridIcon } from "@heroicons/react/outline";
 
 export interface NavigationItem {
   name: string;
@@ -24,12 +18,6 @@ export const bottomNavigation: NavigationItem[] = [
     icon: HomeIcon,
     href: "/",
     exact: true,
-  },
-  {
-    name: "Hubungi Kami",
-    icon: ChatAltIcon,
-    href: siteConfig.whatsapp_contact_url,
-    external: true,
   },
   {
     name: "Pusat Data",
