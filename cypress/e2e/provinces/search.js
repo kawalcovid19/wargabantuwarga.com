@@ -59,12 +59,16 @@ describe("Detail information about ambulans on every provinces for example DKI J
 
   it("gives all detail information on DKI Jakarta with all category and location", () => {
     cy.findByRole("combobox", { name: /kategori/i }).select("Ambulans");
-    // eslint-disable-next-line chai-friendly/no-unused-expressions
-    cy.findAllByText("Ambulans").eq(1).parent().parent().click();
-    cy.url().should(
-      "include",
-      "/provinces/dki-jakarta/ambulans-ambulans-non-covid-serang-ambulance-pospera-081285556116",
-    );
+    cy.findAllByText("Ambulans")
+      .eq(1)
+      .parent()
+      .parent()
+      .children("a")
+      .should(
+        "have.attr",
+        "href",
+        "/provinces/dki-jakarta/ambulans-ambulans-non-covid-serang-ambulance-pospera-081285556116",
+      );
   });
 
   it("gives a contact ambulance on every location either verified and not verified", () => {
@@ -94,5 +98,93 @@ describe("Detail information about ambulans on every provinces for example DKI J
       "include",
       "/provinces/dki-jakarta/ambulans-ambulans-non-covid-serang-ambulance-pospera-081285556116",
     );
+    cy.findByRole("heading", {
+      name: /ambulance pospera/i,
+    }).should("contains", /^ambulance pospera$/);
+    cy.findByText(
+      /informasi ambulance pospera - ambulans non covid di serang, dki jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial\./i,
+    ).should("exist");
+    cy.findByText("Status Verifikasi")
+      .parent()
+      .findByText("Terverifikasi")
+      .should("contain.text", "Terverifikasi");
+  });
+});
+
+describe("Detail information about bantuan kebutuhan pokok on every provinces for example DKI Jakarta", () => {
+  beforeEach(() => {
+    cy.visit("/provinces/dki-jakarta");
+  });
+
+  it("gives all detail information on DKI Jakarta with all category and location", () => {
+    cy.findByRole("combobox", { name: /kategori/i }).select(
+      "Bantuan kebutuhan pokok",
+    );
+    cy.findAllByText("Bantuan kebutuhan pokok")
+      .eq(1)
+      .parent()
+      .parent()
+      .children("a")
+      .should(
+        "have.attr",
+        "href",
+        "/provinces/dki-jakarta/bantuan-kebutuhan-pokok-layanan-antar-pangan-gratis-banten-act-humanity-care-line-08001165228",
+      );
+  });
+
+  it("gives a contact bantuan kebutuhan pokok on every location either verified and not verified", () => {
+    cy.findByRole("combobox", { name: /kategori/i }).select(
+      "Bantuan kebutuhan pokok",
+    );
+    cy.findAllByText("Bantuan kebutuhan pokok").should("have.length", 11);
+    cy.url().should(
+      "include",
+      "/provinces/dki-jakarta?kebutuhan=Bantuan%20kebutuhan%20pokok",
+    );
+  });
+
+  it("gives a contact bantuan kebutuhan pokok on every location with verified contact", () => {
+    cy.findByRole("combobox", { name: /kategori/i }).select(
+      "Bantuan kebutuhan pokok",
+    );
+    cy.findAllByText("Terverifikasi").should("have.length", 9);
+    cy.url().should(
+      "include",
+      "/provinces/dki-jakarta?kebutuhan=Bantuan%20kebutuhan%20pokok",
+    );
+  });
+
+  it("gives a contact bantuan kebutuhan pokok on every location with unverified contact", () => {
+    cy.findByRole("combobox", { name: /kategori/i }).select(
+      "Bantuan kebutuhan pokok",
+    );
+    cy.findAllByText("Belum terverifkasi").should("have.length", 1);
+    cy.url().should(
+      "include",
+      "/provinces/dki-jakarta?kebutuhan=Bantuan%20kebutuhan%20pokok",
+    );
+  });
+
+  it("More detail about bantuan kebutuhan pokok", () => {
+    cy.findByRole("combobox", { name: /kategori/i }).select(
+      "Bantuan kebutuhan pokok",
+    );
+    cy.findByRole("link", {
+      name: /act humanity care line/i,
+    }).click();
+    cy.url().should(
+      "include",
+      "/provinces/dki-jakarta/bantuan-kebutuhan-pokok-layanan-antar-pangan-gratis-banten-act-humanity-care-line-08001165228",
+    );
+    cy.findByRole("heading", {
+      name: /act humanity care line/i,
+    }).should("contains", /^act humanity care line$/);
+    cy.findByText(
+      /informasi act humanity care line - layanan antar pangan gratis di banten, dki jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial\./i,
+    ).should("exist");
+    cy.findByText("Status Verifikasi")
+      .parent()
+      .findByText("Terverifikasi")
+      .should("contain.text", "Terverifikasi");
   });
 });
