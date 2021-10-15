@@ -49,7 +49,7 @@ export async function fetchVaccinationDatabase() {
     }));
   }
   const text = JSON.stringify(locations);
-
+  console.log(text);
   fs.writeFileSync(
     path.resolve(__dirname, "../../data/wbw-vaccination-database.json"),
     text,
