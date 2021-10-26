@@ -3,7 +3,7 @@
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-49-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-50-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -199,6 +199,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://wisesa.dev"><img src="https://avatars.githubusercontent.com/u/35674157?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anvaqta Tangguh Wisesa</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=svspicious" title="Code">💻</a></td>
     <td align="center"><a href="https://behance.net/afifalfiano"><img src="https://avatars.githubusercontent.com/u/47497276?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Afif Alfiano</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=afifalfiano" title="Tests">⚠️</a></td>
     <td align="center"><a href="http://zakiego.my.id"><img src="https://avatars.githubusercontent.com/u/78015359?v=4?s=100" width="100px;" alt=""/><br /><sub><b>M. Zakiyuddin Munziri</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=zakiego" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/FortressValkyrie"><img src="https://avatars.githubusercontent.com/u/66000635?v=4?s=100" width="100px;" alt=""/><br /><sub><b>FortressValkyrie</b></sub></a><br /><a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=FortressValkyrie" title="Code">💻</a> <a href="https://github.com/kawalcovid19/wargabantuwarga.com/commits?author=FortressValkyrie" title="Tests">⚠️</a></td>
   </tr>
 </table>
 
