@@ -64,7 +64,7 @@ Cypress.Commands.add(
     })
       .first()
       .click();
-    cy.url().should("include", href);
+    cy.url({ setTimeout: 2000 }).should("include", href);
     cy.findByRole("heading", {
       name: heading,
     }).should("contains", heading);
