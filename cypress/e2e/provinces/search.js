@@ -61,7 +61,7 @@ describe("Detail information about ambulans on every provinces for example DKI J
     cy.getDetailProvinces(
       /kategori/i,
       "Ambulans",
-      "/provinces/dki-jakarta/ambulans-ambulans-non-covid-serang-ambulance-pospera-081285556116",
+      "/provinces/dki-jakarta/ambulans-jasa-sewa-ambulans-dki-jakarta-ambulance-tiyas-jakarta-08111563630",
     );
   });
 
@@ -70,7 +70,7 @@ describe("Detail information about ambulans on every provinces for example DKI J
       /kategori/i,
       "Ambulans",
       "/provinces/dki-jakarta?kebutuhan=Ambulans",
-      31,
+      29,
     );
   });
 
@@ -79,7 +79,7 @@ describe("Detail information about ambulans on every provinces for example DKI J
       /kategori/i,
       "Ambulans",
       "/provinces/dki-jakarta?kebutuhan=Ambulans",
-      11,
+      21,
       "Terverifikasi",
     );
   });
@@ -89,7 +89,7 @@ describe("Detail information about ambulans on every provinces for example DKI J
       /kategori/i,
       "Ambulans",
       "/provinces/dki-jakarta?kebutuhan=Ambulans",
-      14,
+      6,
       "Belum terverifkasi",
     );
   });
@@ -98,10 +98,10 @@ describe("Detail information about ambulans on every provinces for example DKI J
     cy.getDescriptionContact(
       /kategori/i,
       "Ambulans",
-      /ambulance pospera - ambulans non covid di serang, dki jakarta/i,
-      "/provinces/dki-jakarta/ambulans-ambulans-non-covid-serang-ambulance-pospera-081285556116",
-      /ambulance pospera/i,
-      /informasi ambulance pospera - ambulans non covid di serang, dki jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial\./i,
+      /ambulance tiyas jakarta/i,
+      "/provinces/dki-jakarta/ambulans-jasa-sewa-ambulans-dki-jakarta-ambulance-tiyas-jakarta-08111563630",
+      /ambulance tiyas jakarta/i,
+      /informasi ambulance tiyas jakarta - jasa sewa ambulans di dki jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial./i,
     );
   });
 });
@@ -115,7 +115,7 @@ describe("Detail information about bantuan kebutuhan pokok on every provinces fo
     cy.getDetailProvinces(
       /kategori/i,
       "Bantuan kebutuhan pokok",
-      "/provinces/dki-jakarta/bantuan-kebutuhan-pokok-layanan-antar-pangan-gratis-banten-act-humanity-care-line-08001165228",
+      "/provinces/dki-jakarta/bantuan-kebutuhan-pokok-layanan-antar-pangan-gratis-dki-jakarta-act-humanity-care-line-08001165228",
     );
   });
 
@@ -124,7 +124,7 @@ describe("Detail information about bantuan kebutuhan pokok on every provinces fo
       /kategori/i,
       "Bantuan kebutuhan pokok",
       "/provinces/dki-jakarta?kebutuhan=Bantuan%20kebutuhan%20pokok",
-      11,
+      63,
     );
   });
 
@@ -133,7 +133,7 @@ describe("Detail information about bantuan kebutuhan pokok on every provinces fo
       /kategori/i,
       "Bantuan kebutuhan pokok",
       "/provinces/dki-jakarta?kebutuhan=Bantuan%20kebutuhan%20pokok",
-      9,
+      24,
       "Terverifikasi",
     );
   });
@@ -143,7 +143,7 @@ describe("Detail information about bantuan kebutuhan pokok on every provinces fo
       /kategori/i,
       "Bantuan kebutuhan pokok",
       "/provinces/dki-jakarta?kebutuhan=Bantuan%20kebutuhan%20pokok",
-      1,
+      38,
       "Belum terverifkasi",
     );
   });
@@ -153,9 +153,9 @@ describe("Detail information about bantuan kebutuhan pokok on every provinces fo
       /kategori/i,
       "Bantuan kebutuhan pokok",
       /act humanity care line/i,
-      "/provinces/dki-jakarta/bantuan-kebutuhan-pokok-layanan-antar-pangan-gratis-banten-act-humanity-care-line-08001165228",
+      "/provinces/dki-jakarta/bantuan-kebutuhan-pokok-layanan-antar-pangan-gratis-dki-jakarta-act-humanity-care-line-08001165228",
       /act humanity care line/i,
-      /informasi act humanity care line - layanan antar pangan gratis di banten, dki jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial\./i,
+      /informasi act humanity care line - layanan antar pangan gratis di dki jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial./i,
     );
   });
 });
@@ -169,7 +169,7 @@ describe("Detail information about Donor plasma on every provinces for example D
     cy.getDetailProvinces(
       /kategori/i,
       "Donor plasma",
-      "/provinces/dki-jakarta/donor-plasma-donor-plasma-tangerang-pmi-kota-tangerang-021-5531310",
+      "/provinces/dki-jakarta/donor-plasma-tempat-mendonorkan-plasma-dki-jakarta-gerakan-kebaikan-indonesia-087782772828",
     );
   });
 
@@ -178,7 +178,7 @@ describe("Detail information about Donor plasma on every provinces for example D
       /kategori/i,
       "Donor plasma",
       "/provinces/dki-jakarta?kebutuhan=Donor%20plasma",
-      10,
+      5,
     );
   });
 
@@ -187,7 +187,7 @@ describe("Detail information about Donor plasma on every provinces for example D
       /kategori/i,
       "Donor plasma",
       "/provinces/dki-jakarta?kebutuhan=Donor%20plasma",
-      2,
+      4,
       "Terverifikasi",
     );
   });
@@ -197,7 +197,7 @@ describe("Detail information about Donor plasma on every provinces for example D
       /kategori/i,
       "Donor plasma",
       "/provinces/dki-jakarta?kebutuhan=Donor%20plasma",
-      3,
+      0,
       "Belum terverifkasi",
     );
   });
@@ -206,10 +206,10 @@ describe("Detail information about Donor plasma on every provinces for example D
     cy.getDescriptionContact(
       /kategori/i,
       "Donor plasma",
-      /pmi kota tangerang/i,
-      "/provinces/dki-jakarta/donor-plasma-donor-plasma-tangerang-pmi-kota-tangerang-021-5531310",
-      /pmi kota tangerang/i,
-      /Informasi PMI Kota Tangerang - Donor plasma di Tangerang, DKI Jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial\./i,
+      /gerakan kebaikan indonesia/i,
+      "/provinces/dki-jakarta/donor-plasma-tempat-mendonorkan-plasma-dki-jakarta-gerakan-kebaikan-indonesia-087782772828",
+      /gerakan kebaikan indonesia/i,
+      /informasi gerakan kebaikan indonesia - tempat mendonorkan plasma di dki jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial./i,
     );
   });
 });
@@ -277,7 +277,7 @@ describe("Detail information about Oksigen on every provinces for example DKI Ja
     cy.getDetailProvinces(
       /kategori/i,
       "Oksigen",
-      "/provinces/dki-jakarta/oksigen-isi-ulang-serang-berkah-jaya-gas-081219231827",
+      "/provinces/dki-jakarta/oksigen-isi-ulang-tabung-oksigen-jakarta-barat-3r-medika-gas-081286109493",
     );
   });
 
@@ -286,7 +286,7 @@ describe("Detail information about Oksigen on every provinces for example DKI Ja
       /kategori/i,
       "Oksigen",
       "/provinces/dki-jakarta?kebutuhan=Oksigen",
-      95,
+      78,
     );
   });
 
@@ -295,7 +295,7 @@ describe("Detail information about Oksigen on every provinces for example DKI Ja
       /kategori/i,
       "Oksigen",
       "/provinces/dki-jakarta?kebutuhan=Oksigen",
-      31,
+      48,
       "Terverifikasi",
     );
   });
@@ -305,7 +305,7 @@ describe("Detail information about Oksigen on every provinces for example DKI Ja
       /kategori/i,
       "Oksigen",
       "/provinces/dki-jakarta?kebutuhan=Oksigen",
-      51,
+      29,
       "Belum terverifkasi",
     );
   });
@@ -314,10 +314,10 @@ describe("Detail information about Oksigen on every provinces for example DKI Ja
     cy.getDescriptionContact(
       /kategori/i,
       "Oksigen",
-      /berkah jaya gas/i,
-      "/provinces/dki-jakarta/oksigen-isi-ulang-serang-berkah-jaya-gas-081219231827",
-      /berkah jaya gas/i,
-      /Informasi Berkah Jaya Gas - Isi Ulang di Serang, DKI Jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial\./i,
+      /3r medika gas/i,
+      "/provinces/dki-jakarta/oksigen-isi-ulang-tabung-oksigen-jakarta-barat-3r-medika-gas-081286109493",
+      /3r medika gas/i,
+      /informasi 3r medika gas - isi ulang tabung oksigen di jakarta barat, dki jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial./i,
     );
   });
 });
@@ -385,7 +385,7 @@ describe("Detail information about Rumah sakit on every provinces for example DK
     cy.getDetailProvinces(
       /kategori/i,
       "Rumah sakit",
-      "/provinces/dki-jakarta/rumah-sakit-rs-lapangan-tangerang-dompet-dhuafa-crisis-center-08111617104",
+      "/provinces/dki-jakarta/rumah-sakit-rumah-sakit-rujukan-dki-jakarta-covid-19-indonesia-",
     );
   });
 
@@ -394,7 +394,7 @@ describe("Detail information about Rumah sakit on every provinces for example DK
       /kategori/i,
       "Rumah sakit",
       "/provinces/dki-jakarta?kebutuhan=Rumah%20sakit",
-      18,
+      168,
     );
   });
 
@@ -403,7 +403,7 @@ describe("Detail information about Rumah sakit on every provinces for example DK
       /kategori/i,
       "Rumah sakit",
       "/provinces/dki-jakarta?kebutuhan=Rumah%20sakit",
-      14,
+      64,
       "Terverifikasi",
     );
   });
@@ -413,7 +413,7 @@ describe("Detail information about Rumah sakit on every provinces for example DK
       /kategori/i,
       "Rumah sakit",
       "/provinces/dki-jakarta?kebutuhan=Rumah%20sakit",
-      3,
+      103,
       "Belum terverifkasi",
     );
   });
@@ -422,10 +422,10 @@ describe("Detail information about Rumah sakit on every provinces for example DK
     cy.getDescriptionContact(
       /kategori/i,
       "Rumah sakit",
-      /dompet dhuafa crisis center/i,
-      "/provinces/dki-jakarta/rumah-sakit-rs-lapangan-tangerang-dompet-dhuafa-crisis-center-08111617104",
-      /dompet dhuafa crisis center/i,
-      /Informasi Dompet Dhuafa Crisis Center - RS Lapangan di Tangerang, DKI Jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial\./i,
+      /covid 19 indonesia/i,
+      "/provinces/dki-jakarta/rumah-sakit-rumah-sakit-rujukan-dki-jakarta-covid-19-indonesia-",
+      /covid 19 indonesia/i,
+      /informasi covid 19 indonesia - rumah sakit rujukan di dki jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial./i,
     );
   });
 });
@@ -439,7 +439,7 @@ describe("Detail information about Tempat isolasi mandiri on every provinces for
     cy.getDetailProvinces(
       /kategori/i,
       "Tempat isolasi mandiri",
-      "/provinces/dki-jakarta/tempat-isolasi-mandiri-paket-isolasi-mandiri-berbayar-tangerang-mayapada-hospital-tangerang-082114123910",
+      "/provinces/dki-jakarta/tempat-isolasi-mandiri-tempat-isoman-berbayar-jakarta-selatan-bamed-medical-081289932503",
     );
   });
 
@@ -448,7 +448,7 @@ describe("Detail information about Tempat isolasi mandiri on every provinces for
       /kategori/i,
       "Tempat isolasi mandiri",
       "/provinces/dki-jakarta?kebutuhan=Tempat%20isolasi%20mandiri",
-      26,
+      41,
     );
   });
 
@@ -457,7 +457,7 @@ describe("Detail information about Tempat isolasi mandiri on every provinces for
       /kategori/i,
       "Tempat isolasi mandiri",
       "/provinces/dki-jakarta?kebutuhan=Tempat%20isolasi%20mandiri",
-      7,
+      12,
       "Terverifikasi",
     );
   });
@@ -467,7 +467,7 @@ describe("Detail information about Tempat isolasi mandiri on every provinces for
       /kategori/i,
       "Tempat isolasi mandiri",
       "/provinces/dki-jakarta?kebutuhan=Tempat%20isolasi%20mandiri",
-      18,
+      28,
       "Belum terverifkasi",
     );
   });
@@ -476,10 +476,10 @@ describe("Detail information about Tempat isolasi mandiri on every provinces for
     cy.getDescriptionContact(
       /kategori/i,
       "Tempat isolasi mandiri",
-      /mayapada hospital tangerang/i,
-      "/provinces/dki-jakarta/tempat-isolasi-mandiri-paket-isolasi-mandiri-berbayar-tangerang-mayapada-hospital-tangerang-082114123910",
-      /mayapada hospital tangerang/i,
-      /Informasi Mayapada Hospital Tangerang - Paket isolasi mandiri berbayar di Tangerang, DKI Jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial\./i,
+      /bamed medical/i,
+      "/provinces/dki-jakarta/tempat-isolasi-mandiri-tempat-isoman-berbayar-jakarta-selatan-bamed-medical-081289932503",
+      /bamed medical/i,
+      /informasi bamed medical - tempat isoman berbayar di jakarta selatan, dki jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial./i,
     );
   });
 });
@@ -493,7 +493,7 @@ describe("Detail information about Tempat vaksin on every provinces for example 
     cy.getDetailProvinces(
       /kategori/i,
       "Tempat vaksin",
-      "/provinces/dki-jakarta/tempat-vaksin-layanan-vaksinasi-tangerang-selatan-gor-stadion-benteng-taruna-",
+      "/provinces/dki-jakarta/tempat-vaksin-lokasi-vaksin-jakarta-pusat-balai-sidang-jcc-087780030151",
     );
   });
 
@@ -502,7 +502,7 @@ describe("Detail information about Tempat vaksin on every provinces for example 
       /kategori/i,
       "Tempat vaksin",
       "/provinces/dki-jakarta?kebutuhan=Tempat%20vaksin",
-      125,
+      233,
     );
   });
 
@@ -511,7 +511,7 @@ describe("Detail information about Tempat vaksin on every provinces for example 
       /kategori/i,
       "Tempat vaksin",
       "/provinces/dki-jakarta?kebutuhan=Tempat%20vaksin",
-      27,
+      9,
       "Terverifikasi",
     );
   });
@@ -521,7 +521,7 @@ describe("Detail information about Tempat vaksin on every provinces for example 
       /kategori/i,
       "Tempat vaksin",
       "/provinces/dki-jakarta?kebutuhan=Tempat%20vaksin",
-      89,
+      219,
       "Belum terverifkasi",
     );
   });
@@ -530,10 +530,10 @@ describe("Detail information about Tempat vaksin on every provinces for example 
     cy.getDescriptionContact(
       /kategori/i,
       "Tempat vaksin",
-      /gor stadion benteng taruna/i,
-      "/provinces/dki-jakarta/tempat-vaksin-layanan-vaksinasi-tangerang-selatan-gor-stadion-benteng-taruna-",
-      /gor stadion benteng taruna/i,
-      /Informasi GOR Stadion Benteng Taruna - Layanan vaksinasi di Tangerang Selatan, DKI Jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial\./i,
+      /balai sidang jcc/i,
+      "/provinces/dki-jakarta/tempat-vaksin-lokasi-vaksin-jakarta-pusat-balai-sidang-jcc-087780030151",
+      /balai sidang jcc/i,
+      /informasi balai sidang jcc - lokasi vaksin di jakarta pusat, dki jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial./i,
     );
   });
 });
@@ -547,7 +547,7 @@ describe("Detail information about Tes swab on every provinces for example DKI J
     cy.getDetailProvinces(
       /kategori/i,
       "Tes swab",
-      "/provinces/dki-jakarta/tes-swab-pcr-swab-test-drive-thru-kab-tangerang-drive-thru-covid-19-bsd-085574677403",
+      "/provinces/dki-jakarta/tes-swab-pcr-home-service-jakarta-utara-homecare-24-08111513437",
     );
   });
 
@@ -556,7 +556,7 @@ describe("Detail information about Tes swab on every provinces for example DKI J
       /kategori/i,
       "Tes swab",
       "/provinces/dki-jakarta?kebutuhan=Tes%20swab",
-      15,
+      30,
     );
   });
 
@@ -565,7 +565,7 @@ describe("Detail information about Tes swab on every provinces for example DKI J
       /kategori/i,
       "Tes swab",
       "/provinces/dki-jakarta?kebutuhan=Tes%20swab",
-      8,
+      2,
       "Terverifikasi",
     );
   });
@@ -575,7 +575,7 @@ describe("Detail information about Tes swab on every provinces for example DKI J
       /kategori/i,
       "Tes swab",
       "/provinces/dki-jakarta?kebutuhan=Tes%20swab",
-      6,
+      27,
       "Belum terverifkasi",
     );
   });
@@ -584,10 +584,10 @@ describe("Detail information about Tes swab on every provinces for example DKI J
     cy.getDescriptionContact(
       /kategori/i,
       "Tes swab",
-      /drive thru covid-19 bsd/i,
-      "/provinces/dki-jakarta/tes-swab-pcr-swab-test-drive-thru-kab-tangerang-drive-thru-covid-19-bsd-085574677403",
-      /drive thru covid-19 bsd/i,
-      /informasi drive thru covid./i,
+      /homecare 24/i,
+      "/provinces/dki-jakarta/tes-swab-pcr-home-service-jakarta-utara-homecare-24-08111513437",
+      /homecare 24/i,
+      /informasi homecare 24 - pcr home service di jakarta utara, dki jakarta yang dikumpulkan relawan melalui pencarian di internet atau media sosial./i,
     );
   });
 });
