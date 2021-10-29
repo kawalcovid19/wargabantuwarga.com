@@ -23,7 +23,7 @@ export async function fetchVaccinationDatabase() {
       fetch(`${vaksinId}/locations/${province}`)
         .then((res) => res.json() as unknown as VaccinationRegion)
         .then((region) => {
-          locations[region.data[0].province] = region.data.map((location) => ({
+          locations[province] = region.data.map((location) => ({
             id: `${region.data.findIndex(
               (index) => location.title === index.title,
             )}`,
