@@ -28,6 +28,7 @@ export async function fetchVaccinationDatabase() {
               (index) => location.title === index.title,
             )}`,
             keterangan: "Lokasi Vaksinasi COVID-19",
+            kebutuhan: "Tempat vaksin",
             lokasi: location.city,
             verifikasi: location.isvalid ? 1 : 0,
             penyedia: location.title,
