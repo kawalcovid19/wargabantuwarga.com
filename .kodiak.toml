@@ -2,7 +2,7 @@ version = 1
 
 [merge.automerge_dependencies]
 versions = ["minor", "patch"]
-usernames = ["dependabot"]
+usernames = ["dependabot", "snyk-bot"]
 
 # https://kodiakhq.com/docs/recipes#better-merge-messages
 [merge.message]
