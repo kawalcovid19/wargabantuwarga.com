@@ -30,7 +30,7 @@
     "@headlessui/react": "1.4.1",
     "@heroicons/react": "1.0.5",
     "@kawalcovid19/tailwind-preset-wbw": "^0.1.1",
-    "@netlify/plugin-nextjs": "3.9.0",
+    "@netlify/plugin-nextjs": "3.9.1",
     "@tailwindcss/forms": "^0.3.4",
     "@tailwindcss/typography": "0.4.1",
     "clsx": "^1.1.1",

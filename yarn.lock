@@ -1915,10 +1915,10 @@
     lighthouse "^8.0.0"
     puppeteer "^10.0.0"
 
-"@netlify/plugin-nextjs@3.9.0":
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-3.9.0.tgz#80f8c5087f605b903b7f07f85f67147920305f95"
-  integrity sha512-EqZjRbN/cGBpBmU50U4YA9r/b2cR++ZNK0sOJGbxtdqAjk0GMU3iNkuWbs8aO/4pjRRiNNmcAWsdOIgquF3CZg==
+"@netlify/plugin-nextjs@3.9.1":
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-3.9.1.tgz#8891844d38f9c92c1b57c14faa42714491d65622"
+  integrity sha512-8PtnH4mcWykXUBbjNCqK55DY5YMBT/ErrKQ9uIojxs5SBhHEp4Ft69CLHi83zsY1BUnVd02KWSGnzqMiY7GWYw==
   dependencies:
     "@babel/core" "^7.15.0"
     "@netlify/functions" "^0.7.2"
