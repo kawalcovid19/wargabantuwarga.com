@@ -1628,10 +1628,10 @@
   resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-1.4.1.tgz#0a8dbb20e1d63dcea55bfc3ab1b87637aaac7777"
   integrity sha512-gL6Ns5xQM57cZBzX6IVv6L7nsam8rDEpRhs5fg28SN64ikfmuuMgunc+Rw5C1cMScnvFM+cz32ueVrlSFEVlSg==
 
-"@heroicons/react@1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-1.0.4.tgz#11847eb2ea5510419d7ada9ff150a33af0ad0863"
-  integrity sha512-3kOrTmo8+Z8o6AL0rzN82MOf8J5CuxhRLFhpI8mrn+3OqekA6d5eb1GYO3EYYo1Vn6mYQSMNTzCWbEwUInb0cQ==
+"@heroicons/react@1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-1.0.5.tgz#2fe4df9d33eb6ce6d5178a0f862e97b61c01e27d"
+  integrity sha512-UDMyLM2KavIu2vlWfMspapw9yii7aoLwzI2Hudx4fyoPwfKfxU8r3cL8dEBXOjcLG0/oOONZzbT14M1HoNtEcg==
 
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
@@ -1915,10 +1915,10 @@
     lighthouse "^8.0.0"
     puppeteer "^10.0.0"
 
-"@netlify/plugin-nextjs@3.9.0":
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-3.9.0.tgz#80f8c5087f605b903b7f07f85f67147920305f95"
-  integrity sha512-EqZjRbN/cGBpBmU50U4YA9r/b2cR++ZNK0sOJGbxtdqAjk0GMU3iNkuWbs8aO/4pjRRiNNmcAWsdOIgquF3CZg==
+"@netlify/plugin-nextjs@3.9.1":
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-3.9.1.tgz#8891844d38f9c92c1b57c14faa42714491d65622"
+  integrity sha512-8PtnH4mcWykXUBbjNCqK55DY5YMBT/ErrKQ9uIojxs5SBhHEp4Ft69CLHi83zsY1BUnVd02KWSGnzqMiY7GWYw==
   dependencies:
     "@babel/core" "^7.15.0"
     "@netlify/functions" "^0.7.2"
