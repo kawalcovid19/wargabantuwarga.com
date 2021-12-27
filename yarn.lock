@@ -7889,12 +7889,13 @@ isurl@^1.0.0-alpha5:
     has-to-string-tag-x "^1.2.0"
     is-object "^1.0.1"
 
-itemsjs@^2.1.10:
-  version "2.1.10"
-  resolved "https://registry.yarnpkg.com/itemsjs/-/itemsjs-2.1.10.tgz#1b0c4597975ed7b1f650865de641428a2978b196"
-  integrity sha512-slp5dO5+fcgx1sVeBm2KZyZSN0l4Ek/kvSZK+Oc51wQR/j6RhOB8ZdWxRYiLpHTsXJJd/a7KtuZpbK56py2PFg==
+itemsjs@^2.1.13:
+  version "2.1.14"
+  resolved "https://registry.yarnpkg.com/itemsjs/-/itemsjs-2.1.14.tgz#11cf0e396b6dc4a2e7e80f56f22d60388a7e6571"
+  integrity sha512-+6vWJdi5j5wQwvJo0NzuOSaR3QnsLHz0kASCujthZm0U+a/JGIN26NhY0E7XcvHp5oc7A24Idvqx2/1s2vS9TA==
   dependencies:
     fastbitset "^0.4.0"
+    lodash "^4.17.21"
     lunr "^1.0.0"
 
 jest-changed-files@^27.0.6:
