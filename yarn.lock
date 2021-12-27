@@ -7889,12 +7889,13 @@ isurl@^1.0.0-alpha5:
     has-to-string-tag-x "^1.2.0"
     is-object "^1.0.1"
 
-itemsjs@^2.1.10:
-  version "2.1.10"
-  resolved "https://registry.yarnpkg.com/itemsjs/-/itemsjs-2.1.10.tgz#1b0c4597975ed7b1f650865de641428a2978b196"
-  integrity sha512-slp5dO5+fcgx1sVeBm2KZyZSN0l4Ek/kvSZK+Oc51wQR/j6RhOB8ZdWxRYiLpHTsXJJd/a7KtuZpbK56py2PFg==
+itemsjs@^2.1.13:
+  version "2.1.14"
+  resolved "https://registry.yarnpkg.com/itemsjs/-/itemsjs-2.1.14.tgz#11cf0e396b6dc4a2e7e80f56f22d60388a7e6571"
+  integrity sha512-+6vWJdi5j5wQwvJo0NzuOSaR3QnsLHz0kASCujthZm0U+a/JGIN26NhY0E7XcvHp5oc7A24Idvqx2/1s2vS9TA==
   dependencies:
     fastbitset "^0.4.0"
+    lodash "^4.17.21"
     lunr "^1.0.0"
 
 jest-changed-files@^27.0.6:
@@ -10616,10 +10617,10 @@ postcss@^7.0.14, postcss@^7.0.2, postcss@^7.0.21, postcss@^7.0.26, postcss@^7.0.
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-preact@^10.5.15:
-  version "10.5.15"
-  resolved "https://registry.yarnpkg.com/preact/-/preact-10.5.15.tgz#6df94d8afecf3f9e10a742fd8c362ddab464225f"
-  integrity sha512-5chK29n6QcJc3m1lVrKQSQ+V7K1Gb8HeQY6FViQ5AxCAEGu3DaHffWNDkC9+miZgsLvbvU9rxbV1qinGHMHzqA==
+preact@^10.6.2:
+  version "10.6.4"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.6.4.tgz#ad12c409ff1b4316158486e0a7b8d43636f7ced8"
+  integrity sha512-WyosM7pxGcndU8hY0OQlLd54tOU+qmG45QXj2dAYrL11HoyU/EzOSTlpJsirbBr1QW7lICxSsVJJmcmUglovHQ==
 
 prebuild-install@^6.1.4:
   version "6.1.4"
