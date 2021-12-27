@@ -27,7 +27,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@headlessui/react": "1.4.1",
+    "@headlessui/react": "1.4.2",
     "@heroicons/react": "1.0.5",
     "@kawalcovid19/tailwind-preset-wbw": "^0.1.1",
     "@netlify/plugin-nextjs": "3.9.1",
