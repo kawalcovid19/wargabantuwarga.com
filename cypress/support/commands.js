@@ -50,7 +50,7 @@ Cypress.Commands.add(
   "getAllContactWithStatus",
   (element, category, href, title) => {
     cy.findByRole("combobox", { name: element }).select(category);
-    cy.findAllByText(title).should.not("have.length", 0);
+    cy.findAllByText(title).should("not.have.length", 0);
     cy.url().should("include", href);
   },
 );
