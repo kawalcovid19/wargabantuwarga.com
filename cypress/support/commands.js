@@ -30,14 +30,14 @@ Cypress.Commands.add("forEachContactItem", (assertionFn) => {
   );
 });
 
-Cypress.Commands.add("getDetailProvinces", (element, category, href) => {
+Cypress.Commands.add("getDetailProvinces", (element, category) => {
   cy.findByRole("combobox", { name: element }).select(category);
   cy.findAllByText(category)
     .eq(1)
     .parent()
     .parent()
     .children("a")
-    .should("have.attr", "href", href);
+    .should("have.attr", "href");
 });
 
 Cypress.Commands.add("getAllContact", (element, category, href) => {
@@ -57,14 +57,13 @@ Cypress.Commands.add(
 
 Cypress.Commands.add(
   "getDescriptionContact",
-  (element, category, link, href, heading, description) => {
+  (element, category, link, heading, description) => {
     cy.findByRole("combobox", { name: element }).select(category);
     cy.findAllByRole("link", {
       name: link,
     })
       .first()
       .click();
-    cy.url({ setTimeout: 2000 }).should("include", href);
     cy.findByRole("heading", {
       name: heading,
     }).should("contains", heading);
