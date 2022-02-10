@@ -16,7 +16,6 @@ describe("Detail information about ambulans on every provinces for example DKI J
       /kategori/i,
       "Ambulans",
       "/provinces/dki-jakarta?kebutuhan=Ambulans",
-      29,
     );
   });
 
@@ -25,7 +24,6 @@ describe("Detail information about ambulans on every provinces for example DKI J
       /kategori/i,
       "Ambulans",
       "/provinces/dki-jakarta?kebutuhan=Ambulans",
-      21,
       "Terverifikasi",
     );
   });
@@ -35,7 +33,6 @@ describe("Detail information about ambulans on every provinces for example DKI J
       /kategori/i,
       "Ambulans",
       "/provinces/dki-jakarta?kebutuhan=Ambulans",
-      6,
       "Belum terverifkasi",
     );
   });
@@ -70,7 +67,6 @@ describe("Detail information about bantuan kebutuhan pokok on every provinces fo
       /kategori/i,
       "Bantuan kebutuhan pokok",
       "/provinces/dki-jakarta?kebutuhan=Bantuan%20kebutuhan%20pokok",
-      63,
     );
   });
 
@@ -79,7 +75,6 @@ describe("Detail information about bantuan kebutuhan pokok on every provinces fo
       /kategori/i,
       "Bantuan kebutuhan pokok",
       "/provinces/dki-jakarta?kebutuhan=Bantuan%20kebutuhan%20pokok",
-      24,
       "Terverifikasi",
     );
   });
@@ -89,7 +84,6 @@ describe("Detail information about bantuan kebutuhan pokok on every provinces fo
       /kategori/i,
       "Bantuan kebutuhan pokok",
       "/provinces/dki-jakarta?kebutuhan=Bantuan%20kebutuhan%20pokok",
-      38,
       "Belum terverifkasi",
     );
   });
@@ -124,7 +118,6 @@ describe("Detail information about Donor plasma on every provinces for example D
       /kategori/i,
       "Donor plasma",
       "/provinces/dki-jakarta?kebutuhan=Donor%20plasma",
-      5,
     );
   });
 
@@ -133,18 +126,7 @@ describe("Detail information about Donor plasma on every provinces for example D
       /kategori/i,
       "Donor plasma",
       "/provinces/dki-jakarta?kebutuhan=Donor%20plasma",
-      4,
       "Terverifikasi",
-    );
-  });
-
-  it("gives a contact Donor plasma on every location with unverified contact", () => {
-    cy.getAllContactWithStatus(
-      /kategori/i,
-      "Donor plasma",
-      "/provinces/dki-jakarta?kebutuhan=Donor%20plasma",
-      0,
-      "Belum terverifkasi",
     );
   });
 

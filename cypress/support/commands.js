@@ -40,17 +40,17 @@ Cypress.Commands.add("getDetailProvinces", (element, category, href) => {
     .should("have.attr", "href", href);
 });
 
-Cypress.Commands.add("getAllContact", (element, category, href, length) => {
+Cypress.Commands.add("getAllContact", (element, category, href) => {
   cy.findByRole("combobox", { name: element }).select(category);
-  cy.findAllByText(category).should("have.length", length);
+  cy.findAllByText(category).should.not("have.length", 0);
   cy.url().should("include", href);
 });
 
 Cypress.Commands.add(
   "getAllContactWithStatus",
-  (element, category, href, length, title) => {
+  (element, category, href, title) => {
     cy.findByRole("combobox", { name: element }).select(category);
-    cy.findAllByText(title).should("have.length", length);
+    cy.findAllByText(title).should.not("have.length", 0);
     cy.url().should("include", href);
   },
 );
