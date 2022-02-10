@@ -42,7 +42,7 @@ Cypress.Commands.add("getDetailProvinces", (element, category, href) => {
 
 Cypress.Commands.add("getAllContact", (element, category, href) => {
   cy.findByRole("combobox", { name: element }).select(category);
-  cy.findAllByText(category).should.not("have.length", 0);
+  cy.findAllByText(category).should("not.have.length", 0);
   cy.url().should("include", href);
 });
 
