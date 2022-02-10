@@ -40,7 +40,7 @@
     "itemsjs": "^2.1.13",
     "next": "11.1.3",
     "next-pwa": "^5.4.1",
-    "next-seo": "^4.27.0",
+    "next-seo": "^4.29.0",
     "nprogress": "^0.2.0",
     "preact": "^10.6.2",
     "react": "17.0.2",
