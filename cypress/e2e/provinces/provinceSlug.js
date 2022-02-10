@@ -141,7 +141,6 @@ describe("Detail information about Kontak penting on every provinces for example
       /kategori/i,
       "Kontak penting",
       "/provinces/dki-jakarta?kebutuhan=Kontak%20penting",
-      10,
     );
   });
 
@@ -150,18 +149,7 @@ describe("Detail information about Kontak penting on every provinces for example
       /kategori/i,
       "Kontak penting",
       "/provinces/dki-jakarta?kebutuhan=Kontak%20penting",
-      9,
       "Terverifikasi",
-    );
-  });
-
-  it("gives a contact Kontak penting on every location with unverified contact", () => {
-    cy.getAllContactWithStatus(
-      /kategori/i,
-      "Kontak penting",
-      "/provinces/dki-jakarta?kebutuhan=Kontak%20penting",
-      0,
-      "Belum terverifkasi",
     );
   });
 
@@ -190,7 +178,6 @@ describe("Detail information about Oksigen on every provinces for example DKI Ja
       /kategori/i,
       "Oksigen",
       "/provinces/dki-jakarta?kebutuhan=Oksigen",
-      78,
     );
   });
 
@@ -199,7 +186,6 @@ describe("Detail information about Oksigen on every provinces for example DKI Ja
       /kategori/i,
       "Oksigen",
       "/provinces/dki-jakarta?kebutuhan=Oksigen",
-      48,
       "Terverifikasi",
     );
   });
@@ -209,7 +195,6 @@ describe("Detail information about Oksigen on every provinces for example DKI Ja
       /kategori/i,
       "Oksigen",
       "/provinces/dki-jakarta?kebutuhan=Oksigen",
-      29,
       "Belum terverifkasi",
     );
   });
@@ -239,7 +224,6 @@ describe("Detail information about Pemakaman on every provinces for example DKI 
       /kategori/i,
       "Pemakaman",
       "/provinces/dki-jakarta?kebutuhan=Pemakaman",
-      9,
     );
   });
 
@@ -248,7 +232,6 @@ describe("Detail information about Pemakaman on every provinces for example DKI 
       /kategori/i,
       "Pemakaman",
       "/provinces/dki-jakarta?kebutuhan=Pemakaman",
-      3,
       "Terverifikasi",
     );
   });
@@ -258,7 +241,6 @@ describe("Detail information about Pemakaman on every provinces for example DKI 
       /kategori/i,
       "Pemakaman",
       "/provinces/dki-jakarta?kebutuhan=Pemakaman",
-      5,
       "Belum terverifkasi",
     );
   });
@@ -288,7 +270,6 @@ describe("Detail information about Rumah sakit on every provinces for example DK
       /kategori/i,
       "Rumah sakit",
       "/provinces/dki-jakarta?kebutuhan=Rumah%20sakit",
-      168,
     );
   });
 
@@ -297,7 +278,6 @@ describe("Detail information about Rumah sakit on every provinces for example DK
       /kategori/i,
       "Rumah sakit",
       "/provinces/dki-jakarta?kebutuhan=Rumah%20sakit",
-      64,
       "Terverifikasi",
     );
   });
@@ -307,7 +287,6 @@ describe("Detail information about Rumah sakit on every provinces for example DK
       /kategori/i,
       "Rumah sakit",
       "/provinces/dki-jakarta?kebutuhan=Rumah%20sakit",
-      103,
       "Belum terverifkasi",
     );
   });
@@ -337,7 +316,6 @@ describe("Detail information about Tempat isolasi mandiri on every provinces for
       /kategori/i,
       "Tempat isolasi mandiri",
       "/provinces/dki-jakarta?kebutuhan=Tempat%20isolasi%20mandiri",
-      41,
     );
   });
 
@@ -346,7 +324,6 @@ describe("Detail information about Tempat isolasi mandiri on every provinces for
       /kategori/i,
       "Tempat isolasi mandiri",
       "/provinces/dki-jakarta?kebutuhan=Tempat%20isolasi%20mandiri",
-      12,
       "Terverifikasi",
     );
   });
@@ -356,7 +333,6 @@ describe("Detail information about Tempat isolasi mandiri on every provinces for
       /kategori/i,
       "Tempat isolasi mandiri",
       "/provinces/dki-jakarta?kebutuhan=Tempat%20isolasi%20mandiri",
-      28,
       "Belum terverifkasi",
     );
   });
@@ -386,7 +362,6 @@ describe("Detail information about Tempat vaksin on every provinces for example 
       /kategori/i,
       "Tempat vaksin",
       "/provinces/dki-jakarta?kebutuhan=Tempat%20vaksin",
-      233,
     );
   });
 
@@ -395,7 +370,6 @@ describe("Detail information about Tempat vaksin on every provinces for example 
       /kategori/i,
       "Tempat vaksin",
       "/provinces/dki-jakarta?kebutuhan=Tempat%20vaksin",
-      9,
       "Terverifikasi",
     );
   });
@@ -405,7 +379,6 @@ describe("Detail information about Tempat vaksin on every provinces for example 
       /kategori/i,
       "Tempat vaksin",
       "/provinces/dki-jakarta?kebutuhan=Tempat%20vaksin",
-      219,
       "Belum terverifkasi",
     );
   });
@@ -435,7 +408,6 @@ describe("Detail information about Tes swab on every provinces for example DKI J
       /kategori/i,
       "Tes swab",
       "/provinces/dki-jakarta?kebutuhan=Tes%20swab",
-      30,
     );
   });
 
@@ -444,7 +416,6 @@ describe("Detail information about Tes swab on every provinces for example DKI J
       /kategori/i,
       "Tes swab",
       "/provinces/dki-jakarta?kebutuhan=Tes%20swab",
-      2,
       "Terverifikasi",
     );
   });
@@ -454,7 +425,6 @@ describe("Detail information about Tes swab on every provinces for example DKI J
       /kategori/i,
       "Tes swab",
       "/provinces/dki-jakarta?kebutuhan=Tes%20swab",
-      27,
       "Belum terverifkasi",
     );
   });
