@@ -236,15 +236,6 @@ describe("Detail information about Pemakaman on every provinces for example DKI 
     );
   });
 
-  it("gives a contact Pemakaman on every location with unverified contact", () => {
-    cy.getAllContactWithStatus(
-      /kategori/i,
-      "Pemakaman",
-      "/provinces/dki-jakarta?kebutuhan=Pemakaman",
-      "Belum terverifkasi",
-    );
-  });
-
   it.skip("More detail about Pemakaman", () => {
     cy.getDescriptionContact(
       /kategori/i,
