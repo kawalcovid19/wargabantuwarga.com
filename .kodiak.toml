@@ -8,3 +8,9 @@ usernames = ["dependabot", "snyk-bot"]
 [merge.message]
 title = "pull_request_title"
 include_pr_number = true
+
+# docs: https://kodiakhq.com/docs/recipes#adding-pull-request-approvals-to-dependabot-pull-requests
+[approve]
+# note: remove the "[bot]" suffix from GitHub Bot usernames.
+# Instead of "dependabot[bot]" use "dependabot".
+auto_approve_usernames = ["allcontributors", "zainfathoni", "dependabot", "snyk-bot"]
