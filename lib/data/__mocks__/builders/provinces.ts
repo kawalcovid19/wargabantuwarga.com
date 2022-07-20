@@ -20,7 +20,6 @@ export const contactBuilder = build<Contact>({
       "Pemakaman",
       "Puskesmas",
       "Rumah sakit",
-      "Tempat vaksin",
       "Tes swab",
     ),
     penyedia: fake((f) => f.company.companyName()),
@@ -51,6 +50,11 @@ export const provinceBuilder = build<Province>({
       contactBuilder({
         overrides: {
           penyedia: perBuild(() => "Alpha"),
+        },
+      }),
+      contactBuilder({
+        overrides: {
+          kebutuhan: perBuild(() => "Tempat vaksin"),
         },
       }),
     ],

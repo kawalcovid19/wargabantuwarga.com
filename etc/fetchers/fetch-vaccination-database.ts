@@ -23,11 +23,12 @@ export async function fetchVaccinationDatabase() {
       fetch(`${vaksinId}/locations/${province}`)
         .then((res) => res.json() as unknown as VaccinationRegion)
         .then((region) => {
-          locations[region.data[0].province] = region.data.map((location) => ({
+          locations[province] = region.data.map((location) => ({
             id: `${region.data.findIndex(
               (index) => location.title === index.title,
             )}`,
             keterangan: "Lokasi Vaksinasi COVID-19",
+            kebutuhan: "Tempat vaksin",
             lokasi: location.city,
             verifikasi: location.isvalid ? 1 : 0,
             penyedia: location.title,

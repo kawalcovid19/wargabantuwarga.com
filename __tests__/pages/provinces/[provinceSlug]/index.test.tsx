@@ -3,12 +3,14 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import provinces from "~/lib/data/provinces";
+import vaccination from "~/lib/data/vaccination";
 import ProvincePage, {
   getStaticPaths,
   getStaticProps,
 } from "~/pages/provinces/[provinceSlug]";
 
 jest.mock("~/lib/data/provinces");
+jest.mock("~/lib/data/vaccination");
 jest.mock("next/router", () => require("next-router-mock"));
 
 describe("ProvincePage", () => {
@@ -104,6 +106,7 @@ describe("getStaticProps", () => {
   const [province] = provinces;
   const [unverifiedContact, verifiedContactBravo, verifiedContactAlpha] =
     province.data;
+  const [vaccinationContact] = vaccination["Province A"];
 
   it("gets the provinceName and sorted contactList from the provinceSlug params", () => {
     expect(
@@ -117,6 +120,7 @@ describe("getStaticProps", () => {
         contactList: [
           verifiedContactAlpha,
           verifiedContactBravo,
+          vaccinationContact,
           unverifiedContact,
         ],
       },
