@@ -3,7 +3,7 @@ import path from "path";
 import { load } from "cheerio";
 import fetch from "cross-fetch";
 import { allIsEmptyString, getKebabCase } from "../../lib/string-utils";
-import { contactReducer } from "./utils";
+import { lbhReducer } from "./utils";
 
 export async function fetchLbh() {
   const source = await fetch("https://kcov.id/wbw-lbh");
@@ -54,7 +54,7 @@ export async function fetchLbh() {
     name: sheetName,
     slug: getKebabCase(sheetName),
     data: sheetRows.map((row, rowIndex) => {
-      return sheetColumns.reduce(contactReducer(row), {
+      return sheetColumns.reduce(lbhReducer(row), {
         id: rowIndex.toString(),
       });
     }),
