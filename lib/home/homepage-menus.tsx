@@ -9,7 +9,7 @@ import {
   DonationIcon,
   ContributionIcon,
   EducationIcon,
-  // LegalIcon,
+  LegalIcon,
 } from "~/components/ui/icons";
 
 export interface HomepageMenuItem {
@@ -56,10 +56,9 @@ export const homepageMenus: HomepageMenuItem[] = [
     icon: ContributionIcon,
     external: true,
   },
-  // TODO: uncomment this item once the `/lbh` page is created
-  // {
-  //   name: "LBH",
-  //   href: "/lbh",
-  //   icon: LegalIcon,
-  // },
+  {
+    name: "LBH",
+    href: "/lbh",
+    icon: LegalIcon,
+  },
 ];
