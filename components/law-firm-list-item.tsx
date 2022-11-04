@@ -81,7 +81,7 @@ function LawFirmListItem({ lawFirm }: LawFirmListItemProps) {
                 aria-hidden="true"
                 className="flex-shrink-0 mr-2 h-4 w-4 text-gray-400"
               />
-              {htmr(lawFirm.alamat as string, {
+              {htmr(lawFirm.alamat, {
                 transform: htmrTransform,
               })}
             </p>
