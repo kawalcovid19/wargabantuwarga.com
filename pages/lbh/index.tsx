@@ -9,11 +9,11 @@ import { SeoText } from "~/components/seo-text";
 import entityGroup, { LawFirm } from "~/lib/data/law-firms";
 import { useSearch } from "~/lib/hooks/use-search";
 
-type LbhPageProps = {
+type LawFirmsPageProps = {
   lawFirmList: LawFirm[];
 };
 
-export default function LbhPage(props: LbhPageProps) {
+export default function LawFirmsPage(props: LawFirmsPageProps) {
   const { lawFirmList } = props;
   const [
     filteredContacts,
