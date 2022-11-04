@@ -96,9 +96,8 @@ export const lbhReducer = (row: string[]) => {
     prev[colName] = cellValue;
     if (colName == "nama_lbh") {
       prev.slug = [getKebabCase(prev.nama_lbh as string)].join("-");
-    } else if (colName == "tanggal_verifikasi") {
-      prev.verifikasi = cellValue == "" ? 0 : 1;
     }
+    prev.verifikasi = 1;
     return prev;
   };
 };

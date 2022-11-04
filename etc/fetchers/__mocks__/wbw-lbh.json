@@ -15,7 +15,8 @@
       "twitter": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://twitter.com/LBHBandaAceh\">https://twitter.com/LBHBandaAceh</a>",
       "facebook": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.facebook.com/lbhbandaaceh.org\">https://www.facebook.com/lbhbandaaceh.org</a>",
       "youtube": "",
-      "link_donasi": ""
+      "link_donasi": "",
+      "verifikasi": 1
     },
     {
       "id": "1",
@@ -29,7 +30,8 @@
       "twitter": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://twitter.com/lbh_medan\">https://twitter.com/lbh_medan</a>",
       "facebook": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.facebook.com/BantuanHukumMedan/\">https://www.facebook.com/BantuanHukumMedan/</a>",
       "youtube": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.youtube.com/channel/UC2FuxkrpGGvEHEi2Y0QFsCg\">https://www.youtube.com/channel/UC2FuxkrpGGvEHEi2Y0QFsCg</a>",
-      "link_donasi": ""
+      "link_donasi": "",
+      "verifikasi": 1
     },
     {
       "id": "2",
@@ -43,7 +45,8 @@
       "twitter": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://twitter.com/LbhPadang?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor\">https://twitter.com/LbhPadang</a>",
       "facebook": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.facebook.com/Lembaga-Bantuan-Hukum-Padang-268400807073709/?hc_ref=ARTZfRnlDloAaghqNsZYd0t4kkh-KwLmA04ebymeuIwkk_UslnjsSH7wHWonyedL4Z8&amp;fref=nf\">https://www.facebook.com/Lembaga-Bantuan-Hukum-Padang</a>",
       "youtube": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.youtube.com/channel/UCXaIvb3VfkEDNMN2wyyjA8g\">https://www.youtube.com/channel/UCXaIvb3VfkEDNMN2wyyjA8g</a>",
-      "link_donasi": ""
+      "link_donasi": "",
+      "verifikasi": 1
     }
   ]
 }
