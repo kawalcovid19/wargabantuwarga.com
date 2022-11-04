@@ -35,7 +35,7 @@ export async function fetchLbh() {
           .map((colIndex, td) => {
             if (colMap[colIndex]) {
               // Kebutuhan, Keterangan, Lokasi, & Penyedia aren't supposed to be linked
-              if (colIndex < 5) {
+              if (colIndex < 4) {
                 return $(td).text().trim();
               } else {
                 return ($(td).html() as string).trim();

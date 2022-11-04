@@ -1,4 +1,4 @@
-import entityGroups from "~/data/wbw-lbh.json";
+import entityGroup from "~/data/wbw-lbh.json";
 
 export type EntityGroup = {
   readonly id: number;
@@ -11,7 +11,7 @@ export type LawFirm = {
   readonly id: string;
   readonly nama_lbh: string;
   readonly slug: string;
-  readonly alamat?: string;
+  readonly alamat: string;
   readonly nomor_kontak?: string;
   readonly email?: string;
   readonly website?: string;
@@ -23,4 +23,4 @@ export type LawFirm = {
   readonly verifikasi: number;
 };
 
-export default entityGroups as unknown as EntityGroup;
+export default entityGroup as unknown as EntityGroup;
