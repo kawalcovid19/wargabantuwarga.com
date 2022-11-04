@@ -63,7 +63,7 @@ export default function LbhPage(props: LbhPageProps) {
           filterItems={filterItems}
           initialValue={urlParams}
           isLoading={isLoading}
-          itemName="lbh"
+          itemName="Lembaga Bantuan Hukum"
           onSubmitKeywords={handleSubmitKeywords}
           placeholderText="Cari berdasarkan nama atau alamat"
         />
