@@ -1,0 +1,52 @@
+{
+  "id": "0",
+  "name": "LBH",
+  "slug": "lbh",
+  "data": [
+    {
+      "id": "0",
+      "nama_lbh": "LBH Aceh",
+      "slug": "lbh-aceh",
+      "alamat": "Jalan Sakti, Pango Raya, Kec. Ulee Kareng, Kota Banda Aceh, Aceh 23116",
+      "nomor_kontak": "T: 0651-22940 F: 0651-7400023",
+      "email": "lbh_aceh1995@yahoo.com",
+      "website": "http://lbhbandaaceh.org/",
+      "ig": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.instagram.com/lbh.bandaaceh/\">https://www.instagram.com/lbh.bandaaceh/</a>",
+      "twitter": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://twitter.com/LBHBandaAceh\">https://twitter.com/LBHBandaAceh</a>",
+      "facebook": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.facebook.com/lbhbandaaceh.org\">https://www.facebook.com/lbhbandaaceh.org</a>",
+      "youtube": "",
+      "link_donasi": "",
+      "verifikasi": 1
+    },
+    {
+      "id": "1",
+      "nama_lbh": "LBH Medan",
+      "slug": "lbh-medan",
+      "alamat": "Jalan Hindu No.12 Medan 20111, Sumatera Utara, Indonesia",
+      "nomor_kontak": "Telp. 061-4515 340Fax. 061-4569 749",
+      "email": "lbh_medan@yahoo.comkantor@lbhmedan.org",
+      "website": "https://lbhmedan.org/",
+      "ig": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.instagram.com/lbhmedan/\">https://www.instagram.com/lbhmedan/</a>",
+      "twitter": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://twitter.com/lbh_medan\">https://twitter.com/lbh_medan</a>",
+      "facebook": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.facebook.com/BantuanHukumMedan/\">https://www.facebook.com/BantuanHukumMedan/</a>",
+      "youtube": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.youtube.com/channel/UC2FuxkrpGGvEHEi2Y0QFsCg\">https://www.youtube.com/channel/UC2FuxkrpGGvEHEi2Y0QFsCg</a>",
+      "link_donasi": "",
+      "verifikasi": 1
+    },
+    {
+      "id": "2",
+      "nama_lbh": "LBH Padang",
+      "slug": "lbh-padang",
+      "alamat": "Jalan Pekanbaru nomor 11A, Ulak Karang Selatan, Kota Padang, Sumatera Barat, Indonesia 25135",
+      "nomor_kontak": "0751-7053163",
+      "email": "info@lbhpadang.org",
+      "website": "https://lbhpadang.org/",
+      "ig": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.instagram.com/lbh_padang/\">https://www.instagram.com/lbh_padang/</a>",
+      "twitter": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://twitter.com/LbhPadang?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor\">https://twitter.com/LbhPadang</a>",
+      "facebook": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.facebook.com/Lembaga-Bantuan-Hukum-Padang-268400807073709/?hc_ref=ARTZfRnlDloAaghqNsZYd0t4kkh-KwLmA04ebymeuIwkk_UslnjsSH7wHWonyedL4Z8&amp;fref=nf\">https://www.facebook.com/Lembaga-Bantuan-Hukum-Padang</a>",
+      "youtube": "<a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.youtube.com/channel/UCXaIvb3VfkEDNMN2wyyjA8g\">https://www.youtube.com/channel/UCXaIvb3VfkEDNMN2wyyjA8g</a>",
+      "link_donasi": "",
+      "verifikasi": 1
+    }
+  ]
+}
