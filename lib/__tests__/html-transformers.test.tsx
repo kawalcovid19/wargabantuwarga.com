@@ -81,6 +81,51 @@ describe("htmrTransform", () => {
       </main>
     `);
   });
+
+  it("styles bold, strong, and mark tags correctly", () => {
+    expect(
+      htmrRenderWithTransformer(
+        `<main><b>Bold</b> and <strong>Strong</strong> with some <mark>Mark</mark></main>`,
+      ),
+    ).toMatchInlineSnapshot(`
+      <main>
+        <b
+          className="font-bold text-gray-900"
+        >
+          Bold
+        </b>
+         and 
+        <strong
+          className="font-bold text-gray-900"
+        >
+          Strong
+        </strong>
+         with some 
+        <span
+          className="bg-yellow-200"
+        >
+          Mark
+        </span>
+      </main>
+    `);
+  });
+
+  it("renders image tag correctly when src is provided", () => {
+    expect(htmrRenderWithTransformer(`<img src="/logo" alt="Logo" />`))
+      .toMatchInlineSnapshot(`
+      <img
+        alt="Logo"
+        loading="lazy"
+        src="/logo"
+      />
+    `);
+  });
+
+  it("renders nothing when the image tag doesn't have src props", () => {
+    expect(
+      htmrRenderWithTransformer(`<img alt="Logo" />`),
+    ).toMatchInlineSnapshot(`null`);
+  });
 });
 
 /**
