@@ -8,7 +8,7 @@ const a = (node: JSX.IntrinsicElements["a"]) => {
 
   if (href) {
     // TODO: Strip Google's URL prefix
-    if (href.substr(0, 4) === "http") {
+    if (href.startsWith("http")) {
       return (
         <a
           className="text-indigo-600 hover:text-indigo-500 relative"

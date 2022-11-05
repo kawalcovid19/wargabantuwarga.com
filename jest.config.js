@@ -5,14 +5,15 @@ module.exports = {
     "!./(components|etc|lib|pages)/**/__tests__/**/*.test.(ts|tsx|js|jsx)",
     "!./(components|etc|lib|pages)/**/__mocks__/**/*.(ts|tsx|js|jsx)",
     "!./etc/fetchers/fetch-wbw.ts",
+    "!./etc/create-sitemap-index.ts",
     "!./etc/mirror-box.ts",
   ],
   coverageThreshold: {
     global: {
-      statements: 84,
-      branches: 73,
-      functions: 82,
-      lines: 84,
+      statements: 91,
+      branches: 79,
+      functions: 89,
+      lines: 91,
     },
   },
   transform: {
