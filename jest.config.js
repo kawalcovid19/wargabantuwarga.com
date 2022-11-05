@@ -5,6 +5,7 @@ module.exports = {
     "!./(components|etc|lib|pages)/**/__tests__/**/*.test.(ts|tsx|js|jsx)",
     "!./(components|etc|lib|pages)/**/__mocks__/**/*.(ts|tsx|js|jsx)",
     "!./etc/fetchers/fetch-wbw.ts",
+    "!./etc/create-sitemap-index.ts",
     "!./etc/mirror-box.ts",
   ],
   coverageThreshold: {
