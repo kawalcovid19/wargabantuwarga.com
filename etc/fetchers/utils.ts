@@ -85,9 +85,15 @@ export const lbhReducer = (row: string[]) => {
     const colName = toSnakeCase(col.name);
     let cellValue = row[col.index];
     if (
-      ["nomor_kontak", "link", "twitter", "youtube", "facebook", "ig"].includes(
-        colName,
-      )
+      [
+        "nomor_kontak",
+        "website",
+        "link",
+        "twitter",
+        "youtube",
+        "facebook",
+        "ig",
+      ].includes(colName)
     ) {
       cellValue = extractGoogleQuery(cellValue);
     } else if (["nomor_kontak", "alamat"].includes(colName)) {

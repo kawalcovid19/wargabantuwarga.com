@@ -1,4 +1,5 @@
-import { getContactMeta, getProvinceMeta, Meta } from "../meta";
+import { getContactMeta, getLawFirmMeta, getProvinceMeta, Meta } from "../meta";
+import { LawFirm } from "../data/law-firms";
 import { Contact } from "~/lib/data/provinces";
 
 describe("getProvinceMeta", () => {
@@ -81,6 +82,35 @@ describe("getContactMeta", () => {
       expect(
         getContactMeta(provinceName as string, contact as Contact),
       ).toStrictEqual(expected as Meta);
+    },
+  );
+});
+
+describe("getLawFirmMeta", () => {
+  const fixtures = [
+    [
+      "All lawFirm data exist",
+      {
+        id: "0",
+        slug: "lbh-aceh",
+        nama_lbh: "LBH Aceh",
+        alamat:
+          "Jalan Sakti, Pango Raya, Kec. Ulee Kareng, Kota Banda Aceh, Aceh 23116",
+      },
+      {
+        description:
+          "LBH Aceh beralamat di Jalan Sakti, Pango Raya, Kec. Ulee Kareng, Kota Banda Aceh, Aceh 23116",
+        title: "LBH Aceh",
+      } as Meta,
+    ],
+  ];
+
+  it.each(fixtures)(
+    "should return correct result when: %s",
+    (_, lawFirm, expected) => {
+      expect(getLawFirmMeta(lawFirm as LawFirm)).toStrictEqual(
+        expected as Meta,
+      );
     },
   );
 });
