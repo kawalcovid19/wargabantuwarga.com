@@ -35,7 +35,7 @@ export default function LawFirmsPage(props: LawFirmsPageProps) {
 
   const meta = {
     title: "Lembaga Bantuan Hukum",
-    description: "Daftar LBH seluruh Indonesia",
+    description: "Daftar Lembaga Bantuan Hukum (LBH) seluruh Indonesia",
   };
 
   return (
