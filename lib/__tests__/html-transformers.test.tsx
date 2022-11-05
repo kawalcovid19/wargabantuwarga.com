@@ -82,31 +82,33 @@ describe("htmrTransform", () => {
     `);
   });
 
-  it("styles bold, strong, and mark tags correctly", () => {
-    expect(
-      htmrRenderWithTransformer(
-        `<main><b>Bold</b> and <strong>Strong</strong> with some <mark>Mark</mark></main>`,
-      ),
-    ).toMatchInlineSnapshot(`
-      <main>
-        <b
-          className="font-bold text-gray-900"
-        >
-          Bold
-        </b>
-         and 
-        <strong
-          className="font-bold text-gray-900"
-        >
-          Strong
-        </strong>
-         with some 
-        <span
-          className="bg-yellow-200"
-        >
-          Mark
-        </span>
-      </main>
+  it("styles bold tags correctly", () => {
+    expect(htmrRenderWithTransformer(`<b>bold</b>`)).toMatchInlineSnapshot(`
+      <b
+        className="font-bold text-gray-900"
+      >
+        bold
+      </b>
+    `);
+  });
+  it("styles strong tags correctly", () => {
+    expect(htmrRenderWithTransformer(`<strong>strong</strong>`))
+      .toMatchInlineSnapshot(`
+      <strong
+        className="font-bold text-gray-900"
+      >
+        strong
+      </strong>
+    `);
+  });
+  it("styles mark tags correctly", () => {
+    expect(htmrRenderWithTransformer(`<mark>mark</mark>`))
+      .toMatchInlineSnapshot(`
+      <span
+        className="bg-yellow-200"
+      >
+        mark
+      </span>
     `);
   });
 
@@ -115,6 +117,17 @@ describe("htmrTransform", () => {
       .toMatchInlineSnapshot(`
       <img
         alt="Logo"
+        loading="lazy"
+        src="/logo"
+      />
+    `);
+  });
+
+  it("renders image tag correctly when alt is not provided", () => {
+    expect(htmrRenderWithTransformer(`<img src="/logo" />`))
+      .toMatchInlineSnapshot(`
+      <img
+        alt=""
         loading="lazy"
         src="/logo"
       />
