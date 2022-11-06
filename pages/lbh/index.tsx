@@ -25,12 +25,12 @@ export default function LawFirmsPage(props: LawFirmsPageProps) {
     items: lawFirmList,
     fieldNames: ["nama_lbh", "alamat"],
     sortSettings: {
-      nama_lbh_asc: {
+      id_asc: {
         field: "nama_lbh",
         order: "asc",
       },
     },
-    defaultSort: "nama_lbh_asc",
+    defaultSort: "id_asc",
   });
 
   const meta = {
