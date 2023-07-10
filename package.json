@@ -103,7 +103,7 @@
     "prettier": "2.3.2",
     "react-intersection-observer": "8.32.0",
     "start-server-and-test": "^1.12.6",
-    "stylelint": "13.13.1",
+    "stylelint": "15.10.1",
     "stylelint-config-recommended": "5.0.0",
     "tailwindcss": "2.2.4",
     "ts-node": "^10.1.0",
