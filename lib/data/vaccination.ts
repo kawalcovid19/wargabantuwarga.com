@@ -1,4 +1,5 @@
 import { Contact } from "./provinces";
+import vaccination from "~/data/wbw-vaccination-database.json";
 
 type City = `${"Kab." | "Kota"} ${string}`;
 type DateString = `${number}-${number}-${number}`;
@@ -51,3 +52,7 @@ export interface VaccinationContact extends Contact {
   map: _location["map"];
   link: _location["link"];
 }
+
+export type Vaccination = { [province: string]: VaccinationContact[] };
+
+export default vaccination as unknown as Vaccination;
