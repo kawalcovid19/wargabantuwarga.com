@@ -99,7 +99,7 @@
     "next-router-mock": "0.1.4",
     "next-sitemap": "^1.6.140",
     "ora": "^5.4.1",
-    "postcss": "8.3.5",
+    "postcss": "8.4.31",
     "prettier": "2.3.2",
     "react-intersection-observer": "8.32.0",
     "start-server-and-test": "^1.12.6",
