@@ -24,7 +24,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Fetch the latest data
-        run: yarn run mirror-box
+        run: yarn run fetch-wbw
 
       - name: Cache dependencies
         uses: actions/cache@v1

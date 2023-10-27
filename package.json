@@ -12,7 +12,7 @@
     "lint": "eslint \"**/*.{js,jsx,ts,tsx,yml,yaml}\"",
     "lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx,yml,yaml}\"",
     "mirror-box": "ts-node etc/mirror-box.ts",
-    "netlify-export": "yarn mirror-box && yarn build && next export",
+    "netlify-export": "yarn fetch-wbw && yarn build && next export",
     "prepare": "husky install",
     "start": "next start",
     "cypress:open": "cypress open",
@@ -27,8 +27,8 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@headlessui/react": "1.4.3",
-    "@heroicons/react": "1.0.5",
+    "@headlessui/react": "1.5.0",
+    "@heroicons/react": "1.0.6",
     "@kawalcovid19/tailwind-preset-wbw": "^0.1.1",
     "@netlify/plugin-nextjs": "3.9.2",
     "@tailwindcss/forms": "^0.4.0",
@@ -39,10 +39,10 @@
     "htmr": "^1.0.1",
     "itemsjs": "^2.1.13",
     "next": "11.1.4",
-    "next-pwa": "^5.4.1",
+    "next-pwa": "^5.4.7",
     "next-seo": "^4.29.0",
     "nprogress": "^0.2.0",
-    "preact": "^10.6.2",
+    "preact": "^10.7.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "ts-debounce": "^3.0.0"

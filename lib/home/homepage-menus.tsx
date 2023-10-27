@@ -9,6 +9,7 @@ import {
   DonationIcon,
   ContributionIcon,
   EducationIcon,
+  LegalIcon,
 } from "~/components/ui/icons";
 
 export interface HomepageMenuItem {
@@ -54,5 +55,10 @@ export const homepageMenus: HomepageMenuItem[] = [
     href: "https://www.indorelawan.org/activity/60e2ed45164da80018b0e246",
     icon: ContributionIcon,
     external: true,
+  },
+  {
+    name: "LBH",
+    href: "/lbh",
+    icon: LegalIcon,
   },
 ];

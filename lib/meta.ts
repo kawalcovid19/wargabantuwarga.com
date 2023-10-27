@@ -1,3 +1,4 @@
+import { LawFirm } from "./data/law-firms";
 import { Contact } from "~/lib/data/provinces";
 
 export type Meta = {
@@ -39,5 +40,12 @@ export function getContactMeta(provinceName: string, contact: Contact): Meta {
   return {
     title,
     description: `Informasi ${title} yang dikumpulkan relawan melalui pencarian di internet atau media sosial.`,
+  };
+}
+
+export function getLawFirmMeta(lawFirm: LawFirm): Meta {
+  return {
+    title: lawFirm.nama_lbh,
+    description: `${lawFirm.nama_lbh} beralamat di ${lawFirm.alamat}`,
   };
 }
