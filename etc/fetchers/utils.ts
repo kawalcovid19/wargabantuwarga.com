@@ -79,3 +79,31 @@ export const contactReducer = (row: string[]) => {
     return prev;
   };
 };
+
+export const lbhReducer = (row: string[]) => {
+  return (prev: Record<string, number | string>, col: SheetColumn) => {
+    const colName = toSnakeCase(col.name);
+    let cellValue = row[col.index];
+    if (
+      [
+        "nomor_kontak",
+        "website",
+        "link",
+        "twitter",
+        "youtube",
+        "facebook",
+        "ig",
+      ].includes(colName)
+    ) {
+      cellValue = extractGoogleQuery(cellValue);
+    } else if (["nomor_kontak", "alamat"].includes(colName)) {
+      cellValue = stripTags(cellValue);
+    }
+    prev[colName] = cellValue;
+    if (colName == "nama_lbh") {
+      prev.slug = [getKebabCase(prev.nama_lbh as string)].join("-");
+    }
+    prev.verifikasi = 1;
+    return prev;
+  };
+};
