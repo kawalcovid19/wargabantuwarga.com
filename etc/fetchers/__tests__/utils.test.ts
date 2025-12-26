@@ -4,6 +4,7 @@ import {
   contactReducer,
   extractGoogleQuery,
   parseFAQ,
+  parseFAQFromCSV,
   parseCSV,
   SheetColumn,
 } from "../utils";
@@ -52,6 +53,98 @@ describe("utils > parseFAQ", () => {
         published_date: "",
       },
     ]);
+  });
+});
+
+describe("utils > parseFAQFromCSV", () => {
+  it("should parse simple FAQ CSV", () => {
+    const csv =
+      "Kategori Pertanyaan,Pertanyaan,Jawaban,Tanggal Menulis Jawaban,Sumber,Link,Tanggal Sumber Dipublish\nTanda Bahaya,Kapan saya harus ke IGD?,Segera ke IGD,12 Jul 2021,Saran Dokter,,";
+
+    const result = parseFAQFromCSV(csv);
+
+    expect(result).toStrictEqual([
+      {
+        kategori_pertanyaan: "Tanda Bahaya",
+        pertanyaan: "Kapan saya harus ke IGD?",
+        jawaban: "Segera ke IGD",
+        created_date: "12 Jul 2021",
+        sumber: "Saran Dokter",
+        link: "",
+        published_date: "",
+      },
+    ]);
+  });
+
+  it("should handle multi-line answers in quoted cells", () => {
+    const csv =
+      'Kategori Pertanyaan,Pertanyaan,Jawaban,Tanggal Menulis Jawaban,Sumber,Link,Tanggal Sumber Dipublish\n"Tanda Bahaya","Kapan saya harus ke IGD?","Jika ada tanda-tanda seperti:\n- Sesak nafas\n- Nyeri dada","12 Jul 2021","Saran Dokter","",""';
+
+    const result = parseFAQFromCSV(csv);
+
+    expect(result).toStrictEqual([
+      {
+        kategori_pertanyaan: "Tanda Bahaya",
+        pertanyaan: "Kapan saya harus ke IGD?",
+        jawaban: "Jika ada tanda-tanda seperti:\n- Sesak nafas\n- Nyeri dada",
+        created_date: "12 Jul 2021",
+        sumber: "Saran Dokter",
+        link: "",
+        published_date: "",
+      },
+    ]);
+  });
+
+  it("should handle multiple FAQ entries", () => {
+    const csv =
+      "Kategori Pertanyaan,Pertanyaan,Jawaban,Tanggal Menulis Jawaban,Sumber,Link,Tanggal Sumber Dipublish\nTanda Bahaya,Question 1,Answer 1,12 Jul 2021,Dokter,,\nGejala,Question 2,Answer 2,13 Jul 2021,Rumah Sakit,,";
+
+    const result = parseFAQFromCSV(csv);
+
+    expect(result).toHaveLength(2);
+    expect(result[0].kategori_pertanyaan).toBe("Tanda Bahaya");
+    expect(result[1].kategori_pertanyaan).toBe("Gejala");
+  });
+
+  it("should handle quoted values with commas", () => {
+    const csv =
+      'Kategori Pertanyaan,Pertanyaan,Jawaban,Tanggal Menulis Jawaban,Sumber,Link,Tanggal Sumber Dipublish\n"Tanda Bahaya, Penting","Kapan saya harus ke IGD?","Segera, segera ke IGD","12 Jul 2021, pukul 12","Saran, Dokter","",""';
+
+    const result = parseFAQFromCSV(csv);
+
+    expect(result[0].kategori_pertanyaan).toBe("Tanda Bahaya, Penting");
+    expect(result[0].pertanyaan).toBe("Kapan saya harus ke IGD?");
+    expect(result[0].jawaban).toBe("Segera, segera ke IGD");
+  });
+
+  it("should skip empty rows", () => {
+    const csv =
+      "Kategori Pertanyaan,Pertanyaan,Jawaban,Tanggal Menulis Jawaban,Sumber,Link,Tanggal Sumber Dipublish\nTanda Bahaya,Question 1,Answer 1,12 Jul 2021,Dokter,,\n\nGejala,Question 2,Answer 2,13 Jul 2021,Rumah Sakit,,";
+
+    const result = parseFAQFromCSV(csv);
+
+    expect(result).toHaveLength(2);
+  });
+
+  it("should handle missing optional fields", () => {
+    const csv =
+      "Kategori Pertanyaan,Pertanyaan,Jawaban,Tanggal Menulis Jawaban,Sumber,Link,Tanggal Sumber Dipublish\nTanda Bahaya,Question 1,Answer 1,12 Jul 2021,,";
+
+    const result = parseFAQFromCSV(csv);
+
+    expect(result[0].sumber).toBe("");
+    expect(result[0].link).toBe("");
+    expect(result[0].published_date).toBe("");
+  });
+
+  it("should handle CRLF line endings", () => {
+    const csv =
+      "Kategori Pertanyaan,Pertanyaan,Jawaban,Tanggal Menulis Jawaban,Sumber,Link,Tanggal Sumber Dipublish\r\nTanda Bahaya,Question 1,Answer 1,12 Jul 2021,Dokter,,\r\nGejala,Question 2,Answer 2,13 Jul 2021,Rumah Sakit,,";
+
+    const result = parseFAQFromCSV(csv);
+
+    expect(result).toHaveLength(2);
+    expect(result[0].kategori_pertanyaan).toBe("Tanda Bahaya");
   });
 });
 

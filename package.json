@@ -16,7 +16,7 @@
     "start": "next start",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "test": "is-ci \"test:coverage\" \"test:watch\"",
+    "test": "is-ci \"test:coverage\" \"jest\"",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",

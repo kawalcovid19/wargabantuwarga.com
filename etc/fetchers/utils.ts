@@ -43,6 +43,26 @@ export const parseFAQ = async (html: string): Promise<Faqs> => {
   return faqJSON;
 };
 
+export const parseFAQFromCSV = (csvText: string): Faqs => {
+  const { rows } = parseCSV(csvText);
+
+  return rows
+    .filter((row) => row.some((cell) => cell)) // Skip empty rows
+    .map((row) => {
+      const faq: Faq = {
+        kategori_pertanyaan: row[0] ?? "",
+        pertanyaan: row[1] ?? "",
+        jawaban: row[2] ?? "",
+        created_date: row[3] ?? "",
+        sumber: row[4] ?? "",
+        link: row[5] ?? "",
+        published_date: row[6] ?? "",
+      };
+
+      return faq;
+    });
+};
+
 export const extractGoogleQuery = (value: string): string => {
   const $ = cheerio.load(value);
   const links = $("a");
