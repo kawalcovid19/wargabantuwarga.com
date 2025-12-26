@@ -15,7 +15,7 @@ describe("fetchDatabase", () => {
     writeFileSyncSpy.mockRestore();
   });
 
-  it("fetches database from https://kcov.id/wbw-database correctly", async () => {
+  it("fetches database from Google Sheets htmlview correctly", async () => {
     fetchMock.mockResponseOnce(
       fs.readFileSync(
         path.resolve(__dirname, "../__mocks__/wbw-database.html"),
@@ -25,7 +25,9 @@ describe("fetchDatabase", () => {
     await fetchDatabase();
 
     expect(fetchMock).toHaveBeenCalledTimes(1);
-    expect(fetchMock).toHaveBeenCalledWith("https://kcov.id/wbw-database");
+    expect(fetchMock).toHaveBeenCalledWith(
+      "https://docs.google.com/spreadsheets/d/1SRByPnPalzDHgo5RM85yv2V_N8Z-OylBbIgrre_xwg0/htmlview",
+    );
 
     expect(writeFileSyncSpy).toHaveBeenCalledTimes(1);
     expect(JSON.parse(writeFileSyncSpy.mock.calls[0][1] as string)).toEqual(

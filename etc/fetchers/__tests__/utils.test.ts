@@ -4,6 +4,7 @@ import {
   contactReducer,
   extractGoogleQuery,
   parseFAQ,
+  parseCSV,
   SheetColumn,
 } from "../utils";
 
@@ -166,5 +167,149 @@ describe("utils > contactReducer", () => {
     const result = reducer(obj, col);
 
     expect(result.alamat).toBe("Jl. Palsu, No. 9");
+  });
+});
+
+describe("utils > parseCSV", () => {
+  it("should parse simple CSV with no special characters", () => {
+    const csv = "name,age,city\nJohn,30,NYC\nJane,25,LA";
+
+    const result = parseCSV(csv);
+
+    expect(result.headers).toEqual(["name", "age", "city"]);
+    expect(result.rows).toEqual([
+      ["John", "30", "NYC"],
+      ["Jane", "25", "LA"],
+    ]);
+  });
+
+  it("should handle quoted values with commas", () => {
+    const csv =
+      'name,address,phone\n"Doe, John","123 Main St, Apt 4","(555) 123-4567"';
+
+    const result = parseCSV(csv);
+
+    expect(result.headers).toEqual(["name", "address", "phone"]);
+    expect(result.rows).toEqual([
+      ["Doe, John", "123 Main St, Apt 4", "(555) 123-4567"],
+    ]);
+  });
+
+  it("should handle escaped quotes", () => {
+    const csv = 'name,quote\nJohn,"He said ""Hello"""';
+
+    const result = parseCSV(csv);
+
+    expect(result.headers).toEqual(["name", "quote"]);
+    expect(result.rows).toEqual([["John", 'He said "Hello"']]);
+  });
+
+  it("should handle multi-line values (newlines inside quotes)", () => {
+    const csv = 'name,address\nJohn,"123 Main St\nApt 4"';
+
+    const result = parseCSV(csv);
+
+    expect(result.headers).toEqual(["name", "address"]);
+    expect(result.rows).toEqual([["John", "123 Main St\nApt 4"]]);
+  });
+
+  it("should handle CRLF line endings", () => {
+    const csv = "name,age\r\nJohn,30\r\nJane,25";
+
+    const result = parseCSV(csv);
+
+    expect(result.headers).toEqual(["name", "age"]);
+    expect(result.rows).toEqual([
+      ["John", "30"],
+      ["Jane", "25"],
+    ]);
+  });
+
+  it("should handle mixed line endings", () => {
+    const csv = "name,age\r\nJohn,30\nJane,25";
+
+    const result = parseCSV(csv);
+
+    expect(result.headers).toEqual(["name", "age"]);
+    expect(result.rows).toEqual([
+      ["John", "30"],
+      ["Jane", "25"],
+    ]);
+  });
+
+  it("should handle real-world LBH data with multi-line phone numbers", () => {
+    const csv =
+      'Nama LBH,Nomor Kontak\n"LBH Jakarta","Tlp: (021) 3145518\nFax: (021) 3912377"\n"LBH Medan","Telp. 061-4515 340\nFax. 061-4569 749"';
+
+    const result = parseCSV(csv);
+
+    expect(result.headers).toEqual(["Nama LBH", "Nomor Kontak"]);
+    expect(result.rows).toEqual([
+      ["LBH Jakarta", "Tlp: (021) 3145518\nFax: (021) 3912377"],
+      ["LBH Medan", "Telp. 061-4515 340\nFax. 061-4569 749"],
+    ]);
+  });
+
+  it("should skip empty rows", () => {
+    const csv = "name,age\nJohn,30\n\nJane,25\n\n";
+
+    const result = parseCSV(csv);
+
+    expect(result.headers).toEqual(["name", "age"]);
+    expect(result.rows).toEqual([
+      ["John", "30"],
+      ["Jane", "25"],
+    ]);
+  });
+
+  it("should handle trailing whitespace in cells", () => {
+    const csv = "name,age\n  John  ,  30  \n  Jane  ,  25  ";
+
+    const result = parseCSV(csv);
+
+    expect(result.headers).toEqual(["name", "age"]);
+    expect(result.rows).toEqual([
+      ["John", "30"],
+      ["Jane", "25"],
+    ]);
+  });
+
+  it("should handle empty cells", () => {
+    const csv = "name,middle,last\nJohn,,Doe\n,Jane,Smith";
+
+    const result = parseCSV(csv);
+
+    expect(result.headers).toEqual(["name", "middle", "last"]);
+    expect(result.rows).toEqual([
+      ["John", "", "Doe"],
+      ["", "Jane", "Smith"],
+    ]);
+  });
+
+  it("should return empty rows array for headers only", () => {
+    const csv = "name,age,city";
+
+    const result = parseCSV(csv);
+
+    expect(result.headers).toEqual(["name", "age", "city"]);
+    expect(result.rows).toEqual([]);
+  });
+
+  it("should handle single row of data", () => {
+    const csv = "name,age\nJohn,30";
+
+    const result = parseCSV(csv);
+
+    expect(result.headers).toEqual(["name", "age"]);
+    expect(result.rows).toEqual([["John", "30"]]);
+  });
+
+  it("should handle quoted value at end of row", () => {
+    const csv = 'name,note\nJohn,"Important note"';
+
+    const result = parseCSV(csv);
+
+    expect(result.headers).toEqual(["name", "note"]);
+    expect(result.rows).toEqual([["John", "Important note"]]);
   });
 });

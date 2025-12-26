@@ -1,52 +1,26 @@
 import fs from "fs";
 import path from "path";
-import { load } from "cheerio";
-import fetch from "cross-fetch";
 import { allIsEmptyString, getKebabCase } from "../../lib/string-utils";
-import { lbhReducer } from "./utils";
+import { lbhReducer, parseCSV } from "./utils";
 
 export async function fetchLbh() {
-  const source = await fetch("https://kcov.id/wbw-lbh");
-  const $ = load(await source.text());
-
-  const colMap: Record<string, string> = {};
+  const source = await fetch(
+    "https://docs.google.com/spreadsheets/d/1_M-Y4CcbsfyiXPhMvECu5tisVw9BT6Dni0WUzIgq2qQ/export?format=csv",
+  );
+  const csvText = await source.text();
+  const { headers, rows } = parseCSV(csvText);
 
   const sheetId = "0";
   const sheetName = "LBH";
-  const sheetColumns = $(`#${sheetId} tbody > tr:nth-child(1)`)
-    .find("td")
-    .map((colIndex, td) => {
-      colMap[colIndex] = $(td).text();
-      return {
-        name: $(td).text(),
-        index: colIndex,
-      };
-    })
-    .toArray()
+  const sheetColumns = headers
+    .map((name, index) => ({
+      name,
+      index,
+    }))
     .filter((col) => col.name.trim().length !== 0);
-  const sheetRows = $(`#${sheetId} tbody > tr`)
-    .map((rowIndex, tr) => {
-      if (rowIndex === 0) {
-        return [];
-      }
-      return [
-        $(tr)
-          .find("td")
-          .map((colIndex, td) => {
-            if (colMap[colIndex]) {
-              // Kebutuhan, Keterangan, Lokasi, & Penyedia aren't supposed to be linked
-              if (colIndex < 4) {
-                return $(td).text().trim();
-              } else {
-                return ($(td).html() as string).trim();
-              }
-            }
-            return "";
-          })
-          .toArray(),
-      ];
-    })
-    .toArray()
+
+  const sheetRows = rows
+    .map((row) => row)
     .filter((row) => !allIsEmptyString(row));
 
   const sheetObject = {

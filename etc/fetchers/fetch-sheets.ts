@@ -6,7 +6,9 @@ import { allIsEmptyString, getKebabCase } from "../../lib/string-utils";
 import { contactReducer } from "./utils";
 
 export async function fetchSheets() {
-  const source = await fetch("https://kcov.id/wbw-sheets");
+  const source = await fetch(
+    "https://docs.google.com/spreadsheets/d/1RIcSiQqPCw-6H55QIYwblIQDPpFQmDNC73ukFa05J7c/htmlview",
+  );
   const $ = cheerio.load(await source.text());
 
   const colMap: Record<string, string> = {};

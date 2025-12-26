@@ -12,6 +12,11 @@ export interface SheetColumn {
   index: number;
 }
 
+export interface ParsedCSV {
+  headers: string[];
+  rows: string[][];
+}
+
 export const parseFAQ = async (html: string): Promise<Faqs> => {
   const $ = cheerio.load(html);
   const faqRows = $("#sheets-viewport > div#0").find(
@@ -107,3 +112,60 @@ export const lbhReducer = (row: string[]) => {
     return prev;
   };
 };
+
+/**
+ * Parse CSV data, handling quoted values and line breaks
+ */
+// eslint-disable-next-line complexity
+export function parseCSV(csvText: string): ParsedCSV {
+  const rows: string[][] = [];
+  let current = "";
+  let insideQuotes = false;
+  let currentRow: string[] = [];
+
+  for (let i = 0; i < csvText.length; i++) {
+    const char = csvText[i];
+    const nextChar = csvText[i + 1];
+
+    if (char === '"') {
+      if (insideQuotes && nextChar === '"') {
+        // Escaped quote
+        current += '"';
+        i++;
+      } else {
+        insideQuotes = !insideQuotes;
+      }
+    } else if (char === "," && !insideQuotes) {
+      currentRow.push(current.trim());
+      current = "";
+    } else if ((char === "\n" || char === "\r") && !insideQuotes) {
+      // Skip carriage returns
+      if (char === "\r" && nextChar === "\n") {
+        i++;
+      }
+      if (current.trim() || currentRow.length > 0) {
+        currentRow.push(current.trim());
+      }
+      if (currentRow.length > 0 && currentRow.some((cell) => cell)) {
+        rows.push(currentRow);
+        currentRow = [];
+        current = "";
+      }
+    } else {
+      current += char;
+    }
+  }
+
+  // Push last row and cell
+  if (current.trim() || currentRow.length > 0) {
+    currentRow.push(current.trim());
+  }
+  if (currentRow.length > 0 && currentRow.some((cell) => cell)) {
+    rows.push(currentRow);
+  }
+
+  const headers = rows[0] || [];
+  const dataRows = rows.slice(1);
+
+  return { headers, rows: dataRows };
+}

@@ -4,7 +4,8 @@ import fetch from "cross-fetch";
 
 import { parseFAQ } from "./utils";
 
-const FAQ_LINK = "https://kcov.id/wbw-faq";
+const FAQ_LINK =
+  "https://docs.google.com/spreadsheets/d/1y9DSfDcPjaLsUhif8aEuAODiu2JLilXWYzLI-uLwQcM/htmlview";
 
 export async function fetchFaqSheets() {
   const source = await fetch(FAQ_LINK);

@@ -62,3 +62,6 @@ cypress/screenshots
 service-worker.js
 service-worker.js.map
 workbox-*
+
+# Claude local config
+.claude/*.local.json
