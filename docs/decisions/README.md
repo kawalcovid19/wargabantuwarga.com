@@ -54,6 +54,7 @@ Links to related resources
 ## Current ADRs
 
 - [ADR-0001: CSV Parsing for Google Sheets Data Fetching](./0001-csv-parsing-for-google-sheets.md)
+- [ADR-0002: Consolidate Data Fetchers and Fix Google Sheets Discovery](./0002-consolidate-fetchers-and-fix-sheet-discovery.md)
 
 ## Submitting a New ADR
 
