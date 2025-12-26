@@ -4,7 +4,6 @@ import { toSecond } from "../../lib/string-utils";
 import { fetchDatabase } from "./fetch-database";
 import { fetchFaqSheets } from "./fetch-faq-sheets";
 import { fetchLbh } from "./fetch-lbh";
-import { fetchSheets } from "./fetch-sheets";
 import { fetchVaccinationDatabase } from "./fetch-vaccination-database";
 
 (function fetchWbw() {
@@ -48,16 +47,6 @@ import { fetchVaccinationDatabase } from "./fetch-vaccination-database";
     .then(() => {
       const end = `${toSecond(process.hrtime(start))} seconds`;
       spinner.succeed(`Fetching LBH done in ${chalk.greenBright(end)}`);
-      spinner.start(`${chalk.yellowBright("Fetching next data...")}`);
-    })
-    .catch((err) => {
-      chalk.red(err);
-    });
-
-  fetchSheets()
-    .then(() => {
-      const end = `${toSecond(process.hrtime(start))} seconds`;
-      spinner.succeed(`Fetching Sheets done in ${chalk.greenBright(end)}`);
     })
     .catch((err) => {
       chalk.red(err);

@@ -1,70 +1,60 @@
 import fs from "fs";
 import path from "path";
 import cheerio from "cheerio";
-import fetch from "cross-fetch";
 import { allIsEmptyString, getKebabCase } from "../../lib/string-utils";
-import { contactReducer } from "./utils";
+import { contactReducer, parseCSV, SheetColumn } from "./utils";
+
+const SPREADSHEET_ID = "1SRByPnPalzDHgo5RM85yv2V_N8Z-OylBbIgrre_xwg0";
+const SPREADSHEET_HTML = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/htmlview`;
+const SPREADSHEET_CSV = (gid: string) =>
+  `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/export?format=csv&gid=${gid}`;
 
 export async function fetchDatabase() {
-  const source = await fetch(
-    "https://docs.google.com/spreadsheets/d/1SRByPnPalzDHgo5RM85yv2V_N8Z-OylBbIgrre_xwg0/htmlview",
-  );
-  const $ = cheerio.load(await source.text());
+  // Step 1: Fetch HTML to discover sheets
+  const htmlSource = await fetch(SPREADSHEET_HTML);
+  const html = await htmlSource.text();
+  const $ = cheerio.load(html);
 
-  const colMap: Record<string, string> = {};
+  // Extract sheet IDs and names from sheet menu
+  const sheets: { id: string; name: string }[] = [];
+  $("#sheet-menu > li").each((_, li) => {
+    const sheetId = ($(li).attr("id") as string).replace("sheet-button-", "");
+    const sheetName = $(li).text();
+    sheets.push({ id: sheetId, name: sheetName });
+  });
 
-  const sheetList = $("#sheet-menu > li")
-    .map((_, li) => {
-      const sheetId = ($(li).attr("id") as string).replace("sheet-button-", "");
-      const sheetName = $(li).text();
-      const sheetColumns = $(`#${sheetId} tbody > tr:nth-child(1)`)
-        .find("td")
-        .map((colIndex, td) => {
-          colMap[colIndex] = $(td).text();
-          return {
-            name: $(td).text(),
-            index: colIndex,
-          };
-        })
-        .toArray()
+  // Step 2: Fetch CSV data for each sheet and process
+  const sheetList = await Promise.all(
+    sheets.map(async (sheet) => {
+      const csvSource = await fetch(SPREADSHEET_CSV(sheet.id));
+      const csvText = await csvSource.text();
+      const { headers, rows } = parseCSV(csvText);
+
+      // Build column info from headers
+      const sheetColumns: SheetColumn[] = headers
+        .map((name, index) => ({
+          name,
+          index,
+        }))
         .filter((col) => col.name.trim().length !== 0);
-      const sheetRows = $(`#${sheetId} tbody > tr`)
-        .map((rowIndex, tr) => {
-          if (rowIndex === 0) {
-            return [];
-          }
-          return [
-            $(tr)
-              .find("td")
-              .map((colIndex, td) => {
-                if (colMap[colIndex]) {
-                  // Kebutuhan, Keterangan, Lokasi, & Penyedia aren't supposed to be linked
-                  if (colIndex < 5) {
-                    return $(td).text().trim();
-                  } else {
-                    return ($(td).html() as string).trim();
-                  }
-                }
-                return "";
-              })
-              .toArray(),
-          ];
-        })
-        .toArray()
-        .filter((row) => !allIsEmptyString(row));
 
-      return {
-        id: sheetId,
-        name: sheetName,
-        slug: getKebabCase(sheetName),
-        data: sheetRows.map((row, rowIndex) => {
+      // Filter out empty rows and transform data
+      const sheetRows = rows
+        .filter((row) => !allIsEmptyString(row))
+        .map((row, rowIndex) => {
           return sheetColumns.reduce(contactReducer(row), {
             id: rowIndex.toString(),
           });
-        }),
+        });
+
+      return {
+        id: sheet.id,
+        name: sheet.name,
+        slug: getKebabCase(sheet.name),
+        data: sheetRows,
       };
-    })
-    .toArray();
+    }),
+  );
 
   fs.writeFileSync(
     path.resolve(__dirname, "../../data/wbw-database.json"),
