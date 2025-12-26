@@ -1,6 +1,5 @@
 import fs from "fs";
 import path from "path";
-import cheerio from "cheerio";
 import { allIsEmptyString, getKebabCase } from "../../lib/string-utils";
 import { contactReducer, parseCSV, SheetColumn } from "./utils";
 
@@ -13,15 +12,33 @@ export async function fetchDatabase() {
   // Step 1: Fetch HTML to discover sheets
   const htmlSource = await fetch(SPREADSHEET_HTML);
   const html = await htmlSource.text();
-  const $ = cheerio.load(html);
 
-  // Extract sheet IDs and names from sheet menu
+  // Extract sheet data from embedded JavaScript variable
+  // The HTML contains: var items = []; items.push({name: "...", gid: "...", ...});
+  const itemsMatch = html.match(/var items = \[\];([\s\S]*?)_optPageSwitcher/);
+  if (!itemsMatch) {
+    throw new Error("Could not find sheet items in HTML");
+  }
+
+  const itemsText = itemsMatch[1];
   const sheets: { id: string; name: string }[] = [];
-  $("#sheet-menu > li").each((_, li) => {
-    const sheetId = ($(li).attr("id") as string).replace("sheet-button-", "");
-    const sheetName = $(li).text();
-    sheets.push({ id: sheetId, name: sheetName });
-  });
+
+  // Parse each items.push() call
+  const pushMatches = Array.from(
+    itemsText.matchAll(
+      /items\.push\(\{name:\s*"([^"]+)"[^}]*?gid:\s*"([^"]+)"[^}]*?\}\)/g,
+    ),
+  );
+
+  for (const match of pushMatches) {
+    const name = match[1];
+    const gid = match[2];
+    sheets.push({ id: gid, name });
+  }
+
+  if (sheets.length === 0) {
+    throw new Error("No sheets found in spreadsheet");
+  }
 
   // Step 2: Fetch CSV data for each sheet and process
   const sheetList = await Promise.all(

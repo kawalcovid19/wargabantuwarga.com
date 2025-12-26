@@ -18,30 +18,42 @@ describe("fetchDatabase", () => {
   });
 
   it("fetches database using hybrid HTML discovery and CSV data parsing", async () => {
-    const htmlMock = fs.readFileSync(
-      path.resolve(__dirname, "../__mocks__/wbw-database.html"),
-      "utf-8",
-    );
     const csvMock = fs.readFileSync(
       path.resolve(__dirname, "../__mocks__/wbw-database-aceh.csv"),
       "utf-8",
     );
 
+    // Mock HTML with embedded JavaScript sheet data
+    const htmlMock = `
+      <html>
+        <script>
+          var items = [];
+          items.push({name: "DKI Jakarta", pageUrl: "...", gid: "0", initialSheet: true});
+          items.push({name: "Aceh", pageUrl: "...", gid: "1011184764", initialSheet: false});
+          _optPageSwitcher = null;
+        </script>
+      </html>
+    `;
+
     // Mock HTML response for sheet discovery
     fetchMock.mockResponseOnce(htmlMock);
-    // Mock CSV response for each sheet (same data for all sheets in test)
+    // Mock CSV responses for each sheet (2 sheets in test)
+    fetchMock.mockResponseOnce(csvMock);
     fetchMock.mockResponseOnce(csvMock);
 
     await fetchDatabase();
 
-    // Verify both HTML and CSV fetches were made
-    expect(fetchMock).toHaveBeenCalledTimes(2);
+    // Verify HTML and CSV fetches were made (1 HTML + 2 CSV for 2 sheets)
+    expect(fetchMock).toHaveBeenCalledTimes(3);
     expect(fetchMock).toHaveBeenNthCalledWith(
       1,
       "https://docs.google.com/spreadsheets/d/1SRByPnPalzDHgo5RM85yv2V_N8Z-OylBbIgrre_xwg0/htmlview",
     );
-    // CSV call should have gid parameter
+    // Both CSV calls should have gid parameters
     expect(fetchMock.mock.calls[1][0] as string).toContain(
+      "export?format=csv&gid=",
+    );
+    expect(fetchMock.mock.calls[2][0] as string).toContain(
       "export?format=csv&gid=",
     );
 
@@ -52,18 +64,24 @@ describe("fetchDatabase", () => {
 
     // Verify structure
     expect(Array.isArray(writtenData)).toBe(true);
-    expect(writtenData.length).toBeGreaterThan(0);
+    expect(writtenData.length).toBe(2); // Should have 2 sheets
 
-    // Verify first sheet
+    // Verify first sheet (DKI Jakarta)
     const firstSheet = writtenData[0];
-    expect(firstSheet).toHaveProperty("id");
-    expect(firstSheet).toHaveProperty("name");
-    expect(firstSheet).toHaveProperty("slug");
+    expect(firstSheet).toHaveProperty("id", "0");
+    expect(firstSheet).toHaveProperty("name", "DKI Jakarta");
+    expect(firstSheet).toHaveProperty("slug", "dki-jakarta");
     expect(firstSheet).toHaveProperty("data");
     expect(Array.isArray(firstSheet.data)).toBe(true);
     expect(firstSheet.data.length).toBeGreaterThan(0);
 
-    // Verify first record in first sheet
+    // Verify second sheet (Aceh)
+    const secondSheet = writtenData[1];
+    expect(secondSheet).toHaveProperty("id", "1011184764");
+    expect(secondSheet).toHaveProperty("name", "Aceh");
+    expect(secondSheet).toHaveProperty("slug", "aceh");
+
+    // Verify first record in first sheet has expected fields
     const firstRecord = firstSheet.data[0] as Record<string, unknown>;
     expect(firstRecord).toHaveProperty("kebutuhan");
     expect(firstRecord).toHaveProperty("kontak");

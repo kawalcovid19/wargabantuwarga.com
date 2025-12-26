@@ -8,6 +8,7 @@
     "dev": "next",
     "analyze": "cross-env ANALYZE=true yarn build",
     "fetch-wbw": "ts-node etc/fetchers/fetch-wbw.ts",
+    "fetch-database": "ts-node etc/fetchers/fetch-database-only.ts",
     "format": "prettier --write \"./**/*.{ts,tsx}\"",
     "lint": "eslint \"**/*.{js,jsx,ts,tsx,yml,yaml}\"",
     "lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx,yml,yaml}\"",
