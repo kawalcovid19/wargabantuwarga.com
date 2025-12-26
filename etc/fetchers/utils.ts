@@ -1,4 +1,3 @@
-import cheerio from "cheerio";
 import {
   getKebabCase,
   stripTags,
@@ -37,27 +36,12 @@ export const parseFAQFromCSV = (csvText: string): Faqs => {
     });
 };
 
-export const extractGoogleQuery = (value: string): string => {
-  const $ = cheerio.load(value);
-  const links = $("a");
-  links.each((_, link): void => {
-    const el = $(link);
-    const href = el.attr("href");
-    const url = new URL(href as string);
-    const usp = new URLSearchParams(url.search);
-    el.attr("href", usp.get("q"));
-  });
-  return $("body").html() ?? "";
-};
-
 export const contactReducer = (row: string[]) => {
   return (prev: Record<string, number | string>, col: SheetColumn) => {
     const colName = toSnakeCase(col.name);
     let cellValue = row[col.index];
     if (colName == "lokasi") {
       cellValue = toTitleCase(cellValue);
-    } else if (["kontak", "link"].includes(colName)) {
-      cellValue = extractGoogleQuery(cellValue);
     } else if (colName == "ketersediaan") {
       cellValue = toTitleCase(cellValue);
     } else if (colName == "alamat") {
@@ -83,19 +67,7 @@ export const lbhReducer = (row: string[]) => {
   return (prev: Record<string, number | string>, col: SheetColumn) => {
     const colName = toSnakeCase(col.name);
     let cellValue = row[col.index];
-    if (
-      [
-        "nomor_kontak",
-        "website",
-        "link",
-        "twitter",
-        "youtube",
-        "facebook",
-        "ig",
-      ].includes(colName)
-    ) {
-      cellValue = extractGoogleQuery(cellValue);
-    } else if (["nomor_kontak", "alamat"].includes(colName)) {
+    if (["nomor_kontak", "alamat"].includes(colName)) {
       cellValue = stripTags(cellValue);
     }
     prev[colName] = cellValue;

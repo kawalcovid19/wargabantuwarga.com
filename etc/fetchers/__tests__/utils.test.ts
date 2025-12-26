@@ -1,8 +1,5 @@
-import cheerio from "cheerio";
-
 import {
   contactReducer,
-  extractGoogleQuery,
   parseFAQFromCSV,
   parseCSV,
   SheetColumn,
@@ -97,50 +94,6 @@ describe("utils > parseFAQFromCSV", () => {
 
     expect(result).toHaveLength(2);
     expect(result[0].kategori_pertanyaan).toBe("Tanda Bahaya");
-  });
-});
-
-describe("utils > extractGoogleQuery", () => {
-  it("should extract query from a single link element", () => {
-    const el = `<a href="https://www.google.com/url?q=http://wa.me/6281286109493&sa=D&source=editors&ust=1627902606786000&usg=AOvVaw0Ou4V_199oMgGoMYp8FaAW">
-        http://wa.me/6281286109493
-      </a>`;
-
-    const extracted = extractGoogleQuery(el);
-    expect(extracted).not.toBe(el);
-
-    const $ = cheerio.load(extracted);
-    const parsedEl = $("a");
-    expect(parsedEl.attr("href")).toBe(parsedEl.text().trim());
-  });
-
-  it("should extract query from multiple link elements", () => {
-    const el = `<div>
-      <a href="https://www.google.com/url?q=http://wa.me/6281286109493&sa=D&source=editors&ust=1627902606786000&usg=AOvVaw0Ou4V_199oMgGoMYp8FaAW">
-        http://wa.me/6281286109493
-      </a>
-      <a href="https://www.google.com/url?q=https://3r-medika-gas-isi-ulang-gas-oxygen-medis.business.site/?utm_source%3Dgmb%26utm_medium%3Dreferral&sa=D&source=editors&ust=1627902606786000&usg=AOvVaw3UsJ1uI79Io9KslmnQtDXq">
-      https://3r-medika-gas-isi-ulang-gas-oxygen-medis.business.site/?utm_source=gmb&amp;utm_medium=referral
-      </a>
-    </div>`;
-
-    const extracted = extractGoogleQuery(el);
-
-    expect(el).not.toBe(extracted);
-    const $ = cheerio.load(extracted);
-    const links = $("a");
-
-    links.each((_, link) => {
-      const extractedEl = $(link);
-      expect(extractedEl.attr("href")).toBe(extractedEl.text().trim());
-    });
-  });
-
-  it("should not extract anything if the element is not a link", () => {
-    const el = `<div>a</div>`;
-
-    const extracted = extractGoogleQuery(el);
-    expect(el).toBe(extracted);
   });
 });
 
