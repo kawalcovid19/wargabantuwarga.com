@@ -30,8 +30,10 @@ jobs:
         uses: actions/cache@v4
         id: cache-deps
         with:
-          path: "."
-          key: ${{ github.sha }}
+          path: |
+            node_modules
+            data
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
 
   lint:
     if: github.repository == 'kawalcovid19/wargabantuwarga.com'
@@ -39,17 +41,22 @@ jobs:
     runs-on: ubuntu-latest
     needs: install-deps
     steps:
-      - name: Restore cached dependencies
-        uses: actions/cache@v4
-        id: restore-deps
-        with:
-          path: "."
-          key: ${{ github.sha }}
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
       - name: Setup Node.js 14.x
         uses: actions/setup-node@v1
         with:
           node-version: "14.x"
+
+      - name: Restore cached dependencies
+        uses: actions/cache@v4
+        id: restore-deps
+        with:
+          path: |
+            node_modules
+            data
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
 
       - name: Lint files
         run: yarn run lint
@@ -62,17 +69,22 @@ jobs:
     runs-on: ubuntu-latest
     needs: install-deps
     steps:
-      - name: Restore cached dependencies
-        uses: actions/cache@v4
-        id: restore-deps
-        with:
-          path: "."
-          key: ${{ github.sha }}
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
       - name: Setup Node.js 14.x
         uses: actions/setup-node@v1
         with:
           node-version: "14.x"
+
+      - name: Restore cached dependencies
+        uses: actions/cache@v4
+        id: restore-deps
+        with:
+          path: |
+            node_modules
+            data
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
 
       - name: Perform type checking
         run: yarn run type-check
@@ -84,17 +96,22 @@ jobs:
     runs-on: ubuntu-latest
     needs: install-deps
     steps:
-      - name: Restore cached dependencies
-        uses: actions/cache@v4
-        id: restore-deps
-        with:
-          path: "."
-          key: ${{ github.sha }}
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
       - name: Setup Node.js 14.x
         uses: actions/setup-node@v1
         with:
           node-version: "14.x"
+
+      - name: Restore cached dependencies
+        uses: actions/cache@v4
+        id: restore-deps
+        with:
+          path: |
+            node_modules
+            data
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
 
       - name: Run Jest
         run: yarn run test
@@ -111,17 +128,22 @@ jobs:
     runs-on: ubuntu-latest
     needs: install-deps
     steps:
-      - name: Restore cached dependencies
-        uses: actions/cache@v4
-        id: restore-deps
-        with:
-          path: "."
-          key: ${{ github.sha }}
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
       - name: Setup Node.js 14.x
         uses: actions/setup-node@v1
         with:
           node-version: "14.x"
+
+      - name: Restore cached dependencies
+        uses: actions/cache@v4
+        id: restore-deps
+        with:
+          path: |
+            node_modules
+            data
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install Cypress
         run: yarn cypress install
