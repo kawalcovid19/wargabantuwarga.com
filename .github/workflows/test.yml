@@ -20,22 +20,35 @@ jobs:
         with:
           node-version: "14.x"
 
-      - name: Cache dependencies and data
+      - name: Cache dependencies
         uses: actions/cache@v4
-        id: cache-deps
+        id: cache-node-modules
         with:
-          path: |
-            node_modules
-            data
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}-${{ github.sha }}
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Cache data
+        uses: actions/cache@v4
+        id: cache-data
+        with:
+          path: data
+          key: ${{ runner.os }}-data-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-data-
 
       - name: Install locked dependencies
-        if: steps.cache-deps.outputs.cache-hit != 'true'
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
       - name: Fetch the latest data
-        if: steps.cache-deps.outputs.cache-hit != 'true'
-        run: yarn run fetch-wbw
+        run: |
+          if [ ! -f "data/wbw-database.json" ]; then
+            echo "Data files missing, fetching..."
+            yarn run fetch-wbw
+          else
+            echo "Data files already exist, skipping fetch"
+            ls -la data/
+          fi
 
   lint:
     if: github.repository == 'kawalcovid19/wargabantuwarga.com'
@@ -53,12 +66,26 @@ jobs:
 
       - name: Restore cached dependencies
         uses: actions/cache@v4
-        id: restore-deps
+        id: cache-node-modules
         with:
-          path: |
-            node_modules
-            data
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}-${{ github.sha }}
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Restore cached data
+        uses: actions/cache@v4
+        id: cache-data
+        with:
+          path: data
+          key: ${{ runner.os }}-data-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-data-
+
+      - name: Ensure data files exist
+        run: |
+          if [ ! -f "data/wbw-database.json" ]; then
+            echo "Data files missing, fetching..."
+            yarn run fetch-wbw
+          fi
 
       - name: Lint files
         run: yarn run lint
@@ -81,12 +108,26 @@ jobs:
 
       - name: Restore cached dependencies
         uses: actions/cache@v4
-        id: restore-deps
+        id: cache-node-modules
         with:
-          path: |
-            node_modules
-            data
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}-${{ github.sha }}
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Restore cached data
+        uses: actions/cache@v4
+        id: cache-data
+        with:
+          path: data
+          key: ${{ runner.os }}-data-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-data-
+
+      - name: Ensure data files exist
+        run: |
+          if [ ! -f "data/wbw-database.json" ]; then
+            echo "Data files missing, fetching..."
+            yarn run fetch-wbw
+          fi
 
       - name: Perform type checking
         run: yarn run type-check
@@ -108,12 +149,26 @@ jobs:
 
       - name: Restore cached dependencies
         uses: actions/cache@v4
-        id: restore-deps
+        id: cache-node-modules
         with:
-          path: |
-            node_modules
-            data
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}-${{ github.sha }}
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Restore cached data
+        uses: actions/cache@v4
+        id: cache-data
+        with:
+          path: data
+          key: ${{ runner.os }}-data-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-data-
+
+      - name: Ensure data files exist
+        run: |
+          if [ ! -f "data/wbw-database.json" ]; then
+            echo "Data files missing, fetching..."
+            yarn run fetch-wbw
+          fi
 
       - name: Run Jest
         run: yarn run test
@@ -140,12 +195,26 @@ jobs:
 
       - name: Restore cached dependencies
         uses: actions/cache@v4
-        id: restore-deps
+        id: cache-node-modules
         with:
-          path: |
-            node_modules
-            data
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}-${{ github.sha }}
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Restore cached data
+        uses: actions/cache@v4
+        id: cache-data
+        with:
+          path: data
+          key: ${{ runner.os }}-data-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-data-
+
+      - name: Ensure data files exist
+        run: |
+          if [ ! -f "data/wbw-database.json" ]; then
+            echo "Data files missing, fetching..."
+            yarn run fetch-wbw
+          fi
 
       - name: Install Cypress
         run: yarn cypress install
