@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import fetch from "cross-fetch";
 
 import { parseFAQFromCSV } from "./utils";
 

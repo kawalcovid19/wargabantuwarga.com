@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import fetch from "cross-fetch";
 import { allIsEmptyString, getKebabCase } from "../../lib/string-utils";
 import { contactReducer, parseCSV, SheetColumn } from "./utils";
 
