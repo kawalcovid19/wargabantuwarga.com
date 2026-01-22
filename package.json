@@ -118,6 +118,9 @@
     "*.{js,jsx,ts,tsx,css,md}": "prettier --write"
   },
   "private": true,
+  "volta": {
+    "node": "20.18.0"
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
