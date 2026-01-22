@@ -220,12 +220,13 @@ jobs:
         run: yarn cypress install
 
       - name: Run Cypress
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v6
         with:
           record: true
           start: yarn dev
           wait-on: "http://localhost:3000"
         env:
           CI: true
+          NODE_OPTIONS: "--openssl-legacy-provider"
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
