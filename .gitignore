@@ -58,7 +58,14 @@ workbox-*
 cypress/videos
 cypress/screenshots
 
+# Playwright
+/playwright-report/
+/test-results/
+
 # service workers
 service-worker.js
 service-worker.js.map
 workbox-*
+
+# Claude local config
+.claude/*.local.json
