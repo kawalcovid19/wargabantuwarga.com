@@ -13,25 +13,42 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js 14.x
-        uses: actions/setup-node@v1
+      - name: Setup Node.js 24.x
+        uses: actions/setup-node@v4
         with:
-          node-version: "14.x"
+          node-version: "24.x"
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Cache data
+        uses: actions/cache@v4
+        id: cache-data
+        with:
+          path: data
+          key: ${{ runner.os }}-data-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-data-
 
       - name: Install locked dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
       - name: Fetch the latest data
-        run: yarn run fetch-wbw
-
-      - name: Cache dependencies
-        uses: actions/cache@v1
-        id: cache-deps
-        with:
-          path: "."
-          key: ${{ github.sha }}
+        run: |
+          if [ ! -f "data/wbw-database.json" ]; then
+            echo "Data files missing, fetching..."
+            yarn run fetch-wbw
+          else
+            echo "Data files already exist, skipping fetch"
+            ls -la data/
+          fi
 
   lint:
     if: github.repository == 'kawalcovid19/wargabantuwarga.com'
@@ -39,17 +56,36 @@ jobs:
     runs-on: ubuntu-latest
     needs: install-deps
     steps:
-      - name: Restore cached dependencies
-        uses: actions/cache@v1
-        id: restore-deps
-        with:
-          path: "."
-          key: ${{ github.sha }}
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js 14.x
-        uses: actions/setup-node@v1
+      - name: Setup Node.js 24.x
+        uses: actions/setup-node@v4
         with:
-          node-version: "14.x"
+          node-version: "24.x"
+
+      - name: Restore cached dependencies
+        uses: actions/cache@v4
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Restore cached data
+        uses: actions/cache@v4
+        id: cache-data
+        with:
+          path: data
+          key: ${{ runner.os }}-data-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-data-
+
+      - name: Ensure data files exist
+        run: |
+          if [ ! -f "data/wbw-database.json" ]; then
+            echo "Data files missing, fetching..."
+            yarn run fetch-wbw
+          fi
 
       - name: Lint files
         run: yarn run lint
@@ -62,17 +98,36 @@ jobs:
     runs-on: ubuntu-latest
     needs: install-deps
     steps:
-      - name: Restore cached dependencies
-        uses: actions/cache@v1
-        id: restore-deps
-        with:
-          path: "."
-          key: ${{ github.sha }}
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js 14.x
-        uses: actions/setup-node@v1
+      - name: Setup Node.js 24.x
+        uses: actions/setup-node@v4
         with:
-          node-version: "14.x"
+          node-version: "24.x"
+
+      - name: Restore cached dependencies
+        uses: actions/cache@v4
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Restore cached data
+        uses: actions/cache@v4
+        id: cache-data
+        with:
+          path: data
+          key: ${{ runner.os }}-data-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-data-
+
+      - name: Ensure data files exist
+        run: |
+          if [ ! -f "data/wbw-database.json" ]; then
+            echo "Data files missing, fetching..."
+            yarn run fetch-wbw
+          fi
 
       - name: Perform type checking
         run: yarn run type-check
@@ -84,17 +139,36 @@ jobs:
     runs-on: ubuntu-latest
     needs: install-deps
     steps:
-      - name: Restore cached dependencies
-        uses: actions/cache@v1
-        id: restore-deps
-        with:
-          path: "."
-          key: ${{ github.sha }}
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js 14.x
-        uses: actions/setup-node@v1
+      - name: Setup Node.js 24.x
+        uses: actions/setup-node@v4
         with:
-          node-version: "14.x"
+          node-version: "24.x"
+
+      - name: Restore cached dependencies
+        uses: actions/cache@v4
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Restore cached data
+        uses: actions/cache@v4
+        id: cache-data
+        with:
+          path: data
+          key: ${{ runner.os }}-data-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-data-
+
+      - name: Ensure data files exist
+        run: |
+          if [ ! -f "data/wbw-database.json" ]; then
+            echo "Data files missing, fetching..."
+            yarn run fetch-wbw
+          fi
 
       - name: Run Jest
         run: yarn run test
@@ -111,28 +185,50 @@ jobs:
     runs-on: ubuntu-latest
     needs: install-deps
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 24.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24.x"
+
       - name: Restore cached dependencies
-        uses: actions/cache@v1
-        id: restore-deps
+        uses: actions/cache@v4
+        id: cache-node-modules
         with:
-          path: "."
-          key: ${{ github.sha }}
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Setup Node.js 14.x
-        uses: actions/setup-node@v1
+      - name: Restore cached data
+        uses: actions/cache@v4
+        id: cache-data
         with:
-          node-version: "14.x"
+          path: data
+          key: ${{ runner.os }}-data-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-data-
 
-      - name: Install Cypress
-        run: yarn cypress install
+      - name: Ensure data files exist
+        run: |
+          if [ ! -f "data/wbw-database.json" ]; then
+            echo "Data files missing, fetching..."
+            yarn run fetch-wbw
+          fi
 
-      - name: Run Cypress
-        uses: cypress-io/github-action@v2
-        with:
-          record: true
-          start: yarn dev
-          wait-on: "http://localhost:3000"
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Playwright tests
+        run: yarn e2e
         env:
           CI: true
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_OPTIONS: "--openssl-legacy-provider"
+
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30

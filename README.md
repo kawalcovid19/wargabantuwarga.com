@@ -81,7 +81,7 @@ Then, install dependencies and fetch data to your local machine. **Note that we 
 ```bash
 cd wargabantuwarga.com
 yarn install
-yarn mirror-box
+yarn fetch-wbw
 ```
 
 Finally, run the development server.

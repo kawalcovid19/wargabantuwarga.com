@@ -100,6 +100,26 @@ export function stripTags(str: string): string {
   return str.replace(/(<([^>]+)>)/gi, "");
 }
 
+/**
+ * Convert plain URLs to anchor tags for rendering as clickable links.
+ * This handles the case where CSV data contains raw URLs instead of HTML anchor tags.
+ *
+ * @param {string} text input string
+ * @returns {string} text with URLs wrapped in anchor tags
+ */
+export function autoLinkUrls(text: string): string {
+  if (!text) return text;
+  // If already contains HTML anchor tags, return as-is
+  if (/<a\s/i.test(text)) return text;
+  // Match URLs that start with http:// or https://
+  const urlPattern = /^(https?:\/\/[^\s]+)$/i;
+  if (urlPattern.test(text.trim())) {
+    const url = text.trim();
+    return `<a href="${url}">${url}</a>`;
+  }
+  return text;
+}
+
 export function getQueryParams(query: string): Record<string, string> {
   return query
     ? (/^[?#]/.test(query) ? query.slice(1) : query)
