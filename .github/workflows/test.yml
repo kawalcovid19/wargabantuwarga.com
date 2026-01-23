@@ -216,18 +216,19 @@ jobs:
             yarn run fetch-wbw
           fi
 
-      - name: Install Cypress
-        run: yarn cypress install
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
 
-      - name: Run Cypress
-        uses: cypress-io/github-action@v6
-        with:
-          record: true
-          start: yarn dev
-          wait-on: "http://localhost:3000"
-          wait-on-timeout: 120
+      - name: Run Playwright tests
+        run: yarn e2e
         env:
           CI: true
           NODE_OPTIONS: "--openssl-legacy-provider"
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
