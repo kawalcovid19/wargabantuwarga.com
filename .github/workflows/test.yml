@@ -225,6 +225,7 @@ jobs:
           record: true
           start: yarn dev
           wait-on: "http://localhost:3000"
+          wait-on-timeout: 120
         env:
           CI: true
           NODE_OPTIONS: "--openssl-legacy-provider"
