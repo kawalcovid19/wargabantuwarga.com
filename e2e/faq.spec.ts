@@ -30,10 +30,13 @@ test.describe("FAQ category filtering", () => {
         .getByRole("combobox", { name: "Kategori Pertanyaan" })
         .selectOption(category.name);
 
-      await expect(page.getByText(category.name).first()).toBeVisible();
       await expect(page).toHaveURL(
         new RegExp(`kategori_pertanyaan=${category.urlParam}`),
       );
+      const badges = page
+        .locator("span")
+        .filter({ hasText: new RegExp(`^${category.name}$`) });
+      await expect(badges.first()).toBeVisible();
     });
   }
 });
