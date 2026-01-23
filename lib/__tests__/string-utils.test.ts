@@ -1,5 +1,6 @@
 import {
   allIsEmptyString,
+  autoLinkUrls,
   getInitial,
   getKebabCase,
   isInternalLink,
@@ -142,6 +143,24 @@ describe("markText", () => {
     ({ input, expected }) => {
       const args = input as string[];
       expect(markText(args[0], args[1])).toBe(expected);
+    },
+  );
+});
+
+describe("autoLinkUrls", () => {
+  it.each`
+    input                                             | expected
+    ${"https://pedulimuslim.com/"}                    | ${'<a href="https://pedulimuslim.com/">https://pedulimuslim.com/</a>'}
+    ${"http://example.com"}                           | ${'<a href="http://example.com">http://example.com</a>'}
+    ${"https://example.com/path?query=value"}         | ${'<a href="https://example.com/path?query=value">https://example.com/path?query=value</a>'}
+    ${"plain text"}                                   | ${"plain text"}
+    ${""}                                             | ${""}
+    ${'<a href="https://example.com">link</a>'}       | ${'<a href="https://example.com">link</a>'}
+    ${"not a url but has https://embedded.com in it"} | ${"not a url but has https://embedded.com in it"}
+  `(
+    "should return '$expected' when '$input' is provided",
+    ({ input, expected }) => {
+      expect(autoLinkUrls(input as string)).toBe(expected);
     },
   );
 });

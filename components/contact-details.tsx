@@ -4,7 +4,7 @@ import { CopyButton } from "~/components/copy-button";
 import { OpenMapButton } from "~/components/open-map-button";
 import { Contact } from "~/lib/data/provinces";
 import { htmrTransform } from "~/lib/htmr-transformers";
-import { isNotEmpty, stripTags } from "~/lib/string-utils";
+import { autoLinkUrls, isNotEmpty, stripTags } from "~/lib/string-utils";
 
 type ContactDetailsProps = {
   contact: Contact;
@@ -34,7 +34,11 @@ type DescriptionItemProps = {
 };
 
 const DescriptionItem = (props: DescriptionItemProps) => {
-  const value = isNotEmpty(props.value) ? (props.value as string) : "";
+  let value = isNotEmpty(props.value) ? (props.value as string) : "";
+  // Auto-link URLs for fields that use truncation (typically link fields)
+  if (props.withTruncation) {
+    value = autoLinkUrls(value);
+  }
 
   return (
     <div className="py-4 px-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">

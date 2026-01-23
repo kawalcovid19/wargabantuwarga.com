@@ -15,18 +15,20 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js 14.x
-        uses: actions/setup-node@v1
+      - name: Setup Node.js 24.x
+        uses: actions/setup-node@v4
         with:
-          node-version: 14.x
+          node-version: "24.x"
 
       - name: Install dependencies
         run: yarn
 
       - name: Build and export static assets
         run: yarn run netlify-export
+        env:
+          NODE_OPTIONS: "--openssl-legacy-provider"
 
       - name: Install Netlify CLI
         run: yarn global add netlify-cli@4.1.2
