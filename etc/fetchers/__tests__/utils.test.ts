@@ -86,6 +86,21 @@ describe("utils > parseFAQFromCSV", () => {
     expect(result[0].published_date).toBe("");
   });
 
+  it("should handle rows with very few columns", () => {
+    const csv =
+      "Kategori Pertanyaan,Pertanyaan,Jawaban,Tanggal Menulis Jawaban,Sumber,Link,Tanggal Sumber Dipublish\nTanda Bahaya,Question 1";
+
+    const result = parseFAQFromCSV(csv);
+
+    expect(result[0].kategori_pertanyaan).toBe("Tanda Bahaya");
+    expect(result[0].pertanyaan).toBe("Question 1");
+    expect(result[0].jawaban).toBe("");
+    expect(result[0].created_date).toBe("");
+    expect(result[0].sumber).toBe("");
+    expect(result[0].link).toBe("");
+    expect(result[0].published_date).toBe("");
+  });
+
   it("should handle CRLF line endings", () => {
     const csv =
       "Kategori Pertanyaan,Pertanyaan,Jawaban,Tanggal Menulis Jawaban,Sumber,Link,Tanggal Sumber Dipublish\r\nTanda Bahaya,Question 1,Answer 1,12 Jul 2021,Dokter,,\r\nGejala,Question 2,Answer 2,13 Jul 2021,Rumah Sakit,,";
@@ -165,6 +180,42 @@ describe("utils > contactReducer", () => {
     const result = reducer(obj, col);
 
     expect(result.alamat).toBe("Jl. Palsu, No. 9");
+  });
+
+  it("should generate slug when kontak column is processed", () => {
+    const obj: Record<string, number | string> = {
+      kebutuhan: "Rumah Sakit",
+      keterangan: "Rumah Sakit Rujukan",
+      lokasi: "Jakarta Timur",
+      penyedia: "RS WargaBantuWarga.com",
+    };
+    const col: SheetColumn = {
+      name: "Kontak",
+      index: 5,
+    };
+
+    const result = reducer(obj, col);
+
+    expect(result.kontak).toBe("(0123) 456789");
+    expect(result.slug).toBe(
+      "rumah-sakit-rumah-sakit-rujukan-jakarta-timur-rs-warga-bantu-warga-com-0123-456789",
+    );
+  });
+
+  it("should set verifikasi to 0 when tanggal_verifikasi is empty", () => {
+    const dataWithEmptyDate = [...data];
+    dataWithEmptyDate[9] = "";
+    const reducerWithEmptyDate = contactReducer(dataWithEmptyDate);
+    const obj: Record<string, number | string> = {};
+    const col: SheetColumn = {
+      name: "Tanggal Verifikasi",
+      index: 9,
+    };
+
+    const result = reducerWithEmptyDate(obj, col);
+
+    expect(result.tanggal_verifikasi).toBe("");
+    expect(result.verifikasi).toBe(0);
   });
 });
 
@@ -290,6 +341,15 @@ describe("utils > parseCSV", () => {
     const result = parseCSV(csv);
 
     expect(result.headers).toEqual(["name", "age", "city"]);
+    expect(result.rows).toEqual([]);
+  });
+
+  it("should return empty headers and rows for empty CSV", () => {
+    const csv = "";
+
+    const result = parseCSV(csv);
+
+    expect(result.headers).toEqual([]);
     expect(result.rows).toEqual([]);
   });
 

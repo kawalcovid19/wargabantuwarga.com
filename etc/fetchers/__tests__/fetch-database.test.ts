@@ -17,6 +17,31 @@ describe("fetchDatabase", () => {
     writeFileSyncSpy.mockRestore();
   });
 
+  it("throws error when HTML does not contain sheet items", async () => {
+    const htmlMock = `<html><script>var something = "else";</script></html>`;
+    fetchMock.mockResponseOnce(htmlMock);
+
+    await expect(fetchDatabase()).rejects.toThrow(
+      "Could not find sheet items in HTML",
+    );
+  });
+
+  it("throws error when no sheets are found in HTML", async () => {
+    const htmlMock = `
+      <html>
+        <script>
+          var items = [];
+          _optPageSwitcher = null;
+        </script>
+      </html>
+    `;
+    fetchMock.mockResponseOnce(htmlMock);
+
+    await expect(fetchDatabase()).rejects.toThrow(
+      "No sheets found in spreadsheet",
+    );
+  });
+
   it("fetches database using hybrid HTML discovery and CSV data parsing", async () => {
     const csvMock = fs.readFileSync(
       path.resolve(__dirname, "../__mocks__/wbw-database-aceh.csv"),
