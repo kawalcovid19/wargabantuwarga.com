@@ -20,9 +20,7 @@ export async function fetchLbh() {
     }))
     .filter((col) => col.name.trim().length !== 0);
 
-  const sheetRows = rows
-    .map((row) => row)
-    .filter((row) => !allIsEmptyString(row));
+  const sheetRows = rows.filter((row) => !allIsEmptyString(row));
 
   const sheetObject = {
     id: sheetId,
