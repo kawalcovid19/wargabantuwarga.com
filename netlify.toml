@@ -2,6 +2,10 @@
   command = "yarn netlify-export"
   publish = "out"
 
+[build.environment]
+  NODE_VERSION = "20"
+  NODE_OPTIONS = "--openssl-legacy-provider"
+
 # Temporary header config until Netlify supports setting `headers` on `next.config.js`
 # https://github.com/netlify/netlify-plugin-nextjs/issues/150
 

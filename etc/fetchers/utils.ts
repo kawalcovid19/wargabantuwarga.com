@@ -1,4 +1,3 @@
-import cheerio from "cheerio";
 import {
   getKebabCase,
   stripTags,
@@ -12,43 +11,29 @@ export interface SheetColumn {
   index: number;
 }
 
-export const parseFAQ = async (html: string): Promise<Faqs> => {
-  const $ = cheerio.load(html);
-  const faqRows = $("#sheets-viewport > div#0").find(
-    "table tbody tr:not(:first)",
-  );
+export interface ParsedCSV {
+  headers: string[];
+  rows: string[][];
+}
 
-  const faqJSON: Faqs = faqRows
-    .map((_, el) => {
-      const row = $(el).find("td");
+export const parseFAQFromCSV = (csvText: string): Faqs => {
+  const { rows } = parseCSV(csvText);
+
+  return rows
+    .filter((row) => row.some((cell) => cell)) // Skip empty rows
+    .map((row) => {
       const faq: Faq = {
-        kategori_pertanyaan: $(row.get(0)).text(),
-        pertanyaan: $(row.get(1)).text(),
-        jawaban: $(row.get(2)).html() ?? "",
-        created_date: $(row.get(3)).text(),
-        sumber: $(row.get(4)).text(),
-        link: $(row.get(5)).text(),
-        published_date: $(row.get(6)).text(),
+        kategori_pertanyaan: row[0] ?? "",
+        pertanyaan: row[1] ?? "",
+        jawaban: row[2] ?? "",
+        created_date: row[3] ?? "",
+        sumber: row[4] ?? "",
+        link: row[5] ?? "",
+        published_date: row[6] ?? "",
       };
 
       return faq;
-    })
-    .toArray();
-
-  return faqJSON;
-};
-
-export const extractGoogleQuery = (value: string): string => {
-  const $ = cheerio.load(value);
-  const links = $("a");
-  links.each((_, link): void => {
-    const el = $(link);
-    const href = el.attr("href");
-    const url = new URL(href as string);
-    const usp = new URLSearchParams(url.search);
-    el.attr("href", usp.get("q"));
-  });
-  return $("body").html() ?? "";
+    });
 };
 
 export const contactReducer = (row: string[]) => {
@@ -57,8 +42,6 @@ export const contactReducer = (row: string[]) => {
     let cellValue = row[col.index];
     if (colName == "lokasi") {
       cellValue = toTitleCase(cellValue);
-    } else if (["kontak", "link"].includes(colName)) {
-      cellValue = extractGoogleQuery(cellValue);
     } else if (colName == "ketersediaan") {
       cellValue = toTitleCase(cellValue);
     } else if (colName == "alamat") {
@@ -84,19 +67,7 @@ export const lbhReducer = (row: string[]) => {
   return (prev: Record<string, number | string>, col: SheetColumn) => {
     const colName = toSnakeCase(col.name);
     let cellValue = row[col.index];
-    if (
-      [
-        "nomor_kontak",
-        "website",
-        "link",
-        "twitter",
-        "youtube",
-        "facebook",
-        "ig",
-      ].includes(colName)
-    ) {
-      cellValue = extractGoogleQuery(cellValue);
-    } else if (["nomor_kontak", "alamat"].includes(colName)) {
+    if (["nomor_kontak", "alamat"].includes(colName)) {
       cellValue = stripTags(cellValue);
     }
     prev[colName] = cellValue;
@@ -107,3 +78,60 @@ export const lbhReducer = (row: string[]) => {
     return prev;
   };
 };
+
+/**
+ * Parse CSV data, handling quoted values and line breaks
+ */
+// eslint-disable-next-line complexity
+export function parseCSV(csvText: string): ParsedCSV {
+  const rows: string[][] = [];
+  let current = "";
+  let insideQuotes = false;
+  let currentRow: string[] = [];
+
+  for (let i = 0; i < csvText.length; i++) {
+    const char = csvText[i];
+    const nextChar = csvText[i + 1];
+
+    if (char === '"') {
+      if (insideQuotes && nextChar === '"') {
+        // Escaped quote
+        current += '"';
+        i++;
+      } else {
+        insideQuotes = !insideQuotes;
+      }
+    } else if (char === "," && !insideQuotes) {
+      currentRow.push(current.trim());
+      current = "";
+    } else if ((char === "\n" || char === "\r") && !insideQuotes) {
+      // Skip carriage returns
+      if (char === "\r" && nextChar === "\n") {
+        i++;
+      }
+      if (current.trim() || currentRow.length > 0) {
+        currentRow.push(current.trim());
+      }
+      if (currentRow.length > 0 && currentRow.some((cell) => cell)) {
+        rows.push(currentRow);
+        currentRow = [];
+        current = "";
+      }
+    } else {
+      current += char;
+    }
+  }
+
+  // Push last row and cell
+  if (current.trim() || currentRow.length > 0) {
+    currentRow.push(current.trim());
+  }
+  if (currentRow.length > 0 && currentRow.some((cell) => cell)) {
+    rows.push(currentRow);
+  }
+
+  const headers = rows[0] || [];
+  const dataRows = rows.slice(1);
+
+  return { headers, rows: dataRows };
+}
