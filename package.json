@@ -122,7 +122,7 @@
   },
   "private": true,
   "volta": {
-    "node": "20.18.0"
+    "node": "24.0.0"
   },
   "config": {
     "commitizen": {
