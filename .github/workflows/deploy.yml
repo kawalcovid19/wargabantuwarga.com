@@ -3,9 +3,11 @@
 name: Deploy
 
 on:
-  schedule:
-    - cron: "*/30 0-17,23 * * *"
-    - cron: "*/60 18-22 * * *"
+  # Scheduled deployments disabled to reduce unnecessary builds
+  # schedule:
+  #   - cron: "*/30 0-17,23 * * *"
+  #   - cron: "*/60 18-22 * * *"
+  workflow_dispatch: # Manual trigger only
 
 jobs:
   deploy:
