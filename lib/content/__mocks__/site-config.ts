@@ -5,7 +5,7 @@ const config: SiteConfig = {
   site_tagline: "Informasi Faskes & Alkes untuk COVID-19",
   site_description:
     "#WargaBantuWarga adalah situs yang memuat informasi seputar COVID-19 dan kontak fasilitas/alat kesehatan di seluruh Indonesia yang dikumpulkan relawan melalui pencarian di internet atau media sosial.",
-  site_url: "https://www.wargabantuwarga.com",
+  site_url: "https://www.wargabantuwarga.id",
   whatsapp_contact_url: "https://bit.ly/hotlinewarga",
 };
 
