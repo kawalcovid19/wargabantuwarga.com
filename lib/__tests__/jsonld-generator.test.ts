@@ -11,18 +11,18 @@ describe("jsonLdGenerator", () => {
     ];
     const result = makeBreadcrumbJsonLd(param);
     const expectedResult = {
-      "@id": "https://www.wargabantuwarga.com/provinces/#breadcrumb",
+      "@id": "https://www.wargabantuwarga.id/provinces/#breadcrumb",
       "@type": "BreadcrumbList",
       itemListElement: [
         {
           "@type": "ListItem",
-          item: "https://www.wargabantuwarga.com/",
+          item: "https://www.wargabantuwarga.id/",
           name: "Home",
           position: 1,
         },
         {
           "@type": "ListItem",
-          item: "https://www.wargabantuwarga.com/provinces",
+          item: "https://www.wargabantuwarga.id/provinces",
           name: "Province",
           position: 2,
         },
