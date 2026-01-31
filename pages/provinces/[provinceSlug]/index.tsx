@@ -8,6 +8,7 @@ import { SearchForm } from "~/components/search-form";
 import { SeoText } from "~/components/seo-text";
 import { getProvincesPaths } from "~/lib/data/helpers/provinces";
 import provinces, { Contact } from "~/lib/data/provinces";
+import vaccination from "~/lib/data/vaccination";
 import { getCurrentLongDate } from "~/lib/date-utils";
 import { useSearch } from "~/lib/hooks/use-search";
 import { getProvinceMeta } from "~/lib/meta";
@@ -124,8 +125,11 @@ export const getStaticProps: GetStaticProps = ({ params = {} }) => {
   const { provinceSlug } = params;
   const province = provinces.find((prov) => prov.slug === provinceSlug);
   const provinceName = province ? province.name : "";
-  const contactList = province
-    ? [...province.data].sort((a, b) => {
+  const contacts = province?.data.filter(
+    (contact) => contact.kebutuhan !== "Tempat vaksin",
+  );
+  const contactList = contacts
+    ? [...contacts, ...vaccination[provinceName]].sort((a, b) => {
         return (
           b.verifikasi - a.verifikasi ||
           (a.penyedia ?? "").localeCompare(b.penyedia ?? "")
