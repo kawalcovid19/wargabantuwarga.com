@@ -73,7 +73,7 @@ describe("LinksWell", () => {
         links={[
           { href: "/faq", text: "Info Umum A" },
           {
-            href: "https://www.wargabantuwarga.com/faq",
+            href: "https://www.wargabantuwarga.id/faq",
             text: "Info Umum B",
             internal: true,
           },
@@ -94,10 +94,7 @@ describe("LinksWell", () => {
       name: "Info Umum B",
     });
 
-    expect(linkB).toHaveAttribute(
-      "href",
-      "https://www.wargabantuwarga.com/faq",
-    );
+    expect(linkB).toHaveAttribute("href", "https://www.wargabantuwarga.id/faq");
     expect(linkB).not.toHaveAttribute("target");
     expect(linkB).not.toHaveAttribute("rel");
   });

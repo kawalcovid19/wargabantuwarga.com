@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: "https://www.wargabantuwarga.com",
+  siteUrl: "https://www.wargabantuwarga.id",
   generateRobotsTxt: true,
   sitemapSize: 1000,
   exclude: ["/provinces/tentang-database-0"],
