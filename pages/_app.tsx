@@ -61,7 +61,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
           site_name: meta.siteName,
           images: [
             {
-              url: "https://wargabantuwarga.com/wbw_og.png",
+              url: "https://wargabantuwarga.id/wbw_og.png",
               alt: meta.siteName,
               height: 640,
               width: 1427,

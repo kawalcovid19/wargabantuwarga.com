@@ -26,7 +26,7 @@ jobs:
           yarn global add @lhci/cli@0.8.x
           echo -e "\n"
           echo "Start collecting LH report..."
-          lhci collect --url=https://www.wargabantuwarga.com/ --url=https://www.wargabantuwarga.com/tentang-kami --url=https://www.wargabantuwarga.com/donasi --url=https://www.wargabantuwarga.com/faq --url=https://www.wargabantuwarga.com/provinces -n=5
+          lhci collect --url=https://www.wargabantuwarga.id/ --url=https://www.wargabantuwarga.id/tentang-kami --url=https://www.wargabantuwarga.id/donasi --url=https://www.wargabantuwarga.id/faq --url=https://www.wargabantuwarga.id/provinces -n=5
           echo -e "\n"
           echo "Start asserting LH score..."
           lhci assert --config=./lighthouserc.js

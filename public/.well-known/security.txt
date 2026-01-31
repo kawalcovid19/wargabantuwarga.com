@@ -3,7 +3,7 @@ Hash: SHA512
 
 Contact: mailto:admin@kawalcovid19.id
 Expires: 2022-08-10T16:59:00.000Z
-Canonical: https://www.wargabantuwarga.com/.well-known/security.txt
+Canonical: https://www.wargabantuwarga.id/.well-known/security.txt
 -----BEGIN PGP SIGNATURE-----
 
 iQIzBAEBCgAdFiEE0UPXQYU1D+eqKfsbDIqvr550G/UFAmEXCfcACgkQDIqvr550
