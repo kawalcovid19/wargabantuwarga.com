@@ -84,4 +84,9 @@ export const navMenu: NavMenuItem[] = [
     href: "/tentang-kami",
     exact: true,
   },
+  {
+    name: "Kode Etik (Code of Conduct)",
+    href: "https://github.com/kawalcovid19/wargabantuwarga.com/blob/main/CODE_OF_CONDUCT.md",
+    external: true,
+  },
 ];
