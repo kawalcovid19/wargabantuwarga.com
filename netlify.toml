@@ -1,7 +1,6 @@
 [build]
   command = "yarn netlify-export"
   publish = "out"
-  ignore = "exit 1"
 
 [build.environment]
   NODE_VERSION = "20"
