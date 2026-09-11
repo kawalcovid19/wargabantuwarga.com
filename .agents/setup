@@ -1,0 +1,125 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Prepares a fresh orb: Node 24 (CI / Volta pin), Yarn deps, WBW data, Playwright Chromium.
+# Idempotent. Do not start long-lived servers here; use .amp/services.yaml.
+
+NODE_VERSION="24.21.0"
+NODE_PREFIX="${HOME}/.local/node"
+PROFILE_MARKER="# wargabantuwarga.com orb toolchain"
+
+step() {
+  local name="$1"
+  shift
+  echo "==> ${name}"
+  local start
+  start="$(date +%s)"
+  "$@"
+  local end
+  end="$(date +%s)"
+  echo "==> ${name} done in $((end - start))s"
+}
+
+node_is_v24() {
+  command -v node >/dev/null 2>&1 || return 1
+  local major
+  major="$(node -p "process.versions.node.split('.')[0]" 2>/dev/null || true)"
+  [[ "${major}" == "24" ]]
+}
+
+install_node_24() {
+  if [[ -x "${NODE_PREFIX}/bin/node" ]]; then
+    local installed
+    installed="$("${NODE_PREFIX}/bin/node" -p "process.versions.node" 2>/dev/null || true)"
+    if [[ "${installed}" == "${NODE_VERSION}" ]]; then
+      echo "Node ${NODE_VERSION} already installed at ${NODE_PREFIX}"
+      return 0
+    fi
+  fi
+
+  local tmp tarball
+  tmp="$(mktemp -d)"
+  tarball="node-v${NODE_VERSION}-linux-x64.tar.xz"
+  echo "Downloading Node ${NODE_VERSION}"
+  curl -fsSL "https://nodejs.org/dist/v${NODE_VERSION}/${tarball}" -o "${tmp}/${tarball}"
+  tar -xJ -C "${tmp}" -f "${tmp}/${tarball}"
+  mkdir -p "${HOME}/.local"
+  rm -rf "${NODE_PREFIX}"
+  mv "${tmp}/node-v${NODE_VERSION}-linux-x64" "${NODE_PREFIX}"
+  rm -rf "${tmp}"
+  echo "Installed Node $("${NODE_PREFIX}/bin/node" -v) to ${NODE_PREFIX}"
+}
+
+persist_login_env() {
+  touch "${HOME}/.bash_profile"
+  if grep -Fqx "${PROFILE_MARKER}" "${HOME}/.bash_profile" 2>/dev/null; then
+    echo "Login profile already configured"
+    return 0
+  fi
+
+  cat >> "${HOME}/.bash_profile" <<EOF
+
+${PROFILE_MARKER}
+export PATH="${NODE_PREFIX}/bin:\$PATH"
+# Next.js 11 needs the OpenSSL 3 legacy provider on Node 17+.
+export NODE_OPTIONS="\${NODE_OPTIONS:---openssl-legacy-provider}"
+EOF
+  echo "Appended toolchain PATH to ~/.bash_profile"
+}
+
+write_agent_notes() {
+  local notes="${HOME}/.config/amp/AGENTS.md"
+  local marker="<!-- wargabantuwarga.com orb notes -->"
+  mkdir -p "$(dirname "${notes}")"
+  touch "${notes}"
+  if grep -Fq "${marker}" "${notes}" 2>/dev/null; then
+    return 0
+  fi
+
+  cat >> "${notes}" <<'EOF'
+
+<!-- wargabantuwarga.com orb notes -->
+# WargaBantuWarga orb notes
+
+- Use Yarn 1 (`yarn`), not npm. Install with `yarn install --frozen-lockfile`.
+- Toolchain is Node 24 (CI uses 24.x; `package.json` Volta pin is 24.0.0).
+- Next.js 11 needs `NODE_OPTIONS=--openssl-legacy-provider` (already set in login shells and `yarn dev`).
+- Content JSON under `data/` is gitignored. Fetch with `yarn fetch-wbw` when `data/wbw-database.json` is missing.
+- Start the app with `amp orb services ensure` (declared in `.amp/services.yaml`), not a background `yarn dev`.
+EOF
+}
+
+install_js_deps() {
+  yarn install --frozen-lockfile
+}
+
+fetch_wbw_data() {
+  if [[ -f data/wbw-database.json ]]; then
+    echo "WBW data already present, skipping fetch"
+    return 0
+  fi
+  yarn fetch-wbw
+}
+
+install_playwright() {
+  if compgen -G "${HOME}/.cache/ms-playwright/chromium-*/chrome-linux*/chrome" > /dev/null; then
+    echo "Playwright Chromium already installed"
+    npx playwright install chromium
+    return 0
+  fi
+  npx playwright install --with-deps chromium
+}
+
+echo "WargaBantuWarga orb setup starting"
+step "Install Node ${NODE_VERSION}" install_node_24
+export PATH="${NODE_PREFIX}/bin:${PATH}"
+export NODE_OPTIONS="${NODE_OPTIONS:---openssl-legacy-provider}"
+echo "node $(node -v) ($(command -v node))"
+echo "yarn $(yarn -v) ($(command -v yarn))"
+step "Persist login environment" persist_login_env
+step "Write orb agent notes" write_agent_notes
+step "Install Yarn dependencies" install_js_deps
+step "Fetch WBW data" fetch_wbw_data
+step "Install Playwright Chromium" install_playwright
+echo "WargaBantuWarga orb setup complete"
+echo "node $(node -v) | yarn $(yarn -v) | playwright chromium ready"

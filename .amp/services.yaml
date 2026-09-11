@@ -1,0 +1,11 @@
+services:
+  web:
+    command: yarn next -H 0.0.0.0 -p "$PORT"
+    env:
+      NODE_OPTIONS: --openssl-legacy-provider
+    health: /
+    portal:
+      title: WargaBantuWarga
+      description: Next.js 11 dev server. Content JSON lives under data/ (yarn fetch-wbw).
+    review: true
+    agent: control

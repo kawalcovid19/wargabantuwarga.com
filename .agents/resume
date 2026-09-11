@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Fast repair after orb activation and every wake. Do not install dependencies here.
+
+NODE_PREFIX="${HOME}/.local/node"
+PROFILE_MARKER="# wargabantuwarga.com orb toolchain"
+
+if [[ -x "${NODE_PREFIX}/bin/node" ]]; then
+  export PATH="${NODE_PREFIX}/bin:${PATH}"
+fi
+export NODE_OPTIONS="${NODE_OPTIONS:---openssl-legacy-provider}"
+
+if [[ -x "${NODE_PREFIX}/bin/node" ]] && ! grep -Fqx "${PROFILE_MARKER}" "${HOME}/.bash_profile" 2>/dev/null; then
+  cat >> "${HOME}/.bash_profile" <<EOF
+
+${PROFILE_MARKER}
+export PATH="${NODE_PREFIX}/bin:\$PATH"
+export NODE_OPTIONS="\${NODE_OPTIONS:---openssl-legacy-provider}"
+EOF
+fi
+
+if [[ ! -d node_modules ]]; then
+  echo "warning: node_modules missing; run .agents/setup" >&2
+fi
+if [[ ! -f data/wbw-database.json ]]; then
+  echo "warning: data/wbw-database.json missing; run yarn fetch-wbw" >&2
+fi
+
+echo "resume: node $(command -v node >/dev/null && node -v || echo missing) yarn $(command -v yarn >/dev/null && yarn -v || echo missing)"

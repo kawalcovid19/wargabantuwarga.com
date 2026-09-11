@@ -69,3 +69,6 @@ workbox-*
 
 # Claude local config
 .claude/*.local.json
+
+# Amp orb portal state
+.amp/portals/
